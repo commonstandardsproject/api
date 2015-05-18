@@ -415,7 +415,6 @@
     "description":"Counting and Cardinality",
     "language":"English",
     "asnIdentifier":"S1143409",
-    "statementNotation": "CCSS.Math.Content.K.CC",
     "children":[
       "S114340E",
       "S114340F",

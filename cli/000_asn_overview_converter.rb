@@ -4,7 +4,7 @@ require 'oj'
 require 'pp'
 require 'mongo'
 
-require_relative 'source_to_subject_mapping'
+require_relative 'src/source_to_subject_mapping'
 
 Oj.default_options = {
   indent:      2,
