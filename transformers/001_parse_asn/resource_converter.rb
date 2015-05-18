@@ -1,91 +1,7 @@
-# The part that activates bundler in your app
-require 'bundler/setup'
-
-require 'oj'
-
-Oj.default_options = {
-  indent:  2,
-  symbol_keys: false
-}
-
-@@keys = []
-
-class Converter
-
-  def self.asn(path)
-
-    converters = [
-      Converters::ConvertResources
-    ]
-
-    hash = Oj.load(File.read(path))
-
-    new_hash = hash.reduce({}) do |memo, tuple|
-      key = tuple[0]
-      value = tuple[1]
-      converters.map do |converter|
-        converter.process(memo, key, value)
-      end
-      memo
-    end
-
-    puts @@keys.uniq.sort
-
-    File.write('converted_' + path, Oj.dump(new_hash))
-  end
-
-end
-
-module Converters
-  class ConvertResources
-    def self.process(memo, key, value)
-      if match(key, value)
-        convert(memo, key, value)
-      end
-      memo
-    end
-
-    def self.match(key, value)
-      !key.match(/^http\:\/\/asn\.jesandco\.org\/resources\//).nil?
-    end
-
-    def self.convert(accumulator, key, value)
-      new_key =
-      new_value = value
-      if value.is_a? Hash
-        value.each do |key,value|
-
-          key_matchers.each do |matcher|
-            if value == matcher.match
-              match.replace.call(key, value)
-            end
-          end
-        end
-      end
-      accumulator[new_key] = value
-      accumulator
-    end
-  end
-end
-
-class ASNConverter
-
-  def self.convert(path)
-    hash = Oj.load(File.read(path))
-
-    new_hash = hash.reduce({}) do |memo, tuple|
-      new_key = tuple[0].match(/^http\:\/\/asn\.jesandco\.org\/resources\/(.*)/).to_a.last
-      new_value = ResourceConverter.convert(tuple[1])
-      memo[new_key] = new_value
-      memo
-    end
-
-    File.write('converted_' + path, Oj.dump(new_hash))
-  end
-
-end
-
 class ResourceConverter
+
+
+
 
   def self.convert(hash)
     # Tuple has the form [key, value]
@@ -107,12 +23,16 @@ class ResourceConverter
     return new_hash
   end
 
+
   def self.match_key(key)
     match = KEY_MATCHERS.select do |matcher|
       key == matcher[:key_match]
     end.first
     match
   end
+
+
+
 
   KEY_MATCHERS = [
 
@@ -794,9 +714,4 @@ class ResourceConverter
   ]
 
 
-end
-
-
-ARGV.each do |a|
-  ASNConverter.convert(a)
 end
