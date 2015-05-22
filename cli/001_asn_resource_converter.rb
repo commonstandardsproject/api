@@ -1,6 +1,6 @@
 # The part that activates bundler in your app
 require 'bundler/setup'
-require_relative '../src/transformers/parse_asn/asn_resource_parser'
+require_relative '../src/transformers/asn_resource_parser'
 require 'oj'
 
 Oj.default_options = {
@@ -9,5 +9,6 @@ Oj.default_options = {
 }
 
 ARGV.each do |a|
-  ASNResourceParser.convert(a)
+  hash = Oj.load(File.read(a))
+  ASNResourceParser.convert(hash)
 end

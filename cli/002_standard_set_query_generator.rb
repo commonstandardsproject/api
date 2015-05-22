@@ -1,6 +1,7 @@
 # The part that activates bundler in your app
 require 'bundler/setup'
-require_relative './asn_standard_set_generator'
+require_relative "../src/transformers/asn_standard_set_query_generator"
+
 require 'oj'
 
 Oj.default_options = {
@@ -8,6 +9,7 @@ Oj.default_options = {
   symbol_keys: false
 }
 
-ARGV.each do |a|
-  ASNStandardSetQueryGenerator.generate(a)
+ARGV.each do |path|
+  hash = Oj.load(File.read(path))
+  ASNStandardSetQueryGenerator.generate(hash)
 end

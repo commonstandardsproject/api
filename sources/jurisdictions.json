@@ -1,0 +1,2105 @@
+{
+  "rdf:RDF": {
+    "-xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "-xmlns:dcterms": "http://purl.org/dc/terms/",
+    "-xmlns:owl": "http://www.w3.org/2002/07/owl#",
+    "-xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "-xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "-xmlns:skos": "http://www.w3.org/2004/02/skos/core#",
+    "skos:ConceptScheme": {
+      "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/",
+      "dc:title": {
+        "-xml:lang": "en-US",
+        "#text": "ASN Jurisdiction Vocabulary"
+      },
+      "dc:description": {
+        "-xml:lang": "en-US",
+        "#text": "
+This vocabulary is version 2.0 of the ASN jurisdiction vocabulary.
+"
+      },
+      "dc:creator": {
+        "-xml:lang": "en-US",
+        "#text": "Stuart A. Sutton"
+      },
+      "dcterms:created": {
+        "-rdf:datatype": "http://purl.org/dc/terms/W3CDTF",
+        "#text": "2006-11-01"
+      },
+      "dcterms:modified": {
+        "-rdf:datatype": "http://purl.org/dc/terms/W3CDTF",
+        "#text": "2015-02-17"
+      },
+      "skos:hasTopConcept": [
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AUT" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AUS" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/BEL" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/BIH" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/BGR" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CHN" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/HRV" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/DNK" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/EST" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/FIN" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/FRA" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/DEU" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/GIB" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/GRC" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/GRL" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/HKG" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/HUN" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ISL" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/IRL" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/JPN" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/LTU" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/LUX" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/MEX" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NLD" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NOR" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/POL" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/PRT" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ROU" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/SGP" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/SVK" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/SVN" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ESP" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/SWE" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CHE" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/TWN" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/TUR" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/UKR" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/GBR" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Military" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Corporation" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USFederal" }
+      ]
+    },
+    "skos:Concept": [
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AUT",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Austria"
+        },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AUS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Australia"
+        },
+        "skos:altLabel": [
+          {
+            "-xml:lang": "en-US",
+            "#text": "AUS"
+          },
+          {
+            "-xml:lang": "en-US",
+            "#text": "AU"
+          }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:narrower": [
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-ACT" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-NSW" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-NT" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-QLD" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-SA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-TAS" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-VIC" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-WA" }
+        ]
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-ACT",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Australian Capital Territory"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "AB"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AUS" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-NSW",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "New South Wales"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NSW"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AUS" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-NT",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Northern Territory"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NT"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AUS" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-QLD",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Queensland"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "QLD"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AUS" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-SA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "South Australia"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "SA"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AUS" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-TAS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Tasmania"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "TAS"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AUS" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-VIC",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Victoria"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "VIC"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AUS" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AU-WA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Western Australia"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "WA"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AUS" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/BEL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Belgium"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/BIH",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Bosnia and Herzegovina"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/BGR",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Bulgaria"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Canada"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "CAN"
+        },
+        "skos:narrower": [
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-AB" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-BC" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-MB" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NL" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NS" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NT" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NV" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-AB" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-ON" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-PE" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-QC" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-SK" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-UT" }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-AB",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Alberta"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "AB"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-BC",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "British Columbia"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "BC"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-MB",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Manitoba"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "MB"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NB",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "New Brunswick"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NB"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Newfoundland and Labrador"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NL"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Nova Scotia"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NS"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NT",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Northwest Territories"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NT"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NV",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Nunavut"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NV"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-ON",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ontario"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "ON"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-PE",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Prince Edward Island"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "PEI"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-QC",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Quebec"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "QC"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-SK",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Saskatchewan"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "SK"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-YT",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Yukon"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "YT"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CAN" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CHN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "China"
+        },
+        "skos:altLabel": [
+          {
+            "-xml:lang": "en-US",
+            "#text": "People's Republic of China"
+          },
+          {
+            "-xml:lang": "en-US",
+            "#text": "PRC"
+          }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/HRV",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Croatia"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Republic of Croatia"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/DNK",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Denmark"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/EST",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Estonia"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Republic of Estonia"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/FIN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Finland"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/FRA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "France"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/DEU",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Germany"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/GIB",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Gibraltar"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/GRC",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Greece"
+        },
+        "skos:altLabel": [
+          {
+            "-xml:lang": "en-US",
+            "#text": "Hellenic Republic"
+          },
+          {
+            "-xml:lang": "en-US",
+            "#text": "Hellas"
+          }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/GRL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Greenland"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/HKG",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Hong Cong"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/HUN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Hungary"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Republic of Hungary"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ISL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Iceland"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/IRL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ireland"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/JPN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Japan"
+        },
+        "skos:altLabel": [
+          {
+            "-xml:lang": "en-US",
+            "#text": "JPN"
+          },
+          {
+            "-xml:lang": "en-US",
+            "#text": "JP"
+          }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/LTU",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Lithuania"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/LUX",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Luxembourg"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/MEX",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Mexico"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NLD",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Netherlands"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NOR",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Norway"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/POL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Poland"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/PRT",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Portugal"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ROU",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Romania"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/SGP",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Singapore"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/SVK",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Slovakia"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/SVN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Slovenia"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ESP",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Spain"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/SWE",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Sweden"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CHE",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Switzerland"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/TWN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Taiwan"
+        },
+        "skos:altLabel": [
+          {
+            "-xml:lang": "en-US",
+            "#text": "Republic of China"
+          },
+          {
+            "-xml:lang": "en-US",
+            "#text": "ROC"
+          }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/TUR",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Turkey"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/UKR",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ukraine"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/GBR",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "United Kingdom"
+        },
+        "skos:altLabel": [
+          {
+            "-xml:lang": "en-US",
+            "#text": "UK"
+          },
+          {
+            "-xml:lang": "en-US",
+            "#text": "GB"
+          }
+        ],
+        "skos:narrower": [
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/UK/ENGLAND" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/UK/SCOTLAND" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/UK/WALES" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/UK/NORTHERN_IRELAND" }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/UK/ENGLAND",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "England"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/GBR" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/UK/SCOTLAND",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Scotland"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/GBR" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/UK/WALES",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Wales"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/GBR" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/UK/NORTHERN_IRELAND",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Northern Ireland"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/GBR" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/USA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "U.S. States and Territories"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "USA"
+        },
+        "skos:narrower": [
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AL" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AK" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AZ" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AR" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CO" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CT" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/DE" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/DC" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/FL" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/GA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/GU" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/HI" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ID" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/IL" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/IN" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/IA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/KS" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/KY" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/LA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ME" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/MD" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/MA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/MI" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/MN" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/MS" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/MO" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/MT" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NE" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NV" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NH" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NJ" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NM" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NY" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NC" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ND" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/OH" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/OK" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/OR" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/PA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/PR" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/RI" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/SC" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/SD" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/TN" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/TX" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/UT" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/VT" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/VA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/VI" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/WA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/WV" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/WI" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/WY" }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Alabama"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ala."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AK",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Alaska"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "American Samoa"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AZ",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Arizona"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ariz"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AR",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Arkansas"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ark."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "California"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Calif."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CO",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Colorado"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Colo."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CT",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Connecticut"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Conn."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/DE",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Delaware"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Del."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/DC",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "District of Columbia"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "D.C."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/FL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Florida"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Fla."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/GA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Georgia"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ga."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/GU",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Guam"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/HI",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Hawaii"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ID",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Idaho"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/IL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Illinois"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ill."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/IN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Indiana"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ind."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/IA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Iowa"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/KS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Kansas"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Kans."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/KY",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Kentucky"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ky."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/LA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Louisiana"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "La."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ME",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Maine"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/MD",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Maryland"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Md."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/MA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Massachusetts"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Mass."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/MI",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Michigan"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Mich."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/MN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Minnesota"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Minn."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/MS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Mississippi"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Miss."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/MO",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Missouri"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Mo."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/MT",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Montana"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Mont."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NE",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Nebraska"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Nebr."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NH",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "New Hampshire"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "N.H."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NJ",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "New Jersey"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "N.J."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NM",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "New Mexico"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "N.M."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NY",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "New York"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "N.Y."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NC",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "North Carolina"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "N.C."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ND",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "North Dakota"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "N.D."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NV",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Nevada"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "N.V."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/OH",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ohio"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/OK",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Oklahoma"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Okla."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/OR",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Oregon"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Ore."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/PA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Pennsylvania"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Pa."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/PR",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Puerto Rico"
+        },
+        "skos:altLabel": [
+          {
+            "-xml:lang": "en-US",
+            "#text": "P.R."
+          },
+          {
+            "-xml:lang": "en-US",
+            "#text": "PRI"
+          }
+        ],
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/RI",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Rhode Island"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "R.I."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/SC",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "South Carolina"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "S.C."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/SD",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "South Dakota"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "S.D."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/TN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Tennessee"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Tenn."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/TX",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Texas"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Tex."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/UT",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Utah"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Tex."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/VT",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Vermont"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Vt."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/VA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Virginia"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Va."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/VI",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Virgin Islands"
+        },
+        "skos:altLabel": [
+          {
+            "-xml:lang": "en-US",
+            "#text": "V.I."
+          },
+          {
+            "-xml:lang": "en-US",
+            "#text": "VGB"
+          }
+        ],
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/WA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Washington"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Wash."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/WV",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "West Virginia"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "W.Va."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/WI",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Wisconsin"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Wis."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/WY",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Wyoming"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Wyo."
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USA" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/Military",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Military"
+        }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Organization"
+        },
+        "skos:narrower": [
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AAAS" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/AASL" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ASN" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/CCSS" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/DCMI" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/EngineersCanada" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ISLLC" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ISTE" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ITEA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/JumpStart" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NCEE" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NCHS" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NCHSE" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NCSS" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NCTE-IRA" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NCTM" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NGES" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NGSS" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NHES" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NRC" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NSAE" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NSES" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/MCREL" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/P21" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/ThinkFinity" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/WebJunction" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/WMO" }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AAAS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "
+American Association for the Advancement of Science
+"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "AAAS"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/AASL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "American Association of School Librarians"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "AASL"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ASN",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Achievement Standards Network"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "ASN"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/CCSS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Common Core State Standards"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "CCSS"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/DCMI",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Dublin Core Metadata Initiative"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "DCMI"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/EngineersCanada",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": [
+          {
+            "-xml:lang": "en-CA",
+            "#text": "Engineers Canada"
+          },
+          {
+            "-xml:lang": "fr",
+            "#text": "Ingénieurs Canada"
+          }
+        ],
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ISLLC",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Interstate School Leaders Licensure Consortium"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "ISLLC"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ISTE",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "International Society for Technology in Education"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "ISTE"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ITEA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "
+International Technology and Engineering Educators Association
+"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/JumpStart",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "
+Jump$tart Coalition for Personal Financial Literacy
+"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NCEE",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Council on Economic Education"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NCEE"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NCHS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Center for History in the Schools"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NCHS"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NCHSE",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Consortium for Health Science Education"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NCHSE"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NCSS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Council for the Social Studies"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NCSS"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NCTE-IRA",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NCTE/IRA"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NCTE/IRA Standards for the English Language Arts"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NCTM",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Council of Teachers of Mathematics"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NCTM"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NGES",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Geography Education Standards"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NGES"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NGSS",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Next Generation Science Standards"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NGSS"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NHES",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Health Education Standards"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NHES"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NRC",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Research Council"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NRC"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NSAE",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Standards for Arts Education"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NSAE"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NSES",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Science Education Standards"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NSES"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/MCREL",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "MCREL"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Mid-continent Research for Education and Learning"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/P21",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Partnership for 21st Century Skills"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "P21"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/ThinkFinity",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "ThinkFinity"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "ThinkFinity--Verizon Foundation"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/WebJunction",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "WebJunction"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/WMO",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "World Meteorological Organization"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "WMO"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Organization" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/USFederal",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "U.S. Federal Government"
+        },
+        "skos:narrower": [
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NAEP" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NAGB" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/NCES" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/OVAE" }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NAEP",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Assessment of Educational Progress"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NAEP"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USFederal" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NAGB",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Assessment Governing Board"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NAGB"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USFederal" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/NCES",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "National Center for Educational Statistics"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "NCES"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USFederal" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/OVAE",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Office of Vocational and Adult Education"
+        },
+        "skos:altLabel": {
+          "-xml:lang": "en-US",
+          "#text": "OVAE"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/USFederal" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/Corporation",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Corporation"
+        },
+        "skos:narrower": [
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Cisco" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/D2L" }
+        ],
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/Cisco",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Cisco"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Corporation" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNJurisdiction/D2L",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "D2L"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNJurisdiction/Corporation" }
+      }
+    ]
+  }
+}
