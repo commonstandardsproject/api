@@ -1,3 +1,6 @@
+require_relative "jurisdiction_matchers"
+require_relative "ngss_matchers"
+
 KEY_MATCHERS = {
 
   # "http://xmlns.com/foaf/0.1/primaryTopic":[
@@ -7,9 +10,10 @@ KEY_MATCHERS = {
   #   }
   # ],
   "http://xmlns.com/foaf/0.1/primaryTopic" => lambda {|key, value|
-    new_value = value.first["value"].match(/http\:\/\/asn\.jesandco\.org\/resources\/(.+)/).to_a.last
+    new_value = value.first["value"].match(/http\:\/\/asn\.(?:desire2learn\.com|jesandco\.org)\/resources\/(.+)/).to_a.last
     {primaryTopic: new_value}
   },
+
 
 
 
@@ -46,7 +50,40 @@ KEY_MATCHERS = {
 
 
 
+  # "http://purl.org/ASN/schema/core/derivedFrom" : [
+  #   { "value" : "http://asn.jesandco.org/resources/S2454620", "type" : "uri" }
+  # ],
 
+  "http://purl.org/ASN/schema/core/derivedFrom"  => lambda{|key, value|
+    { derivedFrom: value.first["value"] }
+  },
+
+
+
+  # "http://purl.org/dc/terms/creator" : [
+  #   { "value" : "http://purl.org/ASN/scheme/ASNJurisdiction/OR", "type" : "uri" }
+  # ],
+
+  "http://purl.org/dc/terms/creator" => lambda {|key, value|
+    jurisdictionUrl = value.first["value"].match(/(http\:\/\/purl\.org\/ASN\/scheme\/ASNJurisdiction\/.+)/).to_a.first
+    {
+      creatorUrl: jurisdictionUrl,
+      creatorId:  JURISDICTION_MATCHERS[jurisdictionUrl]["id"],
+      creator:    JURISDICTION_MATCHERS[jurisdictionUrl]["title"]
+    }
+  },
+
+
+
+  # "http://purl.org/dc/elements/1.1/creator" : [
+  #   { "value" : "JES & Co.", "type" : "literal", "datatype" : "http://www.w3.org/2001/XMLSchema#string" }
+  # ],
+
+  "http://purl.org/dc/elements/1.1/creator" => lambda{|key, value|
+    {
+      creator: value.first["value"]
+    }
+  },
 
 
   # "http://purl.org/dc/terms/modified":[
@@ -81,6 +118,17 @@ KEY_MATCHERS = {
   },
 
 
+
+  # "http://purl.org/dc/terms/license"=> [
+  #   {
+  #     "value"=> "http://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  #     "type"=>"uri"
+  #   }
+  # ],
+
+  "http://purl.org/dc/terms/license"=> lambda{|key, value|
+    {license: value.first["value"] }
+  },
 
 
 
@@ -150,7 +198,10 @@ KEY_MATCHERS = {
   # ],
 
   "http://purl.org/ASN/schema/core/jurisdiction" => lambda{|key, value|
-      { jurisdiction: value.first["value"] }
+      {
+        jurisdiction: value.first["value"],
+        jurisdictionId: JURISDICTION_MATCHERS[value.first["value"]][:id]
+      }
    },
 
 
@@ -303,6 +354,25 @@ KEY_MATCHERS = {
       }
    },
 
+  #  "http://purl.org/ASN/schema/core/conceptTerm" : [
+  #    { "value" : "http://purl.org/ASN/scheme/NGSSTopic/7", "type" : "uri" }
+  #  ],
+
+  "http://purl.org/ASN/schema/core/conceptTerm" => lambda{|key, value|
+    { conceptTerm: NGSS_TOPICS_MATCHERS[value.first["value"]] }
+  },
+
+  #
+  #  "http://purl.org/ASN/schema/core/localSubject" : [
+  #    { "value" : "Music", "type" : "literal", "lang" : "en-US" }
+  #  ],
+
+  "http://purl.org/ASN/schema/core/localSubject" => lambda{|key, value|
+    {
+      localSubject: value.first["value"]
+    }
+  },
+
 
 
   # "http://purl.org/dc/terms/educationLevel":[
@@ -339,10 +409,20 @@ KEY_MATCHERS = {
   #   }
   # ],
   "http://purl.org/dc/terms/language" => lambda{|key, value|
-      {
-        language: "English" # If ASN starts publishing in other langugaes, this would have to change
-      }
+    language_map = {
+      "http://id.loc.gov/vocabulary/iso639-2/eng" => "English"
+    }
+    { language: language_map[value.first["value"]] }
    },
+
+
+  #  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [
+  #    { "value" : "http://goo.gl/GOzGS", "type" : "uri" }
+  #  ],
+
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" => lambda{|key, value|
+    { seeAlso: value.first["value"] }
+  },
 
 
   # "http://www.loc.gov/loc.terms/relators/aut":[
@@ -384,6 +464,17 @@ KEY_MATCHERS = {
    },
 
 
+  #  "http://www.w3.org/2004/02/skos/core#note" : [
+  #    { "value" : "Free print copies of the National Standards book will be available through Jump$tart national partner: Publications.USA.Gov very soon. (In the meantime, Publications.USA.Gov still has copies of the third edition available, free.) Enter search text: National Standards in K-12 Personal Finance Education.", "type" : "literal", "lang" : "en-US" }
+  #  ],
+
+  "http://www.w3.org/2004/02/skos/core#note" => lambda{|key, value|
+    {
+      note: value.first["value"]
+    }
+  },
+
+
   # "http://purl.org/dc/terms/rights":[
   #   {
   #     "value":"© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
@@ -420,7 +511,7 @@ KEY_MATCHERS = {
   #
   "http://purl.org/gem/qualifiers/hasChild" => lambda{|key, value|
       {
-        children: value.map{|v| v["value"].match(/http\:\/\/asn\.jesandco\.org\/resources\/(.+)/).to_a.last }
+        children: value.map{|v| v["value"].match(/http\:\/\/asn\.(?:desire2learn\.com|jesandco\.org)\/resources\/(.+)/).to_a.last }
       }
    },
 
@@ -435,7 +526,7 @@ KEY_MATCHERS = {
   # ],
   "http://purl.org/dc/terms/isPartOf" => lambda{|key, value|
       {
-        isPartOf: value.first["value"].match(/http\:\/\/asn\.jesandco\.org\/resources\/(.+)/).to_a.last
+        isPartOf: value.first["value"].match(/http\:\/\/asn\.(?:desire2learn\.com|jesandco\.org)\/resources\/(.+)/).to_a.last
       }
    },
 
@@ -450,7 +541,7 @@ KEY_MATCHERS = {
   # ]
   "http://purl.org/gem/qualifiers/isChildOf" => lambda{|key, value|
       {
-        isChildOf: value.first["value"].match(/http\:\/\/asn\.jesandco\.org\/resources\/(.+)/).to_a.last
+        isChildOf: value.first["value"].match(/http\:\/\/asn\.(?:desire2learn\.com|jesandco\.org)\/resources\/(.+)/).to_a.last
       }
    },
 
@@ -505,7 +596,7 @@ KEY_MATCHERS = {
   # ],
   "http://purl.org/ASN/schema/core/listID" => lambda{|key, value|
       {
-        listID: value.first["value"].gsub('.', '').gsub(')', '').gsub('(', ''),
+        listId: value.first["value"].gsub('.', '').gsub(')', '').gsub('(', '').gsub(':', ''),
       }
    },
 
@@ -537,6 +628,14 @@ KEY_MATCHERS = {
       }
    },
 
+  #  "http://purl.org/ASN/schema/core/conceptKeyword" : [
+  #    { "value" : "Optics", "type" : "literal", "lang" : "en-GB" }
+  #  ],
+
+  "http://purl.org/ASN/schema/core/conceptKeyword" => lambda{|key, value|
+    { conceptKeyword: value.first["value"]}
+  },
+
   # "http://purl.org/ASN/schema/core/comment":[
   #   {
   #     "value":"Mathematically proficient students start by explaining to themselves the meaning of a problem and looking for entry points to its solution. They analyze givens, constraints, relationships, and goals. They make conjectures about the form and meaning of the solution and plan a solution pathway rather than simply jumping into a solution attempt. They consider analogous problems, and try special cases and simpler forms of the original problem in order to gain insight into its solution. They monitor and evaluate their progress and change course if necessary. Older students might, depending on the context of the problem, transform algebraic expressions or change the viewing window on their graphing calculator to get the information they need. Mathematically proficient students can explain correspondences between equations, verbal descriptions, tables, and graphs or draw diagrams of important features and relationships, graph data, and search for regularity or trends. Younger students might rely on using concrete objects or pictures to help conceptualize and solve a problem. Mathematically proficient students check their answers to problems using a different method, and they continually ask themselves, \"Does this make sense?\" They can understand the approaches of others to solving complex problems and identify correspondences between different approaches.",
@@ -566,5 +665,38 @@ KEY_MATCHERS = {
       {
         exactMatch: value.map{|v| v["value"].gsub('urn:guid:', '')}
       }
-   }
+  },
+
+
+  # "http://purl.org/ASN/schema/core/comprisedOf" : [
+  #   { "value" : "http://asn.jesandco.org/resources/S2470857", "type" : "uri" },
+  #   { "value" : "http://asn.jesandco.org/resources/S2470868", "type" : "uri" },
+  #   { "value" : "http://asn.jesandco.org/resources/S2470846", "type" : "uri" }
+  # ],
+  "http://purl.org/ASN/schema/core/comprisedOf" => lambda{|key, value|
+    { comprisedOf: value.map{|el| el["value"]} }
+  },
+
+  # "http://purl.org/ASN/schema/core/alignTo" : [
+  #   { "value" : "http://corestandards.org/ELA-Literacy/RI/3/1", "type" : "uri" },
+  #   { "value" : "http://corestandards.org/ELA-Literacy/RI/3/2", "type" : "uri" },
+  #   { "value" : "http://corestandards.org/ELA-Literacy/RI/3/3", "type" : "uri" },
+  #   { "value" : "http://corestandards.org/ELA-Literacy/W/3/2", "type" : "uri" },
+  #   { "value" : "http://corestandards.org/ELA-Literacy/SL/3/4", "type" : "uri" },
+  #   { "value" : "http://corestandards.org/Math/Content/3/MD/B/3", "type" : "uri" }
+  # ],
+
+  "http://purl.org/ASN/schema/core/alignTo" => lambda{|key, value|
+    { alignTo: value.map{|el| el["value"]} }
+  },
+
+  # "http://purl.org/dc/terms/isVersionOf" : [
+  #   { "value" : "http://corestandards.org/ELA-Literacy/RH/6-8/7", "type" : "uri" }
+  # ],
+
+  "http://purl.org/dc/terms/isVersionOf"  => lambda{|key, value|
+    { isVersionOf: value.first["value"] }
+  }
+
+
 }

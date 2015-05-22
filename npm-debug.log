@@ -1,0 +1,22 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'start',
+1 verbose cli   'ruby',
+1 verbose cli   'cli/000a_jursidction_parser.rb' ]
+2 info using npm@2.7.6
+3 info using node@v0.10.32
+4 verbose node symlink /usr/local/bin/node
+5 verbose stack Error: ENOENT, open '/Users/scottmessinger/code/commoncurriculum/package.json'
+6 verbose cwd /Users/scottmessinger/code/commoncurriculum/convert-standards
+7 error Darwin 14.3.0
+8 error argv "node" "/usr/local/bin/npm" "start" "ruby" "cli/000a_jursidction_parser.rb"
+9 error node v0.10.32
+10 error npm  v2.7.6
+11 error path /Users/scottmessinger/code/commoncurriculum/package.json
+12 error code ENOENT
+13 error errno 34
+14 error enoent ENOENT, open '/Users/scottmessinger/code/commoncurriculum/package.json'
+14 error enoent This is most likely not a problem with npm itself
+14 error enoent and is related to npm not being able to find a file.
+15 verbose exit [ 34, true ]
