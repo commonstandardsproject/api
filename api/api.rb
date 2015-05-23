@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'grape'
 require 'mongo'
 require 'pp'
+require 'oj'
 require_relative 'entities/jurisdiction'
 require_relative 'entities/standards_document_summary'
 require_relative 'entities/standards_document'
@@ -27,7 +28,7 @@ module API
       }).to_a.first
       documents = $db[:standards_documents].find({
         "document.jurisdictionId" => params[:id]
-      }).projection("_id" => 1, "document.title" => 1, "standardSetQueries" => 1).to_a
+      }).projection("_id" => 1, "document.title" => 1).to_a
       jurisdiction["documents"] = documents
       present jurisdiction, with: Entities::Jurisdiction
     end
@@ -40,7 +41,7 @@ module API
         "_id" => 1,
         "document" => 1,
         "documentMeta" => 1,
-        "standardSetQueries" => 1
+        "standardsSetQueries" => 1
       ).to_a.first
 
       present document, with: Entities::StandardsDocument
@@ -51,10 +52,7 @@ module API
         :_id => params.standardsDocumentId
       }).projection(:standards => 1).to_a.first
 
-
-      query = params.query.merge(params.query["query"])
-
-      QueryToStandardSet.generate(standards_hash[:standards], query.to_hash)
+      QueryToStandardSet.generate(standards_hash[:standards], params.query.to_hash)
     end
 
 

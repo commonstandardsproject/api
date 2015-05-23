@@ -397,7 +397,7 @@ KEY_MATCHERS = {
           end
         }
 
-      return { educationLevel: education_levels }
+      return { educationLevels: education_levels }
    },
 
 

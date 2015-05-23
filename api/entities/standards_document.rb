@@ -8,7 +8,7 @@ module API
       expose :_id, as: :id
       expose :documentMeta
       expose :document
-      expose :standardSetQueries
+      expose :standardsSetQueries
 
     end
   end
