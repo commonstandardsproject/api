@@ -28,11 +28,9 @@ class ASNResourceParser
       end
       memo
     end
-    new_hash["standardSetQueries"] = ASNStandardSetQueryGenerator.generate(new_hash)
+    new_hash["standardsSetQueries"] = ASNStandardSetQueryGenerator.generate(new_hash)
     new_hash["_id"] = new_hash["documentMeta"]["primaryTopic"] + ":" + new_hash["documentMeta"]["modified"]
     new_hash
-    # QueryToStandardSet.generate(new_hash["standards"], new_hash["standardSets"][1]["query"])
-    # File.write('output/converted_' + path.gsub('sources/', ''), Oj.dump(new_hash))
   end
 
 

@@ -4,9 +4,9 @@ class ASNStandardSetQueryGenerator
 
   def self.generate(asnDocumentHash)
     # Get standards and set defaults
-    standards = asnDocumentHash["standards"].values.map{|doc| doc["educationLevel"] ||= []; doc}
+    standards = asnDocumentHash["standards"].values.map{|doc| doc["educationLevels"] ||= []; doc}
 
-    ["PK", "K", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
+    queries = ["PK", "K", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
       .map{|level| { "educationLevels" => [level] } }
       .map(&self.assign_standard_ids.call(standards))  # Add standard ids to each group
       .reject{|group| group["standardIds"].empty? || group["standardIds"].nil?} # Reject if there are no standards for the grade level
@@ -14,6 +14,37 @@ class ASNStandardSetQueryGenerator
       .map{|s| s.select{|k| k != "standardIds"}}
       .map(&self.assign_title) # E.g. "Grade 6, 7, 8 Math"
       .map(&self.assign_query.call(asnDocumentHash)) # E.g. educationLevels => [06, 07, 08]
+
+    common_core_exceptions = [
+      "High School — Number and Quantity",
+      "High School — Algebra",
+      "High School — Functions",
+      "High School — Geometry",
+      "High School — Statistics and Probability<sup>★</sup>"
+    ]
+
+    common_core_exceptions.each{|title|
+      if standards.map{|s| s["description"]}.include?(title)
+        children = standards.find{|s| s["description"] == title}["children"]
+        children.unshift(standards.find{|s| s["description"] == "Standards for Mathematical Practice"}["asnIdentifier"])
+        queries.push({
+          "title" =>           title.gsub("<sup>★</sup>", ""),
+          "educationLevels" => ["09", "10", "11", "12"],
+          "children" =>        children
+        })
+      end
+    }
+
+    if (queries.map{|q| q["title"]} & common_core_exceptions.map{|t| t.gsub("<sup>★</sup>", "")}).length == common_core_exceptions.length
+      # This is pretty hacky to find the high school query
+      # where all these standards came from. Should work, though, as this entire
+      # thing is only applicable to teh common core
+      queries.reject!{|q|
+        q["title"] == "Grades 9, 10, 11, 12"
+      }
+    end
+
+    queries
   end
 
 
@@ -28,7 +59,7 @@ class ASNStandardSetQueryGenerator
   def self.assign_standard_ids
     -> (standards, group){
       group.merge({
-        "standardIds" => standards.select{|s| s["educationLevel"].include? group["educationLevels"].first}
+        "standardIds" => standards.select{|s| s["educationLevels"].include? group["educationLevels"].first}
                                   .map{|s| s["asnIdentifier"]}
       })
     }.curry
@@ -42,7 +73,7 @@ class ASNStandardSetQueryGenerator
       end
       if group_with_same_standards
         memo = memo - [group_with_same_standards] # remove the group
-        group["educationLevels"].concat(group_with_same_standards["educationLevels"])
+        group["educationLevels"].concat(group_with_same_standards["educationLevels"]).sort!
       end
       memo.push(group)
     }
@@ -63,10 +94,7 @@ class ASNStandardSetQueryGenerator
   def self.assign_query
     -> (asnDocumentHash, group){
       group.merge({
-        "query" => {
-          "educationLevels" => group["educationLevels"].sort,
-          "rootIds"         => asnDocumentHash["document"]["children"]
-        }
+        "children" => asnDocumentHash["document"]["children"]
       })
     }.curry
   end

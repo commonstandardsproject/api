@@ -5,29 +5,31 @@ require 'pp'
 logger = Logger.new(STDOUT)
 logger.level = Logger::WARN
 Mongo::Logger.logger = logger
+$db = $db || Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'standards')
 
 
 class QueryToStandardSet
 
   def self.generate(standardsHash, query)
-    client           = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'standards')
+    client = $db
     cached_standards = client[:cached_standards]
 
-    standards = standardsHash.select{|key, value| (value["educationLevel"] & query["educationLevels"]).length > 0 }
-    rootIds   = query["rootIds"].select{|id| !standards[id].nil? }
 
-    if rootIds.empty?
-      return []
-    end
-
-
+    # Find standards
+    # ==============
     time_start = Time.now
-    processed_standards = query["rootIds"]
-      .reduce([], &self.gather_standards.call(standards) )
-      .map(&self.set_ancestors.call(rootIds, standards)) # set the ancestors as an array
+    standards     = query["children"].reduce([], &self.gather_standards.call(standardsHash, query["educationLevels"]) )
+    standardsHash = standards.compact.reduce({}) {|memo, standard| memo.merge({standard["asnIdentifier"] => standard})}
+
+
+    # Process Standards
+    # =================
+    processed_standards = standards
+      .map(&self.set_ancestors.call(query["children"], standardsHash)) # set the ancestors as an array
       .map(&self.set_guid.call(cached_standards, query)) # set a guid, looking  to see if there's already a standard with a GUID
       .reduce([], &self.make_linked_list) # assign next_child ids
       .reduce({}, &self.list_to_hash)
+
     time_end = Time.now
 
     {
@@ -49,34 +51,36 @@ class QueryToStandardSet
 
   # Also puts the standards in order
   def self.gather_standards
-    -> (standardsHash, memo, id){
-      memo.push(standardsHash[id])
-      if standardsHash[id] && standardsHash[id]["children"]
-        memo = standardsHash[id]["children"].reduce(memo, &self.gather_standards.call(standardsHash))
+    -> (standardsHash, validEducationLevels, memo, id){
+      if (standardsHash[id]["educationLevels"] & validEducationLevels).length > 0
+        memo.push(standardsHash[id])
+        if standardsHash[id] && standardsHash[id]["children"]
+          memo = standardsHash[id]["children"].reduce(memo, &self.gather_standards.call(standardsHash, validEducationLevels))
+        end
       end
-      memo.compact.uniq
+      memo
     }.curry
   end
 
 
 
   def self.set_ancestors
-    get_ancestors = -> (rootIds, hashed_standards, ancestors, standard){
+    get_ancestors = -> (childrenIds, hashed_standards, ancestors, standard){
       ancestor = hashed_standards[standard["isChildOf"]]
 
       if ancestor
         ancestors.push(ancestor["asnIdentifier"])
       end
 
-      if ancestor && !rootIds.include?(ancestor["asnIdentifier"])
-        get_ancestors.call(rootIds, hashed_standards, ancestors, ancestor)
+      if ancestor && !childrenIds.include?(ancestor["asnIdentifier"])
+        get_ancestors.call(childrenIds, hashed_standards, ancestors, ancestor)
       end
 
       ancestors
     }
 
-    lambda{ |rootIds, hashed_standards, standard|
-      ancestors = get_ancestors.call(rootIds, hashed_standards, [], standard)
+    lambda{ |childrenIds, hashed_standards, standard|
+      ancestors = get_ancestors.call(childrenIds, hashed_standards, [], standard)
       standard.merge({
         "ancestors" => ancestors,
         "depth"     => ancestors.length
