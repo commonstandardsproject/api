@@ -23,9 +23,7 @@ class QueryToStandardSet
 
     time_start = Time.now
     processed_standards = query["rootIds"]
-      .reduce(rootIds, &self.fetch_progeny.call(standards)) # Gather all the progeny -- this is a recursive function
-      .map{|id| standards[id]} # get standard
-      .compact
+      .reduce([], &self.gather_standards.call(standards) )
       .map(&self.set_ancestors.call(rootIds, standards)) # set the ancestors as an array
       .map(&self.set_guid.call(cached_standards, query)) # set a guid, looking  to see if there's already a standard with a GUID
       .reduce([], &self.make_linked_list) # assign next_child ids
@@ -49,19 +47,14 @@ class QueryToStandardSet
   # =========================
 
 
-  def self.fetch_progeny
-    -> (standardsHash, ids, id){
-      standard = standardsHash[id]
-      children = standard && standard["children"] || []
-      if standard.nil? || children.empty?
-        return ids
-      else
-        return ids.concat(
-          children
-        ).concat(
-          children.flat_map{|id2| self.fetch_progeny.call(standardsHash, ids, id2)}.flatten.uniq
-        ).uniq.compact
+  # Also puts the standards in order
+  def self.gather_standards
+    -> (standardsHash, memo, id){
+      memo.push(standardsHash[id])
+      if standardsHash[id] && standardsHash[id]["children"]
+        memo = standardsHash[id]["children"].reduce(memo, &self.gather_standards.call(standardsHash))
       end
+      memo.compact.uniq
     }.curry
   end
 
@@ -72,10 +65,10 @@ class QueryToStandardSet
       ancestor = hashed_standards[standard["isChildOf"]]
 
       if ancestor
-        ancestors.push(standard["asnIdentifier"])
+        ancestors.push(ancestor["asnIdentifier"])
       end
 
-      if ancestor && !rootIds.include?(ancestor["isChildOf"])
+      if ancestor && !rootIds.include?(ancestor["asnIdentifier"])
         get_ancestors.call(rootIds, hashed_standards, ancestors, ancestor)
       end
 
@@ -86,10 +79,12 @@ class QueryToStandardSet
       ancestors = get_ancestors.call(rootIds, hashed_standards, [], standard)
       standard.merge({
         "ancestors" => ancestors,
-        "depth" => ancestors.length
+        "depth"     => ancestors.length
       })
     }.curry
   end
+
+
 
 
   def self.set_guid
