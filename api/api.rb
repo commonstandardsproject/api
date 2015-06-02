@@ -7,6 +7,7 @@ require_relative 'entities/jurisdiction'
 require_relative 'entities/standards_document_summary'
 require_relative 'entities/standards_document'
 require_relative '../src/transformers/query_to_standard_set'
+require_relative "../src/update_standards_set"
 
 module API
   class API < Grape::API
@@ -16,7 +17,7 @@ module API
 
 
     get "jurisdiction" do
-      jurisdictions = $db[:jurisdictions].find().sort({:title => 1}).to_a
+      jurisdictions = $db[:jurisdictions].find({cachedDocumentIds: {:$ne => nil}}).sort({:title => 1}).to_a
       present :jurisdictions, jurisdictions, with: Entities::Jurisdiction
     end
 
@@ -48,12 +49,22 @@ module API
     end
 
     post "standards_set/" do
-      standards_hash = $db[:standards_documents].find({
+      standards_doc = $db[:standards_documents].find({
         :_id => params.standardsDocumentId
-      }).projection(:standards => 1).to_a.first
+      }).to_a.first
 
-      QueryToStandardSet.generate(standards_hash[:standards], params.query.to_hash)
+      QueryToStandardSet.generate(standards_doc, params.query.to_hash)
     end
+
+    post "standards_set_import" do
+      standards_doc = $db[:standards_documents].find({
+        :_id => params.standardsDocumentId
+      }).to_a.first
+
+      set = QueryToStandardSet.generate(standards_doc, params.query.to_hash)
+      UpdateStandardsSet.update(set)
+    end
+
 
 
   end

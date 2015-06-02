@@ -6,7 +6,32 @@ class ASNStandardSetQueryGenerator
     # Get standards and set defaults
     standards = asnDocumentHash["standards"].values.map{|doc| doc["educationLevels"] ||= []; doc}
 
-    queries = ["PK", "K", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
+    grade_levels = [
+      "Pre-K",
+      "K",
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "VocationalTraining",
+      "ProfessionalEducation-Development",
+      "Graduate",
+      "HigherEducation",
+      "Undergraduate-UpperDivision",
+      "Undergraduate-LowerDivision",
+      "AdultEducation",
+      "LifeLongLearning",
+    ]
+
+    queries = grade_levels
       .map{|level| { "educationLevels" => [level] } }
       .map(&self.assign_standard_ids.call(standards))  # Add standard ids to each group
       .reject{|group| group["standardIds"].empty? || group["standardIds"].nil?} # Reject if there are no standards for the grade level
@@ -29,6 +54,7 @@ class ASNStandardSetQueryGenerator
         children.unshift(standards.find{|s| s["description"] == "Standards for Mathematical Practice"}["asnIdentifier"])
         queries.push({
           "title" =>           title.gsub("<sup>★</sup>", ""),
+          "id" =>              title.gsub("<sup>★</sup>", "").gsub(" ", "-").gsub("—", "").gsub("--", "-").downcase,
           "educationLevels" => ["09", "10", "11", "12"],
           "children" =>        children
         })
@@ -82,11 +108,41 @@ class ASNStandardSetQueryGenerator
 
   def self.assign_title
     -> (group) {
-      pluralized_grade    = (group["educationLevels"].length > 1 ? "Grades" : "Grade")
       # Sort, remove leading 0 and join
-      grade_levels_string = group["educationLevels"].sort.map(&->(s){s.gsub(/^0*/,"")}).join(', ')
+      grade_levels_string = group["educationLevels"].sort_by{|level|
+        # Super hacky way of getting the sorting correct. There is probably
+        # a better way to do this
+        if level == "K"
+          [2, level]
+        elsif level == "Pre-K"
+          [1, level]
+        elsif level == "VocationalTraining"
+          [4, level]
+        elsif level.to_i != 0
+          [3, level]
+        else
+          [5, level]
+        end
+      }.map(&->(s){
+        s.gsub(/^0*/,"")
+         .gsub("VocationalTraining", "Vocational Training")
+         .gsub("ProfessionalEducation-Development", "Professional Education & Further Development")
+         .gsub("HigherEducation", "Higher Education")
+         .gsub("Undergraduate-UpperDivision", "Four Year College")
+         .gsub("Undergraduate-LowerDivision", "Two Year College")
+         .gsub("LifeLongLearning", "Life-long Learning")
+      }).join(', ')
 
-      group.merge({ "title" => pluralized_grade + " " + grade_levels_string})
+      if grade_levels_string.match(/(K|1|2|3|4|5|6|7|8|9|10|11|12)/) != nil
+        prefix = (group["educationLevels"].length > 1 ? "Grades " : "Grade ")
+      else
+        prefix = ""
+      end
+
+      group.merge({
+        "title" => prefix + grade_levels_string,
+        "id"    => prefix.gsub(' ', '-').downcase + group["educationLevels"].sort.join('-').downcase
+      })
     }
   end
 

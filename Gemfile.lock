@@ -76,6 +76,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   grape
   grape-entity
   mongo

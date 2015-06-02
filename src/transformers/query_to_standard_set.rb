@@ -1,6 +1,7 @@
 require 'mongo'
 require 'securerandom'
 require 'pp'
+require 'active_support/core_ext/hash/slice'
 
 logger = Logger.new(STDOUT)
 logger.level = Logger::WARN
@@ -10,7 +11,8 @@ $db = $db || Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'standards')
 
 class QueryToStandardSet
 
-  def self.generate(standardsHash, query)
+  def self.generate(standardsDoc, query)
+    standardsHash = standardsDoc[:standards]
     client = $db
     cached_standards = client[:cached_standards]
 
@@ -19,23 +21,39 @@ class QueryToStandardSet
     # ==============
     time_start = Time.now
     standards     = query["children"].reduce([], &self.gather_standards.call(standardsHash, query["educationLevels"]) )
-    standardsHash = standards.compact.reduce({}) {|memo, standard| memo.merge({standard["asnIdentifier"] => standard})}
+    standardsHash = standards.compact.uniq.reduce({}) {|memo, standard| memo.merge({standard["asnIdentifier"] => standard})}
 
 
     # Process Standards
     # =================
     processed_standards = standards
       .map(&self.set_ancestors.call(query["children"], standardsHash)) # set the ancestors as an array
+      .uniq
       .map(&self.set_guid.call(cached_standards, query)) # set a guid, looking  to see if there's already a standard with a GUID
       .reduce([], &self.make_linked_list) # assign next_child ids
+      .map(&self.filter_keys)
       .reduce({}, &self.list_to_hash)
 
     time_end = Time.now
 
+    jurisdictionId = standardsDoc[:document][:jurisdictionId]
+    asnId          = standardsDoc[:documentMeta][:primaryTopic]
+    queryId        = query["id"]
+    id = [jurisdictionId, asnId, queryId].join('_')
+
     {
-      title:     query["title"],
-      standards: processed_standards,
-      timeTook:  (time_end - time_start)*1000
+      "id"              => id,
+      "jurisdictionId"  => jurisdictionId,
+      "subject"         => standardsDoc["document"]["subject"],
+      "documentId"      => standardsDoc["_id"],
+      "educationLevels" => query["educationLevels"],
+      "license"         => standardsDoc["documentMeta"]["license"],
+      "licenseURL"      => standardsDoc["documentMeta"]["licenseURL"],
+      "attributionURL"  => standardsDoc["documentMeta"]["attributionURL"],
+      "rightsHolder"    => standardsDoc["documentMeta"]["rightsHolder"],
+      "title"           => query["title"],
+      "standards"       => processed_standards,
+      # "timeTook":  (time_end - time_start)*1000
     }
   end
 
@@ -100,8 +118,22 @@ class QueryToStandardSet
       when ->(m){ m.length == 1}
         standard.merge({"id" => matched[0]["_id"].to_s})
       when ->(m) { m.length > 1 }
-        p matched
-        raise "More than one standard matched an ID"
+        # From tests, these conflicts only appear to be on a few sets:
+        # - Nevada Computer and Technology Standards
+        # - Arizona Music 9-12
+        # - Grade Expectations for Vermont's Framework of Standards and Learning Opportunities"
+        #
+        # Because these are not core subjects and none of the users in these states
+        # has access to the Cc standards tracker at the time of the conversion,
+        # we're just going to assign new GUIDs
+        #
+        # p "===================================================="
+        # p "RAISE"
+        # p query
+        # p matched
+        # p "===================================================="
+        # raise "More than one standard matched an ID"
+        standard.merge({"id" =>  SecureRandom.uuid().gsub('-', '').upcase})
       when ->(m) {m.length == 0}
         standard.merge({"id" =>  SecureRandom.uuid().gsub('-', '').upcase})
       end
@@ -117,8 +149,29 @@ class QueryToStandardSet
       else
         standard["firstStandard"] = true
       end
+
       memo.push(standard)
     }.curry
+  end
+
+  def self.filter_keys
+    lambda{|standard|
+      standard.slice(
+        "id",
+        "asnIdentifier",
+        "firstStandard",
+        "nextStandard",
+        "depth",
+        "statementNotation",
+        "altStatementNotation",
+        "statementLabel",
+        "listId",
+        "description",
+        "comments",
+        "exactMatch"
+      )
+    }
+
   end
 
   def self.list_to_hash
