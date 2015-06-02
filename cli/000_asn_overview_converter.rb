@@ -70,6 +70,12 @@ responses = requests.map.with_index{|request, index|
   begin
     p "IMPORTING #{doc["document"]["title"]}"
     client[:standards_documents].find({_id: doc["_id"]}).update_one(doc, {upsert: true})
+
+    # We add the document to the jurisdiction so that we have can easily have a count
+    # of how mnay documents a jurisdiction has
+    client[:jurisdictions].find({_id: doc["document"]["jurisdictionId"]}).update({
+      :$addToSet => {:cachedDocumentIds => doc["_id"]}
+    })
   rescue Exception => e
     puts "EXCEPTION"
     puts e.message
