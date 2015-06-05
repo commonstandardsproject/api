@@ -10,8 +10,6 @@ module API
         doc["document"]["title"]
       end
 
-      expose :standardSetQueries
-
     end
   end
 end
