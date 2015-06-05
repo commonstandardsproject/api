@@ -20,5 +20,4 @@ $db[:standards_documents].find().each{|standards_document|
   $db[:jurisdictions].find({_id: standards_document["document"]["jurisdictionId"]}).update_one({
     :$addToSet => {:cachedDocumentIds => standards_document["_id"]}
   })
-
 }
