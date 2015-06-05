@@ -4,6 +4,8 @@ class UpdateStandardsSet
 
   def self.update(doc)
     old_version = $db[:new_standard_sets].find({_id: doc["id"]}).to_a.first
+
+    # Later, we'll use this code when we save each update as a new version
     # if old_version
       # update the version
       # doc["version"] = old_version["version"] + 1
