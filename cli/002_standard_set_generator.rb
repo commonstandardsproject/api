@@ -3,6 +3,7 @@ require 'bundler/setup'
 require_relative "../src/transformers/query_to_standard_set"
 require_relative "../src/update_standards_set"
 
+require 'mongo'
 logger = Logger.new(STDOUT)
 logger.level = Logger::WARN
 Mongo::Logger.logger = logger
