@@ -14,6 +14,8 @@ module API
       expose :rightsHolder
       expose :documentId
       expose :documentTitle
+      expose :jurisdictionId
+      expose :jurisdiction
       expose :source
       expose :standards
     end

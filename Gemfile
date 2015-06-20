@@ -9,3 +9,11 @@ gem 'typhoeus'
 gem 'puma'
 gem 'sinatra'
 gem 'activesupport'
+gem 'jwt'
+gem 'grape_logging'
+
+group :development do
+  gem "guard"
+  gem "guard-shotgun"
+
+end

@@ -42,19 +42,19 @@ class QueryToStandardSet
     id = [jurisdictionId, asnId, queryId].join('_')
 
     {
-      "id"              => id,
-      "jurisdictionId"  => jurisdictionId,
-      "subject"         => standardsDoc["document"]["subject"],
-      "documentId"      => standardsDoc["_id"],
-      "documentTitle"   => standardsDoc["document"]["title"],
-      "source"          => standardsDoc["document"]["source"],
-      "license"         => standardsDoc["documentMeta"]["license"],
-      "licenseURL"      => standardsDoc["documentMeta"]["licenseURL"],
-      "attributionURL"  => standardsDoc["documentMeta"]["attributionURL"],
-      "rightsHolder"    => standardsDoc["documentMeta"]["rightsHolder"],
-      "title"           => query["title"],
-      "educationLevels" => query["educationLevels"],
-      "standards"       => processed_standards,
+      "id"                => id,
+      "jurisdictionId"    => jurisdictionId,
+      "subject"           => standardsDoc["document"]["subject"],
+      "documentId"        => standardsDoc["_id"],
+      "documentTitle"     => standardsDoc["document"]["title"],
+      "documentSourceUrl" => standardsDoc["document"]["source"],
+      "license"           => standardsDoc["documentMeta"]["license"],
+      "licenseURL"        => standardsDoc["documentMeta"]["licenseURL"],
+      "attributionURL"    => standardsDoc["documentMeta"]["attributionURL"],
+      "rightsHolder"      => standardsDoc["documentMeta"]["rightsHolder"],
+      "title"             => query["title"],
+      "educationLevels"   => query["educationLevels"],
+      "standards"         => processed_standards,
       # "timeTook":  (time_end - time_start)*1000
     }
   end
