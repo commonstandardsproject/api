@@ -596,7 +596,8 @@ KEY_MATCHERS = {
   # ],
   "http://purl.org/ASN/schema/core/listID" => lambda{|key, value|
       {
-        listId: value.first["value"].gsub('.', '').gsub(')', '').gsub('(', '').gsub(':', ''),
+        # listId: value.first["value"].gsub(/\.$/, '').gsub(/\)$/, '').gsub(/^\(/, '').gsub(/:$/, ''),
+        listId: value.first["value"]
       }
    },
 
