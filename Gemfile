@@ -13,6 +13,7 @@ gem 'jwt'
 gem 'grape_logging'
 gem 'parallel'
 gem 'grape-swagger'
+gem 'algoliasearch'
 
 group :development do
   gem "guard"
