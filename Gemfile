@@ -12,6 +12,7 @@ gem 'activesupport'
 gem 'jwt'
 gem 'grape_logging'
 gem 'parallel'
+gem 'grape-swagger'
 
 group :development do
   gem "guard"
