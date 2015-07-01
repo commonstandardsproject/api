@@ -5,12 +5,14 @@ require 'mongo'
 require 'pp'
 require 'oj'
 require 'grape_logging'
+require 'algoliasearch'
 require_relative '../lib/securerandom'
 require_relative 'entities/jurisdiction'
 require_relative 'entities/standards_document_summary'
 require_relative 'entities/standards_document'
 require_relative 'entities/standards_set'
 require_relative 'entities/commit'
+require_relative 'entities/user'
 require_relative '../src/transformers/query_to_standard_set'
 require_relative "../src/update_standards_set"
 require_relative "../lib/validate_token"
@@ -54,12 +56,9 @@ module API
     desc "Users", hidden: true
     namespace :users, hidden: true do
 
-      # helpers ApiKeyAuthentication
-
       get "/:email", requirements: {email:  /.+@.+/}  do
-        return {
-          data: $db[:users].find({email: params[:email]}).to_a.first
-        }
+        user = $db[:users].find({email: params[:email]}).to_a.first
+        present :data, user, with: Entities::User
       end
 
       post "/signed_in", hidden: true do
@@ -74,14 +73,33 @@ module API
           }
         }, {upsert: true, return_document: :after})
 
+        if user[:algoliaApiKey].nil?
+          #  Algolia.generate_secured_api_key(user[:email])
+          index = Algolia::Index.new('common-standards-project')
+          key = index.add_user_key({
+            :maxQueriesPerIPPerHour => 200,
+            :indexes                => ["common-standards-project"],
+            :acl                    => ["search"],
+            :description            => "#{user[:email]} - #{user[:profile][:name]} - Limited to searching standards"
+          })
+          user = $db[:users].find({_id: user[:_id]}).find_one_and_update({
+            "$set" => {algoliaApiKey: key["key"]}
+          }, {return_document: true})
+        end
+
         if user[:apiKey].nil?
           user = $db[:users].find({_id: user[:_id]}).find_one_and_update({
             "$set" => {apiKey: SecureRandom.base58(24)}
           }, {return_document: true})
         end
-        {
-          data: user
-        }
+        present :data, user, with: Entities::User
+      end
+
+      post "/:id/allowed_origins", hidden: true do
+        user = $db[:users].find({_id: params[:id]}).find_one_and_update({
+          "$set" => {allowedOrigins: params[:data]}
+        }, {return_document: true})
+        present :data, user, with: Entities::User
       end
 
     end
