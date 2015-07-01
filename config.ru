@@ -3,7 +3,7 @@ require 'sinatra'
 require 'bundler/setup'
 require_relative "api/api"
 require 'rack/cors'
-require_relative 'api/main'
+require_relative 'main'
 
 use Rack::Cors do
   allow do

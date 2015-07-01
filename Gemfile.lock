@@ -38,6 +38,9 @@ GEM
     grape-entity (0.4.5)
       activesupport
       multi_json (>= 1.3.2)
+    grape-swagger (0.10.1)
+      grape (>= 0.8.0)
+      grape-entity
     grape_logging (1.1.0)
       grape
     guard (2.12.6)
@@ -125,6 +128,7 @@ DEPENDENCIES
   activesupport
   grape
   grape-entity
+  grape-swagger
   grape_logging
   guard
   guard-shotgun

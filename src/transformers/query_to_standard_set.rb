@@ -45,20 +45,26 @@ class QueryToStandardSet
     # Return the standards set
     # ========================
     {
-      "id"                => id,
-      "jurisdictionId"    => jurisdictionId,
-      "subject"           => standardsDoc["document"]["subject"],
-      "documentId"        => standardsDoc["_id"],
-      "documentTitle"     => standardsDoc["document"]["title"],
-      "documentSourceUrl" => standardsDoc["document"]["source"],
-      "license"           => standardsDoc["documentMeta"]["license"],
-      "licenseURL"        => standardsDoc["documentMeta"]["licenseURL"],
-      "attributionURL"    => standardsDoc["documentMeta"]["attributionURL"],
-      "rightsHolder"      => standardsDoc["documentMeta"]["rightsHolder"],
-      "title"             => query["title"],
-      "educationLevels"   => query["educationLevels"],
-      "standards"         => processed_standards,
-      # "timeTook":  (time_end - time_start)*1000
+      "id" => id,
+      "jursidiction": {
+        "id"    => jurisdictionId,
+        "title" => $db[:jurisdictions].find({_id: jurisdictionId}).to_a.first[:title]
+      },
+      "subject"  => standardsDoc["document"]["subject"],
+      "document" => {
+        "id"        => standardsDoc["_id"],
+        "title"     => standardsDoc["document"]["title"],
+        "sourceURL" => standardsDoc["document"]["source"],
+      },
+      "license" => {
+        "title"          => standardsDoc["documentMeta"]["license"],
+        "URL"            => standardsDoc["documentMeta"]["licenseURL"],
+        "attributionURL" => standardsDoc["documentMeta"]["attributionURL"],
+      },
+      "rightsHolder"    => standardsDoc["documentMeta"]["rightsHolder"],
+      "title"           => query["title"],
+      "educationLevels" => query["educationLevels"],
+      "standards"       => processed_standards,
     }
   end
 

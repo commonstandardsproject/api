@@ -5,9 +5,9 @@ module API
   module Entities
     class StandardSetSummary < Grape::Entity
       expose :_id, as: :id
-      expose :title
-      expose :subject
-      expose :educationLevels
+      expose :title, documentation: {desc: "The name of the set"}
+      expose :subject, documentation: {desc: "The subject"}
+      expose :educationLevels, documentation: {desc: "The education levels", is_array: true}
       # expose :source
       # expose :documentTitle
     end
