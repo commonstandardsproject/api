@@ -9,6 +9,7 @@ require_relative 'entities/jurisdiction'
 require_relative 'entities/standards_document_summary'
 require_relative 'entities/standards_document'
 require_relative 'entities/standards_set'
+require_relative 'entities/commit'
 require_relative '../src/transformers/query_to_standard_set'
 require_relative "../src/update_standards_set"
 require_relative "../lib/validate_token"
@@ -33,23 +34,30 @@ module API
     # an origin specified in the user's document
 
     before do
-      token = headers["Auth-Token"] || params["auth-token"]
-
-      user = $db[:users].find({apiToken: token}).find_one_and_update({
-        "$inc" => {requestCount: 1}
-      })
-      if user.nil?
-        error!('Unauthorized: Not a valid auth token. Sign up at commonstandardsproject.com', 401)
-        return
-      end
-      if user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
-        error!("Unauthorized: Origin isn't an allowed origin.", 401)
-      end
+      # key = headers["Api-Key"] || params["api-key"]
+      #
+      # user = $db[:users].find({apiKey: key}).find_one_and_update({
+      #   "$inc" => {requestCount: 1}
+      # })
+      # if user.nil?
+      #   error!('Unauthorized: Not a valid auth key. Sign up at commonstandardsproject.com', 401)
+      #   return
+      # end
+      # if env["HTTP_ORIGIN"] && user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
+      #   error!("Unauthorized: Origin isn't an allowed origin.", 401)
+      # end
     end
 
 
 
     namespace :users do
+
+      get "/:email", requirements: {email:  /.+@.+/}  do
+        return {
+          data: $db[:users].find({email: params[:email]}).to_a.first
+        }
+      end
+
       post "/signed_in" do
         user = $db[:users].find({email: params[:profile][:email]}).find_one_and_update({
           "$inc" => {signInCount:  1},
@@ -62,14 +70,60 @@ module API
           }
         }, {upsert: true, return_document: :after})
 
-        if user[:apiToken].nil?
+        if user[:apiKey].nil?
           user = $db[:users].find({_id: user[:_id]}).find_one_and_update({
-            "$set" => {apiToken: SecureRandom.base58(24)}
+            "$set" => {apiKey: SecureRandom.base58(24)}
           }, {return_document: true})
         end
-        user
+        {
+          data: user
+        }
       end
 
+    end
+
+    namespace :commits do
+
+      post "/" do
+        data = {
+          _id:               SecureRandom.uuid().to_s.gsub("-", "").upcase,
+          applied:           false,
+          createdOn:         Time.now,
+          committerName:     params[:data]["committerName"],
+          committerEmail:    params[:data]["committerEmail"],
+          commitSummary:     params[:data]["commitSummary"],
+          standardsSetId:    params[:data]["standardsSetId"],
+          standardsSetTitle: params[:data]["standardsSetTitle"],
+          jurisdictionTitle: params[:data]["jurisdictionTitle"],
+          jurisdictionId:    params[:data]["jurisdictionId"],
+          diff:              params[:data]["diff"],
+        }
+        $db[:commits].insert_one(data)
+        return 201
+      end
+
+      post "/approval/:id" do
+        commit = $db[:commits].find({:_id => params[:id]}).to_a.first
+        if commit[:applied]
+          return 201
+        end
+        diff = commit["diff"]
+        diff["$set"] = diff["$set"] || {}
+        diff["$set"]["commit"] = {
+          "committerName"  => commit["committerName"],
+          "committerEmail" => commit["committerEmail"],
+          "commitSummary"  => commit["commitSummary"],
+          "commitId"       => params[:id],
+        }
+        diff["$set"]["updatedOn"] = Time.now
+        UpdateStandardsSet.with_delta(commit[:standardsSetId], diff)
+        $db[:commits].find({:_id => params[:id]}).update_one({"$set" => {:applied => true}})
+      end
+
+      get "/" do
+        commits = $db[:commits].find({applied: false}).to_a
+        present :data, commits, with: Entities::Commit
+      end
 
     end
 
@@ -78,8 +132,16 @@ module API
     namespace :jurisdictions do
 
       get "/" do
-        jurisdictions = $db[:jurisdictions].find({cachedDocumentIds: {:$ne => nil}}).sort({:title => 1}).to_a
+        jurisdictions = $db[:jurisdictions].find({status: {:$ne => "inactive"}}).sort({:title => 1}).to_a
         present :data, jurisdictions, with: Entities::Jurisdiction
+      end
+
+      post "/" do
+        jurisdiction = params[:jurisdiction].to_hash
+        jurisdiction[:status] = "pending"
+        jurisdiction[:_id] = SecureRandom.uuid().to_s.gsub("-", "").upcase
+        new_jurisdiction = $db[:jurisdictions].insert_one(jurisdiction)
+        present :data, jurisdiction, with: Entities::Jurisdiction
       end
 
       get "/:id" do
@@ -98,7 +160,7 @@ module API
 
         standardSets = $db[:new_standard_sets].find({
           "jurisdictionId" => params[:id]
-        }).projection("_id" => 1, "title" => 1, "subject" => 1, "sourceURL" => 1, "documentTitle" => 1).to_a
+        }).projection("_id" => 1, "title" => 1, "subject" => 1, "sourceURL" => 1, "documentTitle" => 1, "educationLevels" => 1).to_a
 
         jurisdiction["documents"]    = documents
         jurisdiction["standardSets"] = standardSets

@@ -11,6 +11,7 @@ gem 'sinatra'
 gem 'activesupport'
 gem 'jwt'
 gem 'grape_logging'
+gem 'parallel'
 
 group :development do
   gem "guard"

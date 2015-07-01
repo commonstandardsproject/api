@@ -1,4 +1,4 @@
-require_relative "../key_matchers"
+require_relative "../matchters/key_matchers"
 require_relative "asn_standard_set_query_generator"
 require_relative "query_to_standard_set"
 require 'mongo'
@@ -7,6 +7,7 @@ logger.level = Logger::WARN
 Mongo::Logger.logger = logger
 client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'standards')
 
+# Converts files downloaded from the web and normalizes the keys
 class ASNResourceParser
 
   def self.convert(hash)
