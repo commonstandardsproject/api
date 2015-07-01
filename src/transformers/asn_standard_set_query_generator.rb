@@ -1,5 +1,6 @@
 require 'pp'
 
+# Given a document, this method extracts the standards set queries from the docs
 class ASNStandardSetQueryGenerator
 
   def self.generate(asnDocumentHash)

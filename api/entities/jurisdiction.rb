@@ -10,6 +10,7 @@ module API
 
       expose :_id, as: :id
       expose :title
+      expose :type
       expose :documents, with: Entities::StandardsDocumentSummary
       expose :standardSets, with: Entities::StandardSetSummary
 

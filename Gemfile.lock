@@ -75,6 +75,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     oj (2.12.7)
+    parallel (1.6.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -130,6 +131,7 @@ DEPENDENCIES
   jwt
   mongo
   oj
+  parallel
   puma
   rack-cors
   shotgun

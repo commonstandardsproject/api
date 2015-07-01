@@ -9,6 +9,7 @@ Mongo::Logger.logger = logger
 $db = $db || Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'standards')
 
 
+# Given a standards set query, this method creates a standards set
 class QueryToStandardSet
 
   def self.generate(standardsDoc, query)
@@ -30,7 +31,7 @@ class QueryToStandardSet
       .map(&self.set_ancestors.call(query["children"], standardsHash)) # set the ancestors as an array
       .uniq
       .map(&self.set_guid.call(cached_standards, query)) # set a guid, looking  to see if there's already a standard with a GUID
-      .reduce([], &self.make_linked_list) # assign next_child ids
+      .reduce([], &self.add_position) # assign position
       .map(&self.filter_keys)
       .reduce({}, &self.list_to_hash)
 
@@ -41,6 +42,8 @@ class QueryToStandardSet
     queryId        = query["id"]
     id = [jurisdictionId, asnId, queryId].join('_')
 
+    # Return the standards set
+    # ========================
     {
       "id"                => id,
       "jurisdictionId"    => jurisdictionId,
@@ -144,14 +147,9 @@ class QueryToStandardSet
   end
 
 
-  def self.make_linked_list
+  def self.add_position
     lambda{|memo, standard|
-      if memo.last
-        memo.last["nextStandard"] = standard["id"]
-      else
-        standard["firstStandard"] = true
-      end
-
+      standard["position"] = (memo.length + 1) * 1000
       memo.push(standard)
     }.curry
   end
@@ -161,8 +159,7 @@ class QueryToStandardSet
       standard.slice(
         "id",
         "asnIdentifier",
-        "firstStandard",
-        "nextStandard",
+        "position",
         "depth",
         "statementNotation",
         "altStatementNotation",

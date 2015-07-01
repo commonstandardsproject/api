@@ -7,6 +7,7 @@ module API
       expose :_id, as: :id
       expose :title
       expose :subject
+      expose :educationLevels
       # expose :source
       # expose :documentTitle
     end

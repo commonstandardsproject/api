@@ -42,4 +42,4 @@ jurisdictions = docs["rdf:RDF"]["skos:Concept"].map{|el|
   memo
 }
 
-File.write("src/matchers.rb", jurisdictions)
+File.write("src/matchers/jurisdiction_matchers.rb", jurisdictions)

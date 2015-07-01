@@ -1,5 +1,5 @@
-require_relative "jurisdiction_matchers"
-require_relative "ngss_matchers"
+require_relative "matchers/jurisdiction_matchers"
+require_relative "matchers/ngss_matchers"
 
 KEY_MATCHERS = {
 
