@@ -1,7 +1,7 @@
 # The part that activates bundler in your app
 require 'bundler/setup'
 require_relative "../src/transformers/query_to_standard_set"
-require_relative "../src/update_standards_set"
+require_relative "../src/update_standard_set"
 require 'parallel'
 require 'mongo'
 
@@ -22,10 +22,10 @@ Parallel.each_with_index(ids, :in_processes => 16){ |id, index|
     p "Converting #{standards_document["document"]["title"]}"
     p "===================================================="
     # begin
-    Parallel.each(standards_document["standardsSetQueries"], :in_processes => 16){|query|
+    Parallel.each(standards_document["standardSetQueries"], :in_processes => 16){|query|
       p "Converting #{query["title"]}"
       set = QueryToStandardSet.generate(standards_document, query)
-      UpdateStandardsSet.update(set)
+      UpdateStandardSet.update(set)
       begin
         raise Parallel::Kill
       rescue Exception => e

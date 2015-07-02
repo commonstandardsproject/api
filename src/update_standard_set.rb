@@ -1,5 +1,5 @@
 require 'pp'
-class UpdateStandardsSet
+class UpdateStandardSet
 
 
   def self.update(doc)
@@ -14,7 +14,7 @@ class UpdateStandardsSet
     old_version = $db[:new_standard_sets].find({_id: id}).to_a.first
 
     if old_version
-      old_version["standardsSetId"] = id
+      old_version["standardSetId"] = id
       old_version.delete("_id")
       $db[:standard_set_versions].insert_one(old_version)
     end

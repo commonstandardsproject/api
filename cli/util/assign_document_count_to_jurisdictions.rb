@@ -1,7 +1,7 @@
 # The part that activates bundler in your app
 require 'bundler/setup'
 require_relative "../src/transformers/query_to_standard_set"
-require_relative "../src/update_standards_set"
+require_relative "../src/update_standard_set"
 require 'oj'
 
 logger = Logger.new(STDOUT)

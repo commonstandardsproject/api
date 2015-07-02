@@ -10,11 +10,11 @@ require_relative '../lib/securerandom'
 require_relative 'entities/jurisdiction'
 require_relative 'entities/standards_document_summary'
 require_relative 'entities/standards_document'
-require_relative 'entities/standards_set'
+require_relative 'entities/standard_set'
 require_relative 'entities/commit'
 require_relative 'entities/user'
 require_relative '../src/transformers/query_to_standard_set'
-require_relative "../src/update_standards_set"
+require_relative "../src/update_standard_set"
 require_relative "../lib/validate_token"
 
 module ApiKeyAuthentication
@@ -113,8 +113,8 @@ module API
           committerName:     params[:data]["committerName"],
           committerEmail:    params[:data]["committerEmail"],
           commitSummary:     params[:data]["commitSummary"],
-          standardsSetId:    params[:data]["standardsSetId"],
-          standardsSetTitle: params[:data]["standardsSetTitle"],
+          standardSetId:    params[:data]["standardSetId"],
+          standardSetTitle: params[:data]["standardSetTitle"],
           jurisdictionTitle: params[:data]["jurisdictionTitle"],
           jurisdictionId:    params[:data]["jurisdictionId"],
           diff:              params[:data]["diff"],
@@ -137,7 +137,7 @@ module API
           "commitId"       => params[:id],
         }
         diff["$set"]["updatedOn"] = Time.now
-        UpdateStandardsSet.with_delta(commit[:standardsSetId], diff)
+        UpdateStandardSet.with_delta(commit[:standardSetId], diff)
         $db[:commits].find({:_id => params[:id]}).update_one({"$set" => {:applied => true}})
       end
 
@@ -176,7 +176,7 @@ module API
         }).projection("_id" => 1, "document.title" => 1).to_a
 
         standardSets = $db[:new_standard_sets].find({
-          "jurisdictionId" => params[:id]
+          "jurisdiction.id" => params[:id]
         }).projection("_id" => 1, "title" => 1, "subject" => 1, "sourceURL" => 1, "documentTitle" => 1, "educationLevels" => 1).to_a
 
         jurisdiction["documents"]    = documents
@@ -202,7 +202,7 @@ module API
           "_id" => 1,
           "document" => 1,
           "documentMeta" => 1,
-          "standardsSetQueries" => 1
+          "standardSetQueries" => 1
         ).to_a.first
 
         present document, with: Entities::StandardsDocument
@@ -215,18 +215,20 @@ module API
 
     namespace "/standard_sets", desc: "A set of standards typically grouped by grade level & subject" do
 
-      desc "Fetch a standards set", entity: Entities::StandardsSet
+      desc "Fetch a standards set", entity: Entities::StandardSet
       params do
         requires :id, type: String, desc: "ID", default: "49FCDFBD2CF04033A9C347BFA0584DF0_D2604890_grade-01"
       end
       get "/:id" do
-        standards_set = $db[:new_standard_sets].find({
+        standard_set = $db[:new_standard_sets].find({
           :_id => params.id
         }).to_a.first
 
-        standards_set[:jurisdictionTitle] = $db[:jurisdictions].find({_id: standards_set[:jurisdictionId]}).to_a.first[:title]
+        p standard_set
 
-        present :data, standards_set, with: Entities::StandardsSet
+        # standard_set[:jurisdictionTitle] = $db[:jurisdictions].find({_id: standard_set[:jurisdiction][:id]}).to_a.first[:title]
+
+        present :data, standard_set, with: Entities::StandardSet
       end
 
 
@@ -247,13 +249,13 @@ module API
     end
 
 
-    post "standards_set_import", hidden: true do
+    post "standard_set_import", hidden: true do
       standards_doc = $db[:standards_documents].find({
         :_id => params.standardsDocumentId
       }).to_a.first
 
       set = QueryToStandardSet.generate(standards_doc, params.query.to_hash)
-      UpdateStandardsSet.update(set)
+      UpdateStandardSet.update(set)
 
       add_swagger_documentation
     end
@@ -264,7 +266,7 @@ module API
     add_swagger_documentation api_version: "v1",
                               hide_format: true,
                               hide_documentation_path: true,
-                              models: [Entities::Jurisdiction, Entities::StandardSetSummary, Entities::StandardsSet]
+                              models: [Entities::Jurisdiction, Entities::StandardSetSummary, Entities::StandardSet]
 
   end
 end

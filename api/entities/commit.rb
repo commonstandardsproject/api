@@ -12,8 +12,8 @@ module API
       expose :committerName
       expose :committerEmail
       expose :commitSummary
-      expose :standardsSetTitle
-      expose :standardsSetId
+      expose :standardSetTitle
+      expose :standardSetId
       expose :jurisdictionTitle
       expose :jurisdictionId
       expose :createdOn
