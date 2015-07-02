@@ -4,6 +4,7 @@ require 'grape-swagger'
 require 'mongo'
 require 'pp'
 require 'oj'
+require 'jwt'
 require 'grape_logging'
 require 'algoliasearch'
 require_relative '../lib/securerandom'
@@ -15,37 +16,9 @@ require_relative 'entities/commit'
 require_relative 'entities/user'
 require_relative '../src/transformers/query_to_standard_set'
 require_relative "../src/update_standard_set"
-require_relative "../lib/validate_token"
-
-module ApiKeyAuthentication
-  extend Grape::API::Helpers
-
-  # Authentication
-  # Make sure each request has an auth token and originates from
-  # an origin specified in the user's document
-  # before do
-  #   key = headers["Api-Key"] || params["api-key"]
-  #
-  #   user = $db[:users].find({apiKey: key}).find_one_and_update({
-  #     "$inc" => {requestCount: 1}
-  #   })
-  #   if user.nil?
-  #     error!('Unauthorized: Not a valid auth key. Sign up at commonstandardsproject.com', 401)
-  #     return
-  #   end
-  #   if env["HTTP_ORIGIN"] && user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
-  #     error!("Unauthorized: Origin isn't an allowed origin.", 401)
-  #   end
-  # end
-
-end
 
 module API
   class API < Grape::API
-
-    # add_swagger_documentation base_path: "/api",
-    #                       api_version: 'v1',
-    #                       hide_documentation_path: true
 
     logger.formatter = ::GrapeLogging::Formatters::Default.new
     use ::GrapeLogging::Middleware::RequestLogger, { logger: logger }
@@ -53,10 +26,55 @@ module API
     format :json
     prefix :api
 
+    helpers do
+      def validate_token
+        begin
+          auth0_client_id     = ENV['AUTH0_CLIENT_ID']
+          auth0_client_secret = ENV['AUTH0_CLIENT_SECRET']
+          authorization       = headers['Authorization']
+          if authorization.nil?
+            error!("No Authorization Token", 401)
+          end
+
+          token = headers['Authorization'].split(' ').last
+          decoded_token = ::JWT.decode(token, ::JWT.base64url_decode(auth0_client_secret))
+
+          if auth0_client_id != decoded_token[0]["aud"]
+            error!("Invalid Token", 401)
+          end
+        rescue ::JWT::DecodeError
+          error!("Invalid Token", 401)
+        end
+      end
+
+    end
+
+    # Authentication
+    # Make sure each request has an auth token and originates from
+    # an origin specified in the user's document
+    before do
+      key = headers["Api-Key"] || params["api-key"]
+
+      @user = $db[:users].find({apiKey: key}).find_one_and_update({
+        "$inc" => {requestCount: 1}
+      })
+      if @user.nil?
+        error!('Unauthorized: Not a valid auth key. Sign up at commonstandardsproject.com', 401)
+        return
+      end
+      if env["HTTP_ORIGIN"] && @user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
+        error!("Unauthorized: Origin isn't an allowed origin.", 401)
+      end
+    end
+
+
+
+
     desc "Users", hidden: true
     namespace :users, hidden: true do
 
       get "/:email", requirements: {email:  /.+@.+/}  do
+        authenticate_api_key
         user = $db[:users].find({email: params[:email]}).to_a.first
         present :data, user, with: Entities::User
       end
@@ -105,7 +123,9 @@ module API
     end
 
     namespace :commits do
+      desc "Create a new commit to a standard set"
       post "/", hidden: true do
+        validate_token
         data = {
           _id:               SecureRandom.uuid().to_s.gsub("-", "").upcase,
           applied:           false,
@@ -123,7 +143,13 @@ module API
         return 201
       end
 
-      post "/approval/:id", hidden: true do
+      desc "Approve a commit to a standard set and apply it (creating a new version in the process)"
+      post "/:id/approve", hidden: true do
+        validate_token
+        p @user
+        if @user["committer"] != true
+          error!("Cannot commit changes", 401)
+        end
         commit = $db[:commits].find({:_id => params[:id]}).to_a.first
         if commit[:applied]
           return 201
@@ -153,6 +179,7 @@ module API
 
       desc "Return a list of jurisdictions"
       get "/" do
+        p @user
         jurisdictions = $db[:jurisdictions].find({status: {:$ne => "inactive"}}).sort({:title => 1}).to_a
         present :data, jurisdictions, with: Entities::Jurisdiction
       end
@@ -185,6 +212,7 @@ module API
       end
 
       post "/", hidden: true do
+        validate_token
         jurisdiction = params[:jurisdiction].to_hash
         jurisdiction[:status] = "pending"
         jurisdiction[:_id] = SecureRandom.uuid().to_s.gsub("-", "").upcase
@@ -224,20 +252,12 @@ module API
           :_id => params.id
         }).to_a.first
 
-        p standard_set
-
-        # standard_set[:jurisdictionTitle] = $db[:jurisdictions].find({_id: standard_set[:jurisdiction][:id]}).to_a.first[:title]
-
         present :data, standard_set, with: Entities::StandardSet
       end
 
 
       post "/", hidden: true do
-        begin
-          ValidateToken.validate(headers)
-        rescue InvalidTokenError => e
-          error!('Invalid Token', 401)
-        end
+        validate_token
         standards_doc = $db[:standards_documents].find({
           :_id => params.standardsDocumentId
         }).to_a.first
@@ -250,6 +270,8 @@ module API
 
 
     post "standard_set_import", hidden: true do
+      validate_token
+
       standards_doc = $db[:standards_documents].find({
         :_id => params.standardsDocumentId
       }).to_a.first
