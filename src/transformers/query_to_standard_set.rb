@@ -46,7 +46,7 @@ class QueryToStandardSet
     # ========================
     {
       "id" => id,
-      "jursidiction": {
+      "jurisdiction": {
         "id"    => jurisdictionId,
         "title" => $db[:jurisdictions].find({_id: jurisdictionId}).to_a.first[:title]
       },

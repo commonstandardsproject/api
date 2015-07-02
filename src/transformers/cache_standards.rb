@@ -10,9 +10,9 @@ $db = $db || Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'standards')
 
 
 
-class CacheStandardsSet
+class CacheStandardSet
 
-  def self.cache(standardsSet)
+  def self.cache(standardSet)
     # loop through standards set
     # add the ancestors
     # add the jurisdiction

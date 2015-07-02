@@ -17,6 +17,6 @@ $db[:standards_documents].find().each{|set|
   p "Converting a set #{set["document"]["title"]}"
   new_queries = ASNStandardSetQueryGenerator.generate(set)
   $db[:standards_documents].find({_id: set["_id"]}).update_one({
-    :$set => {"standardsSetQueries" => new_queries}
+    :$set => {"standardSetQueries" => new_queries}
   })
 }
