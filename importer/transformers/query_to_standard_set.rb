@@ -50,16 +50,21 @@ class QueryToStandardSet
         "id"    => jurisdictionId,
         "title" => $db[:jurisdictions].find({_id: jurisdictionId}).to_a.first[:title]
       },
-      "subject"  => standardsDoc["document"]["subject"],
-      "document" => {
+      "subject"           => SOURCE_TO_SUBJECT_MAPPINGS[standardsDoc["document"]["title"]],
+      "normalizedSubject" => standardsDoc["document"]["subject"],
+      "document"          => {
         "id"        => standardsDoc["_id"],
         "title"     => standardsDoc["document"]["title"],
         "sourceURL" => standardsDoc["document"]["source"],
+        "publicationStatus" => standardsDoc["document"]["publicationStatus"]
       },
       "license" => {
         "title"          => standardsDoc["documentMeta"]["license"],
         "URL"            => standardsDoc["documentMeta"]["licenseURL"],
-        "attributionURL" => standardsDoc["documentMeta"]["attributionURL"],
+      },
+      "attribution" => {
+        "title" => standardsDoc["documentMeta"]["attributionName"],
+        "URL"   => standardsDoc["documentMeta"]["attributionURL"]
       },
       "rightsHolder"    => standardsDoc["documentMeta"]["rightsHolder"],
       "title"           => query["title"],

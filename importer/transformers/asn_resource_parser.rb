@@ -1,4 +1,5 @@
-require_relative "../matchters/key_matchers"
+require_relative "../matchers/key_matchers"
+require_relative "../matchers/source_to_subject_mapping"
 require_relative "asn_standard_set_query_generator"
 require_relative "query_to_standard_set"
 require 'mongo'
