@@ -14,8 +14,8 @@ require_relative 'entities/standard_document'
 require_relative 'entities/standard_set'
 require_relative 'entities/commit'
 require_relative 'entities/user'
-require_relative '../src/transformers/query_to_standard_set'
-require_relative "../src/update_standard_set"
+require_relative '../importer/transformers/query_to_standard_set'
+require_relative "../importer/update_standard_set"
 
 module API
   class API < Grape::API
