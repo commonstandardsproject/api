@@ -31,7 +31,7 @@ class ASNResourceParser
       memo
     end
     new_hash["standardSetQueries"] = ASNStandardSetQueryGenerator.generate(new_hash)
-    new_hash["_id"] = new_hash["documentMeta"]["primaryTopic"] + ":" + new_hash["documentMeta"]["modified"]
+    new_hash["_id"] = new_hash["documentMeta"]["primaryTopic"]
     new_hash
   end
 
