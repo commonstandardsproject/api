@@ -202,7 +202,7 @@ module API
           "document.jurisdictionId" => params[:id]
         }).projection("_id" => 1, "document.title" => 1).to_a
 
-        standardSets = $db[:new_standard_sets].find({
+        standardSets = $db[:standard_sets].find({
           "jurisdiction.id" => params[:id]
         }).projection("_id" => 1, "title" => 1, "subject" => 1, "sourceURL" => 1, "documentTitle" => 1, "educationLevels" => 1).to_a
 
@@ -248,7 +248,7 @@ module API
         requires :id, type: String, desc: "ID", default: "49FCDFBD2CF04033A9C347BFA0584DF0_D2604890_grade-01"
       end
       get "/:id" do
-        standard_set = $db[:new_standard_sets].find({
+        standard_set = $db[:standard_sets].find({
           :_id => params.id
         }).to_a.first
 
