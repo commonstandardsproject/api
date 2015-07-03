@@ -9,8 +9,8 @@ require 'grape_logging'
 require 'algoliasearch'
 require_relative '../lib/securerandom'
 require_relative 'entities/jurisdiction'
-require_relative 'entities/standards_document_summary'
-require_relative 'entities/standards_document'
+require_relative 'entities/standard_document_summary'
+require_relative 'entities/standard_document'
 require_relative 'entities/standard_set'
 require_relative 'entities/commit'
 require_relative 'entities/user'
@@ -198,7 +198,7 @@ module API
         jurisdiction = $db[:jurisdictions].find({
           :_id => params[:id]
         }).to_a.first
-        documents = $db[:standards_documents].find({
+        documents = $db[:standard_documents].find({
           "document.jurisdictionId" => params[:id]
         }).projection("_id" => 1, "document.title" => 1).to_a
 
@@ -222,9 +222,9 @@ module API
 
     end
 
-    namespace :standards_documents, hidden: true do
+    namespace :standard_documents, hidden: true do
       get ":id", hidden: true do
-        document = $db[:standards_documents].find({
+        document = $db[:standard_documents].find({
           :_id => params[:id]
         }).projection(
           "_id" => 1,
@@ -258,7 +258,7 @@ module API
 
       post "/", hidden: true do
         validate_token
-        standards_doc = $db[:standards_documents].find({
+        standards_doc = $db[:standard_documents].find({
           :_id => params.standardsDocumentId
         }).to_a.first
 
@@ -272,7 +272,7 @@ module API
     post "standard_set_import", hidden: true do
       validate_token
 
-      standards_doc = $db[:standards_documents].find({
+      standards_doc = $db[:standard_documents].find({
         :_id => params.standardsDocumentId
       }).to_a.first
 

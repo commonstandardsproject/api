@@ -1,5 +1,5 @@
-require_relative "matchers/jurisdiction_matchers"
-require_relative "matchers/ngss_matchers"
+require_relative "jurisdiction_matchers"
+require_relative "ngss_matchers"
 
 KEY_MATCHERS = {
 
@@ -127,7 +127,10 @@ KEY_MATCHERS = {
   # ],
 
   "http://purl.org/dc/terms/license"=> lambda{|key, value|
-    {license: value.first["value"] }
+    {
+      license: "Open Government Licence v3.0",
+      licenseURL: value.first["value"]
+    }
   },
 
 
@@ -170,7 +173,7 @@ KEY_MATCHERS = {
   # ]
 
   "http://purl.org/ASN/schema/core/exportVersion" => lambda{|key, value|
-      { attributionName: value.first["value"] }
+      { exportVersion: value.first["value"] }
    },
 
 
@@ -397,7 +400,7 @@ KEY_MATCHERS = {
           end
         }
 
-      return { educationLevels: education_levels }
+      { educationLevels: education_levels }
    },
 
 

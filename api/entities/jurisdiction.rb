@@ -1,6 +1,6 @@
 require 'bundler/setup'
 require 'grape-entity'
-require_relative 'standards_document_summary'
+require_relative 'standard_document_summary'
 require_relative 'standard_set_summary'
 
 

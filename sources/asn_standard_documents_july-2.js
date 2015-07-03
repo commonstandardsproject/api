@@ -1,4 +1,4 @@
-{ "data": [
+{ "documents": [
       {
         "id": "d2650384",
         "data": {
