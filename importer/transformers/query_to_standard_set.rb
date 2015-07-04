@@ -1,23 +1,24 @@
-require 'mongo'
 require 'securerandom'
 require 'pp'
+require_relative '../../lib/init_mongo'
+require_relative '../matchers/source_to_subject_mapping'
 require 'active_support/core_ext/hash/slice'
-
-logger = Logger.new(STDOUT)
-logger.level = Logger::WARN
-Mongo::Logger.logger = logger
-$db = $db || Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'standards')
-
 
 # Given a standards set query, this method creates a standards set
 class QueryToStandardSet
 
+  def self.all
+    $db[:standard_documents].find.batch_size(10).each{|doc|
+      queries = doc["standardSetQueries"] || []
+      queries.each{|query|
+        p "Generating for #{doc["document"]["title"]} #{query["title"]}"
+        self.generate(doc, query)
+      }
+    }
+  end
+
   def self.generate(standardsDoc, query)
     standardsHash = standardsDoc[:standards]
-    client = $db
-    cached_standards = client[:cached_standards]
-
-
     # Find standards
     # ==============
     time_start = Time.now
@@ -25,22 +26,23 @@ class QueryToStandardSet
     standardsHash = standards.compact.uniq.reduce({}) {|memo, standard| memo.merge({standard["asnIdentifier"] => standard})}
 
 
+    jurisdictionId = standardsDoc[:document][:jurisdictionId]
+    asnId          = standardsDoc[:documentMeta][:primaryTopic]
+    queryId        = query["id"]
+    id = [jurisdictionId, asnId, queryId].join('_')
+
+
     # Process Standards
     # =================
     processed_standards = standards
       .map(&self.set_ancestors.call(query["children"], standardsHash)) # set the ancestors as an array
       .uniq
-      .map(&self.set_guid.call(cached_standards, query)) # set a guid, looking  to see if there's already a standard with a GUID
+      .map(&self.set_guid.call(id, query)) # set a guid, looking  to see if there's already a standard with a GUID
       .reduce([], &self.add_position) # assign position
       .map(&self.filter_keys)
       .reduce({}, &self.list_to_hash)
 
     time_end = Time.now
-
-    jurisdictionId = standardsDoc[:document][:jurisdictionId]
-    asnId          = standardsDoc[:documentMeta][:primaryTopic]
-    queryId        = query["id"]
-    id = [jurisdictionId, asnId, queryId].join('_')
 
     # Return the standards set
     # ========================
@@ -56,17 +58,18 @@ class QueryToStandardSet
         "id"        => standardsDoc["_id"],
         "title"     => standardsDoc["document"]["title"],
         "sourceURL" => standardsDoc["document"]["source"],
+        "asnIdentifier" => standardsDoc["documentMeta"]["primaryTopic"],
         "publicationStatus" => standardsDoc["document"]["publicationStatus"]
       },
       "license" => {
         "title"          => standardsDoc["documentMeta"]["license"],
         "URL"            => standardsDoc["documentMeta"]["licenseURL"],
+        "rightsHolder"    => standardsDoc["documentMeta"]["rightsHolder"],
       },
       "attribution" => {
         "title" => standardsDoc["documentMeta"]["attributionName"],
         "URL"   => standardsDoc["documentMeta"]["attributionURL"]
       },
-      "rightsHolder"    => standardsDoc["documentMeta"]["rightsHolder"],
       "title"           => query["title"],
       "educationLevels" => query["educationLevels"],
       "standards"       => processed_standards,
@@ -126,8 +129,11 @@ class QueryToStandardSet
 
 
   def self.set_guid
-    -> (cached_standards_collection, query, standard) {
-      matched = cached_standards_collection.find({asn_id: standard["asnIdentifier"], grade_levels: {:$in => query["educationLevels"]} }).to_a
+    -> (standard_set_id, query, standard) {
+      matched = $db[:cached_standards].find({
+        standardSetId: standard_set_id,
+        asnIdentifier: standard["asnIdentifier"]
+      }).to_a
 
 
       case matched

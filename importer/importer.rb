@@ -8,15 +8,11 @@ require 'typhoeus'
 require 'parallel'
 require_relative 'matchers/source_to_subject_mapping'
 require_relative 'transformers/asn_resource_parser'
-require_relative "update_standard_set"
-require 'mongo'
-
-logger = Logger.new(STDOUT)
-logger.level = Logger::WARN
-Mongo::Logger.logger = logger
+require_relative "../lib/update_standard_set"
+require_relative '../lib/init_mongo'
+require_relative '../lib/send_to_algolia'
 
 docs  = Oj.load(File.read('sources/asn_standard_documents_july-2.js'))
-$db   = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'standards')
 hydra = Typhoeus::Hydra.new(max_concurrency: 20)
 
 
@@ -92,7 +88,7 @@ def generate_standard_sets(doc)
   Parallel.each(doc["standardSetQueries"], :in_processes => 16){|query|
     p "Converting #{doc["document"]["title"]}: #{query["title"]}"
     set = QueryToStandardSet.generate(doc, query)
-    UpdateStandardSet.update(set)
+    UpdateStandardSet.update(set, {cache_standards: false, send_to_algolia: false})
     Parallel::Kill
   }
   doc
@@ -166,3 +162,6 @@ docs.select{|doc|
 }
 
 hydra.run
+
+CachedStandards.all
+SendToAlgolia.all_standard_sets

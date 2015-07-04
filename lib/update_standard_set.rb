@@ -1,10 +1,12 @@
 require 'pp'
 require 'securerandom'
+require_relative 'cache_standards'
+require_relative 'send_to_algolia'
 
 class UpdateStandardSet
 
 
-  def self.update(doc)
+  def self.update(doc, opts)
     old_version    = $db[:standard_sets].find({_id: doc["id"]}).to_a.first || {}
     if old_version["version"] && old_version["version"] > 0
       self.save_version(old_version)
@@ -16,8 +18,18 @@ class UpdateStandardSet
     # Set the ID
     doc["_id"]     = doc.delete("id")
 
-   # Replace the document
-   $db[:standard_sets].find({_id: doc["_id"]}).find_one_and_update(doc, {upsert: true, return_document: :after})
+    # Replace the document
+    doc = $db[:standard_sets].find({_id: doc["_id"]}).find_one_and_update(doc, {upsert: true, return_document: :after})
+
+    # Cache standards
+    unless opts[:cache_standards] == false
+      CachedStandards.one(doc)
+    end
+
+    # Send to algolia
+    unless opts[:send_to_algolia] == false
+      SendToAlgolia.standard_set(doc)
+    end
   end
 
   def self.with_delta(id, delta)
@@ -29,8 +41,13 @@ class UpdateStandardSet
 
     delta["$inc"] = delta["$inc"] || {}
     delta["$inc"]["version"] = 1
-    $db[:standard_sets].find({_id: id}).update_one(delta)
+    doc = $db[:standard_sets].find({_id: id}).update_one(delta, return_document: :after)
 
+    # Cache standards
+    CachedStandards.one(doc)
+
+    # Send to algolia
+    SendToAlgolia.standard_set(doc)
   end
 
   def self.save_version(old_version)

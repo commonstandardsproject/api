@@ -15,7 +15,7 @@ require_relative 'entities/standard_set'
 require_relative 'entities/commit'
 require_relative 'entities/user'
 require_relative '../importer/transformers/query_to_standard_set'
-require_relative "../importer/update_standard_set"
+require_relative "../lib/update_standard_set"
 
 module API
   class API < Grape::API
@@ -179,7 +179,6 @@ module API
 
       desc "Return a list of jurisdictions"
       get "/" do
-        p @user
         jurisdictions = $db[:jurisdictions].find({status: {:$ne => "inactive"}}).sort({:title => 1}).to_a
         present :data, jurisdictions, with: Entities::Jurisdiction
       end
@@ -189,12 +188,6 @@ module API
         requires :id, type: String, desc: "ID", default: "49FCDFBD2CF04033A9C347BFA0584DF0"
       end
       get "/:id" do
-        # begin
-        #   ValidateToken.validate(headers)
-        # rescue InvalidTokenError => e
-        #   error!('Invalid Token', 401)
-        # end
-
         jurisdiction = $db[:jurisdictions].find({
           :_id => params[:id]
         }).to_a.first
