@@ -1,13 +1,9 @@
-require 'mongo'
 require 'pp'
 require 'algoliasearch'
 require 'active_support/core_ext/hash/slice'
+require_relative "init_mongo"
 
 
-logger = Logger.new(STDOUT)
-logger.level = Logger::WARN
-Mongo::Logger.logger = logger
-$db = $db || Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'standards')
 Algolia.init :application_id => ENV["ALGOLIA_APPLICATION_ID"], :api_key => ENV["ALGOLIA_API_KEY"]
 
 class SendToAlgolia
@@ -25,7 +21,7 @@ class SendToAlgolia
   end
 
   def self.standard_set(set)
-    @@index.add_objects(self.denormalize_standards(standards))
+    @@index.add_objects(self.denormalize_standards(set))
   end
 
   def self.denormalize_standards(standardSet)
