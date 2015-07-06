@@ -3,7 +3,7 @@ require 'grape-entity'
 
 module API
   module Entities
-    class StandardsDocument < Grape::Entity
+    class StandardDocument < Grape::Entity
 
       expose :_id, as: :id
       expose :documentMeta

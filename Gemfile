@@ -15,6 +15,7 @@ gem 'grape_logging'
 gem 'parallel'
 gem 'grape-swagger'
 gem 'algoliasearch'
+gem 'nokogiri'
 
 group :development do
   gem "guard"
