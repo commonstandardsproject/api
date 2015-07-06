@@ -1,10 +1,8 @@
 require 'pp'
-require 'algoliasearch'
 require 'active_support/core_ext/hash/slice'
-require_relative "init_mongo"
+require_relative "../config/algolia"
+require_relative "../config/mongo"
 
-
-Algolia.init :application_id => ENV["ALGOLIA_APPLICATION_ID"], :api_key => ENV["ALGOLIA_API_KEY"]
 
 class SendToAlgolia
   @@index = Algolia::Index.new("common-standards-project")
