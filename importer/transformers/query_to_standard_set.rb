@@ -1,6 +1,6 @@
 require 'securerandom'
 require 'pp'
-require_relative '../../lib/init_mongo'
+require_relative '../../config/mongo'
 require_relative '../matchers/source_to_subject_mapping'
 require 'active_support/core_ext/hash/slice'
 

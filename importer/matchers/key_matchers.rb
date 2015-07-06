@@ -202,8 +202,9 @@ KEY_MATCHERS = {
 
   "http://purl.org/ASN/schema/core/jurisdiction" => lambda{|key, value|
       {
-        jurisdiction: value.first["value"],
-        jurisdictionId: JURISDICTION_MATCHERS[value.first["value"]][:id]
+        jurisdiction:      value.first["value"],
+        jurisdictionId:    JURISDICTION_MATCHERS[value.first["value"]][:id],
+        jurisdictionTitle: JURISDICTION_MATCHERS[value.first["value"]][:title]
       }
    },
 

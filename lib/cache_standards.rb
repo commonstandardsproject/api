@@ -1,6 +1,6 @@
 require 'pp';
 require 'parallel'
-require_relative "init_mongo";
+require_relative "../config/mongo";
 
 class CachedStandards
 

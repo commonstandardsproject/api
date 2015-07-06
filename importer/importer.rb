@@ -9,7 +9,7 @@ require 'parallel'
 require_relative 'matchers/source_to_subject_mapping'
 require_relative 'transformers/asn_resource_parser'
 require_relative "../lib/update_standard_set"
-require_relative '../lib/init_mongo'
+require_relative '../config/mongo'
 require_relative '../lib/send_to_algolia'
 
 docs  = Oj.load(File.read('sources/asn_standard_documents_july-2.js'))
