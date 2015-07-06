@@ -72,12 +72,15 @@ GEM
       rb-inotify (>= 0.9)
     lumberjack (1.0.9)
     method_source (0.8.2)
+    mini_portile (0.6.2)
     minitest (5.6.1)
     mongo (2.0.4)
       bson (~> 3.0)
     multi_json (1.11.0)
     multi_xml (0.5.5)
     nenv (0.2.0)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -139,6 +142,7 @@ DEPENDENCIES
   guard-shotgun
   jwt
   mongo
+  nokogiri
   oj
   parallel
   puma

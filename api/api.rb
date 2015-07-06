@@ -9,6 +9,7 @@ require 'grape_logging'
 require 'algoliasearch'
 require_relative '../lib/securerandom'
 require_relative 'entities/jurisdiction'
+require_relative 'entities/jurisdiction_summary'
 require_relative 'entities/standard_document_summary'
 require_relative 'entities/standard_document'
 require_relative 'entities/standard_set'
@@ -55,12 +56,15 @@ module API
     before do
       key = headers["Api-Key"] || params["api-key"]
 
+      if request.path.include? "/api/swagger_doc"
+        next
+      end
+
       @user = $db[:users].find({apiKey: key}).find_one_and_update({
         "$inc" => {requestCount: 1}
       })
       if @user.nil?
         error!('Unauthorized: Not a valid auth key. Sign up at commonstandardsproject.com', 401)
-        return
       end
       if env["HTTP_ORIGIN"] && @user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
         error!("Unauthorized: Origin isn't an allowed origin.", 401)
@@ -146,7 +150,6 @@ module API
       desc "Approve a commit to a standard set and apply it (creating a new version in the process)"
       post "/:id/approve", hidden: true do
         validate_token
-        p @user
         if @user["committer"] != true
           error!("Cannot commit changes", 401)
         end
@@ -175,12 +178,12 @@ module API
     end
 
 
-    namespace :jurisdictions, desc: "State, Organization, or School" do
+    namespace :jurisdictions, desc: "A state, organization, district, or school" do
 
       desc "Return a list of jurisdictions"
       get "/" do
         jurisdictions = $db[:jurisdictions].find({status: {:$ne => "inactive"}}).sort({:title => 1}).to_a
-        present :data, jurisdictions, with: Entities::Jurisdiction
+        present :data, jurisdictions, with: Entities::JurisdictionSummary
       end
 
       desc "Return a jurisdiction", entity: Entities::Jurisdiction
@@ -234,7 +237,7 @@ module API
 
 
 
-    namespace "/standard_sets", desc: "A set of standards typically grouped by grade level & subject" do
+    namespace "/standard_sets", desc: "Standards grouped by grade level & subject" do
 
       desc "Fetch a standards set", entity: Entities::StandardSet
       params do

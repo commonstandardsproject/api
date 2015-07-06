@@ -27,12 +27,12 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "http://localhost:9393/api/swagger_doc";
+        url = "/api/swagger_doc";
       }
       window.swaggerUi = new SwaggerUi({
         url: url,
         dom_id: "swagger-ui-container",
-        supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+        supportedSubmitMethods: ['get'],
         onComplete: function(swaggerApi, swaggerUi){
           if(typeof initOAuth == "function") {
             initOAuth({
@@ -51,7 +51,7 @@
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
         },
-        docExpansion: "none",
+        docExpansion: "list",
         apisSorter: "alpha",
         showRequestHeaders: false
       });
@@ -59,7 +59,7 @@
       function addApiKeyAuthorization(){
         var key = encodeURIComponent($('#input_apiKey')[0].value);
         if(key && key.trim() != "") {
-            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
+            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("Api-Key", key, "header");
             window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
             log("added key " + key);
         }
@@ -68,10 +68,9 @@
       $('#input_apiKey').change(addApiKeyAuthorization);
 
       // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
-      /*
-        var apiKey = "myApiKeyXXXX123456789";
-        $('#input_apiKey').val(apiKey);
-      */
+      var apiKey = "vZKoJwFB1PTJnozKBSANADc3";
+      $('#input_apiKey').val(apiKey);
+      $('#api_selector').hide()
 
       window.swaggerUi.load();
 

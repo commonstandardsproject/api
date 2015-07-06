@@ -3,7 +3,7 @@ require 'grape-entity'
 
 module API
   module Entities
-    class StandardsDocumentSummary < Grape::Entity
+    class StandardDocumentSummary < Grape::Entity
       expose :_id, as: :id
 
       expose :title do |doc, options|
