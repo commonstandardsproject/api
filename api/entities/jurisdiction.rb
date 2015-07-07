@@ -11,7 +11,6 @@ module API
       expose :_id, as: :id, documentation: {type: "string", desc: "id"}
       expose :title, documentation: {type: "string", desc: "The name of the jurisdiction"}
       expose :type, documentation: {type: "string", desc: "The type of jurisdiction", values: ["organization", "state", "school"]}
-      expose :subject
       # expose :documents, with: Entities::StandardDocumentSummary
       expose :standardSets, with: Entities::StandardSetSummary, documentation: {desc: "Standards Sets", param_type: 'body', is_array: true}
 

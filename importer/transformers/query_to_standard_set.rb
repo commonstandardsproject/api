@@ -53,7 +53,7 @@ class QueryToStandardSet
         "id"    => jurisdictionId,
         "title" => jurisdictionTitle
       },
-      "subject"           => SOURCE_TO_SUBJECT_MAPPINGS_GROUPED[jurisdictionTitle][standardsDoc[asnId]],
+      "subject"           => SOURCE_TO_SUBJECT_MAPPINGS_GROUPED[jurisdictionTitle][asnId],
       "normalizedSubject" => standardsDoc["document"]["subject"],
       "document"          => {
         "id"        => standardsDoc["_id"],
