@@ -28,7 +28,13 @@ module API
 
         standardSets = $db[:standard_sets].find({
           "jurisdiction.id" => params[:id]
-        }).projection("_id" => 1, "title" => 1, "subject" => 1, "sourceURL" => 1, "documentTitle" => 1, "educationLevels" => 1).to_a
+        }).projection({
+          "_id" => 1,
+          "title" => 1,
+          "subject" => 1,
+          "document" => 1,
+          "educationLevels" => 1
+        }).to_a
 
         jurisdiction["documents"]    = documents
         jurisdiction["standardSets"] = standardSets
