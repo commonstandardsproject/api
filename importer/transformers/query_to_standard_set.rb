@@ -1,7 +1,7 @@
 require 'securerandom'
 require 'pp'
 require_relative '../../config/mongo'
-require_relative '../matchers/source_to_subject_mapping'
+require_relative '../matchers/source_to_subject_mapping_grouped'
 require 'active_support/core_ext/hash/slice'
 
 # Given a standards set query, this method creates a standards set
@@ -46,13 +46,14 @@ class QueryToStandardSet
 
     # Return the standards set
     # ========================
+    jurisdictionTitle =  $db[:jurisdictions].find({_id: jurisdictionId}).to_a.first[:title]
     {
       "id" => id,
       "jurisdiction": {
         "id"    => jurisdictionId,
-        "title" => $db[:jurisdictions].find({_id: jurisdictionId}).to_a.first[:title]
+        "title" => jurisdictionTitle
       },
-      "subject"           => SOURCE_TO_SUBJECT_MAPPINGS[standardsDoc["document"]["title"]],
+      "subject"           => SOURCE_TO_SUBJECT_MAPPINGS_GROUPED[jurisdictionTitle][standardsDoc[asnId]],
       "normalizedSubject" => standardsDoc["document"]["subject"],
       "document"          => {
         "id"        => standardsDoc["_id"],
