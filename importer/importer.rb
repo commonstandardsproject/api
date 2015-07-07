@@ -1,4 +1,3 @@
-# The part that activates bundler in your app
 require 'bundler/setup'
 require 'oj'
 require 'pp'
@@ -12,12 +11,19 @@ require_relative "../lib/update_standard_set"
 require_relative '../config/mongo'
 require_relative '../lib/send_to_algolia'
 
-docs  = Oj.load(File.read('sources/asn_standard_documents_july-2.js'))
-hydra = Typhoeus::Hydra.new(max_concurrency: 20)
+
+# Comment on the organization of this file:
+# - Methods are at the top
+# - The one line invocation is the last line of the file (due to how Ruby's load's methods)
+# - The methods roughly go in order of execution
+# - The file does one thing -- convert the documents.
+# - If you're new to this file, I'd open it up in two panes. Put the
+#   `convert_docs` method in your left pane and view the method that it calls on the right
 
 
 
-def convert_docs
+def convert_docs(docs)
+  hydra = Typhoeus::Hydra.new(max_concurrency: 20)
 
   # Check that we have all the right titles
   check_document_titles(docs)
@@ -28,9 +34,8 @@ def convert_docs
   docs.select{|doc|
     # This makes sure we only get the documents we haven't already imported.
     # Return true from this labmda if we want to fetch all the docs.
-    # Time.at(previously_imported_docs[doc[:id]].to_i) < Time.at(doc[:date_modified].to_i)
-    true
-  }.take(2).each.with_index{ |_doc, index|
+    Time.at(previously_imported_docs[doc[:id]].to_i) < Time.at(doc[:date_modified].to_i)
+  }.each.with_index{ |_doc, index|
 
     # If we want to use the ASN urls, uncomment this line. I switched to using AWS urls to relieve load on ASN
     # servers and increase thoroughput
@@ -59,12 +64,6 @@ def convert_docs
 
 end
 
-
-# ===================================================
-# Section 1: Functions for conversion
-# Because of how Ruby loads method names, the methods
-# that the script uses go at the top
-# ===================================================
 
 def check_document_titles(docs)
   -> {
@@ -168,10 +167,5 @@ end
 
 
 
-# ===================================================
-# Section 2: The conversion
-# This script that makes the requests and converts each
-# document.
-# ===================================================
-
-convert_docs
+docs  = Oj.load(File.read('sources/asn_standard_documents_july-2.js'))
+convert_docs(docs)

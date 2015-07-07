@@ -57,6 +57,7 @@ class QueryToStandardSet
       "normalizedSubject" => standardsDoc["document"]["subject"],
       "document"          => {
         "id"        => standardsDoc["_id"],
+        "valid"     => standardsDoc["document"]["valid"],
         "title"     => standardsDoc["document"]["title"],
         "sourceURL" => standardsDoc["document"]["source"],
         "asnIdentifier" => standardsDoc["documentMeta"]["primaryTopic"],
