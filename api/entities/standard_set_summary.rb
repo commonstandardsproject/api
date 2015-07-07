@@ -8,7 +8,7 @@ module API
       expose :title, documentation: {desc: "The name of the set"}
       expose :subject, documentation: {desc: "The subject"}
       expose :educationLevels, documentation: {desc: "The education levels", is_array: true}
-      # expose :source
+      expose :document
       # expose :documentTitle
     end
   end
