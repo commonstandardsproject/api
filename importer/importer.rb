@@ -34,7 +34,8 @@ def convert_docs(docs)
   docs.select{|doc|
     # This makes sure we only get the documents we haven't already imported.
     # Return true from this labmda if we want to fetch all the docs.
-    Time.at(previously_imported_docs[doc[:id]].to_i) < Time.at(doc[:date_modified].to_i)
+    # Time.at(previously_imported_docs[doc[:id]].to_i) < Time.at(doc[:date_modified].to_i)
+    true
   }.each.with_index{ |_doc, index|
 
     # If we want to use the ASN urls, uncomment this line. I switched to using AWS urls to relieve load on ASN
