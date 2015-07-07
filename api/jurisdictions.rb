@@ -22,9 +22,7 @@ module API
         jurisdiction = $db[:jurisdictions].find({
           :_id => params[:id]
         }).to_a.first
-        documents = $db[:standard_documents].find({
-          "document.jurisdictionId" => params[:id]
-        }).projection("_id" => 1, "document.title" => 1).to_a
+
 
         standardSets = $db[:standard_sets].find({
           "jurisdiction.id" => params[:id]
@@ -35,9 +33,15 @@ module API
           "document" => 1,
           "educationLevels" => 1
         }).to_a
-
-        jurisdiction["documents"]    = documents
         jurisdiction["standardSets"] = standardSets
+
+
+        # We're tenatively taking out standard_documents from the response
+        # documents = $db[:standard_documents].find({
+        #   "document.jurisdictionId" => params[:id]
+        # }).projection("_id" => 1, "document.title" => 1).to_a
+        # jurisdiction["documents"]    = documents
+
         present :data, jurisdiction, with: Entities::Jurisdiction
       end
 
