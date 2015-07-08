@@ -16,6 +16,7 @@ gem 'parallel'
 gem 'grape-swagger'
 gem 'algoliasearch'
 gem 'nokogiri'
+gem 'skylight'
 
 group :development do
   gem "guard"
