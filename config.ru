@@ -7,7 +7,7 @@ require_relative "api/api"
 require 'rack/cors'
 require_relative 'main'
 
-use Rack::Deflater, :if => lambda { |env, status, headers, body| body.length > 512 }
+use Rack::Deflater
 use Rack::Cors do
   allow do
     origins '*'
