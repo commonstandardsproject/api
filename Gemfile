@@ -17,6 +17,7 @@ gem 'grape-swagger'
 gem 'algoliasearch'
 gem 'nokogiri'
 gem 'skylight'
+gem 'grape-skylight', git: "https://github.com/nickcharlton/grape-skylight"
 
 group :development do
   gem "guard"

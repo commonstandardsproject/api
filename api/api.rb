@@ -3,6 +3,8 @@ require 'grape'
 require 'grape-swagger'
 require 'grape_logging'
 require 'jwt'
+require 'skylight'
+require 'grape-skylight'
 require_relative "../config/mongo"
 require_relative 'entities/jurisdiction'
 require_relative 'entities/jurisdiction_summary'
@@ -19,6 +21,7 @@ module API
 
     logger.formatter = ::GrapeLogging::Formatters::Default.new
     use ::GrapeLogging::Middleware::RequestLogger, { logger: logger }
+    use ::Skylight::Grape::Middleware
 
     format :json
     prefix :api
