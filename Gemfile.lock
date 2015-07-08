@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/nickcharlton/grape-skylight
+  revision: 443e85a993939a3f4e438b31d05ead51f659c7d3
+  specs:
+    grape-skylight (0.1.0)
+      grape
+      skylight
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -138,6 +146,7 @@ DEPENDENCIES
   algoliasearch
   grape
   grape-entity
+  grape-skylight!
   grape-swagger
   grape_logging
   guard
