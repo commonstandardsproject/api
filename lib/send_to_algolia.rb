@@ -23,13 +23,19 @@ class SendToAlgolia
   end
 
   def self.denormalize_standards(standardSet)
+    # Reversed because (for whatever reason), I find it easier to think about
+    # this algorithm if I move from up (instead of down) a tree
     standards = standardSet["standards"].values.sort_by{|s| s["position"]}.reverse
     standards.each_with_index.map{|standard, i|
       last_standard = standard
       ancestors = standards[i+1..-1].inject([]){ |acc, ss|
+        # If it's a root standard, we're done here and can break
         if ss["depth"] == 0
           acc.push(ss)
           break acc
+        # if it's a hierarchical level up, we add it to the ancetor
+        # and set it to the be the last standard for comparison on the next
+        # iteration
         elsif ss["depth"] < last_standard["depth"]
           last_standard = ss
           next acc.push(ss)
