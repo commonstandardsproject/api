@@ -21,7 +21,8 @@ module API
       end
 
 
-      post "/", hidden: true do
+      desc "To preview the results of a standard set query, we call this api."
+      post "/from_query", hidden: true do
         validate_token
         standards_doc = $db[:standard_documents].find({
           :_id => params.standardsDocumentId
