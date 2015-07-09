@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.2"
+ruby '2.2.2'
 gem 'oj'
 gem 'mongo', '~>2.0.6'
 gem 'grape'
@@ -19,7 +19,7 @@ gem 'nokogiri'
 gem 'newrelic_rpm'
 
 group :development do
-  gem "guard"
-  gem "guard-shotgun"
-
+  gem 'guard'
+  gem 'guard-shotgun'
+  gem 'foreman'
 end
