@@ -23,7 +23,7 @@ A few things. First, it's the web api. To see the standards and sign up for an A
 
 I'm Scott and I was a teacher for 4 years in Baltimore City Public Schools and then left to start Common Curriculum. I've wasted too many hours of my life munging standards data and I want to save other edtech companies from having to do the same. Also, I really want to be able to see the barriers to edtech integrations come down. Standards are one of the more unifying elements in edtech, yet we lack a common set of GUIDs or shared database of standards. I want to fix that.
 
-Since publishing the standards online, other contributors have come aboard and are working to improve and extend the project. Standards effect nearly all edtech companies, so if you have an idea (or a need), get a hold of me scott (at) commoncurriculum (dot) com. I'd love to hear your ideas and see if we can make something work!
+Since publishing the standards online, other contributors have come aboard and are working to improve and extend the project. Standards affect nearly all edtech companies, so if you have an idea (or a need), get a hold of me scott (at) commoncurriculum (dot) com. I'd love to hear your ideas and see if we can make something work!
 
 
 ## Guiding Principles of the data format
@@ -39,3 +39,12 @@ When we took on the task of importing the standards, a few principles guided our
 * **Easy to fix**: Converting 50 state standards is a monumental task (and one we're grateful ASN takes on). There will be typos and we want users to find them and fix them. Thus, each set of standards is versioned and changes can be submitted for approval.
 
 * **Easy to add to**: Schools & districts create their own standards (outside of their state). They should be able to publish those standards and share them with their vendors.
+
+## Development
+
+There are a few tasks that must be completed to get running with a local copy of the project for development purposes:
+
+* Sign up with [Algolia](https://www.algolia.com) and obtain your Application ID and Admin API Key
+* Install [MongoDB](https://www.mongodb.org/)
+* Clone the repo and run `bundle install` to get all the gems you will need
+* Run `foreman s` to start the application on your local machine
