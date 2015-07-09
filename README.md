@@ -44,7 +44,19 @@ When we took on the task of importing the standards, a few principles guided our
 
 There are a few tasks that must be completed to get running with a local copy of the project for development purposes:
 
-* Sign up with [Algolia](https://www.algolia.com) and obtain your Application ID and Admin API Key
+* Sign up with [Algolia](https://www.algolia.com) and obtain your Application ID and Admin API Key.
+* Set the Algolia keys in your env: `export ALGOLIA_APPLICATION_ID=[APPID]; export  ALGOLIA_API_KEY=[KEYID]` (to make this persistent, set in your bash profile)
 * Install [MongoDB](https://www.mongodb.org/)
+* Run `mongorestore sources/jurisdiction-mongodb-dump` to do an initial import of jurisdictions
 * Clone the repo and run `bundle install` to get all the gems you will need
+* Run `bundle exec ruby importer/importer.rb` to import all the standards data into your local mongo (this requires internet access, and will take a while, go get a snack)
+* In the mongo console, you will need to create the api docs user:
+
+```
+> use standards;
+> db.createCollection('users')
+> db.users.insert({profile: true, email: 'user@user.com', apiKey: 'vZKoJwFB1PTJnozKBSANADc3'})
+```
+
 * Run `foreman s` to start the application on your local machine
+* Point your browser at `http://localhost:5000` and bask in the goodness of beautifully formatted standards
