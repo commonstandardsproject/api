@@ -2,7 +2,7 @@
 
 State and national standards connect to nearly every part K-12 education. In order for modern K12 edtech companies to use these standards in their apps, they need JSON formatted, well organized data.
 
-Also, for K12 edtech companies to interoperate, they need a common language and identifier for standards. Without guids for each standard, vendors have a hard time speaking making their data speak to each other. For instance, without a common standard guid, a gradebook assignment can't be easily matched up with lesson plans from a different vendor.
+Also, for K12 edtech companies to interoperate, they need a common language and identifier for standards. Without GUIDs for each standard, vendors have a hard time speaking making their align with each other. For instance, without a common standard GUID, a gradebook assignment can't be easily matched up with lesson plan from a different vendor.
 
 
 ## Hasn't this been done already?
@@ -16,7 +16,7 @@ we weren't satisfied with their schema.
 
 ## What is this?
 
-A few things. First, it's the web api. To see the standards and sign up for an API key, visit [http://commonstandardsproject.com](http://commonstandardsproject.com). Second, it's an importer script that downloads the Creative Commons licensed standards from ASN and munges them around until their in a format that's more conducive for modern K12 edtech companies. Third, it's a search interface (at commonstandardsproject.com) for students, parents, and educators to use to search and compare standards.
+A few things. First, it's the web api. To see the standards and sign up for an API key, visit [http://commonstandardsproject.com](http://commonstandardsproject.com). Second, it's an importer script that downloads the Creative Commons licensed standards from ASN and munges it around until it's in a format that's more conducive for modern edtech companies. Third, it's a search interface (at commonstandardsproject.com) for students, parents, and educators to use to search and compare standards.
 
 
 ## Who is behind this?
