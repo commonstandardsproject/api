@@ -21,7 +21,7 @@ module API
 
     logger.formatter = ::GrapeLogging::Formatters::Default.new
     use ::GrapeLogging::Middleware::RequestLogger, { logger: logger }
-    use TraceView::Rack
+    use ::TraceView::Rack
 
     format :json
     prefix :api
