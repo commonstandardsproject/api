@@ -97,7 +97,7 @@ module API
     # that's running underneath. I could fork Ember-CLI or fork the buildpack I'm using
     # on heroku, but that's not worth the effort at the moment.
 
-    get '/sitemap.xml' do
+    get '/sitemap.xml', hidden: true do
       builder = Nokogiri::XML::Builder.new do |xml|
         xml.urlset("xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9") {
           $db[:standard_sets].find().projection({_id: 1}).batch_size(1000).map{|doc|
