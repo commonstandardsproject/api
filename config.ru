@@ -3,12 +3,9 @@ require 'sinatra'
 require 'bundler/setup'
 require 'rubygems'
 require 'grape'
-require 'traceview'
 require_relative "api/api"
 require 'rack/cors'
 require_relative 'main'
-
-TraceView::Config[:tracing_mode] = 'through'
 
 
 use Rack::Deflater
