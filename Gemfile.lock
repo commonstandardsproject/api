@@ -79,6 +79,7 @@ GEM
     multi_json (1.11.0)
     multi_xml (0.5.5)
     nenv (0.2.0)
+    newrelic_rpm (3.12.1.298)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     notiffany (0.0.6)
@@ -142,6 +143,7 @@ DEPENDENCIES
   guard-shotgun
   jwt
   mongo (~> 2.0.6)
+  newrelic_rpm
   nokogiri
   oj
   parallel
