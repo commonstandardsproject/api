@@ -118,6 +118,8 @@ GEM
     tilt (2.0.1)
     timers (4.0.1)
       hitimes
+    traceview (3.0.3)
+      json
     typhoeus (0.7.1)
       ethon (>= 0.7.1)
     tzinfo (1.2.2)
@@ -149,4 +151,5 @@ DEPENDENCIES
   rack-cors
   shotgun
   sinatra
+  traceview
   typhoeus
