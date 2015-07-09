@@ -6,8 +6,6 @@ require_relative '../importer/transformers/query_to_standard_set'
 
 module API
   class StandardSets < Grape::API
-    use ::Skylight::Grape::Middleware
-    include Skylight::Helpers
 
     namespace "/standard_sets", desc: "Standards grouped by grade level & subject" do
 
@@ -15,7 +13,7 @@ module API
       params do
         requires :id, type: String, desc: "ID", default: "49FCDFBD2CF04033A9C347BFA0584DF0_D2604890_grade-01"
       end
-      instrument_method
+
       get "/:id" do
         standard_set = $db[:standard_sets].find({
           :_id => params.id

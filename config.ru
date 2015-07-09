@@ -9,6 +9,7 @@ require_relative "api/api"
 require 'rack/cors'
 require_relative 'main'
 
+
 use Rack::Deflater
 use Rack::Cors do
   allow do
@@ -16,12 +17,6 @@ use Rack::Cors do
     resource '*', headers: :any, methods: [:post, :get]
   end
 end
-
-if ENV["RACK_ENV"] == "production"
-  p "SKYLIGHT"
-  Skylight.start!
-end
-
 
 
 # run API::API

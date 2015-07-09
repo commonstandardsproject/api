@@ -7,10 +7,6 @@ class Main < Sinatra::Base
     set :db, $db
   end
 
-  configure :production do
-    require "skylight/sinatra"
-    Skylight.start!
-  end
 
   get '/' do
     File.read(File.join('public', 'index.html'))
