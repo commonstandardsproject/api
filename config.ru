@@ -2,7 +2,7 @@
 require 'sinatra'
 require 'bundler/setup'
 require 'rubygems'
-require 'algoliasearch'
+require 'traceview'
 require_relative "api/api"
 require 'rack/cors'
 require_relative 'main'
