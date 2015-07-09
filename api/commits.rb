@@ -49,8 +49,25 @@ module API
         $db[:commits].find({:_id => params[:id]}).update_one({"$set" => {:applied => true}})
       end
 
+      post '/:id/reject', hidden: true do
+        validate_token
+        if @user["committer"] != true
+          error!("Cannot commit changes", 401)
+        end
+        commit = $db[:commits].find({:_id => params[:id]}).to_a.first
+        if commit[:applied]
+          return 201
+        end
+        if $db[:commits].find({:_id => params[:id]}).update_one({"$set" => {:applied => false, rejected: true}})
+          return 201
+        else
+          error!("Problem rejecting the commit", 500)
+        end
+
+      end
+
       get "/", hidden: true do
-        commits = $db[:commits].find({applied: false}).to_a
+        commits = $db[:commits].find({applied: false, rejected: false}).to_a
         present :data, commits, with: Entities::Commit
       end
 
