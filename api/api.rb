@@ -4,6 +4,7 @@ require 'grape-swagger'
 require 'grape_logging'
 require 'jwt'
 require 'nokogiri'
+require 'traceview'
 require_relative "../config/mongo"
 require_relative 'entities/jurisdiction'
 require_relative 'entities/jurisdiction_summary'
