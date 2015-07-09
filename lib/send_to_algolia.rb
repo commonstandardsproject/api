@@ -2,6 +2,7 @@ require 'pp'
 require 'active_support/core_ext/hash/slice'
 require_relative "../config/algolia"
 require_relative "../config/mongo"
+require_relative "../lib/standard_hierarchy"
 
 
 class SendToAlgolia
@@ -9,9 +10,8 @@ class SendToAlgolia
 
   def self.all_standard_sets
     $db[:standard_sets].find().batch_size(20).map{|set|
-      # @@index.add_objects(self.denormalize_standards(set))
       p "Denormalizing #{set["jurisdiction"]["title"]}: #{set["title"]}"
-      self.denormalize_standards(set)
+      p self.denormalize_standards(set)
     }.flatten.each_slice(10000){|standards|
       p "Importing #{standards.length}"
       @@index.add_objects(standards)
@@ -28,28 +28,11 @@ class SendToAlgolia
     standards = standardSet["standards"].values.sort_by{|s| s["position"]}.reverse
 
     standards.each_with_index.map{|standard, i|
-      last_standard = standard
-      ancestors = standards[i+1..-1].inject([]){ |acc, ss|
-
-        # If it's a root standard, we're done here and can break
-        if ss["depth"] == 0
-          acc.push(ss)
-          break acc
-
-        # If the standard is a level above the last standard we pushed onto the ancestor array,
-        # we add it to the ancestors array and set it to be the new last_standard
-        elsif ss["depth"] < last_standard["depth"]
-          last_standard = ss
-          next acc.push(ss)
-
-        # Otherwise, we'll just call next
-        else
-          next acc
-        end
-      }
+      ancestors = StandardHierarchy.find_ancestors(standards, standard, i)
       ancestor_ids = ancestors.map{|a| a["id"]}
       standard.merge({
         objectID:             standard["id"],
+        ancestorIds:          ancestor_ids,
         ancestorDescriptions: ancestors.map{|a| a["description"]},
         educationLevels:      standardSet["educationLevels"],
         subject:              standardSet["subject"],

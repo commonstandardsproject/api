@@ -2,6 +2,7 @@ require 'grape'
 require_relative '../config/mongo'
 require_relative 'entities/standard_set'
 require_relative '../importer/transformers/query_to_standard_set'
+require_relative '../lib/standard_hierarchy'
 
 module API
   class StandardSets < Grape::API
@@ -12,11 +13,13 @@ module API
       params do
         requires :id, type: String, desc: "ID", default: "49FCDFBD2CF04033A9C347BFA0584DF0_D2604890_grade-01"
       end
-
       get "/:id" do
         standard_set = $db[:standard_sets].find({
           :_id => params.id
         }).to_a.first
+
+        # Add the ancestor ids to the response. This a read only field
+        standard_set["standards"] = StandardHierarchy.add_ancestor_ids(standard_set["standards"])
 
         present :data, standard_set, with: Entities::StandardSet
       end
