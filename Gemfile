@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby "2.2.2"
 gem 'oj'
-gem 'mongo'
+gem 'mongo', '~>2.0.6'
 gem 'grape'
 gem 'rack-cors'
 gem 'shotgun'
