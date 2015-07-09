@@ -3,6 +3,7 @@ require 'grape'
 require 'grape-swagger'
 require 'grape_logging'
 require 'jwt'
+require 'nokogiri'
 require_relative "../config/mongo"
 require_relative 'entities/jurisdiction'
 require_relative 'entities/jurisdiction_summary'
@@ -59,7 +60,8 @@ module API
     before do
       key = headers["Api-Key"] || params["api-key"]
 
-      if request.path.include? "/api/swagger_doc"
+      p request.path
+      if request.path.include?("/api/swagger_doc") || request.path.include?("/api/sitemap.xml")
         next
       end
 
@@ -88,6 +90,28 @@ module API
     mount ::API::Jurisdictions
     mount ::API::StandardDocuments
     mount ::API::StandardSets
+
+
+    # This really shouldn't be in the API. However, due to how the frontend
+    # is currently set up (as an Ember-CLI app), we don't have access to the node server
+    # that's running underneath. I could fork Ember-CLI or fork the buildpack I'm using
+    # on heroku, but that's not worth the effort at the moment.
+
+    get '/sitemap.xml' do
+      builder = Nokogiri::XML::Builder.new do |xml|
+        xml.urlset("xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9") {
+          $db[:standard_sets].find().projection({_id: 1}).batch_size(1000).map{|doc|
+            xml.url{
+              xml.loc "http://beta.commonstandardsproject.com/search?ids=%5B\"#{doc["_id"]}\"%5D"
+            }
+          }
+        }
+      end
+
+      content_type "text/xml"
+      env['api.format'] = "xml"
+      builder.to_xml
+    end
 
 
     # =====================
