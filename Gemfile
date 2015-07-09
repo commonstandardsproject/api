@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.2"
+ruby '2.2.2'
 gem 'oj'
 gem 'mongo'
 gem 'grape'
@@ -18,7 +18,7 @@ gem 'algoliasearch'
 gem 'nokogiri'
 
 group :development do
-  gem "guard"
-  gem "guard-shotgun"
-
+  gem 'guard'
+  gem 'guard-shotgun'
+  gem 'foreman'
 end
