@@ -18,7 +18,6 @@ require_relative "standard_set_import"
 
 module API
   class API < Grape::API
-    use ::Skylight::Grape::Middleware
 
     logger.formatter = ::GrapeLogging::Formatters::Default.new
     use ::GrapeLogging::Middleware::RequestLogger, { logger: logger }
