@@ -3,8 +3,9 @@ require 'sinatra'
 require 'bundler/setup'
 require 'rubygems'
 require 'grape'
-require_relative "api/api"
 require 'rack/cors'
+require 'newrelic_rpm'
+require_relative "api/api"
 require_relative 'main'
 
 
