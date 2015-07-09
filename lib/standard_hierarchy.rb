@@ -18,6 +18,10 @@ class StandardHierarchy
 
 
   def self.find_ancestors(standards, standard, i)
+    # If it's a root standard, it doesn't have ancestors
+    if standard["depth"] == 0
+      return []
+    end
     last_standard = standard
     standards[i+1..-1].inject([]){ |acc, ss|
 
