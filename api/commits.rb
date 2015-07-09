@@ -67,7 +67,7 @@ module API
       end
 
       get "/", hidden: true do
-        commits = $db[:commits].find({applied: false, rejected: false}).to_a
+        commits = $db[:commits].find({applied: false, rejected: {:$ne => true}}).to_a
         present :data, commits, with: Entities::Commit
       end
 
