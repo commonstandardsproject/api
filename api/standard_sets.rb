@@ -9,7 +9,6 @@ module API
 
     namespace "/standard_sets", desc: "Standards grouped by grade level & subject" do
 
-
       desc "Fetch a standards set", entity: Entities::StandardSet
       params do
         requires :id, type: String, desc: "ID", default: "49FCDFBD2CF04033A9C347BFA0584DF0_D2604890_grade-01"
