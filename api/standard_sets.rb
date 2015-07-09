@@ -1,5 +1,4 @@
 require 'grape'
-require 'grape-skylight'
 require_relative '../config/mongo'
 require_relative 'entities/standard_set'
 require_relative '../importer/transformers/query_to_standard_set'
