@@ -60,3 +60,8 @@ There are a few tasks that must be completed to get running with a local copy of
 
 * Run `foreman s` to start the application on your local machine
 * Point your browser at `http://localhost:5000` and bask in the goodness of beautifully formatted standards
+
+## Contributing!
+
+Join the mailing list and we'll help you out: [https://groups.google.com/d/forum/common-standards-project](https://groups.google.com/d/forum/common-standards-project)
+
