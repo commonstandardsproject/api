@@ -17,6 +17,7 @@ gem 'grape-swagger'
 gem 'algoliasearch'
 gem 'nokogiri'
 gem 'newrelic_rpm'
+gem 'thor'
 
 group :development do
   gem 'guard'

@@ -154,7 +154,5 @@ DEPENDENCIES
   rack-cors
   shotgun
   sinatra
+  thor
   typhoeus
-
-BUNDLED WITH
-   1.10.5

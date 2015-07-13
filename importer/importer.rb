@@ -21,50 +21,63 @@ require_relative '../lib/send_to_algolia'
 #   `convert_docs` method in your left pane and view the method that it calls on the right
 
 
+class Importer
 
-def convert_docs(docs)
-  hydra = Typhoeus::Hydra.new(max_concurrency: 20)
+  def self.run(opts)
+    docs  = Oj.load(File.read('sources/asn_standard_documents_july-2.js'))
 
-  # Check that we have all the right titles
-  check_document_titles(docs)
-  docs = parse_doc_json(docs)
+    hydra = Typhoeus::Hydra.new(max_concurrency: 20)
 
-  previously_imported_docs = get_previously_imported_docs
+    # Check that we have all the right titles
+    check_document_titles(docs)
+    docs = parse_doc_json(docs)
 
-  docs.select{|doc|
-    # This makes sure we only get the documents we haven't already imported.
-    # Return true from this labmda if we want to fetch all the docs.
-    # Time.at(previously_imported_docs[doc[:id]].to_i) < Time.at(doc[:date_modified].to_i)
-    true
-  }.each.with_index{ |_doc, index|
+    previously_imported_docs = get_previously_imported_docs
 
-    # If we want to use the ASN urls, uncomment this line. I switched to using AWS urls to relieve load on ASN
-    # servers and increase thoroughput
-    # request = Typhoeus::Request.new(doc[:url] + "_full.json", followlocation: true)
-    request = Typhoeus::Request.new("http://s3.amazonaws.com/asnstaticd2l/data/rdf/" + _doc[:id].upcase + ".json", followlocation: true)
-    request.on_complete do |response|
-      begin
-        p "#{index + 1}. Converting: #{request.url}"
-        doc = ASNResourceParser.convert(Oj.load(response.body))
-        doc = set_retrieved(doc, request, _doc[:date_modified])
-        doc = save_standard_document(doc)
-        doc = generate_standard_sets(doc)
-        update_jurisdiction(doc)
-
-      rescue Exception => e
-        rescue_exception(e, doc)
+    docs.select{|doc|
+      # This makes sure we only get the documents we haven't already imported.
+      # Return true from this labmda if we want to fetch all the docs.
+      if opts[:only_new]
+        Time.at(previously_imported_docs[doc[:id]].to_i) < Time.at(doc[:date_modified].to_i)
+      else
+        true
       end
+    }.each.with_index{ |_doc, index|
+      # If we want to use the ASN urls, uncomment this line. I switched to using AWS urls to relieve load on ASN
+      # servers and increase thoroughput
+      # request = Typhoeus::Request.new(doc[:url] + "_full.json", followlocation: true)
+      request = Typhoeus::Request.new("http://s3.amazonaws.com/asnstaticd2l/data/rdf/" + _doc[:id].upcase + ".json", followlocation: true)
+      request.on_complete do |response|
+        begin
+          p "#{index + 1}. Converting: #{request.url}"
+          doc = ASNResourceParser.convert(Oj.load(response.body))
+          doc = set_retrieved(doc, request, _doc[:date_modified])
+          doc = save_standard_document(doc)
+          doc = generate_standard_sets(doc)
+          update_jurisdiction(doc)
+
+        rescue Exception => e
+          rescue_exception(e, doc)
+        end
+      end
+      hydra.queue(request)
+    }
+
+    hydra.run
+
+    if opts[:cache_standards]
+      CachedStandards.all
     end
-    hydra.queue(request)
-  }
 
-  hydra.run
+    if opts[:send_to_algolia]
+      SendToAlgolia.all_standard_sets
+    end
 
-  CachedStandards.all
-  SendToAlgolia.all_standard_sets
+  end
+
+
 
 end
-
 
 def check_document_titles(docs)
   -> {
@@ -165,8 +178,3 @@ def rescue_exception(e, doc)
   puts e.backtrace.inspect
   pp doc
 end
-
-
-
-docs  = Oj.load(File.read('sources/asn_standard_documents_july-2.js'))
-convert_docs(docs)
