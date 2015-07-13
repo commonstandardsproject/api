@@ -46,3 +46,33 @@
 [07/13/15 10:44:42 -0400 teachnow.local (74645)] INFO : Installing HTTPClient instrumentation
 [07/13/15 10:44:43 -0400 teachnow.local (74645)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1038491/applications/9643348
 [07/13/15 10:45:14 -0400 teachnow.local (74645)] INFO : Starting Agent shutdown
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : Starting the New Relic agent in "development" environment.
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : Reading configuration from config/newrelic.yml (/Users/scottmessinger/code/commoncurriculum/common-standards-api)
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : Environment: development
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : No known dispatcher detected.
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : Application: Common Standards Project API (Development)
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : Installing New Relic supported Grape instrumentation
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : Installing Net instrumentation
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : Installing Sinatra instrumentation
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : Installing deferred Rack instrumentation
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : Installing Rack::Builder middleware instrumentation
+[07/13/15 11:48:37 -0400 teachnow.local (75514)] INFO : Finished instrumentation
+[07/13/15 11:48:38 -0400 teachnow.local (75514)] INFO : Doing deferred dependency-detection before Rack startup
+[07/13/15 11:48:38 -0400 teachnow.local (75514)] INFO : Installing HTTPClient instrumentation
+[07/13/15 11:48:39 -0400 teachnow.local (75514)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1038491/applications/9643348
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : Starting the New Relic agent in "development" environment.
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : Reading configuration from config/newrelic.yml (/Users/scottmessinger/code/commoncurriculum/common-standards-api)
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : Environment: development
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : No known dispatcher detected.
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : Application: Common Standards Project API (Development)
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : Installing New Relic supported Grape instrumentation
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : Installing Net instrumentation
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : Installing Sinatra instrumentation
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : Installing deferred Rack instrumentation
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : Installing Rack::Builder middleware instrumentation
+[07/13/15 11:49:03 -0400 teachnow.local (75535)] INFO : Finished instrumentation
+[07/13/15 11:49:04 -0400 teachnow.local (75535)] INFO : Doing deferred dependency-detection before Rack startup
+[07/13/15 11:49:04 -0400 teachnow.local (75535)] INFO : Installing HTTPClient instrumentation
+[07/13/15 11:49:04 -0400 teachnow.local (75535)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1038491/applications/9643348
