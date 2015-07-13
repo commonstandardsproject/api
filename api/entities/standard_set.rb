@@ -7,9 +7,31 @@ module API
       expose :_id, as: :id
       expose :title, documentation: {desc: "Title of the set"}
       expose :subject, documentation: {desc: "The subject"}
-      expose :educationLevels, documentation: {desc: "An array of education levels", is_array: true}
+      expose :educationLevels, documentation: {desc: "An array of education levels", values: [
+        "Pre-K",
+        "K",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "VocationalTraining",
+        "ProfessionalEducation-Development",
+        "Graduate",
+        "HigherEducation",
+        "Undergraduate-UpperDivision",
+        "Undergraduate-LowerDivision",
+        "AdultEducation",
+        "LifeLongLearning",
+      ]}
       expose :license
-      expose :rightsHolder, documentation: {desc: "The holder of the copyright"}
       expose :document
       expose :jurisdiction
 

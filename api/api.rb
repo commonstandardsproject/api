@@ -23,6 +23,7 @@ module API
 
     format :json
     prefix :api
+    version 'v1', using: :path
 
 
     # ==================
@@ -61,7 +62,7 @@ module API
       key = headers["Api-Key"] || params["api-key"]
 
       p request.path
-      if request.path.include?("/api/swagger_doc") || request.path.include?("/api/sitemap.xml")
+      if request.path.include?("swagger_doc") || request.path.include?("/api/v1/sitemap.xml")
         next
       end
 
