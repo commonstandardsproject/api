@@ -1,3 +1,6 @@
+## What is this? 
+API for the Common Standards Project, a database of academic standards from all 50 states, organizations, districts, and school. Check out a live API at [http://api.commonstandardsproject.com/](http://api.commonstandardsproject.com/) and read the documentation at [http://commonstandardsproject.com](http://commonstandardsproject.com)
+
 ## Why?
 
 State and national standards connect to nearly every part K-12 education. In order for modern K12 edtech companies to use these standards in their apps, they need JSON formatted, well organized data.
