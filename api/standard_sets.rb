@@ -3,6 +3,7 @@ require_relative '../config/mongo'
 require_relative 'entities/standard_set'
 require_relative '../importer/transformers/query_to_standard_set'
 require_relative '../lib/standard_hierarchy'
+require_relative '../lib/create_standard_set'
 
 module API
   class StandardSets < Grape::API
@@ -20,8 +21,23 @@ module API
 
         # Add the ancestor ids to the response. This a read only field
         standard_set["standards"] = StandardHierarchy.add_ancestor_ids(standard_set["standards"])
+        standard_set["educationLevels"] ||= []
 
         present :data, standard_set, with: Entities::StandardSet
+      end
+
+
+      params do
+        requires :jurisdiction_id
+        requires :subject
+        requires :title
+        requires :committerName
+        requires :committerEmail
+      end
+      post  do
+        validate_token
+        new_set = CreateStandardSet.create(params)
+        present :data, new_set, with: Entities::StandardSet
       end
 
 

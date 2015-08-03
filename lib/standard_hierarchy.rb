@@ -1,6 +1,7 @@
 class StandardHierarchy
 
   def self.add_ancestor_ids(standardsHash)
+    return {} unless standardsHash
     standards = standardsHash.values.sort_by{|s| s["position"]}.reverse
 
     standards
