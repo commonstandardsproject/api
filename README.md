@@ -1,3 +1,6 @@
+## What is this? 
+API for the Common Standards Project, a database of academic standards from all 50 states, organizations, districts, and school. Check out a live API at [http://api.commonstandardsproject.com/](http://api.commonstandardsproject.com/) and read the documentation at [http://commonstandardsproject.com](http://commonstandardsproject.com)
+
 ## Why?
 
 State and national standards connect to nearly every part K-12 education. In order for modern K12 edtech companies to use these standards in their apps, they need JSON formatted, well organized data.
@@ -57,8 +60,6 @@ There are a few tasks that must be completed to get running with a local copy of
 **Viewing the API docs/using the API**
 * Run `foreman start dev` to start the application on your local machine. Foreman will automatically use the variables in your `.env` file.
 * Point your browser at `http://localhost:9393` and bask in the goodness of beautifully formatted standards
-* Run `foreman s` to start the application on your local machine
-* Point your browser at `http://localhost:5000` and bask in the goodness of beautifully formatted standards
 
 ## Contributing!
 
