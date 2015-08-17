@@ -8,7 +8,7 @@ require 'newrelic_rpm'
 require_relative "api/api"
 require_relative 'main'
 
-
+use Skylight::Middleware
 use Rack::Deflater
 use Rack::Cors do
   allow do
