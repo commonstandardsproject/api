@@ -41,13 +41,15 @@ class UpdateStandardSet
 
     delta["$inc"] = delta["$inc"] || {}
     delta["$inc"]["version"] = 1
-    doc = $db[:standard_sets].find({_id: id}).update_one(delta, return_document: :after)
+    doc = $db[:standard_sets].find({_id: id}).find_one_and_update(delta, return_document: :after)
 
     # Cache standards
     CachedStandards.one(doc)
 
     # Send to algolia
-    SendToAlgolia.standard_set(doc)
+    unless ENV["ENVIRONMENT"] == "development"
+      SendToAlgolia.standard_set(doc)
+    end
   end
 
   def self.save_version(old_version)
