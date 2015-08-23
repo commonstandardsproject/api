@@ -20,6 +20,7 @@ class CachedStandards
 
   def self.generate(standardSet)
     p "Caching #{standardSet["jurisdiction"]["title"]} #{standardSet["subject"]} #{standardSet["title"]}"
+    return if standardSet["standards"].nil? || standardSet["standards"].empty?
     standardSet["standards"].values.map{|s|
       {
         :replace_one => {
