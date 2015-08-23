@@ -4,3 +4,5 @@
 *.log
 
 *.log
+
+log/newrelic_agent.log

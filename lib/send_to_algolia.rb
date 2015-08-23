@@ -25,7 +25,7 @@ class SendToAlgolia
   def self.denormalize_standards(standardSet)
     # Reversed because (for whatever reason), I find it easier to think about
     # this algorithm if I move from up (instead of down) a tree
-    standards = standardSet["standards"].values.sort_by{|s| s["position"]}.reverse
+    standards = standardSet["standards"].values.reject{|s| s == ""}.sort_by{|s| s["position"].to_i}.reverse
 
     standards.each_with_index.map{|standard, i|
       ancestors = StandardHierarchy.find_ancestors(standards, standard, i)
