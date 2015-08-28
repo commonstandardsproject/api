@@ -36,7 +36,7 @@ module API
         requires :committerName
         requires :committerEmail
       end
-      post do
+      post hidden: true do
         validate_token
           new_set = CreateStandardSet.create(params)
         present :data, new_set, with: Entities::StandardSet
