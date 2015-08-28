@@ -18,6 +18,7 @@ module API
           commitSummary:     params[:data]["commitSummary"],
           standardSetId:     params[:data]["standardSetId"],
           standardSetTitle:  params[:data]["standardSetTitle"],
+          standardSetSubject:  params[:data]["standardSetSubject"],
           jurisdictionTitle: params[:data]["jurisdictionTitle"],
           jurisdictionId:    params[:data]["jurisdictionId"],
           ops:               params[:data]["ops"],
