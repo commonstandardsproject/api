@@ -14,8 +14,8 @@ class CreateStandardSet
       :subject => params[:subject],
       :educationLevels => [],
       :license => {
-        :title        => "CC BY 3.0 US",
-        :URL          => "http://creativecommons.org/licenses/by/3.0/us/",
+        :title        => "CC BY 4.0 US",
+        :URL          => "http://creativecommons.org/licenses/by/4.0/us/",
         :rightsHolder => "Common Curriculum, Inc."
       },
       :status => "in-review",
