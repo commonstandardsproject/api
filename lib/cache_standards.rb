@@ -10,6 +10,7 @@ class CachedStandards
     }
     Parallel.map_with_index(sets){|set, index|
       p "Inserting set: #{index+1}"
+      next if set.nil? || set.empty?
       $db[:cached_standards].bulk_write(set, :ordered => false)
     }
   end

@@ -12,7 +12,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2500933" => "Health Education",                     # 2009 Alabama Course of Study: Health Education  https://docs.alsde.edu/documents/54/HEALTH%202009%20---FINAL.pdf
     "D2504960" => "Mathematics",                          # 2013 Alabama Course of Study: Mathematics  http://alex.state.al.us/staticfiles/2013_Alabama_Mathematics_Course_of_Study.pdf
     "D2500761" => "Physical Education",                   # 2009 Alabama Course of Study: Physical Education  https://docs.alsde.edu/documents/54/1%202009%20Physical%20Education%20Course%20of%20Study.pdf.pdf
-    "D1000255" => "Science",                              # 2005 Alabama Course of Study: Science  
+    "D1000255" => "Science",                              # 2005 Alabama Course of Study: Science
     "D2575544" => "Social Studies",                       # 2013 Alabama Course of Study: Social Studies  http://alex.state.al.us/staticfiles/2010_AL_Social_Studies_Course_of_Study.pdf
     "D2504422" => "Technology Education",                 # 2009 Alabama Course of Study: Technology Education  https://docs.alsde.edu/documents/54/2008%20Technology%20Education%20Course%20of%20Study.pdf
   },
@@ -86,6 +86,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2528989" => "Advertising and Public Relations",     # 2009 Arizona Technical Standards: Advertising and Public Relations  http://www.azed.gov/career-technical-education/files/2011/11/technical-standards-advertising-and-public-relations-52180030.pdf
     "D2529099" => "Aircraft Mechanics",                   # 2012 Arizona Technical Standards: Aircraft Mechanics  http://www.azed.gov/career-technical-education/files/2013/10/technical-standards-aircraft-mechanics-47060050.pdf
     "D1000308" => "Arts: Theater (2006)",                 # 2006 Arizona Theatre Standards  http://www.azed.gov/standards-practices/files/2011/09/theatre.pdf
+    "D2662817"=>"World and Native Languages",
   },
   # ===================
   # Arkansas
@@ -300,7 +301,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2585371" => "Recreational Sports and Activities",   # 2011 Recreational Sports and Activities Grades 9-12  http://www.arkansased.org/public/userfiles/Learning_Services/Curriculum%20and%20Instruction/Frameworks/PE%20Health/Recreational_Sports_and_Activities.pdf
     "D2648173" => "Retailing",                            # 2007 Retailing  http://ace.arkansas.gov/cte/informationForms/curriculumFrameworks/Documents/Frameworks/Business/retailing.pdf
     "D2648174" => "Salesmanship",                         # 2006 Salesmanship  http://ace.arkansas.gov/cte/informationForms/curriculumFrameworks/Documents/Frameworks/Business/salesmanship2006.pdf
-    "D100025D" => "Science",                              # 2005 Science Curriculum Framework  
+    "D100025D" => "Science",                              # 2005 Science Curriculum Framework
     "D2648175" => "Small Business Operations",            # 2010 Small Business Operations  http://ace.arkansas.gov/cte/informationForms/curriculumFrameworks/Documents/Frameworks/Business/Small%20Business%20Operations4-11-12.pdf
     "D2628068" => "Small Engine Technology",              # 2002 Small Engine Technology  http://ace.arkansas.gov/cte/informationForms/curriculumFrameworks/Documents/Frameworks/Agricultural/smallengine9-2004.pdf
     "D2610643" => "Social Studies",                       # 2014 Social Studies Curriculum Framework (Grade 7)  http://www.arkansased.org/public/userfiles/Learning_Services/Curriculum%20and%20Instruction/Frameworks/Social_Studies/Grade_7_Social_Studies.pdf
@@ -338,6 +339,78 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2624876" => "Workforce Technology",                 # 2011 Workforce Technology  http://ace.arkansas.gov/cte/informationForms/curriculumFrameworks/Documents/Frameworks/Workforce%20Technology%20frameworks%203-23-11.pdf
     "D2610745" => "World Geography",                      # 2014 World Geography Curriculum Framework  http://www.arkansased.org/public/userfiles/Learning_Services/Curriculum%20and%20Instruction/Frameworks/Social_Studies/World_Geography.pdf
     "D2610746" => "World History Since 1450",             # 2014 World History Since 1450 Curriculum Framework  http://www.arkansased.org/public/userfiles/Learning_Services/Curriculum%20and%20Instruction/Frameworks/Social_Studies/World_History_Since_1450.pdf
+    "D2650389"=>"Web Technologies",
+    "D2657545"=>"Introduction to Technology and Engineering",
+    "D2659718"=>"Culinary Arts I",
+    "D2650390"=>"Word Processing I",
+    "D2657520"=>"Animal Science I",
+    "D2662499"=>"Foundations of Law Enforcement",
+    "D2657525"=>"Plant Science II",
+    "D2663634"=>"Diesel Electrical Systems",
+    "D2659719"=>"Culinary Arts II",
+    "D2661016"=>"Mechanical Plumbing and Electrical",
+    "D2661017"=>"Plumbing",
+    "D2659720"=>"Carpentry",
+    "D2657536"=>"Input Technologies",
+    "D2657533"=>"Medical Terminology",
+    "D2657523"=>"Food Science Technology",
+    "D2657521"=>"Animal Science II",
+    "D2657526"=>"Poultry Science",
+    "D2663633"=>"Diesel Brakes",
+    "D2663632"=>"Collision Repair - Structural Analysis/Damage Repair",
+    "D2663415"=>"Collision Repair - Painting & Refinishing",
+    "D2663414"=>"Collision Repair - Nonstructural Analysis/Repair",
+    "D2662822"=>"Aviation",
+    "D2662821"=>"Automotive Suspension and Steering",
+    "D2662820"=>"Automotive Engine Performance",
+    "D2662818"=>"Automotive Brakes",
+    "D2662816"=>"Advanced Shielded Metal Arc Welding",
+    "D2662815"=>"Shielded Metal Arc Welding",
+    "D2662814"=>"Gas Tungsten Arc Welding",
+    "D2662813"=>"Gas Metal Arc Welding",
+    "D2662812"=>"Welding Technology",
+    "D2662811"=>"Power Equipment Technology",
+    "D2662810"=>"Machine Tool Technology",
+    "D2662809"=>"Industrial Equipment Maintenance",
+    "D2662808"=>"Pre-Mechatronics Intermediate",
+    "D2662807"=>"Pre-Mechatronics",
+    "D2662500"=>"Introduction to Criminal Justice",
+    "D2662498"=>"Criminal Law",
+    "D2662497"=>"Crime Scene Investigation",
+    "D2661015"=>"Furniture Manufacturing",
+    "D2659721"=>"Introductory Craft Skills",
+    "D2659717"=>"Introduction to Culinary Arts",
+    "D2655580"=>"Arkansas Science Standards (5-8)",
+    "D2655579"=>"Arkansas Science Standards (K-4)",
+    "D2657524"=>"Plant Science I",
+    "D2657522"=>"Equine Science",
+    "D2657519"=>"Survey of Agriculture Systems",
+    "D2657541"=>"Technology Design and Applications",
+    "D2657540"=>"Technology Communications",
+    "D2657539"=>"Investments and Securities",
+    "D2657538"=>"Introduction to Business Communications and Technology",
+    "D2657537"=>"Insurance and Risk Management",
+    "D2657534"=>"Information and Communications Technology",
+    "D2657532"=>"Medical Procedures Extended",
+    "D2657531"=>"Introduction to Medical Professions Extended",
+    "D2657530"=>"Human Behavior and Disorders",
+    "D2657529"=>"Foundations of Sports Medicine",
+    "D2657528"=>"Abnormal Psychology",
+    "D2657546"=>"Fundamentals of Technology and Engineering",
+    "D2657544"=> "Design Applications in Engineering and Technology Education II",
+    "D2657543"=>"Design Applications in Engineering and Technology Education I",
+    "D2657542"=>"Computer Engineering",
+    "D2657516"=>"Leadership and Service Learning (Grades 7-8)",
+    "D2643143"=>"Banking and Finance Principles",
+    "D2657515"=>"Financial Literacy",
+    "D2657517"=>"Leadership and Service Learning (Grades 9-12)",
+    "D2657518"=>"Introduction to Media Communications",
+    "D2655643"=>"Personal Fitness for Life",
+    "D2650391"=>"Word Processing II",
+    "D2650388"=>"Web Design and Multimedia Productions",
+    "D2650387"=>"Web Design II",
+    "D2650386"=>"Web Design I",
+    "D2650385"=>"Travel Destinations",
   },
   # ===================
   # California
@@ -359,6 +432,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2544695" => "CTE: Public Services",                 # 2013 CTE Model Curriculum Standards: Public Services  http://www.cde.ca.gov/ci/ct/sf/documents/pubservices.pdf
     "D2545823" => "CTE: Transportation",                  # 2013 CTE Model Curriculum Standards: Transportation  http://www.cde.ca.gov/ci/ct/sf/documents/transportation.pdf
     "D2515047" => "English Language Arts & Literacy",     # 2010 California Common Core State Standards: English Language Arts and Literacy  http://www.cde.ca.gov/be/st/ss/documents/finalelaccssstandards.pdf
+    "D2659716" => "English Language Development",
     "D2513639" => "Mathematics",                          # 2010 California Common Core State Standards: Mathematics  http://www.cde.ca.gov/be/st/ss/documents/ccssmathstandardaug2013.pdf
     "D2535156" => "Career Ready Practice",                # 2013 California Standards for Career Ready Practice  http://www.cde.ca.gov/ci/ct/sf/documents/ctestdfrontpages.pdf
     "D2403043" => "Health",                               # 2008 Health Education Content Standards for California Public Schools, Kindergarten Through Grade Twelve  http://www.cde.ca.gov/be/st/ss/documents/healthstandmar08.pdf
@@ -418,7 +492,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10002DE" => "Music",                                # 2007 Delaware Music Content Standards and Grade Level Expectations  http://www.doe.k12.de.us/infosuites/staff/ci/content_areas/files/vpa/MusicGLEPLE092007.pdf
     "D2509533" => "Personal Finance",                     # 2010 Delaware Personal Finance Standards  http://www.doe.k12.de.us/infosuites/staff/ci/content_areas/files/ss/Personal_Finance_9-12.doc
     "D2509318" => "Physical Education",                   # 2008 Delaware Physical Education Standards  http://www.doe.k12.de.us/infosuites/staff/ci/content_areas/files/pe/GradeClusterExpectations-Final_6-24-08.pdf
-    "D100025F" => "Science Content Standards",            # 2006 Delaware Science Content Standards  
+    "D100025F" => "Science Content Standards",            # 2006 Delaware Science Content Standards
     "D2507858" => "Science Grade Level Exepectations",    # 2006 Delaware Science Grade Level Expectations  http://www.doe.k12.de.us/infosuites/staff/ci/content_areas/science.shtml
     "D2589285" => "Technology Education",                 # 2007 Delaware Technology Education Standards  http://www.doe.k12.de.us/infosuites/staff/ci/content_areas/files/tech/TechnologyBinder8-30.pdf
     "D10002DF" => "Theatre",                              # 2007 Delaware Theatre Content Standards and Grade Level Expectations  http://www.doe.k12.de.us/infosuites/staff/ci/content_areas/files/vpa/TheatreGLEPLE092007.pdf
@@ -434,7 +508,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D1000360" => "Arts",                                 # 2008 District of Columbia Arts Education Learning Standards  http://dcps.dc.gov/DCPS/Files/downloads/TEACHING%20&%20LEARNING/Learning%20Standards%202009/DCPS-ARTS-STANDARDS.pdf
     "D2416513" => "Health",                               # 2007 District of Columbia Health Education Standards  http://dcps.dc.gov/DCPS/Files/downloads/TEACHING%20&%20LEARNING/Learning%20Standards%202009/DCPS-HEALTH910-STANDARDS.pdf
     "D2416873" => "Physical Education",                   # 2007 District of Columbia Physical Education Standards  http://dcps.dc.gov/DCPS/Files/downloads/TEACHING%20&%20LEARNING/Learning%20Standards%202009/DCPS-PHYSICALED-STANDARDS.pdf
-    "D100035E" => "Science",                              # 2006 District of Columbia Science Standards  
+    "D100035E" => "Science",                              # 2006 District of Columbia Science Standards
     "D100035F" => "Social Studies",                       # 2006 District of Columbia Social Studies Standards  http://osse.dc.gov/sites/default/files/dc/sites/osse/publication/attachments/DCPS-horiz-soc_studies.pdf
     "D2601214" => "Science",                              # 2013 Next Generation Science Standards  http://www.nextgenscience.org/search-standards-dci
   },
@@ -487,20 +561,20 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2412092" => "Multivariable Calculus",               # 2010 Georgia Multivariable Calculus Standards  https://www.georgiastandards.org/Common-Core/Common%20Core%20Frameworks/CCGPS_Math_9-12_MultivariableCalculus_Standards.pdf
     "D10003C6" => "Astronomy",                            # 2009 Georgia Performance Standards - Astronomy Curriculum  https://www.georgiastandards.org/standards/Georgia%20Performance%20Standards/Astronomy.pdf
     "D10003C7" => "Botany",                               # 2009 Georgia Performance Standards - Botany Curriculum  https://www.georgiastandards.org/standards/Georgia%20Performance%20Standards/Botany.pdf
-    "D10003C8" => "Ecology",                              # 2009 Georgia Performance Standards - Ecology Curriculum  
-    "D10003C9" => "Entomology",                           # 2009 Georgia Performance Standards - Entomology Curriculum  
-    "D10003CA" => "Forensic Science",                     # 2009 Georgia Performance Standards - Forensic Science Curriculum  
-    "D10003CB" => "Geology",                              # 2009 Georgia Performance Standards - Geology Curriculum  
+    "D10003C8" => "Ecology",                              # 2009 Georgia Performance Standards - Ecology Curriculum
+    "D10003C9" => "Entomology",                           # 2009 Georgia Performance Standards - Entomology Curriculum
+    "D10003CA" => "Forensic Science",                     # 2009 Georgia Performance Standards - Forensic Science Curriculum
+    "D10003CB" => "Geology",                              # 2009 Georgia Performance Standards - Geology Curriculum
     "D2617873" => "Guitar",                               # 2010 Georgia Performance Standards - Guitar  https://www.georgiastandards.org/standards/Georgia%20Performance%20Standards/GPS%20Guitar%20-%208-23-10%20doc.pdf
-    "D10003CC" => "Meteorology",                          # 2009 Georgia Performance Standards - Meteorology Curriculum  
-    "D10003CD" => "Microbiology",                         # 2009 Georgia Performance Standards - Microbiology Curriculum  
+    "D10003CC" => "Meteorology",                          # 2009 Georgia Performance Standards - Meteorology Curriculum
+    "D10003CD" => "Microbiology",                         # 2009 Georgia Performance Standards - Microbiology Curriculum
     "D2618571" => "Music Appreciation",                   # 2010 Georgia Performance Standards - Music Appreciation  https://www.georgiastandards.org/standards/Georgia%20Performance%20Standards/GPS%20Music%20Appreciation%206-12%20%208-23-10.pdf
     "D2618572" => "Music Technology",                     # 2010 Georgia Performance Standards - Music Technology  https://www.georgiastandards.org/standards/Georgia%20Performance%20Standards/GPS%20Music%20Technology%206-8%20%208-23-10.pdf
-    "D10003CE" => "Oceanography",                         # 2009 Georgia Performance Standards - Oceanography Curriculum  
+    "D10003CE" => "Oceanography",                         # 2009 Georgia Performance Standards - Oceanography Curriculum
     "D2617874" => "Piano",                                # 2010 Georgia Performance Standards - Piano  https://www.georgiastandards.org/standards/Georgia%20Performance%20Standards/GPS%20Piano%208-23-10.pdf
     "D10003AC" => "Psychology",                           # 2008 Georgia Performance Standards - Psychology  https://www.georgiastandards.org/standards/Georgia%20Performance%20Standards/Psychology.pdf
     "D10003AD" => "Sociology",                            # 2008 Georgia Performance Standards - Sociology Standards  https://www.georgiastandards.org/standards/Georgia%20Performance%20Standards/Sociology.pdf
-    "D10003CF" => "Zoology",                              # 2009 Georgia Performance Standards - Zoology Curriculum  
+    "D10003CF" => "Zoology",                              # 2009 Georgia Performance Standards - Zoology Curriculum
     "D10003E5" => "Fine Arts - Dance",                    # 2009 Georgia Performance Standards Fine Arts – Dance Education  https://www.georgiastandards.org/standards/GPS%20Support%20Docs/Fine_Arts_Dance_GPS_Final_2-11-2010.pdf
     "D10003E8" => "Fine Arts - Music",                    # 2009 Georgia Performance Standards Fine Arts – Music Education  https://www.georgiastandards.org/standards/GPS%20Support%20Docs/Fine-Arts-Music-GPS.pdf
     "D10003E6" => "Fine Arts - Theatre Arts",             # 2009 Georgia Performance Standards Fine Arts – Theatre Arts Education  https://www.georgiastandards.org/standards/GPS%20Support%20Docs/Fine_Arts_Theatre_GPS_Final_2-11-2010.pdf
@@ -510,7 +584,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2529774" => "Social Studies",                       # 2012 Georgia Performance Standards for Social Studies - Grade 6  https://www.georgiastandards.org/Standards/Georgia%20Performance%20Standards/Gr6-Social-Studies-Standards.pdf
     "D2529919" => "Social Studies",                       # 2012 Georgia Performance Standards for Social Studies - Grade 7  https://www.georgiastandards.org/Standards/Georgia%20Performance%20Standards/Gr7-Social-Studies-Standards.pdf
     "D2576605" => "Social Studies",                       # 2012 Georgia Performance Standards for Social Studies - Grade 8  https://www.georgiastandards.org/Standards/Georgia%20Performance%20Standards/Gr8-Social-Studies-Standard.pdf
-    "D100033D" => "Science",                              # 2006 Georgia Science Performance Standards  
+    "D100033D" => "Science",                              # 2006 Georgia Science Performance Standards
     "D2575300" => "Statistical Reasoning",                # 2014 Georgia Statistical Reasoning Standards  https://www.georgiastandards.org/Common-Core/Common%20Core%20Frameworks/CCGPS-Math-9-12-Statistical-Reasoning.pdf
     "D2633452" => "Mathematics - Accelerated Algebra I/Geometry A", # 2015 Mathematics Georgia Standards of Excellence - Accelerated Algebra I/Geometry A  https://www.georgiastandards.org/Common-Core/Documents/Accelerated-Algebra-I-Geometry-A-Standards.pdf
     "D2650383" => "Accelerated Geometry B / Algebra II",  # 2015 Mathematics Georgia Standards of Excellence - Accelerated Geometry B / Algebra II  https://www.georgiastandards.org/Georgia-Standards/Frameworks/Acc-Geometry-B-Algebra-II-Standards.pdf
@@ -530,7 +604,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2623548" => "Mathematics",                          # 2015 Mathematics Georgia Standards of Excellence - Grade 8  https://www.georgiastandards.org/Common-Core/Documents/Grade-6-8-Mathematics-Standards.pdf
     "D2623540" => "Mathematics",                          # 2015 Mathematics Georgia Standards of Excellence - Kindergarten  https://www.georgiastandards.org/Common-Core/Documents/Grade-K-5-Mathematics-Standards.pdf
     "D2635187" => "Mathematics - Standards for Mathematical Practice",  # 2015 Mathematics Georgia Standards of Excellence - Standards for Mathematical Practice  https://www.georgiastandards.org/Common-Core/Pages/Math.aspx
-    "D1000299" => "Social Studies",                       # 2008 Performance Standards for Social Studies  
+    "D1000299" => "Social Studies",                       # 2008 Performance Standards for Social Studies
+    "D2651130" => "Mathematics - Accelerated Pre-Calculus",
+    "D2652125" => "Mathematics - Pre-Calculus",
+    "D2652124" => "Mathematics - Accelerated Analytic Geometry B / Advanced Algebra",
+    "D2652123" => "Mathematics - Accelerated Coordinate Algebra / Analytic Geometry A"
   },
   # ===================
   # Hawaii
@@ -670,6 +748,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2588279" => "Technology Literacy",                  # 2010 Iowa Core 21st Century Skills - Technology Literacy  https://www.educateiowa.gov/sites/files/ed/documents/K-12_21stCentSkills_0.pdf
     "D2542213" => "Literacy",                             # 2011 Iowa Core Literacy  https://www.educateiowa.gov/sites/files/ed/documents/K-12_Literacy.pdf
     "D2539928" => "Mathematics",                          # 2010 Iowa Core Mathematics  https://www.educateiowa.gov/sites/files/ed/documents/K-12_Mathematics_0.pdf
+    "D2667443" => "Next Generation Science Standards",
     "D10003E4" => "Science",                              # 2009 Iowa Core Science  https://www.educateiowa.gov/sites/files/ed/documents/K-12_Science_0.pdf
     "D2527582" => "Social Studies",                       # 2010 Iowa Core Social Studies  https://www.educateiowa.gov/sites/files/ed/documents/K-12_SocialStudies_0.doc
   },
@@ -694,6 +773,43 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D100031E" => "Theatre",                              # 2004 Kansas Model Curricular Standards for Theatre  http://www.ksde.org/Portals/0/CSAS/Content%20Area%20%28F-L%29/Fine%20Arts%20%28Dance,%20Theater,%20Music,%20Visual%20Arts%29/dramastd.pdf
     "D100031F" => "Visual Arts",                          # 2007 Kansas Model Curricular Standards for Visual Arts  http://www.ksde.org/Portals/0/CSAS/Content%20Area%20%28F-L%29/Fine%20Arts%20%28Dance,%20Theater,%20Music,%20Visual%20Arts%29/visualarts061407.pdf
     "D2567600" => "Physical Education",                   # 2005 Kansas Model Curriculum Standards for Physical Education  http://www.kshealthykids.org/HKS_Docs/Standards/PEStandards.pdf
+    "D2652554"=>"Consumer and Personal Finance A",
+    "D2654313"=>"Consumer and Personal Finance B",
+    "D2650372"=>"Project Management and Resource Scheduling",
+    "D2649106"=>"Computer Applications",
+    "D2650382"=>"Commercial Graphic Design",
+    "D2650381"=>"Graphic Design",
+    "D2650371"=>"Media Technology\u2013Workplace Experience",
+    "D2653287"=>"Early Childhood Applications",
+    "D2652551"=>"Foundations in Early Childhood Education",
+    "D2652550"=>"Orientation in Early Childhood Education",
+    "D2653283"=>"Family Studies B",
+    "D2652555"=>"Family Studies A",
+    "D2654262"=>"Nutrition and Wellness B",
+    "D2654255"=>"Nutrition and Wellness A",
+    "D2652553"=>"Entrepreneurship",
+    "D2652552"=>"Introduction to Human Services",
+    "D2650374"=>"Marketing",
+    "D2650373"=>"Business Essentials",
+    "D2649876"=>"Interior and Textile Merchandising",
+    "D2649875"=>"Trends in Interior and Textile Design",
+    "D2649874"=>"Essentials of Interior and Textile Design",
+    "D2649872"=>"Principles of Illustration",
+    "D2649107"=>"Introduction to Family and Consumer Sciences",
+    "D2652549"=>"Human Growth and Development B",
+    "D2652548"=>"Human Growth and Development A",
+    "D2649879"=>"Career and Community Connections",
+    "D2649878"=>"Interior and Textile Design Studio",
+    "D2650376"=>"Digital Media Design and Production",
+    "D2650375"=>"Video Production",
+    "D2649877"=>"Graphic Design Fundamentals",
+    "D2649873"=>"Photo Imaging",
+    "D2649105"=>"Introduction to Drawing",
+    "D2649104"=>"Career and Life Planning",
+    "D2650380"=>"Audio/Video Production Fundamentals",
+    "D2650379"=>"Media and Public Relations",
+    "D2650378"=>"Digital Media Technology",
+    "D2650377"=>"21st Century Journalism"
   },
   # ===================
   # Kentucky
@@ -761,7 +877,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2448583" => "Theater",                              # 2008 Maryland State Curriculum - Theatre  http://mdk12.org/share/vsc/vsc_theatre_grpk8.pdf
     "D2452746" => "Visual Arts",                          # 2008 Maryland State Curriculum - Visual Arts  http://mdk12.org/share/vsc/vsc_visual_arts_grpk8.pdf
     "D2599722" => "Next Generation Science Standards",    # 2013 Next Generation Science Standards  http://mdk12.org/instruction/curriculum/science/index.html
-    "D10002D0" => "Social Studies",                       # 2006 Voluntary State Curriculum - Social Studies  
+    "D10002D0" => "Social Studies",                       # 2006 Voluntary State Curriculum - Social Studies
   },
   # ===================
   # Massachusetts
@@ -783,7 +899,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D1000361" => "Biology",                              # 2006 Biology High School Content Expectations  http://www.michigan.gov/documents/BIOMMC_168213_7.pdf
     "D1000362" => "Chemistry",                            # 2006 Chemistry High School Content Expectations  http://www.michigan.gov/documents/CHEM_HSCE_168205_7.pdf
     "D1000363" => "Earth Science",                        # 2006 Earth Science High School Content Expectations  http://www.michigan.gov/documents/Earth_HSCE_168206_7.pdf
-    "D10003D6" => "English Lanauge (2004)",               # 2004 English Language Proficiency Standards for K-12 Schools  
+    "D10003D6" => "English Lanauge (2004)",               # 2004 English Language Proficiency Standards for K-12 Schools
     "D1000282" => "Health",                               # 2007 Grade Level Content Expectations for Health Education (K-8)  http://www.michigan.gov/mde/0,4615,7-140-28753_64839_38684_29233-156852--,00.html
     "D1000280" => "Science",                              # 2006 High School Science Essential Content Standards and Expectations  http://www.michigan.gov/documents/mde/Essential_Science_204486_7.pdf
     "D2481547" => "Common Core English/Language Arts",    # 2010 MI Common Core State Standards for English Language Arts & Literacy in History/Social Studies, Science, and Technical Subjects  http://www.corestandards.org/assets/CCSSI_ELA%20Standards.pdf
@@ -791,9 +907,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2587643" => "Educational Technology",               # 2009 Michigan Educational Technology Standards for Students (METS-S)  http://techplan.edzone.net/METS/METS2009.pdf
     "D1000394" => "Health Education",                     # 2007 Michigan Merit Curriculum Credit Guidelines for Health Education  http://www.michigan.gov/documents/mde/Health_MMC_178846_7.pdf
     "D2363748" => "Visual Arts, Music, Dance, and Theater",         # 2011 Michigan Merit Curriculum: Visual Arts, Music, Dance, and Theater  http://www.michigan.gov/documents/mde/Complete_VPAA_Expectations_June_2011_356110_7.pdf
-    "D1000395" => "World Language",                       # 2007 Michigan World Language Standards and Benchmarks v.8.07  
-    "D10003D5" => "Physical Education (2007)",            # 2007 Physical Education Content Standards and Benchmarks  
-    "D10003E1" => "Physical Education (2008)",            # 2008 Physical Education K-8 Grade Level Content Expectations v.03.08  
+    "D1000395" => "World Language",                       # 2007 Michigan World Language Standards and Benchmarks v.8.07
+    "D10003D5" => "Physical Education (2007)",            # 2007 Physical Education Content Standards and Benchmarks
+    "D10003E1" => "Physical Education (2008)",            # 2008 Physical Education K-8 Grade Level Content Expectations v.03.08
     "D1000364" => "Physics",                              # 2006 Physics High School Content Expectations  http://www.michigan.gov/documents/Physics_HSCE__168208_7.pdf
     "D1000332" => "Science",                              # 2007 Science Grade Level Content Expectations (K-7)  http://www.michigan.gov/documents/mde/Complete_Science_GLCE_12-12-07_218314_7.pdf
     "D10002CE" => "Social Studies",                       # 2007 Social Studies Grade Level Content Expectations (K-8)  http://www.michigan.gov/documents/mde/SSGLCE_218368_7.pdf?20140908205903
@@ -883,6 +999,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # ===================
   "National Consortium for Health Science Education" => {
     "D2541328" => "Healthcare",                           # 2013 National Healthcare Foundation Standards and Accountability Criteria  http://www.healthscienceconsortium.org/docs/Foundation_Standards__AC_October_2013.pdf
+    "D2662806"=>"National Health Science Standards"
   },
   # ===================
   # National Council for the Social Studies
@@ -907,7 +1024,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # National Geography Education Standards
   # ===================
   "National Geography Education Standards" => {
-    "D100026F" => "Geography",                            # 1994 Geography for Life: The National Geography Standards  
+    "D100026F" => "Geography",                            # 1994 Geography for Life: The National Geography Standards
   },
   # ===================
   # National Health Education Standards
@@ -925,7 +1042,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # National Science Education Standards
   # ===================
   "National Science Education Standards" => {
-    "D10001D0" => "Science",                              # 1995 National Science Education Standards  
+    "D10001D0" => "Science",                              # 1995 National Science Education Standards
   },
   # ===================
   # National Standards for Arts Education
@@ -972,12 +1089,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10002EB" => "Arts",                                 # 2001 K-12 Arts New Hampshire Curriculum Framework  http://www.education.nh.gov/instruction/curriculum/arts/documents/frameworks.pdf
     "D2517365" => "Career Development",                   # 2006 K-12 Career Development New Hampshire Framework  http://www.education.nh.gov/career/guidance/documents/framework_k12.pdf
     "D2518336" => "Health Education",                     # 2003 K-12 Health Education New Hampshire Curriculum Guidelines  http://www.education.nh.gov/instruction/school_health/documents/curr_guidelines.pdf
-    "D100026D" => "Mathematics",                          # 2006 K-12 Mathematics New Hampshire Curriculum Framework  
+    "D100026D" => "Mathematics",                          # 2006 K-12 Mathematics New Hampshire Curriculum Framework
     "D2516680" => "Physical Education",                   # 2005 K-12 Physical Education New Hampshire Curriculum Guidelines  http://www.education.nh.gov/instruction/curriculum/phys_ed/documents/guidelines.pdf
-    "D1000250" => "Reading",                              # 2006 K-12 Reading New Hampshire Curriculum Framework  
+    "D1000250" => "Reading",                              # 2006 K-12 Reading New Hampshire Curriculum Framework
     "D100026E" => "Science Litearcy",                     # 2006 K-12 Science Literacy New Hampshire Curriculum Framework  http://www.education.nh.gov/instruction/curriculum/science/documents/framework.pdf
     "D10002B7" => "Social Studies",                       # 2006 K-12 Social Studies New Hampshire Curriculum Framework  http://www.education.nh.gov/instruction/curriculum/social_studies/documents/frameworks.pdf
-    "D1000251" => "Written & Oral Communication",         # 2006 K-12 Written and Oral Communication New Hampshire Curriculum Framework  
+    "D1000251" => "Written & Oral Communication",         # 2006 K-12 Written and Oral Communication New Hampshire Curriculum Framework
     "D2522919" => "Common Core English Language Arts & Literacy",   # 2010 NH Common Core State Standards for English Language Arts & Literacy in History/Social Studies, Science, and Technical Subjects  http://www.corestandards.org/assets/CCSSI_ELA%20Standards.pdf
     "D2522215" => "Common Core Mathematics",              # 2010 NH Common Core State Standards for Mathematics  http://www.corestandards.org/assets/CCSSI_Math%20Standards.pdf
   },
@@ -1014,7 +1131,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2393136" => "Physical Education",                   # 2009 Physical Education 5-8 Content Standards with Benchmarks and Performance Standards  http://www.ped.state.nm.us/standards/Physical%20Ed/5-8%20PysicalEducationStandards.pdf
     "D2393137" => "Physical Education",                   # 2009 Physical Education 9-12 Content Standards with Benchmarks and Performance Standards  http://www.ped.state.nm.us/standards/Physical%20Ed/9-12%20PysicalEducationStandards.pdf
     "D2393135" => "Physical Education",                   # 2009 Physical Education K-4 Content Standards with Benchmarks and Performance Standards  http://www.ped.state.nm.us/standards/Physical%20Ed/K-4%20PysicalEducationStandards.pdf
-    "D1000119" => "Science",                              # 2003 Science Content Standards, Benchmarks, and Performance Standards  
+    "D1000119" => "Science",                              # 2003 Science Content Standards, Benchmarks, and Performance Standards
     "D2390528" => "Social Studies",                       # 2009 Social Studies 5-8 Content Standards with Benchmarks and Performance Standards  http://www.ped.state.nm.us/standards/Social%20Studies/Social%20Studies%205-8.pdf
     "D2390529" => "Social Studies",                       # 2009 Social Studies 9-12 Content Standards with Benchmarks and Performance Standards  http://www.ped.state.nm.us/standards/Social%20Studies/Social%20Studies%209-12.pdf
     "D2390527" => "Social Studies",                       # 2009 Social Studies K-4 Content Standards with Benchmarks and Performance Standards  http://www.ped.state.nm.us/standards/Social%20Studies/Social%20Studies%20K-4.pdf
@@ -1031,15 +1148,15 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   "New York" => {
     "D1000242" => "English/Language Arts Core",           # 2005 English Language Arts Core Curriculum  http://www.p12.nysed.gov/ciai/ela/elacore.pdf
     "D2490568" => "Career Development & Occupational Studies (1995)",  # 1995 Learning Standards for Career Development and Occupational Studies at Three Levels  http://www.p12.nysed.gov/cte/cdlearn/documents/cdoslea.pdf
-    "D100016A" => "English/Language Arts (1996)",         # 1996 Learning Standards for English Language Arts  
+    "D100016A" => "English/Language Arts (1996)",         # 1996 Learning Standards for English Language Arts
     "D2392328" => "Health, Physical Education, and Family & Consumer Science (1996)",  # 1996 Learning Standards for Health, Physical Education, and Family and Consumer Sciences  http://www.p12.nysed.gov/sss/schoolhealth/schoolhealtheducation/healthPEFACSLearningStandards.pdf
     "D2381392" => "Math, Science & Technology - Standard 4 (1996)", # 1996 Learning Standards for Mathematics, Science, and Technology - Standard 4  http://www.p12.nysed.gov/ciai/mst/pub/mststa4.pdf
     "D2378576" => "Math, Science & Technology - Standard 5 (1996)", # 1996 Learning Standards for Mathematics, Science, and Technology - Standard 5  http://www.p12.nysed.gov/cte/technology/documents/techtsta5.pdf
     "D2378542" => "Math, Science & Technology - Standard 1 & 2 (1996)",  # 1996 Learning Standards for Mathematics, Science, and Technology - Standards 1 & 2  http://www.p12.nysed.gov/ciai/mst/
     "D2378661" => "Math, Science & Technology - Standard 6 & 7 (1996)",  # 1996 Learning Standards for Mathematics, Science, and Technology - Standards 6 & 7  http://www.p12.nysed.gov/ciai/mst/pub/mststa6_7.pdf
-    "D10002AB" => "Social Studies (1996)",                # 1996 Learning Standards for Social Studies  
-    "D10002F9" => "Arts (1996)",                          # 1996 Learning Standards for The Arts  
-    "D1000221" => "Mathematics Core",                     # 2005 Mathematics Core Curriculum  
+    "D10002AB" => "Social Studies (1996)",                # 1996 Learning Standards for Social Studies
+    "D10002F9" => "Arts (1996)",                          # 1996 Learning Standards for The Arts
+    "D1000221" => "Mathematics Core",                     # 2005 Mathematics Core Curriculum
     "D2577277" => "Social Studies",                       # 2014 New York State 9-12 Social Studies Framework  https://www.engageny.org/file/14661/download/ss-framework-9-12.pdf
     "D2575628" => "Social Studies",                       # 2014 New York State K-8 Social Studies Framework  https://www.engageny.org/file/14656/download/ss-framework-k-8.pdf
     "D2489281" => "Common Core English/Language Arts (2010)",       # 2010 New York State P-12 Common Core Learning Standards for English Language Arts & Literacy  http://www.engageny.org/sites/default/files/resource/attachments/nysp12cclsela.pdf
@@ -1100,10 +1217,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2590077" => "Library & Technology",                 # 2012 North Dakota Library and Technology Content Standards  http://www.dpi.state.nd.us/standard/tech-stds.pdf
     "D2549259" => "Mathematics",                          # 2011 North Dakota Mathematics Content Standards  http://www.dpi.state.nd.us/standard/content/math/2011/math.pdf
     "D10002F4" => "Music",                                # 2000 North Dakota Music Content Standards  http://www.dpi.state.nd.us/standard/content/music.pdf
-    "D2438730" => "Physical Education",                   # 2008 North Dakota Physical Education Content Standards  http://www.dpi.state.nd.us/standard/content/PE/pe.pdf
+    "D2438730" => "Physical Education (2008)",                   # 2008 North Dakota Physical Education Content Standards  http://www.dpi.state.nd.us/standard/content/PE/pe.pdf
     "D1000264" => "Science",                              # 2006 North Dakota Science Content Standards  http://www.dpi.state.nd.us/standard/content/science/science.pdf
     "D100034A" => "Social Studies",                       # 2007 North Dakota Social Studies Content Standards  http://www.dpi.state.nd.us/standard/content/sstudies/SS.pdf
     "D10002F5" => "Visual Arts",                          # 2000 North Dakota Visual Arts Content Standards  http://www.dpi.state.nd.us/standard/content/varts.pdf
+    "D2655016" => "Physical Education"
   },
   # ===================
   # Ohio
@@ -1133,13 +1251,13 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2603531" => "Science",                              # 2014 Oklahoma Academic Standards for Science  http://www.ok.gov/sde/sites/ok.gov.sde/files/Oklahoma%20Academic%20Standards%20for%20Science.pdf
     "D2376952" => "Social Studies",                       # 2012 Oklahoma C3 Standards for Social Studies  http://ok.gov/sde/sites/ok.gov.sde/files/C3-SocialStudies.pdf
     "D2398746" => "Pre-Kindergarten C3 Standards (PASS)", # 2011 Pre-Kindergarten Oklahoma C3 Standards (PASS)  http://ok.gov/sde/sites/ok.gov.sde/files/C3%20Pass%20prek.pdf
-    "D1000203" => "English",                              # 2002 Priority Academic Student Skills (PASS) for English  
+    "D1000203" => "English",                              # 2002 Priority Academic Student Skills (PASS) for English
     "D2399464" => "Health, Safety and Physical Education",          # 2002 Priority Academic Student Skills (PASS) for Health, Safety and Physical Education  http://ok.gov/sde/sites/ok.gov.sde/files/C3%20PASS%20PE.pdf
     "D10003D4" => "Mathematics",                          # 2009 Priority Academic Student Skills (PASS) for Mathematics  http://ok.gov/sde/sites/ok.gov.sde/files/C3%20PASS%20math.pdf
     "D2569683" => "Personal Financial Literacy",          # 2008 Priority Academic Student Skills (PASS) for Personal Financial Literacy  http://ok.gov/sde/sites/ok.gov.sde/files/PFLPassport_0.pdf
     "D2372584" => "Science (2011)",                       # 2011 Priority Academic Student Skills (PASS) for Science  http://ok.gov/sde/sites/ok.gov.sde/files/C3%20PASS%20sci.pdf
     "D2568261" => "Technology Education",                 # 2002 Priority Academic Student Skills (PASS) for Technology Education  http://ok.gov/sde/sites/ok.gov.sde/files/C3%20PASS%20gr6_10teched.pdf
-    "D10002E6" => "The Arts",                             # 2003 Priority Academic Student Skills (PASS) for The Arts  
+    "D10002E6" => "The Arts",                             # 2003 Priority Academic Student Skills (PASS) for The Arts
   },
   # ===================
   # Oregon
@@ -1166,6 +1284,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # Pennsylvania
   # ===================
   "Pennsylvania" => {
+    "D2659715" => "Business, Computer and Information Technology",
     "D2400024" => "Career Education and Work",            # 2006 Academic Standards for Career Education and Work  http://www.pdesas.org/main/fileview/Academic_Standards_for_Career_Education_and_Work.pdf
     "D2384126" => "Civics and Government",                # 2009 Academic Standards for Civics and Government (Elementary)  http://www.pdesas.org/main/fileview/Academic_Standards_for_Civics_and_Government_(Elementary).pdf
     "D2384125" => "Civics and Government",                # 2012 Academic Standards for Civics and Government (PreK-3)  http://www.pdesas.org/main/fileview/PreK-2_Civics_and_Government_Standards.pdf
@@ -1192,7 +1311,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2382902" => "Science, Technology, & Engineering",   # 2009 Academic Standards for Science and Technology and Engineering Education (Elementary)  http://www.pdesas.org/main/fileview/Academic_Standards_for_Science_and_Technology_and_Engineering_Education_(Elementary).pdf
     "D2381762" => "Science and Technology and Engineering Education",  # 2012 Academic Standards for Science and Technology and Engineering Education (PreK-3)  http://static.pdesas.org/content/documents/PreK-2_Science_and_Technology_Standards.pdf
     "D2381498" => "Science, Technology, & Engineering",   # 2010 Academic Standards for Science and Technology and Engineering Education (Secondary)  http://static.pdesas.org/content/documents/Academic_Standards_for_Science_and_Technology_and_Engineering_Education_%28Secondary%29.pdf
-    "D10002DC" => "Arts & Humanities",                    # 2002 Academic Standards for the Arts and Humanities  
+    "D10002DC" => "Arts & Humanities",                    # 2002 Academic Standards for the Arts and Humanities
     "D2562969" => "PA Core - English Language Arts",      # 2014 PA Core - English Language Arts (6-12)  http://static.pdesas.org/content/documents/PA%20Core%20Standards%20ELA%206-12%20March%202014.pdf
     "D2562530" => "PA Core - English Language Arts",      # 2014 PA Core - English Language Arts (PreK-5)  http://static.pdesas.org/content/documents/PA%20Core%20Standards%20ELA%20PreK-5%20March%202014.pdf
     "D2563472" => "PA Core - Mathematics",                # 2014 PA Core - Mathematics (PreK-12)  http://static.pdesas.org/content/documents/PA%20Core%20Standards%20Mathematics%20PreK-12%20March%202014.pdf
@@ -1368,7 +1487,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2585980" => "Health and Wellness",                  # 2008 Tennessee Health Education Standards Health and Wellness (3-5)  http://tn.gov/education/standards/health/health_3_5.pdf
     "D2586532" => "Health and Wellness",                  # 2008 Tennessee Health Education Standards Health and Wellness (6-8)  http://tn.gov/education/standards/health/health_6_8.pdf
     "D2585393" => "Health and Wellness",                  # 2008 Tennessee Health Education Standards Health and Wellness (PreK-2)  http://tn.gov/education/standards/health/health_prek_2.pdf
-    "D100033F" => "Science",                              # 2009 Tennessee Science Standards  
+    "D100033F" => "Science",                              # 2009 Tennessee Science Standards
     "D2579656" => "Social Studies",                       # 2013 Tennessee Social Studies Standards: Eighth Grade  http://www.tn.gov/education/standards/social_studies/SS_Eighth_Grade.pdf
     "D2579410" => "Social Studies",                       # 2013 Tennessee Social Studies Standards: Fifth Grade  http://www.tn.gov/education/standards/social_studies/SS_Fifth_Grade.pdf
     "D2579162" => "Social Studies",                       # 2013 Tennessee Social Studies Standards: First Grade  http://www.tn.gov/education/standards/social_studies/SS_First_Grade.pdf
@@ -1420,12 +1539,23 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10003DA" => "Science",                              # 2010 Texas Essential Knowledge and Skills for Science  http://ritter.tea.state.tx.us/rules/tac/chapter112/index.html
     "D2488325" => "Social Studies",                       # 2010 Texas Essential Knowledge and Skills for Social Studies  http://ritter.tea.state.tx.us/rules/tac/chapter113/index.html
     "D2483953" => "Technology Applications",              # 2011 Texas Essential Knowledge and Skills for Technology Applications  http://ritter.tea.state.tx.us/rules/tac/chapter126/index.html
+    "D2670106"=> "Texas Essential Knowledge and Skills for Languages Other Than English",
+    "D2666793"=>"Transportation, Distribution, and Logistics",
+    "D2666209"=>"Information Technology",
+    "D2666206"=>"Human Services",
+    "D2666207"=>"Health Science",
+    "D2666205"=>"Government and Public Administration",
+    "D2665238"=>"Finance",
+    "D2657535"=>"Manufacturing",
+    "D2657527"=>"Marketing",
+    "D2664987"=>"Education and Training",
+    "D1000247"=> "Mathematics, Amended 2006",
   },
   # ===================
   # Utah
   # ===================
   "Utah" => {
-    "D10002C0" => "Economic & Entrepreneurship",          # 2000 CTE/Economic & Entrepreneurship Education  
+    "D10002C0" => "Economic & Entrepreneurship",          # 2000 CTE/Economic & Entrepreneurship Education
     "D2521826" => "Social Studies",                       # 2009 Social Studies Core Curriculum Elementary Grades K-2  http://www.uen.org/core/socialstudies/index.shtml
     "D2524708" => "English Language Arts",                # 2010 Utah Core Standards for English Language Arts  http://www.schools.utah.gov/CURR/langartelem/Core-Standards/ELAColorCombo.aspx
     "D2524004" => "Mathematics",                          # 2010 Utah Core Standards for Mathematics  http://schools.utah.gov/CURR/mathelem/Core/Utah-Core-Standards-in-Mathematics-Approved-Versio.aspx
@@ -1434,18 +1564,18 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2519437" => "Keyboarding",                          # 2002 Utah Educational Technology - Keyboarding  http://www.uen.org/core/edtech/index.shtml
     "D2520900" => "Science",                              # 2010 Utah Elementary Science Core Curriculum  http://www.uen.org/core/science/index.shtml
     "D2521037" => "Science",                              # 2002 Utah Elementary Science Core Curriculum - Grades 3-6  http://www.uen.org/core/science/index.shtml
-    "D1000329" => "Fine Arts - Dance",                    # 1997 Utah Fine Arts - Dance  
-    "D100032A" => "Fine Arts - Music",                    # 1997 Utah Fine Arts - Music  
-    "D100032B" => "Fine Arts - Theater",                  # 1997 Utah Fine Arts - Theatre  
-    "D100032C" => "Fine Arts - Visual Arts",              # 1997 Utah Fine Arts - Visual Arts  
+    "D1000329" => "Fine Arts - Dance",                    # 1997 Utah Fine Arts - Dance
+    "D100032A" => "Fine Arts - Music",                    # 1997 Utah Fine Arts - Music
+    "D100032B" => "Fine Arts - Theater",                  # 1997 Utah Fine Arts - Theatre
+    "D100032C" => "Fine Arts - Visual Arts",              # 1997 Utah Fine Arts - Visual Arts
     "D2519939" => "Health",                               # 2009 Utah Health Education  http://www.uen.org/core/health/index.shtml
     "D2519523" => "Health",                               # 1997 Utah Health Education  http://www.uen.org/core/health/index.shtml
     "D2520175" => "Physical Education",                   # 2007 Utah Physical Education  http://www.uen.org/core/pe/index.shtml
-    "D10002CA" => "Social Studies",                       # 2002 Utah Secondary Core Curriculum Social Studies 7-12  
+    "D10002CA" => "Social Studies",                       # 2002 Utah Secondary Core Curriculum Social Studies 7-12
     "D2435462" => "Earth Science",                        # 2012 Utah Secondary Earth Science Core Standards  http://www.schools.utah.gov/CURR/science/Home/Earth-Science-Core-Standards-October-2012.aspx
     "D2520479" => "Physical Education",                   # 2006 Utah Secondary Physical Education Core Curriculum  http://www.uen.org/core/pe/index.shtml
     "D2521372" => "Science",                              # 2003 Utah Secondary Science Core Curriculum  http://www.uen.org/core/science/index.shtml
-    "D10003AF" => "Social Studies",                       # 2008 Utah Social Studies Core Curriculum Elementary Grades 3-6  
+    "D10003AF" => "Social Studies",                       # 2008 Utah Social Studies Core Curriculum Elementary Grades 3-6
   },
   # ===================
   # Vermont
@@ -1492,7 +1622,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2412541" => "Common Core Math",                     # 2011 Washington Common Core State Standards for Mathematics  http://www.k12.wa.us/CoreStandards/Mathematics/pubdocs/CCSSI_MathStandards.pdf
     "D2414330" => "Educational Technology",               # 2008 Washington State K-12 Essential Academic Learning Requirements  & Grade Level Expectations for Educational Technology  http://www.k12.wa.us/EdTech/Standards/pubdocs/K-12-EdTech-Standards_12-2008b.pdf
     "D2414467" => "Health & Fitness",                     # 2008 Washington State K-12 Health and Fitness Standards  http://www.k12.wa.us/HealthFitness/Standards-GLEs/HealthFitnessStateStandards.pdf
-    "D1000340" => "Mathematics",                          # 2008 Washington State K-12 Mathematics Standards  
+    "D1000340" => "Mathematics",                          # 2008 Washington State K-12 Mathematics Standards
     "D2597531" => "Science",                              # 2013 Washington State K-12 Science Learning Standards  https://www.k12.wa.us/Science/NGSS.aspx
     "D10003BE" => "Science",                              # 2009 Washington State K-12 Science Standards  https://www.k12.wa.us/Science/pubdocs/WAScienceStandards.pdf
     "D1000385" => "Social Studies",                       # 2008 Washington State K-12 Social Studies Grade Level Expectations  http://www.k12.wa.us/SocialStudies/pubdocs/SocialStudiesStandards.pdf
@@ -1508,15 +1638,15 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # West Virginia
   # ===================
   "West Virginia" => {
-    "D1000310" => "Dance",                                # 2008 21st Century Dance Content Standards and Objectives for West Virginia Schools  
+    "D1000310" => "Dance",                                # 2008 21st Century Dance Content Standards and Objectives for West Virginia Schools
     "D2558848" => "Learning Skills and Technology Tools", # 2008 21st Century Learning Skills and Technology Tools Content Standards and Objectives for West Virginia Schools  https://wvde.state.wv.us/policies/p2520.14.pdf
     "D2592578" => "Mathematics",                          # 2014 21st Century Mathematics Content Standards and Objectives for West Virginia Schools  http://apps.sos.wv.gov/adlaw/csr/readfile.aspx?DocId=26209&Format=PDF
-    "D1000311" => "Music",                                # 2008 21st Century Music Content Standards and Objectives for West Virginia Schools  
+    "D1000311" => "Music",                                # 2008 21st Century Music Content Standards and Objectives for West Virginia Schools
     "D2561465" => "Physical Education",                   # 2008 21st Century Physical Education 5-12 Content Standards and Objectives for West Virginia Schools  https://wvde.state.wv.us/policies/policy.php?p=2520.6&alt=1
     "D2575648" => "Science",                              # 2013 21st Century Science 9-12 Content Standards and Objectives for West Virginia Schools  https://wvde.state.wv.us/policies/policy.php?p=2520.35
-    "D100025C" => "Science",                              # 2008 21st Century Science K-8 Content Standards and Objectives for West Virginia Schools  
-    "D1000312" => "Theater",                              # 2008 21st Century Theatre Content Standards and Objectives for West Virginia Schools  
-    "D1000313" => "Visual Arts",                          # 2008 21st Century Visual Arts Content Standards and Objectives for West Virginia Schools  
+    "D100025C" => "Science",                              # 2008 21st Century Science K-8 Content Standards and Objectives for West Virginia Schools
+    "D1000312" => "Theater",                              # 2008 21st Century Theatre Content Standards and Objectives for West Virginia Schools
+    "D1000313" => "Visual Arts",                          # 2008 21st Century Visual Arts Content Standards and Objectives for West Virginia Schools
     "D2560500" => "Wellness",                             # 2008 21st Century Wellness PreK-4 Content Standards and Objectives for West Virginia Schools  https://wvde.state.wv.us/policies/policy.php?p=2520.55&alt=1
     "D2560112" => "Early Learning",                       # 2010 Early Learning Standards Framework Content Standards and Learning Criteria for West Virginia Pre-Kindergarten  https://wvde.state.wv.us/policies/p2520.15.pdf
     "D2622715" => "Library Media",                        # 2006 Library Media Content Standards and Objectives for West Virginia Schools  https://wvde.state.wv.us/policies/p2520.17.pdf
@@ -1561,7 +1691,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # Wyoming
   # ===================
   "Wyoming" => {
-    "D2400246" => "Career/Vocational Education Content",  # 2008 Wyoming Career/Vocational Education Content Standards  http://edu.wyoming.gov/sf-docs/publications/Standards_2008_Career_Vocational_PDF.pdf?sfvrsn=0
+    "D2400246" => "Career/Vocational Education Content (2008)",  # 2008 Wyoming Career/Vocational Education Content Standards  http://edu.wyoming.gov/sf-docs/publications/Standards_2008_Career_Vocational_PDF.pdf?sfvrsn=0
+    "D2659371" => "Career and Vocational Education Content Standards (2014)",
     "D2530005" => "Fine and Performing Arts Content",     # 2013 Wyoming Fine and Performing Arts Content Standards  http://edu.wyoming.gov/downloads/standards/2013_Fine_and_Performing_Arts_Standards.pdf
     "D2530225" => "Foreign Languages Content",            # 2013 Wyoming Foreign Languages Content Standards  http://edu.wyoming.gov/downloads/standards/2013_Foreign_Language_Standards.pdf
     "D2400245" => "Health Education Content",             # 2012 Wyoming Health Education Content Standards  http://edu.wyoming.gov/downloads/standards/final-2012-health-standardsb.pdf

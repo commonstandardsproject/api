@@ -11,7 +11,6 @@ require_relative "../lib/update_standard_set"
 require_relative '../config/mongo'
 require_relative '../lib/send_to_algolia'
 
-
 # Comment on the organization of this file:
 # - Methods are at the top
 # - The one line invocation is the last line of the file (due to how Ruby's load's methods)
@@ -24,12 +23,12 @@ require_relative '../lib/send_to_algolia'
 class Importer
 
   def self.run(opts)
-    docs  = Oj.load(File.read('sources/asn_standard_documents_july-2.js'))
+    docs  = Oj.load(File.read('sources/asn_standard_documents_aug-28.js'))
 
     hydra = Typhoeus::Hydra.new(max_concurrency: 20)
 
     # Check that we have all the right titles
-    check_document_titles(docs)
+    check_document_titles(docs).call
     docs = parse_doc_json(docs)
 
     previously_imported_docs = get_previously_imported_docs
@@ -37,11 +36,13 @@ class Importer
     docs.select{|doc|
       # This makes sure we only get the documents we haven't already imported.
       # Return true from this labmda if we want to fetch all the docs.
-      if opts[:only_new]
-        Time.at(previously_imported_docs[doc[:id]].to_i) < Time.at(doc[:date_modified].to_i)
-      else
+      if opts[:import_all]
         true
+      else
+        Time.at(previously_imported_docs[doc[:id]].to_i) < Time.at(doc[:date_modified].to_i)
       end
+    }.tap{|arr|
+      puts "Importing #{arr.length} documents"
     }.each.with_index{ |_doc, index|
       # If we want to use the ASN urls, uncomment this line. I switched to using AWS urls to relieve load on ASN
       # servers and increase thoroughput
@@ -97,6 +98,8 @@ def check_document_titles(docs)
       pp titles_to_be_edited
       puts ""
       raise "You must add these subjects before you continue"
+    else
+      puts "You've added all the subjects. Nice work!"
     end
   }
 end

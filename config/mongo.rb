@@ -1,7 +1,5 @@
 require 'mongo'
 
-logger = Logger.new(STDOUT)
-logger.level = ENV['MONGODB_LOGGING_LEVEL'].to_i || 1
-Mongo::Logger.logger = logger
+Mongo::Logger.logger.level = Logger::WARN
 connection_string = ENV["MONGODB_CONNECTION_STRING"] || [ '127.0.0.1:27017' ]
 $db = $db || Mongo::Client.new(connection_string, :database => 'common-standards-project')
