@@ -24,4 +24,5 @@ group :development do
   gem 'guard'
   gem 'guard-shotgun'
   gem 'foreman'
+  gem 'pry'
 end

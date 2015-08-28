@@ -152,6 +152,7 @@ DEPENDENCIES
   nokogiri
   oj
   parallel
+  pry
   puma
   rack-cors
   shotgun

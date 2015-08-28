@@ -32,16 +32,23 @@ class UpdateStandardSet
     end
   end
 
-  def self.with_delta(id, delta)
+  def self.with_delta(id, ops)
     old_version = $db[:standard_sets].find({_id: id}).to_a.first
 
     if old_version
       self.save_version(old_version)
     end
 
-    delta["$inc"] = delta["$inc"] || {}
-    delta["$inc"]["version"] = 1
-    doc = $db[:standard_sets].find({_id: id}).find_one_and_update(delta, return_document: :after)
+    operations = ops.reduce({}){|acc, hash|
+      acc[hash["op"]] ||= {}
+      acc[hash["op"]][hash["path"]] = hash["value"]
+      acc
+    }
+    operations["$inc"] ||= {}
+    operations["$inc"]["version"] = 1
+    operations["$set"] ||={}
+    operations["$set"]["updatedAt"] = Time.now
+    doc = $db[:standard_sets].find({_id: id}).find_one_and_update(operations, return_document: :after)
 
     # Cache standards
     CachedStandards.one(doc)

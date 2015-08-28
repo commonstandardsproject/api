@@ -17,7 +17,7 @@ module API
       expose :jurisdictionTitle
       expose :jurisdictionId
       expose :createdOn
-      expose :diff
+      expose :ops
 
     end
   end

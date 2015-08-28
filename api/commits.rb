@@ -16,11 +16,11 @@ module API
           committerName:     params[:data]["committerName"],
           committerEmail:    params[:data]["committerEmail"],
           commitSummary:     params[:data]["commitSummary"],
-          standardSetId:    params[:data]["standardSetId"],
-          standardSetTitle: params[:data]["standardSetTitle"],
+          standardSetId:     params[:data]["standardSetId"],
+          standardSetTitle:  params[:data]["standardSetTitle"],
           jurisdictionTitle: params[:data]["jurisdictionTitle"],
           jurisdictionId:    params[:data]["jurisdictionId"],
-          diff:              params[:data]["diff"],
+          ops:               params[:data]["ops"],
         }
         $db[:commits].insert_one(data)
         return 201
@@ -33,19 +33,10 @@ module API
           error!("Cannot commit changes", 401)
         end
         commit = $db[:commits].find({:_id => params[:id]}).to_a.first
-        if commit[:applied]
-          return 201
-        end
-        diff = commit["diff"]
-        diff["$set"] = diff["$set"] || {}
-        diff["$set"]["commit"] = {
-          "committerName"  => commit["committerName"],
-          "committerEmail" => commit["committerEmail"],
-          "commitSummary"  => commit["commitSummary"],
-          "commitId"       => params[:id],
-        }
-        diff["$set"]["updatedOn"] = Time.now
-        UpdateStandardSet.with_delta(commit[:standardSetId], diff)
+        # if commit[:applied]
+        #   return 201
+        # end
+        UpdateStandardSet.with_delta(commit[:standardSetId], commit[:ops])
         $db[:commits].find({:_id => params[:id]}).update_one({"$set" => {:applied => true}})
       end
 
