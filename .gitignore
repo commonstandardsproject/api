@@ -6,3 +6,5 @@
 *.log
 
 log/newrelic_agent.log
+
+log/newrelic_agent.log
