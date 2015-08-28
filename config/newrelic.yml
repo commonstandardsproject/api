@@ -36,6 +36,8 @@ development:
   # Do not use for production or load testing.
   developer_mode: true
 
+  agent_enabled: false
+
 test:
   <<: *default_settings
   # It doesn't make sense to report to New Relic from automated test runs.
