@@ -11,7 +11,7 @@ class SendToAlgolia
   def self.all_standard_sets
     $db[:standard_sets].find().batch_size(20).map{|set|
       p "Denormalizing #{set["jurisdiction"]["title"]}: #{set["title"]}"
-      p self.denormalize_standards(set)
+      self.denormalize_standards(set)
     }.flatten.each_slice(10000){|standards|
       p "Importing #{standards.length}"
       @@index.add_objects(standards)
