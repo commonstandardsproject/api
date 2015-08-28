@@ -33,9 +33,9 @@ module API
           error!("Cannot commit changes", 401)
         end
         commit = $db[:commits].find({:_id => params[:id]}).to_a.first
-        # if commit[:applied]
-        #   return 201
-        # end
+        if commit[:applied]
+          return 201
+        end
         UpdateStandardSet.with_delta(commit[:standardSetId], commit[:ops])
         $db[:commits].find({:_id => params[:id]}).update_one({"$set" => {:applied => true}})
       end
