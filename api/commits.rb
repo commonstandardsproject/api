@@ -2,6 +2,7 @@ require 'grape'
 require_relative '../config/mongo'
 require_relative '../lib/update_standard_set'
 require_relative 'entities/commit'
+require "slack-notify"
 
 module API
   class Commits < Grape::API
@@ -10,20 +11,23 @@ module API
       post "/", hidden: true do
         validate_token
         data = {
-          _id:               SecureRandom.uuid().to_s.gsub("-", "").upcase,
-          applied:           false,
-          createdOn:         Time.now,
-          committerName:     params[:data]["committerName"],
-          committerEmail:    params[:data]["committerEmail"],
-          commitSummary:     params[:data]["commitSummary"],
-          standardSetId:     params[:data]["standardSetId"],
-          standardSetTitle:  params[:data]["standardSetTitle"],
-          standardSetSubject:  params[:data]["standardSetSubject"],
-          jurisdictionTitle: params[:data]["jurisdictionTitle"],
-          jurisdictionId:    params[:data]["jurisdictionId"],
-          ops:               params[:data]["ops"],
+          _id:                SecureRandom.uuid().to_s.gsub("-", "").upcase,
+          applied:            false,
+          createdOn:          Time.now,
+          committerName:      params[:data]["committerName"],
+          committerEmail:     params[:data]["committerEmail"],
+          commitSummary:      params[:data]["commitSummary"],
+          standardSetId:      params[:data]["standardSetId"],
+          standardSetTitle:   params[:data]["standardSetTitle"],
+          standardSetSubject: params[:data]["standardSetSubject"],
+          jurisdictionTitle:  params[:data]["jurisdictionTitle"],
+          jurisdictionId:     params[:data]["jurisdictionId"],
+          ops:                params[:data]["ops"],
         }
         $db[:commits].insert_one(data)
+        client = SlackNotify::Client.new(webhook_url: ENV["SLACK_WEBHOOK_URL"])
+        client.notify("Commit by #{data[:committerName]} #{data[:committerEmail]} to #{data[:jurisdictionTitle]} #{data[:standardSetSubject]} #{data[:standardSetTitle]}", ['#csp-commits'])
+
         return 201
       end
 

@@ -20,6 +20,7 @@ gem 'nokogiri'
 gem 'newrelic_rpm'
 gem 'thor'
 gem 'skylight', '~>0.8.0'
+gem "slack-notify"
 
 group :development do
   gem 'guard'
