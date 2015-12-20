@@ -17,7 +17,7 @@ class ImporterCLI < Thor
     end
 
     # create the sample user
-    user = $db[:users].find({apiKey => "vZKoJwFB1PTJnozKBSANADc3"}).to_a.first
+    user = $db[:users].find({"apiKey" => "vZKoJwFB1PTJnozKBSANADc3"}).to_a.first
     if user.nil?
       $db[:users].insert_one({
         _id:     SecureRandom.uuid().to_s.upcase.gsub('-', ''),
