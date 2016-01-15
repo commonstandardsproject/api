@@ -14,6 +14,7 @@ require_relative "jurisdictions"
 require_relative "standard_documents"
 require_relative "standard_sets"
 require_relative "standard_set_import"
+require_relative "pull_requests"
 
 module API
   class API < Grape::API
@@ -61,7 +62,6 @@ module API
     before do
       key = headers["Api-Key"] || params["api-key"]
 
-      p request.path
       if request.path.include?("swagger_doc") || request.path.include?("/api/v1/sitemap.xml")
         next
       end
@@ -91,6 +91,7 @@ module API
     mount ::API::Jurisdictions
     mount ::API::StandardDocuments
     mount ::API::StandardSets
+    mount ::API::PullRequests
 
 
     # This really shouldn't be in the API. However, due to how the frontend
@@ -103,7 +104,7 @@ module API
         xml.urlset("xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9") {
           $db[:standard_sets].find().projection({_id: 1}).batch_size(1000).map{|doc|
             xml.url{
-              xml.loc "http://beta.commonstandardsproject.com/search?ids=%5B\"#{doc["_id"]}\"%5D"
+              xml.loc "http://commonstandardsproject.com/search?ids=%5B\"#{doc["_id"]}\"%5D"
             }
           }
         }

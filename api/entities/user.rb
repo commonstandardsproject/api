@@ -10,6 +10,7 @@ module API
       expose :apiKey
       expose :algoliaApiKey
       expose :allowedOrigins
+      expose :pullRequests
     end
   end
 end
