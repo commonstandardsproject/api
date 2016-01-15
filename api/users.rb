@@ -12,6 +12,7 @@ module API
 
       get "/:email", requirements: {email:  /.+@.+/}  do
         user = $db[:users].find({email: params[:email]}).to_a.first
+        user[:pullRequests] = $db[:pullRequests].find(:submitterId => user[:_id]).to_a
         present :data, user, with: Entities::User
       end
 

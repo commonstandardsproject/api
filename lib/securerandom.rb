@@ -22,4 +22,8 @@ module SecureRandom
       BASE58_ALPHABET[idx]
     end.join
   end
+
+  def self.csp_uuid
+    self.uuid().to_s.upcase.gsub('-', '')    
+  end
 end
