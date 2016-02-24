@@ -38,6 +38,12 @@ class PullRequest
     self.new(attrs)
   end
 
+  def self.find_all
+    $db[:pull_requests].find({status: {:$ne => "rejected"}}).to_a.map{|pr|
+      self.new(pr)
+    }
+  end
+
   def self.can_edit?(model, user)
     return true if user && user["committer"] === true
     return true if model.submitterId === user.id
