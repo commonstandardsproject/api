@@ -9,7 +9,7 @@ describe "PullRequest API" do
  end
 
   before(:each) do
-    User.create({
+    @user = User.create({
       id: "tester",
       email: "test@test.com",
       apiKey: "testing",
@@ -92,7 +92,7 @@ describe "PullRequest API" do
     end
   end
 
-  describe "changing status" do
+  describe "changing status or comments" do
     before(:each) do
       @pull_request = PullRequest.new({
         id: "1",
@@ -164,8 +164,33 @@ describe "PullRequest API" do
         pr = PullRequest.find(@pull_request.id)
         expect(pr.status).to eq("revise-and-resubmit")
       end
-
     end
-  end
 
+    describe "POST /:id/comment" do
+      it "should post an admin's comment" do
+
+        allow(AsanaTask).to receive(:add_comment_from_approver)
+        allow(PostmarkClient).to receive(:deliver_with_template)
+        post "/api/v1/pull_requests/#{@pull_request.id}/comment", comment: "love it"
+
+        pr = PullRequest.find(@pull_request.id)
+        expect(pr.activities.first.title).to eq("love it")
+        expect(AsanaTask).to have_received(:add_comment_from_approver).with("task-1", "love it", @user[:profile][:name])
+        expect(PostmarkClient).to have_received(:deliver_with_template)
+      end
+
+      it "should post a submitters comment" do
+        # make user not a committer
+        $db[:users].find({_id: "tester"}).find_one_and_update({"$set" => {committer: false}})
+
+        allow(AsanaTask).to receive(:add_comment_from_submitter)
+        post "/api/v1/pull_requests/#{@pull_request.id}/comment", comment: "love it"
+
+        pr = PullRequest.find(@pull_request.id)
+        expect(pr.activities.first.title).to eq("love it")
+        expect(AsanaTask).to have_received(:add_comment_from_submitter).with("task-1", "love it", @user[:profile][:name])
+      end
+    end
+
+  end
 end

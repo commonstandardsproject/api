@@ -144,6 +144,20 @@ class PullRequest
       })
   end
 
+  def self.add_comment(model, comment, user)
+    activity = Activity.new({
+      type: "comment",
+      title: comment
+    })
+    self.add_activity(model, activity)
+    if user["committer"] == true
+      Email.send("admin-comment-added", model)
+      AsanaTask.add_comment_from_approver(model.asanaTaskId, comment, user["profile"]["name"])
+    else
+      AsanaTask.add_comment_from_submitter(model.asanaTaskId, comment, user["profile"]["name"])
+    end
+  end
+
   def self.change_status(id, status, comment, send_notice=false)
     return false unless STATUSES.include? status
     model = self.from_mongo($db[:pull_requests]
