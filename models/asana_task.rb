@@ -1,7 +1,9 @@
+require 'asana'
+
 class AsanaTask
 
   def self.create_task(pr_id, submitterName, submitterEmail)
-    url = "http://commonstandardsproject.com/pull-requests/#{id}"
+    url = "http://commonstandardsproject.com/pull-requests/#{pr_id}"
     Asana::Resources::Task.create(AsanaClient,
       projects: [ENV["ASANA_PR_PROJECT"]],
       name: "PR from #{submitterName}",
@@ -16,7 +18,7 @@ class AsanaTask
     task.add_comment(text: "Sent back for review")
   end
 
-  def self.request_approval(task_id)
+  def self.approval_requested(task_id)
     task = Asana::Resources::Task.find_by_id(task_id)
     task.update(completed: false)
     task.add_comment(text: "Submittered requested approval")

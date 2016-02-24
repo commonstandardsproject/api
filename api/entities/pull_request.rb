@@ -3,17 +3,19 @@ require 'grape-entity'
 module API
   module Entities
     class PullRequest < Grape::Entity
-      expose :_id, as: :id
+
+      expose :id
       expose :createdAt
+      expose :updatedAt
       expose :summary
       expose :submitterId
-      expose :authorEmail
-      expose :authorName
-      expose :activity
+      expose :submitterEmail
+      expose :submitterName
+      expose :activities
+      expose :forkedFromStandardSetId
 
       # just standardSetId instead
       expose :standardSet, using: API::Entities::StandardSet
-      expose :isApplied
       expose :status
     end
   end

@@ -1,43 +1,46 @@
 require 'pp'
-require_relative 'cache_standards'
-require_relative 'send_to_algolia'
-require_relative "standard_set_license"
-require_relative "standard_set_jurisdiction"
+require 'dry-validation'
+require_relative '../lib/cache_standards'
+require_relative '../lib/send_to_algolia'
+require_relative "standard"
 require_relative "../lib/securerandom"
 
 class StandardSet
   include Virtus.model
 
-  attribute :id, String, :default => -> (page, attrs) { SecureRandom.csp_uuid() }
+  attribute :id, String, default: -> (page, attrs) { SecureRandom.csp_uuid() }
   attribute :title, String
   attribute :subject, String
+  attribute :document, Hash
   attribute :createdAt, DateTime
   attribute :updatedAt, DateTime
+  attribute :version, Integer, default: 1
+  attribute :standards, Hash[String => Standard]
 
-  attribute :jurisdiction, StandardSetJurisdiction, default: (page, attrs) -> {StandardSetJurisdiction.new}
-  class StandardSetJurisdiction
+  class Jurisdiction
     include Virtus.model
     attribute :id, String
     attribute :title, String
 
-    class Validator < Dry::Validation::Schema
+    class Validator < ::Dry::Validation::Schema
       key(:id, &:str?)
       key(:title, &:str?)
     end
   end
+  attribute :jurisdiction, Jurisdiction, default: -> (page, attrs){Jurisdiction.new}
 
-  attribute :license, StandardSetLicense, default: (page, attrs) -> {StandardSetLicense.new}
-  class StandardSetLicense
+  class License
     include Virtus.model
     attribute :title, String, default: "CC BY 4.0 US"
     attribute :URL, String, default: "http://creativecommons.org/licenses/by/4.0/us/"
     attribute :rightsHolder, String, default: "Common Curriculum, Inc."
-    class Validator < Dry::Validation::Schema
+    class Validator < ::Dry::Validation::Schema
       key(:title, &:str?)
       key(:URL, &:str?)
       key(:rightsHolder, &:str?)
     end
   end
+  attribute :license, License, default: -> (page, attrs){License.new}
 
   attribute :educationLevels, Array[String]
   EDUCATION_LEVELS = [
@@ -65,27 +68,31 @@ class StandardSet
     "LifeLongLearning",
   ]
 
-  class Validator < Dry::Validation::Schema
+  class Validator < ::Dry::Validation::Schema
     key(:title, &:str?)
     key(:subject, &:str?)
-    key(:educationLevels) {|attr| attr.inclusion? EDUCATION_LEVELS}
+    key(:educationLevels) {|attr| attr.empty? | attr.inclusion?(EDUCATION_LEVELS)}
   end
 
   def self.validate(model)
-    self_validations = Validator.new.call(model)
-    jurisdiction_validations = StandardSetJurisdiction::Validator.new.call(model.jurisdiction)
-    license_validations = StandardSetLicense::Validator.new.call(model.license)
-    messages = self_validations.messages + jurisdiction_validations.messages + license_validations.messages
-    messages.empty? true : messages
+    self_validations = Validator.new.call(model.attributes)
+    return self_validations.messages unless self_validations.messages.empty?
+
+    jurisdiction_validations = Jurisdiction::Validator.new.call(model.jurisdiction.attributes)
+    return jurisdiction_validations.messages unless jurisdiction_validations.messages.empty?
+
+    license_validations = License::Validator.new.call(model.license.attributes)
+    return license_validations.messages unless license_validations.messages.empty?
+
+    return true
   end
 
   def self.find(id)
     attrs = $db[:standard_sets].find({_id: id}).first
-    attrs[:id] = attrs.delete(:_id)
-    self.new(attrs)
+    self.from_mongo(attrs)
   end
 
-  def self.update(doc, opts)
+  def self.update(doc, opts={})
     old_version    = $db[:standard_sets].find({_id: doc["id"]}).to_a.first || {}
     if old_version["version"] && old_version["version"] > 0
       self.save_version(old_version)
@@ -115,6 +122,11 @@ class StandardSet
     old_version["standardSetId"] = old_version["_id"]
     old_version["_id"] = SecureRandom.csp_uuid()
     $db[:standard_set_versions].insert_one(old_version)
+  end
+
+  def self.from_mongo(attrs)
+    attrs[:id] = attrs.delete("_id")
+    self.new(attrs)
   end
 
 
