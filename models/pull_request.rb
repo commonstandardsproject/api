@@ -119,6 +119,7 @@ class PullRequest
     model = find(id)
     case status
     when "approved"
+      PostmarkClient
       # SendEmail
     when "rejected"
       # send email
