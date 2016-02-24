@@ -5,7 +5,7 @@ require 'rubygems'
 require 'grape'
 require 'rack/cors'
 require 'newrelic_rpm'
-require_relative "config/reform"
+require_relative "config/postmark"
 require_relative "api/api"
 require_relative 'main'
 
