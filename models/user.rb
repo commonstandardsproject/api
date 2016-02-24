@@ -16,7 +16,7 @@ class User
   end
 
   def self.create(attrs)
-    attrs[:_id] ||= SecureRandom.csp_uuid()
+    attrs[:_id] = attrs[:id] || SecureRandom.csp_uuid()
     user = $db[:users].find({_id: attrs[:_id]}).find_one_and_update({
       "$set" => attrs
     }, {upsert: true, return_document: :after})

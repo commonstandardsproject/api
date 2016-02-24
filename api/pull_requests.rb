@@ -48,6 +48,13 @@ module API
         PullRequest.change_status(params[:id], params[:status], params[:message], true)
       end
 
+      post "/:id/comment" do
+        validate_token
+        model = PullRequest.find(params[:id])
+        return 401 unless PullRequest.can_edit?(model, @user)
+        PullRequest.add_comment(model, params[:comment], @user)
+      end
+
       get "/:id" do
         validate_token
 
