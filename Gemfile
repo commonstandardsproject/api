@@ -24,10 +24,13 @@ gem "slack-notify"
 gem 'virtus'
 gem 'dry-validation'
 gem 'asana'
+gem 'postmark'
 
 group :development do
   gem 'guard'
   gem 'guard-shotgun'
   gem 'foreman'
   gem 'pry'
+  gem 'rspec'
+  gem 'rack-test'
 end

@@ -9,7 +9,6 @@ require_relative 'entities/jurisdiction'
 require_relative 'entities/jurisdiction_summary'
 require_relative 'entities/standard_set'
 require_relative "users"
-require_relative "commits"
 require_relative "jurisdictions"
 require_relative "standard_documents"
 require_relative "standard_sets"
@@ -38,6 +37,7 @@ module API
           auth0_client_id     = ENV['AUTH0_CLIENT_ID']
           auth0_client_secret = ENV['AUTH0_CLIENT_SECRET']
           authorization       = headers['Authorization']
+          return if ENV["ENVIRONMENT"] == "test" && authorization == "TEST"
           if authorization.nil?
             error!("No Authorization Token", 401)
           end
@@ -87,7 +87,6 @@ module API
     # into their own files.
 
     mount ::API::Users
-    mount ::API::Commits
     mount ::API::Jurisdictions
     mount ::API::StandardDocuments
     mount ::API::StandardSets

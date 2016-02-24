@@ -3,7 +3,6 @@ require_relative '../config/mongo'
 require_relative 'entities/standard_set'
 require_relative '../importer/transformers/query_to_standard_set'
 require_relative '../lib/standard_hierarchy'
-require_relative '../lib/create_standard_set'
 
 module API
   class StandardSets < Grape::API
