@@ -8,36 +8,39 @@ module API
     namespace :pull_requests do
 
       post "/" do
-        pp "POST"
         validate_token
-
-        hash = params[:data] || {}
-
-        # find
-        model = $db[:pull_requests].find({_id: hash[:id]}).first
-
-        # return if not authorized
-        return 401 if model != nil && model["submitterId"] != @user["id"] || @user["committer"] == false
-
-        # set defaults
-        hash[:_id]            = hash.delete(:id)
-        hash[:_id] ||= SecureRandom.csp_uuid() # ensure an id
-        hash[:submitterId]    = @user["_id"]
-        hash[:submitterEmail] = @user["email"]
-        hash[:submitterName]  = @user["profile"]["name"]
-
-        # upsert it
-        model = $db[:pull_requests]
-          .find({_id: hash[:_id]})
-          .find_one_and_update({
-            "$set": hash,
-            "$setOnInsert" => {
-              "createdAt" => Time.now
-            }
-          }, {upsert: true, return_document: :after})
-
+        PullRequest.create(@user, params.standard_set_id)
+        PullRequest.add_activity(model, Activity.new({
+          type: "created",
+          title: "Woohoo! New pull request created by #{@user['profile']['name']}"
+        }))
         # return it
         present :data, model, with: Entities::PullRequest
+      end
+
+      post "/:id" do
+        validate_token
+        model = PullRequest.find(params[:id])
+        return 401 unless PullRequest.can_edit?(model, @user)
+        model = PullRequest.update(params[:data])
+        # PullRequest.add_activity(model, Activity.new({
+        #   type: "saved",
+        #   title: "Saved by #{@user['profile']['name']}"
+        # }))
+        present :data, model, with: Entities::PullRequest
+      end
+
+      post "/:id/submit" do
+        validate_token
+        model = PullRequest.find(params[:id])
+        return 401 unless PullRequest.can_edit?(model, @user)
+        PullRequest.change_status(params[:id], "in-review", true)
+      end
+
+      post "/:id/change-status" do
+        validate_token
+        return 401  unless @user["committer"] === true
+        PullRequest.change_status(params[:id], status, true)
       end
 
       get "/:id" do
@@ -57,7 +60,10 @@ module API
       end
 
       get "/" do
-        models = $db[:pull_requests].find({status: {:$ne => "rejected"}}).to_a
+        models = $db[:pull_requests].find({status: {:$ne => "rejected"}}).to_a.map{|pr|
+          pr["standardSet"] ||= {}
+          pr
+        }
         present :data, models, with: Entities::PullRequest
       end
 

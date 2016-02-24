@@ -21,6 +21,8 @@ gem 'newrelic_rpm'
 gem 'thor'
 gem 'skylight', '~>0.8.0'
 gem "slack-notify"
+gem 'virtus'
+gem 'dry-validation'
 
 group :development do
   gem 'guard'
