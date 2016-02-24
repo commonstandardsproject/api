@@ -40,7 +40,7 @@ module API
       post "/:id/change-status" do
         validate_token
         return 401  unless @user["committer"] === true
-        PullRequest.change_status(params[:id], status, true)
+        PullRequest.change_status(params[:id], params[:status], params[:message], true)
       end
 
       get "/:id" do

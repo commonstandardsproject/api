@@ -15,8 +15,4 @@ class Activity
     key(:title, &:str?)
   end
 
-  def self.validate(model)
-    Validator.new.call(model)
-  end
-
 end

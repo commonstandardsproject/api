@@ -24,10 +24,6 @@ class StandardSet
       key(:id, &:str?)
       key(:title, &:str?)
     end
-
-    def self.validate(model)
-      Validator.new.call(model)
-    end
   end
 
   attribute :license, StandardSetLicense, default: (page, attrs) -> {StandardSetLicense.new}
@@ -40,9 +36,6 @@ class StandardSet
       key(:title, &:str?)
       key(:URL, &:str?)
       key(:rightsHolder, &:str?)
-    end
-    def self.validate(model)
-      Validator.new.call(model)
     end
   end
 
@@ -80,9 +73,10 @@ class StandardSet
 
   def self.validate(model)
     self_validations = Validator.new.call(model)
-    jurisdiction_validations = StandardSetJurisdiction.validate(model.jurisdiction)
-    license_validations = StandardSetLicense.validate(model.license)
-    self_validations.messages + jurisdiction_validations.messages + license_validations.messages
+    jurisdiction_validations = StandardSetJurisdiction::Validator.new.call(model.jurisdiction)
+    license_validations = StandardSetLicense::Validator.new.call(model.license)
+    messages = self_validations.messages + jurisdiction_validations.messages + license_validations.messages
+    messages.empty? true : messages
   end
 
   def self.find(id)
