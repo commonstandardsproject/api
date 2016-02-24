@@ -1,5 +1,7 @@
 require_relative "activity"
 require_relative "standard_set"
+require_relative "asana_task"
+require_relative "email"
 require_relative "../lib/securerandom"
 require 'dry-validation'
 
@@ -14,21 +16,23 @@ class PullRequest
   attribute :activities, Array[Activity], default: []
   attribute :forkedFromStandardSetId, String
   attribute :standardSet, StandardSet, default: -> (page, attrs) {StandardSet.new}
+  attribute :asanaTaskId, String
 
   class Validator < Dry::Validation::Schema
     key(:submitterId, &:str?)
     key(:submitterEmail, &:str?)
     key(:submitterName, &:str?)
-    key(:status){|status| status.inclusion? ["draft", "in-review", "awaiting-changes", "approved", "rejected" ]}
+    key(:status){|status| status.inclusion? ["draft", "approval-requested", "revise-and-resubmit", "approved", "rejected" ]}
   end
 
   def self.validate(model)
     attrs_validation = Validator.new.call(model.attributes)
     activites_validation = model.activities.map{|activity|
-      Activity.validate(activity)
+      Activity::Validator.new.call(activity)
     }.flatten
     standard_set_validation = StandardSet.validate(model.standardSet)
-    attrs_validation.messages + activites_validation.messages + standard_set_validation.messages
+    messages = attrs_validation.messages + activites_validation.messages + standard_set_validation.messages
+    messages.empty? true : messages
   end
 
 
@@ -65,9 +69,12 @@ class PullRequest
   end
 
   def self.save(model)
+    task = AsanaTask.create_task(model.id, model.submitterName, model.submitterEmail)
+    model.asanaTaskId = task.id
     attrs = model.attributes
     attrs[:_id] = attrs.delete(:id)
     $db[:pull_requests].insert_one(attrs)
+    Email.send("submitted", model)
   end
 
   def self.update(model)
@@ -97,7 +104,7 @@ class PullRequest
       })
   end
 
-  def self.change_status(id, status, send_notice=false)
+  def self.change_status(id, status, comment, send_notice=false)
     model = self.new($db[:pull_requests]
       .find({_id: id})
       .find_one_and_update({
@@ -106,29 +113,27 @@ class PullRequest
 
     if status == "approved"
       StandardSet.update(model.attributes[:standardSet])
-      # apply the standard set to the one it was forked from
     end
 
-    if send_notice
-      send_notice(id, status)
-    end
+    send_notice(model, status, comment) if send_notice
+
     model
   end
 
-  def self.send_notice(id, status)
-    model = find(id)
+  def self.send_notice(model, status, comment)
+
     case status
     when "approved"
-      PostmarkClient
-      # SendEmail
+      Email.send("approved", model, comment)
+      AsanaTask.approve(model.task_id)
     when "rejected"
-      # send email
-    when "awaiting-changes"
-      # send email asking to await changes
-    when "in-review"
-      # add task to asana
-      # slack us
-      # send email
+      Email.send("rejected", model, comment)
+      AsanaTask.reject(model.task_id)
+    when "revise-and-resubmit"
+      Email.send("revise-and-resubmit", model, comment)
+      AsanaTask.revise_and_resubmit(model.task_id)
+    when "requested-approval"
+      AsanaTask.request_approval(model.task_id)
     end
   end
 
