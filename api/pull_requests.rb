@@ -60,10 +60,8 @@ module API
       end
 
       get "/" do
-        models = $db[:pull_requests].find({status: {:$ne => "rejected"}}).to_a.map{|pr|
-          pr["standardSet"] ||= {}
-          pr
-        }
+        validate_token
+        models = PullRequest.find_all
         present :data, models, with: Entities::PullRequest
       end
 
