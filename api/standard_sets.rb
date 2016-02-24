@@ -29,20 +29,6 @@ module API
       end
 
 
-      params do
-        requires :jurisdiction_id
-        requires :subject
-        requires :title
-        requires :committerName
-        requires :committerEmail
-      end
-      post hidden: true do
-        validate_token
-          new_set = CreateStandardSet.create(params)
-        present :data, new_set, with: Entities::StandardSet
-      end
-
-
       desc "To preview the results of a standard set query, we call this api."
       post "/from_query", hidden: true do
         validate_token

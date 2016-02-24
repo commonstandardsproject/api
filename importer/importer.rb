@@ -7,7 +7,7 @@ require 'typhoeus'
 require 'parallel'
 require_relative 'matchers/source_to_subject_mapping_grouped'
 require_relative 'transformers/asn_resource_parser'
-require_relative "../lib/update_standard_set"
+require_relative "../models/standard_set"
 require_relative '../config/mongo'
 require_relative '../lib/send_to_algolia'
 
@@ -149,7 +149,7 @@ def generate_standard_sets(doc)
   Parallel.each(doc["standardSetQueries"], :in_processes => 16){|query|
     p "Converting #{doc["document"]["title"]}: #{query["title"]}"
     set = QueryToStandardSet.generate(doc, query)
-    UpdateStandardSet.update(set, {cache_standards: false, send_to_algolia: false})
+    StandardSet.update(set, {cache_standards: false, send_to_algolia: false})
     Parallel::Kill
   }
   doc

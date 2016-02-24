@@ -9,8 +9,10 @@ module API
       expose :submitterId
       expose :authorEmail
       expose :authorName
-      expose :comments
-      expose :standardSet
+      expose :activity
+
+      # just standardSetId instead
+      expose :standardSet, using: API::Entities::StandardSet
       expose :isApplied
       expose :status
     end
