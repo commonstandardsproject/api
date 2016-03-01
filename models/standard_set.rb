@@ -9,13 +9,13 @@ class StandardSet
   include Virtus.model
 
   attribute :id, String, default: -> (page, attrs) { SecureRandom.csp_uuid() }
-  attribute :title, String
-  attribute :subject, String
-  attribute :document, Hash
-  attribute :createdAt, DateTime
+  attribute :title, String, default: ""
+  attribute :subject, String, default: ""
+  attribute :document, Hash, default: ""
+  attribute :createdAt, DateTime, default: -> (page, attrs) { Time.now}
   attribute :updatedAt, DateTime
   attribute :version, Integer, default: 1
-  attribute :standards, Hash[String => Standard]
+  attribute :standards, Hash[String => Standard], default: {}
 
   class Jurisdiction
     include Virtus.model
@@ -42,7 +42,7 @@ class StandardSet
   end
   attribute :license, License, default: -> (page, attrs){License.new}
 
-  attribute :educationLevels, Array[String]
+  attribute :educationLevels, Array[String], default: []
   EDUCATION_LEVELS = [
     "Pre-K",
     "K",
@@ -71,10 +71,16 @@ class StandardSet
   class Validator < ::Dry::Validation::Schema
     key(:title, &:str?)
     key(:subject, &:str?)
-    key(:educationLevels) {|attr| attr.empty? | attr.inclusion?(EDUCATION_LEVELS)}
+    key(:educationLevels) {|attr| attr.empty? | attr.in_education_levels?}
+    def in_education_levels?(value)
+      # the intersection of the array should produce an array of the same length
+      # as given if all the given education levels are in the EDUCATION_LEVELS set
+      (EDUCATION_LEVELS & value).length == value.length
+    end
   end
 
   def self.validate(model)
+    pp model.attributes
     self_validations = Validator.new.call(model.attributes)
     return self_validations.messages unless self_validations.messages.empty?
 

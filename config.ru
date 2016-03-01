@@ -1,4 +1,6 @@
 #\ -s puma
+require 'dotenv'
+Dotenv.load
 require 'sinatra'
 require 'bundler/setup'
 require 'rubygems'

@@ -25,6 +25,7 @@ gem 'virtus'
 gem 'dry-validation'
 gem 'asana'
 gem 'postmark'
+gem 'dotenv'
 
 group :development do
   gem 'guard'

@@ -13,6 +13,7 @@ class PullRequest
   attribute :submitterEmail, String
   attribute :submitterName, String
   attribute :status, String, default: "draft"
+  attribute :statusComment, String
   attribute :activities, Array[Activity], default: []
   attribute :forkedFromStandardSetId, String
   attribute :standardSet, StandardSet, default: -> (page, attrs) {StandardSet.new}
@@ -22,6 +23,13 @@ class PullRequest
   attribute :summary, String
 
   STATUSES = ["draft", "approval-requested", "revise-and-resubmit", "approved", "rejected" ]
+  HUMANIZED_STATUSES = {
+    "draft"               => "Draft",
+    "approval-requested"  => "Approval Requested",
+    "revise-and-resubmit" => "Revise and Resubmit",
+    "approved"            => "Approved",
+    "rejected"            => "Rejected"
+  }
 
   class Validator < Dry::Validation::Schema
     key(:submitterId, &:str?)
@@ -35,10 +43,10 @@ class PullRequest
     return attrs_validation.messages unless attrs_validation.messages.empty?
 
     unless model.activities.empty?
-      activites_validation = model.activities.map{|activity|
-        Activity::Validator.new.call(activity.attributes).messages
+       model.activities.each{|activity|
+        messages = Activity::Validator.new.call(activity.attributes).messages
+        return messages unless messages.empty?
       }.flatten
-      return activites_validation.messages unless activites_validation.messages.empty?
     end
 
     standard_set_messages = StandardSet.validate(model.standardSet)
@@ -65,7 +73,7 @@ class PullRequest
   end
 
   def self.can_edit?(model, user)
-    return true if user && user["committer"] === true
+    return true if user && user["isCommitter"] === true
     return true if model.submitterId === user["id"]
     return false
   end
@@ -95,7 +103,6 @@ class PullRequest
 
     insert(model)
     self.create_asana_task(model)
-    Email.send("submitted", model)
     model
   end
 
@@ -113,6 +120,7 @@ class PullRequest
 
   def self.user_update(params)
     model = self.new(params)
+    pp model
     return [false, self.validate(model)] if self.validate(model) != true
     return [true, self.update(model)]
   end
@@ -134,7 +142,9 @@ class PullRequest
 
   def self.add_activity(model, activity)
     validation = Activity::Validator.new.call(activity.attributes)
-    return validation.messages if validation.messages.length > 0
+    if validation.messages.length > 0
+      raise ArgumentError, "Validation failed: #{validation.messages.inspect}"
+    end
     attrs = model.as_json
     attrs.delete(:id)
     model = $db[:pull_requests]
@@ -147,11 +157,13 @@ class PullRequest
   def self.add_comment(model, comment, user)
     activity = Activity.new({
       type: "comment",
-      title: comment
+      title: comment,
+      userName: user["profile"]["name"],
+      userId: user["id"]
     })
     self.add_activity(model, activity)
     if user["committer"] == true
-      Email.send("admin-comment-added", model)
+      Email.send_email("admin-comment-added", model)
       AsanaTask.add_comment_from_approver(model.asanaTaskId, comment, user["profile"]["name"])
     else
       AsanaTask.add_comment_from_submitter(model.asanaTaskId, comment, user["profile"]["name"])
@@ -163,8 +175,18 @@ class PullRequest
     model = self.from_mongo($db[:pull_requests]
       .find({_id: id})
       .find_one_and_update({
-        "$set" => {"status" => status}
+        "$set" => {
+          "status" => status,
+          "statusComment" => comment
+        }
       }, {upsert: true, return_document: :after}))
+
+    activity = Activity.new({
+      type: "status-change",
+      status: HUMANIZED_STATUSES[status],
+      title: comment || ""
+    })
+    self.add_activity(model, activity)
 
     if status == "approved"
       StandardSet.update(model.standardSet.as_json)
@@ -179,13 +201,13 @@ class PullRequest
 
     case status
     when "approved"
-      Email.send("approved", model, comment)
+      Email.send_email("approved", model, comment)
       AsanaTask.approve(model.asanaTaskId)
     when "rejected"
-      Email.send("rejected", model, comment)
+      Email.send_email("rejected", model, comment)
       AsanaTask.reject(model.asanaTaskId)
     when "revise-and-resubmit"
-      Email.send("revise-and-resubmit", model, comment)
+      Email.send_email("revise-and-resubmit", model, comment)
       AsanaTask.revise_and_resubmit(model.asanaTaskId)
     when "approval-requested"
       AsanaTask.approval_requested(model.asanaTaskId)
