@@ -78,6 +78,8 @@ module API
         error!("Unauthorized: Origin isn't an allowed origin.", 401)
       end
 
+      @user["id"] = @user["_id"]
+      @user
     end
 
     # =============

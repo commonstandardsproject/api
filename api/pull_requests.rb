@@ -10,7 +10,7 @@ module API
 
       post "/" do
         validate_token
-        model = PullRequest.create(@user, params[:standard_set_id])
+        model = PullRequest.create(@user, params[:standardSetId])
 
         # reload it
         model = PullRequest.find(model.id)
@@ -25,6 +25,7 @@ module API
         return 401 unless PullRequest.can_edit?(model, @user)
         success, response = PullRequest.user_update(params[:data])
         if success === false
+          status 422
           return {
             errors: response.map{|field, (expected, actual)|
               "#{expected.first} but we received #{actual.to_s}"
@@ -38,21 +39,33 @@ module API
       post "/:id/submit" do
         validate_token
         model = PullRequest.find(params[:id])
-        return 401 unless PullRequest.can_edit?(model, @user)
-        PullRequest.change_status(params[:id], "approval-requested", nil, true)
+        unless PullRequest.can_edit?(model, @user)
+          status 401
+          return
+        end
+        PullRequest.change_status(params[:id], "approval-requested", "Thanks so much! We'll take a look and get back to you in the next week (if not sooner)", true)
+        present :data, PullRequest.find(params[:id]), with: Entities::PullRequest
       end
 
       post "/:id/change_status" do
         validate_token
-        return 401  unless @user["committer"] === true
+        unless @user["isCommitter"]
+          status 401
+          return
+        end
         PullRequest.change_status(params[:id], params[:status], params[:message], true)
+        present :data, PullRequest.find(params[:id]), with: Entities::PullRequest
       end
 
       post "/:id/comment" do
         validate_token
         model = PullRequest.find(params[:id])
-        return 401 unless PullRequest.can_edit?(model, @user)
+        unless PullRequest.can_edit?(model, @user)
+          status 401
+          return
+        end
         PullRequest.add_comment(model, params[:comment], @user)
+        present :data, PullRequest.find(params[:id]), with: Entities::PullRequest
       end
 
       get "/:id" do

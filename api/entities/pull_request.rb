@@ -13,6 +13,7 @@ module API
       expose :submitterName
       expose :activities
       expose :forkedFromStandardSetId
+      expose :statusComment
 
       # just standardSetId instead
       expose :standardSet, using: API::Entities::StandardSet
