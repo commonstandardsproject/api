@@ -202,6 +202,7 @@ class PullRequest
 
     if status == "approved"
       StandardSet.update(model.standardSet.as_json)
+      Jurisdiction.approve(model.standardSet.jurisdiction.id)
     end
 
     send_notice(model, status, comment) if send_notice
