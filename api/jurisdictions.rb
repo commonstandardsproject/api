@@ -1,6 +1,7 @@
 require 'grape'
 require_relative '../config/mongo'
 require_relative 'entities/jurisdiction'
+require_relative '../models/jurisdiction'
 require_relative 'entities/jurisdiction_summary'
 
 module API
@@ -10,7 +11,16 @@ module API
 
       desc "Return a list of jurisdictions"
       get "/" do
-        jurisdictions = $db[:jurisdictions].find({status: {:$ne => "inactive"}}).sort({:title => 1}).to_a
+        pp @user["id"]
+        jurisdictions = $db[:jurisdictions].find({
+          :$or => [
+            {:$and => [
+              {:status => {:$ne => "inactive"}},
+              {:status => {:$ne => "pending"}},
+              {:status => {:$ne => "rejected"}} ] },
+            {:submitterId => @user["id"]}
+          ]
+        }).sort({:title => 1}).to_a
         present :data, jurisdictions, with: Entities::JurisdictionSummary
       end
 
@@ -20,7 +30,7 @@ module API
       end
       get "/:id" do
         jurisdiction = $db[:jurisdictions].find({
-          :_id => params[:id]
+          :_id => params[:id],
         }).to_a.first
 
 
@@ -47,10 +57,10 @@ module API
 
       post "/", hidden: true do
         validate_token
-        jurisdiction = params[:jurisdiction].to_hash
-        jurisdiction[:status] = "pending"
-        jurisdiction[:_id] = SecureRandom.uuid().to_s.gsub("-", "").upcase
-        new_jurisdiction = $db[:jurisdictions].insert_one(jurisdiction)
+        jurisdiction= Jurisdiction.new(params[:jurisdiction].to_hash)
+        jurisdiction.status = "pending"
+        jurisdiction.submitterId = @user["id"]
+        Jurisdiction.insert(jurisdiction)
         present :data, jurisdiction, with: Entities::Jurisdiction
       end
 
