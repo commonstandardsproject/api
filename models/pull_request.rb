@@ -244,11 +244,13 @@ class PullRequest
     PullRequest.update(pr)
     PullRequest.create_asana_task(pr, false)
 
-    sets = commit[:diff]["$set"].reduce({}){|acc, (path, value)|
-      acc["standardSet." + path] = value
+    operations = commit[:ops].reduce({}){|acc, hash|
+      acc[hash["op"]] ||= {}
+      acc[hash["op"]]["standardSet." + hash["path"]] = hash["value"]
       acc
     }
-    $db[:pull_requests].find({_id: pr.id}).update_one({"$set" => sets})
+
+    $db[:pull_requests].find({_id: pr.id}).update_one(operations)
     pr
   end
 
