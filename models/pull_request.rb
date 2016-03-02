@@ -1,4 +1,5 @@
 require_relative "activity"
+require_relative "user"
 require_relative "standard_set"
 require_relative "asana_task"
 require_relative "email"
@@ -111,8 +112,8 @@ class PullRequest
     $db[:pull_requests].insert_one(attrs)
   end
 
-  def self.create_asana_task(model)
-    task = AsanaTask.create_task(model)
+  def self.create_asana_task(model, completed=true)
+    task = AsanaTask.create_task(model, completed)
     model.asanaTaskId = task.id
     self.update(model)
   end
@@ -134,9 +135,7 @@ class PullRequest
     model.updatedAt = Time.now
     model.title = "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}"
     attrs = model.as_json
-    attrs.delete(:id)
-    attrs.delete(:createdAt)
-    attrs.delete(:asanaTaskId)
+    attrs.delete("id")
 
     update_in_mongo(model.id, attrs.as_json)
 
@@ -231,6 +230,26 @@ class PullRequest
     attrs[:id] = attrs.delete("_id")
     model = self.new(attrs)
     model
+  end
+
+  def self.from_commit(commit_id)
+    commit = $db[:commits].find({_id: commit_id}).first
+    pr = self.new
+    pr.submitterId = User.find_by_email(commit[:committerEmail]).id
+    pr.submitterEmail = commit[:committerEmail]
+    pr.submitterName = commit[:committerName]
+    pr.status = "draft"
+    pr.forkedFromStandardSetId = commit[:standardSetId]
+    pr.standardSet = StandardSet.find(commit[:standardSetId])
+    PullRequest.update(pr)
+    PullRequest.create_asana_task(pr, false)
+
+    sets = commit[:diff]["$set"].reduce({}){|acc, (path, value)|
+      acc["standardSet." + path] = value
+      acc
+    }
+    $db[:pull_requests].find({_id: pr.id}).update_one({"$set" => sets})
+    pr
   end
 
 end

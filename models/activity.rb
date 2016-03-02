@@ -1,5 +1,6 @@
 require_relative "../lib/securerandom"
 require 'dry-validation'
+require 'virtus'
 
 class Activity
   include Virtus.model
