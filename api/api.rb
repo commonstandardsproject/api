@@ -74,7 +74,12 @@ module API
         error!('Unauthorized: Not a valid auth key. Sign up at commonstandardsproject.com', 401)
       end
 
-      if env["HTTP_ORIGIN"] && @user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
+      check_origin = env["ENVIRONMENT"] != "development" &&
+                     env["HTTP_ORIGIN"] &&
+                     env["HTTP_ORIGIN"] != "http://commonstandardsproject.com" &&
+                     env["HTTP_ORIGIN"] != "http://www.commonstandardsproject.com"
+
+      if check_origin && @user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
         error!("Unauthorized: Origin isn't an allowed origin.", 401)
       end
 
