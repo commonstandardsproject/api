@@ -10,7 +10,7 @@ class PullRequest
 
   attribute :id, String, :default => -> (page, attrs) { SecureRandom.csp_uuid() }
   attribute :submitterId, String
-  attribute :submitterEmail, String
+  attribute :submitterEmail, String, default: "noemail@example.com"
   attribute :submitterName, String
   attribute :status, String, default: "draft"
   attribute :statusComment, String
