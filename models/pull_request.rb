@@ -33,7 +33,6 @@ class PullRequest
 
   class Validator < Dry::Validation::Schema
     key(:submitterId, &:str?)
-    key(:submitterEmail, &:str?)
     key(:submitterName, &:str?)
     key(:status){|status| status.inclusion? STATUSES }
   end
