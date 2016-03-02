@@ -10,12 +10,16 @@ class Email
       "revise-and-resubmit" => 438823
     }
     template_model = {
-      name: pr.submitterName
+      name:         pr.submitterName,
+      URL:          "http://commonstandardsproject.com/edit/pull-requests/" + pr.id,
+      jurisdiction: pr.standardSet.jurisdiction.title,
+      subject:      pr.standardSet.subject,
+      title:        pr.standardSet.title,
     }
     template_model[:comment] = {text: comment} if comment
 
     PostmarkClient.deliver_with_template(
-      from: 'scott@commoncurriculum.com',
+      from: 'robbie@commoncurriculum.com',
       to: "#{pr.submitterName} <#{pr.submitterEmail}>",
       template_id: templates[template_name],
       template_model: template_model
