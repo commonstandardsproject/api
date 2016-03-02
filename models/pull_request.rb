@@ -113,16 +113,19 @@ class PullRequest
   end
 
   def self.create_asana_task(model)
-    task = AsanaTask.create_task(model.id, model.submitterName, model.submitterEmail)
+    task = AsanaTask.create_task(model.id, model)
     model.asanaTaskId = task.id
     self.update(model)
   end
 
   def self.user_update(params)
     model = self.new(params)
-    pp model
     return [false, self.validate(model)] if self.validate(model) != true
-    return [true, self.update(model)]
+
+    # only let the user update the standard set
+    attrs = {standardSet: model.as_json["standardSet"]}
+    new_model = self.from_mongo(update_in_mongo(model.id, attrs))
+    return [true, new_model]
   end
 
   def self.update(model)
@@ -130,14 +133,19 @@ class PullRequest
     attrs = model.as_json
     attrs.delete(:id)
     attrs.delete(:createdAt)
+    attrs.delete(:asanaTaskId)
 
-    $db[:pull_requests]
-      .find({_id: model.id})
-      .find_one_and_update({
-        "$set" => attrs.as_json
-      })
+    update_in_mongo(model.id, attrs.as_json)
 
     model
+  end
+
+  def self.update_in_mongo(id, attrs)
+    $db[:pull_requests]
+      .find({_id: id})
+      .find_one_and_update({
+        "$set" => attrs
+      }, {upsert: true, return_document: :after})
   end
 
   def self.add_activity(model, activity)
@@ -166,7 +174,7 @@ class PullRequest
       Email.send_email("admin-comment-added", model)
       AsanaTask.add_comment_from_approver(model.asanaTaskId, comment, user["profile"]["name"])
     else
-      AsanaTask.add_comment_from_submitter(model.asanaTaskId, comment, user["profile"]["name"])
+      AsanaTask.add_comment_from_submitter(model.asanaTaskId, comment, user["profile"]["name"], model)
     end
   end
 
@@ -202,15 +210,15 @@ class PullRequest
     case status
     when "approved"
       Email.send_email("approved", model, comment)
-      AsanaTask.approve(model.asanaTaskId)
+      AsanaTask.approve(model.asanaTaskId, model)
     when "rejected"
       Email.send_email("rejected", model, comment)
-      AsanaTask.reject(model.asanaTaskId)
+      AsanaTask.reject(model.asanaTaskId, model)
     when "revise-and-resubmit"
       Email.send_email("revise-and-resubmit", model, comment)
-      AsanaTask.revise_and_resubmit(model.asanaTaskId)
+      AsanaTask.revise_and_resubmit(model.asanaTaskId, model)
     when "approval-requested"
-      AsanaTask.approval_requested(model.asanaTaskId)
+      AsanaTask.approval_requested(model.asanaTaskId, model)
     end
   end
 
