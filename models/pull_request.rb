@@ -20,7 +20,7 @@ class PullRequest
   attribute :asanaTaskId, String
   attribute :createdAt, DateTime
   attribute :updatedAt, DateTime
-  attribute :summary, String
+  attribute :title, String
 
   STATUSES = ["draft", "approval-requested", "revise-and-resubmit", "approved", "rejected" ]
   HUMANIZED_STATUSES = {
@@ -113,7 +113,7 @@ class PullRequest
   end
 
   def self.create_asana_task(model)
-    task = AsanaTask.create_task(model.id, model)
+    task = AsanaTask.create_task(model)
     model.asanaTaskId = task.id
     self.update(model)
   end
@@ -123,13 +123,17 @@ class PullRequest
     return [false, self.validate(model)] if self.validate(model) != true
 
     # only let the user update the standard set
-    attrs = {standardSet: model.as_json["standardSet"]}
+    attrs = {
+      title: "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}",
+      standardSet: model.as_json["standardSet"]
+    }
     new_model = self.from_mongo(update_in_mongo(model.id, attrs))
     return [true, new_model]
   end
 
   def self.update(model)
     model.updatedAt = Time.now
+    model.title = "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}"
     attrs = model.as_json
     attrs.delete(:id)
     attrs.delete(:createdAt)

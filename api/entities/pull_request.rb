@@ -7,7 +7,7 @@ module API
       expose :id
       expose :createdAt
       expose :updatedAt
-      expose :summary
+      expose :title
       expose :submitterId
       expose :submitterEmail
       expose :submitterName
