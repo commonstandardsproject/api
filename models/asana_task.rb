@@ -11,12 +11,12 @@ class AsanaTask
     "J: #{model.standardSet.jurisdiction.title}\nS: #{model.standardSet.subject}\nT: #{model.standardSet.title}\n\nPR: http://commonstandardsproject.com/edit/pull-requests/#{model.id}\nEmail: #{model.submitterEmail}"
   end
 
-  def self.create_task(model)
+  def self.create_task(model, completed=true)
     Asana::Resources::Task.create(AsanaClient,
       projects: [ENV["ASANA_PR_PROJECT"]],
       name: make_title(model),
       notes: make_notes(model),
-      completed: true,
+      completed: completed,
       assignee: ENV["ASANA_PR_ASSIGNEE_ID"]
     )
   end

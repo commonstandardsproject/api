@@ -4,6 +4,7 @@ require_relative "../lib/securerandom"
 class User
   include Virtus.model
 
+  attribute :id
   attribute :profile, Hash
   attribute :email, String
   attribute :apiKey, String, default: -> (page, attrs){ SecureRandom.base58(24) }
@@ -12,6 +13,13 @@ class User
 
   def self.find(id)
     user = $db[:users].find({_id: id}).to_a.first
+    user[:id] = user.delete "_id"
+    self.new(user)
+  end
+
+  def self.find_by_email(email)
+    user = $db[:users].find({email: email}).to_a.first
+    user[:id] = user.delete "_id"
     self.new(user)
   end
 
