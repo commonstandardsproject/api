@@ -8,7 +8,7 @@ class AsanaTask
   end
 
   def self.make_notes(model)
-    "J: #{model.standardSet.jurisdiction.title}\nS: #{model.standardSet.subject}\nT: #{model.standardSet.title}\n\nPR: http://commonstandardsproject.com/pull-requests/#{model.id}\nEmail: #{model.submitterEmail}"
+    "J: #{model.standardSet.jurisdiction.title}\nS: #{model.standardSet.subject}\nT: #{model.standardSet.title}\n\nPR: http://commonstandardsproject.com/edit/pull-requests/#{model.id}\nEmail: #{model.submitterEmail}"
   end
 
   def self.create_task(model)
