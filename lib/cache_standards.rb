@@ -16,7 +16,9 @@ class CachedStandards
   end
 
   def self.one(set)
-    $db[:cached_standards].bulk_write(self.generate(set), :ordered => false)
+    cached = self.generate(set)
+    return if cached.nil?
+    $db[:cached_standards].bulk_write(cached, :ordered => false)
   end
 
   def self.generate(standardSet)

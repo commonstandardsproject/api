@@ -1,4 +1,4 @@
-## What is this? 
+## What is this?
 API for the Common Standards Project, a database of academic standards from all 50 states, organizations, districts, and school. Check out a live API at [http://api.commonstandardsproject.com/](http://api.commonstandardsproject.com/) and read the documentation at [http://commonstandardsproject.com](http://commonstandardsproject.com)
 
 ## Why?
@@ -50,7 +50,6 @@ There are a few tasks that must be completed to get running with a local copy of
 
 **Getting Setup**
 * Install [MongoDB](https://www.mongodb.org/) or `brew install mongodb`
-* Run `mongorestore sources/jurisdiction-mongodb-dump` to do an initial import of jurisdictions
 * Clone the repo and run `bundle install` to get all the gems you will need
 * Run `./importer/cli setup` to create a default user and a sample .env file
 
@@ -64,4 +63,3 @@ There are a few tasks that must be completed to get running with a local copy of
 ## Contributing!
 
 Join the mailing list and we'll help you out: [https://groups.google.com/d/forum/common-standards-project](https://groups.google.com/d/forum/common-standards-project)
-

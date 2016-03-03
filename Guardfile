@@ -17,7 +17,7 @@
 
 group :server do
   guard :shotgun, :server => "puma", :port => "9393" do
-    watch %r{^(api|lib)/.*\.rb}
+    watch %r{^(api|lib|models)/.*\.rb}
     watch 'config.ru'
   end
 end
