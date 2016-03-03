@@ -11,7 +11,7 @@ class StandardSet
   attribute :id, String, default: -> (page, attrs) { SecureRandom.csp_uuid() }
   attribute :title, String, default: ""
   attribute :subject, String, default: ""
-  attribute :document, Hash, default: ""
+  attribute :document, Hash, default: {}
   attribute :createdAt, DateTime, default: -> (page, attrs) { Time.now}
   attribute :updatedAt, DateTime
   attribute :version, Integer, default: 1
