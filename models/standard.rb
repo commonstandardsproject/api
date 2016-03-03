@@ -1,3 +1,5 @@
+require 'virtus'
+
 class Standard
   include Virtus.model
 
