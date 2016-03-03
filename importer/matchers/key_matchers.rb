@@ -392,7 +392,7 @@ KEY_MATCHERS = {
   "http://purl.org/dc/terms/educationLevel" => lambda{|key, value|
       education_levels = value
         .map{|v| v["value"]}
-        .map{|v| v.match(/http\:\/\/purl.org\/ASN\/scheme\/ASNEducationLevel\/(.+)/).to_a.last}
+        .map{|v| v.match(/http\:\/\/purl.org\/ASN\/scheme\/ASNEducationLevel(_CAN-BC)?\/(.+)/).to_a.last}
         .map{|level|
           if level.to_i && level.to_i < 10 && level.to_i > 0
             "0" + level
