@@ -12,9 +12,15 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2500933" => "Health Education",                     # 2009 Alabama Course of Study: Health Education  https://docs.alsde.edu/documents/54/HEALTH%202009%20---FINAL.pdf
     "D2504960" => "Mathematics",                          # 2013 Alabama Course of Study: Mathematics  http://alex.state.al.us/staticfiles/2013_Alabama_Mathematics_Course_of_Study.pdf
     "D2500761" => "Physical Education",                   # 2009 Alabama Course of Study: Physical Education  https://docs.alsde.edu/documents/54/1%202009%20Physical%20Education%20Course%20of%20Study.pdf.pdf
-    "D1000255" => "Science",                              # 2005 Alabama Course of Study: Science
+    "D1000255" => "Science (2005)",                       # 2005 Alabama Course of Study: Science
     "D2575544" => "Social Studies",                       # 2013 Alabama Course of Study: Social Studies  http://alex.state.al.us/staticfiles/2010_AL_Social_Studies_Course_of_Study.pdf
     "D2504422" => "Technology Education",                 # 2009 Alabama Course of Study: Technology Education  https://docs.alsde.edu/documents/54/2008%20Technology%20Education%20Course%20of%20Study.pdf
+    # March 3, 2016 Imports:
+    "D2687909" => "Science (2015)", # 2015 Alabama Course of Study: Science
+    "D2707611" => "Languages Other Than English—Foreign Languages (2006)", # 2006 Alabama Course of Study: Languages Other Than English—Foreign Languages
+    "D2725060" => "Career Mathematics (2015)", # 2015 Alabama Course of Study: Career Mathematics
+
+
   },
   # ===================
   # Alaska
@@ -339,78 +345,100 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2624876" => "Workforce Technology",                 # 2011 Workforce Technology  http://ace.arkansas.gov/cte/informationForms/curriculumFrameworks/Documents/Frameworks/Workforce%20Technology%20frameworks%203-23-11.pdf
     "D2610745" => "World Geography",                      # 2014 World Geography Curriculum Framework  http://www.arkansased.org/public/userfiles/Learning_Services/Curriculum%20and%20Instruction/Frameworks/Social_Studies/World_Geography.pdf
     "D2610746" => "World History Since 1450",             # 2014 World History Since 1450 Curriculum Framework  http://www.arkansased.org/public/userfiles/Learning_Services/Curriculum%20and%20Instruction/Frameworks/Social_Studies/World_History_Since_1450.pdf
-    "D2650389"=>"Web Technologies",
-    "D2657545"=>"Introduction to Technology and Engineering",
-    "D2659718"=>"Culinary Arts I",
-    "D2650390"=>"Word Processing I",
-    "D2657520"=>"Animal Science I",
-    "D2662499"=>"Foundations of Law Enforcement",
-    "D2657525"=>"Plant Science II",
-    "D2663634"=>"Diesel Electrical Systems",
-    "D2659719"=>"Culinary Arts II",
-    "D2661016"=>"Mechanical Plumbing and Electrical",
-    "D2661017"=>"Plumbing",
-    "D2659720"=>"Carpentry",
-    "D2657536"=>"Input Technologies",
-    "D2657533"=>"Medical Terminology",
-    "D2657523"=>"Food Science Technology",
-    "D2657521"=>"Animal Science II",
-    "D2657526"=>"Poultry Science",
-    "D2663633"=>"Diesel Brakes",
-    "D2663632"=>"Collision Repair - Structural Analysis/Damage Repair",
-    "D2663415"=>"Collision Repair - Painting & Refinishing",
-    "D2663414"=>"Collision Repair - Nonstructural Analysis/Repair",
-    "D2662822"=>"Aviation",
-    "D2662821"=>"Automotive Suspension and Steering",
-    "D2662820"=>"Automotive Engine Performance",
-    "D2662818"=>"Automotive Brakes",
-    "D2662816"=>"Advanced Shielded Metal Arc Welding",
-    "D2662815"=>"Shielded Metal Arc Welding",
-    "D2662814"=>"Gas Tungsten Arc Welding",
-    "D2662813"=>"Gas Metal Arc Welding",
-    "D2662812"=>"Welding Technology",
-    "D2662811"=>"Power Equipment Technology",
-    "D2662810"=>"Machine Tool Technology",
-    "D2662809"=>"Industrial Equipment Maintenance",
-    "D2662808"=>"Pre-Mechatronics Intermediate",
-    "D2662807"=>"Pre-Mechatronics",
-    "D2662500"=>"Introduction to Criminal Justice",
-    "D2662498"=>"Criminal Law",
-    "D2662497"=>"Crime Scene Investigation",
-    "D2661015"=>"Furniture Manufacturing",
-    "D2659721"=>"Introductory Craft Skills",
-    "D2659717"=>"Introduction to Culinary Arts",
-    "D2655580"=>"Arkansas Science Standards (5-8)",
-    "D2655579"=>"Arkansas Science Standards (K-4)",
-    "D2657524"=>"Plant Science I",
-    "D2657522"=>"Equine Science",
-    "D2657519"=>"Survey of Agriculture Systems",
-    "D2657541"=>"Technology Design and Applications",
-    "D2657540"=>"Technology Communications",
-    "D2657539"=>"Investments and Securities",
-    "D2657538"=>"Introduction to Business Communications and Technology",
-    "D2657537"=>"Insurance and Risk Management",
-    "D2657534"=>"Information and Communications Technology",
-    "D2657532"=>"Medical Procedures Extended",
-    "D2657531"=>"Introduction to Medical Professions Extended",
-    "D2657530"=>"Human Behavior and Disorders",
-    "D2657529"=>"Foundations of Sports Medicine",
-    "D2657528"=>"Abnormal Psychology",
-    "D2657546"=>"Fundamentals of Technology and Engineering",
-    "D2657544"=> "Design Applications in Engineering and Technology Education II",
-    "D2657543"=>"Design Applications in Engineering and Technology Education I",
-    "D2657542"=>"Computer Engineering",
-    "D2657516"=>"Leadership and Service Learning (Grades 7-8)",
-    "D2643143"=>"Banking and Finance Principles",
-    "D2657515"=>"Financial Literacy",
-    "D2657517"=>"Leadership and Service Learning (Grades 9-12)",
-    "D2657518"=>"Introduction to Media Communications",
-    "D2655643"=>"Personal Fitness for Life",
-    "D2650391"=>"Word Processing II",
-    "D2650388"=>"Web Design and Multimedia Productions",
-    "D2650387"=>"Web Design II",
-    "D2650386"=>"Web Design I",
-    "D2650385"=>"Travel Destinations",
+    "D2650389" => "Web Technologies",
+    "D2657545" => "Introduction to Technology and Engineering",
+    "D2659718" => "Culinary Arts I",
+    "D2650390" => "Word Processing I",
+    "D2657520" => "Animal Science I",
+    "D2662499" => "Foundations of Law Enforcement",
+    "D2657525" => "Plant Science II",
+    "D2663634" => "Diesel Electrical Systems",
+    "D2659719" => "Culinary Arts II",
+    "D2661016" => "Mechanical Plumbing and Electrical",
+    "D2661017" => "Plumbing",
+    "D2659720" => "Carpentry",
+    "D2657536" => "Input Technologies",
+    "D2657533" => "Medical Terminology",
+    "D2657523" => "Food Science Technology",
+    "D2657521" => "Animal Science II",
+    "D2657526" => "Poultry Science",
+    "D2663633" => "Diesel Brakes",
+    "D2663632" => "Collision Repair - Structural Analysis/Damage Repair",
+    "D2663415" => "Collision Repair - Painting & Refinishing",
+    "D2663414" => "Collision Repair - Nonstructural Analysis/Repair",
+    "D2662822" => "Aviation",
+    "D2662821" => "Automotive Suspension and Steering",
+    "D2662820" => "Automotive Engine Performance",
+    "D2662818" => "Automotive Brakes",
+    "D2662816" => "Advanced Shielded Metal Arc Welding",
+    "D2662815" => "Shielded Metal Arc Welding",
+    "D2662814" => "Gas Tungsten Arc Welding",
+    "D2662813" => "Gas Metal Arc Welding",
+    "D2662812" => "Welding Technology",
+    "D2662811" => "Power Equipment Technology",
+    "D2662810" => "Machine Tool Technology",
+    "D2662809" => "Industrial Equipment Maintenance",
+    "D2662808" => "Pre-Mechatronics Intermediate",
+    "D2662807" => "Pre-Mechatronics",
+    "D2662500" => "Introduction to Criminal Justice",
+    "D2662498" => "Criminal Law",
+    "D2662497" => "Crime Scene Investigation",
+    "D2661015" => "Furniture Manufacturing",
+    "D2659721" => "Introductory Craft Skills",
+    "D2659717" => "Introduction to Culinary Arts",
+    "D2655580" => "Arkansas Science Standards (5-8)",
+    "D2655579" => "Arkansas Science Standards (K-4)",
+    "D2657524" => "Plant Science I",
+    "D2657522" => "Equine Science",
+    "D2657519" => "Survey of Agriculture Systems",
+    "D2657541" => "Technology Design and Applications",
+    "D2657540" => "Technology Communications",
+    "D2657539" => "Investments and Securities",
+    "D2657538" => "Introduction to Business Communications and Technology",
+    "D2657537" => "Insurance and Risk Management",
+    "D2657534" => "Information and Communications Technology",
+    "D2657532" => "Medical Procedures Extended",
+    "D2657531" => "Introduction to Medical Professions Extended",
+    "D2657530" => "Human Behavior and Disorders",
+    "D2657529" => "Foundations of Sports Medicine",
+    "D2657528" => "Abnormal Psychology",
+    "D2657546" => "Fundamentals of Technology and Engineering",
+    "D2657544" => "Design Applications in Engineering and Technology Education II",
+    "D2657543" => "Design Applications in Engineering and Technology Education I",
+    "D2657542" => "Computer Engineering",
+    "D2657516" => "Leadership and Service Learning (Grades 7-8)",
+    "D2643143" => "Banking and Finance Principles",
+    "D2657515" => "Financial Literacy",
+    "D2657517" => "Leadership and Service Learning (Grades 9-12)",
+    "D2657518" => "Introduction to Media Communications",
+    "D2655643" => "Personal Fitness for Life",
+    "D2650391" => "Word Processing II",
+    "D2650388" => "Web Design and Multimedia Productions",
+    "D2650387" => "Web Design II",
+    "D2650386" => "Web Design I",
+    "D2650385" => "Travel Destinations",
+    "D2673129" => "Transitional Literacy", # 2015 Transitional Literacy
+    "D2673235" => "Foreign Language Acquisition", # (K-8) 2013 Foreign Language Acquisition (K-8)",
+    "D2673234" =>
+    "Foreign Language Experiences (K-8) 2013 Foreign Language Experiences (K-8)",
+    "D2673236" => "Latin I 2013 Latin I",
+    "D2673237" => "Latin II 2013 Latin II",
+    "D2673238" =>
+    "Spanish for Heritage and Native Speakers I 2013 Spanish for Heritage and Native Speakers I",
+    "D2673307" =>
+    "Spanish for Heritage and Native Speakers II 2013 Spanish for Heritage and Native Speakers II",
+    "D2673308" =>
+    "Spanish for Heritage and Native Speakers III 2013 Spanish for Heritage and Native Speakers III",
+    "D2673306" => "Modern Languages I 2013 Modern Languages I",
+    "D2673239" => "Modern Languages II 2013 Modern Languages II",
+    "D2673240" => "Modern Languages III 2013 Modern Languages III",
+    "D2673241" => "Modern Languages IV 2013 Modern Languages IV",
+    "D2673312" => "American Sign Language IV 2014 American Sign Language IV",
+    "D2673311" => "American Sign Language III 2014 American Sign Language III",
+    "D2673310" => "American Sign Language II 2014 American Sign Language II",
+    "D2673309" => "American Sign Language I 2014 American Sign Language I",
+    "D2679976" => "Beef Science 2015 Beef Science",
+    "D2679977" => "Veterinary Science 2015 Veterinary Science"
   },
   # ===================
   # California
@@ -456,6 +484,71 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10003F2" => "Science",                              # 2009 Colorado Academic Standards for Science  http://www.cde.state.co.us/CoScience/Documents/Science_Standards_Adopted_2009.pdf
     "D10003F5" => "Social Studies",                       # 2009 Colorado Academic Standards for Social Studies  http://www.cde.state.co.us/CoSocialStudies/Documents/Social_Studies_Adopted_12_10_09.pdf
     "D10003F8" => "Visual Arts",                          # 2009 Colorado Academic Standards for Visual Arts  http://www.cde.state.co.us/CoArts/Documents/VisualArts/Visual_Arts_Standards_adopted_2009.pdf
+    # March 3, 2016 Imports:
+    "D2699568" => "Agriculture Cluster (2015)", # 2015 Agriculture Cluster
+    "D2699569" => "Agribusiness Systems (2015)", # 2015 Agribusiness Systems
+    "D2699570" => "Animal Science (2015)", # 2015 Animal Science
+    "D2699571" => "Food Products & Processing Systems (2015)", # 2015 Food Products & Processing Systems
+    "D2699572" => "Natural Resource and Environmental Systems (2015)", # 2015 Natural Resource and Environmental Systems
+    "D2699573" => "Plant Science (2015)", # 2015 Plant Science
+    "D2699574" => "Power, Structure, and Technical Systems (2015)", # 2015 Power, Structure, and Technical Systems
+    "D2713201" => "Construction (2015)", # 2015 Construction
+    "D2713202" => "Maintenance and Operations (2015)", # 2015 Maintenance and Operations
+    "D2713203" => "Design and Pre-Construction (2015)", # 2015 Design and Pre-Construction
+    "D2713527" => "Education & Training (2015)", # 2015 Education & Training
+    "D2713528" => "Restaurants and Food & Beverage Services (2015)", # 2015 Restaurants and Food & Beverage Services
+    "D2713529" => "Maintenance, Installation & Repair (2015)", # 2015 Maintenance, Installation & Repair
+    "D2713530" => "Manufacturing Production (2015)", # 2015 Manufacturing Production
+    "D2713531" => "STEM (2015)", # 2015 STEM
+    "D2714027" => "Emergency and Fire Management (2015)", # 2015 Emergency and Fire Management
+    "D2714028" => "Law Enforcement Services (2015)", # 2015 Law Enforcement Services
+    "D2714029" => "Facility & Mobile Equipment Maintenance (2015)", # 2015 Facility & Mobile Equipment Maintenance
+    "D2714030" => "Logistics, Planning & Management Services (2015)", # 2015 Logistics, Planning & Management Services
+    "D2714031" => "Sales and Service (2015)", # 2015 Sales and Service
+    "D2714032" => "Transportation Operations (2015)", # 2015 Transportation Operations
+    "D2714033" => "Warehousing & Distribution Center Operations (2015)", # 2015 Warehousing & Distribution Center Operations
+    "D2715562" => "Electrical Energy Transmission & Distribution (2015)", # 2015 Electrical Energy Transmission & Distribution
+    "D2715563" => "Electromechanical Generation & Maintenance (2015)", # 2015 Electromechanical Generation & Maintenance
+    "D2715564" => "Energy (2015)", # 2015 Energy
+    "D2715565" => "Energy Efficiency & Environmental Technology (2015)", # 2015 Energy Efficiency & Environmental Technology
+    "D2715566" => "Fossil Energy Extraction, Processing & Distribution (2015)", # 2015 Fossil Energy Extraction, Processing & Distribution
+    "D2715567" => "Renewable Energy Production (2015)", # 2015 Renewable Energy Production
+    "D2715568" => "Information Support and Services (2015)", # 2015 Information Support and Services
+    "D2715569" => "Interactive Media (2015)", # 2015 Interactive Media
+    "D2715570" => "IT Cluster (2015)", # 2015 IT Cluster
+    "D2715571" => "Network Systems & Telecommunications (2015)", # 2015 Network Systems & Telecommunications
+    "D2715572" => "Programming & Software Engineering (2015)", # 2015 Programming & Software Engineering
+    "D2715573" => "Postseconday and Workforce Readiness (2015)", # 2015 Postseconday and Workforce Readiness
+    "D2716862" => "Arts, AV and Communication (2015)", # 2015 Arts, AV and Communication
+    "D2716863" => "Audio/Video Technology & Film (2015)", # 2015 Audio/Video Technology & Film
+    "D2716864" => "Journalism & Broadcasting (2015)", # 2015 Journalism & Broadcasting
+    "D2716865" => "Performing Arts (2015)", # 2015 Performing Arts
+    "D2716866" => "Printing/Publishing (2015)", # 2015 Printing/Publishing
+    "D2716867" => "Visual & Design Arts (2015)", # 2015 Visual & Design Arts
+    "D2716868" => "Accounting (2015)", # 2015 Accounting
+    "D2716869" => "Banking Services (2015)", # 2015 Banking Services
+    "D2716870" => "Corporate Finance (2015)", # 2015 Corporate Finance
+    "D2716871" => "Finance (2015)", # 2015 Finance
+    "D2716872" => "Insurance (2015)", # 2015 Insurance
+    "D2716873" => "Securities and Investments (2015)", # 2015 Securities and Investments
+    "D2716874" => "Health (2015)", # 2015 Health
+    "D2716875" => "Therapeutic Services (2015)", # 2015 Therapeutic Services
+    "D2718998" => "Counseling and Mental Health Services (2015)", # 2015 Counseling and Mental Health Services
+    "D2718999" => "Early Childhood Development (2015)", # 2015 Early Childhood Development
+    "D2719000" => "Family and Community Services (2015)", # 2015 Family and Community Services
+    "D2719001" => "Personal Care Services (2015)", # 2015 Personal Care Services
+    "D2719007" => "Operations Management (2015)", # 2015 Operations Management
+    "D2719004" => "Corporate/General Management (2015)", # 2015 Corporate/General Management
+    "D2718997" => "Consumer Services (2015)", # 2015 Consumer Services
+    "D2719002" => "Administrative Services (2015)", # 2015 Administrative Services
+    "D2719003" => "Business Information Technology (2015)", # 2015 Business Information Technology
+    "D2719005" => "Human Resource Management (2015)", # 2015 Human Resource Management
+    "D2719006" => "Management (2015)", # 2015 Management
+    "D2719013" => "Professional Sales (2015)", # 2015 Professional Sales
+    "D2719008" => "Marketing (2015)", # 2015 Marketing
+    "D2719009" => "Marketing Communications (2015)", # 2015 Marketing Communications
+    "D2719010" => "Marketing Management (2015)", # 2015 Marketing Management
+    "D2719011" => "Marketing Research (2015)", # 2015 Marketing Research
   },
   # ===================
   # Common Core State Standards
@@ -474,8 +567,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2620312" => "Social Studies",                       # 2015 Connecticut Elementary and Secondary Social Studies Framework  http://www.sde.ct.gov/sde/lib/sde/pdf/board/ssframeworks.pdf
     "D2419351" => "Health & Physical Education",          # 2006 Connecticut Healthy and Balanced Living Curriculum Framework Comprehensive School Health and Physical Education  http://www.sde.ct.gov/sde/lib/sde/pdf/curriculum/health/healthybalancedliving.pdf
     "D2419643" => "Information & Technology Literacy",    # 2006 Connecticut Information and Technology Literacy Framework  http://www.sde.ct.gov/sde/lib/sde/pdf/Curriculum/itf.pdf
-    "D10003B3" => "Science",                              # 2010 Connecticut Science Curriculum Grade-Level Expectations  http://www.sde.ct.gov/sde/lib/sde/pdf/curriculum/science/pk8_science_curriculumstandards2011.pdf
+    "D10003B3" => "Science (2010)",                       # 2010 Connecticut Science Curriculum Grade-Level Expectations  http://www.sde.ct.gov/sde/lib/sde/pdf/curriculum/science/pk8_science_curriculumstandards2011.pdf
     "D10002A8" => "Social Studies",                       # 1998 Connecticut Social Studies Curriculum Framework  http://ct-n.com/civics/pdf/social%20studies%20framework.pdf
+    # March 3, 2016 Imports:
+    "D2716033" => "Next Generation Science Standards (2015)", # 2015 Next Generation Science Standards
   },
   # ===================
   # Delaware
@@ -670,6 +765,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2407056" => "Social Science",                       # 1997 Illinois Learning Standards for Social Science  http://www.isbe.net/ils/social_science/standards.htm
     "D2406942" => "Social/Emotional Development",         # 1997 Illinois Learning Standards for Social/Emotional Development  http://www.isbe.net/ils/social_emotional/standards.htm
     "D2599723" => "Next Generation Science Standards",    # 2014 Next Generation Science Standards  http://www.isbe.state.il.us/ngss/default.htm
+    # March 3, 2016 Imports:
+    "D10000ED" => "Science (1997)", # 1997 Illinois Learning Standards for Science
   },
   # ===================
   # Indiana
@@ -771,45 +868,47 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2567593" => "Health Education",                     # 2007 Kansas Model Curricular Standards for Health Education  http://www.kshealthykids.org/HKS_Docs/Standards/Health_Standards.pdf
     "D2624439" => "Library Media and Technology",         # 2007 Kansas Model Curricular Standards for Library Media and Technology  http://www.ksde.org/Portals/0/CSAS/Content%20Area%20%28F-L%29/Library,%20Media%20and%20Technology/Standards/LMT%20Standards%20Final.pdf
     "D100031E" => "Theatre",                              # 2004 Kansas Model Curricular Standards for Theatre  http://www.ksde.org/Portals/0/CSAS/Content%20Area%20%28F-L%29/Fine%20Arts%20%28Dance,%20Theater,%20Music,%20Visual%20Arts%29/dramastd.pdf
-    "D100031F" => "Visual Arts",                          # 2007 Kansas Model Curricular Standards for Visual Arts  http://www.ksde.org/Portals/0/CSAS/Content%20Area%20%28F-L%29/Fine%20Arts%20%28Dance,%20Theater,%20Music,%20Visual%20Arts%29/visualarts061407.pdf
+    "D100031F" => "Visual Arts (2007)",                   # 2007 Kansas Model Curricular Standards for Visual Arts  http://www.ksde.org/Portals/0/CSAS/Content%20Area%20%28F-L%29/Fine%20Arts%20%28Dance,%20Theater,%20Music,%20Visual%20Arts%29/visualarts061407.pdf
     "D2567600" => "Physical Education",                   # 2005 Kansas Model Curriculum Standards for Physical Education  http://www.kshealthykids.org/HKS_Docs/Standards/PEStandards.pdf
-    "D2652554"=>"Consumer and Personal Finance A",
-    "D2654313"=>"Consumer and Personal Finance B",
-    "D2650372"=>"Project Management and Resource Scheduling",
-    "D2649106"=>"Computer Applications",
-    "D2650382"=>"Commercial Graphic Design",
-    "D2650381"=>"Graphic Design",
-    "D2650371"=>"Media Technology\u2013Workplace Experience",
-    "D2653287"=>"Early Childhood Applications",
-    "D2652551"=>"Foundations in Early Childhood Education",
-    "D2652550"=>"Orientation in Early Childhood Education",
-    "D2653283"=>"Family Studies B",
-    "D2652555"=>"Family Studies A",
-    "D2654262"=>"Nutrition and Wellness B",
-    "D2654255"=>"Nutrition and Wellness A",
-    "D2652553"=>"Entrepreneurship",
-    "D2652552"=>"Introduction to Human Services",
-    "D2650374"=>"Marketing",
-    "D2650373"=>"Business Essentials",
-    "D2649876"=>"Interior and Textile Merchandising",
-    "D2649875"=>"Trends in Interior and Textile Design",
-    "D2649874"=>"Essentials of Interior and Textile Design",
-    "D2649872"=>"Principles of Illustration",
-    "D2649107"=>"Introduction to Family and Consumer Sciences",
-    "D2652549"=>"Human Growth and Development B",
-    "D2652548"=>"Human Growth and Development A",
-    "D2649879"=>"Career and Community Connections",
-    "D2649878"=>"Interior and Textile Design Studio",
-    "D2650376"=>"Digital Media Design and Production",
-    "D2650375"=>"Video Production",
-    "D2649877"=>"Graphic Design Fundamentals",
-    "D2649873"=>"Photo Imaging",
-    "D2649105"=>"Introduction to Drawing",
-    "D2649104"=>"Career and Life Planning",
-    "D2650380"=>"Audio/Video Production Fundamentals",
-    "D2650379"=>"Media and Public Relations",
-    "D2650378"=>"Digital Media Technology",
-    "D2650377"=>"21st Century Journalism"
+    "D2652554" => "Consumer and Personal Finance A",
+    "D2654313" => "Consumer and Personal Finance B",
+    "D2650372" => "Project Management and Resource Scheduling",
+    "D2649106" => "Computer Applications",
+    "D2650382" => "Commercial Graphic Design",
+    "D2650381" => "Graphic Design",
+    "D2650371" => "Media Technology\u2013Workplace Experience",
+    "D2653287" => "Early Childhood Applications",
+    "D2652551" => "Foundations in Early Childhood Education",
+    "D2652550" => "Orientation in Early Childhood Education",
+    "D2653283" => "Family Studies B",
+    "D2652555" => "Family Studies A",
+    "D2654262" => "Nutrition and Wellness B",
+    "D2654255" => "Nutrition and Wellness A",
+    "D2652553" => "Entrepreneurship",
+    "D2652552" => "Introduction to Human Services",
+    "D2650374" => "Marketing",
+    "D2650373" => "Business Essentials",
+    "D2649876" => "Interior and Textile Merchandising",
+    "D2649875" => "Trends in Interior and Textile Design",
+    "D2649874" => "Essentials of Interior and Textile Design",
+    "D2649872" => "Principles of Illustration",
+    "D2649107" => "Introduction to Family and Consumer Sciences",
+    "D2652549" => "Human Growth and Development B",
+    "D2652548" => "Human Growth and Development A",
+    "D2649879" => "Career and Community Connections",
+    "D2649878" => "Interior and Textile Design Studio",
+    "D2650376" => "Digital Media Design and Production",
+    "D2650375" => "Video Production",
+    "D2649877" => "Graphic Design Fundamentals",
+    "D2649873" => "Photo Imaging",
+    "D2649105" => "Introduction to Drawing",
+    "D2649104" => "Career and Life Planning",
+    "D2650380" => "Audio/Video Production Fundamentals",
+    "D2650379" => "Media and Public Relations",
+    "D2650378" => "Digital Media Technology",
+    "D2650377" => "21st Century Journalism",
+    # March 3, 2016 Imports:
+    "D2700778" => "Visual Arts (2015)", # 2015 Kansas Curricular Standards for Visual Arts
   },
   # ===================
   # Kentucky
@@ -824,6 +923,36 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2587236" => "Technology",                           # 2010 Kentucky Core Academic Standards - Technology  http://education.ky.gov/curriculum/docs/Documents/KCAS%20-%20June%202013.pdf
     "D2589291" => "Vocational Studies",                   # 2010 Kentucky Core Academic Standards - Vocational Studies  http://education.ky.gov/curriculum/docs/Documents/KCAS%20-%20June%202013.pdf
     "D10003FE" => "Teacher Standards",                    # 2008 Kentucky Teacher Standards  http://www.kyepsb.net/documents/eduprep/kentuckyteacherstandards.doc
+    # March 3, 2016 Imports:
+    "D2682256" => "Advanced Foods & Nutrition (2015)", # 2015 Advanced Foods & Nutrition
+    "D2682257" => "Career Choices (2015)", # 2015 Career Choices
+    "D2682258" => "Child Development Services I (2015)", # 2015 Child Development Services I
+    "D2682259" => "Child Development Services II (2015)", # 2015 Child Development Services II
+    "D2682260" => "Consumer Economics (2015)", # 2015 Consumer Economics
+    "D2682261" => "Culinary Arts I (2015)", # 2015 Culinary Arts I
+    "D2682262" => "Culinary Arts II (2015)", # 2015 Culinary Arts II
+    "D2682263" => "Early Lifespan Development (2015)", # 2015 Early Lifespan Development
+    "D2682264" => "FACS Essentials (2015)", # 2015 FACS Essentials
+    "D2682265" => "FACS Essentials Health (2015)", # 2015 FACS Essentials Health
+    "D2682266" => "Fashion & Interior Design I (2015)", # 2015 Fashion & Interior Design I
+    "D2682267" => "Fashion & Interior Design II (2015)", # 2015 Fashion & Interior Design II
+    "D2682268" => "Foods & Nutrition (2015)", # 2015 Foods & Nutrition
+    "D2682269" => "Fundamentals of Dietetics (2015)", # 2015 Fundamentals of Dietetics
+    "D2682270" => "Introductory FACS Essentials (2015)", # 2015 Introductory FACS Essentials (Grade 6)
+    "D2683383" => "Introductory FACS Essentials (2015)", # 2015 Introductory FACS Essentials (Grade 7)
+    "D2683384" => "Introductory FACS Essentials (2015)", # 2015 Introductory FACS Essentials (Grade 8)
+    "D2682271" => "Leadership Dynamics (2015)", # 2015 Leadership Dynamics
+    "D2682272" => "Middle to Late Lifespan Development (2015)", # 2015 Middle to Late Lifespan Development
+    "D2682273" => "Money Skills for Math (2015)", # 2015 Money Skills for Math
+    "D2682274" => "Money Skills (2015)", # 2015 Money Skills
+    "D2682275" => "Nutritional Food Science (2015)", # 2015 Nutritional Food Science
+    "D2682276" => "Parenting (2015)", # 2015 Parenting
+    "D2682277" => "Principles of Hospitality (2015)", # 2015 Principles of Hospitality
+    "D2682278" => "Principles of Teaching (2015)", # 2015 Principles of Teaching
+    "D2682279" => "Relationships (2015)", # 2015 Relationships
+    "D2682280" => "Specialized Services in Hospitality (2015)", # 2015 Specialized Services in Hospitality
+
+
   },
   # ===================
   # Louisiana
@@ -878,6 +1007,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2452746" => "Visual Arts",                          # 2008 Maryland State Curriculum - Visual Arts  http://mdk12.org/share/vsc/vsc_visual_arts_grpk8.pdf
     "D2599722" => "Next Generation Science Standards",    # 2013 Next Generation Science Standards  http://mdk12.org/instruction/curriculum/science/index.html
     "D10002D0" => "Social Studies",                       # 2006 Voluntary State Curriculum - Social Studies
+    # March 3, 2016 Imports:
+    "D2682151" => "Technology Literacy (2007)", # 2007 Maryland Technology Literacy Standards
+    "D2684064" => "Mathematics", # 2015 Maryland's College and Career-Ready Standards - Mathematics (Prekindergarten)
   },
   # ===================
   # Massachusetts
@@ -911,9 +1043,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10003D5" => "Physical Education (2007)",            # 2007 Physical Education Content Standards and Benchmarks
     "D10003E1" => "Physical Education (2008)",            # 2008 Physical Education K-8 Grade Level Content Expectations v.03.08
     "D1000364" => "Physics",                              # 2006 Physics High School Content Expectations  http://www.michigan.gov/documents/Physics_HSCE__168208_7.pdf
-    "D1000332" => "Science",                              # 2007 Science Grade Level Content Expectations (K-7)  http://www.michigan.gov/documents/mde/Complete_Science_GLCE_12-12-07_218314_7.pdf
+    "D1000332" => "Science (2007)",                       # 2007 Science Grade Level Content Expectations (K-7)  http://www.michigan.gov/documents/mde/Complete_Science_GLCE_12-12-07_218314_7.pdf
     "D10002CE" => "Social Studies",                       # 2007 Social Studies Grade Level Content Expectations (K-8)  http://www.michigan.gov/documents/mde/SSGLCE_218368_7.pdf?20140908205903
     "D2596842" => "Social Studies",                       # 2007 Social Studies High School Content Expectations  http://www.michigan.gov/documents/mde/SS_HSCE_210739_7_470248_7.pdf?20141009100841
+    # March 3, 2016 Imports:
+    "D2716032" => "Science (2015)", # 2015 Michigan K-12 Science Standards
   },
   # ===================
   # Minnesota
@@ -1056,15 +1190,17 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   "Nebraska" => {
     "D2599836" => "English Language Arts",                # 2014 Nebraska English Language Arts Standards  http://www.education.ne.gov/read/PDF/2014_Updated_ELA_Standards_Vertical_Version_k_12.pdf
     "D2575554" => "Fine Arts: Dance",                     # 2014 Nebraska K-12 Fine Arts Standards: Dance  http://www.education.ne.gov/FineArts/Standards/Final%20FAS%20Dance.pdf
-    "D2575546" => "Fine Arts :Media Arts",                # 2014 Nebraska K-12 Fine Arts Standards: Media Arts  http://www.education.ne.gov/FineArts/Standards/Final%20FAS%20Media%20Arts.pdf
+    "D2575546" => "Fine Arts: Media Arts",                # 2014 Nebraska K-12 Fine Arts Standards: Media Arts  http://www.education.ne.gov/FineArts/Standards/Final%20FAS%20Media%20Arts.pdf
     "D2575553" => "Fine Arts: Music",                     # 2014 Nebraska K-12 Fine Arts Standards: Music  http://www.education.ne.gov/FineArts/Standards/Final%20FAS%20Music.pdf
     "D2575556" => "Fine Arts: Theatre",                   # 2014 Nebraska K-12 Fine Arts Standards: Theatre  http://www.education.ne.gov/FineArts/Standards/Final%20FAS%20Theatre.pdf
     "D2575555" => "Fine Arts: Visual Arts",               # 2014 Nebraska K-12 Fine Arts Standards: Visual Arts  http://www.education.ne.gov/FineArts/Standards/Final%20FAS%20Visual%20Arts.pdf
     "D10003B2" => "Language Arts",                        # 2009 Nebraska Language Arts Standards  http://www.education.ne.gov/READ/Standards/StandardsLinearBoardApproved.pdf
-    "D10003DC" => "Mathematics",                          # 2009 Nebraska Mathematics Standards  http://www.education.ne.gov/math/PDFs/MathStandardsAdopted10-08-09Vertical.pdf
+    "D10003DC" => "Mathematics (2009)",                   # 2009 Nebraska Mathematics Standards  http://www.education.ne.gov/math/PDFs/MathStandardsAdopted10-08-09Vertical.pdf
     "D2603463" => "Physical Education",                   # 2006 Nebraska Physical Education Essential Learnings  http://www.education.ne.gov/PE/PDFs/NePEEL.pdf
     "D2377913" => "Science",                              # 2010 Nebraska Science Standards  http://www.education.ne.gov/Science/Documents/2010AdoptedScienceStandards.pdf
     "D2499255" => "Social Studies",                       # 2012 Nebraska Social Studies Standards  http://www.education.ne.gov/AcademicStandards/Documents/NE_SocialStudiesStandardsApproved.pdf
+    # March 3, 2016 Imports:
+    "D2679395" => "Mathematics (2015)" # 2015 Nebraska Mathematics Standards
   },
   # ===================
   # Nevada
@@ -1204,6 +1340,25 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2425367" => "World Humanities",                     # 2010 North Carolina Social Studies Elective - World Humanities  http://www.ncpublicschools.org/docs/acre/standards/new-standards/social-studies/world-humanities.pdf
     "D2362834" => "Social Studies",                       # 2010 North Carolina Social Studies Essential Standards  http://www.ncpublicschools.org/acre/standards/new-standards/#social
     "D2400608" => "World Language",                       # 2010 North Carolina World Language Essential Standards  http://www.ncpublicschools.org/docs/acre/standards/new-standards/healthful-living/khs.pdf
+
+    # March 3, 2016 Imports:
+    "D2682153" => "Financial Management (2010)", # 2010 Occupational Course of Study - Financial Management
+    "D2682154" => "Introduction to Mathematics (2010)", # 2010 Occupational Course of Study - Introduction to Mathematics
+    "D2682155" => "Occupational - Preparation 1 (2006)", # 2006 Occupational Course of Study - Preparation 1
+    "D2682156" => "Occupational - Preparation 2 (2006)", # 2006 Occupational Course of Study - Preparation 2
+    "D2682157" => "Occupational - Preparation 3 (2006)", # 2006 Occupational Course of Study - Preparation 3
+    "D2682158" => "Occupational - Preparation 4 (2006)", # 2006 Occupational Course of Study - Preparation 4
+    "D2684102" => "American History I and II (2011)", # 2011 North Carolina Extended Content Standards: American History I and II
+    "D2684100" => "Social Studies (K-8) (2011)", # 2011 North Carolina Extended Content Standards: Social Studies (K-8)
+    "D2684101" => "Civics and Governance (2011)", # 2011 North Carolina Extended Content Standards: Civics and Governance
+    "D2684255" => "Science (K-8) (2011)", # 2011 North Carolina Extended Content Standards: Science (K-8)
+    "D2684256" => "Life Science (2011)", # 2011 North Carolina Extended Content Standards: Life Science
+    "D2684257" => "Biology A&B (2011)", # 2011 North Carolina Extended Content Standards: Biology A&B
+    "D2684458" => "Financial Management (2011)", # 2011 North Carolina Extended Content Standards: Financial Management
+    "D2684459" => "Mathematics (2011)", # 2011 North Carolina Extended Content Standards: Mathematics
+    "D2684460" => "English/Language Arts (2011)", # 2011 North Carolina Extended Standards: English/Language Arts
+
+
   },
   # ===================
   # North Dakota
@@ -1238,8 +1393,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2462762" => "Science",                              # 2011 Ohio's New Learning Standards: K-8 Science  http://www.ode.state.oh.us/GD/DocumentManagement/DocumentDownload.aspx?DocumentID=135695
     "D2462866" => "Social Studies",                       # 2012 Ohio's New Learning Standards: K-8 Social Studies  http://education.ohio.gov/getattachment/Topics/Academic-Content-Standards/Social-Studies/K-8-Social-Studies-Standards-Updated-September-2012.pdf.aspx
     "D2491791" => "Mathematics",                          # 2010 Ohio's New Learning Standards: Mathematics  http://education.ohio.gov/getattachment/Topics/Ohio-s-New-Learning-Standards/Mathematics/Math-Standards.pdf.aspx
-    "D2465188" => "Physical Education",                   # 2009 Ohio's Physical Education Academic Content Standards K-12  http://www.ode.state.oh.us/GD/DocumentManagement/DocumentDownload.aspx?DocumentID=77172
+    "D2465188" => "Physical Education (2009)",            # 2009 Ohio's Physical Education Academic Content Standards K-12  http://www.ode.state.oh.us/GD/DocumentManagement/DocumentDownload.aspx?DocumentID=77172
     "D2465259" => "Technology",                           # 2003 Ohio's Technology Academic Content Standards  http://www.ode.state.oh.us/GD/DocumentManagement/DocumentDownload.aspx?DocumentID=793
+    # March 3, 2016 Imports:
+    "D2692656" => "Science (2011)", # 2011 Ohio's New Learning Standards: High School Science
+    "D2716034" => "Physical Education (2015)", # 2015 Ohio's New Learning Standards: Physical Education
   },
   # ===================
   # Oklahoma
@@ -1273,6 +1431,16 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2597530" => "Science (NGSS)",                       # 2014 Oregon Science Standards (NGSS)  http://www.ode.state.or.us/search/page/?id=1577
     "D2378214" => "Social Sciences",                      # 2011 Oregon Social Sciences Academic Content Standards  http://www.ode.state.or.us/teachlearn/subjects/socialscience/standards/adoptedsocialsciencesstandards8-2011.pdf
     "D1000375" => "Arts",                                 # 2004 Oregon The Arts Academic Content Standards  http://www.ode.state.or.us/teachlearn/subjects/arts/standards/theartscontentstandardsadopted10.21.04.pdf
+    # March 3, 2016 Imports:
+    "D2707730" => "Music Composition and Theory (2015)", # 2015 Oregon Arts Content Standards: Music Composition and Theory
+    "D2708013" => "Music Technology (2015)", # 2015 Oregon Arts Content Standards: Music Technology
+    "D2708015" => "Harmonizing Instruments (2015)", # 2015 Oregon Arts Content Standards: Harmonizing Instruments
+    "D2708016" => "Traditional and Emerging Ensembles (2015)", # 2015 Oregon Arts Content Standards: Traditional and Emerging Ensembles
+    "D2707639" => "Dance (2015)", # 2015 Oregon Arts Content Standards: Dance
+    "D2709802" => "Media Arts (2015)", # 2015 Oregon Arts Content Standards: Media Arts
+    "D2707648" => "Theatre (2015)", # 2015 Oregon Arts Content Standards: Theatre
+    "D2707729" => "Visual Arts (2015)", # 2015 Oregon Arts Content Standards: Visual Arts
+    "D2708687" => "Music PreK-8 (2015)", # 2015 Oregon Arts Content Standards: Music PreK-8
   },
   # ===================
   # Partnership for 21st Century Skills
@@ -1411,6 +1579,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2603776" => "Physical Education",                   # 2014 South Dakota Standards and Grade-level Outcomes for K-12 Physical Education  http://doe.sd.gov/contentstandards/documents/SD_PEstan.pdf
     "D2435780" => "Technology",                           # 2007 South Dakota Technology Content Standards  http://doe.sd.gov/contentstandards/documents/BoardApprovededtechstandardsforweb.pdf
     "D2435763" => "World Language",                       # 2011 South Dakota World Language Standards  http://doe.sd.gov/contentstandards/documents/WorldLanguageContentStandards-Complete.pdf
+    # March 3, 2016 Imports:
+    "D2678706" => "Social Studies"                        # 2015 South Dakota Social Studies Content Standards
   },
   # ===================
   # Tennessee
@@ -1523,33 +1693,39 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # Texas
   # ===================
   "Texas" => {
+    "D2664988" => "Architecture and Construction",
+    "D2665237" => "Arts, Audio/Video Technology, and Communications",
     "D2647589" => "Business Management and Administration",         # 2010 Business Management and Administration  http://ritter.tea.state.tx.us/rules/tac/chapter130/ch130d.html
     "D2533928" => "College and Career Readiness",         # 2009 Texas College and Career Readiness Standards  http://www.thecb.state.tx.us/collegereadiness/crs.pdf
     "D2485394" => "Career Development",                   # 2010 Texas Essential Knowledge and Skills for Career Development  http://ritter.tea.state.tx.us/rules/tac/chapter127/index.html
     "D2485243" => "Economics",                            # 2011 Texas Essential Knowledge and Skills for Economics with Emphasis on the Free Enterprise System and Its Benefits  http://ritter.tea.state.tx.us/rules/tac/chapter118/index.html
+    "D2664987" => "Education and Training",
     "D100036C" => "English Language Arts and Reading",    # 2010 Texas Essential Knowledge and Skills for English Language Arts and Reading  http://ritter.tea.state.tx.us/rules/tac/chapter110/index.html
     "D2569173" => "Fine Arts",                            # 2013 Texas Essential Knowledge and Skills for Fine Arts  http://ritter.tea.state.tx.us/rules/tac/chapter117/index.html
+    "D2665238" => "Finance",
+    "D2666205" => "Government and Public Administration",
     "D2487445" => "Health Education",                     # 1998 Texas Essential Knowledge and Skills for Health Education  http://ritter.tea.state.tx.us/rules/tac/chapter115/index.html
+    "D2666208" => "Hospitality and Tourism",
+    "D2666206" => "Human Services",
+    "D2666207" => "Health Science",
     "D2533669" => "Languages Other Than English",         # 1998 Texas Essential Knowledge and Skills for Languages Other Than English  http://ritter.tea.state.tx.us/rules/tac/chapter114/ch114c.html
+    "D2666795" => "Law, Public Safety, Corrections, and Security",
+    "D2666209" => "Information Technology",
     "D2486388" => "Mathematics",                          # 2012 Texas Essential Knowledge and Skills for Mathematics  http://ritter.tea.state.tx.us/rules/tac/chapter111/index.html
+    "D1000247" => "Mathematics, Amended 2006",
     "D2638199" => "Mathematics: Algebraic Reasoning",     # 2015 Texas Essential Knowledge and Skills for Mathematics: Algebraic Reasoning  http://ritter.tea.state.tx.us/rules/tac/chapter111/ch111c.html#111.48
     "D2616591" => "Mathematics: Discrete Mathematics",    # 2013 Texas Essential Knowledge and Skills for Mathematics: Discrete Mathematics for Problem Solving  http://ritter.tea.state.tx.us/rules/tac/chapter111/ch111c.html
     "D2616592" => "Mathematics: Statistics",              # 2015 Texas Essential Knowledge and Skills for Mathematics: Statistics  http://ritter.tea.state.tx.us/rules/tac/chapter111/ch111c.html
+    "D2657527" => "Marketing",
+    "D2657535" => "Manufacturing",
     "D2486543" => "Physical Education",                   # 1998 Texas Essential Knowledge and Skills for Physical Education  http://ritter.tea.state.tx.us/rules/tac/chapter116/index.html
+    "D2664986" => "Principles of Agriculture, Food, and Natural Resources",
     "D10003DA" => "Science",                              # 2010 Texas Essential Knowledge and Skills for Science  http://ritter.tea.state.tx.us/rules/tac/chapter112/index.html
+    "D2666794" => "Science, Technology, Engineering, and Mathematics",
     "D2488325" => "Social Studies",                       # 2010 Texas Essential Knowledge and Skills for Social Studies  http://ritter.tea.state.tx.us/rules/tac/chapter113/index.html
     "D2483953" => "Technology Applications",              # 2011 Texas Essential Knowledge and Skills for Technology Applications  http://ritter.tea.state.tx.us/rules/tac/chapter126/index.html
-    "D2670106"=> "Texas Essential Knowledge and Skills for Languages Other Than English",
-    "D2666793"=>"Transportation, Distribution, and Logistics",
-    "D2666209"=>"Information Technology",
-    "D2666206"=>"Human Services",
-    "D2666207"=>"Health Science",
-    "D2666205"=>"Government and Public Administration",
-    "D2665238"=>"Finance",
-    "D2657535"=>"Manufacturing",
-    "D2657527"=>"Marketing",
-    "D2664987"=>"Education and Training",
-    "D1000247"=> "Mathematics, Amended 2006",
+    "D2670106" => "Texas Essential Knowledge and Skills for Languages Other Than English",
+    "D2666793" => "Transportation, Distribution, and Logistics",
   },
   # ===================
   # Utah
@@ -1576,6 +1752,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2520479" => "Physical Education",                   # 2006 Utah Secondary Physical Education Core Curriculum  http://www.uen.org/core/pe/index.shtml
     "D2521372" => "Science",                              # 2003 Utah Secondary Science Core Curriculum  http://www.uen.org/core/science/index.shtml
     "D10003AF" => "Social Studies",                       # 2008 Utah Social Studies Core Curriculum Elementary Grades 3-6
+    # March 3, 2016 Imports:
+    "D2688297" => "Elementary Library Media (2015)", # 2015 Utah Core Standards for Elementary Library Media
+    "D2726259" => "Science with Engineering Education (SEEd) (2017)", # 2017 Utah Science with Engineering Education (SEEd) Standards
   },
   # ===================
   # Vermont
@@ -1609,6 +1788,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2563853" => "Economics and Personal Finance",       # 2009 Standards of Learning Documents for Economics and Personal Finance  http://www.doe.virginia.gov/testing/sol/standards_docs/economics_personal_finance/economics_personal_finance_sol.pdf
     "D2565454" => "Theater",                              # 2013 Theatre Arts Standards of Learning for Virginia Public Schools  http://www.doe.virginia.gov/testing/sol/standards_docs/fine_arts/2013/theatre_arts/std_finearts_theatrearts.pdf
     "D2564993" => "Visual Art",                           # 2013 Visual Arts Standards of Learning for Virginia Public Schools  http://www.doe.virginia.gov/testing/sol/standards_docs/fine_arts/2013/visual_arts/std_finearts_visualarts.pdf
+    # March 3, 2016 Imports:
+    "D2680138" => "Health (2015)",                        # 2015 Health Education Standards of Learning for Virginia Public Schools
+    "D2680137" => "Physical Education (2015)",            # 2015 Physical Education Standards of Learning for Virginia Public Schools
+    "D2727342" => "History and Social Science (2015)",    # 2015 History and Social Science Standards of Learning
+
+
   },
   # ===================
   # Washington
@@ -1650,11 +1835,16 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2560500" => "Wellness",                             # 2008 21st Century Wellness PreK-4 Content Standards and Objectives for West Virginia Schools  https://wvde.state.wv.us/policies/policy.php?p=2520.55&alt=1
     "D2560112" => "Early Learning",                       # 2010 Early Learning Standards Framework Content Standards and Learning Criteria for West Virginia Pre-Kindergarten  https://wvde.state.wv.us/policies/p2520.15.pdf
     "D2622715" => "Library Media",                        # 2006 Library Media Content Standards and Objectives for West Virginia Schools  https://wvde.state.wv.us/policies/p2520.17.pdf
-    "D2592580" => "Enlish Language Arts",                 # 2014 Next Generation Content Standards and Objectives for English Language Arts in West Virginia Schools  http://apps.sos.wv.gov/adlaw/csr/readfile.aspx?DocId=26244&Format=PDF
-    "D2592579" => "Mathematics",                          # 2014 Next Generation Content Standards and Objectives for Mathematics in West Virginia Schools  http://apps.sos.wv.gov/adlaw/csr/readfile.aspx?DocId=26211&Format=PDF
+    "D2592580" => "Enlish Language Arts (2014)",          # 2014 Next Generation Content Standards and Objectives for English Language Arts in West Virginia Schools  http://apps.sos.wv.gov/adlaw/csr/readfile.aspx?DocId=26244&Format=PDF
+    "D2592579" => "Mathematics (2014)",                   # 2014 Next Generation Content Standards and Objectives for Mathematics in West Virginia Schools  http://apps.sos.wv.gov/adlaw/csr/readfile.aspx?DocId=26211&Format=PDF
     "D2553359" => "Social Studies",                       # 2012 Next Generation Content Standards and Objectives for Social Studies in West Virginia  https://wvde.state.wv.us/policies/policy.php?p=2520.4&alt=1
     "D2561567" => "Health Education",                     # 2012 Next Generation Health Education 5-12 Content Standards and Objectives for West Virginia Schools  https://wvde.state.wv.us/policies/policy.php?p=2520.5&alt=1
     "D2607694" => "Science",                              # 2016 Next Generation Standards and Objectives for Science in West Virginia Schools  http://wvde.state.wv.us/policies/policy.php?p=2520.3C
+    # March 3, 2016 Imports:
+    "D2651132" => "Career and Technical Education (2015)", # 2015 Next Generation Standards for Career and Technical Education in West Virginia Schools
+    "D2725077" => "English Language Arts (2016)",         # 2016 West Virginia College- and Career-Readiness Standards for English Language Arts
+    "D2725113" => "Mathematics (2016)",                   # 2016 West Virginia College- and Career-Readiness Standards for Mathematics
+
   },
   # ===================
   # Wisconsin
@@ -1679,6 +1869,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2433421" => "Social Studies",                       # 1998 Wisconsin's Model Academic Standards for Social Studies  http://standards.dpi.wi.gov/stn_ssintro
     "D2402334" => "Technology Education",                 # 1998 Wisconsin's Model Academic Standards for Technology Education  http://dpi.wi.gov/standards/pdf/teched.pdf
     "D10002E4" => "Theater",                              # 1997 Wisconsin's Model Academic Standards for Theatre  http://standards.dpi.wi.gov/files/standards/pdf/theatre.pdf
+    "D2673128" => "Physical Education"                    # Wisconsin's Model Academic Standards for Physical Education
   },
   # ===================
   # World Meteorological Organization
@@ -1704,4 +1895,77 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D1000384" => "Social Studies Content",               # 2008 Wyoming Social Studies Content Standards  http://edu.wyoming.gov/sf-docs/publications/Standards_2008_Social_Studies_PDF.pdf
     "D2620100" => "Social Studies Content",               # 2014 Wyoming Social Studies Content Standards  http://edu.wyoming.gov/downloads/standards/2015/2014-SS-WyCPS-FINAL.pdf
   },
+
+  # =========
+  # Diocese of Phoenix Catholic Schools
+  # =========
+  "Diocese of Phoenix Catholic Schools" => {
+    # March 3, 2016 Imports:
+    "D2682281" => "Elementary Science (2015)", # 2015 Elementary Science Curriculum
+    "D2682282" => "Middle School Science (2015)", # 2015 Middle School Science Curriculum
+  },
+
+  # =========
+  # Ontario
+  # ========
+  "Ontario" => {
+    # March 3, 2016 Imports:
+    "D2691532" => "Health and Physical Education (2015)", # 2015 The Ontario Curriculum, Grades 1-8: Health and Physical Education
+    "D2692055" => "Health and Physical Education (2015)", # 2015 The Ontario Curriculum, Grades 9-12: Health and Physical Education
+    "D2700214" => "Canadian and World Studies (2015)", # 2015 The Ontario Curriculum, Grades 11 and 12: Canadian and World Studies
+    "D2700213" => "Canadian and World Studies (2013)", # 2013 The Ontario Curriculum, Grades 9 and 10: Canadian and World Studies
+    "D2710474" => "French as a Second Language (2013)", # 2013 The Ontario Curriculum, French as a Second Language: Core, Grades 4–8; Extended, Grades 4–8; Immersion, Grades 1–8
+    "D2710475" => "French as a Second Language (2014)", # 2014 The Ontario Curriculum, Grades 9 to 12: French as a Second Language – Core, Extended, and Immersion French
+    "D2688296" => "Social Sciences and Humanities (2013)", # 2013 The Ontario Curriculum, Grades 9 to 12: Social Sciences and Humanities
+    "D2690128" => "Social Studies, History, & Geography (2013)", # 2013 The Ontario Curriculum, Social Studies, Grades 1-6; History and Geography, Grades 7-8
+    "D2699567" => "Full-Day Early Learning–Kindergarten (2011)", # 2011 The Full-Day Early Learning–Kindergarten Program
+    "D2693487" => "The Arts (2009)", # 2009 The Ontario Curriculum, Grades 1-8: The Arts
+    "D2693488" => "The Arts (2010)", # 2010 The Ontario Curriculum, Grades 9 and 10: The Arts
+    "D2693489" => "The Arts (2010)", # 2010 The Ontario Curriculum, Grades 11 and 12: The Arts
+    "D2709801" => "Technological Education (2009)", # 2009 The Ontario Curriculum, Grades 9 and 10: Technological Education
+    "D2698253" => "Technological Education (2009)", # 2009 The Ontario Curriculum, Grades 11 and 12: Technological Education
+    "D2687910" => "Science (2008)", # 2008 The Ontario Curriculum, Grades 9 and 10: Science
+    "D2687911" => "Science (2008)", # 2008 The Ontario Curriculum, Grades 11 and 12: Science
+    "D2690129" => "Computer Studies (2008)", # 2008 The Ontario Curriculum, Grades 10 to 12: Computer Studies
+    "D2685424" => "Mathematics Transfer Applied to Academic (2006)", # 2006 The Ontario Curriculum, Mathematics Transfer Course, Grade 9, Applied to Academic
+    "D2686558" => "Mathematics (2007)", # 2007 The Ontario Curriculum, Grades 11 and 12: Mathematics
+    "D2684099" => "Mathematics (2005)", # 2005 The Ontario Curriculum, Grades 1 to 8: Mathematics
+    "D2685483" => "Mathematics (2005)", # 2005 The Ontario Curriculum, Grades 9 and 10: Mathematics
+    "D2686664" => "Science and Technology (2007)", # 2007 The Ontario Curriculum, Grades 1 to 8: Science and Technology
+    "D2697388" => "English (EOSSLC) (2003)", # 2003 The Ontario Curriculum, English: The Ontario Secondary School Literacy Course (EOSSLC)
+    "D2697465" => "English (2007)", # 2007 The Ontario Curriculum, Grades 11 and 12: English
+    "D2696095" => "English (2007)", # 2007 The Ontario Curriculum, Grades 9 and 10: English
+    "D2692056" => "Language (2006)", # 2006 The Ontario Curriculum, Grades 1-8: Language
+    "D2708014" => "English as a Second Language and English Literacy Developmente: Grades 9-12 (2007)", # 2007 The Ontario Curriculum, Grades 9-12: English as a Second Language and English Literacy Development
+    "D2698251" => "Business Studies (2006)", # 2006 The Ontario Curriculum, Grades 9 and 10: Business Studies
+    "D2698252" => "Business Studies (2006)", # 2006 The Ontario Curriculum, Grades 11 and 12: Business Studies
+    "D2698254" => "Guidance and Career Education (2006)", # 2006 The Ontario Curriculum, Grades 9 and 10: Guidance and Career Education
+    "D2698255" => "Guidance and Career Education (2006)", # 2006 The Ontario Curriculum, Grades 11 and 12: Guidance and Career Education
+    "D2693490" => "Interdisciplinary Studies (2002)", # 2002 The Ontario Curriculum, Grades 11 and 12: Interdisciplinary Studies
+    "D2708715" => "Native Languages (2000)", # 2000 The Ontario Curriculum, Grades 11 and 12: Native Languages
+    "D2708710" => "Native Languages (2001)", # 2001 The Ontario Curriculum, Grades 1-8: Native Languages
+    "D2702154" => "Classical and International Languages (1999)", # 1999 The Ontario Curriculum, Grades 9 and 10: Classical and International Languages
+    "D2702155" => "Classical and International Languages (2000)", # 2000 The Ontario Curriculum, Grades 11 and 12: Classical and International Languages
+    "D2708714" => "Native Languages (1999)", # 1999 The Ontario Curriculum, Grades 9 and 10: Native Languages
+    "D2700779" => "Native Studies (1999)", # 1999 The Ontario Curriculum, Grades 9 and 10: Native Studies
+    "D2700780" => "Native Studies (2000)", # 2000 The Ontario Curriculum, Grades 11 and 12: Native Studies
+
+
+  },
+
+  # ========
+  # British Columbia
+  # ========
+  "British Columbia" => {
+    # March 3, 2016 Imports:
+    "D2725124" => "Arts Education (2015)", # 2015 Arts Education Curriculum (K-9)
+    "D2725125" => "English Language Arts (2015)", # 2015 English Language Arts Curriculum (K-9)
+    "D2725126" => "Core French (2015)", # 2015 Core French Curriculum (5-12)
+    "D2725127" => "Mathematics (2015)", # 2015 Mathematics Curriculum (K-9)
+    "D2725128" => "Physical and Health Education (2015)", # 2015 Physical and Health Education Curriculum (K-9)
+    "D2725129" => "Science (2015)", # 2015 Science Curriculum (K-9)
+    "D2725130" => "Social Studies (2015)", # 2015 Social Studies Curriculum (K-9)
+
+  }
+
 }
