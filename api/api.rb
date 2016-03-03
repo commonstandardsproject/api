@@ -9,11 +9,11 @@ require_relative 'entities/jurisdiction'
 require_relative 'entities/jurisdiction_summary'
 require_relative 'entities/standard_set'
 require_relative "users"
-require_relative "commits"
 require_relative "jurisdictions"
 require_relative "standard_documents"
 require_relative "standard_sets"
 require_relative "standard_set_import"
+require_relative "pull_requests"
 
 module API
   class API < Grape::API
@@ -37,6 +37,7 @@ module API
           auth0_client_id     = ENV['AUTH0_CLIENT_ID']
           auth0_client_secret = ENV['AUTH0_CLIENT_SECRET']
           authorization       = headers['Authorization']
+          return if ENV["ENVIRONMENT"] == "test" && authorization == "TEST"
           if authorization.nil?
             error!("No Authorization Token", 401)
           end
@@ -61,7 +62,6 @@ module API
     before do
       key = headers["Api-Key"] || params["api-key"]
 
-      p request.path
       if request.path.include?("swagger_doc") || request.path.include?("/api/v1/sitemap.xml")
         next
       end
@@ -74,10 +74,17 @@ module API
         error!('Unauthorized: Not a valid auth key. Sign up at commonstandardsproject.com', 401)
       end
 
-      if env["HTTP_ORIGIN"] && @user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
+      check_origin = env["ENVIRONMENT"] != "development" &&
+                     env["HTTP_ORIGIN"] &&
+                     env["HTTP_ORIGIN"] != "http://commonstandardsproject.com" &&
+                     env["HTTP_ORIGIN"] != "http://www.commonstandardsproject.com"
+
+      if check_origin && @user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
         error!("Unauthorized: Origin isn't an allowed origin.", 401)
       end
 
+      @user["id"] = @user["_id"]
+      @user
     end
 
     # =============
@@ -87,10 +94,10 @@ module API
     # into their own files.
 
     mount ::API::Users
-    mount ::API::Commits
     mount ::API::Jurisdictions
     mount ::API::StandardDocuments
     mount ::API::StandardSets
+    mount ::API::PullRequests
 
 
     # This really shouldn't be in the API. However, due to how the frontend
@@ -103,7 +110,7 @@ module API
         xml.urlset("xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9") {
           $db[:standard_sets].find().projection({_id: 1}).batch_size(1000).map{|doc|
             xml.url{
-              xml.loc "http://beta.commonstandardsproject.com/search?ids=%5B\"#{doc["_id"]}\"%5D"
+              xml.loc "http://commonstandardsproject.com/search?ids=%5B\"#{doc["_id"]}\"%5D"
             }
           }
         }

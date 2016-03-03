@@ -19,6 +19,7 @@ class SendToAlgolia
   end
 
   def self.standard_set(set)
+    return if ENV["ENVIRONMENT"] == "development"
     @@index.add_objects(self.denormalize_standards(set))
   end
 
