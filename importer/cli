@@ -8,7 +8,7 @@ require_relative 'importer'
 class ImporterCLI < Thor
 
 
-  desc "Setup", "Set up dev environment script"
+  desc "setup", "Set up dev environment script"
   def setup
 
     # Add the .env file
@@ -28,7 +28,7 @@ class ImporterCLI < Thor
   end
 
 
-  desc "Import", "Import standards from ASN"
+  desc "import", "Import standards from ASN"
   option :algolia,         :type => :boolean, :default => false
   option :all,             :type => :boolean, :default => false
   option :cache_standards, :type => :boolean, :default => true
