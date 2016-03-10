@@ -1,5 +1,5 @@
 ## What is this?
-API for the Common Standards Project, a database of academic standards from all 50 states, organizations, districts, and school. Check out a live API at [http://api.commonstandardsproject.com/](http://api.commonstandardsproject.com/) and read the documentation at [http://commonstandardsproject.com](http://commonstandardsproject.com)
+API for the Common Standards Project, a database of academic standards from all 50 states, organizations, districts, and school. Check out a live API at [http://api.commonstandardsproject.com/](http://api.commonstandardsproject.com/), read the documentation at [http://commonstandardsproject.com](http://commonstandardsproject.com), or check out the [standards importer](https://github.com/commonstandardsproject/standards-importer) to import the standards from the API into your database. Only need the data for one set of standards and don't want to mess with an importer? Go to the [api](http://api.commonstandardsproject.com) where you can get the JSON for a standard set by typing in the standard set id.
 
 ## Why?
 
@@ -42,6 +42,10 @@ When we took on the task of importing the standards, a few principles guided our
 * **Easy to fix**: Converting 50 state standards is a monumental task (and one we're grateful ASN takes on). There will be typos and we want users to find them and fix them. Thus, each set of standards is versioned and changes can be submitted for approval.
 
 * **Easy to add to**: Schools & districts create their own standards (outside of their state). They should be able to publish those standards and share them with their vendors.
+
+## I don't want to use the API -- I want to put the standards in my database
+
+Great idea. You'll still need to use the API, but only once to pull the standards. Fortunately, this work has already been done for you! Go download the [standards importer project](https://github.com/commonstandardsproject/standards-importer) and run it. You'll have the standards sitting in your RDBMS in no time flat.
 
 ## Development
 
