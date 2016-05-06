@@ -23,6 +23,7 @@ module API
         # Add the ancestor ids to the response. This a read only field
         standard_set["standards"] = StandardHierarchy.add_ancestor_ids(standard_set["standards"])
         standard_set["educationLevels"] ||= []
+        standard_set["id"] = standard_set["_id"]
 
         present :data, standard_set, with: Entities::StandardSet
       end
