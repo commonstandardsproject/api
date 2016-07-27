@@ -157,5 +157,6 @@ JURISDICTION_MATCHERS = {
   "http://purl.org/ASN/scheme/ASNJurisdiction/Corporation"=>{:title=>"Corporation", :id=>"F89AF16988004CEDAF5AA78F1A6B4FE2", type: "organization"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/Cisco"=>{:title=>"Cisco", :id=>"64F8EAA7309B4CD6ADCBD2DCC0D1B448", type: "organization"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/D2L"=>{:title=>"D2L", :id=>"2E0CC9E14F0C40F691F81662F8C82DEB", type: "organization"},
-  "http://purl.org/ASN/scheme/ASNJurisdiction/Diocese_of_Phoenix_Catholic_Schools"=> {:title => "Diocese of Phoenix Catholic Schools", id: "272D4A7EEED348E4ADF7CF9422723112", type: "organization"}
+  "http://purl.org/ASN/scheme/ASNJurisdiction/Diocese_of_Phoenix_Catholic_Schools"=> {:title => "Diocese of Phoenix Catholic Schools", id: "272D4A7EEED348E4ADF7CF9422723112", type: "organization"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/K12_Inc" => {:title => "K12 Inc.", type: "corporation", id: "50CA76B6DED64CCBB5364E13E1ED9475"},
 }

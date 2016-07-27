@@ -762,11 +762,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10001EB" => "Mathematics",                          # 1997 Illinois Learning Standards for Mathematics  http://www.isbe.net/ils/math/standards.htm
     "D2406779" => "Physical Development & Health",        # 1997 Illinois Learning Standards for Physical Development and Health  http://www.isbe.net/ils/pdh/standards.htm
     "D2617309" => "Physical Development & Health",        # 2014 Illinois Learning Standards for Physical Development and Health  http://www.isbe.net/ils/pdh/standards.htm
-    "D2407056" => "Social Science",                       # 1997 Illinois Learning Standards for Social Science  http://www.isbe.net/ils/social_science/standards.htm
+    "D2407056" => "Social Science (1997)",                       # 1997 Illinois Learning Standards for Social Science  http://www.isbe.net/ils/social_science/standards.htm
     "D2406942" => "Social/Emotional Development",         # 1997 Illinois Learning Standards for Social/Emotional Development  http://www.isbe.net/ils/social_emotional/standards.htm
     "D2599723" => "Next Generation Science Standards",    # 2014 Next Generation Science Standards  http://www.isbe.state.il.us/ngss/default.htm
     # March 3, 2016 Imports:
     "D10000ED" => "Science (1997)", # 1997 Illinois Learning Standards for Science
+
+    # July 27, 2016 Imports:
+    "D2731595" => "Social Science (2016)", # 2016 Illinois Learning Standards for Social Science
   },
   # ===================
   # Indiana
@@ -822,6 +825,30 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2509546" => "Physical Education",                   # 2010 Indiana Physical Education Standards  http://www.doe.in.gov/sites/default/files/standards/physical-education/2010_physical_education_standards.pdf
     "D2588691" => "Technology Education",                 # 2006 Indiana Technology Education Curriculum Standards  http://www.doe.in.gov/sites/default/files/standards/engineering-tech-ed-2011/2006-08-15-teched-stds.pdf
     "D2571075" => "Process Standards for Mathematics",    # 2014 Process Standards for Mathematics  http://www.doe.in.gov/standards/mathematics
+
+    # July 27, 2016 Imports:
+    "D2731594" => "Mathematics: Quantitative Reasoning (2015)", # 2015 Indiana Academic Standards Mathematics: Quantitative Reasoning
+    "D2740456" => "Computer Science: K-2 (2016)", # 2016 Indiana Computer Science Standards: K-2
+    "D2740457" => "Computer Science: 3-5 (2016)", # 2016 Indiana Computer Science Standards: 3-5
+    "D2740458" => "Computer Science: 6-8 (2016)", # 2016 Indiana Computer Science Standards: 6-8
+    "D2740442" => "Science: Science and Engineering Process Standards (2016)", # 2016 Indiana Acadmic Science Standards: Science and Engineering Process Standards
+    "D2740435" => "Indiana Academic Science Standards: Grade 8 (2016)", # 2016 Indiana Academic Science Standards: Grade 8
+    "D2740448" => "Indiana Academic Science Standards: Kindergarten (2016)", # 2016 Indiana Academic Science Standards: Kindergarten
+    "D2740449" => "Indiana Academic Science Standards: Grade 1 (2016)", # 2016 Indiana Academic Science Standards: Grade 1
+    "D2740450" => "Indiana Academic Science Standards: Grade 2 (2016)", # 2016 Indiana Academic Science Standards: Grade 2
+    "D2740451" => "Indiana Academic Science Standards: Grade 3 (2016)", # 2016 Indiana Academic Science Standards: Grade 3
+    "D2740452" => "Indiana Academic Science Standards: Grade 4 (2016)", # 2016 Indiana Academic Science Standards: Grade 4
+    "D2740453" => "Indiana Academic Science Standards: Grade 5 (2016)", # 2016 Indiana Academic Science Standards: Grade 5
+    "D2740454" => "Indiana Academic Science Standards: Grade 6 (2016)", # 2016 Indiana Academic Science Standards: Grade 6
+    "D2740455" => "Indiana Academic Science Standards: Grade 7 (2016)", # 2016 Indiana Academic Science Standards: Grade 7
+    "D2740437" => "Indiana Academic Science Standards: Biology (2016)", # 2016 Indiana Academic Science Standards: Biology
+    "D2740438" => "Indiana Academic Science Standards: Chemistry (2016)", # 2016 Indiana Academic Science Standards: Chemistry
+    "D2740439" => "Indiana Academic Science Standards: Earth & Space Science (2016)", # 2016 Indiana Academic Science Standards: Earth & Space Science
+    "D2740440" => "Indiana Academic Science Standards: Environmental Science (2016)", # 2016 Indiana Academic Science Standards: Environmental Science
+    "D2740441" => "Indiana Academic Science Standards: Integrated Chemistry & Physics (2016)", # 2016 Indiana Academic Science Standards: Integrated Chemistry & Physics
+    "D2740443" => "Indiana Academic Science Standards: Physics I (2016)", # 2016 Indiana Academic Science Standards: Physics I
+    "D2740444" => "Indiana Academic Science Standards: Physics II (2016)", # 2016 Indiana Academic Science Standards: Physics II
+
   },
   # ===================
   # International Technology and Engineering Educators Association
@@ -1965,6 +1992,20 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2725128" => "Physical and Health Education (2015)", # 2015 Physical and Health Education Curriculum (K-9)
     "D2725129" => "Science (2015)", # 2015 Science Curriculum (K-9)
     "D2725130" => "Social Studies (2015)", # 2015 Social Studies Curriculum (K-9)
+
+  },
+
+  # ========
+  # Newfoundland and Labrador
+  # ========
+  "Newfoundland and Labrador" => {
+
+  },
+
+  # ========
+  # K12 Inc.
+  # ========
+  "K12 Inc." => {
 
   }
 
