@@ -24,7 +24,7 @@ require_relative '../lib/securerandom'
 class Importer
 
   def self.run(opts)
-    docs  = Oj.load(File.read('sources/asn_standard_documents_2016-03-03.js'))
+    docs  = Oj.load(File.read('sources/asn_standard_documents_2016-07-27.json'))
 
     hydra = Typhoeus::Hydra.new(max_concurrency: 20)
 
@@ -115,7 +115,7 @@ def check_document_titles(docs)
       titles_to_be_edited.each{|jurisdiction, docs|
 puts ""
 puts "#{jurisdiction}"
-puts "# March 3, 2016 Imports:"
+puts "# July 27, 2016 Imports:"
 docs.each{|asn_id, hash|
 puts '    "' + asn_id + '" => "' + "#{hash[:title]} (#{hash[:year]})" + '", # ' + hash[:year] + ' ' + hash[:title]}
 }
