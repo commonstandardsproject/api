@@ -100,12 +100,13 @@ class StandardSet
 
   def self.update(doc, opts={})
     old_version    = $db[:standard_sets].find({_id: doc["id"]}).to_a.first || {}
-    if old_version["version"] && old_version["version"] > 0
+    if old_version
       self.save_version(old_version)
     end
 
     # Set the version
     doc["version"] = old_version["version"] || 0
+    doc["version"] = doc["version"] + 1
 
     # Set the ID
     doc["_id"]     = doc.delete("id")
@@ -127,6 +128,7 @@ class StandardSet
   def self.save_version(old_version)
     old_version["standardSetId"] = old_version["_id"]
     old_version["_id"] = SecureRandom.csp_uuid()
+    old_version["createdAt"] = Time.now
     $db[:standard_set_versions].insert_one(old_version)
   end
 
