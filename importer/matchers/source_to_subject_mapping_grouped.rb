@@ -41,6 +41,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2566355" => "English/Language Arts",                # 2012 Alaska English/Language Arts Standards  http://education.alaska.gov/akstandards/standards/akstandards_elaandmath_080812.pdf
     "D2564196" => "Mathematics",                          # 2012 Alaska Mathematics Standards  http://education.alaska.gov/akstandards/standards/akstandards_elaandmath_080812.pdf
     "D2472504" => "Physical Education",                   # 2010 Alaska Physical Education Standards  http://education.alaska.gov/tls/schoolhealth/PEStandards.html
+    # July 27, 2016 Imports:
+    "D2740434" => "Arts (2016)", # 2016 Alaska Content Standards: Arts
   },
   # ===================
   # American Association for the Advancement of Science
@@ -438,7 +440,15 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2673310" => "American Sign Language II 2014 American Sign Language II",
     "D2673309" => "American Sign Language I 2014 American Sign Language I",
     "D2679976" => "Beef Science 2015 Beef Science",
-    "D2679977" => "Veterinary Science 2015 Veterinary Science"
+    "D2679977" => "Veterinary Science 2015 Veterinary Science",
+    # July 27, 2016 Imports:
+    "D2740445" => "Mathematics (K-5) (2016)", # 2016 Arkansas Mathematics Standards (K-5)
+    "D2740446" => "Mathematics (6-8) (2016)", # 2016 Arkansas Mathematics Standards (6-8)
+    "D2740447" => "Mathematics (9-12) (2016)", # 2016 Arkansas Mathematics Standards (9-12)
+    "D2751181" => "Computer Science (K-4) (2016)", # 2016 Arkansas Computer Science Standards (K-4)
+    "D2751182" => "Computer Science (5-8) (2016)", # 2016 Arkansas Computer Science Standards (5-8)
+    "D2751183" => "Computer Science Coding Block (Grades 7 or 8) (2016)", # 2016 Arkansas Computer Science Standards Coding Block (Grades 7 or 8)
+
   },
   # ===================
   # California
@@ -571,6 +581,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10002A8" => "Social Studies",                       # 1998 Connecticut Social Studies Curriculum Framework  http://ct-n.com/civics/pdf/social%20studies%20framework.pdf
     # March 3, 2016 Imports:
     "D2716033" => "Next Generation Science Standards (2015)", # 2015 Next Generation Science Standards
+    # July 27, 2016 Imports:
+    "D2740459" => "Sexual Health Education Curriculum Framework (2013)", # 2013 Connecticut Sexual Health Education Curriculum Framework
   },
   # ===================
   # Delaware
@@ -628,6 +640,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D1000338" => "Science",                              # 2008 Science Next Generation Sunshine State Standards  http://www.cpalms.org/Downloads.aspx
     "D1000389" => "Social Studies",                       # 2008 Social Studies Next Generation Sunshine State Standards  http://www.floridastandards.org/index.aspx
     "D2436167" => "World Languages",                      # 2010 World Languages Next Generation Sunshine State Standards  http://www.fldoe.org/aala/pdf/2011WorldLanguagesStandards.pdf
+    # July 27, 2016 Imports:
+    "D2748822" => "Computer Science (2016)", # 2016 Computer Science Next Generation Sunshine State Standards
   },
   # ===================
   # Georgia
@@ -715,8 +729,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10002F6" => "Fine Arts",                            # 2006 Hawaii Content and Performance Standards for Fine Arts  http://165.248.30.40/hcpsv3/files/hcpsiii_final_finearts_librarydocs_72.pdf
     "D2448113" => "Health",                               # 2005 Hawaii Content and Performance Standards for Health  http://165.248.30.40/hcpsv3/files/final_hcpsiii_health_librarydocs_9.pdf
     "D2448225" => "Physical Education",                   # 2005 Hawaii Content and Performance Standards for Physical Education  http://165.248.30.40/hcpsv3/files/final_hcpsiii_pe_librarydocs_8.pdf
-    "D1000270" => "Science",                              # 2005 Hawaii Content and Performance Standards for Science  http://165.248.30.40/hcpsv3/files/final_hcpsiii_science_librarydocs_7.pdf
+    "D1000270" => "Science (2005)",                       # 2005 Hawaii Content and Performance Standards for Science  http://165.248.30.40/hcpsv3/files/final_hcpsiii_science_librarydocs_7.pdf
     "D100029C" => "Social Studies",                       # 2005 Hawaii Content and Performance Standards for Social Studies  http://165.248.30.40/hcpsv3/files/final_hcpsiii_socialstudies_librarydocs_1.pdf
+    # July 27, 2016 Imports:
+    "D2739283" => "Next Generation Science Standards (2016)", # 2016 Next Generation Science Standards
   },
   # ===================
   # Idaho
@@ -1050,6 +1066,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10002BC" => "History & Social Studies",             # 2003 Massachusetts History and Social Science Curriculum Framework  http://www.doe.mass.edu/frameworks/hss/final.pdf
     "D1000272" => "Sciece, Technology, Engineering",      # 2006 Massachusetts Science and Technology/Engineering Curriculum Framework  http://www.doe.mass.edu/frameworks/scitech/1006.pdf
     "D2407673" => "Technology Literacy",                  # 2008 Massachusetts Technology Literacy Standards and Expectations  http://www.doe.mass.edu/edtech/standards/itstand.pdf
+    # July 27, 2016 Imports:
+    "D2730523" => "Science and Technology/Engineering (2016)", # 2016 Massachusetts Science and Technology/Engineering Standards
   },
   # ===================
   # Michigan
@@ -1103,23 +1121,35 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D1000322" => "Music",                                # 2003 Mississippi Visual and Performing Arts Music Framework  http://www.mde.k12.ms.us/docs/curriculum-and-instructions-library/music.pdf?sfvrsn=2
     "D1000323" => "Theater",                              # 2003 Mississippi Visual and Performing Arts Theatre Framework  http://www.mde.k12.ms.us/docs/curriculum-and-instructions-library/theater.pdf?sfvrsn=2
     "D1000324" => "Visual Arts",                          # 2003 Mississippi Visual and Performing Arts Visual Arts Framework  http://www.mde.k12.ms.us/docs/curriculum-and-instructions-library/visarts.pdf?sfvrsn=2
+
+    # July 27, 2016 Imports:
+    "D2731596" => "World Languages Framework (2016)",     # 2016 Mississippi World Languages Framework
   },
   # ===================
   # Missouri
   # ===================
   "Missouri" => {
-    "D2477969" => "Common Core English/Language Arts",    # 2010 Common Core State Standards for English Language Arts & Literacy in History/Social Studies, Science, and Technical Subjects  http://dese.mo.gov/sites/default/files/CCSSI_ELA%20Standards.pdf
-    "D2477265" => "Common Core Math",                     # 2010 Common Core State Standards for Mathematics  http://dese.mo.gov/sites/default/files/CCSSI_Math%20Standards.pdf
+    "D2477969" => "Common Core English/Language Arts (2010)",    # 2010 Common Core State Standards for English Language Arts & Literacy in History/Social Studies, Science, and Technical Subjects  http://dese.mo.gov/sites/default/files/CCSSI_ELA%20Standards.pdf
+    "D2477265" => "Common Core Math (2010)",                     # 2010 Common Core State Standards for Mathematics  http://dese.mo.gov/sites/default/files/CCSSI_Math%20Standards.pdf
     "D2582981" => "Health",                               # 2007 Health Education Grade Level Expectations  http://dese.mo.gov/sites/default/files/gle-health-education.pdf
     "D100030C" => "Music",                                # 2007 Music Grade Level Expectations  http://dese.mo.gov/sites/default/files/gle-music.pdf
     "D2583438" => "Physical Education",                   # 2007 Physical Education Grade Level Expectations  http://dese.mo.gov/sites/default/files/gle-physical-education.pdf
     "D2595229" => "Biology",                              # 2008 Science Course Level Expectations - Biology  http://dese.mo.gov/sites/default/files/cle-biology-science.pdf
-    "D2595228" => "Science",                              # 2008 Science Grade Level Expectations (6-8)  http://dese.mo.gov/sites/default/files/gle-6-8-science.pdf
-    "D2595227" => "Science",                              # 2008 Science Grade Level Expectations (K-5)  http://dese.mo.gov/sites/default/files/gle-k-5-science.pdf
-    "D2585748" => "Social Studies",                       # 2007 Social Studies Course Level Expectations (9-12)  http://dese.mo.gov/sites/default/files/cle-social-studies.pdf
-    "D10003AE" => "Social Studies",                       # 2007 Social Studies Grade Level Expectations (K-8)  http://dese.mo.gov/sites/default/files/gle-social-studies.pdf
+    "D2595228" => "Science 6-8",                              # 2008 Science Grade Level Expectations (6-8)  http://dese.mo.gov/sites/default/files/gle-6-8-science.pdf
+    "D2595227" => "Science K-5",                              # 2008 Science Grade Level Expectations (K-5)  http://dese.mo.gov/sites/default/files/gle-k-5-science.pdf
+    "D2585748" => "Social Studies 9-12 (2007)",                # 2007 Social Studies Course Level Expectations (9-12)  http://dese.mo.gov/sites/default/files/cle-social-studies.pdf
+    "D10003AE" => "Social Studies K-8 (2007)",                # 2007 Social Studies Grade Level Expectations (K-8)  http://dese.mo.gov/sites/default/files/gle-social-studies.pdf
     "D100030D" => "Theater",                              # 2006 Theater Grade Level Expectations  http://dese.mo.gov/sites/default/files/gle-theater.pdf
     "D100030E" => "Visual Art",                           # 2007 Visual Art Grade Level Expectations  http://dese.mo.gov/sites/default/files/gle-visual-arts.pdf
+    # July 27, 2016 Imports:
+    "D2746759" => "Mathematics (K-5) (2016)", # 2016 Missouri Learning Standards: Mathematics (K-5)
+    "D2746760" => "Mathematics (6-12) (2016)", # 2016 Missouri Learning Standards: Mathematics (6-12)
+    "D2746505" => "English Language Arts (K-5) (2016)", # 2016 Missouri Learning Standards: English Language Arts (K-5)
+    "D2746506" => "English Language Arts (6-12) (2016)", # 2016 Missouri Learning Standards: English Language Arts (6-12)
+    "D2746761" => "Social Studies (K-5) (2016)", # 2016 Missouri Learning Standards: Social Studies (K-5)
+    "D2748823" => "Social Studies (6-12) (2016)", # 2016 Missouri Learning Standards: Social Studies (6-12)
+    "D2749071" => "Science (K-5) (2016)", # 2016 Missouri Learning Standards: Science (K-5)
+    "D2749940" => "Science (6-12) (2016)", # 2016 Missouri Learning Standards: Science (6-12)
   },
   # ===================
   # Montana
@@ -1274,6 +1304,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2602363" => "Technology",                           # 2014 New Jersey Core Curriculum Content Standards for Technology  http://www.state.nj.us/education/cccs/2014/tech/8.pdf
     "D2594344" => "Visual & Performing Arts",             # 2014 New Jersey Core Curriculum Content Standards for Visual and Performing Arts  http://www.state.nj.us/education/cccs/2014/arts/standards.pdf
     "D2603532" => "World Languages",                      # 2014 New Jersey Core Curriculum Content Standards for World Languages  http://www.state.nj.us/education/cccs/2014/wl/WL.pdf
+    # July 27, 2016 Imports:
+    "D2740436" => "English Language Arts (2016)", # 2016 New Jersey Student Learning Standards for English Language Arts
+    "D2742493" => "Mathematics (2016)", # 2016 New Jersey Student Learning Standards for Mathematics
   },
   # ===================
   # New Mexico
@@ -1443,6 +1476,34 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2372584" => "Science (2011)",                       # 2011 Priority Academic Student Skills (PASS) for Science  http://ok.gov/sde/sites/ok.gov.sde/files/C3%20PASS%20sci.pdf
     "D2568261" => "Technology Education",                 # 2002 Priority Academic Student Skills (PASS) for Technology Education  http://ok.gov/sde/sites/ok.gov.sde/files/C3%20PASS%20gr6_10teched.pdf
     "D10002E6" => "The Arts",                             # 2003 Priority Academic Student Skills (PASS) for The Arts
+    # July 27, 2016 Imports:
+    "D2738736" => "Mathematics (2016)", # 2016 Oklahoma Academic Standards for Mathematics
+    "D2739281" => "English Language Arts (2016)", # 2016 Oklahoma Academic Standards for English Language Arts
+    "D2739282" => "Health (2016)", # 2016 Oklahoma Academic Standards for Health
+    "D2739284" => "Physical Education (2016)", # 2016 Oklahoma Academic Standards for Physical Education
+    "D2744620" => "Introduction to Agriscience (2014)", # 2014 Introduction to Agriscience
+    "D2744621" => "Agriscience Principles and Applications (2014)", # 2014 Agriscience Principles and Applications
+    "D2744622" => "Animal Science (2014)", # 2014 Animal Science
+    "D2744623" => "Introduction to Plant and Soil Science (2014)", # 2014 Introduction to Plant and Soil Science
+    "D2744624" => "Introduction to Horticulture (2014)", # 2014 Introduction to Horticulture
+    "D2744625" => "Environmental Science and Natural Resources (2014)", # 2014 Environmental Science and Natural Resources
+    "D2744636" => "Marriage and Family Life (2014)", # 2014 Marriage and Family Life
+    "D2744637" => "Personal Financial Literacy (2014)", # 2014 Personal Financial Literacy
+    "D2744638" => "Touring Oklahoma (2014)", # 2014 Touring Oklahoma
+    "D2744639" => "Advanced Pastry Arts (2016)", # 2016 Advanced Pastry Arts
+    "D2744640" => "Beverage Management (2016)", # 2016 Beverage Management
+    "D2744626" => "Practical Nursing (2012)", # 2012 Practical Nursing
+    "D2744630" => "Advertising and Design (2011)", # 2011 Advertising and Design
+    "D2744641" => "Culinary Concepts (2016)", # 2016 Culinary Concepts
+    "D2744642" => "Culinary Techniques (2016)", # 2016 Culinary Techniques
+    "D2744628" => "Hydraulics (2012)", # 2012 Hydraulics
+    "D2744631" => "Press Operations, Binding and Finishing (2013)", # 2013 Press Operations, Binding and Finishing
+    "D2744632" => "Gas Metal Arc Welding (2001)", # 2001 Gas Metal Arc Welding
+    "D2744633" => "Gas Tungsten Arc Welding (2001)", # 2001 Gas Tungsten Arc Welding
+    "D2744643" => "Residential HVAC System Design (2016)", # 2016 Residential HVAC System Design
+    "D2744629" => "Orientation to Graphic Communications (2012)", # 2012 Orientation to Graphic Communications
+    "D2744634" => "Oxyacetylene Welding (2002)", # 2002 Oxyacetylene Welding
+    "D2744627" => "Wind Energy: Wind Turbine Technician (2012)", # 2012 Wind Energy: Wind Turbine Technician
   },
   # ===================
   # Oregon
@@ -1761,7 +1822,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10002C0" => "Economic & Entrepreneurship",          # 2000 CTE/Economic & Entrepreneurship Education
     "D2521826" => "Social Studies",                       # 2009 Social Studies Core Curriculum Elementary Grades K-2  http://www.uen.org/core/socialstudies/index.shtml
     "D2524708" => "English Language Arts",                # 2010 Utah Core Standards for English Language Arts  http://www.schools.utah.gov/CURR/langartelem/Core-Standards/ELAColorCombo.aspx
-    "D2524004" => "Mathematics",                          # 2010 Utah Core Standards for Mathematics  http://schools.utah.gov/CURR/mathelem/Core/Utah-Core-Standards-in-Mathematics-Approved-Versio.aspx
+    "D2524004" => "Mathematics (2010)",                          # 2010 Utah Core Standards for Mathematics  http://schools.utah.gov/CURR/mathelem/Core/Utah-Core-Standards-in-Mathematics-Approved-Versio.aspx
     "D2651131" => "Secondary Library Media",              # 2015 Utah Core Standards for Secondary Library Media  http://www.schools.utah.gov/CURR/library/Core/612/SecondaryLibraryMediaStandards.aspx
     "D2519377" => "Educational Technology",               # 2000 Utah Educational Technology  http://www.uen.org/core/edtech/index.shtml
     "D2519437" => "Keyboarding",                          # 2002 Utah Educational Technology - Keyboarding  http://www.uen.org/core/edtech/index.shtml
@@ -1782,6 +1843,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # March 3, 2016 Imports:
     "D2688297" => "Elementary Library Media (2015)", # 2015 Utah Core Standards for Elementary Library Media
     "D2726259" => "Science with Engineering Education (SEEd) (2017)", # 2017 Utah Science with Engineering Education (SEEd) Standards
+    # July 27, 2016 Imports:
+    "D2745842" => "Mathematics (K-5) (2016)", # 2016 Utah Core State Standards for Mathematics (K-5)
+    "D2745366" => "Mathematics (6-8) (2016)", # 2016 Utah Core State Standards for Mathematics (6-8)
+    "D2728684" => "Mathematics (9-12) (2016)", # 2016 Utah Core State Standards for Mathematics (9-12)
+
+
   },
   # ===================
   # Vermont
@@ -1833,12 +1900,15 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2413245" => "Common Core English/Language Arts",    # 2011 Washington Common Core State Standards for English Language Arts  http://www.k12.wa.us/CoreStandards/ELAstandards/pubdocs/CCSSI_ELA_Standards.pdf
     "D2412541" => "Common Core Math",                     # 2011 Washington Common Core State Standards for Mathematics  http://www.k12.wa.us/CoreStandards/Mathematics/pubdocs/CCSSI_MathStandards.pdf
     "D2414330" => "Educational Technology",               # 2008 Washington State K-12 Essential Academic Learning Requirements  & Grade Level Expectations for Educational Technology  http://www.k12.wa.us/EdTech/Standards/pubdocs/K-12-EdTech-Standards_12-2008b.pdf
-    "D2414467" => "Health & Fitness",                     # 2008 Washington State K-12 Health and Fitness Standards  http://www.k12.wa.us/HealthFitness/Standards-GLEs/HealthFitnessStateStandards.pdf
+    "D2414467" => "Health & Fitness (2008)",              # 2008 Washington State K-12 Health and Fitness Standards  http://www.k12.wa.us/HealthFitness/Standards-GLEs/HealthFitnessStateStandards.pdf
     "D1000340" => "Mathematics",                          # 2008 Washington State K-12 Mathematics Standards
     "D2597531" => "Science",                              # 2013 Washington State K-12 Science Learning Standards  https://www.k12.wa.us/Science/NGSS.aspx
     "D10003BE" => "Science",                              # 2009 Washington State K-12 Science Standards  https://www.k12.wa.us/Science/pubdocs/WAScienceStandards.pdf
     "D1000385" => "Social Studies",                       # 2008 Washington State K-12 Social Studies Grade Level Expectations  http://www.k12.wa.us/SocialStudies/pubdocs/SocialStudiesStandards.pdf
     "D2419329" => "World Languages",                      # 2010 Washington State K-12 World Languages Learning Standards  http://www.k12.wa.us/WorldLanguages/Standards/WorldLanguagesStandards.pdf
+    # July 27, 2016 Imports:
+    "D2751187" => "Health Learning Standards (2016)", # 2016 Washington State K-12 Health Learning Standards
+    "D2751196" => "Physical Education Learning Standards (2016)", # 2016 Washington State K-12 Physical Education Learning Standards
   },
   # ===================
   # WebJunction
@@ -1871,6 +1941,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2651132" => "Career and Technical Education (2015)", # 2015 Next Generation Standards for Career and Technical Education in West Virginia Schools
     "D2725077" => "English Language Arts (2016)",         # 2016 West Virginia College- and Career-Readiness Standards for English Language Arts
     "D2725113" => "Mathematics (2016)",                   # 2016 West Virginia College- and Career-Readiness Standards for Mathematics
+    # July 27, 2016 Imports:
+    "D2739437" => "Next Generation Health Education 5-12 (2015)", # 2015 Next Generation Health Education 5-12 Content Standards and Objectives for West Virginia Schools
 
   },
   # ===================
@@ -1976,6 +2048,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2708714" => "Native Languages (1999)", # 1999 The Ontario Curriculum, Grades 9 and 10: Native Languages
     "D2700779" => "Native Studies (1999)", # 1999 The Ontario Curriculum, Grades 9 and 10: Native Studies
     "D2700780" => "Native Studies (2000)", # 2000 The Ontario Curriculum, Grades 11 and 12: Native Studies
+    # July 27, 2016 Imports:
+    "D2754782" => "Kindergarten Program (2016)", # 2016 The Kindergarten Program
 
 
   },
@@ -1999,14 +2073,91 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # Newfoundland and Labrador
   # ========
   "Newfoundland and Labrador" => {
-
+    # July 27, 2016 Imports:
+    "D2732159" => "Occupational Health and Safety 3203 (2015)", # 2015 Occupational Health and Safety 3203
+    "D2732160" => "Skilled Trades 1201 (2008)", # 2008 Skilled Trades 1201
+    "D2732161" => "Design and Fabrication 1202 (2011)", # 2011 Design and Fabrication 1202
+    "D2732165" => "Employment and Labour Studies 1106 (2013)", # 2013 Employment and Labour Studies 1106
+    "D2732869" => "Kindergarten Science Curriculum (2010)", # 2010 Kindergarten Science Curriculum
+    "D2732870" => "Science 1 Curriculum (2016)", # 2016 Science 1 Curriculum
+    "D2732874" => "Science Grade 8 (2010)", # 2010 Science Grade 8 Curriculum
+    "D2732875" => "Science Grade 9 (2010)", # 2010 Science Grade 9 Curriculum
+    "D2733927" => "Environmental Science 3205 (2010)", # 2010 Environmental Science 3205
+    "D2733930" => "Science 3200 (2005)", # 2005 Science 3200
+    "D2736120" => "Mathematics 2201 (2012)", # 2012 Mathematics 2201
+    "D2737268" => "Mathematics Grade 1 (2009)", # 2009 Mathematics Grade 1 Curriculum
+    "D2737272" => "Mathematics Grade 5 (2015)", # 2015 Mathematics Grade 5 Curriculum
+    "D2737273" => "Mathematics Grade 6 (2015)", # 2015 Mathematics Grade 6 Curriculum
+    "D2737274" => "Mathematics Grade 7 (2013)", # 2013 Mathematics Grade 7 Curriculum
+    "D2735197" => "English Language Arts Grade 1 (2013)", # 2013 English Language Arts Grade 1 Curriculum
+    "D2735198" => "English Language Arts Grade 2 (2014)", # 2014 English Language Arts Grade 2 Curriculum
+    "D2735199" => "English Language Arts Grade 3 (2015)", # 2015 English Language Arts Grade 3 Curriculum
+    "D2735200" => "English Language Arts Grade 4 (2012)", # 2012 English Language Arts Grade 4 Curriculum
+    "D2735201" => "English Language Arts Grade 5 (2013)", # 2013 English Language Arts Grade 5 Curriculum
+    "D2735202" => "English Language Arts Grade 6 (2014)", # 2014 English Language Arts Grade 6 Curriculum
+    "D2735203" => "English Language Arts Grade 7 (2010)", # 2010 English Language Arts Grade 7 Curriculum
+    "D2735204" => "English Language Arts Grade 8 (2011)", # 2011 English Language Arts Grade 8 Curriculum
+    "D2735205" => "English Language Arts Grade 9 (2012)", # 2012 English Language Arts Grade 9 Curriculum
+    "D2735653" => "Writing 2203 (2014)", # 2014 Writing 2203
+    "D2735654" => "Literacy 1204 (2013)", # 2013 Literacy 1204
+    "D2735655" => "English 2201 (2014)", # 2014 English 2201
+    "D2735656" => "English 2202 (2014)", # 2014 English 2202
+    "D2735658" => "English 3201 (2015)", # 2015 English 3201
+    "D2735659" => "English 3202 (2015)", # 2015 English 3202
+    "D2735660" => "World Literature 3207 (2009)", # 2009 World Literature 3207
+    "D2735662" => "English 1201 (2013)", # 2013 English 1201
+    "D2735663" => "English 1202 (2013)", # 2013 English 1202
+    "D2732162" => "Power and Energy 3201 (2010)", # 2010 Power and Energy 3201
+    "D2732163" => "Career Development Intermediate (2012)", # 2012 Career Development Intermediate
+    "D2732164" => "Career Development 2201 (2010)", # 2010 Career Development 2201
+    "D2732871" => "Primary Science Curriculum (2010)", # 2010 Primary Science Curriculum
+    "D2732872" => "Elementary Science Curriculum (2002)", # 2002 Elementary Science Curriculum
+    "D2732873" => "Science Grade 7 Curriculum (2013)", # 2013 Science Grade 7 Curriculum
+    "D2733922" => "Biology 2201 (2002)", # 2002 Biology 2201
+    "D2733923" => "Biology 3201 (2004)", # 2004 Biology 3201
+    "D2733924" => "Chemistry 2202 (2004)", # 2004 Chemistry 2202
+    "D2733925" => "Chemistry 3202 (2005)", # 2005 Chemistry 3202
+    "D2733926" => "Earth Systems 3209 (2010)", # 2010 Earth Systems 3209
+    "D2735661" => "English 1200 (2009)", # 2009 English 1200
+    "D2735657" => "Drama 2206 (2009)", # 2009 Drama 2206
+    "D2733928" => "Science 1206 (2002)", # 2002 Science 1206
+    "D2733929" => "Science 2200 (2004)", # 2004 Science 2200
+    "D2733931" => "Physics 2204 (2002)", # 2002 Physics 2204
+    "D2733932" => "Physics 3204 (2004)", # 2004 Physics 3204
+    "D2736117" => "Mathematics 1201 (2015)", # 2015 Mathematics 1201
+    "D2737276" => "Mathematics Grade 9 (2014)", # 2014 Mathematics Grade 9 Curriculum
+    "D2735196" => "English Language Arts Kindergarten (2014)", # 2014 English Language Arts Kindergarten Curriculum
+    "D2737275" => "Mathematics Grade 8 (2015)", # 2015 Mathematics Grade 8 Curriculum
+    "D2737271" => "Mathematics Grade 4 (2014)", # 2014 Mathematics Grade 4 Curriculum
+    "D2737270" => "Mathematics Grade 3 (2010)", # 2010 Mathematics Grade 3 Curriculum
+    "D2737269" => "Mathematics Grade 2 (2009)", # 2009 Mathematics Grade 2 Curriculum
+    "D2736118" => "Mathematics 1202 (2015)", # 2015 Mathematics 1202
+    "D2736119" => "Mathematics 2200 (2012)", # 2012 Mathematics 2200
+    "D2736121" => "Mathematics 2202 (2012)", # 2012 Mathematics 2202
+    "D2736122" => "Mathematics 3200 (2013)", # 2013 Mathematics 3200
+    "D2736123" => "Mathematics 3201 (2013)", # 2013 Mathematics 3201
+    "D2736124" => "Mathematics 3202 (2013)", # 2013 Mathematics 3202
+    "D2736125" => "Calculus 3208 (2013)", # 2013 Calculus 3208
+    "D2737267" => "Mathematics Kindergarten (2009)", # 2009 Mathematics Kindergarten Curriculum
+    "D2753697" => "Home Economics: Intermediate (1990)", # 1990 Home Economics: Intermediate
+    "D2751329" => "Healthy Living 1200 (2002)", # 2002 Healthy Living 1200
+    "D2751330" => "Human Dynamics 2201 (2004)", # 2004 Human Dynamics 2201
+    "D2751331" => "Nutrition 2102 (2007)", # 2007 Nutrition 2102
+    "D2751332" => "Nutrition 3102 (2007)", # 2007 Nutrition 3102
+    "D2742494" => "Business Enterprise 1100 (1993)", # 1993 Business Enterprise 1100
+    "D2742495" => "Consumer Studies 1202 (1989)", # 1989 Consumer Studies 1202
+    "D2742496" => "Canadian Economy 2203 (2004)", # 2004 Canadian Economy 2203
+    "D2742497" => "Entrepreneurship 3209 (2011)", # 2011 Entrepreneurship 3209
   },
 
   # ========
   # K12 Inc.
   # ========
   "K12 Inc." => {
-
+    # July 27, 2016 Imports:
+    "D2751186" => "Summit Content Statements (2016)", # 2016 Summit Content Statements
+    "D2753394" => "English Language Arts Content Statements (9-10) (2016)", # 2016 English Language Arts Content Statements (9-10)
+    "D2751185" => "Mathematics Content Statements (6-12) (2016)", # 2016 Mathematics Content Statements (6-12)
   }
 
 }
