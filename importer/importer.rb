@@ -5,6 +5,7 @@ require 'date'
 require 'time'
 require 'typhoeus'
 require 'parallel'
+require 'open-uri'
 require_relative 'matchers/source_to_subject_mapping_grouped'
 require_relative 'transformers/asn_resource_parser'
 require_relative "../models/standard_set"
@@ -24,9 +25,9 @@ require_relative '../lib/securerandom'
 class Importer
 
   def self.run(opts)
-    docs  = Oj.load(File.read('sources/asn_standard_documents_2016-07-27.json'))
+    docs  = Oj.load(open(ENV["IMPORT_JSON"]))
 
-    hydra = Typhoeus::Hydra.new(max_concurrency: 20)
+    hydra = Typhoeus::Hydra.new(max_concurrency: 10)
 
     # Check that we have all the right titles
     check_document_titles(docs).call
@@ -115,7 +116,7 @@ def check_document_titles(docs)
       titles_to_be_edited.each{|jurisdiction, docs|
 puts ""
 puts "#{jurisdiction}"
-puts "# July 27, 2016 Imports:"
+puts "# " + Time.now.strftime("%b%e, %Y") + " Imports:"
 docs.each{|asn_id, hash|
 puts '    "' + asn_id + '" => "' + "#{hash[:title]} (#{hash[:year]})" + '", # ' + hash[:year] + ' ' + hash[:title]}
 }
