@@ -1,3 +1,5 @@
+![Common Standards Project Homepage](https://cl.ly/3U43401V0P2o/download/Screen%20Shot%202016-08-19%20at%205.02.51%20PM.png)
+
 ## What is this?
 API for the Common Standards Project, a database of academic standards from all 50 states, organizations, districts, and school. Check out a live API at [http://api.commonstandardsproject.com/](http://api.commonstandardsproject.com/), read the documentation at [http://commonstandardsproject.com](http://commonstandardsproject.com), or check out the [standards importer](https://github.com/commonstandardsproject/standards-importer) to import the standards from the API into your database. Only need the data for one set of standards and don't want to mess with an importer? Go to the [api](http://api.commonstandardsproject.com) where you can get the JSON for a standard set by typing in the standard set id.
 
