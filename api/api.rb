@@ -73,13 +73,15 @@ module API
       if @user.nil?
         error!('Unauthorized: Not a valid auth key. Sign up at commonstandardsproject.com', 401)
       end
+      
+      http_origin = env["HTTP_ORIGIN"].tr('http://', '')
 
       check_origin = env["ENVIRONMENT"] != "development" &&
-                     env["HTTP_ORIGIN"] &&
+                     http_origin &&
                      env["HTTP_ORIGIN"] != "http://commonstandardsproject.com" &&
                      env["HTTP_ORIGIN"] != "http://www.commonstandardsproject.com"
-
-      if check_origin && @user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
+      
+      if check_origin && @user[:allowedOrigins].include?(http_origin) == false
         error!("Unauthorized: Origin isn't an allowed origin.", 401)
       end
 
