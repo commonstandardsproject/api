@@ -57,13 +57,14 @@ There are a few tasks that must be completed to get running with a local copy of
 **Getting Setup**
 * Install [MongoDB](https://www.mongodb.org/) or `brew install mongodb`
 * Clone the repo and run `bundle install` to get all the gems you will need
-* Run `./importer/cli setup` to create a default user and a sample .env file
+* Install [Forego](https://github.com/ddollar/forego) or [Foreman](https://github.com/ddollar/foreman): `brew install forego`
+* Run `forego run importer/cli setup` to create a default user and a sample .env file
 
 **Importing the standards**
-* Run `./importer/cli import` to import the standards
+* Run `forego run importer/cli import` to import the standards
 
 **Viewing the API docs/using the API**
-* Run `foreman start dev` to start the application on your local machine. Foreman will automatically use the variables in your `.env` file.
+* Run `forego start dev` to start the application on your local machine. Foreman will automatically use the variables in your `.env` file.
 * Point your browser at `http://localhost:9393` and bask in the goodness of beautifully formatted standards
 
 ## Contributing!
