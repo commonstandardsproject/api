@@ -1253,6 +1253,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug 15, 2016 Imports:
     "D2755079" => "Physical Education (2016)", # 2016 Montana Physical Education Standards
     "D2754940" => "Health Enhancement (2016)", # 2016 Montana Health Enhancement Standards
+
+    # Dec 5, 2016 Imports:
+    "D2765540" => "Science (2016)", # 2016 Montana Science Content Standards
   },
   # ===================
   # NCTE/IRA
@@ -1545,6 +1548,23 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2766674" => "Drafting III - Engineering (2016)", # 2016 Drafting III - Engineering
     "D2766687" => "Technology Design and Innovation (2012)", # 2012 Technology Design and Innovation
 
+    # Dec 5, 2016 Imports:
+    "D2770768" => "Multimedia and Web Page Design (2015)", # 2015 Multimedia and Web Page Design
+    "D2770769" => "Personal Finance (2014)", # 2014 Personal Finance
+    "D2770770" => "Keyboarding and Basic Word Processing (2016)", # 2016 Keyboarding and Basic Word Processing
+    "D2770771" => "Introduction to Office Productivity (2016)", # 2016 Introduction to Office Productivity
+    "D2770772" => "Office Productivity Applications (2016)", # 2016 Office Productivity Applications
+    "D2770773" => "Apparel and Textile Production I (2015)", # 2015 Apparel and Textile Production I
+    "D2770774" => "Apparel and Textile Production II (2015)", # 2015 Apparel and Textile Production II
+    "D2770775" => "Honors Health Science II (2014)", # 2014 Honors Health Science II
+    "D2770776" => "Nursing Fundamentals (2011)", # 2011 Nursing Fundamentals
+    "D2771034" => "Health Science I (2012)", # 2012 Health Science I
+    "D2771035" => "Interior Design I (2016)", # 2016 Interior Design I
+    "D2771036" => "Interior Design II (2005)", # 2005 Interior Design II
+    "D2771037" => "Masonry I (2012)", # 2012 Masonry I
+    "D2771038" => "Masonry II (2012)", # 2012 Masonry II
+    "D2771039" => "Masonry III (2012)", # 2012 Masonry III
+    "D2771040" => "Microsoft Word and PowerPoint (2016)", # 2016 Microsoft Word and PowerPoint
   },
   # ===================
   # North Dakota
@@ -1584,6 +1604,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # March 3, 2016 Imports:
     "D2692656" => "Science (2011)", # 2011 Ohio's New Learning Standards: High School Science
     "D2716034" => "Physical Education (2015)", # 2015 Ohio's New Learning Standards: Physical Education
+    # Dec 5, 2016 Imports:
+    "D2769578" => "Financial Literacy (2016)", # 2016 Ohio's New Learning Standards: Financial Literacy
   },
   # ===================
   # Oklahoma
@@ -1908,6 +1930,19 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2591194" => "Visual Art History",                   # 2010 Visual Art History (9-12)  http://tn.gov/education/standards/arts/ART_VA_Art_His.pdf
     "D2580345" => "World Geography",                      # 2013 World Geography  http://www.tn.gov/education/standards/social_studies/SS_World_Geography.pdf
     "D2580389" => "World History and Geography",          # 2013 World History and Geography  http://www.tn.gov/education/standards/social_studies/SS_World_History_Geography.pdf
+
+    # Dec 5, 2016 Imports:
+    "D2766761" => "Science (2016)", # 2016 Tennessee Academic Standards: Science (Kindergarten)
+    "D2766424" => "Science (2016)", # 2016 Tennessee Academic Standards: Science (Grade 1)
+    "D2772005" => "Science (2016)", # 2016 Tennessee Academic Standards: Science (Grade 2)
+    "D2772006" => "Science (2016)", # 2016 Tennessee Academic Standards: Science (Grade 3)
+    "D2772007" => "Science (2016)", # 2016 Tennessee Academic Standards: Science (Grade 4)
+    "D2772008" => "Science (2016)", # 2016 Tennessee Academic Standards: Science (Grade 5)
+    "D2766762" => "Science (2016)", # 2016 Tennessee Academic Standards: Science (Grade 6)
+    "D2772009" => "Science (2016)", # 2016 Tennessee Academic Standards: Science (Grade 7)
+    "D2772010" => "Science (2016)", # 2016 Tennessee Academic Standards: Science (Grade 8)
+    "D2766763" => "Biology I (2016)", # 2016 Tennessee Academic Standards: Biology I
+    "D2766765" => "Chemistry I (2016)", # 2016 Tennessee Academic Standards: Chemistry I
   },
   # ===================
   # Texas
@@ -2079,15 +2114,20 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2553359" => "Social Studies (2012)",                # 2012 Next Generation Content Standards and Objectives for Social Studies in West Virginia  https://wvde.state.wv.us/policies/policy.php?p=2520.4&alt=1
     "D2561567" => "Health Education",                     # 2012 Next Generation Health Education 5-12 Content Standards and Objectives for West Virginia Schools  https://wvde.state.wv.us/policies/policy.php?p=2520.5&alt=1
     "D2607694" => "Science",                              # 2016 Next Generation Standards and Objectives for Science in West Virginia Schools  http://wvde.state.wv.us/policies/policy.php?p=2520.3C
+
     # March 3, 2016 Imports:
     "D2651132" => "Career and Technical Education (2015)", # 2015 Next Generation Standards for Career and Technical Education in West Virginia Schools
     "D2725077" => "English Language Arts (2016)",         # 2016 West Virginia College- and Career-Readiness Standards for English Language Arts
     "D2725113" => "Mathematics (2016)",                   # 2016 West Virginia College- and Career-Readiness Standards for Mathematics
+
     # July 27, 2016 Imports:
     "D2739437" => "Next Generation Health Education 5-12 (2015)", # 2015 Next Generation Health Education 5-12 Content Standards and Objectives for West Virginia Schools
+
     # Aug 15, 2016 Imports:
     "D2753690" => "Social Studies (2016)",                # 2016 West Virginia College- and Career-Readiness Standards for Social Studies
 
+    # Dec 5, 2016 Imports:
+    "D2766423" => "Foreign Language (2007)", # 2007 21st Century Foreign Language Content Standards and Objectives for West Virginia Schools
   },
   # ===================
   # Wisconsin
@@ -2127,16 +2167,19 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   "Wyoming" => {
     "D2400246" => "Career/Vocational Education Content (2008)",  # 2008 Wyoming Career/Vocational Education Content Standards  http://edu.wyoming.gov/sf-docs/publications/Standards_2008_Career_Vocational_PDF.pdf?sfvrsn=0
     "D2659371" => "Career and Vocational Education Content Standards (2014)",
-    "D2530005" => "Fine and Performing Arts Content",     # 2013 Wyoming Fine and Performing Arts Content Standards  http://edu.wyoming.gov/downloads/standards/2013_Fine_and_Performing_Arts_Standards.pdf
-    "D2530225" => "Foreign Languages Content",            # 2013 Wyoming Foreign Languages Content Standards  http://edu.wyoming.gov/downloads/standards/2013_Foreign_Language_Standards.pdf
-    "D2400245" => "Health Education Content",             # 2012 Wyoming Health Education Content Standards  http://edu.wyoming.gov/downloads/standards/final-2012-health-standardsb.pdf
-    "D2426148" => "Language Arts Content",                # 2011 Wyoming Language Arts Content Standards  http://edu.wyoming.gov/sf-docs/standards/final-2012-ela-standards.pdf
-    "D2425444" => "Mathematics Content",                  # 2011 Wyoming Mathematics Content Standards  http://edu.wyoming.gov/sf-docs/standards/final-2012-math-standards.pdf
-    "D2620101" => "Physical Education Content",           # 2014 Wyoming Physical Education Content Standards  http://edu.wyoming.gov/downloads/standards/2015/2014-PE-WyCPS-FINAL.pdf
-    "D2400244" => "Physical Education Content",           # 2008 Wyoming Physical Education Content Standards  http://edu.wyoming.gov/downloads/standards/Standards_2008_Physical_Education_PDF.pdf
-    "D1000382" => "Science Content",                      # 2008 Wyoming Science Content Standards  http://edu.wyoming.gov/sf-docs/publications/Standards_2008_Science_PDF.pdf
-    "D1000384" => "Social Studies Content",               # 2008 Wyoming Social Studies Content Standards  http://edu.wyoming.gov/sf-docs/publications/Standards_2008_Social_Studies_PDF.pdf
-    "D2620100" => "Social Studies Content",               # 2014 Wyoming Social Studies Content Standards  http://edu.wyoming.gov/downloads/standards/2015/2014-SS-WyCPS-FINAL.pdf
+    "D2530005" => "Fine and Performing Arts Content (2013)",     # 2013 Wyoming Fine and Performing Arts Content Standards  http://edu.wyoming.gov/downloads/standards/2013_Fine_and_Performing_Arts_Standards.pdf
+    "D2530225" => "Foreign Languages Content (2013)",            # 2013 Wyoming Foreign Languages Content Standards  http://edu.wyoming.gov/downloads/standards/2013_Foreign_Language_Standards.pdf
+    "D2400245" => "Health Education Content (2012)",             # 2012 Wyoming Health Education Content Standards  http://edu.wyoming.gov/downloads/standards/final-2012-health-standardsb.pdf
+    "D2426148" => "Language Arts Content (2011)",                # 2011 Wyoming Language Arts Content Standards  http://edu.wyoming.gov/sf-docs/standards/final-2012-ela-standards.pdf
+    "D2425444" => "Mathematics Content (2011)",                  # 2011 Wyoming Mathematics Content Standards  http://edu.wyoming.gov/sf-docs/standards/final-2012-math-standards.pdf
+    "D2620101" => "Physical Education Content (2014)",           # 2014 Wyoming Physical Education Content Standards  http://edu.wyoming.gov/downloads/standards/2015/2014-PE-WyCPS-FINAL.pdf
+    "D2400244" => "Physical Education Content (2008)",           # 2008 Wyoming Physical Education Content Standards  http://edu.wyoming.gov/downloads/standards/Standards_2008_Physical_Education_PDF.pdf
+    "D1000382" => "Science Content (2008)",                      # 2008 Wyoming Science Content Standards  http://edu.wyoming.gov/sf-docs/publications/Standards_2008_Science_PDF.pdf
+    "D1000384" => "Social Studies Content (2008)",               # 2008 Wyoming Social Studies Content Standards  http://edu.wyoming.gov/sf-docs/publications/Standards_2008_Social_Studies_PDF.pdf
+    "D2620100" => "Social Studies Content (2008)",               # 2014 Wyoming Social Studies Content Standards  http://edu.wyoming.gov/downloads/standards/2015/2014-SS-WyCPS-FINAL.pdf
+
+    # Dec 5, 2016 Imports:
+    "D2765885" => "Science (2016)", # 2016 Wyoming Science Content and Performance Standards
   },
 
   # =========
@@ -2350,6 +2393,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2751186" => "Summit Content Statements (2016)", # 2016 Summit Content Statements
     "D2753394" => "English Language Arts Content Statements (9-10) (2016)", # 2016 English Language Arts Content Statements (9-10)
     "D2751185" => "Mathematics Content Statements (6-12) (2016)", # 2016 Mathematics Content Statements (6-12)
+  },
+
+  "Dublin Core Metadata Initiative" => {
+    # Dec 5, 2016 Imports:
+    "D2695955" => "Competency Index for Linked Data (2016)", # 2016 Competency Index for Linked Data
   }
 
 }
