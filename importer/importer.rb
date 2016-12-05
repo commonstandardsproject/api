@@ -27,7 +27,7 @@ class Importer
   def self.run(opts)
     docs  = Oj.load(open(ENV["IMPORT_JSON"]))
 
-    hydra = Typhoeus::Hydra.new(max_concurrency: 10)
+    hydra = Typhoeus::Hydra.new(max_concurrency: ENV["IMPORT_CONCURRENCY"] || 10)
 
     # Check that we have all the right titles
     check_document_titles(docs).call
