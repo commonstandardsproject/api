@@ -209,6 +209,7 @@ DEPENDENCIES
   activesupport
   algoliasearch (~> 1.7.0)
   asana
+  bson
   bson_ext
   dotenv
   dry-validation
@@ -238,3 +239,9 @@ DEPENDENCIES
   thor
   typhoeus
   virtus
+
+RUBY VERSION
+   ruby 2.2.2p95
+
+BUNDLED WITH
+   1.12.5
