@@ -137,6 +137,9 @@ def parse_doc_json(docs)
   }
   find_id = lambda{ |title|
     jurisdiction = jurisdiction_titles[title]
+    if jurisdiction == nil
+      raise "Missing jurisdiction in jurisdiction_matches.rb: #{title}"
+    end
     db_jurisdiction = $db[:jurisdictions].find({_id: jurisdiction[:id]}).to_a.first
     if db_jurisdiction.nil?
       $db[:jurisdictions].insert_one({

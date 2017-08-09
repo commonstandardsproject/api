@@ -95,6 +95,31 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2529099" => "Aircraft Mechanics",                   # 2012 Arizona Technical Standards: Aircraft Mechanics  http://www.azed.gov/career-technical-education/files/2013/10/technical-standards-aircraft-mechanics-47060050.pdf
     "D1000308" => "Arts: Theater (2006)",                 # 2006 Arizona Theatre Standards  http://www.azed.gov/standards-practices/files/2011/09/theatre.pdf
     "D2662817"=>"World and Native Languages",
+    # Aug 9, 2017 Imports:
+    "D2773916" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grade 2)
+    "D2773914" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Kindergarten)
+    "D2773915" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grade 1)
+    "D2773918" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grade 4)
+    "D2773919" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grade 5)
+    "D2773920" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grade 6)
+    "D2773921" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grade 7)
+    "D2773922" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grade 8)
+    "D2773923" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grades 9 &amp; 10)
+    "D2773924" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grades 11 &amp; 12)
+    "D2773901" => "Mathematics (2016)", # 2016 Arizona Mathematics Standards (Kindergarten)
+    "D2773902" => "Mathematics (2016)", # 2016 Arizona Mathematics Standards (Grade 1)
+    "D2773903" => "Mathematics (2016)", # 2016 Arizona Mathematics Standards (Grade 2)
+    "D2773904" => "Mathematics (2016)", # 2016 Arizona Mathematics Standards (Grade 3)
+    "D2773905" => "Mathematics (2016)", # 2016 Arizona Mathematics Standards (Grade 4)
+    "D2773906" => "Mathematics (2016)", # 2016 Arizona Mathematics Standards (Grade 5)
+    "D2773907" => "Mathematics (2016)", # 2016 Arizona Mathematics Standards (Grade 6)
+    "D2773908" => "Mathematics (2016)", # 2016 Arizona Mathematics Standards (Grade 7)
+    "D2773909" => "Mathematics (2016)", # 2016 Arizona Mathematics Standards (Grade 8)
+    "D2773910" => "Algebra I (2016)", # 2016 Algebra I
+    "D2773911" => "Algebra II (2016)", # 2016 Algebra II
+    "D2773912" => "Geometry (2016)", # 2016 Geometry
+    "D2773913" => "Math Plus (2016)", # 2016 Math Plus
+    "D2773917" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grade 3)
   },
   # ===================
   # Arkansas
@@ -466,6 +491,23 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2760238" => "Geometry A (2016)", # 2016 Geometry A
     "D2760241" => "Algebra I Part A (2016)", # 2016 Algebra I Part A
 
+    # Aug 9, 2017 Imports:
+    "D2784930" => "Disciplinary Literacy Standards for Fine Arts (2016)", # 2016 Arkansas Disciplinary Literacy Standards for Fine Arts
+    "D2784931" => "Disciplinary Literacy Standards for History/Social Studies (2016)", # 2016 Arkansas Disciplinary Literacy Standards for History/Social Studies
+    "D2784932" => "Disciplinary Literacy Standards for Science (2016)", # 2016 Arkansas Disciplinary Literacy Standards for Science
+    "D2760242" => "Algebra I Part B (2016)", # 2016 Algebra I Part B
+    "D2760243" => "Bridge to Algebra II (2016)", # 2016 Bridge to Algebra II
+    "D2760244" => "Algebra I Content Standards (2016)", # 2016 Algebra I Content Standards
+    "D2760245" => "Algebra II Content Standards (2016)", # 2016 Algebra II Content Standards
+    "D2760246" => "Algebra III Content Standards (2016)", # 2016 Algebra III Content Standards
+    "D2760247" => "Advanced Topics and Modeling in Mathematics (2016)", # 2016 Advanced Topics and Modeling in Mathematics
+    "D2800679" => "Quantitative Literacy (2016)", # 2016 Quantitative Literacy
+    "D2800720" => "Mathematical Applications and Algorithms (2016)", # 2016 Mathematical Applications and Algorithms
+    "D2760239" => "Geometry (2016)", # 2016 Geometry
+    "D2760237" => "Geometry B (2016)", # 2016 Geometry B
+    "D2760240" => "Calculus (2016)", # 2016 Calculus
+    "D2802332" => "KeyCode (2017)", # 2017 KeyCode
+
   },
   # ===================
   # California
@@ -638,6 +680,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Nov 4, 2016 Imports:
     "D2760564" => "Health Education (2016)", # 2016 District of Columbia Health Education Standards
+
+    # Aug 9, 2017 Imports:
+    "D2791944" => "Physical Education (2017)", # 2017 District of Columbia Physical Education Standards
   },
 
   # ===================
@@ -774,6 +819,20 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2769603" => "Science - Physical Science (2016)", # 2016 Science Georgia Standards of Excellence - Physical Science
     "D2769602" => "Science - Physics (2016)", # 2016 Science Georgia Standards of Excellence - Physics
 
+    # Aug 9, 2017 Imports:
+    "D2778415" => "English - Technical College Readiness (2016)", # 2016 Technical College Readiness English
+    "D2775639" => "Mathematics - Technical College Readiness (2016)", # 2016 Technical College Readiness Mathematics
+    "D2775638" => "Mathematics - Advanced Finite Mathematics (2016)", # 2016 Advanced Finite Mathematics
+    "D2784942" => "Mathematics - Engineering Calculus (2017)", # 2017 Mathematics Georgia Standards of Excellence - Engineering Calculus
+    "D2784933" => "Mathematics - Advanced Mathematical Decision Making (2017)", # 2017 Mathematics Georgia Standards of Excellence - Advanced Mathematical Decision Making
+    "D2784934" => "Mathematics - Mathematics of Industry and Government (2017)", # 2017 Mathematics Georgia Standards of Excellence - Mathematics of Industry and Government
+    "D2784935" => "Mathematics - College Readiness (2016)", # 2016 College Readiness Mathematics
+    "D2784936" => "Mathematics - Mathematics of Finance (2017)", # 2017 Mathematics Georgia Standards of Excellence - Mathematics of Finance
+    "D2784937" => "Mathematics - Multivariable Calculus (2017)", # 2017 Mathematics Georgia Standards of Excellence - Multivariable Calculus
+    "D2784938" => "Mathematics - History of Mathematics (2017)", # 2017 Mathematics Georgia Standards of Excellence - History of Mathematics
+    "D2784939" => "Mathematics - Statistical Reasoning (2017)", # 2017 Mathematics Georgia Standards of Excellence - Statistical Reasoning
+    "D2784940" => "Mathematics - Calculus (2017)", # 2017 Mathematics Georgia Standards of Excellence - Calculus
+    "D2784941" => "Mathematics - Advanced Mathematical Topics (2017)", # 2017 Mathematics Georgia Standards of Excellence - Advanced Mathematical Topics
 
   },
   # ===================
@@ -905,22 +964,25 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2740457" => "Computer Science: 3-5 (2016)", # 2016 Indiana Computer Science Standards: 3-5
     "D2740458" => "Computer Science: 6-8 (2016)", # 2016 Indiana Computer Science Standards: 6-8
     "D2740442" => "Science: Science and Engineering Process Standards (2016)", # 2016 Indiana Acadmic Science Standards: Science and Engineering Process Standards
-    "D2740435" => "Indiana Academic Science Standards: Grade 8 (2016)", # 2016 Indiana Academic Science Standards: Grade 8
-    "D2740448" => "Indiana Academic Science Standards: Kindergarten (2016)", # 2016 Indiana Academic Science Standards: Kindergarten
-    "D2740449" => "Indiana Academic Science Standards: Grade 1 (2016)", # 2016 Indiana Academic Science Standards: Grade 1
-    "D2740450" => "Indiana Academic Science Standards: Grade 2 (2016)", # 2016 Indiana Academic Science Standards: Grade 2
-    "D2740451" => "Indiana Academic Science Standards: Grade 3 (2016)", # 2016 Indiana Academic Science Standards: Grade 3
-    "D2740452" => "Indiana Academic Science Standards: Grade 4 (2016)", # 2016 Indiana Academic Science Standards: Grade 4
-    "D2740453" => "Indiana Academic Science Standards: Grade 5 (2016)", # 2016 Indiana Academic Science Standards: Grade 5
-    "D2740454" => "Indiana Academic Science Standards: Grade 6 (2016)", # 2016 Indiana Academic Science Standards: Grade 6
-    "D2740455" => "Indiana Academic Science Standards: Grade 7 (2016)", # 2016 Indiana Academic Science Standards: Grade 7
-    "D2740437" => "Indiana Academic Science Standards: Biology (2016)", # 2016 Indiana Academic Science Standards: Biology
-    "D2740438" => "Indiana Academic Science Standards: Chemistry (2016)", # 2016 Indiana Academic Science Standards: Chemistry
-    "D2740439" => "Indiana Academic Science Standards: Earth & Space Science (2016)", # 2016 Indiana Academic Science Standards: Earth & Space Science
-    "D2740440" => "Indiana Academic Science Standards: Environmental Science (2016)", # 2016 Indiana Academic Science Standards: Environmental Science
-    "D2740441" => "Indiana Academic Science Standards: Integrated Chemistry & Physics (2016)", # 2016 Indiana Academic Science Standards: Integrated Chemistry & Physics
-    "D2740443" => "Indiana Academic Science Standards: Physics I (2016)", # 2016 Indiana Academic Science Standards: Physics I
-    "D2740444" => "Indiana Academic Science Standards: Physics II (2016)", # 2016 Indiana Academic Science Standards: Physics II
+    "D2740435" => "Science (2016)", # 2016 Indiana Academic Science Standards: Grade 8
+    "D2740448" => "Science (2016)", # 2016 Indiana Academic Science Standards: Kindergarten
+    "D2740449" => "Science (2016)", # 2016 Indiana Academic Science Standards: Grade 1
+    "D2740450" => "Science (2016)", # 2016 Indiana Academic Science Standards: Grade 2
+    "D2740451" => "Science (2016)", # 2016 Indiana Academic Science Standards: Grade 3
+    "D2740452" => "Science (2016)", # 2016 Indiana Academic Science Standards: Grade 4
+    "D2740453" => "Science (2016)", # 2016 Indiana Academic Science Standards: Grade 5
+    "D2740454" => "Science (2016)", # 2016 Indiana Academic Science Standards: Grade 6
+    "D2740455" => "Science (2016)", # 2016 Indiana Academic Science Standards: Grade 7
+    "D2740437" => "Science: Biology (2016)", # 2016 Indiana Academic Science Standards: Biology
+    "D2740438" => "Science: Chemistry (2016)", # 2016 Indiana Academic Science Standards: Chemistry
+    "D2740439" => "Science: Earth & Space Science (2016)", # 2016 Indiana Academic Science Standards: Earth & Space Science
+    "D2740440" => "Science: Environmental Science (2016)", # 2016 Indiana Academic Science Standards: Environmental Science
+    "D2740441" => "Science: Integrated Chemistry & Physics (2016)", # 2016 Indiana Academic Science Standards: Integrated Chemistry & Physics
+    "D2740443" => "Science: Physics I (2016)", # 2016 Indiana Academic Science Standards: Physics I
+    "D2740444" => "Science: Physics II (2016)", # 2016 Indiana Academic Science Standards: Physics II
+
+    # Aug 9, 2017 Imports:
+    "D2798407" => "Mathematics (2017)", # 2017 Indiana Academic Standards Mathematics: Math 10
 
   },
   # ===================
@@ -948,6 +1010,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2667443" => "Next Generation Science Standards",
     "D10003E4" => "Science",                              # 2009 Iowa Core Science  https://www.educateiowa.gov/sites/files/ed/documents/K-12_Science_0.pdf
     "D2527582" => "Social Studies",                       # 2010 Iowa Core Social Studies  https://www.educateiowa.gov/sites/files/ed/documents/K-12_SocialStudies_0.doc
+    # Aug 9, 2017 Imports:
+    "D2788376" => "Social Studies (2017)", # 2017 Iowa Core Social Studies
   },
   # ===================
   # Jump$tart Coalition for Personal Financial Literacy
@@ -1148,6 +1212,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2730523" => "Science and Technology/Engineering (2016)", # 2016 Massachusetts Science and Technology/Engineering Standards
     # Aug 15, 2016 Imports:
     "D2757060" => "Digital Literacy and Computer Science (2016)", # 2016 Massachusetts Digital Literacy and Computer Science Curriculum Framework
+    # Aug 9, 2017 Imports:
+    "D2802330" => "Mathematics (2017)", # 2017 Massachusetts Curriculum Framework for Mathematics
   },
   # ===================
   # Michigan
@@ -1346,8 +1412,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2603463" => "Physical Education",                   # 2006 Nebraska Physical Education Essential Learnings  http://www.education.ne.gov/PE/PDFs/NePEEL.pdf
     "D2377913" => "Science",                              # 2010 Nebraska Science Standards  http://www.education.ne.gov/Science/Documents/2010AdoptedScienceStandards.pdf
     "D2499255" => "Social Studies",                       # 2012 Nebraska Social Studies Standards  http://www.education.ne.gov/AcademicStandards/Documents/NE_SocialStudiesStandardsApproved.pdf
+
     # March 3, 2016 Imports:
-    "D2679395" => "Mathematics (2015)" # 2015 Nebraska Mathematics Standards
+    "D2679395" => "Mathematics (2015)", # 2015 Nebraska Mathematics Standards
+
+    # Aug 9, 2017 Imports:
+    "D2766688" => "Physical Education (2016)", # 2016 Nebraska Physical Education Standards
   },
   # ===================
   # Nevada
@@ -1450,6 +1520,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Nov 4, 2016 Imports:
     "D10000D2" => "Science (1999)", # 1999 Elementary Science, Intermediate Science, Living Environment, Earth Science, Chemistry, and Physics Core Curriculum
+
+    # Aug 9, 2017 Imports:
+    "D2778655" => "Science (2016)", # 2016 New York State P-12 Science Learning Standards
   },
   # ===================
   # Next Generation Science Standards
@@ -1565,6 +1638,29 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2771038" => "Masonry II (2012)", # 2012 Masonry II
     "D2771039" => "Masonry III (2012)", # 2012 Masonry III
     "D2771040" => "Microsoft Word and PowerPoint (2016)", # 2016 Microsoft Word and PowerPoint
+
+    # Aug 9, 2017 Imports:
+    "D2773230" => "Advanced Functions and Modeling (2003)", # 2003 Advanced Functions and Modeling
+    "D2773231" => "Discrete Mathematics (2003)", # 2003 Discrete Mathematics
+    "D2773232" => "Pre-Calculus (2003)", # 2003 Pre-Calculus
+    "D2773233" => "Mathematics (2015)", # 2015 North Carolina Standard Course of Study: Mathematics (Kindergarten)
+    "D2773234" => "Mathematics (2015)", # 2015 North Carolina Standard Course of Study: Mathematics (Grade 1)
+    "D2773235" => "Mathematics (2015)", # 2015 North Carolina Standard Course of Study: Mathematics (Grade 2)
+    "D2773236" => "Mathematics (2015)", # 2015 North Carolina Standard Course of Study: Mathematics (Grade 3)
+    "D2773237" => "Mathematics (2015)", # 2015 North Carolina Standard Course of Study: Mathematics (Grade 4)
+    "D2773238" => "Mathematics (2015)", # 2015 North Carolina Standard Course of Study: Mathematics (Grade 5)
+    "D2773239" => "Mathematics (2015)", # 2015 North Carolina Standard Course of Study: Mathematics (Grade 6)
+    "D2773240" => "Mathematics (2015)", # 2015 North Carolina Standard Course of Study: Mathematics (Grade 7)
+    "D2773241" => "Mathematics (2015)", # 2015 North Carolina Standard Course of Study: Mathematics (Grade 8)
+    "D2773242" => "Standards for Mathematical Practice (2015)", # 2015 North Carolina Standard Course of Study: Standards for Mathematical Practice
+    "D2785400" => "Drafting II - Architectural (2015)", # 2015 Drafting II - Architectural
+    "D2785401" => "Drafting I (2013)", # 2013 Drafting I
+    "D2797582" => "Agricultural Mechanics I (2004)", # 2004 Agricultural Mechanics I
+    "D2797583" => "Agricultural Mechanics II (2005)", # 2005 Agricultural Mechanics II
+    "D2797584" => "Horticulture I (2012)", # 2012 Horticulture I
+    "D2797585" => "Horticulture II (2013)", # 2013 Horticulture II
+    "D2797586" => "Agriscience Applications (2013)", # 2013 Agriscience Applications
+
   },
   # ===================
   # North Dakota
@@ -1606,6 +1702,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2716034" => "Physical Education (2015)", # 2015 Ohio's New Learning Standards: Physical Education
     # Dec 5, 2016 Imports:
     "D2769578" => "Financial Literacy (2016)", # 2016 Ohio's New Learning Standards: Financial Literacy
+    # Aug 9, 2017 Imports:
+    "D2784929" => "Mathematics (2017)", # 2017 Ohio's Learning Standards: Mathematics
   },
   # ===================
   # Oklahoma
@@ -1677,6 +1775,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2707648" => "Theatre (2015)", # 2015 Oregon Arts Content Standards: Theatre
     "D2707729" => "Visual Arts (2015)", # 2015 Oregon Arts Content Standards: Visual Arts
     "D2708687" => "Music PreK-8 (2015)", # 2015 Oregon Arts Content Standards: Music PreK-8
+    # Aug 9, 2017 Imports:
+    "D2778675" => "Physical Education (2016)", # 2016 Oregon Core Standards: Physical Education
   },
   # ===================
   # Partnership for 21st Century Skills
@@ -1724,6 +1824,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2562464" => "PA Core - Writing for History and Social Studies",  # 2014 PA Core - Writing for History and Social Studies (6-12)  http://static.pdesas.org/content/documents/PA%20Core%20Standards%20for%20Writing%20in%20History%20and%20Social%20Studies%20March%202014.pdf
     "D2562497" => "PA Core - Writing for Science and Technical Subjects",  # 2014 PA Core - Writing for Science and Technical Subjects (6-12)  http://static.pdesas.org/content/documents/PA%20Core%20Standards%20for%20Writing%20in%20Science%20and%20Technical%20Subjects%20March%202014.pdf
     "D2624346" => "Personal Finance Model Curriculum",    # 2014 Personal Finance Model Curriculum  http://pdesas.org/main/fileview/PA%20Model%20Personal%20Finance%20Curriculum.pdf
+    # Aug 9, 2017 Imports:
+    "D2778414" => "World Languages (2002)", # 2002 Proposed Academic Standards for World Languages
   },
   # ===================
   # Rhode Island
@@ -1943,7 +2045,21 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2772010" => "Science (2016)", # 2016 Tennessee Academic Standards: Science (Grade 8)
     "D2766763" => "Biology I (2016)", # 2016 Tennessee Academic Standards: Biology I
     "D2766765" => "Chemistry I (2016)", # 2016 Tennessee Academic Standards: Chemistry I
+
+    # Aug 9, 2017 Imports:
+    "D2766764" => "Biology II (2016)", # 2016 Tennessee Academic Standards: Biology II
+    "D2766766" => "Chemistry II (2016)", # 2016 Tennessee Academic Standards: Chemistry II
+    "D2766767" => "Earth and Space Science (2016)", # 2016 Tennessee Academic Standards: Earth and Space Science
+    "D2766768" => "Ecology (2016)", # 2016 Tennessee Academic Standards: Ecology
+    "D2766769" => "Environmental Science (2016)", # 2016 Tennessee Academic Standards: Environmental Science
+    "D2766770" => "Geology (2016)", # 2016 Tennessee Academic Standards: Geology
+    "D2766771" => "Human Anatomy and Physiology (2016)", # 2016 Tennessee Academic Standards: Human Anatomy and Physiology
+    "D2766772" => "Physical Science (2016)", # 2016 Tennessee Academic Standards: Physical Science
+    "D2766773" => "Physical World Concepts (2016)", # 2016 Tennessee Academic Standards: Physical World Concepts
+    "D2766774" => "Physics (2016)", # 2016 Tennessee Academic Standards: Physics
+    "D2766775" => "Scientific Research (2016)", # 2016 Tennessee Academic Standards: Scientific Research
   },
+
   # ===================
   # Texas
   # ===================
@@ -2025,6 +2141,13 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2740206" => "Physical Education (2016)", # 2016 Utah Core Standards for Physical Education
     "D2765547" => "General Financial Literacy (2015)", # 2015 General Financial Literacy
 
+    # Aug 9, 2017 Imports:
+    "D2784789" => "United States History I (2016)", # 2016 United States History I
+    "D2784790" => "United States History II (2016)", # 2016 United States History II
+    "D2784791" => "Utah Studies (2016)", # 2016 Utah Studies
+    "D2784792" => "World Geography (2016)", # 2016 World Geography
+    "D2784793" => "World History (2016)", # 2016 World History
+    "D2784794" => "U.S. Government & Citizenship (2016)", # 2016 U.S. Government &amp; Citizenship
 
   },
   # ===================
@@ -2063,7 +2186,25 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2680138" => "Health (2015)",                        # 2015 Health Education Standards of Learning for Virginia Public Schools
     "D2680137" => "Physical Education (2015)",            # 2015 Physical Education Standards of Learning for Virginia Public Schools
     "D2727342" => "History and Social Science (2015)",    # 2015 History and Social Science Standards of Learning
-
+    # Aug 9, 2017 Imports:
+    "D2773842" => "Mathematics (2016)", # 2016 Mathematics Standards of Learning for Virginia Public Schools (Kindergarten)
+    "D2773843" => "Mathematics (2016)", # 2016 Mathematics Standards of Learning for Virginia Public Schools (Grade 1)
+    "D2773844" => "Mathematics (2016)", # 2016 Mathematics Standards of Learning for Virginia Public Schools (Grade 2)
+    "D2773845" => "Mathematics (2016)", # 2016 Mathematics Standards of Learning for Virginia Public Schools (Grade 3)
+    "D2773846" => "Mathematics (2016)", # 2016 Mathematics Standards of Learning for Virginia Public Schools (Grade 4)
+    "D2773847" => "Mathematics (2016)", # 2016 Mathematics Standards of Learning for Virginia Public Schools (Grade 5)
+    "D2773848" => "Mathematics (2016)", # 2016 Mathematics Standards of Learning for Virginia Public Schools (Grade 6)
+    "D2773849" => "Mathematics (2016)", # 2016 Mathematics Standards of Learning for Virginia Public Schools (Grade 7)
+    "D2773850" => "Mathematics (2016)", # 2016 Mathematics Standards of Learning for Virginia Public Schools (Grade 8)
+    "D2773851" => "Algebra I (2016)", # 2016 Algebra I
+    "D2773852" => "Geometry (2016)", # 2016 Geometry
+    "D2773853" => "Algebra, Functions, & Data Analysis (2016)", # 2016 Algebra, Functions, &amp; Data Analysis
+    "D2773854" => "Algebra II (2016)", # 2016 Algebra II
+    "D2773855" => "Trigonometry (2016)", # 2016 Trigonometry
+    "D2773856" => "Computer Mathematics (2016)", # 2016 Computer Mathematics
+    "D2773857" => "Probability & Statistics (2016)", # 2016 Probability &amp; Statistics
+    "D2773858" => "Discrete Mathematics (2016)", # 2016 Discrete Mathematics
+    "D2773859" => "Mathematical Analysis (2016)", # 2016 Mathematical Analysis
 
   },
   # ===================
@@ -2383,6 +2524,28 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2769090" => "Physical Education: 2101 (2011)", # 2011 Physical Education: 2101 Curriculum Guide
     "D2769091" => "Physical Education: 3100 (2012)", # 2012 Physical Education: 3100 Curriculum Guide
     "D2769092" => "Physical Education: 3101 (2012)", # 2012 Physical Education: 3101 Curriculum Guide
+
+    # Aug 9, 2017 Imports:
+    "D2771203" => "Kindergarten Health Curriculum Guide (2010)", # 2010 Kindergarten Health Curriculum Guide
+    "D2771204" => "Health (2010)", # 2010 Grade 1 Health Curriculum Guide
+    "D2771205" => "Health (2011)", # 2011 Grade 2 Health Curriculum Guide
+    "D2771206" => "Health (2015)", # 2015 Grade 3 Health Curriculum Guide
+    "D2771207" => "Health (1994)", # 1994 Grade 4 Health Curriculum Guide
+    "D2771208" => "Health (1994)", # 1994 Grade 5 Health Curriculum Guide
+    "D2771209" => "Health (1994)", # 1994 Grade 6 Health Curriculum Guide
+    "D2771210" => "Health (1993)", # 1993 Grade 7 Health Curriculum Guide
+    "D2771211" => "Health (1993)", # 1993 Grade 8 Health Curriculum Guide
+    "D2771212" => "Health (2008)", # 2008 Grade 9 Health Curriculum Guide
+    "D2775614" => "ESL (2012)", # 2012 ESL Intermediate School Curriculum
+    "D2775615" => "ESL (2011)", # 2011 ESL Strategies for Advanced Learners in Grades 4-12
+    "D2775616" => "ESL (2011)", # 2011 ESL Foundation: A Curriculum Guide (Intermediate and Senior High)
+    "D2775617" => "ESL 1205 (2012)", # 2012 English Second Language 1205: Curriculum
+    "D2775618" => "ESL 2205 (2003)", # 2003 English Second Language 2205: Curriculum Guide
+    "D2775619" => "ESL 3205 (2003)", # 2003 English Second Language 3205: Curriculum Guide
+    "D2775897" => "Religious Education - A Curriculum Guide (Grades 7-9) (2002)", # 2002 Religious Education - A Curriculum Guide (Grades 7-9)
+    "D2775898" => "Religious Education Guide Ethics & Philosophy 2101 (2010)", # 2010 Religious Education Guide Ethics &amp; Philosophy 2101
+    "D2775899" => "Religious Education Guide Ethics & Social Justice 2106 (2010)", # 2010 Religious Education Guide Ethics &amp; Social Justice 2106
+    "D2775900" => "Religious Education 3101/3106 Curriculum Guide (2005)", # 2005 Religious Education 3101/3106 Curriculum Guide
   },
 
   # ========
@@ -2393,11 +2556,143 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2751186" => "Summit Content Statements (2016)", # 2016 Summit Content Statements
     "D2753394" => "English Language Arts Content Statements (9-10) (2016)", # 2016 English Language Arts Content Statements (9-10)
     "D2751185" => "Mathematics Content Statements (6-12) (2016)", # 2016 Mathematics Content Statements (6-12)
+    # Aug 9, 2017 Imports:
+    "D2788330" => "Spanish (2017)", # 2017 Spanish Content Statements (9-12)
+    "D2788345" => "Physical Education (2017)", # 2017 Physical Education Content Statements (9-12)
+    "D2788358" => "Health (2017)", # 2017 Health Content Statements (9-12)
   },
 
   "Dublin Core Metadata Initiative" => {
     # Dec 5, 2016 Imports:
     "D2695955" => "Competency Index for Linked Data (2016)", # 2016 Competency Index for Linked Data
+  },
+
+  "D2L" => {
+    # Aug 9, 2017 Imports:
+    "D2788203" => "Product Knowledge Standards (2017)", # 2017 Product Knowledge Standards
+  },
+
+  "Gwinnett County Public Schools" => {
+    # Aug 9, 2017 Imports:
+    "D2780930" => "HS Science (2016)", # 2016 GCPS HS Science
+    "D2788248" => "Algebra I (2017)", # 2017 Algebra I
+  },
+
+  "Nova Scotia" => {
+    # Aug 9, 2017 Imports:
+    "D2778639" => "Pre-calculus (2016)", # 2016 Pre-calculus 12
+    "D2778575" => "Mathematics (2015)", # 2015 Mathematics 12
+    "D2778601" => "Mathematics (2015)", # 2015 Mathematics 7
+    "D2778605" => "Mathematics (2015)", # 2015 Mathematics 8
+    "D2778609" => "Mathematics (2015)", # 2015 Mathematics 9
+    "D2780961" => "Accounting (2015)", # 2015 Accounting 11
+    "D2780991" => "Accounting (2015)", # 2015 Accounting 12
+    "D2781016" => "Calculus (2015)", # 2015 Calculus 12
+    "D2781067" => "Mathematics Pre-IB (2015)", # 2015 Mathematics 10 Pre-IB
+    "D2781086" => "Mathematics at Work (2015)", # 2015 Mathematics at Work 12
+    "D2781182" => "Mathematics Essentials (2015)", # 2015 Mathematics Essentials 10
+    "D2781252" => "Mathematics Essentials (2015)", # 2015 Mathematics Essentials 11
+    "D2781297" => "Mathematics Essentials (2015)", # 2015 Mathematics Essentials 12
+    "D2778571" => "Mathematics (2014)", # 2014 Mathematics 11
+    "D2778588" => "Mathematics (2014)", # 2014 Mathematics 4
+    "D2778592" => "Mathematics (2014)", # 2014 Mathematics 5
+    "D2778597" => "Mathematics (2014)", # 2014 Mathematics 6
+    "D2778618" => "Mathematics at Work (2014)", # 2014 Mathematics at Work 11
+    "D2778634" => "Pre-calculus (2014)", # 2014 Pre-calculus 11
+    "D2778555" => "Mathematics (2013)", # 2013 Mathematics 1
+    "D2778566" => "Mathematics (2013)", # 2013 Mathematics 10
+    "D2778580" => "Mathematics (2013)", # 2013 Mathematics 2
+    "D2778584" => "Mathematics (2013)", # 2013 Mathematics 3
+    "D2778614" => "Mathematics (2013)", # 2013 Mathematics at Work 10
+    "D2778628" => "Mathematics (2013)", # 2013 Mathematics Primary
+    "D2781326" => "Agriculture Agrifood 11 (2015)", # 2015 Agriculture Agrifood 11
+    "D2781372" => "Biology 11 And Advanced Biology 11 (2015)", # 2015 Biology 11 And Advanced Biology 11
+    "D2781414" => "Biology 12 (2015)", # 2015 Biology 12
+    "D2781471" => "Chemistry 11 And Advanced Chemistry 11 (2015)", # 2015 Chemistry 11 And Advanced Chemistry 11
+    "D2781472" => "Chemistry 12 And Advanced Chemistry 12 (2015)", # 2015 Chemistry 12 And Advanced Chemistry 12
+    "D2781714" => "Food Science 12 (2015)", # 2015 Food Science 12
+    "D2781764" => "Geology (2015)", # 2015 Geology 12
+    "D2781875" => "Geomatics (2015)", # 2015 Geomatics 12
+    "D2781911" => "Physics And Advanced Physics (2015)", # 2015 Physics 11 And Advanced Physics 11
+    "D2782001" => "Physics And Advanced Physics (2015)", # 2015 Physics 12 And Advanced Physics 12
+    "D2782082" => "Science (2015)", # 2015 Science 1
+    "D2782159" => "Science (2015)", # 2015 Science 2
+    "D2782185" => "Science (2015)", # 2015 Science 3
+    "D2782212" => "Science (2015)", # 2015 Science 4
+    "D2782279" => "Science (2015)", # 2015 Science 5
+    "D2782348" => "Science (2015)", # 2015 Science 6
+    "D2782599" => "Science (2015)", # 2015 Science 10
+    "D2782654" => "Science (2015)", # 2015 Science P
+    "D2782414" => "Science (2014)", # 2014 Science 7
+    "D2782477" => "Science (2014)", # 2014 Science 8
+    "D2782538" => "Science (2014)", # 2014 Science 9
+    "D2783571" => "English Language Arts (2014)", # 2014 English Language Arts 7
+    "D2783622" => "English Language Arts (2014)", # 2014 English Language Arts 8
+    "D2783673" => "English Language Arts (2014)", # 2014 English Language Arts 9
+    "D2783263" => "Canadian Literature (2015)", # 2015 Canadian Literature 12
+    "D2783280" => "English (2015)", # 2015 English 10
+    "D2783335" => "English 11/English-Communications 11/Advanced English 11 (2015)", # 2015 English 11/English-Communications 11/Advanced English 11
+    "D2783391" => "English 12/English Communications 12/English 12 African Heritage/Advanced English 12 (2015)", # 2015 English 12/English Communications 12/English 12 African Heritage/Advanced English 12
+    "D2783438" => "English Language Arts (2015)", # 2015 English Language Arts 4
+    "D2783482" => "English Language Arts (2015)", # 2015 English Language Arts 5
+    "D2783526" => "English Language Arts (2015)", # 2015 English Language Arts 6
+    "D2783113" => "Social Studies (2014)", # 2014 Social Studies 7
+    "D2783146" => "Social Studies (2014)", # 2014 Social Studies 8
+    "D2783178" => "Social Studies (2014)", # 2014 Social Studies 9
+    "D2783237" => "Sociology (2015)", # 2015 Sociology 12
+    "D2783220" => "Social Studies (2015)", # 2015 Social Studies P
+    "D2783083" => "Social Studies (2015)", # 2015 Social Studies 6
+    "D2783063" => "Social Studies (2015)", # 2015 Social Studies 5
+    "D2783041" => "Social Studies (2015)", # 2015 Social Studies 4
+    "D2782993" => "Social Studies (2015)", # 2015 Social Studies 1
+    "D2783010" => "Social Studies (2015)", # 2015 Social Studies 2
+    "D2783026" => "Social Studies (2015)", # 2015 Social Studies 3
+    "D2782921" => "History (2015)", # 2015 History 10
+    "D2782948" => "Law (2015)", # 2015 Law 12
+    "D2782896" => "Global Politics 12 And Advanced Global Politics 12 (2015)", # 2015 Global Politics 12 And Advanced Global Politics 12
+    "D2782858" => "Global History 12 And Advanced Global History 12 (2015)", # 2015 Global History 12 And Advanced Global History 12
+    "D2782819" => "Global Geography 12 And Advanced Global Geography 12 (2015)", # 2015 Global Geography 12 And Advanced Global Geography 12
+    "D2782757" => "Geography of Canada (2015)", # 2015 Geography of Canada 11
+    "D2782720" => "Geography (2015)", # 2015 Geography 10
+    "D2782676" => "Canadian History (2015)", # 2015 Canadian History 11
+  },
+
+  "Australian Government Department of Education and Training" => {
+    # Aug 9, 2017 Imports:
+    "D2778417" => "SISFFIT001 - Provide health screening and fitness orientation (2015)", # 2015 SISFFIT001 - Provide health screening and fitness orientation
+    "D2789434" => "BSBRSK401 - Identify Risk and Apply Risk Management Processes (2017)", # 2017 BSBRSK401 - Identify Risk and Apply Risk Management Processes
+    "D2789435" => "HLTAID003 - Provide first aid (2017)", # 2017 HLTAID003 - Provide first aid
+    "D2789436" => "HLTWHS001 - Participate in Workplace Health and Safety (2016)", # 2016 HLTWHS001 - Participate in Workplace Health and Safety
+    "D2789437" => "SISFFIT002 - Recognise and Apply Exercise Considerations For Specific Populations (2016)", # 2016 SISFFIT002 - Recognise and Apply Exercise Considerations For Specific Populations
+    "D2789438" => "SISFFIT003 - Instruct Fitness Programs (2016)", # 2016 SISFFIT003 - Instruct Fitness Programs
+    "D2789439" => "SISFFIT004 - Incorporate anatomy and physiology principles into fitness programming (2016)", # 2016 SISFFIT004 - Incorporate anatomy and physiology principles into fitness programming
+    "D2789440" => "SISFFIT005 - Provide healthy eating information (2016)", # 2016 SISFFIT005 - Provide healthy eating information
+    "D2789441" => "SISFFIT006 - Conduct fitness appraisals (2016)", # 2016 SISFFIT006 - Conduct fitness appraisals
+    "D2789442" => "SISFFIT007 - Instruct group exercise sessions (2016)", # 2016 SISFFIT007 - Instruct group exercise sessions
+    "D2789443" => "SISFFIT011 - Instruct approved community fitness programs (2016)", # 2016 SISFFIT011 - Instruct approved community fitness programs
+    "D2789444" => "SISFFIT014 - Instruct exercise to older clients (2016)", # 2016 SISFFIT014 - Instruct exercise to older clients
+    "D2789445" => "SISFFIT031 - Implement injury prevention strategies (2016)", # 2016 SISFFIT031 - Implement injury prevention strategies
+    "D2789446" => "SISXCCS001 - Provide quality service (2016)", # 2016 SISXCCS001 - Provide quality service
+    "D2789447" => "SISXFAC001 - Maintain equipment for activities (2016)", # 2016 SISXFAC001 - Maintain equipment for activities
+    "D2789448" => "SISXFAC002 - Maintain sport, fitness and recreation facilities (2016)", # 2016 SISXFAC002 - Maintain sport, fitness and recreation facilities
+    "D2789449" => "SISXIND001 - Work effectively in sport, fitness and recreation environments (2016)", # 2016 SISXIND001 - Work effectively in sport, fitness and recreation environments
+  },
+  "Australia" => {
+    # Aug 9, 2017 Imports:
+    "D2798730" => "Mathematics (2017)", # 2017 The Australian Curriculum: Mathematics
+    "D2799610" => "Work Studies (2017)", # 2017 The Australian Curriculum: Work Studies
+    "D2800139" => "Health and Physical Education (2017)", # 2017 The Australian Curriculum: Health and Physical Education
+    "D2800981" => "Technologies (2017)", # 2017 The Australian Curriculum: Technologies
+    "D2801548" => "Science (2017)", # 2017 The Australian Curriculum: Science
+    "D2802329" => "The Arts (2017)", # 2017 The Australian Curriculum: The Arts
+    "D2804764" => "English (2017)", # 2017 The Australian Curriculum: English
+  },
+  "Alberta" => {
+    # Aug 9, 2017 Imports:
+    "D2797748" => "Mathematics (2016)", # 2016 Mathematics K–9
+    "D2797587" => "Mathematics (2008)", # 2008 Mathematics 10–12
+    "D2797985" => "Mathematics 31 (1995)", # 1995 Mathematics 31
+
   }
 
 }

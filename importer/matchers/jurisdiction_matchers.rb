@@ -159,4 +159,6 @@ JURISDICTION_MATCHERS = {
   "http://purl.org/ASN/scheme/ASNJurisdiction/D2L"=>{:title=>"D2L", :id=>"2E0CC9E14F0C40F691F81662F8C82DEB", type: "organization"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/Diocese_of_Phoenix_Catholic_Schools"=> {:title => "Diocese of Phoenix Catholic Schools", id: "272D4A7EEED348E4ADF7CF9422723112", type: "organization"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/K12_Inc" => {:title => "K12 Inc.", type: "corporation", id: "50CA76B6DED64CCBB5364E13E1ED9475"},
-}
+  "http://purl.org/ASN/scheme/ASNJurisdiction/Gwinnett_County_Public_Schools" => {:title => "Gwinnett County Public Schools", type: "organization", id: "AA0ABAE558D14AF590FC6F19D8A4D9A3"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/AUS-VET" => {:title => "Australian Government Department of Education and Training", type: "organization", id: "5F1D84C1EB1C4F7DB2D1D8360F3CF04B"},
+ }
