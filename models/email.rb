@@ -19,7 +19,7 @@ class Email
     template_model[:comment] = {text: comment} if comment
 
     PostmarkClient.deliver_with_template(
-      from: 'robbie@commoncurriculum.com',
+      from: ENV["POSTMARK_FROM_ADDRESS"],
       to: "#{pr.submitterName} <#{pr.submitterEmail}>",
       template_id: templates[template_name],
       template_model: template_model
