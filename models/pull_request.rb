@@ -221,6 +221,7 @@ class PullRequest
       Email.send_email("revise-and-resubmit", model, comment)
       AsanaTask.revise_and_resubmit(model.asanaTaskId, model)
     when "approval-requested"
+      Email.send_email("approval-requested", model, comment)
       AsanaTask.approval_requested(model.asanaTaskId, model)
     end
   end
