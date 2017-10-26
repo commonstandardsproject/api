@@ -3,11 +3,11 @@ class Email
 
   def self.send_email(template_name, pr, comment=nil)
     templates = {
-      "approval-requested"  => 438823,
-      "approved"            => 438922,
-      "rejected"            => 438821,
-      "admin-comment-added" => 438822,
-      "revise-and-resubmit" => 438823
+      "approval-requested"  => 3694442,
+      "approved"            => 3694223,
+      "rejected"            => 3694422,
+      "admin-comment-added" => 3694441,
+      "revise-and-resubmit" => 3694421
     }
     template_model = {
       name:         pr.submitterName,
