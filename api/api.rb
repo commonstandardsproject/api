@@ -77,7 +77,9 @@ module API
       check_origin = env["ENVIRONMENT"] != "development" &&
                      env["HTTP_ORIGIN"] &&
                      env["HTTP_ORIGIN"] != "http://commonstandardsproject.com" &&
-                     env["HTTP_ORIGIN"] != "http://www.commonstandardsproject.com"
+                     env["HTTP_ORIGIN"] != "http://www.commonstandardsproject.com" &&
+                     env["HTTP_ORIGIN"] != "https://commonstandardsproject.com" &&
+                     env["HTTP_ORIGIN"] != "https://www.commonstandardsproject.com"
 
       if check_origin && @user[:allowedOrigins].include?(env["HTTP_ORIGIN"]) == false
         error!("Unauthorized: Origin isn't an allowed origin.", 401)
