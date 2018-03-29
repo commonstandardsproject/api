@@ -16,7 +16,7 @@ use Rack::Deflater
 use Rack::Cors do
   allow do
     origins '*'
-    resource '*', headers: :any, methods: [:post, :get]
+    resource '*', headers: :any, methods: [:post, :get, :options]
   end
 end
 
