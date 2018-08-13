@@ -1,7 +1,7 @@
 require 'logger'
 require "skylight/sinatra"
 
-Skylight.start!
+# Skylight.start!
 
 
 class Main < Sinatra::Base

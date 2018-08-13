@@ -161,4 +161,10 @@ JURISDICTION_MATCHERS = {
   "http://purl.org/ASN/scheme/ASNJurisdiction/K12_Inc" => {:title => "K12 Inc.", type: "corporation", id: "50CA76B6DED64CCBB5364E13E1ED9475"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/Gwinnett_County_Public_Schools" => {:title => "Gwinnett County Public Schools", type: "organization", id: "AA0ABAE558D14AF590FC6F19D8A4D9A3"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/AUS-VET" => {:title => "Australian Government Department of Education and Training", type: "organization", id: "5F1D84C1EB1C4F7DB2D1D8360F3CF04B"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/AAMC" => {:title => "Association of American Medical Colleges", type: "organization", id: "B24BE72BF5E34B7C889790315071E5B6"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/CPACanada" => {:title => "CPA Canada", type: "organization", id: "A41C8B45610A474F9012460136E7977D"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/ICEONT" => {:title => "Institute for Catholic Education", type: "organization", id: "7341AD1444C14DCE91B1F149578F6D56"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-ON-FR" => {:title => "Ontario (Français)", type: "state", abbreviation: "ON", id: "6C1C46EAB3F345D78085A548AF831FB8"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-BC-FR" => {:title => "British Columbia (Français)", type: "state", abbreviation: "BC", id: "EB941913257145ECBAAD3E7EF2DB9E4B"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/NZ" => {:title => "New Zealand", type: "country", abbreviation: "NZ", id: "66D464B36D28478DB099F2933AF0DFEC"},
  }

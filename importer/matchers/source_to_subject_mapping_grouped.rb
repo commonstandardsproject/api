@@ -19,6 +19,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2687909" => "Science (2015)", # 2015 Alabama Course of Study: Science
     "D2707611" => "Languages Other Than English—Foreign Languages (2006)", # 2006 Alabama Course of Study: Languages Other Than English—Foreign Languages
     "D2725060" => "Career Mathematics (2015)", # 2015 Alabama Course of Study: Career Mathematics
+    # Aug13, 2018 Imports:
+    "D2843223" => "English Language Arts (2016)", # 2016 Alabama Course of Study: English Language Arts
+    "D2843224" => "Mathematics (2016)", # 2016 Alabama Course of Study: Mathematics
+    "D2773840" => "Algebra with Finance (2017)", # 2017 Algebra with Finance
 
 
   },
@@ -508,6 +512,41 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2760240" => "Calculus (2016)", # 2016 Calculus
     "D2802332" => "KeyCode (2017)", # 2017 KeyCode
 
+    # Aug13, 2018 Imports:
+    "D2766759" => "Creative Writing - One Semester (2016)", # 2016 Creative Writing - One Semester
+    "D2766760" => "Creative Writing - One Year 1 Credit (2016)", # 2016 Creative Writing - One Year 1 Credit
+    "D2774926" => "Critical Reading I (2016)", # 2016 Critical Reading I
+    "D2774927" => "Critical Reading II (2016)", # 2016 Critical Reading II
+    "D2774928" => "Debate I (2016)", # 2016 Debate I
+    "D2774929" => "Debate II (2016)", # 2016 Debate II
+    "D2774930" => "Debate III (2016)", # 2016 Debate III
+    "D2775590" => "Debate IV (2016)", # 2016 Debate IV
+    "D2775591" => "Dramatic Literature (2016)", # 2016 Dramatic Literature
+    "D2775592" => "ELA Drama (2016)", # 2016 ELA Drama
+    "D2775593" => "Forensics I (2016)", # 2016 Forensics I
+    "D2775594" => "Forensics II (2016)", # 2016 Forensics II
+    "D2775595" => "Forensics III (2016)", # 2016 Forensics III
+    "D2775596" => "Forensics IV (2016)", # 2016 Forensics IV
+    "D2775597" => "Journalism I (2016)", # 2016 Journalism I
+    "D2775598" => "Journalism II (2016)", # 2016 Journalism II
+    "D2775599" => "Journalism III (2016)", # 2016 Journalism III
+    "D2775600" => "Journalism IV (2016)", # 2016 Journalism IV
+    "D2775601" => "Oral Communication - One Semester (2016)", # 2016 Oral Communication - One Semester
+    "D2775602" => "Oral Commuication - One Year 1 Credit (2016)", # 2016 Oral Commuication - One Year 1 Credit
+    "D2775603" => "Strategic Reading (6-8) (2016)", # 2016 Strategic Reading (6-8)
+    "D2775604" => "Transitional Literacy (2016)", # 2016 Transitional Literacy
+    "D2775605" => "Science: Astronomy (2018)", # 2018 Arkansas Science Standards: Astronomy
+    "D2775606" => "Science: Biology - Integrated (2018)", # 2018 Arkansas Science Standards: Biology - Integrated
+    "D2775607" => "Science: Chemistry II (2018)", # 2018 Arkansas Science Standards: Chemistry II
+    "D2775608" => "Science: Chemistry - Integrated (2018)", # 2018 Arkansas Science Standards: Chemistry - Integrated
+    "D2775609" => "Science: Earth Science (2018)", # 2018 Arkansas Science Standards: Earth Science
+    "D2775610" => "Science: Environmental Science (2018)", # 2018 Arkansas Science Standards: Environmental Science
+    "D2775611" => "Science: Human Anatomy and Physiology (2018)", # 2018 Arkansas Science Standards: Human Anatomy and Physiology
+    "D2775612" => "Science: Physical Science - Integrated (2018)", # 2018 Arkansas Science Standards: Physical Science - Integrated
+    "D2775613" => "Science: Physics (2018)", # 2018 Arkansas Science Standards: Physics
+
+
+
   },
   # ===================
   # California
@@ -834,6 +873,13 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2784940" => "Mathematics - Calculus (2017)", # 2017 Mathematics Georgia Standards of Excellence - Calculus
     "D2784941" => "Mathematics - Advanced Mathematical Topics (2017)", # 2017 Mathematics Georgia Standards of Excellence - Advanced Mathematical Topics
 
+    # Aug13, 2018 Imports:
+    "D2819751" => "Personal Financial Literacy Social Studies (2017)", # 2017 Personal Financial Literacy Georgia Standards of Excellence for Social Studies
+    "D2805937" => "Media Arts (2017)", # 2017 Georgia Standards of Excellence in Media Arts
+    "D2805938" => "Theatre (2017)", # 2017 Georgia Standards of Excellence in Theatre
+    "D2805939" => "Visual Art (2017)", # 2017 Georgia Standards of Excellence in Visual Art
+    "D2957259" => "Mathematics - Differential Equations (2017)", # 2017 Mathematics Georgia Standards of Excellence - Differential Equations
+
   },
   # ===================
   # Hawaii
@@ -876,6 +922,18 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2566729" => "Hand Writing",                         # 2013 Idaho Hand Writing Standards (K-6)  http://www.sde.idaho.gov/site/content_standards/handwriting/Hand%20Writing%20Standards%20for%20Idaho%20K-6.pdf
     "D2567481" => "Biology (End-Of-Course)",              # 2012 Idaho Science End-Of-Course (EOC) Biology Content Standards  http://www.sde.idaho.gov/site/content_standards/science_standards_docs/Biology%20EOC%20Standards%20Skills%20and%20CL.docx
     "D2567533" => "Chemistry (End-Of-Course)",            # 2012 Idaho Science End-Of-Course (EOC) Chemistry Content Standards  http://www.sde.idaho.gov/site/content_standards/science_standards_docs/Chem%20EOC%20Standards%20Skills%20and%20CL.docx
+    # Aug13, 2018 Imports:
+    "D2842244" => "Fine Arts - Visual Arts (2017)", # 2017 Idaho Fine Arts Standards - Visual Arts
+    "D2784943" => "State Science Standards (2016)", # 2016 Idaho State Science Standards
+    "D2843220" => "Fine Arts - General Music, Music Appreciation, Music History (2017)", # 2017 Idaho Fine Arts Standards - General Music, Music Appreciation, Music History
+    "D2843221" => "Fine Arts - Harmonizing Instruments (2017)", # 2017 The Idaho Fine Arts Standards - Harmonizing Instruments
+    "D2843222" => "Fine Arts - Music Composition and Theory (2017)", # 2017 Idaho Fine Arts Standards - Music Composition and Theory
+    "D2844333" => "Fine Arts - Traditional and Emerging Ensembles (2017)", # 2017 Idaho Fine Arts Standards - Traditional and Emerging Ensembles
+    "D2845341" => "Fine Arts - Music Technology (2017)", # 2017 Idaho Fine Arts Standards - Music Technology
+    "D2845342" => "Fine Arts - Dance (2017)", # 2017 Idaho Fine Arts Standards - Dance
+    "D2845343" => "Fine Arts - Media Arts (2017)", # 2017 Idaho Fine Arts Standards - Media Arts
+    "D2845344" => "Fine Arts - Theatre (2017)", # 2017 Idaho Fine Arts Standards - Theatre
+
   },
   # ===================
   # Illinois
@@ -902,6 +960,15 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # July 27, 2016 Imports:
     "D2731595" => "Social Science (2016)", # 2016 Illinois Learning Standards for Social Science
+
+    # Aug13, 2018 Imports:
+    "D2753691" => "Dance (2016)", # 2016 Fine Arts Standards: Dance
+    "D2753693" => "Media Arts (2016)", # 2016 Fine Arts Standards: Media Arts
+    "D2753694" => "Music (2016)", # 2016 Fine Arts Standards: Music
+    "D2753696" => "Visual Arts (2016)", # 2016 Fine Arts Standards: Visual Arts
+    "D2753695" => "Theatre (2016)", # 2016 Fine Arts Standards: Theatre
+
+
   },
   # ===================
   # Indiana
@@ -984,6 +1051,15 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug 9, 2017 Imports:
     "D2798407" => "Mathematics (2017)", # 2017 Indiana Academic Standards Mathematics: Math 10
 
+    # Aug13, 2018 Imports:
+    "D2961872" => "Health & Wellness (2017)", # 2017 Indiana Academic Standards for Health & Wellness
+    "D2962883" => "Fine Arts - Dance (2017)", # 2017 Indiana Academic Standards for Fine Arts - Dance
+    "D2963965" => "Fine Arts - Theatre (2017)", # 2017 Indiana Academic Standards for Fine Arts - Theatre
+    "D2963966" => "Fine Arts - Visual Arts (2017)", # 2017 Indiana Academic Standards for Fine Arts - Visual Arts
+    "D2962880" => "Physical Education (K-5) (2017)", # 2017 Indiana Academic Standards for Physical Education (K-5)
+    "D2962881" => "Physical Education (6-8) (2017)", # 2017 Indiana Academic Standards for Physical Education (6-8)
+    "D2962882" => "Physical Education (9-12) (2017)", # 2017 Indiana Academic Standards for Physical Education (9-12)
+
   },
   # ===================
   # International Technology and Engineering Educators Association
@@ -1012,6 +1088,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2527582" => "Social Studies",                       # 2010 Iowa Core Social Studies  https://www.educateiowa.gov/sites/files/ed/documents/K-12_SocialStudies_0.doc
     # Aug 9, 2017 Imports:
     "D2788376" => "Social Studies (2017)", # 2017 Iowa Core Social Studies
+    # Aug13, 2018 Imports:
+    "D2780990" => "Core English Language Arts and Literacy in History/Social Studies, Science, and Technical Subjects (2016)", # 2016 Iowa Core English Language Arts and Literacy in History/Social Studies, Science, and Technical Subjects
+    "D2798405" => "Social Studies (2017)", # 2017 Iowa Social Studies Standards
   },
   # ===================
   # Jump$tart Coalition for Personal Financial Literacy
@@ -1079,6 +1158,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2762092" => "Music: Ensembles (2015)", # 2015 Kansas Music Standards for Ensembles
     "D2762091" => "Theatre (2013)", # 2013 Kansas Curricular Standards for Theatre
 
+    # Aug13, 2018 Imports:
+    "D2867743" => "Mathematics (2017)", # 2017 Kansas Mathematics Standards
+    "D2953714" => "English Language Arts Standards (2017)", # 2017 Kansas English Language Arts Standards
 
   },
   # ===================
@@ -1154,6 +1236,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2381866" => "Social Studies",                       # 2011 Louisiana Social Studies Grade-Level Expectations  http://www.louisianaschools.net/lde/uploads/18504.pdf
     # Aug 15, 2016 Imports:
     "D2751180" => "Mathematics (2016)",                   # 2016 Louisiana Standards for Mathematics
+
+    # Aug13, 2018 Imports:
+    "D2750254" => "English Language Arts (2016)", # 2016 Louisiana Standards for English Language Arts
+    "D2785461" => "Science (2017)", # 2017 Louisiana Student Standards for Science
+
   },
   # ===================
   # Maine
@@ -1214,6 +1301,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2757060" => "Digital Literacy and Computer Science (2016)", # 2016 Massachusetts Digital Literacy and Computer Science Curriculum Framework
     # Aug 9, 2017 Imports:
     "D2802330" => "Mathematics (2017)", # 2017 Massachusetts Curriculum Framework for Mathematics
+    # Aug13, 2018 Imports:
+    "D2800677" => "English Language Arts and Literacy (2017)", # 2017 Massachusetts English Language Arts and Literacy Framework
   },
   # ===================
   # Michigan
@@ -1251,6 +1340,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2389117" => "Arts",                                 # 2008 Minnesota Academic Standards in the Arts  http://education.state.mn.us/MDE/EdExc/StanCurri/K-12AcademicStandards/
     "D2608477" => "Health",                               # 2007 National Health Education Standards and Minnesota Benchmarks  http://education.state.mn.us/mdeprod/idcplg?IdcService=GET_FILE&dDocName=005242&RevisionSelectionMethod=latestReleased&Rendition=primary
     "D2608476" => "Physical Education",                   # 2004 National Physical Education Standards and Minnesota Benchmarks  http://education.state.mn.us/mdeprod/idcplg?IdcService=GET_FILE&dDocName=005243&RevisionSelectionMethod=latestReleased&Rendition=primary
+    # Aug13, 2018 Imports:
+    "D2968233" => "Physical Education (2018)", # 2018 Minnesota K-12 Academic Standards Physical Education
   },
   # ===================
   # Mississippi
@@ -1271,6 +1362,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2731596" => "World Languages Framework (2016)",     # 2016 Mississippi World Languages Framework
     # Aug 15, 2016 Imports:
     "D2720417" => "Mathematics (2016)", # 2016 Mississippi College and Career Readiness Standards for Mathematics
+    # Aug13, 2018 Imports:
+    "D2788373" => "Science (2018)", # 2018 Mississippi College- and Career-Readiness Standards for Science
+    "D2950281" => "Information and Communication Technology I (2014)", # 2014 Information and Communication Technology I
+    "D2950416" => "Information and Communication Technology II (2014)", # 2014 Information and Communication Technology II
+    "D2754941" => "English Language Arts (2016)", # 2016 Mississippi College and Career Readiness Standards for English Language Arts
 
 
   },
@@ -1322,6 +1418,13 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Dec 5, 2016 Imports:
     "D2765540" => "Science (2016)", # 2016 Montana Science Content Standards
+    # Aug13, 2018 Imports:
+    "D2759800" => "Media Arts (2016)", # 2016 Montana Media Arts Content Standards
+    "D2759801" => "Visual Arts (2016)", # 2016 Montana Visual Arts Content Standards
+    "D2759802" => "Theatre Arts (2016)", # 2016 Montana Theatre Arts Content Standards
+    "D2759803" => "Music (2016)", # 2016 Montana Music Content Standards
+    "D2759804" => "Dance (2016)", # 2016 Montana Dance Content Standards
+
   },
   # ===================
   # NCTE/IRA
@@ -1418,6 +1521,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Aug 9, 2017 Imports:
     "D2766688" => "Physical Education (2016)", # 2016 Nebraska Physical Education Standards
+
+    # Aug13, 2018 Imports:
+    "D2843219" => "Science (2017)", # 2017 Nebraska College and Career Ready Standards for Science
+
   },
   # ===================
   # Nevada
@@ -1434,6 +1541,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2499268" => "Health",                               # 2007 Nevada Health Content Standards  http://www.doe.nv.gov/NDE_Offices/APAC/Nevada_Academic_Standards/Health_and_PE/Current_Health_Standards_2007/
     "D2623549" => "Information Literacy Standards",       # 2002 Nevada Information Literacy Standards  file:///opt/bitnami/apps/drupal/www.doe.nv.gov/Standards_Instructional_Support/Nevada_Academic_Standards/Literacy_Standard/infolit/
     "D100038E" => "Social Studies",                       # 2008 Nevada Social Studies Standards  http://www.doe.nv.gov/Standards_Instructional_Support/Nevada_Academic_Standards/Social_Studies/CompleteStandardsDec2008/
+    # Aug13, 2018 Imports:
+    "D2845340" => "Social Studies (2017)", # 2017 Nevada Academic Content Standards for Social Studies
   },
   # ===================
   # New Hampshire
@@ -1450,6 +1559,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D1000251" => "Written & Oral Communication",         # 2006 K-12 Written and Oral Communication New Hampshire Curriculum Framework
     "D2522919" => "Common Core English Language Arts & Literacy",   # 2010 NH Common Core State Standards for English Language Arts & Literacy in History/Social Studies, Science, and Technical Subjects  http://www.corestandards.org/assets/CCSSI_ELA%20Standards.pdf
     "D2522215" => "Common Core Mathematics",              # 2010 NH Common Core State Standards for Mathematics  http://www.corestandards.org/assets/CCSSI_Math%20Standards.pdf
+    # Aug13, 2018 Imports:
+    "D2777191" => "Science (NGSS) (2016)", # 2016 NH Career & College-Ready Science Standards (NGSS)
   },
   # ===================
   # New Jersey
@@ -1523,6 +1634,24 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Aug 9, 2017 Imports:
     "D2778655" => "Science (2016)", # 2016 New York State P-12 Science Learning Standards
+
+    # Aug13, 2018 Imports:
+    "D2867744" => "Next Generation English Language Arts Learning Standards (2017)", # 2017 New York State Next Generation English Language Arts Learning Standards
+    "D2867745" => "Next Generation Grades 6-12 Learning Standards for Literacy (2017)", # 2017 New York State Next Generation Grades 6-12 Learning Standards for Literacy
+    "D2868533" => "Algebra I (2017)", # 2017 Algebra I
+    "D2868534" => "Algebra II (2017)", # 2017 Algebra II
+    "D2868535" => "Geometry (2017)", # 2017 Geometry
+    "D2868536" => "Mathematics Plus Standards (2017)", # 2017 Mathematics Plus Standards
+    "D2868537" => "Next Generation Mathematics Learning Standards (K-8) (2017)", # 2017 New York State Next Generation Mathematics Learning Standards (K-8)
+    "D2845345" => "Arts: Dance (2017)", # 2017 New York State Learning Standards for the Arts: Dance
+    "D2845346" => "Arts: Media Arts (2017)", # 2017 New York State Learning Standards for the Arts: Media Arts
+    "D2845347" => "Arts: Theater (2017)", # 2017 New York State Learning Standards for the Arts: Theater
+    "D2845348" => "Arts: Visual Arts (2017)", # 2017 New York State Learning Standards for the Arts: Visual Arts
+    "D2845349" => "Arts: General Music (2017)", # 2017 New York State Learning Standards for the Arts: General Music
+    "D2845350" => "Arts: Music Technology (2017)", # 2017 New York State Learning Standards for the Arts: Music Technology
+    "D2845351" => "Arts: Composition and Theory (2017)", # 2017 New York State Learning Standards for the Arts: Composition and Theory
+    "D2845645" => "Arts: Music - Harmonizing Instruments (2017)", # 2017 New York State Learning Standards for the Arts: Music - Harmonizing Instruments
+    "D2845646" => "Arts: Music - Traditional and Emerging Ensembles (2017)", # 2017 New York State Learning Standards for the Arts: Music - Traditional and Emerging Ensembles
   },
   # ===================
   # Next Generation Science Standards
@@ -1661,6 +1790,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2797585" => "Horticulture II (2013)", # 2013 Horticulture II
     "D2797586" => "Agriscience Applications (2013)", # 2013 Agriscience Applications
 
+    # Aug13, 2018 Imports:
+    "D2788226" => "English Language Arts (2018)", # 2018 North Carolina Standard Course of Study for English Language Arts
+    "D2881767" => "Mathematics (2018)", # 2018 North Carolina Standard Course of Study K-8 Mathematics
+
+
+
   },
   # ===================
   # North Dakota
@@ -1678,7 +1813,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D1000264" => "Science",                              # 2006 North Dakota Science Content Standards  http://www.dpi.state.nd.us/standard/content/science/science.pdf
     "D100034A" => "Social Studies",                       # 2007 North Dakota Social Studies Content Standards  http://www.dpi.state.nd.us/standard/content/sstudies/SS.pdf
     "D10002F5" => "Visual Arts",                          # 2000 North Dakota Visual Arts Content Standards  http://www.dpi.state.nd.us/standard/content/varts.pdf
-    "D2655016" => "Physical Education"
+    "D2655016" => "Physical Education",
+
+    # Aug13, 2018 Imports:
+    "D2788230" => "Mathematics (2017)", # 2017 North Dakota Mathematics Content Standards
+    "D2788229" => "English Language Arts and Literacy (2017)", # 2017 North Dakota English Language Arts and Literacy Content Standards
   },
   # ===================
   # Ohio
@@ -1704,6 +1843,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2769578" => "Financial Literacy (2016)", # 2016 Ohio's New Learning Standards: Financial Literacy
     # Aug 9, 2017 Imports:
     "D2784929" => "Mathematics (2017)", # 2017 Ohio's Learning Standards: Mathematics
+
+    # Aug13, 2018 Imports:
+    "D2784796" => "History/Social Studies, Science, and Technical Subjects (2017)", # 2017 Ohio's Learning Standards Literacy in History/Social Studies, Science, and Technical Subjects
+    "D2784795" => "English Language Arts (2017)", # 2017 Ohio Learning Standards English Language Arts
+    "D2808337" => "Technology (2017)", # 2017 Ohio's Learning Standards for Technology
   },
   # ===================
   # Oklahoma
@@ -1750,6 +1894,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2744629" => "Orientation to Graphic Communications (2012)", # 2012 Orientation to Graphic Communications
     "D2744634" => "Oxyacetylene Welding (2002)", # 2002 Oxyacetylene Welding
     "D2744627" => "Wind Energy: Wind Turbine Technician (2012)", # 2012 Wind Energy: Wind Turbine Technician
+    # Aug13, 2018 Imports:
+    "D2958332" => "Music (2017)", # 2017 Oklahoma Academic Standards - Music
+    "D2958336" => "Visual Arts (2017)", # 2017 Oklahoma Academic Standards - Visual Arts
   },
   # ===================
   # Oregon
@@ -1898,6 +2045,18 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2765881" => "Secondary Cosmetology (2015)", # 2015 Secondary Cosmetology
     "D2765882" => "Firefighter 1 (2014)", # 2014 Firefighter 1
     "D2765883" => "Firefighter II (2014)", # 2014 Firefighter II
+
+    # Aug13, 2018 Imports:
+    "D2792522" => "Computer Science and Digital Literacy Standards (2017)", # 2017 South Carolina Computer Science and Digital Literacy Standards
+    "D2807207" => "Health and Safety Education (2017)", # 2017 South Carolina Academic Standards for Health and Safety Education
+    "D2804736" => "Visual and Performing Arts: Visual Arts (2017)", # 2017 South Carolina College- and Career-Ready Standards for Visual and Performing Arts Proficiency: Visual Arts
+    "D2804737" => "Visual and Performing Arts: Theatre (2017)", # 2017 South Carolina College- and Career-Ready Standards for Visual and Performing Arts Proficiency: Theatre
+    "D2804738" => "Visual and Performing Arts: Media Arts (2017)", # 2017 South Carolina College- and Career-Ready Standards for Visual and Performing Arts Proficiency: Media Arts
+    "D2804739" => "Visual and Performing Arts: Instrumental Music (2017)", # 2017 South Carolina College- and Career-Ready Standards for Visual and Performing Arts Proficiency: Instrumental Music
+    "D2804740" => "Visual and Performing Arts: General Music (2017)", # 2017 South Carolina College- and Career-Ready Standards for Visual and Performing Arts Proficiency: General Music
+    "D2804741" => "Visual and Performing Arts: Choral Music (2017)", # 2017 South Carolina College- and Career-Ready Standards for Visual and Performing Arts Proficiency: Choral Music
+    "D2804742" => "Visual and Performing Arts: Design (2017)", # 2017 South Carolina College- and Career-Ready Standards for Visual and Performing Arts Proficiency: Design
+    "D2804743" => "Visual and Performing Arts: Dance (2017)", # 2017 South Carolina College- and Career-Ready Standards for Visual and Performing Arts Proficiency: Dance
 
   },
   # ===================
@@ -2058,6 +2217,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2766773" => "Physical World Concepts (2016)", # 2016 Tennessee Academic Standards: Physical World Concepts
     "D2766774" => "Physics (2016)", # 2016 Tennessee Academic Standards: Physics
     "D2766775" => "Scientific Research (2016)", # 2016 Tennessee Academic Standards: Scientific Research
+
+    # Aug13, 2018 Imports:
+    "D2744619" => "Mathematics (2016)", # 2016 Tennessee Academic Standards: Mathematics
+    "D2742491" => "English Language Arts (2016)", # 2016 Tennessee Academic Standards: English Language Arts
+    "D2769094" => "Physical Education (2016)", # 2016 Tennessee Physical Education Standards K-5
+    "D2769095" => "Physical Education (2016)", # 2016 Tennessee Physical Education Standards 6-8
+    "D2769096" => "Physical Education (2016)", # 2016 Tennessee Physical Education Standards 9-12
+
   },
 
   # ===================
@@ -2101,6 +2268,27 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Nov 4, 2016 Imports:
     "D2760645" => "Personal Financial Literacy (2016)", # 2016 Texas Essential Knowledge and Skills for Personal Financial Literacy
 
+    # Aug13, 2018 Imports:
+    "D2845647" => "English Language Arts and Reading (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - Kindergarten
+    "D2845648" => "English Language Arts and Reading (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 1
+    "D2845649" => "English Language Arts and Reading (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 2
+    "D2845650" => "English Language Arts and Reading (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 3
+    "D2845651" => "English Language Arts and Reading (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 4
+    "D2845652" => "English Language Arts and Reading (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 5
+    "D2864159" => "English Language Arts and Reading (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 6
+    "D2864160" => "English Language Arts and Reading (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 7
+    "D2864161" => "English Language Arts and Reading (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 8
+    "D2881763" => "Health Education (2017)", # 2017 Texas Essential Skills and Knowledge for Health Education - Grade 6
+    "D2881764" => "Health Education (2017)", # 2017 Texas Essential Skills and Knowledge for Health Education - Grades 7 & 8
+    "D2881765" => "Health Education (2017)", # 2017 Texas Essential Skills and Knowledge for Health Education - Grades 9 & 10
+    "D2881766" => "Health Education (2017)", # 2017 Texas Essential Skills and Knowledge for Health Education - Grades 11 & 12
+    "D2949937" => "English Language Arts and Reading - English I (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - English I
+    "D2949938" => "English Language Arts and Reading - English II (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - English II
+    "D2949939" => "English Language Arts and Reading - English III (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - English III
+    "D2949940" => "English Language Arts and Reading - English IV (2017)", # 2017 Texas Essential Knowledge and Skills for English Language Arts and Reading - English IV
+    "D2953715" => "English I for English as a Second Language (2017)", # 2017 English I for English as a Second Language
+    "D2953716" => "English II for English as a Second Language (2017)", # 2017 English II for English as a Second Language
+    "D2953717" => "English Language Development and Acquisition (ELDA) (2017)", # 2017 English Language Development and Acquisition (ELDA)
   },
   # ===================
   # Utah
@@ -2148,6 +2336,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2784792" => "World Geography (2016)", # 2016 World Geography
     "D2784793" => "World History (2016)", # 2016 World History
     "D2784794" => "U.S. Government & Citizenship (2016)", # 2016 U.S. Government &amp; Citizenship
+
+    # Aug13, 2018 Imports:
+    "D2742492" => "Fine Arts K-6 (2016)", # 2016 Fine Arts Core Standards K-6
+    "D2956021" => "Fine Arts 7-8 (2016)", # 2016 Fine Arts Core Standards Secondary 7-8
 
   },
   # ===================
@@ -2205,6 +2397,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2773857" => "Probability & Statistics (2016)", # 2016 Probability &amp; Statistics
     "D2773858" => "Discrete Mathematics (2016)", # 2016 Discrete Mathematics
     "D2773859" => "Mathematical Analysis (2016)", # 2016 Mathematical Analysis
+    # Aug13, 2018 Imports:
+    "D2805940" => "English (2017)", # 2017 English Standards of Learning for Virginia Public Schools
+    "D2788029" => "Family Life Education (2016)", # 2016 Virginia Family Life Education
+    "D2956022" => "Computer Science Programming (2017)", # 2017 Computer Science Programming
+    "D2956023" => "Computer Science Principles (2017)", # 2017 Computer Science Principles
+    "D2956024" => "Computer Science Foundations (2017)", # 2017 Computer Science Foundations
+    "D2956025" => "Computer Science Standards Middle School Elective (2017)", # 2017 Computer Science Standards Middle School Elective
+    "D2956026" => "Computer Science (K-8) (2017)", # 2017 Computer Science Standards of Learning for Virginia Public Schools (K-8)
 
   },
   # ===================
@@ -2227,6 +2427,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # July 27, 2016 Imports:
     "D2751187" => "Health Learning Standards (2016)", # 2016 Washington State K-12 Health Learning Standards
     "D2751196" => "Physical Education Learning Standards (2016)", # 2016 Washington State K-12 Physical Education Learning Standards
+    # Aug13, 2018 Imports:
+    "D2862287" => "Computer Science (2016)", # 2016 Washington State K-12 Computer Science Learning Standards
+    "D2769085" => "Financial Education (2016)", # 2016 Washington State K-12 Financial Education Learning Standards
+
   },
   # ===================
   # WebJunction
@@ -2269,7 +2473,15 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Dec 5, 2016 Imports:
     "D2766423" => "Foreign Language (2007)", # 2007 21st Century Foreign Language Content Standards and Objectives for West Virginia Schools
+
+    # Aug13, 2018 Imports:
+    "D2814048" => "Technology and Computer Science (2017)", # 2017 West Virginia College- and Career-Readiness Standards for Technology and Computer Science
+    "D2814049" => "Discovering Computer Science (2017)", # 2017 Discovering Computer Science
+    "D2814050" => "Computer Science in the Modern World (2017)", # 2017 Computer Science in the Modern World
+    "D2814051" => "Computer Science & Mathematics (2017)", # 2017 Computer Science & Mathematics
+    "D2814052" => "Computer Science - Introduction to Geographic Information Systems (2017)", # 2017 Computer Science - Introduction to Geographic Information Systems
   },
+
   # ===================
   # Wisconsin
   # ===================
@@ -2293,7 +2505,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2433421" => "Social Studies",                       # 1998 Wisconsin's Model Academic Standards for Social Studies  http://standards.dpi.wi.gov/stn_ssintro
     "D2402334" => "Technology Education",                 # 1998 Wisconsin's Model Academic Standards for Technology Education  http://dpi.wi.gov/standards/pdf/teched.pdf
     "D10002E4" => "Theater",                              # 1997 Wisconsin's Model Academic Standards for Theatre  http://standards.dpi.wi.gov/files/standards/pdf/theatre.pdf
-    "D2673128" => "Physical Education"                    # Wisconsin's Model Academic Standards for Physical Education
+    "D2673128" => "Physical Education",                   # Wisconsin's Model Academic Standards for Physical Education
+
+
+    # Aug13, 2018 Imports:
+    "D2802387" => "Computer Science (2017)", # 2017 Wisconsin Standards for Computer Science
+    "D2957258" => "Standards for Science (2017)", # 2017 Wisconsin Standards for Science
+    "D2960032" => "Music (2017)", # 2017 Wisconsin Standards for Music
+
   },
   # ===================
   # World Meteorological Organization
@@ -2378,6 +2597,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2700780" => "Native Studies (2000)", # 2000 The Ontario Curriculum, Grades 11 and 12: Native Studies
     # July 27, 2016 Imports:
     "D2754782" => "Kindergarten Program (2016)", # 2016 The Kindergarten Program
+    # Aug13, 2018 Imports:
+    "D2826701" => "English, 9e et 10e année (2007)", # 2007 Le curriculum de l'Ontario – English, 9e et 10e année
+    "D2829949" => "English, 11e et 12e année (2007)", # 2007 Le curriculum de l'Ontario – English, 11e et 12e année
+    "D2973927" => "Canadian and World Studies: Grades 9 & 10 (2018)", # 2018 The Ontario Curriculum, Grades 9 & 10: Canadian and World Studies
+    "D2973928" => "Social Studies, Grades 1-6; History and Geography, Grades 7-8 (2018)", # 2018 The Ontario Curriculum, Social Studies, Grades 1-6; History and Geography, Grades 7-8
+    "D2973929" => "Cooperative Education - Grades 11 & 12 (2018)", # 2018 The Ontario Curriculum, Grades 11 & 12 Cooperative Education
 
 
   },
@@ -2399,6 +2624,17 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2769097" => "Career Education Curriculum (K-9) (2016)", # 2016 Career Education Curriculum (K-9)
     "D2769098" => "Applied Design, Skills, and Technologies Curriculum (K-9) (2016)", # 2016 Applied Design, Skills, and Technologies Curriculum (K-9)
 
+    # Aug13, 2018 Imports:
+        "D2965288" => "Éducation à la Carrière (M-9) (2016)", # 2016 Éducation à la Carrière (M-9)
+        "D2965392" => "Sciences humaines (M-9) (2016)", # 2016 Sciences humaines (M-9)
+        "D2965582" => "Français Langue Première (M-9) (2016)", # 2016 Français Langue Première (M-9)
+        "D2965827" => "Conception, compétences pratiques et technologies (M-9) (2016)", # 2016 Conception, compétences pratiques et technologies (M-9)
+        "D2966171" => "Éducation artistique (M-9) (2016)", # 2016 Éducation artistique (M-9)
+        "D2966562" => "English Language Arts (M-9) (2016)", # 2016 English Language Arts (M-9)
+        "D2966939" => "Mathématiques (M-9) (2016)", # 2016 Mathématiques (M-9)
+        "D2967297" => "Sciences (M-9) (2016)", # 2016 Sciences (M-9)
+        "D2967677" => "Éducation physique et santé (M-9) (2016)", # 2016 Éducation physique et santé (M-9)
+        "D2968034" => "Français de base (5-12) (2016)", # 2016 Français de base (5-12)
   },
 
   # ========
@@ -2560,6 +2796,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2788330" => "Spanish (2017)", # 2017 Spanish Content Statements (9-12)
     "D2788345" => "Physical Education (2017)", # 2017 Physical Education Content Statements (9-12)
     "D2788358" => "Health (2017)", # 2017 Health Content Statements (9-12)
+    # Aug13, 2018 Imports:
+    "D2960067" => "Art Content Statements (K-5) (2018)", # 2018 Art Content Statements (K-5)
+    "D2968355" => "History Content Statements (Grade 5) (2018)", # 2018 History Content Statements (Grade 5)
+    "D2968235" => "Science Content Statements (K-5) (2018)", # 2018 Science Content Statements (K-5)
   },
 
   "Dublin Core Metadata Initiative" => {
@@ -2686,13 +2926,251 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2801548" => "Science (2017)", # 2017 The Australian Curriculum: Science
     "D2802329" => "The Arts (2017)", # 2017 The Australian Curriculum: The Arts
     "D2804764" => "English (2017)", # 2017 The Australian Curriculum: English
+
+    # Aug13, 2018 Imports:
+    "D2840085" => "Humanities and Social Sciences (F–6/7) (2017)", # 2017 The Australian Curriculum: Humanities and Social Sciences (F–6/7)
+    "D2840086" => "History (7–10) (2017)", # 2017 The Australian Curriculum: History (7–10)
+    "D2840087" => "Geography (7–10) (2017)", # 2017 The Australian Curriculum: Geography (7–10)
+    "D2840088" => "Civics and Citizenship (7–10) (2017)", # 2017 The Australian Curriculum: Civics and Citizenship (7–10)
+    "D2840089" => "Economics and Business (7–10) (2017)", # 2017 The Australian Curriculum: Economics and Business (7–10)
+    "D2845653" => "Arabic (2017)", # 2017 The Australian Curriculum: Arabic
+    "D2845655" => "Chinese (2017)", # 2017 The Australian Curriculum: Chinese
+    "D2845657" => "Aboriginal Languages and Torres Strait Islander Languages (2017)", # 2017 The Australian Curriculum: Aboriginal Languages and Torres Strait Islander Languages
+    "D2845656" => "Classical Languages (2017)", # 2017 The Australian Curriculum: Classical Languages
+    "D2845658" => "French (2017)", # 2017 The Australian Curriculum: French
+    "D2849370" => "German (2017)", # 2017 The Australian Curriculum: German
+    "D2849371" => "Hindi (2017)", # 2017 The Australian Curriculum: Hindi
+    "D2851707" => "Indonesian (2017)", # 2017 The Australian Curriculum: Indonesian
+    "D2851708" => "Italian (2017)", # 2017 The Australian Curriculum: Italian
+    "D2851709" => "Japanese (2017)", # 2017 The Australian Curriculum: Japanese
+    "D2854842" => "Korean (2017)", # 2017 The Australian Curriculum: Korean
+    "D2854843" => "Modern Greek (2017)", # 2017 The Australian Curriculum: Modern Greek
+    "D2854844" => "Spanish (2017)", # 2017 The Australian Curriculum: Spanish
+    "D2854845" => "Turkish (2017)", # 2017 The Australian Curriculum: Turkish
+    "D2854846" => "Vietnamese (2017)", # 2017 The Australian Curriculum: Vietnamese
+
+    # Aug13, 2018 Imports:
+    "D2845654" => "Auslan (2017)", # 2017 The Australian Curriculum: Auslan
+
   },
   "Alberta" => {
     # Aug 9, 2017 Imports:
     "D2797748" => "Mathematics (2016)", # 2016 Mathematics K–9
     "D2797587" => "Mathematics (2008)", # 2008 Mathematics 10–12
     "D2797985" => "Mathematics 31 (1995)", # 1995 Mathematics 31
+    # Aug13, 2018 Imports:
+    "D2788377" => "Science 1-6 (1996)", # 1996 Science 1-6
+    "D2789232" => "Science 10 (2014)", # 2014 Science 10
+    "D2789298" => "Science 14-24 (2014)", # 2014 Science 14-24
+    "D2790823" => "Biology 20–30 (2014)", # 2014 Biology 20–30
+    "D2788933" => "Science 7-9 (2014)", # 2014 Science 7-9
+    "D2791424" => "Chemistry 20-30 (2014)", # 2014 Chemistry 20-30
+    "D2791945" => "Physics 20-30 (2014)", # 2014 Physics 20-30
+    "D2792521" => "Science 20-30 (2014)", # 2014 Science 20-30
+    "D2794182" => "English Language Arts 10 - 12 (2003)", # 2003 English Language Arts 10 - 12
+    "D2793164" => "English Language Arts K - 9 (2000)", # 2000 English Language Arts K - 9
+    "D2867746" => "Physical Education Kindergarten Through Grade 9 (2000)", # 2000 Physical Education Kindergarten Through Grade 9
+    "D2867747" => "Physical Education 10 (2000)", # 2000 Physical Education 10
+    "D2867748" => "Physical Education 20 (2000)", # 2000 Physical Education 20
+    "D2867749" => "Physical Education 30 (2000)", # 2000 Physical Education 30
+    "D2868461" => "Agriculture Safety (2015)", # 2015 Agriculture Safety
+    "D2868538" => "Knowledge and Employability Social Studies Grades 8 & 9 (2007)", # 2007 Knowledge and Employability Social Studies Grades 8 & 9
+    "D2868539" => "Knowledge and Employability Social Studies 10-4, 20-4 (2009)", # 2009 Knowledge and Employability Social Studies 10-4, 20-4
+    "D2868932" => "Knowledge and Employability Art/Design Communication Grades 8 & 9 (2006)", # 2006 Knowledge and Employability Art/Design Communication Grades 8 & 9
+    "D2868933" => "Knowledge and Employability Auto Mechanics Grades 8 & 9 (2006)", # 2006 Knowledge and Employability Auto Mechanics Grades 8 & 9
+    "D2869281" => "Knowledge and Employability Business Services Grades 8 & 9 (2006)", # 2006 Knowledge and Employability Business Services Grades 8 & 9
+    "D2869282" => "Knowledge and Employability Construction Grades 8 & 9 (2006)", # 2006 Knowledge and Employability Construction Grades 8 & 9
+    "D2871168" => "Knowledge and Employability Fabrics Grades 8 & 9 (2006)", # 2006 Knowledge and Employability Fabrics Grades 8 & 9
+    "D2871280" => "Knowledge and Employability Foods Grades 8 & 9 (2006)", # 2006 Knowledge and Employability Foods Grades 8 & 9
+    "D2871557" => "Knowledge and Employability Horticulture Grades 8 & 9 (2006)", # 2006 Knowledge and Employability Horticulture Grades 8 & 9
+    "D2871873" => "Knowledge and Employability Human Care Grades 8 & 9 (2006)", # 2006 Knowledge and Employability Human Care Grades 8 & 9
+    "D2872080" => "Knowledge and Employability Workplace Readiness Grades 8 & 9 (2006)", # 2006 Knowledge and Employability Workplace Readiness Grades 8 & 9
+    "D2872537" => "Knowledge and Employability Workplace Readiness Grades 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Workplace Readiness Grades 10-4, 20-4, 30-4
+    "D2872764" => "Knowledge and Employability Fabrics 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Fabrics 10-4, 20-4, 30-4
+    "D2873457" => "Knowledge and Employability Art/Design Communication 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Art/Design Communication 10-4, 20-4, 30-4
+    "D2874409" => "Knowledge and Employability Auto Mechanics 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Auto Mechanics 10-4, 20-4, 30-4
+    "D2875122" => "Knowledge and Employability Business Services 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Business Services 10-4, 20-4, 30-4
+    "D2876226" => "Knowledge and Employability Building 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Building 10-4, 20-4, 30-4
+    "D2876956" => "Knowledge and Employability Metal Fabrication 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Metal Fabrication 10-4, 20-4, 30-4
+    "D2877787" => "Knowledge and Employability Cosmetology 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Cosmetology 10-4, 20-4, 30-4
+    "D2878327" => "Knowledge and Employability Foods 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Foods 10-4, 20-4, 30-4
+    "D2879057" => "Knowledge and Employability Horticulture 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Horticulture 10-4, 20-4, 30-4
+    "D2879058" => "Knowledge and Employability Human Care 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Human Care 10-4, 20-4, 30-4
+    "D2879786" => "Knowledge and Employability Natural Resources 10-4, 20-4, 30-4 (2006)", # 2006 Knowledge and Employability Natural Resources 10-4, 20-4, 30-4
+    "D2881427" => "German Language Arts Kindergarten to Grade 9 (2005)", # 2005 German Language Arts Kindergarten to Grade 9
+    "D2881442" => "Chinese Language Arts Kindergarten to Grade 9 (2006)", # 2006 Chinese Language Arts Kindergarten to Grade 9
+    "D2881458" => "Spanish Language Arts Kindergarten to Grade 6 (2005)", # 2005 Spanish Language Arts Kindergarten to Grade 6
+    "D2881435" => "Chinese Language and Culture 10-3Y, 20-3Y, 30-3Y (2005)", # 2005 Chinese Language and Culture 10-3Y, 20-3Y, 30-3Y
+    "D2881437" => "Chinese Language and Culture 10-9Y, 20-9Y, 30-9Y (2010)", # 2010 Chinese Language and Culture 10-9Y, 20-9Y, 30-9Y
+    "D2881433" => "German Language and Culture 10-9Y, 20-9Y, 30-9Y (2010)", # 2010 German Language and Culture 10-9Y, 20-9Y, 30-9Y
+    "D2881430" => "Latin 10, 20, 30 (1986)", # 1986 Latin 10, 20, 30
+    "D2881428" => "German Language and Culture Six-Year Program Grades 7-8-9 (2006)", # 2006 German Language and Culture Six-Year Program Grades 7-8-9
+    "D2881429" => "German Language and Culture Nine-Year Program Grades 7-8-9 (2008)", # 2008 German Language and Culture Nine-Year Program Grades 7-8-9
+    "D2881438" => "Chinese Language Arts 10-20-30 (2006)", # 2006 Chinese Language Arts 10-20-30
+    "D2881439" => "Chinese Language and Culture Nine-Year Program Grades 4-5-6 (2007)", # 2007 Chinese Language and Culture Nine-Year Program Grades 4-5-6
+    "D2881441" => "Chinese Language and Culture Six-Year Program Grades 7-8-9 (2005)", # 2005 Chinese Language and Culture Six-Year Program Grades 7-8-9
+    "D2881431" => "German Language and Culture 10-3Y, 20-3Y, 30-3Y (2006)", # 2006 German Language and Culture 10-3Y, 20-3Y, 30-3Y
+    "D2881432" => "German Language and Culture 10-6Y, 20-6Y, 30-6Y (2006)", # 2006 German Language and Culture 10-6Y, 20-6Y, 30-6Y
+    "D2881434" => "German Language Arts 10-20-30 (2005)", # 2005 German Language Arts 10-20-30
+    "D2881436" => "Chinese Language and Culture 10-6Y, 20-6Y, 30-6Y (2005)", # 2005 Chinese Language and Culture 10-6Y, 20-6Y, 30-6Y
+    "D2881440" => "Chinese Language and Culture Nine-Year Program Grades 7-8-9 (2009)", # 2009 Chinese Language and Culture Nine-Year Program Grades 7-8-9
+    "D2881762" => "German Language and Culture Nine-Year Program Grades 4-5-6 (2007)", # 2007 German Language and Culture Nine-Year Program Grades 4-5-6
+    "D2881455" => "Spanish Language and Culture Nine-Year Program Grades 7-8-9 (2009)", # 2009 Spanish Language and Culture Nine-Year Program Grades 7-8-9
+    "D2881456" => "Spanish Language and Culture 10-6Y, 20-6Y, 30-6Y (2006)", # 2006 Spanish Language and Culture 10-6Y, 20-6Y, 30-6Y
+    "D2881459" => "Ukrainian Language and Culture Nine-Year Program Grades 4-5-6 (2007)", # 2007 Ukrainian Language and Culture Nine-Year Program Grades 4-5-6
+    "D2881460" => "Ukrainian Language and Culture 10-9Y, 20-9Y, 30-9Y (2010)", # 2010 Ukrainian Language and Culture 10-9Y, 20-9Y, 30-9Y
+    "D2881461" => "Ukrainian Language and Culture 6-Year Program Grades 7-8-9 (2005)", # 2005 Ukrainian Language and Culture 6-Year Program Grades 7-8-9
+    "D2881462" => "Ukrainian Language and Culture 10-6Y, 20-6Y, 30-6Y (2005)", # 2005 Ukrainian Language and Culture 10-6Y, 20-6Y, 30-6Y
+    "D2881443" => "Italian Language and Culture 6-Year Program Grades 7-8-9 (2006)", # 2006 Italian Language and Culture 6-Year Program Grades 7-8-9
+    "D2881444" => "Italian Language and Culture 10-6Y, 20-6Y, 30-6Y (2006)", # 2006 Italian Language and Culture 10-6Y, 20-6Y, 30-6Y
+    "D2881445" => "Italian Language and Culture 10-3Y, 20-3Y, 30-3Y (2006)", # 2006 Italian Language and Culture 10-3Y, 20-3Y, 30-3Y
+    "D2881446" => "Italian Language and Culture Twelve-Year Program Grades 7-8-9 (2006)", # 2006 Italian Language and Culture Twelve-Year Program Grades 7-8-9
+    "D2881448" => "Italian Language and Culture Twelve-Year Program Kindergarten to Grade 6 (2005)", # 2005 Italian Language and Culture Twelve-Year Program Kindergarten to Grade 6
+    "D2881449" => "Japanese Language and Culture Nine-Year Program Grades 4-5-6 (2007)", # 2007 Japanese Language and Culture Nine-Year Program Grades 4-5-6
+    "D2881450" => "Japanese Language and Culture Nine-Year Program Grades 7-8-9 (2008)", # 2008 Japanese Language and Culture Nine-Year Program Grades 7-8-9
+    "D2881451" => "Japanese Language and Culture 10-9Y, 20-9Y, 30-9Y (2010)", # 2010 Japanese Language and Culture 10-9Y, 20-9Y, 30-9Y
+    "D2881452" => "Japanese Language and Culture Six-Year Program Grades 7-8-9 (2005)", # 2005 Japanese Language and Culture Six-Year Program Grades 7-8-9
+    "D2881453" => "Japanese Language and Culture 10-6Y, 20-6Y, 30-6Y (2005)", # 2005 Japanese Language and Culture 10-6Y, 20-6Y, 30-6Y
+    "D2881454" => "Japanese Language and Culture 10-3Y, 20-3Y, 30-3Y (2005)", # 2005 Japanese Language and Culture 10-3Y, 20-3Y, 30-3Y
+    "D2798081" => "Economics 11-12 (1985)", # 1985 Economics 11-12
+    "D2798356" => "Geography 11-12 (1985)", # 1985 Geography 11-12
+    "D2798360" => "History 11-12 (1985)", # 1985 History 11-12
+    "D2798378" => "Philosophy 11-12 (1985)", # 1985 Philosophy 11-12
+    "D2798398" => "Political Science 11-12 (1985)", # 1985 Political Science 11-12
+    "D2798072" => "Social Sciences 11-12 (1985)", # 1985 Social Sciences 11-12
+    "D2798077" => "Anthropology 12 (1985)", # 1985 Anthropology 12
+    "D2798404" => "Social Studies K-9 (2005)", # 2005 Social Studies K-9
+    "D2798729" => "Social Studies 10 (2005)", # 2005 Social Studies 10
+    "D2798866" => "Social Studies 11 (2005)", # 2005 Social Studies 11
+    "D2799994" => "Social Studies 12 (2005)", # 2005 Social Studies 12
+    "D2897478" => "Introductory Career Transitions (2010)", # 2010 Introductory Career Transitions
+    "D2897480" => "Advanced Career Transitions (2010)", # 2010 Advanced Career Transitions
+    "D2897479" => "Intermediate Career Transitions (2010)", # 2010 Intermediate Career Transitions
+    "D2881457" => "Spanish Language and Culture 10-3Y, 20-3Y, 30-3Y (2006)", # 2006 Spanish Language and Culture 10-3Y, 20-3Y, 30-3Y
+    "D2881447" => "Italian Language and Culture 10-12Y, 20-12Y, 30-12Y (2010)", # 2010 Italian Language and Culture 10-12Y, 20-12Y, 30-12Y
+    "D2796034" => "Drama 1-6 (1985)", # 1985 Drama 1-6
+    "D2796273" => "Art 7-9 (1984)", # 1984 Art 7-9
+    "D2794789" => "Art 1-6 (1985)", # 1985 Art 1-6
+    "D2796753" => "Art 11-21-31 (1986)", # 1986 Art 11-21-31
+    "D2796629" => "Art 10-12 (1986)", # 1986 Art 10-12
+    "D2796582" => "General Art 10-12 (1986)", # 1986 General Art 10-12
+    "D2796880" => "Drama 10-12 (1989)", # 1989 Drama 10-12
+    "D2796418" => "Drama 7-9 (1989)", # 1989 Drama 7-9
+    "D2795045" => "Music 1-6 (1989)", # 1989 Music 1-6
+    "D2797155" => "Choral Music 10-12 (1991)", # 1991 Choral Music 10-12
+    "D2797210" => "General Music 10 - 12 (1994)", # 1994 General Music 10 - 12
+    "D2868243" => "Bee Keeper Production Technician (2006)", # 2006 Bee Keeper Production Technician
+    "D2868244" => "Cow-Calf Beef Production Technician (2000)", # 2000 Cow-Calf Beef Production Technician
+    "D2868245" => "Dairy Production Technician (2000)", # 2000 Dairy Production Technician
+    "D2868246" => "Feedlot Beef Production Technician (2000)", # 2000 Feedlot Beef Production Technician
+    "D2868247" => "Field Crop Production Technician (2000)", # 2000 Field Crop Production Technician
+    "D2868248" => "Irrigated Field Crop Production Technician (2000)", # 2000 Irrigated Field Crop Production Technician
+    "D2868249" => "Sheep Production Technician (2000)", # 2000 Sheep Production Technician
+    "D2868250" => "Swine Production Technician (2000)", # 2000 Swine Production Technician
+    "D2868251" => "Career Internship 10 (2011)", # 2011 Career Internship 10
+    "D2868419" => "Greenhouse Technician (2016)", # 2016 Greenhouse Technician
+    "D2868443" => "Equine Technician (2016)", # 2016 Equine Technician
+    "D2897464" => "Design Studies (2010)", # 2010 Design Studies
+    "D2897465" => "Communication Technology (2010)", # 2010 Communication Technology
+    "D2897466" => "Fashion Studies (2010)", # 2010 Fashion Studies
+    "D2897495" => "Recreation Leadership (2014)", # 2014 Recreation Leadership
+    "D2897496" => "Tourism (2010)", # 2010 Tourism
+    "D2948561" => "Instrument Technician Apprenticeship (2017)", # 2017 Instrument Technician Apprenticeship
+    "D2897497" => "Auto Body Technician Apprenticeship (2017)", # 2017 Auto Body Technician Apprenticeship
+    "D2897494" => "Millwright Apprenticeship (2017)", # 2017 Millwright Apprenticeship
+    "D2897493" => "Legal Studies (2010)", # 2010 Legal Studies
+    "D2897492" => "Communication Technology (2010)", # 2010 Communication Technology
+    "D2897491" => "Landscape Horticulturist Apprenticeship (2017)", # 2017 Landscape Horticulturist Apprenticeship
+    "D2897490" => "Insulator Apprenticeship (2014)", # 2014 Insulator Apprenticeship
+    "D2897489" => "Heavy Equipment Technician Apprenticeship (2014)", # 2014 Heavy Equipment Technician Apprenticeship
+    "D2897488" => "Hairstylist Apprenticeship (2010)", # 2010 Hairstylist Apprenticeship
+    "D2897487" => "Electrician Apprenticeship (2014)", # 2014 Electrician Apprenticeship
+    "D2897486" => "Cook Apprenticeship (2016)", # 2016 Cook Apprenticeship
+    "D2897485" => "Communication Technician Apprenticeship (2014)", # 2014 Communication Technician Apprenticeship
+    "D2897484" => "Carpenter Apprenticeship (2015)", # 2015 Carpenter Apprenticeship
+    "D2897483" => "Baker Apprenticeship (2016)", # 2016 Baker Apprenticeship
+    "D2897482" => "Cabinetmaker Apprenticeship (2015)", # 2015 Cabinetmaker Apprenticeship
+    "D2897467" => "Agriculture (2010)", # 2010 Agriculture
+    "D2897468" => "Environmental Stewardship (2010)", # 2010 Environmental Stewardship
+    "D2897469" => "Forestry (2010)", # 2010 Forestry
+    "D2897470" => "Primary Resources (2010)", # 2010 Primary Resources
+    "D2897471" => "Wildlife (2010)", # 2010 Wildlife
+    "D2897481" => "Agricultural Equipment Technician Apprenticeship (2014)", # 2014 Agricultural Equipment Technician Apprenticeship
+    "D2897477" => "Power Engineering (2016)", # 2016 Power Engineering
+    "D2897476" => "Mechanics (2009)", # 2009 Mechanics
+    "D2897475" => "Logistics (2009)", # 2009 Logistics
+    "D2897474" => "Fabrication (2009)", # 2009 Fabrication
+    "D2897473" => "Electro-Technologies (2009)", # 2009 Electro-Technologies
+    "D2897472" => "Construction (2009)", # 2009 Construction
 
+  },
+
+  "Association of American Medical Colleges" => {
+    # Aug13, 2018 Imports:
+        "D2807206" => "Physician Competency Reference Set (2013)", # 2013 Physician Competency Reference Set
+
+  },
+  "British Columbia (Français)" => {
+    # Aug13, 2018 Imports:
+        "D2965288" => "Éducation à la Carrière (M-9) (2016)", # 2016 Éducation à la Carrière (M-9)
+        "D2965392" => "Sciences humaines (M-9) (2016)", # 2016 Sciences humaines (M-9)
+        "D2965582" => "Français Langue Première (M-9) (2016)", # 2016 Français Langue Première (M-9)
+        "D2965827" => "Conception, compétences pratiques et technologies (M-9) (2016)", # 2016 Conception, compétences pratiques et technologies (M-9)
+        "D2966171" => "Éducation artistique (M-9) (2016)", # 2016 Éducation artistique (M-9)
+        "D2966562" => "English Language Arts (M-9) (2016)", # 2016 English Language Arts (M-9)
+        "D2966939" => "Mathématiques (M-9) (2016)", # 2016 Mathématiques (M-9)
+        "D2967297" => "Sciences (M-9) (2016)", # 2016 Sciences (M-9)
+        "D2967677" => "Éducation physique et santé (M-9) (2016)", # 2016 Éducation physique et santé (M-9)
+        "D2968034" => "Français de base (5-12) (2016)", # 2016 Français de base (5-12)
+  },
+  "New Zealand" => {
+    # Aug13, 2018 Imports:
+        "D2973708" => "Social sciences (2007)", # 2007 The New Zealand Curriculum: Social sciences
+  },
+  "Ontario (Français)" => {
+    # Aug13, 2018 Imports:
+        "D2816877" => "Mathématiques de la 1re à la 8e année (2005)", # 2005 Le curriculum de l'Ontario – Mathématiques de la 1re à la 8e année
+        "D2819752" => "Mathématiques, 9e année, transition du cours appliqué au cours théorique (2006)", # 2006 Le curriculum de l'Ontario – Mathématiques, 9e année, transition du cours appliqué au cours théorique
+        "D2819753" => "Mathématiques, 9e et 10e année (2005)", # 2005 Le curriculum de l'Ontario – Mathématiques, 9e et 10e année
+        "D2819754" => "Mathématiques, 11e et 12e année (2007)", # 2007 Le curriculum de l'Ontario – Mathématiques, 11e et 12e année
+        "D2820776" => "Langues autochtones, de la 1re à la 8e année (2001)", # 2001 Le curriculum de l'Ontario – Langues autochtones, de la 1re à la 8e année
+        "D2820777" => "Langues autochtones, 9e et 10e année (1999)", # 1999 Le curriculum de l'Ontario – Langues autochtones, 9e et 10e année
+        "D2820778" => "Langues autochtones, 11e et 12e année (2000)", # 2000 Le curriculum de l'Ontario – Langues autochtones, 11e et 12e année
+        "D2821319" => "Études sociales de la 1re à la 6e année; histoire et géographie 7e et 8e année (2013)", # 2013 Le curriculum de l'Ontario – Études sociales de la 1re à la 6e année; histoire et géographie 7e et 8e année
+        "D2821713" => "Études informatiques de la 10e à la 12e année (2008)", # 2008 Le curriculum de l'Ontario – Études informatiques de la 10e à la 12e année
+        "D2822025" => "Français, de la 1re à la 8e année (2006)", # 2006 Le curriculum de l'Ontario – Français, de la 1re à la 8e année
+        "D2822463" => "Études interdisciplinaires, 11e et 12e année (2002)", # 2002 Le curriculum de l'Ontario – Études interdisciplinaires, 11e et 12e année
+        "D2822662" => "Orientation et formation au cheminement de carrière, 9e et 10e année (2006)", # 2006 Le curriculum de l'Ontario – Orientation et formation au cheminement de carrière, 9e et 10e année
+        "D2822663" => "Orientation et formation au cheminement de carrière, 11e et 12e année (2006)", # 2006 Le curriculum de l'Ontario – Orientation et formation au cheminement de carrière, 11e et 12e année
+        "D2823163" => "Sciences et technologie, de la 1re à la 8e année (2007)", # 2007 Le curriculum de l'Ontario – Sciences et technologie, de la 1re à la 8e année
+        "D2823785" => "Éducation physique et santé, de la 1re à la 8e année (2015)", # 2015 Le curriculum de l'Ontario – Éducation physique et santé, de la 1re à la 8e année
+        "D2824121" => "Éducation physique et santé, de la 9e à la 12e année (2015)", # 2015 Le curriculum de l'Ontario – Éducation physique et santé, de la 9e à la 12e année
+        "D2824438" => "Éducation artistique, de la 1re à la 8e année (2009)", # 2009 Le curriculum de l'Ontario – Éducation artistique, de la 1re à la 8e année
+        "D2824891" => "Éducation artistique, 9e et 10e année (2010)", # 2010 Le curriculum de l'Ontario – Éducation artistique, 9e et 10e année
+        "D2824892" => "Éducation artistique, 11e et 12e année (2010)", # 2010 Le curriculum de l'Ontario – Éducation artistique, 11e et 12e année
+        "D2824893" => "Programme de la maternelle et du jardin d'enfant (2016)", # 2016 Programme de la maternelle et du jardin d'enfants
+        "D2825059" => "Sciences, 9e et 10e année (2008)", # 2008 Le curriculum de l'Ontario – Sciences, 9e et 10e année
+        "D2825060" => "Sciences, 11e et 12e année (2008)", # 2008 Le curriculum de l'Ontario – Sciences, 11e et 12e année
+        "D2825993" => "Études autochtones, 9e et 10e année (1999)", # 1999 Le curriculum de l'Ontario – Études autochtones, 9e et 10e année
+        "D2826193" => "Affaires et commerce, 9e et 10e année (2006)", # 2006 Le curriculum de l'Ontario – Affaires et commerce, 9e et 10e année
+        "D2826353" => "Études canadiennes et mondiales, 9e et 10e année (2013)", # 2013 Le curriculum de l'Ontario – Études canadiennes et mondiales, 9e et 10e année
+        "D2826984" => "Éducation technologique, 9e et 10e année (2009)", # 2009 Le curriculum de l'Ontario – Éducation technologique, 9e et 10e année
+        "D2827624" => "Sciences humaines et sociales, 9e à la 12e année (2013)", # 2013 Le curriculum de l'Ontario – Sciences humaines et sociales, 9e à la 12e année
+        "D2829948" => "Études autochtones, 11e et 12e année (2000)", # 2000 Le curriculum de l'Ontario – Études autochtones, 11e et 12e année
+        "D2829950" => "Affaires et commerce, 11e et 12e année (2006)", # 2006 Le curriculum de l'Ontario – Affaires et commerce, 11e et 12e année
+        "D2829951" => "Études canadiennes et mondiales, 11e et 12e année (2015)", # 2015 Le curriculum de l'Ontario – Études canadiennes et mondiales, 11e et 12e année
+        "D2829952" => "Éducation technologique, 11e (2009)", # 2009 Le curriculum de l'Ontario – Éducation technologique, 11e
+        "D2838516" => "Éducation technologique, 12e (2009)", # 2009 Le curriculum de l'Ontario – Éducation technologique, 12e
+
+  },
+  "CPA Canada" => {
+    # Aug13, 2018 Imports:
+        "D2975910" => "CPA Competency Map (2013)", # 2013 CPA Competency Map
+  },
+  "Institute for Catholic Education" => {
+    # Aug13, 2018 Imports:
+        "D2975931" => "Ontario Catholic Graduate Expectations (2011)", # 2011 Ontario Catholic Graduate Expectations
   }
+
 
 }

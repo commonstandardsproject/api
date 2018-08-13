@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.2.6'
-gem 'oj'
+gem 'oj', '~> 3.6.5'
 gem 'mongo', '~>2.0.6'
 gem 'bson'
 gem 'bson_ext'
