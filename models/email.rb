@@ -15,6 +15,7 @@ class Email
       jurisdiction: pr.standardSet.jurisdiction.title,
       subject:      pr.standardSet.subject,
       title:        pr.standardSet.title,
+      comment:      comment
     }
     template_model[:comment] = {text: comment} if comment
 
