@@ -172,7 +172,7 @@ class PullRequest
       userId: user["id"]
     })
     self.add_activity(model, activity)
-    if user["committer"] == true
+    if user["isCommitter"] == true
       Email.send_email("admin-comment-added", model)
       AsanaTask.add_comment_from_approver(model.asanaTaskId, comment, user["profile"]["name"])
     else
