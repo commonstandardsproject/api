@@ -124,6 +124,13 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2773912" => "Geometry (2016)", # 2016 Geometry
     "D2773913" => "Math Plus (2016)", # 2016 Math Plus
     "D2773917" => "English Language Arts (2016)", # 2016 Arizona English Language Arts Standards (Grade 3)
+    # Jun28, 2019 Imports:
+    "D2985274" => "Science (2018)", # 2018 Arizona Science Standards
+    "D2985281" => "History and Social Science (2018)", # 2018 Arizona History and Social Science Standards (K-2)
+    "D2985282" => "History and Social Science (2018)", # 2018 Arizona History and Social Science Standards (3-5)
+    "D2985283" => "History and Social Science (2018)", # 2018 Arizona History and Social Science Standards (6-8)
+    "D2985284" => "History and Social Science (2018)", # 2018 Arizona History and Social Science Standards (High School)
+
   },
   # ===================
   # Arkansas
@@ -657,6 +664,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2719009" => "Marketing Communications (2015)", # 2015 Marketing Communications
     "D2719010" => "Marketing Management (2015)", # 2015 Marketing Management
     "D2719011" => "Marketing Research (2015)", # 2015 Marketing Research
+
+    # Jun28, 2019 Imports:
+    "D2980644" => "Science (2020)", # 2020 Colorado Academic Standards: Science
+    "D2980645" => "Social Studies (2020)", # 2020 Colorado Academic Standards: Social Studies
+
   },
   # ===================
   # Common Core State Standards
@@ -933,6 +945,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2845342" => "Fine Arts - Dance (2017)", # 2017 Idaho Fine Arts Standards - Dance
     "D2845343" => "Fine Arts - Media Arts (2017)", # 2017 Idaho Fine Arts Standards - Media Arts
     "D2845344" => "Fine Arts - Theatre (2017)", # 2017 Idaho Fine Arts Standards - Theatre
+    # Jun28, 2019 Imports:
+    "D2984010" => "Science (2018)", # 2018 Idaho Content Standards - Science
+    "D2788238" => "Social Studies (2017)", # 2017 Idaho Content Standards - Social Studies
+
 
   },
   # ===================
@@ -1216,6 +1232,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2762227" => "Media Arts (2015)", # 2015 Kentucky Academic Standards Arts and Humanities: Media Arts
     "D2762228" => "Theatre (2015)", # 2015 Kentucky Academic Standards Arts and Humanities: Theatre
     "D2762229" => "Visual Arts (2015)", # 2015 Kentucky Academic Standards Arts and Humanities: Visual Arts
+
+    # Jun28, 2019 Imports:
+    "D21015102" => "Reading and Writing (2019)", # 2019 Kentucky Academic Standards: Reading and Writing
+    "D21015096" => "Mathematics (2019)", # 2019 Kentucky Academic Standards: Mathematics
+
 
 
   },
@@ -1608,6 +1629,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2394940" => "Visual Arts",                          # 2009 Visual Arts 6-8 Content Standards with Benchmarks and Performance Standards  http://www.ped.state.nm.us/standards/Arts/Art.Visual%20Arts.6-8.pdf
     "D2394941" => "Visual Arts",                          # 2009 Visual Arts 9-12 Content Standards with Benchmarks and Performance Standards  http://www.ped.state.nm.us/standards/Arts/Art.Visual%20Arts.9-12.pdf
     "D2394939" => "Visual Arts",                          # 2009 Visual Arts K-5 Content Standards with Benchmarks and Performance Standards  http://www.ped.state.nm.us/standards/Arts/Art.Visual%20Arts.K-5.pdf
+
+    # Jun28, 2019 Imports:
+    "D2980345" => "Science (2018)", # 2018 New Mexico Specific STEM Ready! Science Standards
+    "D2980344" => "Science (2013)", # 2013 New Mexico STEM Ready! Science Standards
+
   },
   # ===================
   # New York
@@ -1652,6 +1678,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2845351" => "Arts: Composition and Theory (2017)", # 2017 New York State Learning Standards for the Arts: Composition and Theory
     "D2845645" => "Arts: Music - Harmonizing Instruments (2017)", # 2017 New York State Learning Standards for the Arts: Music - Harmonizing Instruments
     "D2845646" => "Arts: Music - Traditional and Emerging Ensembles (2017)", # 2017 New York State Learning Standards for the Arts: Music - Traditional and Emerging Ensembles
+
+    # Jun28, 2019 Imports:
+    "D2968234" => "Social Studies (2017)", # 2017 New York State K-8 Social Studies Framework
+    "D2968352" => "Social Studies (2017)", # 2017 New York State 9-12 Social Studies Framework
+
   },
   # ===================
   # Next Generation Science Standards
@@ -1848,6 +1879,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2784796" => "History/Social Studies, Science, and Technical Subjects (2017)", # 2017 Ohio's Learning Standards Literacy in History/Social Studies, Science, and Technical Subjects
     "D2784795" => "English Language Arts (2017)", # 2017 Ohio Learning Standards English Language Arts
     "D2808337" => "Technology (2017)", # 2017 Ohio's Learning Standards for Technology
+    # Jun28, 2019 Imports:
+    "D2976165" => "Social Studies (2018)", # 2018 Ohio's Learning Standards Social Studies
+
   },
   # ===================
   # Oklahoma
@@ -1924,6 +1958,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2708687" => "Music PreK-8 (2015)", # 2015 Oregon Arts Content Standards: Music PreK-8
     # Aug 9, 2017 Imports:
     "D2778675" => "Physical Education (2016)", # 2016 Oregon Core Standards: Physical Education
+    # Jun28, 2019 Imports:
+    "D2982515" => "Social Sciences (2018)", # 2018 Oregon K-12 Social Sciences Academic Content Standards
+
   },
   # ===================
   # Partnership for 21st Century Skills
@@ -2083,7 +2120,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2435780" => "Technology",                           # 2007 South Dakota Technology Content Standards  http://doe.sd.gov/contentstandards/documents/BoardApprovededtechstandardsforweb.pdf
     "D2435763" => "World Language",                       # 2011 South Dakota World Language Standards  http://doe.sd.gov/contentstandards/documents/WorldLanguageContentStandards-Complete.pdf
     # March 3, 2016 Imports:
-    "D2678706" => "Social Studies"                        # 2015 South Dakota Social Studies Content Standards
+    "D2678706" => "Social Studies",                       # 2015 South Dakota Social Studies Content Standards
+    # Jun28, 2019 Imports:
+    "D2973775" => "English Language Arts & Literacy (2018)", # 2018 South Dakota State Standards for English Language Arts & Literacy in History/Social Studies, Science, and Technical Subjects
+    "D2971927" => "Mathematics (2018)", # 2018 South Dakota State Standards for Mathematics
+
   },
   # ===================
   # Tennessee
@@ -2289,6 +2330,51 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2953715" => "English I for English as a Second Language (2017)", # 2017 English I for English as a Second Language
     "D2953716" => "English II for English as a Second Language (2017)", # 2017 English II for English as a Second Language
     "D2953717" => "English Language Development and Acquisition (ELDA) (2017)", # 2017 English Language Development and Acquisition (ELDA)
+
+    # Jun28, 2019 Imports:
+    "D2981794" => "Science (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Kindergarten
+    "D2981795" => "Science (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Grade 1
+    "D2981796" => "Science (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Grade 2
+    "D2981797" => "Science (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Grade 3
+    "D2981798" => "Science (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Grade 4
+    "D2981799" => "Science (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Grade 5
+    "D2981800" => "Science (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Grade 6
+    "D2981801" => "Science (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Grade 7
+    "D2981802" => "Science (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Grade 8
+    "D2981803" => "Physics (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Physics
+    "D2981804" => "Integrated Physics and Chemistry (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Integrated Physics and Chemistry
+    "D2981805" => "Biology (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Biology
+    "D2981806" => "Chemistry (2018)", # 2018 Texas Essential Knowledge and Skills for Science - Chemistry
+    "D2982521" => "English Language Arts and Reading (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - Kindergarten
+    "D2982522" => "English Language Arts and Reading (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 1
+    "D2982523" => "English Language Arts and Reading (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 2
+    "D2982524" => "English Language Arts and Reading (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 3
+    "D2982525" => "English Language Arts and Reading (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 4
+    "D2982526" => "English Language Arts and Reading (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 5
+    "D2982527" => "English Language Arts and Reading (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 6
+    "D2982528" => "English Language Arts and Reading (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 7
+    "D2982529" => "English Language Arts and Reading (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - Grade 8
+    "D2982530" => "English I (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - English I
+    "D2982531" => "English II (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - English II
+    "D2982532" => "English III (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - English III
+    "D2982533" => "English IV (2009)", # 2009 Texas Essential Knowledge and Skills for English Language Arts and Reading - English IV
+    "D2975923" => "Marketing (2015)", # 2015 Marketing
+    "D2973924" => "Agriculture, Food, and Natural Resources (2015)", # 2015 Agriculture, Food, and Natural Resources
+    "D2973925" => "Architecture and Construction (2015)", # 2015 Architecture and Construction
+    "D2973926" => "Arts, Audio/Video Technology, and Communications (2015)", # 2015 Arts, Audio/Video Technology, and Communications
+    "D2975913" => "Business Management and Administration (2015)", # 2015 Business Management and Administration
+    "D2975914" => "Education and Training (2018)", # 2018 Education and Training
+    "D2975915" => "Finance (2015)", # 2015 Finance
+    "D2975916" => "Government and Public Administration (2015)", # 2015 Government and Public Administration
+    "D2975917" => "Health Science (2015)", # 2015 Health Science
+    "D2975918" => "Hospitality and Tourism (2015)", # 2015 Hospitality and Tourism
+    "D2975919" => "Human Services (2015)", # 2015 Human Services
+    "D2975920" => "Information Technology (2015)", # 2015 Information Technology
+    "D2975921" => "Law, Public Safety, Corrections, and Security (2015)", # 2015 Law, Public Safety, Corrections, and Security
+    "D2975922" => "Manufacturing (2015)", # 2015 Manufacturing
+    "D2975924" => "Science, Technology, Engineering, and Mathematics (2015)", # 2015 Science, Technology, Engineering, and Mathematics
+    "D2975925" => "Transportation, Distribution, and Logistics (2015)", # 2015 Transportation, Distribution, and Logistics
+
   },
   # ===================
   # Utah
@@ -2340,6 +2426,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug13, 2018 Imports:
     "D2742492" => "Fine Arts K-6 (2016)", # 2016 Fine Arts Core Standards K-6
     "D2956021" => "Fine Arts 7-8 (2016)", # 2016 Fine Arts Core Standards Secondary 7-8
+
+    # Jun28, 2019 Imports:
+    "D21016202" => "English Language Arts and Literacy (2013)", # 2013 Utah Core State Standards for English Language Arts and Literacy in History/Social Studies, Science, and Technical Subjects
+
 
   },
   # ===================
@@ -2405,6 +2495,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2956024" => "Computer Science Foundations (2017)", # 2017 Computer Science Foundations
     "D2956025" => "Computer Science Standards Middle School Elective (2017)", # 2017 Computer Science Standards Middle School Elective
     "D2956026" => "Computer Science (K-8) (2017)", # 2017 Computer Science Standards of Learning for Virginia Public Schools (K-8)
+    # Jun28, 2019 Imports:
+    "D2985351" => "Science (2018)", # 2018 Virginia Science Standards of Learning
 
   },
   # ===================
@@ -2513,6 +2605,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2957258" => "Standards for Science (2017)", # 2017 Wisconsin Standards for Science
     "D2960032" => "Music (2017)", # 2017 Wisconsin Standards for Music
 
+    # Jun28, 2019 Imports:
+    "D2975992" => "Environmental Literacy & Sustainability (2018)", # 2018 Wisconsin Standards for Environmental Literacy & Sustainability
+    "D2979053" => "Social Studies (2018)", # 2018 Wisconsin Standards for Social Studies
+
+
   },
   # ===================
   # World Meteorological Organization
@@ -2603,7 +2700,17 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2973927" => "Canadian and World Studies: Grades 9 & 10 (2018)", # 2018 The Ontario Curriculum, Grades 9 & 10: Canadian and World Studies
     "D2973928" => "Social Studies, Grades 1-6; History and Geography, Grades 7-8 (2018)", # 2018 The Ontario Curriculum, Social Studies, Grades 1-6; History and Geography, Grades 7-8
     "D2973929" => "Cooperative Education - Grades 11 & 12 (2018)", # 2018 The Ontario Curriculum, Grades 11 & 12 Cooperative Education
-
+    # Jun28, 2019 Imports:
+    "D2990485" => "Mathematics Calculus 3208 (2018)", # 2018 Mathematics Calculus 3208
+    "D2990486" => "Advanced Mathematics 3200 (2017)", # 2017 Advanced Mathematics 3200
+    "D2990487" => "Academic Mathematics 3201 (2016)", # 2016 Academic Mathematics 3201
+    "D21011346" => "Music 2206 (2018)", # 2018 Music 2206
+    "D21011345" => "Experiencing Music 2200 (2015)", # 2015 Experiencing Music 2200
+    # Jun28, 2019 Imports:
+    "D2992822" => "Mathematics (2005)", # 2005 Locally Developed Compulsory Credit Courses Grades 9 and 10 Mathematics
+    "D2992823" => "English (2005)", # 2005 Locally Developed Compulsory Credit Courses Grades 9 and 10 English
+    "D21020411" => "The Ontario Curriculum, Classical Studies and International Languages (2016)", # 2016 The Ontario Curriculum, Classical Studies and International Languages
+    "D21024936" => "The Ontario Curriculum: First Nations, Métis, and Inuit Cultures (Grades 9-12) (2019)", # 2019 The Ontario Curriculum: First Nations, Métis, and Inuit Cultures (Grades 9-12)
 
   },
 
@@ -2625,16 +2732,20 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2769098" => "Applied Design, Skills, and Technologies Curriculum (K-9) (2016)", # 2016 Applied Design, Skills, and Technologies Curriculum (K-9)
 
     # Aug13, 2018 Imports:
-        "D2965288" => "Éducation à la Carrière (M-9) (2016)", # 2016 Éducation à la Carrière (M-9)
-        "D2965392" => "Sciences humaines (M-9) (2016)", # 2016 Sciences humaines (M-9)
-        "D2965582" => "Français Langue Première (M-9) (2016)", # 2016 Français Langue Première (M-9)
-        "D2965827" => "Conception, compétences pratiques et technologies (M-9) (2016)", # 2016 Conception, compétences pratiques et technologies (M-9)
-        "D2966171" => "Éducation artistique (M-9) (2016)", # 2016 Éducation artistique (M-9)
-        "D2966562" => "English Language Arts (M-9) (2016)", # 2016 English Language Arts (M-9)
-        "D2966939" => "Mathématiques (M-9) (2016)", # 2016 Mathématiques (M-9)
-        "D2967297" => "Sciences (M-9) (2016)", # 2016 Sciences (M-9)
-        "D2967677" => "Éducation physique et santé (M-9) (2016)", # 2016 Éducation physique et santé (M-9)
-        "D2968034" => "Français de base (5-12) (2016)", # 2016 Français de base (5-12)
+    "D2965288" => "Éducation à la Carrière (M-9) (2016)", # 2016 Éducation à la Carrière (M-9)
+    "D2965392" => "Sciences humaines (M-9) (2016)", # 2016 Sciences humaines (M-9)
+    "D2965582" => "Français Langue Première (M-9) (2016)", # 2016 Français Langue Première (M-9)
+    "D2965827" => "Conception, compétences pratiques et technologies (M-9) (2016)", # 2016 Conception, compétences pratiques et technologies (M-9)
+    "D2966171" => "Éducation artistique (M-9) (2016)", # 2016 Éducation artistique (M-9)
+    "D2966562" => "English Language Arts (M-9) (2016)", # 2016 English Language Arts (M-9)
+    "D2966939" => "Mathématiques (M-9) (2016)", # 2016 Mathématiques (M-9)
+    "D2967297" => "Sciences (M-9) (2016)", # 2016 Sciences (M-9)
+    "D2967677" => "Éducation physique et santé (M-9) (2016)", # 2016 Éducation physique et santé (M-9)
+    "D2968034" => "Français de base (5-12) (2016)", # 2016 Français de base (5-12)
+
+    # Jun28, 2019 Imports:
+    "D21012572" => "Science (2018)", # 2018 Science 10
+
   },
 
   # ========
@@ -2782,6 +2893,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2775898" => "Religious Education Guide Ethics & Philosophy 2101 (2010)", # 2010 Religious Education Guide Ethics &amp; Philosophy 2101
     "D2775899" => "Religious Education Guide Ethics & Social Justice 2106 (2010)", # 2010 Religious Education Guide Ethics &amp; Social Justice 2106
     "D2775900" => "Religious Education 3101/3106 Curriculum Guide (2005)", # 2005 Religious Education 3101/3106 Curriculum Guide
+
+    # Jun28, 2019 Imports:
+    "D2990485" => "Mathematics Calculus 3208 (2018)", # 2018 Mathematics Calculus 3208
+    "D2990486" => "Advanced Mathematics 3200 (2017)", # 2017 Advanced Mathematics 3200
+    "D2990487" => "Academic Mathematics 3201 (2016)", # 2016 Academic Mathematics 3201
+    "D21011346" => "Music 2206 (2018)", # 2018 Music 2206
+    "D21011345" => "Experiencing Music 2200 (2015)", # 2015 Experiencing Music 2200
+
   },
 
   # ========
@@ -2800,6 +2919,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2960067" => "Art Content Statements (K-5) (2018)", # 2018 Art Content Statements (K-5)
     "D2968355" => "History Content Statements (Grade 5) (2018)", # 2018 History Content Statements (Grade 5)
     "D2968235" => "Science Content Statements (K-5) (2018)", # 2018 Science Content Statements (K-5)
+    # Jun28, 2019 Imports:
+    "D2982439" => "Career and Technical Education Content Statements (2018)", # 2018 Career and Technical Education Content Statements
+
   },
 
   "Dublin Core Metadata Initiative" => {
@@ -3103,6 +3225,17 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2897473" => "Electro-Technologies (2009)", # 2009 Electro-Technologies
     "D2897472" => "Construction (2009)", # 2009 Construction
 
+    # Jun28, 2019 Imports:
+    "D2991251" => "Mathématiques (2016)", # 2016 Mathématiques Maternelle à 9e année
+    "D2991252" => "Mathématiques (2007)", # 2007 Mathématiques 8e et 9e années Connaissances et employabilité
+    "D2991253" => "Mathématiques (2015)", # 2015 Mathématiques 10 à 12
+    "D2991254" => "Mathématiques (2007)", # 2007 Mathématiques 10-4, 20-4
+    "D2991255" => "Mathématiques (2015)", # 2015 Mathématiques 31
+    "D2992528" => "Programme d'études Santé et préparation pour la vie (M-9) (2002)", # 2002 Programme d'études Santé et préparation pour la vie (M-9)
+    "D2993170" => "Technologies de l'information et de la communication (2000)", # 2000 Technologies de l'information et de la communication
+    "D2993171" => "Programme d'études de français langue première (1998)", # 1998 Programme d'études de français langue première
+
+
   },
 
   "Association of American Medical Colleges" => {
@@ -3123,44 +3256,51 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
         "D2967677" => "Éducation physique et santé (M-9) (2016)", # 2016 Éducation physique et santé (M-9)
         "D2968034" => "Français de base (5-12) (2016)", # 2016 Français de base (5-12)
   },
+
   "New Zealand" => {
     # Aug13, 2018 Imports:
         "D2973708" => "Social sciences (2007)", # 2007 The New Zealand Curriculum: Social sciences
   },
+
   "Ontario (Français)" => {
     # Aug13, 2018 Imports:
-        "D2816877" => "Mathématiques de la 1re à la 8e année (2005)", # 2005 Le curriculum de l'Ontario – Mathématiques de la 1re à la 8e année
-        "D2819752" => "Mathématiques, 9e année, transition du cours appliqué au cours théorique (2006)", # 2006 Le curriculum de l'Ontario – Mathématiques, 9e année, transition du cours appliqué au cours théorique
-        "D2819753" => "Mathématiques, 9e et 10e année (2005)", # 2005 Le curriculum de l'Ontario – Mathématiques, 9e et 10e année
-        "D2819754" => "Mathématiques, 11e et 12e année (2007)", # 2007 Le curriculum de l'Ontario – Mathématiques, 11e et 12e année
-        "D2820776" => "Langues autochtones, de la 1re à la 8e année (2001)", # 2001 Le curriculum de l'Ontario – Langues autochtones, de la 1re à la 8e année
-        "D2820777" => "Langues autochtones, 9e et 10e année (1999)", # 1999 Le curriculum de l'Ontario – Langues autochtones, 9e et 10e année
-        "D2820778" => "Langues autochtones, 11e et 12e année (2000)", # 2000 Le curriculum de l'Ontario – Langues autochtones, 11e et 12e année
-        "D2821319" => "Études sociales de la 1re à la 6e année; histoire et géographie 7e et 8e année (2013)", # 2013 Le curriculum de l'Ontario – Études sociales de la 1re à la 6e année; histoire et géographie 7e et 8e année
-        "D2821713" => "Études informatiques de la 10e à la 12e année (2008)", # 2008 Le curriculum de l'Ontario – Études informatiques de la 10e à la 12e année
-        "D2822025" => "Français, de la 1re à la 8e année (2006)", # 2006 Le curriculum de l'Ontario – Français, de la 1re à la 8e année
-        "D2822463" => "Études interdisciplinaires, 11e et 12e année (2002)", # 2002 Le curriculum de l'Ontario – Études interdisciplinaires, 11e et 12e année
-        "D2822662" => "Orientation et formation au cheminement de carrière, 9e et 10e année (2006)", # 2006 Le curriculum de l'Ontario – Orientation et formation au cheminement de carrière, 9e et 10e année
-        "D2822663" => "Orientation et formation au cheminement de carrière, 11e et 12e année (2006)", # 2006 Le curriculum de l'Ontario – Orientation et formation au cheminement de carrière, 11e et 12e année
-        "D2823163" => "Sciences et technologie, de la 1re à la 8e année (2007)", # 2007 Le curriculum de l'Ontario – Sciences et technologie, de la 1re à la 8e année
-        "D2823785" => "Éducation physique et santé, de la 1re à la 8e année (2015)", # 2015 Le curriculum de l'Ontario – Éducation physique et santé, de la 1re à la 8e année
-        "D2824121" => "Éducation physique et santé, de la 9e à la 12e année (2015)", # 2015 Le curriculum de l'Ontario – Éducation physique et santé, de la 9e à la 12e année
-        "D2824438" => "Éducation artistique, de la 1re à la 8e année (2009)", # 2009 Le curriculum de l'Ontario – Éducation artistique, de la 1re à la 8e année
-        "D2824891" => "Éducation artistique, 9e et 10e année (2010)", # 2010 Le curriculum de l'Ontario – Éducation artistique, 9e et 10e année
-        "D2824892" => "Éducation artistique, 11e et 12e année (2010)", # 2010 Le curriculum de l'Ontario – Éducation artistique, 11e et 12e année
-        "D2824893" => "Programme de la maternelle et du jardin d'enfant (2016)", # 2016 Programme de la maternelle et du jardin d'enfants
-        "D2825059" => "Sciences, 9e et 10e année (2008)", # 2008 Le curriculum de l'Ontario – Sciences, 9e et 10e année
-        "D2825060" => "Sciences, 11e et 12e année (2008)", # 2008 Le curriculum de l'Ontario – Sciences, 11e et 12e année
-        "D2825993" => "Études autochtones, 9e et 10e année (1999)", # 1999 Le curriculum de l'Ontario – Études autochtones, 9e et 10e année
-        "D2826193" => "Affaires et commerce, 9e et 10e année (2006)", # 2006 Le curriculum de l'Ontario – Affaires et commerce, 9e et 10e année
-        "D2826353" => "Études canadiennes et mondiales, 9e et 10e année (2013)", # 2013 Le curriculum de l'Ontario – Études canadiennes et mondiales, 9e et 10e année
-        "D2826984" => "Éducation technologique, 9e et 10e année (2009)", # 2009 Le curriculum de l'Ontario – Éducation technologique, 9e et 10e année
-        "D2827624" => "Sciences humaines et sociales, 9e à la 12e année (2013)", # 2013 Le curriculum de l'Ontario – Sciences humaines et sociales, 9e à la 12e année
-        "D2829948" => "Études autochtones, 11e et 12e année (2000)", # 2000 Le curriculum de l'Ontario – Études autochtones, 11e et 12e année
-        "D2829950" => "Affaires et commerce, 11e et 12e année (2006)", # 2006 Le curriculum de l'Ontario – Affaires et commerce, 11e et 12e année
-        "D2829951" => "Études canadiennes et mondiales, 11e et 12e année (2015)", # 2015 Le curriculum de l'Ontario – Études canadiennes et mondiales, 11e et 12e année
-        "D2829952" => "Éducation technologique, 11e (2009)", # 2009 Le curriculum de l'Ontario – Éducation technologique, 11e
-        "D2838516" => "Éducation technologique, 12e (2009)", # 2009 Le curriculum de l'Ontario – Éducation technologique, 12e
+    "D2816877" => "Mathématiques de la 1re à la 8e année (2005)", # 2005 Le curriculum de l'Ontario – Mathématiques de la 1re à la 8e année
+    "D2819752" => "Mathématiques, 9e année, transition du cours appliqué au cours théorique (2006)", # 2006 Le curriculum de l'Ontario – Mathématiques, 9e année, transition du cours appliqué au cours théorique
+    "D2819753" => "Mathématiques, 9e et 10e année (2005)", # 2005 Le curriculum de l'Ontario – Mathématiques, 9e et 10e année
+    "D2819754" => "Mathématiques, 11e et 12e année (2007)", # 2007 Le curriculum de l'Ontario – Mathématiques, 11e et 12e année
+    "D2820776" => "Langues autochtones, de la 1re à la 8e année (2001)", # 2001 Le curriculum de l'Ontario – Langues autochtones, de la 1re à la 8e année
+    "D2820777" => "Langues autochtones, 9e et 10e année (1999)", # 1999 Le curriculum de l'Ontario – Langues autochtones, 9e et 10e année
+    "D2820778" => "Langues autochtones, 11e et 12e année (2000)", # 2000 Le curriculum de l'Ontario – Langues autochtones, 11e et 12e année
+    "D2821319" => "Études sociales de la 1re à la 6e année; histoire et géographie 7e et 8e année (2013)", # 2013 Le curriculum de l'Ontario – Études sociales de la 1re à la 6e année; histoire et géographie 7e et 8e année
+    "D2821713" => "Études informatiques de la 10e à la 12e année (2008)", # 2008 Le curriculum de l'Ontario – Études informatiques de la 10e à la 12e année
+    "D2822025" => "Français, de la 1re à la 8e année (2006)", # 2006 Le curriculum de l'Ontario – Français, de la 1re à la 8e année
+    "D2822463" => "Études interdisciplinaires, 11e et 12e année (2002)", # 2002 Le curriculum de l'Ontario – Études interdisciplinaires, 11e et 12e année
+    "D2822662" => "Orientation et formation au cheminement de carrière, 9e et 10e année (2006)", # 2006 Le curriculum de l'Ontario – Orientation et formation au cheminement de carrière, 9e et 10e année
+    "D2822663" => "Orientation et formation au cheminement de carrière, 11e et 12e année (2006)", # 2006 Le curriculum de l'Ontario – Orientation et formation au cheminement de carrière, 11e et 12e année
+    "D2823163" => "Sciences et technologie, de la 1re à la 8e année (2007)", # 2007 Le curriculum de l'Ontario – Sciences et technologie, de la 1re à la 8e année
+    "D2823785" => "Éducation physique et santé, de la 1re à la 8e année (2015)", # 2015 Le curriculum de l'Ontario – Éducation physique et santé, de la 1re à la 8e année
+    "D2824121" => "Éducation physique et santé, de la 9e à la 12e année (2015)", # 2015 Le curriculum de l'Ontario – Éducation physique et santé, de la 9e à la 12e année
+    "D2824438" => "Éducation artistique, de la 1re à la 8e année (2009)", # 2009 Le curriculum de l'Ontario – Éducation artistique, de la 1re à la 8e année
+    "D2824891" => "Éducation artistique, 9e et 10e année (2010)", # 2010 Le curriculum de l'Ontario – Éducation artistique, 9e et 10e année
+    "D2824892" => "Éducation artistique, 11e et 12e année (2010)", # 2010 Le curriculum de l'Ontario – Éducation artistique, 11e et 12e année
+    "D2824893" => "Programme de la maternelle et du jardin d'enfant (2016)", # 2016 Programme de la maternelle et du jardin d'enfants
+    "D2825059" => "Sciences, 9e et 10e année (2008)", # 2008 Le curriculum de l'Ontario – Sciences, 9e et 10e année
+    "D2825060" => "Sciences, 11e et 12e année (2008)", # 2008 Le curriculum de l'Ontario – Sciences, 11e et 12e année
+    "D2825993" => "Études autochtones, 9e et 10e année (1999)", # 1999 Le curriculum de l'Ontario – Études autochtones, 9e et 10e année
+    "D2826193" => "Affaires et commerce, 9e et 10e année (2006)", # 2006 Le curriculum de l'Ontario – Affaires et commerce, 9e et 10e année
+    "D2826353" => "Études canadiennes et mondiales, 9e et 10e année (2013)", # 2013 Le curriculum de l'Ontario – Études canadiennes et mondiales, 9e et 10e année
+    "D2826984" => "Éducation technologique, 9e et 10e année (2009)", # 2009 Le curriculum de l'Ontario – Éducation technologique, 9e et 10e année
+    "D2827624" => "Sciences humaines et sociales, 9e à la 12e année (2013)", # 2013 Le curriculum de l'Ontario – Sciences humaines et sociales, 9e à la 12e année
+    "D2829948" => "Études autochtones, 11e et 12e année (2000)", # 2000 Le curriculum de l'Ontario – Études autochtones, 11e et 12e année
+    "D2829950" => "Affaires et commerce, 11e et 12e année (2006)", # 2006 Le curriculum de l'Ontario – Affaires et commerce, 11e et 12e année
+    "D2829951" => "Études canadiennes et mondiales, 11e et 12e année (2015)", # 2015 Le curriculum de l'Ontario – Études canadiennes et mondiales, 11e et 12e année
+    "D2829952" => "Éducation technologique, 11e (2009)", # 2009 Le curriculum de l'Ontario – Éducation technologique, 11e
+    "D2838516" => "Éducation technologique, 12e (2009)", # 2009 Le curriculum de l'Ontario – Éducation technologique, 12e
+    # Jun28, 2019 Imports:
+    "D2829949" => "English, 11e et 12e année (2007)", # 2007 Le curriculum de l'Ontario – English, 11e et 12e année
+    "D2826701" => "English, 9e et 10e année (2007)", # 2007 Le curriculum de l'Ontario – English, 9e et 10e année
+    "D2994839" => "Français (2007)", # 2007 Le curriculum de l'Ontario 9e et 10e année Français
+    "D2994840" => "Français (2007)", # 2007 Le curriculum de l'Ontario 11e et 12e année Français
 
   },
   "CPA Canada" => {
@@ -3170,7 +3310,64 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   "Institute for Catholic Education" => {
     # Aug13, 2018 Imports:
         "D2975931" => "Ontario Catholic Graduate Expectations (2011)", # 2011 Ontario Catholic Graduate Expectations
+    # Jun28, 2019 Imports:
+        "D21019787" => "Ontario Catholic Secondary Curriculum Religious Education (Grades 9-12) (2016)", # 2016 Ontario Catholic Secondary Curriculum Religious Education (Grades 9-12)
+
+  },
+
+  "Council for the Accreditation of Educator Preparation" => {
+    # Jun28, 2019 Imports:
+    "D21014931" => "Council for the Accreditation of Educator Preparation (CAEP) Standards (2013)", # 2013 Council for the Accreditation of Educator Preparation (CAEP) Standards
+  },
+  "Accreditation Council for Genetic Counseling" => {
+    # Jun28, 2019 Imports:
+    "D21014962" => "Practice-Based Competencies for Genetic Counselors (2015)", # 2015 Practice-Based Competencies for Genetic Counselors
+  },
+  "College of Nurses of Ontario" => {
+    # Jun28, 2019 Imports:
+        "D21020958" => "Entry-to-Practice Competencies for Registered Nurses (2014)", # 2014 Entry-to-Practice Competencies for Registered Nurses
+
+  },
+  "Manitoba" => {
+    # Jun28, 2019 Imports:
+    "D21022918" => "K-8 English Language Arts: Manitoba Curriculum Framework (2004)", # 2004 K-8 English Language Arts: Manitoba Curriculum Framework
+    "D21022674" => "Senior 1-4 English Language Arts: Manitoba Curriculum Framework (1996)", # 1996 Senior 1-4 English Language Arts: Manitoba Curriculum Framework
+    "D21021095" => "Kindergarten Science: Manitoba Curriculum Framework (1999)", # 1999 Kindergarten Science: Manitoba Curriculum Framework
+    "D21021149" => "Grade 1 Science: Manitoba Curriculum Framework (1999)", # 1999 Grade 1 Science: Manitoba Curriculum Framework
+    "D21021250" => "Grade 2 Science: Manitoba Curriculum Framework (1999)", # 1999 Grade 2 Science: Manitoba Curriculum Framework
+    "D21021355" => "Grade 3 Science: Manitoba Curriculum Framework (1999)", # 1999 Grade 3 Science: Manitoba Curriculum Framework
+    "D21021461" => "Grade 4 Science: Manitoba Curriculum Framework (1999)", # 1999 Grade 4 Science: Manitoba Curriculum Framework
+    "D21021571" => "Grade 5 Science: Manitoba Curriculum Framework (1999)", # 1999 Grade 5 Science: Manitoba Curriculum Framework
+    "D21021687" => "Grade 6 Science: Manitoba Curriculum Framework (1999)", # 1999 Grade 6 Science: Manitoba Curriculum Framework
+    "D21021808" => "Grade 7 Science: Manitoba Curriculum Framework (1999)", # 1999 Grade 7 Science: Manitoba Curriculum Framework
+    "D21021928" => "Grade 8 Science: Manitoba Curriculum Framework (1999)", # 1999 Grade 8 Science: Manitoba Curriculum Framework
+    "D21022049" => "Senior 1 Science: Manitoba Curriculum Framework (1999)", # 1999 Senior 1 Science: Manitoba Curriculum Framework
+    "D21022168" => "Senior 2 Science: Manitoba Curriculum Framework (2003)", # 2003 Senior 2 Science: Manitoba Curriculum Framework
+    "D21022334" => "Manitoba Grade 11 Chemistry: A Foundation for Implementation (2006)", # 2006 Manitoba Grade 11 Chemistry: A Foundation for Implementation
+    "D21022265" => "Manitoba Grade 11 Biology: A Foundation for Implementation (2010)", # 2010 Manitoba Grade 11 Biology: A Foundation for Implementation
+    "D21022451" => "Manitoba Grade 12 Biology: A Foundation for Implementation (2011)", # 2011 Manitoba Grade 12 Biology: A Foundation for Implementation
+    "D21022540" => "Manitoba Grade 12 Chemistry: A Foundation for Implementation (2013)", # 2013 Manitoba Grade 12 Chemistry: A Foundation for Implementation
+
+  },
+  "Henry County Schools" => {
+    # Jun28, 2019 Imports:
+        "D21024853" => "Science Learning Targets Grade 3 (2018)", # 2018 Science Learning Targets Grade 3
+
+  },
+  "Alberta (Français)" => {
+    # Jun28, 2019 Imports:
+    "D2991251" => "Mathématiques Maternelle à 9e année (2016)", # 2016 Mathématiques Maternelle à 9e année
+    "D2991252" => "Mathématiques 8e et 9e années Connaissances et employabilité (2007)", # 2007 Mathématiques 8e et 9e années Connaissances et employabilité
+    "D2991253" => "Mathématiques 10 à 12 (2015)", # 2015 Mathématiques 10 à 12
+    "D2991254" => "Mathématiques 10-4, 20-4 (2007)", # 2007 Mathématiques 10-4, 20-4
+    "D2991255" => "Mathématiques 31 (2015)", # 2015 Mathématiques 31
+    "D2992528" => "Programme d'études Santé et préparation pour la vie (M-9) (2002)", # 2002 Programme d'études Santé et préparation pour la vie (M-9)
+    "D2993170" => "Technologies de l'information et de la communication (2000)", # 2000 Technologies de l'information et de la communication
+    "D2993171" => "Programme d'études de français langue première (1998)", # 1998 Programme d'études de français langue première
+
+
   }
+
 
 
 }

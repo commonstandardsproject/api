@@ -87,7 +87,7 @@ def check_document_titles(docs)
     jurisidictions_to_be_added =  docs["hits"]["hit"].map{|doc|
       jurisidiction_in_doc = doc["data"]["jurisdiction"][0]
       jurisdiction = SOURCE_TO_SUBJECT_MAPPINGS_GROUPED[jurisidiction_in_doc]
-      jurisidiction_in_doc if jurisdiction.nil?
+      doc["data"]["jurisdiction"] if jurisdiction.nil?
     }.compact.uniq
 
     if jurisidictions_to_be_added.length > 0
@@ -138,7 +138,8 @@ def parse_doc_json(docs)
   find_id = lambda{ |title|
     jurisdiction = jurisdiction_titles[title]
     if jurisdiction == nil
-      raise "Missing jurisdiction in jurisdiction_matches.rb: #{title}"
+      puts "SKIPPING: Missing jurisdiction in jurisdiction_matches.rb: #{title}"
+      return nil
     end
     db_jurisdiction = $db[:jurisdictions].find({_id: jurisdiction[:id]}).to_a.first
     if db_jurisdiction.nil?
@@ -154,7 +155,10 @@ def parse_doc_json(docs)
     end
     jurisdiction[:id]
   }
-  docs["hits"]["hit"].map{|doc|
+  docs["hits"]["hit"].reject{|doc|
+    jurisdiction = find_id.call(doc["data"]["jurisdiction"][0])
+    jurisdiction == nil
+  }.map{|doc|
     subject = SOURCE_TO_SUBJECT_MAPPINGS_GROUPED[doc["data"]["jurisdiction"][0]][doc["id"].upcase]
     {
       date_modified:   doc["data"]["date_modified"][0],

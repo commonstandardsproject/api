@@ -14,6 +14,7 @@ JURISDICTION_MATCHERS = {
   "http://purl.org/ASN/scheme/ASNJurisdiction/BGR"=>{:title=>"Bulgaria", :id=>"87B5ABCDE0CD47BDB14D1CBEA2C77C9B"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN"=>{:title=>"Canada", :id=>"AFE3F6DF3A39404DA72BEEDD8ABF568F", abbreviation: "CAN"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-AB"=>{:title=>"Alberta", :id=>"5C8C751020F44B39AD4BCB5E5B6680A4", type: "state", abbreviation: "AB"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-ABF"=>{:title=>"Alberta (Français)", :id=>"5C8C751020F44B39AD4BCB5E5B6680A5", type: "state", abbreviation: "ABF"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-BC"=>{:title=>"British Columbia", :id=>"27702E75622642399036EF059126D888", type: "state", abbreviation: "BC"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-MB"=>{:title=>"Manitoba", :id=>"0C92C08A87AA4EBEBC6D7408AEFBFEBB", type: "state", abbreviation: "MB"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NB"=>{:title=>"New Brunswick", :id=>"4695FD787B404E0FA11C9DF47AD69079", type: "state", abbreviation: "NB"},
@@ -22,6 +23,7 @@ JURISDICTION_MATCHERS = {
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NT"=>{:title=>"Northwest Territories", :id=>"EA88B62B2C83429E9769370C4C7B7832", type: "state", abbreviation: "NT"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-NV"=>{:title=>"Nunavut", :id=>"E85D703AEC3F4FCC91C517A989E29C95", type: "state", abbreviation: "NV"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-ON"=>{:title=>"Ontario", :id=>"B6AA8AC483B949F0B4198062C61A61AD", type: "state", abbreviation: "ON"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-ONF"=>{:title=>"Ontario (Français)", :id=>"B6AA8AC483B949F0B4198062C61A61AE", type: "state", abbreviation: "ONF"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-PE"=>{:title=>"Prince Edward Island", :id=>"E2AA82DDF32844BDABA2C54D76F89055", type: "state", abbreviation: "PEI"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-QC"=>{:title=>"Quebec", :id=>"C87538348CBE46F5B9BF1326485C3716", type: "state", abbreviation: "QC"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-SK"=>{:title=>"Saskatchewan", :id=>"6BE751C2C19847A6901D8CF5D5593B33", type: "state", abbreviation: "SK"},
@@ -167,4 +169,5 @@ JURISDICTION_MATCHERS = {
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-ON-FR" => {:title => "Ontario (Français)", type: "state", abbreviation: "ON", id: "6C1C46EAB3F345D78085A548AF831FB8"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-BC-FR" => {:title => "British Columbia (Français)", type: "state", abbreviation: "BC", id: "EB941913257145ECBAAD3E7EF2DB9E4B"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/NZ" => {:title => "New Zealand", type: "country", abbreviation: "NZ", id: "66D464B36D28478DB099F2933AF0DFEC"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/CAEP" => {:title => "Council for the Accreditation of Educator Preparation", type: "organization", abbreviation: "NZ", id: "66D464B36D28478DB099F2933AF0DFEC"},
  }
