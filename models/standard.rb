@@ -11,5 +11,6 @@ class Standard
   attribute :statementNotation, String
   attribute :statementLabel, String
   attribute :description, String
+  attribute :comments, Array[String]
 
 end
