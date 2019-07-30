@@ -9,6 +9,7 @@ class Standard
   attribute :depth, Integer
   attribute :listId, String
   attribute :statementNotation, String
+  attribute :altStatementNotation, String
   attribute :statementLabel, String
   attribute :description, String
   attribute :comments, Array[String]
