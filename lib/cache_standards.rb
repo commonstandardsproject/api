@@ -24,15 +24,28 @@ class CachedStandards
   def self.generate(standardSet)
     p "Caching #{standardSet["jurisdiction"]["title"]} #{standardSet["subject"]} #{standardSet["title"]}"
     return if standardSet["standards"].nil? || standardSet["standards"].empty?
-    standardSet["standards"].values.map{|s|
+    standards_hash = StandardHierarchy.add_ancestor_ids(standard_set["standards"])
+    standards_hash.values.map{|s|
       {
         :replace_one => {
           :find => {_id: s["id"]},
           :replacement => {
             _id:             s["id"],
-            standardSetId:   standardSet["_id"],
             asnIdentifier:   s["asnIdentifier"],
-            educationLevels: standardSet["educationLevels"]
+            standardSetId:   standardSet["_id"],
+            standardDocumentId: standardSet["document"]["id"],
+            jurisdictionId:  standardSet["jurisdiction"]["id"],
+            subject:         standardSet["subject"],
+            educationLevels: standardSet["educationLevels"],
+            position:        s["position"],
+            depth:           s["depth"],
+            statementNotation: s["statementNotation"],
+            altStatementNotation: s["altStatementNotation"],
+            statementLabel:  s["statementLabel"],
+            listId:          s["listId"],
+            description:     s["description"],
+            comments:        s["comments"],
+            ancestorIds:     s["ancestorIds"]
           },
           :upsert => true
         }
