@@ -24,7 +24,7 @@ class CachedStandards
   def self.generate(standardSet)
     p "Caching #{standardSet["jurisdiction"]["title"]} #{standardSet["subject"]} #{standardSet["title"]}"
     return if standardSet["standards"].nil? || standardSet["standards"].empty?
-    standards_hash = StandardHierarchy.add_ancestor_ids(standard_set["standards"])
+    standards_hash = StandardHierarchy.add_ancestor_ids(standardSet["standards"])
     standards_hash.values.map{|s|
       {
         :replace_one => {
