@@ -31,7 +31,7 @@ class AsanaTask
     task = Asana::Resources::Task.find_by_id(AsanaClient, task_id)
     title = "APPROVAL REQUESTED " + make_title(model)
     task.update(completed: false, name: title, notes: make_notes(model))
-    task.add_comment(text: "Submittered requested approval")
+    task.add_comment(text: "Submitted request for approval")
   end
 
   def self.add_comment_from_submitter(task_id, comment, submitterName, model)
