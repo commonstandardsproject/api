@@ -10,7 +10,7 @@ GEM
     algoliasearch (1.7.0)
       httpclient (~> 2.4)
       json (>= 1.5.1)
-    asana (0.5.0)
+    asana (0.9.3)
       faraday (~> 0.9)
       faraday_middleware (~> 0.9)
       faraday_middleware-multi_json (~> 0.0)
