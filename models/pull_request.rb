@@ -114,7 +114,7 @@ class PullRequest
 
   def self.create_asana_task(model, completed=true)
     task = AsanaTask.create_task(model, completed)
-    model.asanaTaskId = task.id
+    model.asanaTaskId = task.gid
     self.update(model)
   end
 
