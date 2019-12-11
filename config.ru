@@ -1,4 +1,6 @@
 #\ -s puma
+#\
+#\
 require 'dotenv'
 Dotenv.load
 require 'sinatra'
@@ -11,7 +13,7 @@ require_relative "config/postmark"
 require_relative "api/api"
 require_relative 'main'
 
-use Skylight::Middleware
+# use Skylight::Middleware
 use Rack::Deflater
 use Rack::Cors do
   allow do
