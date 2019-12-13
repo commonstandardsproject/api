@@ -43,7 +43,7 @@ module API
           end
 
           token = headers['Authorization'].split(' ').last
-          decoded_token = ::JWT.decode(token, ::JWT.base64url_decode(auth0_client_secret))
+          decoded_token = ::JWT.decode(token, ::JWT::Base64.url_decode(auth0_client_secret))
 
           if auth0_client_id != decoded_token[0]["aud"]
             error!("Invalid Token", 401)
