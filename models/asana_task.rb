@@ -78,7 +78,7 @@ class AsanaTask
       "1156104420836719": "#{model.standardSet.title}", #subject
       "1156104420836722": model.standardSet.standards.keys.length, #standards count
       "1156120467564154": model.try(:activities).try(:first).try(:createdAt).try(:strftime, "%a, %b.%e %Y"), # created at
-      "1156120467564157": model.forkedFromStandardSetId ? "1156120467564158" : "1156120467564159" # forked from
+      "1156120467564157": model.forkedFromStandardSetId ? "1156120467564158" : null # forked from
     }
   end
 
