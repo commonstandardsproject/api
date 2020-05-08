@@ -19,8 +19,7 @@ You bet! Head over to [http://commonstandardsproject.com](http://commonstandards
 Sort of.
 
 - The [Achievement Standards Network](http://asn.jesandco.org/) has created XML and JSON versions of the standards. In our experience, their schema doesn't fully address our needs.
-- [Academic Benchmarks](academicbenchmarks.com) is a company that sells XML and JSON versions of the standars. Like with ASN,
-  we weren't satisfied with their schema.
+- A company that sent us a cease and decease letter for merely mentioning their name on this website sells XML and JSON versions of the standards. Like with ASN, we weren't satisfied with their schema. 
 - [OpenSALT/CASE](https://sites.google.com/view/opensalt/home) is an open format for standards. It came out after CSP was created. We like their format for individual standards, but the semantics don't reflect the organization we see in the real world. See more below.
 
 ## What is this?
