@@ -28,19 +28,19 @@ module API
           }
         }, {upsert: true, return_document: :after})
 
-        if user[:algoliaApiKey].nil?
-          #  Algolia.generate_secured_api_key(user[:email])
-          index = Algolia::Index.new('common-standards-project')
-          key = index.add_user_key({
-            :maxQueriesPerIPPerHour => 200,
-            :indexes                => ["common-standards-project"],
-            :acl                    => ["search"],
-            :description            => "#{user[:email]} - #{user[:profile][:name]} - Limited to searching standards"
-          })
-          user = $db[:users].find({_id: user[:_id]}).find_one_and_update({
-            "$set" => {algoliaApiKey: key["key"]}
-          }, {return_document: :after})
-        end
+#         if user[:algoliaApiKey].nil?
+#           #  Algolia.generate_secured_api_key(user[:email])
+#           index = Algolia::Index.new('common-standards-project')
+#           key = index.add_user_key({
+#             :maxQueriesPerIPPerHour => 200,
+#             :indexes                => ["common-standards-project"],
+#             :acl                    => ["search"],
+#             :description            => "#{user[:email]} - #{user[:profile][:name]} - Limited to searching standards"
+#           })
+#           user = $db[:users].find({_id: user[:_id]}).find_one_and_update({
+#             "$set" => {algoliaApiKey: key["key"]}
+#           }, {return_document: :after})
+#         end
 
         if user[:apiKey].nil?
           user = $db[:users].find({_id: user[:_id]}).find_one_and_update({
