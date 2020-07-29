@@ -23,7 +23,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2843223" => "English Language Arts (2016)", # 2016 Alabama Course of Study: English Language Arts
     "D2843224" => "Mathematics (2016)", # 2016 Alabama Course of Study: Mathematics
     "D2773840" => "Algebra with Finance (2017)", # 2017 Algebra with Finance
-
+    # Jul29, 2020 Imports:
+    "D21083301" => "Mathematics (2019)", # 2019 Alabama Course of Study: Mathematics
+    "D21131691" => "Mathematics (2019)", # 2019 Alabama Course of Study: Mathematics
 
   },
   # ===================
@@ -669,6 +671,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2980644" => "Science (2020)", # 2020 Colorado Academic Standards: Science
     "D2980645" => "Social Studies (2020)", # 2020 Colorado Academic Standards: Social Studies
 
+    # Jul29, 2020 Imports:
+    "D2980651" => "Mathematics (2020)", # 2020 Colorado Academic Standards: Mathematics
+    "D21132944" => "Reading, Writing and Communicating (2020)", # 2020 Colorado Academic Standards: Reading, Writing and Communicating
+
   },
   # ===================
   # Common Core State Standards
@@ -760,6 +766,18 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2436167" => "World Languages",                      # 2010 World Languages Next Generation Sunshine State Standards  http://www.fldoe.org/aala/pdf/2011WorldLanguagesStandards.pdf
     # July 27, 2016 Imports:
     "D2748822" => "Computer Science (2016)", # 2016 Computer Science Next Generation Sunshine State Standards
+    # Jul29, 2020 Imports:
+    "D21102666" => "Arts A/V Technology & Communication (2019)", # 2019 Arts A/V Technology & Communication
+    "D21103817" => "Business Management & Administration (2019)", # 2019 Business Management & Administration
+    "D21104942" => "Education & Training (2019)", # 2019 Education & Training
+    "D21105526" => "Health Science (2019)", # 2019 Health Science
+    "D21109209" => "Hospitality & Tourism (2019)", # 2019 Hospitality & Tourism
+    "D21110191" => "Information Technology (2019)", # 2019 Information Technology
+    "D21109800" => "Human Services (2019)", # 2019 Human Services
+    "D21114976" => "Law, Public Safety & Security (2019)", # 2019 Law, Public Safety & Security
+    "D21115331" => "Manufacturing (2019)", # 2019 Manufacturing
+    "D21100803" => "Architecture & Construction (2019)", # 2019 Architecture & Construction
+    "D21121314" => "Transportation, Distribution, and Logistics (2019)", # 2019 Transportation, Distribution, and Logistics
   },
   # ===================
   # Georgia
@@ -1076,6 +1094,41 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2962881" => "Physical Education (6-8) (2017)", # 2017 Indiana Academic Standards for Physical Education (6-8)
     "D2962882" => "Physical Education (9-12) (2017)", # 2017 Indiana Academic Standards for Physical Education (9-12)
 
+    # Jul29, 2020 Imports:
+    "D21131321" => "Algebra II (2020)", # 2020 Indiana Academic Standards Mathematics: Algebra II
+    "D21092607" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Kindergarten
+    "D21092719" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Grade 1
+    "D21092833" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Grade 2
+    "D21093105" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Grade 3
+    "D21093218" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Grade 4
+    "D21093330" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Grade 5
+    "D21093443" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Grade 6
+    "D21093533" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Grade 7
+    "D21093621" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Grade 8
+    "D21093709" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Grades 9-10
+    "D21093798" => "English Language Arts (2020)", # 2020 Indiana Academic Standards English Language Arts: Grades 11-12
+    "D21093887" => "Journalism (2020)", # 2020 Indiana Academic Standards Journalism: Grades 9-12
+    "D21094006" => "Mathematics: K-8 (2020)", # 2020 Indiana Academic Standards Mathematics: Kindergarten
+    "D21094044" => "Mathematics: K-8 (2020)", # 2020 Indiana Academic Standards Mathematics: Grade 1
+    "D21094080" => "Mathematics: K-8 (2020)", # 2020 Indiana Academic Standards Mathematics: Grade 2
+    "D21094122" => "Mathematics: K-8 (2020)", # 2020 Indiana Academic Standards Mathematics: Grade 3
+    "D21094172" => "Mathematics: K-8 (2020)", # 2020 Indiana Academic Standards Mathematics: Grade 4
+    "D21094224" => "Mathematics: K-8 (2020)", # 2020 Indiana Academic Standards Mathematics: Grade 5
+    "D21094273" => "Mathematics: K-8 (2020)", # 2020 Indiana Academic Standards Mathematics: Grade 6
+    "D21094324" => "Mathematics: K-8 (2020)", # 2020 Indiana Academic Standards Mathematics: Grade 7
+    "D21094373" => "Mathematics: K-8 (2020)", # 2020 Indiana Academic Standards Mathematics: Grade 8
+    "D21094416" => "Mathematics: Algebra I (2020)", # 2020 Indiana Academic Standards Mathematics: Algebra I
+    "D21094464" => "Mathematics: Analytical Algebra II (2020)", # 2020 Indiana Academic Standards Mathematics: Analytical Algebra II
+    "D21094507" => "Mathematics: Calculus (2020)", # 2020 Indiana Academic Standards Mathematics: Calculus
+    "D21094578" => "Mathematics: Finite (2020)", # 2020 Indiana Academic Standards Mathematics: Finite
+    "D21094620" => "Mathematics: Geometry (2020)", # 2020 Indiana Academic Standards Mathematics: Geometry
+    "D21094908" => "Mathematics: Precalculus: Algebra (2020)", # 2020 Indiana Academic Standards Mathematics: Precalculus: Algebra
+    "D21094947" => "Mathematics: Probability and Statistics (2020)", # 2020 Indiana Academic Standards Mathematics: Probability and Statistics
+    "D21094991" => "Mathematics: Precalculus: Trigonometry (2020)", # 2020 Indiana Academic Standards Mathematics: Precalculus: Trigonometry
+    "D21095036" => "Mathematics: Quantitative Reasoning (2020)", # 2020 Indiana Academic Standards Mathematics: Quantitative Reasoning
+    "D21012650" => "Mathematics: Analytical Algebra II (2018)", # 2018 Indiana Academic Standards Mathematics: Analytical Algebra II
+
+
   },
   # ===================
   # International Technology and Engineering Educators Association
@@ -1237,6 +1290,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21015102" => "Reading and Writing (2019)", # 2019 Kentucky Academic Standards: Reading and Writing
     "D21015096" => "Mathematics (2019)", # 2019 Kentucky Academic Standards: Mathematics
 
+    # Jul29, 2020 Imports:
+    "D21044559" => "Social Studies (2019)", # 2019 Kentucky Academic Standards Social Studies
+
 
 
   },
@@ -1349,6 +1405,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2596842" => "Social Studies",                       # 2007 Social Studies High School Content Expectations  http://www.michigan.gov/documents/mde/SS_HSCE_210739_7_470248_7.pdf?20141009100841
     # March 3, 2016 Imports:
     "D2716032" => "Science (2015)", # 2015 Michigan K-12 Science Standards
+    # Jul29, 2020 Imports:
+    "D2968388" => "Integrated Technology Competencies for Students (MITECS) (2017)", # 2017 Michigan Integrated Technology Competencies for Students (MITECS)
   },
   # ===================
   # Minnesota
@@ -1825,6 +1883,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2788226" => "English Language Arts (2018)", # 2018 North Carolina Standard Course of Study for English Language Arts
     "D2881767" => "Mathematics (2018)", # 2018 North Carolina Standard Course of Study K-8 Mathematics
 
+    # Jul29, 2020 Imports:
+    "D21084961" => "4th Level Math Standards (2019)", # 2019 North Carolina Standard Course of Study 4th Level Math Standards
 
 
   },
@@ -1931,6 +1991,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug13, 2018 Imports:
     "D2958332" => "Music (2017)", # 2017 Oklahoma Academic Standards - Music
     "D2958336" => "Visual Arts (2017)", # 2017 Oklahoma Academic Standards - Visual Arts
+
+    # Jul29, 2020 Imports:
+    "D21024851" => "Social Studies (2019)", # 2019 Oklahoma Academic Standards for Social Studies
   },
   # ===================
   # Oregon
@@ -1960,6 +2023,21 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2778675" => "Physical Education (2016)", # 2016 Oregon Core Standards: Physical Education
     # Jun28, 2019 Imports:
     "D2982515" => "Social Sciences (2018)", # 2018 Oregon K-12 Social Sciences Academic Content Standards
+    # Jul29, 2020 Imports:
+    "D21098097" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Kindergarten
+    "D21098277" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 1
+    "D21098442" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 2
+    "D21098605" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 3
+    "D21098775" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 4
+    "D21098940" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 5
+    "D21099103" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 6
+    "D21099253" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 7
+    "D21099400" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 8
+    "D21099549" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grades 9-10
+    "D21099696" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grades 11-12
+    "D21099841" => "Standards for Literacy in History/Social Studies & Technical Subjects (2019)", # 2019 Oregon Standards for Literacy in History/Social Studies & Technical Subjects: Grades 6-8
+    "D21099928" => "Standards for Literacy in History/Social Studies & Technical Subjects (2019)", # 2019 Oregon Standards for Literacy in History/Social Studies & Technical Subjects: Grades 9-10
+    "D21100016" => "Standards for Literacy in History/Social Studies & Technical Subjects (2019)", # 2019 Oregon Standards for Literacy in History/Social Studies & Technical Subjects: Grades 11-12
 
   },
   # ===================
@@ -2375,6 +2453,28 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2975924" => "Science, Technology, Engineering, and Mathematics (2015)", # 2015 Science, Technology, Engineering, and Mathematics
     "D2975925" => "Transportation, Distribution, and Logistics (2015)", # 2015 Transportation, Distribution, and Logistics
 
+    # Jul29, 2020 Imports:
+    "D21038021" => "Social Studies (2018)", # 2018 Texas Essential Knowledge and Skills for Social Studies - Grade 6
+    "D21038022" => "Social Studies (2018)", # 2018 Texas Essential Knowledge and Skills for Social Studies - Grade 7
+    "D21038023" => "Social Studies (2018)", # 2018 Texas Essential Knowledge and Skills for Social Studies - Grade 8
+    "D21039074" => "Economics with Emphasis on the Free Enterprise System and Its Benefits (2018)", # 2018 Economics with Emphasis on the Free Enterprise System and Its Benefits
+    "D21039305" => "World History Studies (2018)", # 2018 World History Studies
+    "D21039453" => "World Geography Studies (2018)", # 2018 World Geography Studies
+    "D21039544" => "United States Government (2018)", # 2018 United States Government
+    "D21039635" => "Ethnic Studies: Mexican American Studies (2019)", # 2019 Ethnic Studies: Mexican American Studies
+    "D21039167" => "United States History Studies Since 1877 (2018)", # 2018 United States History Studies Since 1877
+    "D21071880" => "Investigating Careers (2015)", # 2015 Investigating Careers
+    "D21071881" => "Medical Terminology (2015)", # 2015 Medical Terminology
+    "D21071882" => "Video Game Design (2015)", # 2015 Video Game Design
+    "D21071883" => "Advertising (2015)", # 2015 Advertising
+    "D21071884" => "Audio/Video Production I (2015)", # 2015 Audio/Video Production I
+    "D21071885" => "Counseling and Mental Health (2015)", # 2015 Counseling and Mental Health
+    "D21071886" => "Principles of Government and Public Administration (2015)", # 2015 Principles of Government and Public Administration
+    "D21072653" => "Science - Astronomy (2010)", # 2010 Texas Essential Knowledge and Skills for Science - Astronomy
+    "D21083298" => "Science - Aquatic Science (2010)", # 2010 Texas Essential Knowledge and Skills for Science - Aquatic Science
+    "D21083299" => "Science - Earth and Space Systems (2010)", # 2010 Texas Essential Knowledge and Skills for Science - Earth and Space Systems
+    "D21083300" => "Science - Environmental Systems (2010)", # 2010 Texas Essential Knowledge and Skills for Science - Environmental Systems
+
   },
   # ===================
   # Utah
@@ -2712,6 +2812,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21020411" => "The Ontario Curriculum, Classical Studies and International Languages (2016)", # 2016 The Ontario Curriculum, Classical Studies and International Languages
     "D21024936" => "The Ontario Curriculum: First Nations, Métis, and Inuit Cultures (Grades 9-12) (2019)", # 2019 The Ontario Curriculum: First Nations, Métis, and Inuit Cultures (Grades 9-12)
 
+    # Jul29, 2020 Imports:
+    "D21032846" => "Career Studies Grade 10 Open (GLC20) (2019)", # 2019 The Ontario Curriculum: Career Studies Grade 10 Open (GLC20)
+    "D21038355" => "Health and Physical Education (2019)", # 2019 The Ontario Curriculum Health and Physical Education Grades 1-8
+    "D21084835" => "Locally Developed Compulsory Credit Course: Science Grade 9 (SNC1L) (2005)", # 2005 Locally Developed Compulsory Credit Course: Science Grade 9 (SNC1L)
+    "D21084898" => "Locally Developed Compulsory Credit Course: Science Grade 10 (SNC2L) (2005)", # 2005 Locally Developed Compulsory Credit Course: Science Grade 10 (SNC2L)
+    "D21128810" => "Mathematics (2020)", # 2020 The Ontario Curriculum, Grades 1–8: Mathematics, 2020
   },
 
   # ========
@@ -2745,6 +2851,84 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Jun28, 2019 Imports:
     "D21012572" => "Science (2018)", # 2018 Science 10
+
+    # Jul29, 2020 Imports:
+    "D21033783" => "Science 10 (2018)", # 2018 British Columbia Science 10
+    "D21033784" => "Chemistry 11 (2018)", # 2018 British Columbia Chemistry 11
+    "D21033785" => "Earth Sciences 11 (2018)", # 2018 British Columbia Earth Sciences 11
+    "D21033786" => "Environmental Science 11 (2018)", # 2018 British Columbia Environmental Science 11
+    "D21033787" => "Life Sciences 11 (2018)", # 2018 British Columbia Life Sciences 11
+    "D21033788" => "Physics 11 (2018)", # 2018 British Columbia Physics 11
+    "D21033789" => "Science for Citizens 11 (2018)", # 2018 British Columbia Science for Citizens 11
+    "D21033790" => "Anatomy and Physiology 12 (2018)", # 2018 British Columbia Anatomy and Physiology 12
+    "D21033791" => "Chemistry 12 (2018)", # 2018 British Columbia Chemistry 12
+    "D21033792" => "Environmental Science 12 (2018)", # 2018 British Columbia Environmental Science 12
+    "D21033793" => "Geology 12 (2018)", # 2018 British Columbia Geology 12
+    "D21033794" => "Physics 12 (2018)", # 2018 British Columbia Physics 12
+    "D21033795" => "Specialized Science 12 (2018)", # 2018 British Columbia Specialized Science 12
+    "D21033834" => "Explorations in Social Studies 11 (2019)", # 2019 British Columbia Explorations in Social Studies 11
+    "D21033835" => "Francophone History and Culture 11 (2019)", # 2019 British Columbia Francophone History and Culture 11
+    "D21033836" => "20th Century World History 12 (2019)", # 2019 British Columbia 20th Century World History 12
+    "D21033837" => "Asian Studies 1850-Present (2019)", # 2019 British Columbia Asian Studies 1850-Present
+    "D21033838" => "B.C. First Peoples (2019)", # 2019 British Columbia B.C. First Peoples
+    "D21033839" => "Comparative Cultures (2019)", # 2019 British Columbia Comparative Cultures
+    "D21033840" => "Comparative World Religions (2019)", # 2019 British Columbia Comparative World Religions
+    "D21033841" => "Contemporary Indigenous Studies (2019)", # 2019 British Columbia Contemporary Indigenous Studies
+    "D21033842" => "Economic Theory (2019)", # 2019 British Columbia Economic Theory
+    "D21033843" => "Genocide Studies (2019)", # 2019 British Columbia Genocide Studies
+    "D21033844" => "Human Geography (2019)", # 2019 British Columbia Human Geography
+    "D21033845" => "Law Studies (2019)", # 2019 British Columbia Law Studies
+    "D21033846" => "Philosophy (2019)", # 2019 British Columbia Philosophy
+    "D21033847" => "Physical Geography (2019)", # 2019 British Columbia Physical Geography
+    "D21033848" => "Political Studies (2019)", # 2019 British Columbia Political Studies
+    "D21033849" => "Social Justice (2019)", # 2019 British Columbia Social Justice
+    "D21033850" => "Urban Studies (2019)", # 2019 British Columbia Urban Studies
+    "D21033851" => "Active Living Grade 11 (2918)", # 2918 British Columbia Active Living Grade 11
+    "D21033852" => "Active Fitness and Conditioning 11 (2018)", # 2018 British Columbia Active Fitness and Conditioning 11
+    "D21033853" => "Outdoor Education 11 (2018)", # 2018 British Columbia Outdoor Education 11
+    "D21033854" => "Active Living 12 (2018)", # 2018 British Columbia Active Living 12
+    "D21033855" => "Fitness and Conditioning 12 (2018)", # 2018 British Columbia Fitness and Conditioning 12
+    "D21033856" => "Outdoor Education 12 (2018)", # 2018 British Columbia Outdoor Education 12
+    "D21033796" => "English Language Arts Composition 10 (2018)", # 2018 British Columbia English Language Arts Composition 10
+    "D21033797" => "English Language Arts Creative Writing 10 (2018)", # 2018 British Columbia English Language Arts Creative Writing 10
+    "D21033798" => "English Language Arts Literary Studies 10 (2018)", # 2018 British Columbia English Language Arts Literary Studies 10
+    "D21033799" => "English Language Arts New Media 10 (2018)", # 2018 British Columbia English Language Arts New Media 10
+    "D21033800" => "English Language Arts Spoken Language 10 (2018)", # 2018 British Columbia English Language Arts Spoken Language 10
+    "D21033801" => "English First Peoples Literary Studies 10 (2018)", # 2018 British Columbia English First Peoples Literary Studies 10
+    "D21033802" => "English First Peoples New Media 10 (2018)", # 2018 British Columbia English First Peoples New Media 10
+    "D21033803" => "English First Peoples Spoken Language 10 (2018)", # 2018 British Columbia English First Peoples Spoken Language 10
+    "D21033804" => "English First Peoples Writing 10 (2018)", # 2018 British Columbia English First Peoples Writing 10
+    "D21033805" => "English Language Arts Composition 11 (2018)", # 2018 British Columbia English Language Arts Composition 11
+    "D21033806" => "English Language Arts Creative Writing 11 (2018)", # 2018 British Columbia English Language Arts Creative Writing 11
+    "D21033807" => "English Language Arts Literary Studies 11 (2018)", # 2018 British Columbia English Language Arts Literary Studies 11
+    "D21033809" => "English Language Arts Spoken Language 11 (2019)", # 2019 British Columbia English Language Arts Spoken Language 11
+    "D21033808" => "English Language Arts New Media 11 (2018)", # 2018 British Columbia English Language Arts New Media 11
+    "D21033810" => "English First Peoples Literary Studies + New Media 11 (2018)", # 2018 British Columbia English First Peoples Literary Studies + New Media 11
+    "D21033811" => "English First Peoples Literary Studies + Spoken Language 11 (2019)", # 2019 British Columbia English First Peoples Literary Studies + Spoken Language 11
+    "D21033812" => "English First Peoples Literary Studies + Writing 11 (2019)", # 2019 British Columbia English First Peoples Literary Studies + Writing 11
+    "D21033813" => "English Language Arts Composition 12 (2019)", # 2019 British Columbia English Language Arts Composition 12
+    "D21033814" => "English Language Arts Creative Writing 12 (2019)", # 2019 British Columbia English Language Arts Creative Writing 12
+    "D21033816" => "English Language Arts Literary Studies 12 (2018)", # 2018 British Columbia English Language Arts Literary Studies 12
+    "D21033817" => "English Language Arts New Media 12 (2018)", # 2018 British Columbia English Language Arts New Media 12
+    "D21033818" => "English Language Arts Spoken Language 12 (2018)", # 2018 British Columbia English Language Arts Spoken Language 12
+    "D21033819" => "English First Peoples 12 (2018)", # 2018 British Columbia English First Peoples 12
+    "D21033820" => "Foundations of Mathematics and Pre-Calculus (2018)", # 2018 British Columbia Foundations of Mathematics and Pre-Calculus
+    "D21033821" => "Workplace Mathematics 10 (2018)", # 2018 British Columbia Workplace Mathematics 10
+    "D21033822" => "Computer Science 11 (2018)", # 2018 British Columbia Computer Science 11
+    "D21033823" => "Foundations of Mathematics 11 (2018)", # 2018 British Columbia Foundations of Mathematics 11
+    "D21033824" => "History of Mathematics 11 (2018)", # 2018 British Columbia History of Mathematics 11
+    "D21033825" => "Pre-Calculus 11 (2018)", # 2018 British Columbia Pre-Calculus 11
+    "D21033826" => "Workplace Mathematics 11 (2018)", # 2018 British Columbia Workplace Mathematics 11
+    "D21033827" => "Apprenticeship Mathematics 12 (2018)", # 2018 British Columbia Apprenticeship Mathematics 12
+    "D21033828" => "Calculus 12 (2018)", # 2018 British Columbia Calculus 12
+    "D21033829" => "Computer Science 12 (2018)", # 2018 British Columbia Computer Science 12
+    "D21033830" => "Foundations of Mathematics 12 (2018)", # 2018 British Columbia Foundations of Mathematics 12
+    "D21033831" => "Geometry 12 (2018)", # 2018 British Columbia Geometry 12
+    "D21033832" => "Pre-Calculus 12 (2018)", # 2018 British Columbia Pre-Calculus 12
+    "D21033833" => "Statistics 12 (2018)", # 2018 British Columbia Statistics 12
+    "D21066974" => "British  Canada and the World: 1914 to the Present 10 (2018)", # 2018 British Columbia: Canada and the World: 1914 to the Present 10
+    "D21092202" => "English Studies 12 (2018)", # 2018 British Columbia English Studies 12
+
 
   },
 
@@ -2921,7 +3105,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2968235" => "Science Content Statements (K-5) (2018)", # 2018 Science Content Statements (K-5)
     # Jun28, 2019 Imports:
     "D2982439" => "Career and Technical Education Content Statements (2018)", # 2018 Career and Technical Education Content Statements
-
+    # Jul29, 2020 Imports:
+    "D21032016" => "Embark Content Standards (2019)", # 2019 Embark Content Standards
+    "D21097696" => "Technology Content Statements (2020)", # 2020 Technology Content Statements
   },
 
   "Dublin Core Metadata Initiative" => {
@@ -3301,17 +3487,32 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2826701" => "English, 9e et 10e année (2007)", # 2007 Le curriculum de l'Ontario – English, 9e et 10e année
     "D2994839" => "Français (2007)", # 2007 Le curriculum de l'Ontario 9e et 10e année Français
     "D2994840" => "Français (2007)", # 2007 Le curriculum de l'Ontario 11e et 12e année Français
+    # Jul29, 2020 Imports:
+    "D21033743" => "Exploration de Carrière 10e année, cours ouvert (GLC2O) (2019)", # 2019 Exploration de Carrière 10e année, cours ouvert (GLC2O)
+    "D21038356" => "Le Curriculum De L'Ontario Éducation Physiqueet Santé de la 1re à la 8e année (2019)", # 2019 Le Curriculum De L'Ontario Éducation Physiqueet Santé de la 1re à la 8e année
+    "D21086122" => "Actualisation linguistique en français (ALF 1-8 année) (2010)", # 2010 Le curriculum de l'Ontario: Actualisation linguistique en français (ALF 1-8 année)
+    "D21086657" => "Actualisation linguistique en français (ALF 9-12 année) (2010)", # 2010 Le curriculum de l'Ontario: Actualisation linguistique en français (ALF 9-12 année)
+    "D21086948" => "Programme d'appui aux nouveaux arrivants (PANA 1-8 année) (2010)", # 2010 Le curriculum de l'Ontario: Programme d'appui aux nouveaux arrivants (PANA 1-8 année)
+    "D21088557" => "Programme d'appui aux nouveaux arrivants (PANA 9-12 année) (2010)", # 2010 Le curriculum de l'Ontario: Programme d'appui aux nouveaux arrivants (PANA 9-12 année)
+    "D21091350" => "Études des Premières Nations, des Métis et des Inuits (2019)", # 2019 Le curriculum de l'Ontario: Études des Premières Nations, des Métis et des Inuits
+    "D21129204" => "Le curriculum de l'Ontario de la 1re à la 8e année – Mathématiques, 2020 (2020)", # 2020 Le curriculum de l'Ontario de la 1re à la 8e année – Mathématiques, 2020
+
 
   },
   "CPA Canada" => {
     # Aug13, 2018 Imports:
-        "D2975910" => "CPA Competency Map (2013)", # 2013 CPA Competency Map
+    "D2975910" => "CPA Competency Map (2013)", # 2013 CPA Competency Map
+
+    # Jul29, 2020 Imports:
+    "D21096630" => "CPA Competency Map (2020)", # 2020 CPA Competency Map
   },
   "Institute for Catholic Education" => {
     # Aug13, 2018 Imports:
-        "D2975931" => "Ontario Catholic Graduate Expectations (2011)", # 2011 Ontario Catholic Graduate Expectations
+    "D2975931" => "Ontario Catholic Graduate Expectations (2011)", # 2011 Ontario Catholic Graduate Expectations
     # Jun28, 2019 Imports:
-        "D21019787" => "Ontario Catholic Secondary Curriculum Religious Education (Grades 9-12) (2016)", # 2016 Ontario Catholic Secondary Curriculum Religious Education (Grades 9-12)
+    "D21019787" => "Ontario Catholic Secondary Curriculum Religious Education (Grades 9-12) (2016)", # 2016 Ontario Catholic Secondary Curriculum Religious Education (Grades 9-12)
+    # Jul29, 2020 Imports:
+    "D21045743" => "Ontario Catholic Religious Education 1-8 (2012)", # 2012 Ontario Catholic Religious Education 1-8
 
   },
 
@@ -3325,7 +3526,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   },
   "College of Nurses of Ontario" => {
     # Jun28, 2019 Imports:
-        "D21020958" => "Entry-to-Practice Competencies for Registered Nurses (2014)", # 2014 Entry-to-Practice Competencies for Registered Nurses
+    "D21020958" => "Entry-to-Practice Competencies for Registered Nurses (2014)", # 2014 Entry-to-Practice Competencies for Registered Nurses
+
+    # Jul29, 2020 Imports:
+    "D21044567" => "Entry-to-Practice Competencies for Registered Nurses (2020)", # 2020 Entry-to-Practice Competencies for Registered Nurses
 
   },
   "Manitoba" => {
@@ -3348,6 +3552,20 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21022451" => "Manitoba Grade 12 Biology: A Foundation for Implementation (2011)", # 2011 Manitoba Grade 12 Biology: A Foundation for Implementation
     "D21022540" => "Manitoba Grade 12 Chemistry: A Foundation for Implementation (2013)", # 2013 Manitoba Grade 12 Chemistry: A Foundation for Implementation
 
+  # Jul29, 2020 Imports:
+    "D21040546" => "Grade 9 Mathematics (10F) (2014)", # 2014 Manitoba Curriculum Framework: Grade 9 Mathematics (10F)
+    "D21040547" => "Grade 10 Essential Mathematics (25S) Half Course I (2014)", # 2014 Manitoba Curriculum Framework: Grade 10 Essential Mathematics (25S) Half Course I
+    "D21040548" => "Grade 10 Essential Mathematics (25S) Half Course II (2014)", # 2014 Manitoba Curriculum Framework: Grade 10 Essential Mathematics (25S) Half Course II
+    "D21040549" => "Grade 10 Introduction to Applied and Pre-Calculus Mathematics (20S) (2014)", # 2014 Manitoba Curriculum Framework: Grade 10 Introduction to Applied and Pre-Calculus Mathematics (20S)
+    "D21040550" => "Grade 11 Applied Mathematics (30S) (2014)", # 2014 Manitoba Curriculum Framework: Grade 11 Applied Mathematics (30S)
+    "D21040551" => "Grade 11 Essential Mathematics (35S) Half Course III (2014)", # 2014 Manitoba Curriculum Framework: Grade 11 Essential Mathematics (35S) Half Course III
+    "D21040553" => "Grade 11 Pre-Calculus Mathematics (30S) (2014)", # 2014 Manitoba Curriculum Framework: Grade 11 Pre-Calculus Mathematics (30S)
+    "D21040554" => "Grade 12 Applied Mathematics (40S) (2014)", # 2014 Manitoba Curriculum Framework: Grade 12 Applied Mathematics (40S)
+    "D21040555" => "Grade 12 Essential Mathematics (40S) Half Course V) (2014)", # 2014 Manitoba Curriculum Framework: Grade 12 Essential Mathematics (40S) Half Course V)
+    "D21040556" => "Grade 12 Essential Mathematics (40S) Half Course VI (2014)", # 2014 Manitoba Curriculum Framework: Grade 12 Essential Mathematics (40S) Half Course VI
+    "D21040557" => "Grade 12 Pre-Calculus Mathematics (40S) (2014)", # 2014 Manitoba Curriculum Framework: Grade 12 Pre-Calculus Mathematics (40S)
+    "D21040552" => "Grade 11 Essential Mathematics (30S) Half Course IV (2014)", # 2014 Manitoba Curriculum Framework: Grade 11 Essential Mathematics (30S) Half Course IV
+
   },
   "Henry County Schools" => {
     # Jun28, 2019 Imports:
@@ -3367,29 +3585,76 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   },
 
   "Gwinnett Online Campus" => {
+    # Jul29, 2020 Imports:
+    "D21036269" => "AKS (2019)", # 2019 AKS
+    "D21046296" => "AKS (2019)", # 2019 AKS
+    "D21045757" => "AKS (2019)", # 2019 AKS
+    "D21046315" => "AKS (2019)", # 2019 AKS
+    "D21048654" => "AKS (2019)", # 2019 AKS
+    "D21050351" => "AKS (2019)", # 2019 AKS
+    "D21052888" => "AKS (2019)", # 2019 AKS
+    "D21061377" => "AKS (2019)", # 2019 AKS
+    "D21056338" => "AKS (2019)", # 2019 AKS
 
   },
 
   "Waseca Public Schools" => {
-
+    # Jul29, 2020 Imports:
+    "D21044561" => "Math (2019)", # 2019 4th Grade Math
+    "D21044562" => "Math (2019)", # 2019 5th Grade Math
+    "D21044563" => "Math (2019)", # 2019 6th Grade Math
+    "D21044564" => "Reading (2019)", # 2019 4th Grade Reading
+    "D21044565" => "Reading (2019)", # 2019 5th Grade Reading
+    "D21044566" => "Reading (2019)", # 2019 6th Grade Reading
+    "D21071887" => "ELL Learning Targets (2019)", # 2019 ELL Learning Targets
+    "D21071893" => "Kindergarten ELA Learning Targets (2019)", # 2019 Kindergarten ELA Learning Targets
+    "D21071897" => "Reading Learning Targets (2019)", # 2019 4th Grade Reading Learning Targets
+    "D21071898" => "Reading Learning Targets (2019)", # 2019 5th Grade Reading Learning Targets
+    "D21071899" => "Reading Learning Targets (2019)", # 2019 6th Grade Reading Learning Targets
+    "D21071894" => "ELA Learning Targets (2019)", # 2019 1st Grade ELA Learning Targets
+    "D21071895" => "ELA Learning Targets (2019)", # 2019 2nd Grade ELA Learning Targets
+    "D21071896" => "ELA Learning Targets (2019)", # 2019 3rd Grade ELA Learning Targets
+    "D21071900" => "Math Learning Targets (2019)", # 2019 Kindergarten Math Learning Targets
+    "D21071901" => "Math Learning Targets (2019)", # 2019 1st Grade Math Learning Targets
+    "D21071902" => "Math Learning Targets (2019)", # 2019 2nd Grade Math Learning Targets
+    "D21071903" => "Math Learning Targets (2019)", # 2019 3rd Grade Math Learning Targets
+    "D21071904" => "Math Learning Targets (2019)", # 2019 4th Grade Math Learning Targets
+    "D21071905" => "Math Learning Targets (2019)", # 2019 5th Grade Math Learning Targets
+    "D21071906" => "Math Learning Targets (2019)", # 2019 6th Grade Math Learning Targets
+    "D21071907" => "Science Learning Targets (2019)", # 2019 4th Grade Science Learning Targets
   },
 
   "Association to Advance Collegiate Schools of Business" => {
+    # Jul29, 2020 Imports:
+    "D21071857" => "Accounting Accreditation (2018)", # 2018 Standards for Accounting Accreditation
+    "D21071864" => "Business Accreditation (2013)", # 2013 Standards for Business Accreditation
 
   },
 
   "Community College Preparatory Academy" => {
+    # Jul29, 2020 Imports:
+    "D21082115" => "CompTIA IT Fundamentals (ITF+) Certification Exam Objectives (FC0-U61) (2019)", # 2019 CompTIA IT Fundamentals (ITF+) Certification Exam Objectives (FC0-U61)
+    "D21082155" => "MOS Excel 2013 Exam Objectives (2013)", # 2013 MOS Excel 2013 Exam Objectives
+    "D21082179" => "MOS Outlook 2013 Exam Objectives (2013)", # 2013 MOS Outlook 2013 Exam Objectives
+    "D21082197" => "MOS PowerPoint 2013 Exam Objectives (2013)", # 2013 MOS PowerPoint 2013 Exam Objectives
+    "D21082223" => "MOS Word 2013 Exam Objectives (2013)", # 2013 MOS Word 2013 Exam Objectives
+    "D21082245" => "CompTIA A+ Certification Exam: Core 1 Objectives (220-1001) (2019)", # 2019 CompTIA A+ Certification Exam: Core 1 Objectives (220-1001)
+    "D21082286" => "CompTIA A+ Certification Exam: Core 2 Objectives (220-1002) (2019)", # 2019 CompTIA A+ Certification Exam: Core 2 Objectives (220-1002)
+    "D21125239" => "Customer Service and Sales Skills Standards (2017)", # 2017 Customer Service and Sales Skills Standards
+    "D21125266" => "EFF Skills for Adult Literacy and Lifelong Learning (Work Readiness) (2020)", # 2020 EFF Skills for Adult Literacy and Lifelong Learning (Work Readiness)
+    "D21125287" => "HVAC Section 608 Exam (2020)", # 2020 HVAC Section 608 Exam
 
   },
 
   "Office of Vocational and Adult Education" => {
-
+    # Jul29, 2020 Imports:
+    "D21082714" => "English Language Arts (2013)", # 2013 College and Career Readiness Standards for Adult Education - English Language Arts
+    "D21082324" => "Mathematics (2013)", # 2013 College and Career Readiness Standards for Adult Education - Mathematics
   },
 
   "Equipped for the Future" => {
-
+    # Jul29, 2020 Imports:
+    "D21092541" => "EFF Content Standards (2020)", # 2020 EFF Content Standards
   }
-
-
 
 }
