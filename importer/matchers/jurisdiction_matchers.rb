@@ -170,4 +170,10 @@ JURISDICTION_MATCHERS = {
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAN-BC-FR" => {:title => "British Columbia (Français)", type: "state", abbreviation: "BC", id: "EB941913257145ECBAAD3E7EF2DB9E4B"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/NZ" => {:title => "New Zealand", type: "country", abbreviation: "NZ", id: "66D464B36D28478DB099F2933AF0DFEC"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/CAEP" => {:title => "Council for the Accreditation of Educator Preparation", type: "organization", abbreviation: "NZ", id: "66D464B36D28478DB099F2933AF0DFEC"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/EFF" => {:title => "Equipped for the Future", type: "organization", abbreviation: "EFF", id: "13555870056A47E89F32EAD28ECB2B36"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/OVAE" => {:title => "Office of Vocational and Adult Education", type:"organization", abbreviation: "OVAE", id: "929E59348526433C8A1480819B9F5384"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/Community_College_Prep" => {:title => "Community College Preparatory Academy", type:"organization", abbreviation: "CCPA", id: "95D7A9A7CCAC4715BAF26FDB14B5D5B3"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/AACSB" => {:title => "Association to Advance Collegiate Schools of Business", type:"organization", abbreviation: "AACSB", id: "3F7EF92F2EF8454F8CD355194AE2B0AB"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/Waseca_Public_Schools" => {:title => "Waseca Public Schools", type:"organization", abbreviation: "Waseca", id: "5802DA914078408EA307A4275A5F4312"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/Gwinnett_Online_Campus" => {:title => "Gwinnett Online Campus", type:"organization", abbreviation: "GOC", id: "9AD14D7259BD4E9086344AC58DC8A9CB"},
  }
