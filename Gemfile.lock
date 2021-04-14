@@ -136,7 +136,7 @@ GEM
       rack (>= 1.2, < 3)
     oj (3.6.5)
     parallel (1.6.0)
-    postmark (1.7.1)
+    postmark (1.19.2)
       json
       rake
     pry (0.10.1)
