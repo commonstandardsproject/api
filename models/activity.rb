@@ -13,7 +13,7 @@ class Activity
   attribute :userId, String
   attribute :userName, String
 
-  class Validator < Dry::Validation::Schema
+  class Validator < ::Dry::Validation::Schema
     key(:createdAt, &:date_time?)
     key(:title, &:str?)
     key(:type, &:str?)

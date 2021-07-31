@@ -60,6 +60,9 @@ module API
     # Make sure each request has an auth token and originates from
     # an origin specified in the user's document
     before do
+      p "HELLO"
+      p headers
+      p params
       key = headers["Api-Key"] || params["api-key"]
 
       if request.path.include?("swagger_doc") || request.path.include?("/api/v1/sitemap.xml")
@@ -108,6 +111,7 @@ module API
     # on heroku, but that's not worth the effort at the moment.
 
     get '/sitemap.xml', hidden: true do
+      p $db
       builder = Nokogiri::XML::Builder.new do |xml|
         xml.urlset("xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9") {
           $db[:standard_sets].find().projection({_id: 1}).batch_size(1000).map{|doc|

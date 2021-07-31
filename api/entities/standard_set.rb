@@ -13,9 +13,9 @@ module API
       expose :document
       expose :jurisdiction
 
-      expose :standards, documentation: {desc: "A map of standards"} {|doc|
+      expose :standards, documentation: {desc: "A map of standards"} do |doc|
         doc[:standards] || {}
-      }
+      end
     end
   end
 end

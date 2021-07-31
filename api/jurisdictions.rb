@@ -6,12 +6,11 @@ require_relative 'entities/jurisdiction_summary'
 
 module API
   class Jurisdictions < Grape::API
-
+    format :json
     namespace :jurisdictions, desc: "A state, organization, district, or school" do
 
       desc "Return a list of jurisdictions"
       get "/" do
-        pp @user["id"]
         jurisdictions = $db[:jurisdictions].find({
           :$or => [
             {:$and => [

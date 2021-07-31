@@ -12,6 +12,9 @@ require 'newrelic_rpm'
 require_relative "config/postmark"
 require_relative "api/api"
 require_relative 'main'
+require 'grape-swagger/entity'
+require 'grape-swagger/representable'
+API::API.compile!
 
 # use Skylight::Middleware
 use Rack::Deflater
@@ -25,4 +28,6 @@ end
 
 # run API::API
 
-run Rack::Cascade.new [API::API, Main]
+use Rack::ContentLength
+use Rack::ContentType
+run Rack::Cascade.new [Main, API::API]
