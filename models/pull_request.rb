@@ -32,7 +32,7 @@ class PullRequest
     "rejected"            => "Rejected"
   }
 
-  class Validator < Dry::Validation::Schema
+  class Validator < ::Dry::Validation::Schema
     key(:submitterId, &:str?)
     key(:submitterName, &:str?)
     key(:status){|status| status.inclusion? STATUSES }

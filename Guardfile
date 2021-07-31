@@ -16,7 +16,7 @@
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
 group :server do
-  guard :shotgun, :server => "puma", :port => "9393" do
+  guard :shotgun, :server => "puma", :port => "9393", :host => "localhost" do
     watch %r{^(api|lib|models)/.*\.rb}
     watch 'config.ru'
   end
