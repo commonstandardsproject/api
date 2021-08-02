@@ -25,7 +25,7 @@ require_relative '../lib/securerandom'
 class Importer
 
   def self.run(opts)
-    docs  = Oj.load(open(ENV["IMPORT_JSON"]))
+    docs  = Oj.load(URI.open(ENV["IMPORT_JSON"]))
 
     hydra = Typhoeus::Hydra.new(max_concurrency: ENV["IMPORT_CONCURRENCY"] || 10)
 
@@ -90,13 +90,24 @@ def check_document_titles(docs)
       doc["data"]["jurisdiction"] if jurisdiction.nil?
     }.compact.uniq
 
+    # We don't care about this anymore since the additional jurisdictions aren't ones we need
     if jurisidictions_to_be_added.length > 0
       pp jurisidictions_to_be_added
-      raise "Add these jurisidictions to source_to_subject_mapping_grouped.rb and check that they're in JURISDICTION_MATCHERS"
+      puts "Add these jurisidictions to source_to_subject_mapping_grouped.rb and check that they're in JURISDICTION_MATCHERS if you want standards for these imported"
     end
 
-    titles_to_be_edited =  docs["hits"]["hit"].reduce({}){|acc, doc|
+    # ignoring per the comment above
+    titles_to_be_edited =  docs["hits"]["hit"].reject{|doc|
+      jurisidiction_in_doc = doc["data"]["jurisdiction"][0]
+      SOURCE_TO_SUBJECT_MAPPINGS_GROUPED[jurisidiction_in_doc].nil?
+
+    # find any docs that we haven't mapped to their subject name
+    }.reduce({}){|acc, doc|
       jurisdiction = SOURCE_TO_SUBJECT_MAPPINGS_GROUPED[doc["data"]["jurisdiction"][0]]
+      if jurisdiction == nil
+        puts "ADD THIS" + doc["data"]["jurisdiction"][0]
+      end
+
       subject = jurisdiction[doc["id"].upcase]
       if subject.nil?
         acc[doc["data"]["jurisdiction"][0]] ||= {}
@@ -159,6 +170,10 @@ def parse_doc_json(docs)
     jurisdiction = find_id.call(doc["data"]["jurisdiction"][0])
     jurisdiction == nil
   }.map{|doc|
+    if SOURCE_TO_SUBJECT_MAPPINGS_GROUPED[doc["data"]["jurisdiction"][0]] == nil
+      puts "Add " + doc["data"]["jurisdiction"]
+    end
+
     subject = SOURCE_TO_SUBJECT_MAPPINGS_GROUPED[doc["data"]["jurisdiction"][0]][doc["id"].upcase]
     {
       date_modified:   doc["data"]["date_modified"][0],
