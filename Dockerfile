@@ -1,4 +1,5 @@
-FROM ruby:2.6.8
+# FROM ruby:3.0.2
+FROM circleci/ruby:3.0.2
 
 WORKDIR /home/app
 
@@ -6,9 +7,10 @@ ENV PORT 3000
 
 EXPOSE $PORT
 
-RUN gem install rails bundler
-RUN gem install rails
-RUN apt-get update -qq && apt-get install -y nodejs
+USER root
+
+RUN gem install bundler
+RUN sudo apt-get update -qq && apt-get install -y nodejs
 ADD Gemfile .
 ADD Gemfile.lock .
 RUN bundle install --jobs 4
