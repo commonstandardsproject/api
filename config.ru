@@ -14,7 +14,6 @@ require_relative "api/api"
 require_relative 'main'
 require 'grape-swagger/entity'
 require 'grape-swagger/representable'
-API::API.compile!
 
 # use Skylight::Middleware
 use Rack::Deflater

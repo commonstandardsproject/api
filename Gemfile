@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
-ruby '3.0.2'
+ruby '2.7.4'
 gem 'oj'
 gem 'mongo'
 gem 'bson'
 gem 'bson_ext'
-gem 'grape'
+# gem 'grape'
+gem 'grape', '~>0.16.0'
 # for this issue
 # https://github.com/ruby-grape/grape/issues/1966
 gem 'rack', '~>2.0.8'
