@@ -27,6 +27,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21083301" => "Mathematics (2019)", # 2019 Alabama Course of Study: Mathematics
     "D21131691" => "Mathematics (2019)", # 2019 Alabama Course of Study: Mathematics
 
+    # Aug 1, 2021 Imports:
+    "D21193752" => "English Language Arts (2021)", # 2021 Alabama Course of Study: English Language Arts
+    "D21124926" => "Science, Technology, Engineering, and Mathematics (STEM) (2020)", # 2020 Alabama Course of Study: Science, Technology, Engineering, and Mathematics (STEM)
+
   },
   # ===================
   # Alaska
@@ -49,6 +53,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2472504" => "Physical Education",                   # 2010 Alaska Physical Education Standards  http://education.alaska.gov/tls/schoolhealth/PEStandards.html
     # July 27, 2016 Imports:
     "D2740434" => "Arts (2016)", # 2016 Alaska Content Standards: Arts
+
+    # Aug 1, 2021 Imports:
+    "D21090960" => "Science (2019)", # 2019 K-12 Science Standards for Alaska
   },
   # ===================
   # American Association for the Advancement of Science
@@ -62,6 +69,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # ===================
   "American Association of School Librarians" => {
     "D10003B9" => "Standards for the 21st-Century Learner",         # 2007 Standards for the 21st-Century Learner  http://www.ala.org/aasl/files/guidelinesandstandards/learningstandards/AASL_Learning_Standards_2007.pdf
+
+    # Aug 1, 2021 Imports:
+    "D21188182" => "AASL Standards Frameworks for Learners (2018)", # 2018 AASL Standards Frameworks for Learners
+
+
   },
   # ===================
   # American Psychological Association
@@ -554,6 +566,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2775612" => "Science: Physical Science - Integrated (2018)", # 2018 Arkansas Science Standards: Physical Science - Integrated
     "D2775613" => "Science: Physics (2018)", # 2018 Arkansas Science Standards: Physics
 
+    # Aug 1, 2021 Imports:
+    "D21189630" => "Technical Math (2019)", # 2019 Arkansas Technical Math for College and Career Content Standards
+    "D21189587" => "Quantitative Literacy (2017)", # 2017 Arkansas Quantitative Literacy Content Standards – Act 480
+
 
 
   },
@@ -778,6 +794,21 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21115331" => "Manufacturing (2019)", # 2019 Manufacturing
     "D21100803" => "Architecture & Construction (2019)", # 2019 Architecture & Construction
     "D21121314" => "Transportation, Distribution, and Logistics (2019)", # 2019 Transportation, Distribution, and Logistics
+
+    # Aug 1, 2021 Imports:
+    "D21157170" => "Information Technology (2020)", # 2020 Information Technology
+    "D21089981" => "English Language Arts (2020)", # 2020 Florida's B.E.S.T. Standards English Language Arts
+    "D21089982" => "Mathematics (2020)", # 2020 Florida's B.E.S.T. Standards Mathematics
+    "D21162495" => "Transportation, Distribution & Logistics (2020)", # 2020 Transportation, Distribution & Logistics
+    "D21161955" => "Manufacturing (2020)", # 2020 Manufacturing
+    "D21156779" => "Human Services (2020)", # 2020 Human Services
+    "D21156193" => "Hospitality and Tourism (2020)", # 2020 Hospitality and Tourism
+    "D21152745" => "Health Science (2020)", # 2020 Health Science
+    "D21152152" => "Education & Training (2020)", # 2020 Education & Training
+    "D21151027" => "Business Management & Administration (2020)", # 2020 Business Management & Administration
+    "D21149880" => "Arts, A/V Technology & Communication (2020)", # 2020 Arts, A/V Technology & Communication
+    "D21148408" => "Architecture & Construction (2020)", # 2020 Architecture & Construction
+
   },
   # ===================
   # Georgia
@@ -909,6 +940,21 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2805938" => "Theatre (2017)", # 2017 Georgia Standards of Excellence in Theatre
     "D2805939" => "Visual Art (2017)", # 2017 Georgia Standards of Excellence in Visual Art
     "D2957259" => "Mathematics - Differential Equations (2017)", # 2017 Mathematics Georgia Standards of Excellence - Differential Equations
+
+    # Aug 1, 2021 Imports:
+    "D21044557" => "Zoology (2019)", # 2019 Georgia Standards of Excellence: Zoology
+    "D21044556" => "Oceanography (2019)", # 2019 Georgia Standards of Excellence: Oceanography
+    "D21044555" => "Microbiology (2019)", # 2019 Georgia Standards of Excellence: Microbiology
+    "D21044554" => "Meteorology (2019)", # 2019 Georgia Standards of Excellence: Meteorology
+    "D21044553" => "Human Anatomy & Physiology (2019)", # 2019 Georgia Standards of Excellence: Human Anatomy & Physiology
+    "D21044552" => "Geology (2019)", # 2019 Georgia Standards of Excellence: Geology
+    "D21044551" => "Forensic Science (2019)", # 2019 Georgia Standards of Excellence: Forensic Science
+    "D21044550" => "Epidemiology (2019)", # 2019 Georgia Standards of Excellence: Epidemiology
+    "D21044549" => "Entomology (2019)", # 2019 Georgia Standards of Excellence: Entomology
+    "D21044548" => "Ecology (2019)", # 2019 Georgia Standards of Excellence: Ecology
+    "D21044547" => "Botany (2019)", # 2019 Georgia Standards of Excellence: Botany
+    "D21044546" => "Astronomy (2019)", # 2019 Georgia Standards of Excellence: Astronomy
+    "D21014923" => "Journalism (2018)", # 2018 Georgia Standards of Excellence: Journalism
 
   },
   # ===================
@@ -1128,6 +1174,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21095036" => "Mathematics: Quantitative Reasoning (2020)", # 2020 Indiana Academic Standards Mathematics: Quantitative Reasoning
     "D21012650" => "Mathematics: Analytical Algebra II (2018)", # 2018 Indiana Academic Standards Mathematics: Analytical Algebra II
 
+    # Aug 1, 2021 Imports:
+    "D21185999" => "Mass Media (2020)", # 2020 Indiana Academic Standards Mass Media: Grades 9-12
+
+
+
 
   },
   # ===================
@@ -1135,6 +1186,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # ===================
   "International Technology and Engineering Educators Association" => {
     "D10003E9" => "Technology Literacy",                  # 2000 Standards for Technological Literacy: Content for the Study of Technology  http://www.iteaconnect.org/TAA/PDFs/xstnd.pdf
+
+    # Aug 1, 2021 Imports:
+    "D21199461" => "Standards for Technical and Engineering Literacy (2020)", # 2020 Standards for Technical and Engineering Literacy
   },
   # ===================
   # Interstate School Leaders Licensure Consortium
@@ -1230,6 +1284,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug13, 2018 Imports:
     "D2867743" => "Mathematics (2017)", # 2017 Kansas Mathematics Standards
     "D2953714" => "English Language Arts Standards (2017)", # 2017 Kansas English Language Arts Standards
+
+    # Aug 1, 2021 Imports:
+    "D21183345" => "Handwriting (2020)", # 2020 Kansas Handwriting Curricular Standards
+    "D2842243" => "History, Government, and Social Studies Standards (2020)", # 2020 Kansas History, Government, and Social Studies Standards
 
   },
   # ===================
@@ -1331,6 +1389,43 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10002AA" => "Social Studies",                       # 2007 Social Studies Learning Results: Parameters for Essential Instruction  http://www.maine.gov/education/lres/pei/ss102207.pdf
     "D1000331" => "Visual & Performing Arts",             # 2007 Visual and Performing Arts Learning Results: Parameters for Essential Instruction  http://www.maine.gov/education/lres/vpa/documents/MLR-VPAComplete.pdf
     "D2516281" => "World Language",                       # 2007 World Language Learning Results: Parameters for Essential Instruction  http://www.maine.gov/doe/worldlanguages/standards/world-languages-standards.rtf
+
+    # Aug 1, 2021 Imports:
+    "D21136017" => "English Language Arts and Literacy Standards (2020)", # 2020 Maine Learning Results: English Language Arts and Literacy Standards
+    "D21089984" => "Science (NGSS) (2013)", # 2013 Maine's Learning Standards for Science (NGSS)
+    "D21136601" => " Mathematics (2020)", # 2020 Maine Learning Results: Mathematics
+    "D21178288" => "Automotive Service (2020)", # 2020 Automotive Service
+    "D21178056" => "Automotive Systems (2020)", # 2020 Automotive Systems
+    "D21173147" => "Video and Multimedia Journalism (2020)", # 2020 Video and Multimedia Journalism
+    "D21172945" => "Restaurant Operations (2020)", # 2020 Restaurant Operations
+    "D21172770" => "Residential Construction (2020)", # 2020 Residential Construction
+    "D21172612" => "Pre-Nursing Standards (2020)", # 2020 Pre-Nursing Standards
+    "D21172447" => "Pre-Nursing Internship Standards (2020)", # 2020 Pre-Nursing Internship Standards
+    "D21172339" => "Outdoor Leadership (2020)", # 2020 Outdoor Leadership
+    "D21172162" => "Machinist Operations (2020)", # 2020 Machinist Operations
+    "D21172040" => "Machine Tool Standards (2020)", # 2020 Machine Tool Standards
+    "D21171823" => "Law Enforcement & Police Patrol (2020)", # 2020 Law Enforcement & Police Patrol
+    "D21171574" => "IT Support Specialist (2020)", # 2020 IT Support Specialist
+    "D21171481" => "Forestry & Wildlife Management (2020)", # 2020 Forestry & Wildlife Management
+    "D21171306" => "Food Preparation (2020)", # 2020 Food Preparation
+    "D21170231" => "Firefighting (2020)", # 2020 Firefighting
+    "D21170022" => "Finish Carpentry (2020)", # 2020 Finish Carpentry
+    "D21169163" => "EMT Basic Standards (2020)", # 2020 EMT Basic Standards
+    "D21168943" => "Electrical II (2020)", # 2020 Electrical II
+    "D21168723" => "Electrical 1 (2020)", # 2020 Electrical 1
+    "D21168683" => "Early Childhood (2020)", # 2020 Early Childhood
+    "D21168514" => "CTE Academy (2020)", # 2020 CTE Academy
+    "D21168423" => "Crime Investigation & Criminology (2020)", # 2020 Crime Investigation & Criminology
+    "D21168385" => "Child Care (2020)", # 2020 Child Care
+    "D21168265" => "Broadcasting & Multimedia Production (2020)", # 2020 Broadcasting & Multimedia Production
+    "D21138089" => "Apple Technology & App Development (2020)", # 2020 Apple Technology & App Development
+    "D21144978" => "Mathematics - RSU 25 Promotion Standards (2020)", # 2020 RSU 25 Promotion Standards for Mathematics 1-2
+    "D21144895" => "English Language Arts - RSU 25 Promotion Standards  (2020)", # 2020 RSU 25 Promotion Standards for English Language Arts 1-8
+    "D21144867" => "Social Studies - RSU 25 Promotion Standards  (2020)", # 2020 RSU 25 Promotion Standards for Social Studies 5-8
+    "D21144833" => "Mathematics - RSU 25 Promotion Standards (2020)", # 2020 RSU 25 Promotion Standards for Mathematics 5-8
+    "D21144799" => "Science Mathematics RSU 25 Promotion Standards (2020)", # 2020 RSU 25 Promotion Standards for Science 5-8
+    "D21134362" => "Life and Career Ready Standards (2020)", # 2020 Maine Learning Results: Life and Career Ready Standards
+    "D21089980" => "Social Studies (2019)", # 2019 Maine Learning Results for Social Studies
   },
   # ===================
   # Maryland
@@ -1359,6 +1454,32 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # March 3, 2016 Imports:
     "D2682151" => "Technology Literacy (2007)", # 2007 Maryland Technology Literacy Standards
     "D2684064" => "Mathematics", # 2015 Maryland's College and Career-Ready Standards - Mathematics (Prekindergarten)
+
+    # Aug 1, 2021 Imports:
+    "D21188263" => "Dance (2019)", # 2019 Maryland Dance Education Framework
+    "D21188925" => "Theatre (2019)", # 2019 Maryland Theatre Education Framework
+    "D21189203" => "Visual Arts (2019)", # 2019 Maryland Visual Arts Education Framework
+    "D21188722" => "Music (2019)", # 2019 Maryland Music Education Framework
+    "D21188551" => "Media Arts (2019)", # 2019 Maryland Media Arts Education Framework
+    "D21183463" => "Technology (2016)", # 2016 Maryland Technology Education Standards
+    "D21072649" => "Comprehensive Health (2020)", # 2020 Maryland Comprehensive Health Education Framework
+    "D21072651" => "Physical Education (2019)", # 2019 Maryland K-12 Physical Education Framework
+    "D21014922" => "Government (2020)", # 2020 Maryland American Government Framework
+    "D21014921" => "Modern World History (2020)", # 2020 Maryland Modern World History Framework
+    "D21014920" => "United States History (2020)", # 2020 Maryland Middle School United States History Framework
+    "D21095825" => "Mathematics - Geometry (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Geometry
+    "D21095711" => "Mathematics - Algebra II (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Algebra II
+    "D21095618" => "Mathematics - Algebra I (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Algebra I
+    "D21095560" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 5
+    "D21095505" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 4
+    "D21095451" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 3
+    "D21095408" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 2
+    "D21095369" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 1
+    "D21095329" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Kindergarten
+    "D21095294" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Pre-Kindergarten
+    "D21095231" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 6
+    "D21095173" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 7
+    "D21095123" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 8
   },
   # ===================
   # Massachusetts
@@ -1407,6 +1528,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2716032" => "Science (2015)", # 2015 Michigan K-12 Science Standards
     # Jul29, 2020 Imports:
     "D2968388" => "Integrated Technology Competencies for Students (MITECS) (2017)", # 2017 Michigan Integrated Technology Competencies for Students (MITECS)
+    # Aug 1, 2021 Imports:
+    "D21033773" => "Social Studies (2019)", # 2019 Michigan K-12 Standards: Social Studies Content Expectations
   },
   # ===================
   # Minnesota
@@ -1446,6 +1569,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2950281" => "Information and Communication Technology I (2014)", # 2014 Information and Communication Technology I
     "D2950416" => "Information and Communication Technology II (2014)", # 2014 Information and Communication Technology II
     "D2754941" => "English Language Arts (2016)", # 2016 Mississippi College and Career Readiness Standards for English Language Arts
+
+    # Aug 1, 2021 Imports:
+    "D2994838" => "Social Studies (2018)", # 2018 Mississippi College- and Career-Ready Standards for the Social Studies
 
 
   },
@@ -1604,6 +1730,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug13, 2018 Imports:
     "D2843219" => "Science (2017)", # 2017 Nebraska College and Career Ready Standards for Science
 
+    # Aug 1, 2021 Imports:
+    "D21072654" => "Social Studies (2019)", # 2019 Nebraska Social Studies Standards
+
   },
   # ===================
   # Nevada
@@ -1657,6 +1786,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # July 27, 2016 Imports:
     "D2740436" => "English Language Arts (2016)", # 2016 New Jersey Student Learning Standards for English Language Arts
     "D2742493" => "Mathematics (2016)", # 2016 New Jersey Student Learning Standards for Mathematics
+
+    # Aug 1, 2021 Imports:
+    "D21130301" => "Social Studies (2020)", # 2020 New Jersey Student Learning Standards – Social Studies
+    "D21128380" => "Science (2020)", # 2020 New Jersey Student Learning Standards - Science
   },
   # ===================
   # New Mexico
@@ -1909,6 +2042,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug13, 2018 Imports:
     "D2788230" => "Mathematics (2017)", # 2017 North Dakota Mathematics Content Standards
     "D2788229" => "English Language Arts and Literacy (2017)", # 2017 North Dakota English Language Arts and Literacy Content Standards
+
+    # Aug 1, 2021 Imports:
+    "D21019771" => "Science (2019)", # 2019 North Dakota Science Content Standards
+    "D21045744" => "Social Studies (2019)", # 2019 North Dakota Social Studies Content Standards
   },
   # ===================
   # Ohio
@@ -1994,6 +2131,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Jul29, 2020 Imports:
     "D21024851" => "Social Studies (2019)", # 2019 Oklahoma Academic Standards for Social Studies
+
+    # Aug 1, 2021 Imports:
+    "D21131374" => "Science (2020)", # 2020 Oklahoma Academic Standards for Science
   },
   # ===================
   # Oregon
@@ -2173,6 +2313,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2804742" => "Visual and Performing Arts: Design (2017)", # 2017 South Carolina College- and Career-Ready Standards for Visual and Performing Arts Proficiency: Design
     "D2804743" => "Visual and Performing Arts: Dance (2017)", # 2017 South Carolina College- and Career-Ready Standards for Visual and Performing Arts Proficiency: Dance
 
+    # Aug 1, 2021 Imports:
+    "D21024846" => "Social Studies (2020)", # 2020 South Carolina Social Studies College- and Career-Ready Standards
+
   },
   # ===================
   # South Dakota
@@ -2202,6 +2345,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Jun28, 2019 Imports:
     "D2973775" => "English Language Arts & Literacy (2018)", # 2018 South Dakota State Standards for English Language Arts & Literacy in History/Social Studies, Science, and Technical Subjects
     "D2971927" => "Mathematics (2018)", # 2018 South Dakota State Standards for Mathematics
+
+    # Aug 1, 2021 Imports:
+    "D2971932" => "Oceti Sakowin (2018)", # 2018 South Dakota Oceti Sakowin Essential Understandings & Standards
 
   },
   # ===================
@@ -2344,6 +2490,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2769095" => "Physical Education (2016)", # 2016 Tennessee Physical Education Standards 6-8
     "D2769096" => "Physical Education (2016)", # 2016 Tennessee Physical Education Standards 9-12
 
+    # Aug 1, 2021 Imports:
+    "D21091223" => "STEM (2019)", # 2019 Tennessee STEM Standards of Practice Framework (K-5)
+
   },
 
   # ===================
@@ -2475,6 +2624,18 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21083299" => "Science - Earth and Space Systems (2010)", # 2010 Texas Essential Knowledge and Skills for Science - Earth and Space Systems
     "D21083300" => "Science - Environmental Systems (2010)", # 2010 Texas Essential Knowledge and Skills for Science - Environmental Systems
 
+    # Aug 1, 2021 Imports:
+    "D21205545" => "Social Studies (2018)", # 2018 Texas Essential Knowledge and Skills for Social Studies - Grade 5
+    "D21205456" => "Social Studies (2018)", # 2018 Texas Essential Knowledge and Skills for Social Studies - Grade 4
+    "D21205399" => "Social Studies (2018)", # 2018 Texas Essential Knowledge and Skills for Social Studies - Grade 3
+    "D21205340" => "Social Studies (2018)", # 2018 Texas Essential Knowledge and Skills for Social Studies - Grade 2
+    "D21205278" => "Social Studies (2018)", # 2018 Texas Essential Knowledge and Skills for Social Studies - Grade 1
+    "D21205232" => "Social Studies (2018)", # 2018 Texas Essential Knowledge and Skills for Social Studies - Kindergarten
+    "D21193371" => "Dance (2013)", # 2013 Texas Essential Knowledge and Skills for Dance
+    "D21192674" => "Theatre (2013)", # 2013 Texas Essential Knowledge and Skills for Theatre
+    "D21192210" => "Music (2013)", # 2013 Texas Essential Knowledge and Skills for Music
+    "D21191947" => "Art (2013)", # 2013 Texas Essential Knowledge and Skills for Art
+
   },
   # ===================
   # Utah
@@ -2529,6 +2690,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Jun28, 2019 Imports:
     "D21016202" => "English Language Arts and Literacy (2013)", # 2013 Utah Core State Standards for English Language Arts and Literacy in History/Social Studies, Science, and Technical Subjects
+
+    # Aug 1, 2021 Imports:
+    "D21033782" => "Science (2020)", # 2020 Utah Science with SEEd Standards (Grades 9-12)
+    "D21033781" => "Science (2020)", # 2020 Utah Science with SEEd Standards (Grades 3-5)
+    "D21033780" => "Science (2020)", # 2020 Utah Science with SEEd Standards (Grades K-2)
 
 
   },
@@ -2623,6 +2789,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2862287" => "Computer Science (2016)", # 2016 Washington State K-12 Computer Science Learning Standards
     "D2769085" => "Financial Education (2016)", # 2016 Washington State K-12 Financial Education Learning Standards
 
+    # Aug 1, 2021 Imports:
+    "D21045197" => "Social Studies (2019)", # 2019 Washington State K-12 Learning Standards for Social Studies
+
   },
   # ===================
   # WebJunction
@@ -2672,6 +2841,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2814050" => "Computer Science in the Modern World (2017)", # 2017 Computer Science in the Modern World
     "D2814051" => "Computer Science & Mathematics (2017)", # 2017 Computer Science & Mathematics
     "D2814052" => "Computer Science - Introduction to Geographic Information Systems (2017)", # 2017 Computer Science - Introduction to Geographic Information Systems
+
+    # Aug 1, 2021 Imports:
+    "D21182111" => "English Language Arts (2020)", # 2020 West Virginia College- and Career-Ready Standards for English Language Arts
   },
 
   # ===================
@@ -2709,6 +2881,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2975992" => "Environmental Literacy & Sustainability (2018)", # 2018 Wisconsin Standards for Environmental Literacy & Sustainability
     "D2979053" => "Social Studies (2018)", # 2018 Wisconsin Standards for Social Studies
 
+    # Aug 1, 2021 Imports:
+    "D21129598" => "English Language Arts (2020)", # 2020 Wisconsin Standards for English Language Arts
+    "D21201558" => "Mathematics (2021)", # 2021 Wisconsin Standards for Mathematics
+
 
   },
   # ===================
@@ -2737,6 +2913,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Dec 5, 2016 Imports:
     "D2765885" => "Science (2016)", # 2016 Wyoming Science Content and Performance Standards
+
+    # Aug 1, 2021 Imports:
+    "D21190058" => "Science (2018)", # 2018 Wyoming Science Extended Content and Performance Standards
+    "D2982516" => "Mathematics (2018)", # 2018 Wyoming Mathematics Content and Performance Standards
   },
 
   # =========
@@ -3108,6 +3288,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Jul29, 2020 Imports:
     "D21032016" => "Embark Content Standards (2019)", # 2019 Embark Content Standards
     "D21097696" => "Technology Content Statements (2020)", # 2020 Technology Content Statements
+
+    # Aug 1, 2021 Imports:
+    "D21195105" => "CRE Careers Content Statements (2021)", # 2021 CRE Careers Content Statements
+    "D21193684" => "CTE Business Content Statements (2021)", # 2021 CTE Business Content Statements
   },
 
   "Dublin Core Metadata Initiative" => {
@@ -3224,6 +3408,85 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2789447" => "SISXFAC001 - Maintain equipment for activities (2016)", # 2016 SISXFAC001 - Maintain equipment for activities
     "D2789448" => "SISXFAC002 - Maintain sport, fitness and recreation facilities (2016)", # 2016 SISXFAC002 - Maintain sport, fitness and recreation facilities
     "D2789449" => "SISXIND001 - Work effectively in sport, fitness and recreation environments (2016)", # 2016 SISXIND001 - Work effectively in sport, fitness and recreation environments
+
+    # Aug 1, 2021 Imports:
+    "643BAA6DFC154EF7BE175B58FC4D0CBB" => "Transmission Distribution and Rail Sector (UET12) (2020)", # 2020 Transmission Distribution and Rail Sector (UET12)
+    "686AEC52369C4CE58F72A93CD457A710" => "Electrotechnology (UEE11) (2020)", # 2020 Electrotechnology (UEE11)
+    "E71C55BCFC844159A8A4D3D14BE3877B" => "Transmission Distribution and Rail Sector (UET) (2020)", # 2020 Transmission Distribution and Rail Sector (UET)
+    "41F12F3731664E679EC7E06B8258DF8D" => "Electricity Supply Industry - Generation Sector (UEP12) (2020)", # 2020 Electricity Supply Industry - Generation Sector (UEP12)
+    "B61A08A8F437487CBA5AF2CCC5F7CCB7" => "Electrotechnology (UEE07) (2020)", # 2020 Electrotechnology (UEE07)
+    "DFF038DFA9294FAF9EBA46C892495B90" => "Transport and Logistics (TLI) (2020)", # 2020 Transport and Logistics (TLI)
+    "B1ECF0BD91BE49A29189A97530ADA911" => "Transport and Logistics (TLI10) (2020)", # 2020 Transport and Logistics (TLI10)
+    "5169ED7143FD4B37BC9A805A38A59669" => "Electrotechnology (UEE) (2020)", # 2020 Electrotechnology (UEE)
+    "05C8E901CBE34B219FE723E84E288FBA" => "Training and Education (TAE) (2020)", # 2020 Training and Education (TAE)
+    "48935CAF559E4041A28585ECFC8AF964" => "Training and Education (TAE10) (2020)", # 2020 Training and Education (TAE10)
+    "0B9E0C63689040DC8754B7C59E2B5E5A" => "Tourism Travel and Hospitality (SIT12) (2020)", # 2020 Tourism Travel and Hospitality (SIT12)
+    "A726111666E046AD848452F6D54136A7" => "Tourism Travel and Hospitality (SIT) (2020)", # 2020 Tourism Travel and Hospitality (SIT)
+    "3383DDE84BE9471D8B6538A414F2F611" => "Sport Fitness and Recreation (SIS10) (2020)", # 2020 Sport Fitness and Recreation (SIS10)
+    "67DE99ED518047E48ECD7771F7BE6B8E" => "Sport Fitness and Recreation (SIS) (2020)", # 2020 Sport Fitness and Recreation (SIS)
+    "8FB49851306F4A55AEF70D1AB4C7639F" => "Retail Services (SIR07) (2020)", # 2020 Retail Services (SIR07)
+    "2BD3666C0C4142E19830A1DB841F9BA8" => "Hairdressing (SIH11) (2020)", # 2020 Hairdressing (SIH11)
+    "01E45705C79741779DE0D266C8ABB983" => "Funeral Services (SIF) (2020)", # 2020 Funeral Services (SIF)
+    "6B7C2CB71C6946C79708FF147152381D" => "Retail Services (SIR) (2020)", # 2020 Retail Services (SIR)
+    "D611F2F05AF84012ACBD3EA42C91CE60" => "Beauty (SIB10) (2020)", # 2020 Beauty (SIB10)
+    "717D81C3E9DE4267B09C628DB3F5EEBB" => "Hairdressing and Beauty Services (SHB) (2020)", # 2020 Hairdressing and Beauty Services (SHB)
+    "02AB8AE74B8F4B82927AED700DD486DD" => "Floristry (SFL) (2020)", # 2020 Floristry (SFL)
+    "ED198EC8DA5D489FB9B24C46DCAF1EC7" => "Resources and Infrastructure Industry (RII09) (2020)", # 2020 Resources and Infrastructure Industry (RII09)
+    "5BF3678F46CE4E0399CBA30042B9C7D1" => "Resources and Infrastructure Industry (RII) (2020)", # 2020 Resources and Infrastructure Industry (RII)
+    "4016A037098942A0B0A95C076B1E3CF9" => "Racing and Breeding (RGR) (2020)", # 2020 Racing and Breeding (RGR)
+    "599D31D959164E5897242D58700183B6" => "Public Sector (PSP) (2020)", # 2020 Public Sector (PSP)
+    "C7BECFE853DD4D39AC80F00869B7F404" => "Public Safety (PUA00) (2020)", # 2020 Public Safety (PUA00)
+    "058C42F7A80944F1BAFE6A1A1ED2407E" => "Public Safety (PUA12) (2020)", # 2020 Public Safety (PUA12)
+    "D3182194C84746B5A5CA99845FFD5374" => "Public Safety (PUA) (2020)", # 2020 Public Safety (PUA)
+    "0088BB32AFCF47D3B6E1B3B4AC7B4AE7" => "Public Sector (PSP04) (2020)", # 2020 Public Sector (PSP04)
+    "8266A1385F844468B0BDA917F6F4B65A" => "Plastics Rubber and Cablemaking (PMB) (2020)", # 2020 Plastics Rubber and Cablemaking (PMB)
+    "B86626E1FE2E41B2AAB453FB94B5A479" => "Plastics Rubber and Cablemaking (PMB07) (2020)", # 2020 Plastics Rubber and Cablemaking (PMB07)
+    "84068ACF61554A2D942EEF42A2F77AE6" => "National Water (NWP) (2020)", # 2020 National Water (NWP)
+    "00C9A9B187EB45C6BABC2AA82F07637A" => "Textiles Clothing and Footwear (MST) (2020)", # 2020 Textiles Clothing and Footwear (MST)
+    "2E9D4D4B0569456D815B9517A0844D9F" => "Sustainability (MSS11) (2020)", # 2020 Sustainability (MSS11)
+    "5150272A59E244BE8692D7C98E623C66" => "Laboratory Operations (MSL09) (2020)", # 2020 Laboratory Operations (MSL09)
+    "6FE10A02558A4AA295C0E668B8121BCA" => "Manufacturing (MSM) (2020)", # 2020 Manufacturing (MSM)
+    "744D41A9031E4239ADB1CEF48A81EDC0" => "Sustainability (MSS) (2020)", # 2020 Sustainability (MSS)
+    "22AA57A2E8894FAD8537D541E3E5FD62" => "Laboratory Operations (MSL) (2020)", # 2020 Laboratory Operations (MSL)
+    "8ACD101D398743F3B99AD37BA91C735B" => "Furnishing (MSF) (2020)", # 2020 Furnishing (MSF)
+    "EF3192DE4AD14BC2BC9A962DD796C462" => "Manufacturing (MSA07) (2020)", # 2020 Manufacturing (MSA07)
+    "FCCAA8CD32F04178AEF1A53FDD33B9C4" => "Metal and Engineering (MEM05) (2020)", # 2020 Metal and Engineering (MEM05)
+    "A9D5D30F73D94CF287A206FD19A9F15B" => "Manufacturing and Engineering (MEM) (2020)", # 2020 Manufacturing and Engineering (MEM)
+    "6FA651D738C6456B8C6274E4397EA818" => "Local Government (LGA04) (2020)", # 2020 Local Government (LGA04)
+    "3B8277C701B74060872CC37786091C5E" => "Textiles Clothing and Footwear (LMT07) (2020)", # 2020 Textiles Clothing and Footwear (LMT07)
+    "8AE72BFE85AA41E1BD305D756B93DCCB" => "Maritime (MAR) (2020)", # 2020 Maritime (MAR)
+    "82BA425D7BCC4170A9D97E8A7BBAE4BB" => "Information and Communications Technology (ICT) (2020)", # 2020 Information and Communications Technology (ICT)
+    "E752FF66445541E5824F3791BF7C952F" => "Printing and Graphic Arts (ICP) (2020)", # 2020 Printing and Graphic Arts (ICP)
+    "9D0146A344FA4240B76F9E3F39B9ADA3" => "Information and Communications Technology (ICA11) (2020)", # 2020 Information and Communications Technology (ICA11)
+    "33EFFF075A1046AE82E3DDB5F3D811A5" => "Health (HLT07) (2020)", # 2020 Health (HLT07)
+    "A03C1A72B1684F8CB8EC29451E24A1B0" => "Health (HLT) (2020)", # 2020 Health (HLT)
+    "E6BB29AD78454DF3B93280160EA87FDB" => "Financial Services (FNS10) (2020)", # 2020 Financial Services (FNS10)
+    "419340A4B63D47288B12A44364E7D07D" => "Foundation Skills (FSK) (2020)", # 2020 Foundation Skills (FSK)
+    "4337D7B6D5864A4A82EB6E483FE4AB68" => "Forest and Wood Products (FWP) (2020)", # 2020 Forest and Wood Products (FWP)
+    "A9D15F06FA7C40498AAABE4AF7B672AE" => "Financial Services (FNS) (2020)", # 2020 Financial Services (FNS)
+    "89A934AC61F54D65B1506406F5A6F033" => "Food Processing (FDF10) (2020)", # 2020 Food Processing (FDF10)
+    "F9864AB124C2418988A9865F9570141E" => "Food Beverage and Pharmaceutical (FBP) (2020)", # 2020 Food Beverage and Pharmaceutical (FBP)
+    "0F470CEDAFF5455B81E5BE428419F5D6" => "Screen and Media (CUF07) (2020)", # 2020 Screen and Media (CUF07)
+    "63701022BA064A9F8945DF1C3CFA491B" => "Library Information and Cultural Services (CUL11) (2020)", # 2020 Library Information and Cultural Services (CUL11)
+    "2545DA04675F4617AE97D141AC327199" => "Visual Arts Crafts and Design (CUV11) (2020)", # 2020 Visual Arts Crafts and Design (CUV11)
+    "906081DAB00C4CD28105F30E658F82F4" => "Creative Arts and Culture (CUA) (2020)", # 2020 Creative Arts and Culture (CUA)
+    "444355BF898441748C8753C6D40B0A91" => "Property Services (CPP07) (2020)", # 2020 Property Services (CPP07)
+    "B130378760934497B9C747E7C49B4536" => "Correctional Services (CSC) (2020)", # 2020 Correctional Services (CSC)
+    "F373FB50CC2D4F55B702F346724CBF82" => "Property Services (CPP) (2020)", # 2020 Property Services (CPP)
+    "1A98573C9569426DA318D9389312AC33" => "Construction Plumbing and Services (CPC08) (2020)", # 2020 Construction Plumbing and Services (CPC08)
+    "E05A165D3DA440FFAF03D423F452A750" => "Construction Plumbing and Services (CPC) (2020)", # 2020 Construction Plumbing and Services (CPC)
+    "50ACC0ABD58F4D0CBDE3FDF8A6B76D41" => "Community Services (CHC08) (2020)", # 2020 Community Services (CHC08)
+    "F944275CEFBA46D28BED6FB1E1033261" => "Community Services (CHC) (2020)", # 2020 Community Services (CHC)
+    "EAF909E6EF1D4B498CFDCC8C44956645" => "Business Services (BSB07) (2020)", # 2020 Business Services (BSB07)
+    "47A3E097E39747A39CE058C4F5058C5D" => "Business Services (BSB) (2020)", # 2020 Business Services (BSB)
+    "44386AEDBB334C948C3DE63570483C90" => "Automotive Retail Service and Repair (AUR) (2020)", # 2020 Automotive Retail Service and Repair (AUR)
+    "AF5F63CD0429453EACB4AA357BB3FAE1" => "Automotive Manufacturing (AUM12) (2020)", # 2020 Automotive Manufacturing (AUM12)
+    "D9D98473C8C54A94828EAE213A181989" => "Automotive Manufacturing (AUM) (2020)", # 2020 Automotive Manufacturing (AUM)
+    "1E6BAD4F5D2146018B9EF463C0D535A9" => "Automotive Industry Retail Service and Repair (AUR12) (2020)", # 2020 Automotive Industry Retail Service and Repair (AUR12)
+    "6ADD6931C71240B4A19E1BC47ADE2029" => "Agriculture Horticulture and Conservation and Land Management (AHC10) (2020)", # 2020 Agriculture Horticulture and Conservation and Land Management (AHC10)
+    "B505D12F19224F2288E6FF93EC226068" => "Agriculture Horticulture and Conservation and Land Management (AHC) (2020)", # 2020 Agriculture Horticulture and Conservation and Land Management (AHC)
+    "D21181050" => "ACM - Animal Care and Management Training Package (2020)", # 2020 ACM - Animal Care and Management Training Package
+
   },
   "Australia" => {
     # Aug 9, 2017 Imports:
@@ -3513,6 +3776,16 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21019787" => "Ontario Catholic Secondary Curriculum Religious Education (Grades 9-12) (2016)", # 2016 Ontario Catholic Secondary Curriculum Religious Education (Grades 9-12)
     # Jul29, 2020 Imports:
     "D21045743" => "Ontario Catholic Religious Education 1-8 (2012)", # 2012 Ontario Catholic Religious Education 1-8
+    # Aug 1, 2021 Imports:
+    "D21186258" => "Ontario Catholic School Kindergarten Program (2019)", # 2019 Ontario Catholic School Kindergarten Program
+    "D21179355" => "Church and Culture (2018)", # 2018 Grade 12 University/College: Church and Culture (HRE 4M)
+    "D21179158" => "Equity and Social Justice (2013)", # 2013 Grade 12 University/College Preparation: Equity and Social Justice (HSE 4M)
+    "D21179280" => "Church and Culture (2018)", # 2018 Grade 12 OPEN: Church and Culture
+    "D21179052" => "Faith and Culture - World Religions - HRE 3M (2018)", # 2018 Grade 11 University/College: Faith and Culture - World Religions (HRE 3M)
+    "D21178979" => "Faith and Culture - World Religions - HRE 30 (2018)", # 2018 Grade 11 OPEN: Faith and Culture - World Religions (HRE 30)
+    "D21178802" => "Stewards of the Gift (2009)", # 2009 Grade 10 Civics: Stewards of the Gift
+    "D21178885" => "Christ and Culture (2018)", # 2018 Grade 10 OPEN: Christ and Culture (HRE 20)
+    "D21178724" => "Discipleship and Culture (2018)", # 2018 Grade 9 OPEN: Discipleship and Culture (HRE 10)
 
   },
 
@@ -3565,6 +3838,33 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21040556" => "Grade 12 Essential Mathematics (40S) Half Course VI (2014)", # 2014 Manitoba Curriculum Framework: Grade 12 Essential Mathematics (40S) Half Course VI
     "D21040557" => "Grade 12 Pre-Calculus Mathematics (40S) (2014)", # 2014 Manitoba Curriculum Framework: Grade 12 Pre-Calculus Mathematics (40S)
     "D21040552" => "Grade 11 Essential Mathematics (30S) Half Course IV (2014)", # 2014 Manitoba Curriculum Framework: Grade 11 Essential Mathematics (30S) Half Course IV
+
+    # Aug 1, 2021 Imports:
+    "D21198821" => "Chemistry (2021)", # 2021 Manitoba Specific Learning Outcomes for Chemistry (Grade 11)
+    "D21197503" => "Chemistry (2021)", # 2021 Manitoba General Learning Outcomes and Skills for Chemistry (Grade 11)
+    "D21197380" => "Science (2021)", # 2021 Manitoba Science (Grade 10)
+    "D21197233" => "Science (2021)", # 2021 Manitoba Science (Grade 9)
+    "D21197148" => "Psychology (2021)", # 2021 Manitoba Psychology (Grade 12)
+    "D21196792" => "Power Mechanics Technology (2021)", # 2021 Manitoba Power Mechanics Technology (Grade 9)
+    "D21198109" => "Drafting Outcomes (2021)", # 2021 Manitoba Drafting Outcomes (Grade 10)
+    "D21198031" => "Electricity and Electronics Outcomes (2021)", # 2021 Manitoba Electricity and Electronics Outcomes (Grade 10)
+    "D21197953" => "Electricity and Electronics Outcomes (2021)", # 2021 Manitoba Electricity and Electronics Outcomes (Grade 9)
+    "D21197874" => "Drafting Outcomes (2021)", # 2021 Manitoba Drafting Outcomes (Grade 9)
+    "D21198494" => "Indigenous Studies (2021)", # 2021 Manitoba Indigenous Studies (Grade 12)
+    "D21197794" => "Spanish (2021)", # 2021 Manitoba Spanish (Grade 9)
+    "D21198417" => "German (2021)", # 2021 Manitoba German (Grade 9)
+    "D21196555" => "German (2021)", # 2021 Manitoba German (Grade 10)
+    "D21196634" => "German (2021)", # 2021 Manitoba German (Grade 11)
+    "D21196713" => "German (2021)", # 2021 Manitoba German (Grade 12)
+    "D21196383" => "Family Studies (2021)", # 2021 Manitoba Family Studies (Grade 12)
+    "D21195745" => "Career Development: Life/Work Exploration (Grade 9) (2021)", # 2021 Manitoba Career Development: Life/Work Exploration (Grade 9)
+    "D21195838" => "Career Development: Life/Work Planning (Grade 10) (2021)", # 2021 Manitoba Career Development: Life/Work Planning (Grade 10)
+    "D21195935" => "Career Development: Life/Work Building (Grade 11) (2021)", # 2021 Manitoba Career Development: Life/Work Building (Grade 11)
+    "D21196001" => "Career Development: Life/Work Transitioning (Grade 12) (2021)", # 2021 Manitoba Career Development: Life/Work Transitioning (Grade 12)
+    "D21195368" => "Personal Finance (2021)", # 2021 Manitoba Personal Finance (Grade 10)
+    "D21195499" => "Accounting (2021)", # 2021 Manitoba Accounting Essentials (Grade 11)
+    "D21195610" => "Accounting (2021)", # 2021 Manitoba Accounting Systems (Grade 12)
+
 
   },
   "Henry County Schools" => {
