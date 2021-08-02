@@ -27,7 +27,7 @@ class StandardHierarchy
     standards[i+1..-1].inject([]){ |acc, ss|
 
       # If it's a root standard, we're done here and can break
-      if ss["depth"] == 0
+      if ss["depth"] == 0 || ss["depth"] == nil
         acc.push(ss)
         break acc
 
