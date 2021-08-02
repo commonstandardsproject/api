@@ -1,5 +1,5 @@
 # FROM ruby:3.0.2
-FROM circleci/ruby:3.0.2
+FROM circleci/ruby:2.7.4
 
 WORKDIR /home/app
 
