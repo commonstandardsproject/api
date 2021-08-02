@@ -60,9 +60,6 @@ module API
     # Make sure each request has an auth token and originates from
     # an origin specified in the user's document
     before do
-      p "HELLO"
-      p headers
-      p params
       key = headers["Api-Key"] || params["api-key"]
 
       if request.path.include?("swagger_doc") || request.path.include?("/api/v1/sitemap.xml")
