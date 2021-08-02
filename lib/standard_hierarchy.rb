@@ -20,7 +20,7 @@ class StandardHierarchy
 
   def self.find_ancestors(standards, standard, i)
     # If it's a root standard, it doesn't have ancestors
-    if standard["depth"] == 0
+    if standard.nil? || standard["depth"] == 0 || standard["depth"] == nil
       return []
     end
     last_standard = standard
