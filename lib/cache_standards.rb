@@ -30,7 +30,6 @@ class CachedStandards
         :replace_one => {
           :find => {_id: s["id"]},
           :replacement => {
-            _id:             s["id"],
             asnIdentifier:   s["asnIdentifier"],
             standardSetId:   standardSet["_id"],
             standardDocumentId: standardSet["document"] ? standardSet["document"]["id"] : nil,
