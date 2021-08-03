@@ -52,18 +52,22 @@ class Importer
       p "Requesting " + _doc[:url] + " and using " +  "https://asnstaticd2l.s3.amazonaws.com/data/rdf/" + _doc[:id].upcase + ".json"
       request = Typhoeus::Request.new("https://asnstaticd2l.s3.amazonaws.com/data/rdf/" + _doc[:id].upcase + ".json", followlocation: true)
       request.on_complete do |response|
-        begin
-          p "#{index + 1}. Converting: #{request.url}"
-          doc = ASNResourceParser.convert(Oj.load(response.body))
-          doc = set_retrieved(doc, request, _doc[:date_modified])
-          doc = save_standard_document(doc)
-          doc = generate_standard_sets(doc)
-          update_jurisdiction(doc)
+        if response.code == 403
+          p "403 for #{request.url}"
+        else
+          begin
+            p "#{index + 1}. Converting: #{request.url}"
+            doc = ASNResourceParser.convert(Oj.load(response.body))
+            doc = set_retrieved(doc, request, _doc[:date_modified])
+            doc = save_standard_document(doc)
+            doc = generate_standard_sets(doc)
+            update_jurisdiction(doc)
 
-        rescue Exception => e
-          rescue_exception(e, doc)
-          # https://github.com/typhoeus/typhoeus/issues/679
-          GC.start()
+          rescue Exception => e
+            rescue_exception(e, doc)
+            # https://github.com/typhoeus/typhoeus/issues/679
+            GC.start()
+          end
         end
       end
       hydra.queue(request)
