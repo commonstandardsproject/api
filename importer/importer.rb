@@ -222,7 +222,6 @@ def generate_standard_sets(doc)
     p "Converting #{doc["document"]["title"]}: #{query["title"]}"
     set = QueryToStandardSet.generate(doc, query)
     StandardSet.update(set, {cache_standards: false, send_to_algolia: false})
-    Parallel::Kill
   }
   doc
 end
