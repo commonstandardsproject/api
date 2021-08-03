@@ -49,6 +49,7 @@ class Importer
       # If we want to use the ASN urls, uncomment this line. I switched to using AWS urls to relieve load on ASN
       # servers and increase thoroughput
       # request = Typhoeus::Request.new(doc[:url] + "_full.json", followlocation: true)
+      p "Requesting " + doc[:url] + " and using " +  "http://s3.amazonaws.com/asnstaticd2l/data/rdf/" + _doc[:id].upcase + ".json"
       request = Typhoeus::Request.new("http://s3.amazonaws.com/asnstaticd2l/data/rdf/" + _doc[:id].upcase + ".json", followlocation: true)
       request.on_complete do |response|
         begin
