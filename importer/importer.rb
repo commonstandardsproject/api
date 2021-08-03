@@ -62,6 +62,8 @@ class Importer
 
         rescue Exception => e
           rescue_exception(e, doc)
+          # https://github.com/typhoeus/typhoeus/issues/679
+          GC.start()
         end
       end
       hydra.queue(request)
