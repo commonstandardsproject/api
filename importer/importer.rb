@@ -218,7 +218,8 @@ end
 
 
 def generate_standard_sets(doc)
-  Parallel.each(doc["standardSetQueries"], :in_processes => 16){|query|
+  # Parallel.each(doc["standardSetQueries"], :in_processes => 16){|query|
+  doc["standardSetQueries"].each{|query|
     p "Converting #{doc["document"]["title"]}: #{query["title"]}"
     set = QueryToStandardSet.generate(doc, query)
     StandardSet.update(set, {cache_standards: false, send_to_algolia: false})
