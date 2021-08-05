@@ -5,7 +5,7 @@ gem 'mongo'
 gem 'bson'
 gem 'bson_ext'
 # gem 'grape'
-gem 'grape', '~>0.16.0'
+gem 'grape', '~>1.1.0'
 # for this issue
 # https://github.com/ruby-grape/grape/issues/1966
 gem 'rack', '~>2.0.8'

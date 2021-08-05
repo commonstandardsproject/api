@@ -57,7 +57,6 @@ GEM
       dry-data (~> 0.5, >= 0.5.0)
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.1, >= 0.1.2)
-    enumerable-lazy (0.0.2)
     equalizer (0.0.11)
     ethon (0.14.0)
       ffi (>= 1.15.0)
@@ -88,13 +87,10 @@ GEM
     ffi (1.15.3)
     foreman (0.87.2)
     formatador (0.3.0)
-    grape (0.16.2)
+    grape (1.1.0)
       activesupport
       builder
-      hashie (>= 2.1.0)
-      multi_json (>= 1.3.2)
-      multi_xml (>= 0.5.2)
-      mustermann19 (~> 0.4.3)
+      mustermann-grape (~> 1.0.0)
       rack (>= 1.3.0)
       rack-accept
       virtus (>= 1.0.0)
@@ -126,7 +122,6 @@ GEM
       ffi
       guard (~> 2.0)
       spoon
-    hashie (4.1.0)
     httpclient (2.8.3)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
@@ -149,8 +144,8 @@ GEM
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    mustermann19 (0.4.4)
-      enumerable-lazy
+    mustermann-grape (1.0.1)
+      mustermann (>= 1.0.0)
     nenv (0.3.0)
     newrelic_rpm (7.2.0)
     nio4r (2.5.7)
@@ -249,7 +244,7 @@ DEPENDENCIES
   dry-logic (~> 0.1.4)
   dry-validation (~> 0.6.0)
   foreman
-  grape (~> 0.16.0)
+  grape (~> 1.1.0)
   grape-entity
   grape-swagger
   grape-swagger-entity
