@@ -34,7 +34,8 @@ module API
 
 
         standardSets = $db[:standard_sets].find({
-          "jurisdiction.id" => params[:id]
+          "jurisdiction.id" => params[:id],
+          "cspStatus.value" => {"$ne" => "hidden"}
         }).projection({
           "_id" => 1,
           "title" => 1,

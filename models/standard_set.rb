@@ -29,6 +29,18 @@ class StandardSet
   end
   attribute :jurisdiction, Jurisdiction, default: -> (page, attrs){Jurisdiction.new}
 
+  class CspStatus
+    include Virtus.model
+    attribute :value, String, default: "visible"
+    attribute :notes, String
+    class Validator < ::Dry::Validation::Schema
+      key(:id, &:str?)
+      key(:title, &:str?)
+    end
+  end
+  attribute :cspStatus, CspStatus, default: -> (page, attrs){CspStatus.new}
+
+
   class License
     include Virtus.model
     attribute :title, String, default: "CC BY 4.0 US"
