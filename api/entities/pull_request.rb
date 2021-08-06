@@ -1,4 +1,5 @@
 require 'grape-entity'
+require_relative './activity'
 
 module API
   module Entities
