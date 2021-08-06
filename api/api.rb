@@ -18,8 +18,15 @@ require_relative "pull_requests"
 module API
   class API < Grape::API
 
+    self.logger.level = Logger::DEBUG
+
     logger.formatter = ::GrapeLogging::Formatters::Default.new
-    use ::GrapeLogging::Middleware::RequestLogger, { logger: logger }
+    use ::GrapeLogging::Middleware::RequestLogger, { logger: logger, log_level: 'debug' }
+
+    rescue_from :all do |e|
+      ::API::API.logger.error(e)
+      #do here whatever you originally planned to do :)
+    end
 
     format :json
     prefix :api
