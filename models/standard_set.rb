@@ -32,7 +32,7 @@ class StandardSet
   class CspStatus
     include Virtus.model
     attribute :value, String, default: "visible"
-    attribute :notes, String
+    attribute :notes, String, default: nil
     class Validator < ::Dry::Validation::Schema
       key(:id, &:str?)
       key(:title, &:str?)
