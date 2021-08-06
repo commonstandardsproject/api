@@ -11,7 +11,7 @@ module API
       expose :submitterId
       expose :submitterEmail
       expose :submitterName
-      expose :activities
+      expose :activities, using: API::Entities::Activity
       expose :forkedFromStandardSetId
       expose :statusComment
 
