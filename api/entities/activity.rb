@@ -6,12 +6,11 @@ module API
     class Activity < Grape::Entity
       expose :id
       expose :createdAt
-      expose :type,
+      expose :type
       expose :status
       expose :title
       expose :userId
       expose :userName
-
     end
   end
 end
