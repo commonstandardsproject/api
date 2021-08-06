@@ -9,22 +9,17 @@ module API
       expose :title, documentation: {desc: "Title of the set"}
       expose :subject, documentation: {desc: "The subject"}
       expose :educationLevels, documentation: {desc: "An array of education levels", values: ::StandardSet::EDUCATION_LEVELS }
-      expose :cspStatus, safe: true do
-        expose :value, safe: true
-        expose :notes, safe: true
+      expose :cspStatus, safe: true do |doc, opts|
+        doc[:cspStatus].to_hash
       end
-      expose :license, safe: true do
-        expose :title, safe: true
-        expose :URL, safe: true
-        expose :rightsHolder, safe: true
+      expose :license, safe: true do |doc, opts|
+        doc[:license].to_hash
       end
-      expose :document, safe: true do
-        expose :title, safe: true
-        expose :sourceURL, safe: true
+      expose :document, safe: true do |doc, opts|
+        doc[:document].to_hash
       end
-      expose :jurisdiction, safe: true do
-        expose :title, safe: true
-        expose :id, safe: true
+      expose :jurisdiction, safe: true do |doc, opts|
+        doc[:jurisdiction].to_hash
       end
 
       expose :standards_map, as: :standards
@@ -38,9 +33,6 @@ module API
         }
       end
 
-      # expose :standards, documentation: {desc: "A map of standards"} do |doc, options|
-
-      # end
     end
   end
 end
