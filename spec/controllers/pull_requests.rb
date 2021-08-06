@@ -86,7 +86,7 @@ describe "PullRequest API" do
       })
       PullRequest.insert(pull_request)
       pull_request.standardSet.title = "MD Math Grade 2"
-      response = post "/api/v1/pull_requests/#{pull_request.id}", :standard_set_id => "md-math-grade1", data: pull_request.as_json
+      response = post "/api/v1/pull_requests/#{pull_request.id}", :standard_set_id => "md-math-grade1", data: pull_request.to_hash
       model = PullRequest.find("1")
       expect(model.standardSet.title).to eq("MD Math Grade 2")
     end
