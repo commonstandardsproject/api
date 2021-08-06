@@ -107,7 +107,7 @@ class PullRequest
   end
 
   def self.insert(model)
-    attrs = model.to_hash
+    attrs = model.as_json
     attrs[:_id] = attrs.delete("id")
     $db[:pull_requests].insert_one(attrs)
   end
@@ -125,7 +125,7 @@ class PullRequest
     # only let the user update the standard set
     attrs = {
       title: "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}",
-      standardSet: model.to_hash["standardSet"]
+      standardSet: model.as_json["standardSet"]
     }
     new_model = self.from_mongo(update_in_mongo(model.id, attrs))
     return [true, new_model]
@@ -134,10 +134,10 @@ class PullRequest
   def self.update(model)
     model.updatedAt = Time.now
     model.title = "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}"
-    attrs = model.to_hash
+    attrs = model.as_json
     attrs.delete("id")
 
-    update_in_mongo(model.id, attrs.to_hash)
+    update_in_mongo(model.id, attrs.as_json)
 
     model
   end
@@ -155,12 +155,12 @@ class PullRequest
     if validation.messages.length > 0
       raise ArgumentError, "Validation failed: #{validation.messages.inspect}"
     end
-    attrs = model.to_hash
+    attrs = model.as_json
     attrs.delete(:id)
     model = $db[:pull_requests]
       .find({_id: model.id})
       .find_one_and_update({
-        "$push" => { "activities" => activity.to_hash }
+        "$push" => { "activities" => activity.as_json }
       })
   end
 
@@ -199,7 +199,7 @@ class PullRequest
     self.add_activity(model, activity)
 
     if status == "approved"
-      StandardSet.update(model.standardSet.to_hash)
+      StandardSet.update(model.standardSet.as_json)
       Jurisdiction.approve(model.standardSet.jurisdiction.id)
     end
 

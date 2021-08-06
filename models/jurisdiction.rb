@@ -19,7 +19,7 @@ class Jurisdiction
   end
 
   def self.insert(model)
-    attrs = model.to_hash
+    attrs = model.as_json
     attrs[:_id] = attrs.delete("id")
     $db[:jurisdictions].insert_one(attrs)
   end
