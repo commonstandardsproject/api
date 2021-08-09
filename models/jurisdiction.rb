@@ -1,3 +1,4 @@
+require 'virtus_convert'
 class Jurisdiction
   include Virtus.model
 

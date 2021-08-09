@@ -1,4 +1,5 @@
 require_relative "activity"
+require 'virtus_convert'
 require_relative "user"
 require_relative "standard_set"
 require_relative "asana_task"
