@@ -39,7 +39,7 @@ module API
           "jurisdiction.id" => params[:id],
         }
         if params[:hideHiddenSets] == true
-          standard_set_query["cspStatus.value"] => {"$ne" => "hidden"}
+          standard_set_query["cspStatus.value"] = {"$ne" => "hidden"}
         end
 
         standard_set_projection = {
