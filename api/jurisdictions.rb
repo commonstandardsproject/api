@@ -26,32 +26,35 @@ module API
       desc "Return a jurisdiction", entity: Entities::Jurisdiction
       params do
         requires :id, type: String, desc: "ID", default: "49FCDFBD2CF04033A9C347BFA0584DF0"
+        optional :hideHiddenSets, type: Boolean, desc: "Hide the sets that are duplicative or otherwise are out of date", default: true
       end
       get "/:id" do
+        # Find the jurisdiction
         jurisdiction = $db[:jurisdictions].find({
           :_id => params[:id],
         }).to_a.first
 
-
-        standardSets = $db[:standard_sets].find({
+        #  Construct standard set query
+        standard_set_query = {
           "jurisdiction.id" => params[:id],
-          "cspStatus.value" => {"$ne" => "hidden"}
-        }).projection({
+        }
+        if params[:hideHiddenSets] == true
+          standard_set_query["cspStatus.value"] => {"$ne" => "hidden"}
+        end
+
+        standard_set_projection = {
           "_id" => 1,
           "title" => 1,
           "subject" => 1,
           "document" => 1,
           "educationLevels" => 1
-        }).to_a
+        }
+
+        # Find the standard sets
+        standardSets = $db[:standard_sets].find(standard_set_query).projection(standard_set_projection).to_a
+
+        # Assemble doc
         jurisdiction["standardSets"] = standardSets
-
-
-        # We're tenatively taking out standard_documents from the response
-        # documents = $db[:standard_documents].find({
-        #   "document.jurisdictionId" => params[:id]
-        # }).projection("_id" => 1, "document.title" => 1).to_a
-        # jurisdiction["documents"]    = documents
-
         present :data, jurisdiction, with: Entities::Jurisdiction
       end
 
