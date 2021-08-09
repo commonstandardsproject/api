@@ -10,16 +10,16 @@ module API
       expose :subject, documentation: {desc: "The subject"}
       expose :educationLevels, documentation: {desc: "An array of education levels", values: ::StandardSet::EDUCATION_LEVELS }
       expose :cspStatus, safe: true do |doc, opts|
-        doc[:cspStatus].to_hash
+        (doc[:cspStatus] || {}).to_hash
       end
       expose :license, safe: true do |doc, opts|
-        doc[:license].to_hash
+        (doc[:license] || {}).to_hash
       end
       expose :document, safe: true do |doc, opts|
-        doc[:document].to_hash
+        (doc[:document] || {}).to_hash
       end
       expose :jurisdiction, safe: true do |doc, opts|
-        doc[:jurisdiction].to_hash
+        (doc[:jurisdiction] || {}).to_hash
       end
 
       expose :standards_map, as: :standards
