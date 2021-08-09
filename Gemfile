@@ -28,6 +28,7 @@ gem 'newrelic_rpm'
 gem 'thor'
 gem "slack-notify"
 gem 'virtus', '~>1.0.5'
+gem 'virtus_convert'
 gem 'dry-validation', '~>0.6.0'
 gem 'dry-equalizer', '~>0.2.0'
 gem 'dry-logic', '~>0.1.4'

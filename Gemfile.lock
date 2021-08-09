@@ -233,6 +233,7 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
+    virtus_convert (0.1.0)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -276,6 +277,7 @@ DEPENDENCIES
   thor
   typhoeus
   virtus (~> 1.0.5)
+  virtus_convert
 
 RUBY VERSION
    ruby 2.7.4p191
