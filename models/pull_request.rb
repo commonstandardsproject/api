@@ -101,7 +101,7 @@ class PullRequest
     model.status = "draft"
     model.activities.push(activity)
 
-    insert(model)
+    insert(model.to_hash)
     self.create_asana_task(model)
     model
   end
