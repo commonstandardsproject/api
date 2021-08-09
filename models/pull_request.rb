@@ -107,7 +107,7 @@ class PullRequest
   end
 
   def self.insert(model)
-    attrs = VirtusConvert.new(model).to_hash
+    attrs = ::VirtusConvert.new(model).to_hash
     attrs[:_id] = attrs.delete(:id)
     $db[:pull_requests].insert_one(attrs)
   end
@@ -125,7 +125,7 @@ class PullRequest
     # only let the user update the standard set
     attrs = {
       title: "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}",
-      standardSet: VirtusConvert.new(model).to_hash[:standardSet]
+      standardSet: ::VirtusConvert.new(model).to_hash[:standardSet]
     }
     new_model = self.from_mongo(update_in_mongo(model.id, attrs))
     return [true, new_model]
@@ -134,7 +134,7 @@ class PullRequest
   def self.update(model)
     model.updatedAt = Time.now
     model.title = "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}"
-    attrs = VirtusConvert.new(model).to_hash
+    attrs = ::VirtusConvert.new(model).to_hash
     attrs.delete(:id)
 
     update_in_mongo(model.id, attrs)
@@ -197,7 +197,7 @@ class PullRequest
     self.add_activity(model, activity)
 
     if status == "approved"
-      StandardSet.update(VirtusConvert.new(model).to_hash[:standardSet])
+      StandardSet.update(::VirtusConvert.new(model).to_hash[:standardSet])
       Jurisdiction.approve(model.standardSet.jurisdiction.id)
     end
 

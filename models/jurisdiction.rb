@@ -19,7 +19,7 @@ class Jurisdiction
   end
 
   def self.insert(model)
-    attrs = VirtusConvert.new(model).to_hash
+    attrs = ::VirtusConvert.new(model).to_hash
     attrs[:_id] = attrs.delete("id")
     $db[:jurisdictions].insert_one(attrs)
   end
