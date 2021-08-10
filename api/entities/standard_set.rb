@@ -22,15 +22,19 @@ module API
         (doc[:jurisdiction] || {}).to_hash
       end
 
-      expose :standards_map, as: :standards
+      expose :standards_map_or_array, as: :standards
 
       private
-      def standards_map
+      def standards_map_or_array
         standards = object[:standards] || {}
-        standards.reduce({}) {|map, kv|
-          map[kv[0]] = kv[1].to_hash
-          map
-        }
+        if standards.is_a? Hash
+          standards.reduce({}) {|map, kv|
+            map[kv[0]] = kv[1].to_hash
+            map
+          }
+        else
+          standards.map{|standard| standard.to_hash}
+        end
       end
 
     end

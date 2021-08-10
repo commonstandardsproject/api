@@ -12,6 +12,7 @@ module API
       desc "Fetch a standards set", entity: Entities::StandardSet
       params do
         requires :id, type: String, desc: "ID", default: "49FCDFBD2CF04033A9C347BFA0584DF0_D2604890_grade-01"
+        optional :standardsAsArray, type: Boolean, desc: "Send back standards as an array instead of a dictionary", default: false
       end
       get "/:id" do
         standard_set = $db[:standard_sets].find({
@@ -22,6 +23,9 @@ module API
 
         # Add the ancestor ids to the response. This a read only field
         standard_set["standards"] = StandardHierarchy.add_ancestor_ids(standard_set["standards"])
+        if params[:standardsAsArray]
+          standard_set["standards"] = standard_set["standards"].values
+        end
         standard_set["educationLevels"] ||= []
         standard_set["id"] = standard_set["_id"]
 
