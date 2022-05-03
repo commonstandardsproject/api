@@ -1,0 +1,35 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - vendor/**/*
+    - example/**/*
+  TargetRubyVersion: 2.7
+
+Layout/EmptyLinesAroundArguments:
+  Enabled: false
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - spec/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/ClassLength:
+  Max: 300
+
+Metrics/MethodLength:
+  Exclude:
+    - spec/**/*
+
+Naming:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false

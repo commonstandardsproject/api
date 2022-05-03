@@ -1,0 +1,86 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - vendor/**/*
+    - example/**/*
+  NewCops: enable
+  TargetRubyVersion: 3.0
+  SuggestExtensions: false
+
+#  Layout stuff
+#
+Layout/EmptyLinesAroundArguments:
+  Enabled: false
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - spec/**/*
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+#  Lint stuff
+#
+Lint/ConstantDefinitionInBlock:
+  Enabled: true
+  Exclude:
+    - spec/**/*
+
+#  Metrics stuff
+#
+Metrics/AbcSize:
+  Max: 25
+  IgnoredMethods:
+    # from lib/grape_entity/exposure/nesting_exposure.rb
+    - 'normalized_exposures'
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/CyclomaticComplexity:
+  Max: 13
+
+Metrics/ClassLength:
+  Max: 300
+
+Metrics/MethodLength:
+  Max: 26
+  Exclude:
+    - spec/**/*
+
+Metrics/PerceivedComplexity:
+  Max: 11
+  IgnoredMethods:
+    # from lib/grape_entity/entity.rb
+    - 'expose'
+    - 'merge_options'
+    # from lib/grape_entity/exposure/nesting_exposure.rb
+    - 'normalized_exposures'
+
+#  Naming stuff
+#
+
+Naming:
+  Enabled: false
+
+#  Style stuff
+#
+Style/Documentation:
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  AllowedMethods:
+    # from lib/grape_entity/condition/base.rb
+    - 'initialize'
+    # form lib/grape_entity/entity.rb
+    - 'entity_class'
+    - 'present_collection'

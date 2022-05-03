@@ -1,0 +1,6 @@
+---
+BUNDLE_PATH: ".bundle"
+BUNDLE_FORCE_RUBY_PLATFORM: "true"
+BUNDLE_CACHE_ALL: "false"
+BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries"
+BUNDLE_WITH: "rails"

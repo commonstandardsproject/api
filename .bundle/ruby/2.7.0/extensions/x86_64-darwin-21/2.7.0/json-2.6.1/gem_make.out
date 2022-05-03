@@ -1,0 +1,13 @@
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+/Users/schrater/.rbenv/versions/2.7.1/bin/ruby -I /Users/schrater/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20220502-77070-1qrtkum.rb extconf.rb
+creating Makefile
+
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+make "DESTDIR=" install

@@ -1,0 +1,225 @@
+<%
+var singularName  = resource.name,
+    pluralName    = plural(singularName),
+    mixins        = {
+      task: ["AttachmentUploading", "EventSubscription"],
+      project: ["EventSubscription"]
+    },
+    skip          = { attachment: ["createOnTask"] },
+    formatComment = function formatComment(text, indentation) {
+        var indent = Array(indentation + 1).join(" ")
+        return text.trim().split("\n").map(function(line) {
+            return indent + (line.length > 0 ? "# " : "#") + line
+        }).join("\n")
+    }
+
+
+function Action(action) {
+    var that = this
+    this.action = action
+    this.collection = action.collection == true
+    this.requiresData = action.method == "POST" || action.method == "PUT"
+    this.isInstanceAction = (action.method == "PUT" || action.method == "DELETE")
+    this.method = action.method
+    this.methodName = snake(action.name)
+    this.clientMethod = action.method.toLowerCase()
+    this.returnsUpdatedRecord = action.method == 'PUT' || action.comment.match(/Returns[a-z\W]+updated/) !== null
+    this.returnsNothing = action.comment.match(/Returns an empty/) !== null
+
+    // Params and idParams
+    var params = action.params || []
+    this.idParams = _.filter(params, function(p) { return p.type == "Id" })
+
+    // If it looks like an instance action but it's not, make it one
+    if (!this.isInstanceAction) {
+        var mainIdParam = _.find(this.idParams, function(p) { return p.name == singularName })
+        if (mainIdParam !== undefined && !action.name.match(/Id/)) {
+            this.isInstanceAction = true
+            this.mainIdParam = mainIdParam
+        }
+    }
+
+    if (this.idParams.length == 1 &&
+        action.path.match(/%d/) &&
+        (action.name.match(/Id/) || (this.isInstanceAction && this.mainIdParam == undefined))) {
+            var mainIdParam = this.idParams[0]
+            this.mainIdParam = mainIdParam
+            this.inferredReturnType = this.isInstanceAction ? 'self.class' : 'self'
+    }
+
+    if (mainIdParam !== undefined) {
+        this.params = _.reject(params, function(p) { return p.name == mainIdParam.name })
+    } else {
+        this.params = params
+    }
+
+    if (!this.inferredReturnType) {
+        // Infer return type
+        var name = action.path.match(/\/([a-zA-Z]+)$/)
+        if (name !== null) {
+            name = name[1]
+
+            // Desugarize 'addProject' to 'project'
+            var camelCaseTail = name.match(/.*([A-Z][a-z]+)$/)
+            if (camelCaseTail !== null) { name = decap(camelCaseTail[1]) }
+
+            name = single(name)
+
+            var explicit = _.find(resources, function(p) { return p == name })
+
+            if (name == singularName || name == 'parent' || name == 'children' || name.match(/^sub/) !== null) {
+                this.inferredReturnType = this.isInstanceAction ? 'self.class' : 'self'
+            } else if (explicit !== undefined) {
+                this.inferredReturnType = cap(explicit)
+            } else {
+                this.inferredReturnType = 'Resource'
+            }
+        } else {
+            this.inferredReturnType = 'Resource'
+        }
+    }
+
+    // Endpoint path
+    this.path = _.reduce(this.idParams, function(acc, id) {
+        var localName = that.mainIdParam == id ? "id" : id.name
+        return acc.replace("\%d", "#{" + localName + "}")
+    }, action.path)
+
+    // Extra params (not in the URL) to be passed in the body of the call
+    this.extraParams = _.reject(this.params, function(p) {
+        return that.path.match(new RegExp("#{" + p.name + "}"))
+    })
+
+    // Params processing
+    var paramsLocal = "data"
+    if (this.collection) { this.extraParams.push({ name: "per_page", apiParamName: "limit" }) }
+    if (this.extraParams.length > 0) {
+        var paramNames = _.map(this.extraParams, function(p) { return (p.apiParamName || p.name) + ": " + p.name })
+        if (this.requiresData) {
+            var paramsProcessing = "with_params = data.merge(" + paramNames.join(", ") + ")"
+            paramsLocal = "with_params"
+        } else {
+            var paramsProcessing = "params = { " + paramNames.join(", ") + " }"
+            paramsLocal = "params"
+        }
+        paramsProcessing += ".reject { |_,v| v.nil? || Array(v).empty? }"
+    }
+
+    this.paramsProcessing = paramsProcessing
+    this.paramsLocal      = paramsLocal
+
+    // Method argument names
+    var argumentNames = Array()
+    if (!this.isInstanceAction) { argumentNames.push("client") }
+    if (this.mainIdParam !== undefined && !this.isInstanceAction) { argumentNames.push("id") }
+    _.forEach(this.params, function(param) {
+        argumentNames.push(param.name + ":" + (param.required ? " required(\"" + param.name + "\")" : " nil"))
+    })
+    if (this.collection) { argumentNames.push("per_page: 20") }
+    if (this.method != 'DELETE')  { argumentNames.push("options: {}") }
+    if (this.requiresData)          { argumentNames.push("**data") }
+    this.argumentNames = argumentNames
+
+    // API request params
+    var requestParams = Array()
+    requestParams.push('"' + this.path + '"')
+    if (this.paramsProcessing || this.argumentNames.indexOf("**data") != -1) {
+        var argument = this.requiresData ? "body" : "params"
+        requestParams.push(argument + ": " + paramsLocal)
+    }
+    if (this.method != 'DELETE') { requestParams.push("options: options") }
+    this.requestParams = requestParams
+    this.documentation = this.renderDocumentation()
+
+    // Constructor
+    this.constructor = function(body) {
+        var pre = '', post = ''
+        var wrapWithParsing = function(body) {
+            var pre = '', post = ''
+            if (!that.returnsNothing) {
+                pre = 'parse('
+                post = ')' + (that.collection ? '' : '.first')
+            }
+            return pre + body + post
+        }
+
+        if (!that.returnsNothing) {
+            if (that.isInstanceAction && that.returnsUpdatedRecord) {
+                pre = "refresh_with("
+                post = ')'
+            } else {
+                pre = that.collection ? "Collection.new(" : that.inferredReturnType + ".new("
+                post = (that.collection ? ', type: ' + that.inferredReturnType : '') + ', client: client)'
+            }
+        } else { post = ' && true' }
+        return pre + wrapWithParsing(body) + post
+    }
+
+    this.request = this.constructor("client." + this.clientMethod + "(" + this.requestParams.join(", ") + ")")
+}
+
+Action.prototype.renderDocumentation = function () {
+    var formatParamNotes = function(params) {
+        var trimmed = _.flatten(_.map(params, function(p) {
+            return _.map(p.notes, function(note) { return note.trim() })
+        }))
+        return (trimmed.length > 0 ? "\nNotes:\n\n" + trimmed.join("\n\n") : "")
+    }
+
+    var formatParam = function(p, name) {
+        return (name !== undefined ? name : p.name) + " - [" + p.type + "] " + p.comment
+    }
+    var lines = _.map(this.params, function(p) { return formatParam(p) })
+    if (this.mainIdParam !== undefined && !this.isInstanceAction) { lines.unshift(formatParam(this.mainIdParam, "id")) }
+    if (this.collection) { lines.push("per_page - [Integer] the number of records to fetch per page.") }
+    if (this.method != 'DELETE') { lines.push("options - [Hash] the request I/O options.") }
+    if (this.requiresData) { lines.push("data - [Hash] the attributes to post.") }
+    return this.action.comment + "\n" + lines.join("\n") + formatParamNotes(this.params)
+}
+
+var actionsToSkip   = skip[resource.name] || []
+var actionsToGen    = _.reject(resource.actions, function(action) {
+  return actionsToSkip.indexOf(action.name) != -1
+})
+
+var allActions      = _.map(actionsToGen, function(action) { return new Action(action) }),
+    instanceActions = _.filter(allActions, function(action) { return action.isInstanceAction }),
+    classActions    = _.reject(allActions, function(action) { return action.isInstanceAction })
+
+var mixinsToInclude = mixins[resource.name] || []
+
+%>### WARNING: This file is auto-generated by the asana-api-meta repo. Do not
+### edit it manually.
+
+module Asana
+  module Resources
+<%= formatComment(resource.comment, 4) %>
+    class <%= cap(singularName) %> < Resource
+<% _.forEach(mixinsToInclude, function(mixin) { %>
+      include <%= mixin %>
+<% }) %>
+<% _.forEach(resource.properties, function(property) { %>
+      attr_reader :<%= property.name %>
+<% }) %>
+      class << self
+        # Returns the plural name of the resource.
+        def plural_name
+          '<%= pluralName %>'
+        end
+<% _.forEach(classActions, function(action) { %>
+<%= formatComment(action.documentation, 8) %>
+        def <%= action.methodName %>(<%= action.argumentNames.join(", ") %>)
+<% if (action.paramsProcessing) { %>          <%= action.paramsProcessing %><% } %>
+          <%= action.request %>
+        end
+<% }) %>      end
+<% _.forEach(instanceActions, function(action) { %>
+<%= formatComment(action.documentation, 6) %>
+      def <%= action.methodName %>(<%= action.argumentNames.join(", ") %>)
+<% if (action.paramsProcessing) { %>        <%= action.paramsProcessing %><% } %>
+        <%= action.request %>
+      end
+<% }) %>
+    end
+  end
+end

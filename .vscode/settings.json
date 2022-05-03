@@ -1,0 +1,8 @@
+{
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": true,
+        "strings": "off"
+    },
+    "terminal.integrated.shellIntegration.enabled": true
+}

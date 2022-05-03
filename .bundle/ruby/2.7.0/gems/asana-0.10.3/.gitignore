@@ -1,0 +1,14 @@
+.idea
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/bin/
+test.rb
+/node_modules/
+/gemfiles/

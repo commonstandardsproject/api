@@ -1,0 +1,34 @@
+AllCops:
+  Exclude:
+    - vendor/**/*
+  TargetRubyVersion: 2.4
+
+inherit_from: .rubocop_todo.yml
+
+Layout/EmptyLinesAroundArguments:
+  Enabled: false
+
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/ClassLength:
+  Max: 300
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - spec/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - spec/**/*
+
+Naming:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false

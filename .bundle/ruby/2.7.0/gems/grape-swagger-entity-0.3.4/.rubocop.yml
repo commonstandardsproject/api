@@ -1,0 +1,25 @@
+AllCops:
+  Exclude:
+    - vendor/**/*
+  TargetRubyVersion:
+    2.2
+
+inherit_from: .rubocop_todo.yml
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/LineLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - spec/**/*
+
+Naming/FileName:
+  Enabled: false
+
+Layout/IndentFirstHashElement:
+  EnforcedStyle: consistent
