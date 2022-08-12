@@ -1,3 +1,4 @@
+require 'dotenv/load'
 require 'bundler/setup'
 require 'oj'
 require 'pp'
@@ -91,16 +92,42 @@ end
 
 def check_document_titles(docs)
   -> {
+    hydra = Typhoeus::Hydra.new(max_concurrency: ENV["IMPORT_CONCURRENCY"] || 10)
     jurisidictions_to_be_added =  docs["hits"]["hit"].map{|doc|
       jurisidiction_in_doc = doc["data"]["jurisdiction"][0]
       jurisdiction = SOURCE_TO_SUBJECT_MAPPINGS_GROUPED[jurisidiction_in_doc]
-      doc["data"]["jurisdiction"] if jurisdiction.nil?
+      jurisdiction_uri = nil
+      if jurisdiction.nil?
+        request = Typhoeus::Request.new("https://asnstaticd2l.s3.amazonaws.com/data/rdf/" + doc["id"].upcase + ".json", followlocation: true)
+        request.on_complete do |response|
+          # response.body
+          regex = /\"http:\/\/purl\.org\/ASN\/schema\/core\/jurisdiction\"\s+\:\s+\[\s+\{\s\"value\"\s\:\s\"(?<url>.+)\",/
+          match =  response.body.match(regex)
+          jurisdiction_uri =  match[:url] if match
+          response.body.match(regex)
+          #  "http://purl.org/ASN/schema/core/jurisdiction"=>[{"value"=>"http://purl.org/ASN/scheme/ASNJurisdiction/MTW"
+        end
+        hydra.queue(request)
+        hydra.run
+      end
+      [doc["data"]["jurisdiction"][0], jurisdiction_uri] if jurisdiction.nil?
     }.compact.uniq
 
     # We don't care about this anymore since the additional jurisdictions aren't ones we need
     if jurisidictions_to_be_added.length > 0
-      pp jurisidictions_to_be_added
-      puts "Add these jurisidictions to source_to_subject_mapping_grouped.rb and check that they're in JURISDICTION_MATCHERS if you want standards for these imported"
+      hash = {}
+      jurisidictions_to_be_added.each{|tuple|
+        hash[tuple[1]] = {:title => tuple[0], type: "", abbreviation: "", id: SecureRandom.uuid().to_s.upcase.gsub('-', '')}
+      }
+      pp "Add these to JURISDICTION_MATCHERS if you want standards for these imported"
+      pp hash
+      pp "----"
+      pp "Add these jurisidictions to source_to_subject_mapping_grouped.rb "
+      for_subj = {}
+      jurisidictions_to_be_added.each{|tuple|
+        for_subj[tuple[0]] = {}
+      }
+      pp for_subj
     end
 
     # ignoring per the comment above
