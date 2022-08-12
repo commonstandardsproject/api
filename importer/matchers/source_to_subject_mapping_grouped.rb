@@ -570,6 +570,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21189630" => "Technical Math (2019)", # 2019 Arkansas Technical Math for College and Career Content Standards
     "D21189587" => "Quantitative Literacy (2017)", # 2017 Arkansas Quantitative Literacy Content Standards – Act 480
 
+    # Aug11, 2022 Imports:
+    "D2985275" => "Social Studies: Economics (2017)", # 2017 Arkansas Social Studies Curriculum Framework: Economics
 
 
   },
@@ -603,6 +605,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2400206" => "Physical Education",                   # 2005 Physical Education Model Content Standards for California Public Schools, Kindergarten Through Grade Twelve  http://www.cde.ca.gov/be/st/ss/documents/pestandards.pdf
     "D1000315" => "Visual & Performing Arts",             # 2001 Visual and Performing Arts Content Standards for California Public Schools, Prekindergarten Through Grade Twelve  http://www.cde.ca.gov/be/st/ss/documents/vpastandards.pdf
     "D2532819" => "World Language",                       # 2009 World Language Content Standards for California Public Schools, Kindergarten Through Grade Twelve  http://www.cde.ca.gov/be/st/ss/documents/worldlanguage2009.pdf
+
+    # Aug11, 2022 Imports:
+    "D21024849" => "World Languages (2019)", # 2019 World Languages Standards for California Public Schools K-12
+
+
   },
   # ===================
   # Colorado
@@ -737,6 +744,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D10002DF" => "Theatre",                              # 2007 Delaware Theatre Content Standards and Grade Level Expectations  http://www.doe.k12.de.us/infosuites/staff/ci/content_areas/files/vpa/TheatreGLEPLE092007.pdf
     "D10002E0" => "Visual Art",                           # 2007 Delaware Visual Art Content Standards and Grade Level Expectations  http://www.doe.k12.de.us/infosuites/staff/ci/content_areas/files/vpa/VArtGLEPLE092007.pdf
     "D2603111" => "Next Generation Science",              # 2013 Next Generation Science Standards  http://www.nextgenscience.org/next-generation-science-standards
+
+    # Aug11, 2022 Imports:
+    "D21072650" => "Financial Literacy Standards (2018)", # 2018 Delaware Financial Literacy Standards
+    "D21189378" => "History (2018)", # 2018 Delaware Standards for History
+    "D21189430" => "Civics (2018)", # 2018 Delaware Standards for Civics
+    "D21189461" => "Economics (2018)", # 2018 Delaware Standards for Economics
+    "D21189484" => "Geography (2018)", # 2018 Delaware Standards for Geography
+
   },
   # ===================
   # District of Columbia
@@ -808,6 +823,29 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21151027" => "Business Management & Administration (2020)", # 2020 Business Management & Administration
     "D21149880" => "Arts, A/V Technology & Communication (2020)", # 2020 Arts, A/V Technology & Communication
     "D21148408" => "Architecture & Construction (2020)", # 2020 Architecture & Construction
+
+    # Aug11, 2022 Imports:
+    "D21219514" => "Architecture and Construction (2021)", # 2021 Architecture and Construction
+    "D21220954" => "Arts, A/V Technology & Communications (2021)", # 2021 Arts, A/V Technology & Communications
+    "D21222071" => "Business Management & Administration (2021)", # 2021 Business Management & Administration
+    "D21223667" => "Education & Training (2021)", # 2021 Education & Training
+    "D21224259" => "Health Science (2021)", # 2021 Health Science
+    "D21230392" => "Hospitality & Tourism (2021)", # 2021 Hospitality & Tourism
+    "D21230978" => "Human Services (2021)", # 2021 Human Services
+    "D21231340" => "Manufacturing (2021)", # 2021 Manufacturing
+    "D21231888" => "Transportation, Distribution & Logistics (2021)", # 2021 Transportation, Distribution & Logistics
+    "D21214777" => "Information Technology (2021)", # 2021 Information Technology
+    "D21247840" => "ACF Knowledge & Skills Competencies (2021)", # 2021 ACF Knowledge & Skills Competencies
+    "D21293183" => "Social Studies (2021)", # 2021 Next Generation Sunshine State Standards - Social Studies (Kindergarten)
+    "D21293253" => "Social Studies (2021)", # 2021 Next Generation Sunshine State Standards - Social Studies (Grade 1)
+    "D21293329" => "Social Studies (2021)", # 2021 Next Generation Sunshine State Standards - Social Studies (Grade 2)
+    "D21293400" => "Social Studies (2021)", # 2021 Next Generation Sunshine State Standards - Social Studies (Grade 3)
+    "D21293481" => "Social Studies (2021)", # 2021 Next Generation Sunshine State Standards - Social Studies (Grade 4)
+    "D21293599" => "Social Studies (2021)", # 2021 Next Generation Sunshine State Standards - Social Studies (Grade 5)
+    "D21293744" => "Social Studies (2021)", # 2021 Next Generation Sunshine State Standards - Social Studies (Grade 6)
+    "D21294055" => "Social Studies (2021)", # 2021 Next Generation Sunshine State Standards - Social Studies (Grade 7)
+    "D21293867" => "Social Studies (2021)", # 2021 Next Generation Sunshine State Standards - Social Studies (Grade 8)
+    "D21294311" => "Social Studies (2021)", # 2021 Next Generation Sunshine State Standards - Social Studies (High School)
 
   },
   # ===================
@@ -956,6 +994,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21044546" => "Astronomy (2019)", # 2019 Georgia Standards of Excellence: Astronomy
     "D21014923" => "Journalism (2018)", # 2018 Georgia Standards of Excellence: Journalism
 
+    # Aug11, 2022 Imports:
+    "D21253145" => "Map and Globe Skills (2016)", # 2016 Georgia Standards of Excellence - Map and Globe Skills
+    "D21253159" => "Information Processing Skills (2016)", # 2016 Georgia Standards of Excellence - Information Processing Skills
+
   },
   # ===================
   # Hawaii
@@ -971,6 +1013,23 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D100029C" => "Social Studies",                       # 2005 Hawaii Content and Performance Standards for Social Studies  http://165.248.30.40/hcpsv3/files/final_hcpsiii_socialstudies_librarydocs_1.pdf
     # July 27, 2016 Imports:
     "D2739283" => "Next Generation Science Standards (2016)", # 2016 Next Generation Science Standards
+
+    # Aug11, 2022 Imports:
+    "D21012632" => "Social Studies (2018)", # 2018 Hawaii Core Standards for Social Studies - Kindergarten
+    "D21012633" => "Social Studies (2018)", # 2018 Hawaii Core Standards for Social Studies - Grade 1
+    "D21012634" => "Social Studies (2018)", # 2018 Hawaii Core Standards for Social Studies - Grade 2
+    "D21012635" => "Social Studies (2018)", # 2018 Hawaii Core Standards for Social Studies - Grade 3
+    "D21012636" => "Social Studies (2018)", # 2018 Hawaii Core Standards for Social Studies - Grade 4
+    "D21012637" => "Social Studies (2018)", # 2018 Hawaii Core Standards for Social Studies - Grade 5
+    "D21012638" => "Social Studies - Grade 6: World History (2018)", # 2018 Hawaii Core Standards for Social Studies - Grade 6: World History
+    "D21012639" => "Social Studies - Grade 7: History of the Hawaiian Kingdom (2018)", # 2018 Hawaii Core Standards for Social Studies - Grade 7: History of the Hawaiian Kingdom
+    "D21012640" => "Social Studies - Grade 7: Pacific Island Studies (2018)", # 2018 Hawaii Core Standards for Social Studies - Grade 7: Pacific Island Studies
+    "D21012641" => "Social Studies - Grade 8: United States History (2018)", # 2018 Hawaii Core Standards for Social Studies - Grade 8: United States History
+    "D21012642" => "Social Studies - Grades 9-12: World History and Culture (2018)", # 2018 Hawaii Core Standards for Social Studies - Grades 9-12: World History and Culture
+    "D21012643" => "Social Studies - Grades 9-12: United States History and Government (2018)", # 2018 Hawaii Core Standards for Social Studies - Grades 9-12: United States History and Government
+    "D21012644" => "Social Studies - Grades 9-12: Modern History of Hawai'i (2018)", # 2018 Hawaii Core Standards for Social Studies - Grades 9-12: Modern History of Hawaiʻi
+    "D21012645" => "Social Studies - Grades 9-12: Participation in a Democracy (2018)", # 2018 Hawaii Core Standards for Social Studies - Grades 9-12: Participation in a Democracy
+
   },
   # ===================
   # Idaho
@@ -1013,6 +1072,13 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2984010" => "Science (2018)", # 2018 Idaho Content Standards - Science
     "D2788238" => "Social Studies (2017)", # 2017 Idaho Content Standards - Social Studies
 
+    # Aug12, 2022 Imports:
+    "D21200843" => "Mathematics (2019)", # 2019 Idaho Content Standards: Mathematics
+    "D21241990" => "English Language Arts/Literacy (2017)", # 2017 Idaho Content Standards: English Language Arts/Literacy
+    "D21266176" => "Standards Science (2022)", # 2022 Idaho Content Standards Science
+    "D21266438" => "Mathematics (2022)", # 2022 Idaho Content Standards Mathematics
+    "D21265425" => "English Language Arts/Literacy (2022)", # 2022 Idaho Content Standards English Language Arts/Literacy
+
 
   },
   # ===================
@@ -1047,6 +1113,17 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2753694" => "Music (2016)", # 2016 Fine Arts Standards: Music
     "D2753696" => "Visual Arts (2016)", # 2016 Fine Arts Standards: Visual Arts
     "D2753695" => "Theatre (2016)", # 2016 Fine Arts Standards: Theatre
+
+    # Aug11, 2022 Imports:
+    "D21200843" => "Mathematics (2019)", # 2019 Idaho Content Standards: Mathematics
+    "D21241990" => "English Language Arts/Literacy (2017)", # 2017 Idaho Content Standards: English Language Arts/Literacy
+    "D21266176" => "Science (2022)", # 2022 Idaho Content Standards Science
+    "D21266438" => "Mathematics (2022)", # 2022 Idaho Content Standards Mathematics
+    "D21265425" => "English Language Arts/Literacy (2022)", # 2022 Idaho Content Standards English Language Arts/Literacy
+
+    # Aug11, 2022 Imports:
+    "D21268982" => "Social Science (2022)", # 2022 Illinois Social Science Standards
+
 
 
   },
@@ -1177,7 +1254,47 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug 1, 2021 Imports:
     "D21185999" => "Mass Media (2020)", # 2020 Indiana Academic Standards Mass Media: Grades 9-12
 
-
+# Aug11, 2022 Imports:
+    "D21095888" => "Economics (2020)", # 2020 Indiana Academic Standards: Economics
+    "D21095963" => "Ethnic Studies (2020)", # 2020 Indiana Academic Standards: Ethnic Studies
+    "D21095979" => "Geography and History of the World (2020)", # 2020 Indiana Academic Standards: Geography and History of the World
+    "D21096058" => "Global Economics (2020)", # 2020 Indiana Academic Standards: Global Economics
+    "D21096660" => "Psychology (2020)", # 2020 Indiana Academic Standards: Psychology
+    "D21096723" => "History/Social Studies Literacy (2020)", # 2020 Indiana Academic Standards: History/Social Studies Literacy
+    "D21097720" => "Social Studies: Sociology (2020)", # 2020 Indiana Academic Standards Social Studies: Sociology
+    "D21097826" => "United States Government (2020)", # 2020 Indiana Academic Standards: United States Government
+    "D21097888" => "United States History (1877 to Present) (2020)", # 2020 Indiana Academic Standards: United States History (1877 to Present)
+    "D21098021" => "World History and Civilization (2020)", # 2020 Indiana Academic Standards: World History and Civilization
+    "D21096118" => "Social Studies (2020)", # 2020 Indiana Academic Standards Social Studies: Grade 1
+    "D21096155" => "Social Studies (2020)", # 2020 Indiana Academic Standards Social Studies: Grade 2
+    "D21096195" => "Social Studies (2020)", # 2020 Indiana Academic Standards Social Studies: Grade 3
+    "D21096242" => "Social Studies (2020)", # 2020 Indiana Academic Standards Social Studies: Grade 4
+    "D21096300" => "Social Studies (2020)", # 2020 Indiana Academic Standards Social Studies: Grade 5
+    "D21096363" => "Social Studies (2020)", # 2020 Indiana Academic Standards Social Studies: Grade 6
+    "D21096423" => "Social Studies (2020)", # 2020 Indiana Academic Standards Social Studies: Grade 7
+    "D21096473" => "Social Studies (2020)", # 2020 Indiana Academic Standards Social Studies: Grade 8
+    "D21096543" => "Social Studies: Indiana Studies (2020)", # 2020 Indiana Academic Standards Social Studies: Indiana Studies
+    "D21096632" => "Social Studies (2020)", # 2020 Indiana Academic Standards Social Studies: Kindergarten
+    "D21283419" => "Science (2022)", # 2022 Indiana Academic Standards Science (Kindergarten)
+    "D21284642" => "Science (2022)", # 2022 Indiana Academic Standards Science (Grade 1)
+    "D21285518" => "Science (2022)", # 2022 Indiana Academic Standards Science (Grade 2)
+    "D21288091" => "Science (2022)", # 2022 Indiana Academic Standards Science (Grade 5)
+    "D21288063" => "Science (2022)", # 2022 Indiana Academic Standards Science (Grade 4)
+    "D21287058" => "Science (2022)", # 2022 Indiana Academic Standards Science (Grade 3)
+    "D21289244" => "Science (2022)", # 2022 Indiana Academic Standards Science (Grade 8)
+    "D21288139" => "Science (2022)", # 2022 Indiana Academic Standards Science (Grade 7)
+    "D21288117" => "Science (2022)", # 2022 Indiana Academic Standards Science (Grade 6)
+    "D21289380" => "Chemistry (2022)", # 2022 Indiana Academic Standards Chemistry
+    "D21289351" => "Biology (2022)", # 2022 Indiana Academic Standards Biology
+    "D21289278" => "Anatomy and Physiology (2022)", # 2022 Indiana Academic Standards Anatomy and Physiology
+    "D21289454" => "Integrated Chemistry & Physics (2022)", # 2022 Indiana Academic Standards Integrated Chemistry & Physics
+    "D21289421" => "Environmental Science (2022)", # 2022 Indiana Academic Standards Environmental Science
+    "D21289396" => "Earth and Space Science (2022)", # 2022 Indiana Academic Standards Earth and Space Science
+    "D21289471" => "Physics I (2022)", # 2022 Indiana Academic Standards Physics I
+    "D21289489" => "Physics II (2022)", # 2022 Indiana Academic Standards Physics II
+    "D21289550" => "Computer Science (2022)", # 2022 Indiana Academic Standards Computer Science (K-2)
+    "D21289612" => "Computer Science (2022)", # 2022 Indiana Academic Standards Computer Science (6-8)
+    "D21289579" => "Computer Science (2022)", # 2022 Indiana Academic Standards Computer Science (3-5)
 
 
   },
@@ -1376,6 +1493,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2750254" => "English Language Arts (2016)", # 2016 Louisiana Standards for English Language Arts
     "D2785461" => "Science (2017)", # 2017 Louisiana Student Standards for Science
 
+    # Aug11, 2022 Imports:
+    "D21089059" => "English Language Arts (2019)", # 2019 Louisiana Student Standards K-12 English Language Arts
+
+
   },
   # ===================
   # Maine
@@ -1426,6 +1547,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21144799" => "Science Mathematics RSU 25 Promotion Standards (2020)", # 2020 RSU 25 Promotion Standards for Science 5-8
     "D21134362" => "Life and Career Ready Standards (2020)", # 2020 Maine Learning Results: Life and Career Ready Standards
     "D21089980" => "Social Studies (2019)", # 2019 Maine Learning Results for Social Studies
+
+    # Aug11, 2022 Imports:
+    "D21241520" => "Food Preparation and Culinary Arts (2021)", # 2021 Food Preparation and Culinary Arts
+    "D21241923" => "NRAEF ServSafe Standards (2021)", # 2021 NRAEF ServSafe Standards
+    "D21268392" => "Early Learning and Development Standards (2015)", # 2015 Maine Early Learning and Development Standards
+
   },
   # ===================
   # Maryland
@@ -1480,6 +1607,22 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21095231" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 6
     "D21095173" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 7
     "D21095123" => "Mathematics (2019)", # 2019 Maryland College and Career Ready Mathematics Curriculum Framework - Grade 8
+
+    # Aug11, 2022 Imports:
+    "D21255273" => "Social Studies (2021)", # 2020 Maryland Social Studies Framework: Pre-Kindergarten
+    "D21255207" => "Social Studies (2021)", # 2020 Maryland Social Studies Framework: Kindergarten
+    "D21254783" => "Social Studies (2021)", # 2021 Maryland Social Studies Framework: Grade 1
+    "D21254984" => "Social Studies (2021)", # 2021 Maryland Social Studies Framework: Grade 2
+    "D21255056" => "Social Studies (2021)", # 2021 Maryland Social Studies Framework: Grade 3
+    "D21255106" => "Social Studies (2021)", # 2021 Maryland Social Studies Framework: Grade 4
+    "D21255160" => "Social Studies (2021)", # 2021 Maryland Social Studies Framework: Grade 5
+    "D21255609" => "Social Studies (2021)", # 2021 Maryland Social Studies Framework: Grades 6-7
+    "D21254682" => "Social Studies (2021)", # 2020 Maryland Social Studies Framework: Grade 8
+    "D21254855" => "Social Studies: United States History (2020)", # 2020 Maryland Social Studies Framework: United States History
+    "D21255317" => "Social Studies: American Government (2021)", # 2021 Maryland Social Studies Framework: American Government
+    "D21255318" => "Social Studies: Modern World History (2021)", # 2021 Maryland Social Studies Framework: Modern World History
+    "D21255450" => "6 Core Social Studies Standards (Pre-K-12) (2020)", # 2020 Maryland State 6 Core Social Studies Standards (Pre-K-12)
+
   },
   # ===================
   # Massachusetts
@@ -1501,6 +1644,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2802330" => "Mathematics (2017)", # 2017 Massachusetts Curriculum Framework for Mathematics
     # Aug13, 2018 Imports:
     "D2800677" => "English Language Arts and Literacy (2017)", # 2017 Massachusetts English Language Arts and Literacy Framework
+    # Aug11, 2022 Imports:
+    "D21253178" => "History and Social Science (2018)", # 2018 Massachusetts History and Social Science Curriculum Framework
   },
   # ===================
   # Michigan
@@ -1573,6 +1718,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug 1, 2021 Imports:
     "D2994838" => "Social Studies (2018)", # 2018 Mississippi College- and Career-Ready Standards for the Social Studies
 
+    # Aug11, 2022 Imports:
+    "D21206974" => "Advanced Technical Mathematics (2021)", # 2021 Mississippi College- and Career-Readiness Standards for Advanced Technical Mathematics
+
+
+
 
   },
   # ===================
@@ -1629,6 +1779,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2759802" => "Theatre Arts (2016)", # 2016 Montana Theatre Arts Content Standards
     "D2759803" => "Music (2016)", # 2016 Montana Music Content Standards
     "D2759804" => "Dance (2016)", # 2016 Montana Dance Content Standards
+
+    # Aug11, 2022 Imports:
+    "D21183346" => "Social Studies (2020)", # 2020 Montana Content Standards for Social Studies
+    "D21256599" => "Social Studies (2021)", # 2021 Montana Content Standards for Social Studies
+
 
   },
   # ===================
@@ -1880,7 +2035,13 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   # ===================
   "Next Generation Science Standards" => {
     "D2454348" => "Science",                              # 2013 Next Generation Science Standards  http://63960de18916c597c345-8e3bed018cb857642bed25a591e65353.r63.cf1.rackcdn.com/Combined%20DCIs%205.15.13.pdf
+    # Aug11, 2022 Imports:
+    "D21246007" => "Appendix J: Science, Technology, Society and the Environment (2013)", # 2013 NGSS Appendix J: Science, Technology, Society and the Environment
+    "D21245911" => "Appendix H: Understanding the Scientific Enterprise: The Nature of Science in NGSS (2013)", # 2013 NGSS Appendix H: Understanding the Scientific Enterprise: The Nature of Science in NGSS
+    "D21245354" => "Appendix G: Crosscutting Concepts (2013)", # 2013 NGSS Appendix G: Crosscutting Concepts
+    "D21245181" => "Appendix F: Science and Engineering Practices (2013)", # 2013 NGSS Appendix F: Science and Engineering Practices
   },
+
   # ===================
   # North Carolina
   # ===================
@@ -2019,6 +2180,22 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Jul29, 2020 Imports:
     "D21084961" => "4th Level Math Standards (2019)", # 2019 North Carolina Standard Course of Study 4th Level Math Standards
 
+    # Aug11, 2022 Imports:
+    "D21190410" => "Social Studies Standards (Kindergarten) (2021)", # 2021 North Carolina Social Studies Standards (Kindergarten)
+    "D21190449" => "Social Studies Standards (Grade 1) (2021)", # 2021 North Carolina Social Studies Standards (Grade 1)
+    "D21190489" => "Social Studies Standards (Grade 2) (2021)", # 2021 North Carolina Social Studies Standards (Grade 2)
+    "D21190524" => "Social Studies Standards (Grade 3) (2021)", # 2021 North Carolina Social Studies Standards (Grade 3)
+    "D21190561" => "Social Studies Standards (Grade 4) (2021)", # 2021 North Carolina Social Studies Standards (Grade 4)
+    "D21190604" => "Social Studies Standards (Grade 5) (2021)", # 2021 North Carolina Social Studies Standards (Grade 5)
+    "D21190652" => "Social Studies Standards (Grade 6) (2021)", # 2021 North Carolina Social Studies Standards (Grade 6)
+    "D21190693" => "Social Studies Standards (Grade 7) (2021)", # 2021 North Carolina Social Studies Standards (Grade 7)
+    "D21190736" => "Social Studies Standards (Grade 8) (2021)", # 2021 North Carolina Social Studies Standards (Grade 8)
+    "D21190786" => "American History (2021)", # 2021 North Carolina Standards for American History
+    "D21178669" => "Economics and Personal Finance (2021)", # 2021 North Carolina Standards for Economics and Personal Finance
+    "D21190861" => "Civic Literacy (2021)", # 2021 Founding Principles of the United States of America and North Carolina: Civic Literacy
+    "D21190934" => "World History (2021)", # 2021 North Carolina Standards for World History
+
+
 
   },
   # ===================
@@ -2079,6 +2256,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Jun28, 2019 Imports:
     "D2976165" => "Social Studies (2018)", # 2018 Ohio's Learning Standards Social Studies
 
+    # Aug11, 2022 Imports:
+    "D21257039" => "Family and Consumer Sciences (2020)", # 2020 Ohio Family and Consumer Sciences
+    "D21030950" => "Social and Emotional Learning Standards (2019)", # 2019 Ohio K-12 Social and Emotional Learning Standards
+    "D21244950" => "Science (2018)", # 2018 Ohio Learning Standards: Science
+
+
   },
   # ===================
   # Oklahoma
@@ -2134,21 +2317,25 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Aug 1, 2021 Imports:
     "D21131374" => "Science (2020)", # 2020 Oklahoma Academic Standards for Science
+
+    # Aug11, 2022 Imports:
+    "D21211786" => "English Language Arts (2021)", # 2021 Oklahoma Academic Standards: English Language Arts
+
   },
   # ===================
   # Oregon
   # ===================
   "Oregon" => {
-    "D2495369" => "Common Core English Language Arts & Literacy",   # 2010 Common Core State Standards for English Language Arts & Literacy  http://www.corestandards.org/assets/CCSSI_ELA%20Standards.pdf
-    "D2496454" => "Common Core Math",                     # 2010 Common Core State Standards for Mathematics  http://www.ode.state.or.us/wma/teachlearn/commoncore/ccssmath.pdf
-    "D2500728" => "Educational Technology",               # 2008 Oregon Educational Technology Standards  http://www.ode.state.or.us/teachlearn/subjects/technology/oregonedtechstandards.rtf
-    "D2560113" => "Health Education",                     # 2012 Oregon Health Education Standards and Benchmarks  http://www.ode.state.or.us/wma/teachlearn/commoncore/health-2012.xls
-    "D2491483" => "Physical Education Content Standards", # 2001 Oregon Physical Education Academic Content Standards  http://www.ode.state.or.us/search/page/?id=1467
-    "D2623550" => "School Library Standards",             # 2015 Oregon School Library Standards  https://docs.google.com/spreadsheets/d/1RdFHMsLZsmy7H5lJZMY8VWEoEJotKGV-OxHR1rsQqdU
-    "D10003B0" => "Science",                              # 2009 Oregon Science Academic Content Standards  http://www.ode.state.or.us/teachlearn/real/standards/sbd.aspx
-    "D2597530" => "Science (NGSS)",                       # 2014 Oregon Science Standards (NGSS)  http://www.ode.state.or.us/search/page/?id=1577
-    "D2378214" => "Social Sciences",                      # 2011 Oregon Social Sciences Academic Content Standards  http://www.ode.state.or.us/teachlearn/subjects/socialscience/standards/adoptedsocialsciencesstandards8-2011.pdf
-    "D1000375" => "Arts",                                 # 2004 Oregon The Arts Academic Content Standards  http://www.ode.state.or.us/teachlearn/subjects/arts/standards/theartscontentstandardsadopted10.21.04.pdf
+    "D2495369" => "Common Core English Language Arts & Literacy (2010)",   # 2010 Common Core State Standards for English Language Arts & Literacy  http://www.corestandards.org/assets/CCSSI_ELA%20Standards.pdf
+    "D2496454" => "Common Core Math (2010)",                     # 2010 Common Core State Standards for Mathematics  http://www.ode.state.or.us/wma/teachlearn/commoncore/ccssmath.pdf
+    "D2500728" => "Educational Technology (2008)",               # 2008 Oregon Educational Technology Standards  http://www.ode.state.or.us/teachlearn/subjects/technology/oregonedtechstandards.rtf
+    "D2560113" => "Health Education (2012)",                     # 2012 Oregon Health Education Standards and Benchmarks  http://www.ode.state.or.us/wma/teachlearn/commoncore/health-2012.xls
+    "D2491483" => "Physical Education Content Standards (2001)", # 2001 Oregon Physical Education Academic Content Standards  http://www.ode.state.or.us/search/page/?id=1467
+    "D2623550" => "School Library Standards (2015)",             # 2015 Oregon School Library Standards  https://docs.google.com/spreadsheets/d/1RdFHMsLZsmy7H5lJZMY8VWEoEJotKGV-OxHR1rsQqdU
+    "D10003B0" => "Science (2009)",                              # 2009 Oregon Science Academic Content Standards  http://www.ode.state.or.us/teachlearn/real/standards/sbd.aspx
+    "D2597530" => "Science (NGSS) (2014)",                       # 2014 Oregon Science Standards (NGSS)  http://www.ode.state.or.us/search/page/?id=1577
+    "D2378214" => "Social Sciences (2011)",                      # 2011 Oregon Social Sciences Academic Content Standards  http://www.ode.state.or.us/teachlearn/subjects/socialscience/standards/adoptedsocialsciencesstandards8-2011.pdf
+    "D1000375" => "Arts (2004)",                                 # 2004 Oregon The Arts Academic Content Standards  http://www.ode.state.or.us/teachlearn/subjects/arts/standards/theartscontentstandardsadopted10.21.04.pdf
     # March 3, 2016 Imports:
     "D2707730" => "Music Composition and Theory (2015)", # 2015 Oregon Arts Content Standards: Music Composition and Theory
     "D2708013" => "Music Technology (2015)", # 2015 Oregon Arts Content Standards: Music Technology
@@ -2164,27 +2351,34 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Jun28, 2019 Imports:
     "D2982515" => "Social Sciences (2018)", # 2018 Oregon K-12 Social Sciences Academic Content Standards
     # Jul29, 2020 Imports:
-    "D21098097" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Kindergarten
-    "D21098277" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 1
-    "D21098442" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 2
-    "D21098605" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 3
-    "D21098775" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 4
-    "D21098940" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 5
-    "D21099103" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 6
-    "D21099253" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 7
-    "D21099400" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 8
-    "D21099549" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grades 9-10
-    "D21099696" => "English Language Arts & Literacy Standards (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grades 11-12
-    "D21099841" => "Standards for Literacy in History/Social Studies & Technical Subjects (2019)", # 2019 Oregon Standards for Literacy in History/Social Studies & Technical Subjects: Grades 6-8
-    "D21099928" => "Standards for Literacy in History/Social Studies & Technical Subjects (2019)", # 2019 Oregon Standards for Literacy in History/Social Studies & Technical Subjects: Grades 9-10
-    "D21100016" => "Standards for Literacy in History/Social Studies & Technical Subjects (2019)", # 2019 Oregon Standards for Literacy in History/Social Studies & Technical Subjects: Grades 11-12
+    "D21098097" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Kindergarten
+    "D21098277" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 1
+    "D21098442" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 2
+    "D21098605" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 3
+    "D21098775" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 4
+    "D21098940" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 5
+    "D21099103" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 6
+    "D21099253" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 7
+    "D21099400" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grade 8
+    "D21099549" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grades 9-10
+    "D21099696" => "English Language Arts & Literacy (2019)", # 2019 Oregon English Language Arts & Literacy Standards: Grades 11-12
+    "D21099841" => "Literacy in History/Social Studies & Technical Subjects (2019)", # 2019 Oregon Standards for Literacy in History/Social Studies & Technical Subjects: Grades 6-8
+    "D21099928" => "Literacy in History/Social Studies & Technical Subjects (2019)", # 2019 Oregon Standards for Literacy in History/Social Studies & Technical Subjects: Grades 9-10
+    "D21100016" => "Literacy in History/Social Studies & Technical Subjects (2019)", # 2019 Oregon Standards for Literacy in History/Social Studies & Technical Subjects: Grades 11-12
+
+    # Aug11, 2022 Imports:
+    "D21207206" => "Social Science Integrated with Ethnic Studies (2021)", # 2021 Oregon Social Science Standards Integrated with Ethnic Studies
+    "D21270900" => "Mathematics (2021)", # 2021 Oregon Mathematics Standards
 
   },
   # ===================
   # Partnership for 21st Century Skills
   # ===================
   "Partnership for 21st Century Skills" => {
-    "D10003D2" => "Framework for 21st Century Learning",  # 2009 Framework for 21st Century Learning  http://www.p21.org
+    "D10003D2" => "Framework for 21st Century Learning (2009)",  # 2009 Framework for 21st Century Learning  http://www.p21.org
+    # Aug11, 2022 Imports:
+    "D21246232" => "Framework for 21st Century Learning (2019)", # 2019 Framework for 21st Century Learning
+
   },
   # ===================
   # Pennsylvania
@@ -2249,6 +2443,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D1000335" => "Life Science",                         # 2006 Rhode Island Life Science Grade Span Expectations  http://www.ride.ri.gov/Portals/0/Uploads/Documents/Instruction-and-Assessment-World-Class-Standards/Science/Revision-LifeScienceGSEs-Draft-Rhode-Island-K-12.pdf
     "D2581693" => "Physical Education",                   # 2003 Rhode Island Physical Education Framework  http://www.thriveri.org/documents/RI_PE_Framework.pdf
     "D1000336" => "Physical Science",                     # 2006 Rhode Island Physical Science Grade Span Expectations  http://www.ride.ri.gov/Portals/0/Uploads/Documents/Instruction-and-Assessment-World-Class-Standards/Science/Revision-PhysicalScienceGSEs-Draft-Rhode-Island-K-12.pdf
+
+    # Aug11, 2022 Imports:
+    "D21204503" => "Mathematics (2021)", # 2021 Rhode Island Core Standards for Mathematics
   },
   # ===================
   # Scotland
@@ -2315,6 +2512,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Aug 1, 2021 Imports:
     "D21024846" => "Social Studies (2020)", # 2020 South Carolina Social Studies College- and Career-Ready Standards
+
+    # Aug11, 2022 Imports:
+    "D21210357" => "Science (2021)", # 2021 South Carolina College- and Career-Ready Science Standards
 
   },
   # ===================
@@ -2493,6 +2693,13 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug 1, 2021 Imports:
     "D21091223" => "STEM (2019)", # 2019 Tennessee STEM Standards of Practice Framework (K-5)
 
+    # Aug11, 2022 Imports:
+    "D2805933" => "Social Studies (2017)", # 2017 Tennessee Social Studies (K-2)
+    "D2805934" => "Social Studies (2017)", # 2017 Tennessee Social Studies (3-5)
+    "D2805935" => "Social Studies (2017)", # 2017 Tennessee Social Studies (6-8)
+    "D2805936" => "Social Studies (2017)", # 2017 Tennessee Social Studies (9-12)
+
+
   },
 
   # ===================
@@ -2635,6 +2842,21 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21192674" => "Theatre (2013)", # 2013 Texas Essential Knowledge and Skills for Theatre
     "D21192210" => "Music (2013)", # 2013 Texas Essential Knowledge and Skills for Music
     "D21191947" => "Art (2013)", # 2013 Texas Essential Knowledge and Skills for Art
+
+    # Aug11, 2022 Imports:
+    "D21211287" => "Science - Biology (2021)", # 2021 Texas Essential Knowledge And Skills For Science - Biology
+    "D21211346" => "Science - Chemistry (2020)", # 2020 Texas Essential Knowledge And Skills For Science - Chemistry
+    "D21211419" => "Science - Integrated Physics and Chemistry (2020)", # 2020 Texas Essential Knowledge And Skills For Science - Integrated Physics and Chemistry
+    "D21211468" => "Science - Physics (2020)", # 2020 Texas Essential Knowledge And Skills For Science - Physics
+    "D21189511" => "Health Education (2013)", # 2013 Texas Essential Knowledge and Skills for Health Education - Kindergarten
+    "D21189512" => "Health Education (2013)", # 2013 Texas Essential Knowledge and Skills for Health Education - Grade 1
+    "D21189513" => "Health Education (2013)", # 2013 Texas Essential Knowledge and Skills for Health Education - Grade 2
+    "D21189514" => "Health Education (2013)", # 2013 Texas Essential Knowledge and Skills for Health Education - Grade 3
+    "D21189515" => "Health Education (2013)", # 2013 Texas Essential Knowledge and Skills for Health Education - Grade 4
+    "D21189516" => "Health Education (2013)", # 2013 Texas Essential Knowledge and Skills for Health Education - Grade 5
+    "D21203691" => "Character Traits (2021)", # 2021 Texas Essential Knowledge and Skills for Character Traits
+
+
 
   },
   # ===================
@@ -2917,6 +3139,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug 1, 2021 Imports:
     "D21190058" => "Science (2018)", # 2018 Wyoming Science Extended Content and Performance Standards
     "D2982516" => "Mathematics (2018)", # 2018 Wyoming Mathematics Content and Performance Standards
+
+    # Aug11, 2022 Imports:
+    "D21218769" => "Mathematics (2021)", # 2021 Wyoming Mathematics Content Standards
   },
 
   # =========
@@ -2998,6 +3223,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21084835" => "Locally Developed Compulsory Credit Course: Science Grade 9 (SNC1L) (2005)", # 2005 Locally Developed Compulsory Credit Course: Science Grade 9 (SNC1L)
     "D21084898" => "Locally Developed Compulsory Credit Course: Science Grade 10 (SNC2L) (2005)", # 2005 Locally Developed Compulsory Credit Course: Science Grade 10 (SNC2L)
     "D21128810" => "Mathematics (2020)", # 2020 The Ontario Curriculum, Grades 1–8: Mathematics, 2020
+
+    # Aug11, 2022 Imports:
+    "D21236449" => "Mathematics (2021)", # 2021 The Ontario Curriculum, Grade 9: Mathematics
+    "D21271377" => "Science and Technology (Grades 1-8) (2022)", # 2022 The Ontario Curriculum: Science and Technology (Grades 1-8)
+    "D21272309" => "Science (Grade 9) (2022)", # 2022 The Ontario Curriculum: Science (Grade 9)
+    "D21129204" => "Mathématiques (2020)", # 2020 Le curriculum de l'Ontario de la 1re à la 8e année – Mathématiques, 2020
+
+
   },
 
   # ========
@@ -3110,6 +3343,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21092202" => "English Studies 12 (2018)", # 2018 British Columbia English Studies 12
 
 
+    # Aug11, 2022 Imports:
+    "D21243211" => "Core Competencies (2019)", # 2019 British Columbia Core Competencies
   },
 
   # ========
@@ -3292,6 +3527,16 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug 1, 2021 Imports:
     "D21195105" => "CRE Careers Content Statements (2021)", # 2021 CRE Careers Content Statements
     "D21193684" => "CTE Business Content Statements (2021)", # 2021 CTE Business Content Statements
+
+    # Aug11, 2022 Imports:
+    "D21246071" => "CRE Interpersonal Communication (2021)", # 2021 CRE Interpersonal Communication
+    "D21243520" => "CRE Forensic Science Content Statements (2021)", # 2021 CRE Forensic Science Content Statements
+    "D21246029" => "CRE Law Content Statements (2021)", # 2021 CRE Law Content Statements
+    "D21245451" => "Science Content Statements 2021 (2021)", # 2021 Science Content Statements 2021
+    "D21269609" => "World Language Content Statements (2022)", # 2022 World Language Content Statements
+    "D21274016" => "Social and Emotional Learning Content Statements (2022)", # 2022 Social and Emotional Learning Content Statements
+    "D21290636" => "Computer Science Content Statements (2022)", # 2022 Computer Science Content Statements
+    "D21289646" => "Science Content Statements High School 2021 (2021)", # 2021 Science Content Statements High School 2021
   },
 
   "Dublin Core Metadata Initiative" => {
@@ -3684,6 +3929,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2993170" => "Technologies de l'information et de la communication (2000)", # 2000 Technologies de l'information et de la communication
     "D2993171" => "Programme d'études de français langue première (1998)", # 1998 Programme d'études de français langue première
 
+    # Aug11, 2022 Imports:
+    "D21267359" => "Programme d'études de français langue seconde - immersion (1998)", # 1998 Programme d'études de français langue seconde - immersion
+    "D21268033" => "French as a Second Language (3 Year Program) (2007)", # 2007 French as a Second Language (3 Year Program)
+    "D21269699" => "Mathematics Curriculum (2022)", # 2022 Alberta K-6 Mathematics Curriculum
+    "D21269782" => "English Language Arts Curriculum (2022)", # 2022 Alberta K-6 English Language Arts Curriculum
+    "D21269846" => "Physical Education and Wellness Curriculum (2022)", # 2022 Alberta K-6 Physical Education and Wellness Curriculum
 
   },
 
@@ -3759,6 +4010,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21088557" => "Programme d'appui aux nouveaux arrivants (PANA 9-12 année) (2010)", # 2010 Le curriculum de l'Ontario: Programme d'appui aux nouveaux arrivants (PANA 9-12 année)
     "D21091350" => "Études des Premières Nations, des Métis et des Inuits (2019)", # 2019 Le curriculum de l'Ontario: Études des Premières Nations, des Métis et des Inuits
     "D21129204" => "Le curriculum de l'Ontario de la 1re à la 8e année – Mathématiques, 2020 (2020)", # 2020 Le curriculum de l'Ontario de la 1re à la 8e année – Mathématiques, 2020
+
+    # Aug11, 2022 Imports:
+    "D21236521" => "Mathématiques (2021)", # 2021 Le curriculum de l'Ontario – Mathématiques, 9e année
+    "D21271843" => "Sciences et technologie (1ʳᵉ à la 8ᵉ année) (2022)", # 2022 Le Curriculum De L'Ontario: Sciences et technologie (1ʳᵉ à la 8ᵉ année)
+    "D21272859" => "Sciences (9ᵉ année) (2022)", # 2022 Le Curriculum De L'Ontario: Sciences (9ᵉ année)
+    "D21273658" => "Anglais (2006)", # 2006 Anglais de la 4e à la 8e année
+    "D21273354" => "Anglais pour débutants (APD) (2013)", # 2013 Anglais pour débutants de la 4e à la 8e année (APD)
+
 
 
   },
@@ -3929,6 +4188,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21071857" => "Accounting Accreditation (2018)", # 2018 Standards for Accounting Accreditation
     "D21071864" => "Business Accreditation (2013)", # 2013 Standards for Business Accreditation
 
+    # Aug11, 2022 Imports:
+    "D21247800" => "Business Accreditation (2020)", # 2020 Guiding Principles and Standards for Business Accreditation
+
+
   },
 
   "Community College Preparatory Academy" => {
@@ -3955,6 +4218,224 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   "Equipped for the Future" => {
     # Jul29, 2020 Imports:
     "D21092541" => "EFF Content Standards (2020)", # 2020 EFF Content Standards
-  }
+  },
 
+
+
+
+  "Move This World"=>{
+    # Aug11, 2022 Imports:
+    "D21134451" => "Social Emotional Learning Standards and Objectives (2020)", # 2020 Social Emotional Learning Standards and Objectives
+    "D21135686" => "Move This World Skills and Competencies (2020)", # 2020 Move This World Skills and Competencies
+  },
+  "Escuela Americana"=>{
+    # Aug11, 2022 Imports:
+    "D21142931" => "Early Learning Creative Curriculum Objectives (2020)", # 2020 Early Learning Creative Curriculum Objectives
+    "D21143035" => "AERO K-8 English Language Arts Curriculum Framework (2015)", # 2015 AERO K-8 English Language Arts Curriculum Framework
+    "D21143735" => "AERO Mathematics Curriculum Framework (2015)", # 2015 AERO Mathematics Curriculum Framework
+    "D21144423" => "AERO K-12 Social Studies Curriculum Framework (2019)", # 2019 AERO K-12 Social Studies Curriculum Framework
+  },
+  "Branksome Hall"=>{
+    # Aug11, 2022 Imports:
+    "D21179432" => "International Baccalaureate Dance (2013)", # 2013 International Baccalaureate Dance
+    "D21179463" => "International Baccalaureate Film (2018)", # 2018 International Baccalaureate Film
+    "D21179487" => "International Baccalaureate Music (2020)", # 2020 International Baccalaureate Music
+    "D21179532" => "International Baccalaureate Theatre (2017)", # 2017 International Baccalaureate Theatre
+    "D21179561" => "International Baccalaureate Visual Arts (2017)", # 2017 International Baccalaureate Visual Arts
+    "D21179808" => "International Baccalaureate Diploma Programme Core (2020)", # 2020 International Baccalaureate Diploma Programme Core
+    "D21179703" => "International Baccalaureate Individuals & Societies (2020)", # 2020 International Baccalaureate Individuals & Societies
+    "D21179689" => "International Baccalaureate Language AB Initio & Language B (2020)", # 2020 International Baccalaureate Language AB Initio & Language B
+    "D21179679" => "International Baccalaureate Classical Languages (2020)", # 2020 International Baccalaureate Classical Languages
+    "D21179660" => "International Baccalaureate Math Analysis, Approaches, Applications & Interpretations (2020)", # 2020 International Baccalaureate Math Analysis, Approaches, Applications & Interpretations
+    "D21179642" => "International Baccalaureate Further Mathematics HL Guide (2016)", # 2016 International Baccalaureate Further Mathematics HL Guide
+    "D21179616" => "International Baccalaureate Science (2018)", # 2018 International Baccalaureate Science
+    "D21179592" => "International Baccalaureate Language & Literature (2019)", # 2019 International Baccalaureate Language & Literature
+
+  },
+  "National Association of State Administrators of Family and Consumer Sciences"=> {
+    # Aug11, 2022 Imports:
+    "D21206334" => "National Standards for Family and Consumer Sciences Education (2018)", # 2018 National Standards for Family and Consumer Sciences Education
+  },
+  "Collaborative for Academic, Social, and Emotional Learning"=>{
+    # Aug11, 2022 Imports:
+    "D21236829" => "CASEL SEL Framework (2020)", # 2020 CASEL SEL Framework
+  },
+  "Red Deer Public Schools"=>{
+    # Aug11, 2022 Imports:
+    "D21240093" => "Math Grades (2021)", # 2021 Math Grades 1-5
+    "D21240154" => "English Language Arts (2021)", # 2021 English Language Arts Grades 1-5
+    "D21240155" => "Science Grades (2021)", # 2021 Science Grades 1-5
+    "D21240156" => "Art Grades (2021)", # 2021 Art Grades 1-5
+    "D21240157" => "Social Studies (2021)", # 2021 Social Studies Grades 1-5
+    "D21241171" => "Health Grades (2021)", # 2021 Health Grades 1-5
+    "D21241207" => "Physical Education (2021)", # 2021 Physical Education Grades 1-5
+    "D21241232" => "Music Grades (2021)", # 2021 Music Grades 1-5
+    "D21241301" => "French Language Arts (2021)", # 2021 French Language Arts Grades 1-5
+    "D21241393" => "French (2021)", # 2021 French Grades 4-5
+    "D21241409" => "Spanish Language Arts (2021)", # 2021 Spanish Language Arts Grades 1-5
+  },
+  "iLEAD"=>{
+    # Aug11, 2022 Imports:
+    "D21243553" => "IB Theatre (2021)", # 2021 IB Theatre
+    "D21243583" => "IB Biology SL & HL (2021)", # 2021 IB Biology SL & HL
+    "D21244176" => "Sustainable Development Global Indicator Framework (2018)", # 2018 Sustainable Development Global Indicator Framework
+    "D21244618" => "CSTA Computer Science (2017)", # 2017 CSTA Computer Science Standards
+  },
+  "Learning for Justice"=>{
+    # Aug11, 2022 Imports:
+    "D21246127" => "Social Justice Standards (2020)", # 2020 Social Justice Standards
+
+  },
+  "Anne Arundel County Public Schools"=>{
+    # Aug11, 2022 Imports:
+    "D9C4447D20224E379082C077A5FD763E" => "ACFEF American Culinary Federation Standards (2021)", # 2021 ACFEF American Culinary Federation Standards
+    "D21885FF89E04F6A86D31CCCBC5427C7" => "AP 3-D Art and Design (2021)", # 2021 AP 3-D Art and Design
+    "256A3226D59443459345BA64C64E7EC8" => "AP Art History (2019)", # 2019 AP Art History
+    "7C6ED7AAAD284AAC9EEA282798C266DA" => "AP Art History: Art Historical Thinking Skills (2021)", # 2021 AP Art History: Art Historical Thinking Skills
+    "F1C676AD328E42269E8DF53089AE2000" => "AP Comparative Government and Politics (2019)", # 2019 AP Comparative Government and Politics
+    "973B5CF865C54BAAABA8D1D9ADB9A471" => "AP Drawing (2021)", # 2021 AP Drawing
+    "2A54CB69A88B4664B32372A1AA5AE544" => "AP World Languages and Cultures (2019)", # 2019 AP World Languages and Cultures
+    "99AD5F2B36914BFFA04AFC5B54EEE8BC" => "CCSS English Language Arts Standards (2021)", # 2021 CCSS English Language Arts Standards
+    "9D8ADCDA939D4C1DAD2A0FDD75477D48" => "Design Assessment (2014)", # 2014 Design Assessment
+    "BFEE94148FB145AE8D2B251E98F0AB39" => "IB Physical and Health Education Guide (2015)", # 2015 IB Physical and Health Education Guide
+    "F3D23A4E908046DE93432E0C4C51C036" => "IB Language and Literature Guide (2014)", # 2014 IB Language and Literature Guide
+    "9A264275995547378F3396B55DA0A0A2" => "IB Mathematics Guide (2014)", # 2014 IB Mathematics Guide
+    "25938E351C3E4A3A84852E855CB9E741" => "IB Arts Guide (2014)", # 2014 IB Arts Guide
+    "64AFBE0638F0483B8580DBA5A4C73E24" => "Maryland General Music (2021)", # 2021 Maryland General Music
+    "271421C6CC9E47288DF2962383B9ADD7" => "IB Science Assessments (2021)", # 2021 IB Science Assessments
+    "0DB652C474FB4319958462FFAC7C2909" => "Maryland Common Core State Curriculum Framework for English Language Arts (2011)", # 2011 Maryland Common Core State Curriculum Framework for English Language Arts
+    "32F588435BC94EF8A27720F9A533249E" => "AASL Standards Framework for Learners (2017)", # 2017 AASL Standards Framework for Learners
+    "19BADCA777E8436EBFEEE110D4DB2865" => "Common Core Mathematics PreK-Grade 2 (2010)", # 2010 Common Core Mathematics PreK-Grade 2
+    "3F358D7E8C2C4054A075116141FDE207" => "Maryland Social Studies (2021)", # 2021 Maryland Social Studies
+    "5C146F70B67A4CF59B2D72B525CB19FB" => "National Automotive Technicians Education Foundation (NATEF) (2021)", # 2021 National Automotive Technicians Education Foundation (NATEF)
+    "13551255552343FD9B4847E1DD5C4766" => "National Standards for Business Education (NBEA) (2021)", # 2021 National Standards for Business Education (NBEA)
+    "9112BD7525214AC3A9CFFAE7B9B5F23F" => "National Health Science Standards (2013)", # 2013 National Health Science Standards
+    "212CB2B7F9BD4CA5818EF90674304D3A" => "Next Generation Science Standards (2021)", # 2021 Next Generation Science Standards
+    "6999AD08A60346549D57657F4DACC197" => "SAT English Language Arts (2021)", # 2021 SAT English Language Arts
+    "476986D576794E0D93720C24A614371B" => "Social and Emotional Learning Standards (WCSD Competency Assessment) (2018)", # 2018 Social and Emotional Learning Standards (WCSD Competency Assessment)
+    "97CCD0752CF542D299A217D9B259A2F3" => "SHAPE America's Physical Education Standards (2013)", # 2013 SHAPE America's Physical Education Standards
+    "581A38E60CDE48C89D86393F3F2F719F" => "World History Standards (2010)", # 2010 World History Standards
+    "060C440E76A04BA3B93B4FC42EDA879C" => "ACT English College and Career Readiness Standards (2017)", # 2017 ACT English College and Career Readiness Standards
+    "D007D3A304C0405D957A269F8676F255" => "AP Art History Standards (2015)", # 2015 AP Art History Standards
+    "E7FBCCBC5B794F088901F732AAC0F20A" => "AP Human Geography (2019)", # 2019 AP Human Geography
+    "233287F54949478CBF0B4B9837AAD02E" => "AP Psychology (2019)", # 2019 AP Psychology
+    "51A643DA123A4C22B375B5F065AFF589" => "General Psychology (2021)", # 2021 General Psychology
+    "9E779CB089A84459ABBA1F9CCF8347B8" => "Maryland Technology Education (2021)", # 2021 Maryland Technology Education
+    "B337876F7E7D4E48A0389E54D5A543C6" => "ACT Reading College and Career Readiness Standards (2017)", # 2017 ACT Reading College and Career Readiness Standards
+    "6021E41B761645EC95ED26433F504012" => "ACT Science College and Career Readiness Standards (2017)", # 2017 ACT Science College and Career Readiness Standards
+    "8CA376C87A254511ADFF73FE682321A5" => "AP 2-D Art and Design (2019)", # 2019 AP 2-D Art and Design
+    "7FB7AAEBE39C4C6D9C5E7858E16352F2" => "AP Biology (2017)", # 2017 AP Biology
+    "8AC425B0E6FE4A2FBB13E586C97B5558" => "AP Biology (2019)", # 2019 AP Biology
+    "F226123C0D6D40FD99D7CC5F917A05F5" => "AP Biology (AACPS) (2018)", # 2018 AP Biology (AACPS)
+    "85F331D574DA4FB2B5BB88912F257D02" => "AP English Language and Composition (2019)", # 2019 AP English Language and Composition
+    "624EC1E1429347A18FB8BDFDC3187F8C" => "AP English Literature and Composition Standards (2017)", # 2017 AP English Literature and Composition Standards
+    "B950323B92FD44988D58366280799F74" => "AP English (AACPS) (2017)", # 2017 AP English (AACPS)
+    "D16C0988147147E9B5D900E487A2AE12" => "AP English Laguage Standards (2009)", # 2009 AP English Laguage Standards
+    "7E8BB0E5DD5A48A2B98F585B0D4A8A6D" => "AP English Literature and Composition (2019)", # 2019 AP English Literature and Composition
+    "86D793FC473F4176B03D76EAFD22BE4F" => "AP English Language and Composition (AACPS) (2017)", # 2017 AP English Language and Composition (AACPS)
+    "0527D253C9BF4AA5A222A0845DFE7F19" => "AP English Literature and Composition (AACPS) (2011)", # 2011 AP English Literature and Composition (AACPS)
+    "3AD96DEA0D8F4265B9A84E7D2C6351D0" => "AP Environmental Science (2012)", # 2012 AP Environmental Science
+    "F7CFE29E4CA0434F8DDC8101867302CF" => "AP French Language and Culture (AACPS) (2011)", # 2011 AP French Language and Culture (AACPS)
+    "D55FB59EB4914275A49C4109DE7940F3" => "AP United States Government and Politics (AACPS) (2011)", # 2011 AP United States Government and Politics (AACPS)
+    "B4A18F281E104929AD07A64ADE62A784" => "AP French Language and Culture (2016)", # 2016 AP French Language and Culture
+    "5C90B53C94E340AFB327F6F92298CCBE" => "AP Macroeconomics (2015)", # 2015 AP Macroeconomics
+    "12F1A8775992411790267FF0016FC4EC" => "AP Physics 1 (2018)", # 2018 AP Physics 1
+    "B30E10B54DA4408ABFED9DC060A570BC" => "AP Human Geography (AACPS) (2017)", # 2017 AP Human Geography (AACPS)
+    "C311730BC3CE428D963B20FD9A6B1F8F" => "AP English Language and Composition (2012)", # 2012 AP English Language and Composition
+    "DE4CF2676553490883D0FC7DA9A821C1" => "AP Physics 1 (AACPS) (2018)", # 2018 AP Physics 1 (AACPS)
+    "3CC54F75125E41A28C5A0D49E01CFE28" => "AP Physics 2 (2018)", # 2018 AP Physics 2
+    "86715B9677B14176B876C9D4EF9DACF1" => "AP Microeconomics (AACPS) (2015)", # 2015 AP Microeconomics (AACPS)
+    "63D762E7C6604F7390D87C2A2EA0BBCC" => "AP Spanish (AACPS) (2021)", # 2021 AP Spanish (AACPS)
+    "61C8974D75D34D9D8AF88978E2E8B115" => "AP Psychology (AACPS) (2021)", # 2021 AP Psychology (AACPS)
+    "A597C8D5B889447EAC29A5605770D84F" => "APA Psychology (2021)", # 2021 APA Psychology
+    "23C78AE7FEAA48A2BE0AAED4B9BB83A5" => "AP Human Geography (2017)", # 2017 AP Human Geography
+    "B235D80AB54149B28AE43CA93AE8BBE5" => "AP Science Practices (2021)", # 2021 AP Science Practices
+    "399CB3A2D6534EE783210F9A865BF2D0" => "AP Social Studies (2021)", # 2021 AP Social Studies
+    "1879D5C8E89841648FDECEB364D9A740" => "AP Spanish (2021)", # 2021 AP Spanish
+    "5A58BF153C304DC2955BF29D061EFC71" => "AP Statistics (2021)", # 2021 AP Statistics
+    "77F93CA8EA07467AAF3B8F1A479C01EC" => "AP Psychology Standards (2021)", # 2021 AP Psychology Standards
+    "664181674AF545CDAB02471859CF0DEF" => "AP Research (2021)", # 2021 AP Research
+    "FF3A26A0E6744764B6F2706D1BE4F192" => "AP Seminar (2021)", # 2021 AP Seminar
+    "3FBB16FE693E4B2683316989B961D9FA" => "AP Statistics (AACPS) (2021)", # 2021 AP Statistics (AACPS)
+    "26201DD3C98C4395A150359CB1A80717" => "AP United States Government and Politics (2021)", # 2021 AP United States Government and Politics
+    "EA77DCE065DB46158469ECF65553F970" => "IB Arts Assessment (2021)", # 2021 IB Arts Assessment
+    "ADA8E0BC280948B8A429748F4C1F1834" => "AP World History (2021)", # 2021 AP World History
+    "D0942FD33239407391CBD572BEA3F3C3" => "AP United States History (2015)", # 2015 AP United States History
+    "65077B732E06400A91F78D3D7328BBBD" => "AP United States History (AACPS) (2021)", # 2021 AP United States History (AACPS)
+    "D1019147771E44A9A541A1103E01332A" => "IB Business Management (2017)", # 2017 IB Business Management
+    "FEC9019E0F024BD5BD76C6A6BD52B55F" => "C3 Framework for Social Studies (2013)", # 2013 C3 Framework for Social Studies
+    "C8B0FB5E593A444080A7ACF7D0EF0AB8" => "AP World History (2016)", # 2016 AP World History
+    "E3D2293C252D4980800242E78B0ABB41" => "AP World History (AACPS) (2021)", # 2021 AP World History (AACPS)
+    "E0B8CD165DED4AB4A6A06529FDD59B58" => "BG Math (2021)", # 2021 BG Math
+    "8C53DE74A3C044E490BF8EF0A4C05444" => "IB Biology (2018)", # 2018 IB Biology
+    "531AAE3DC0E744DDA7C985542D8F2B03" => "CATns CCNA Standards (2020)", # 2020 CATns CCNA Standards
+    "4D45829A83D246DFB2DD0A5C062443FC" => "CATn ACF Baking & Pastry Standards (AACPS) (2021)", # 2021 CATn ACF Baking & Pastry Standards (AACPS)
+    "16104BEAB285457786C27011870894BB" => "CATn Cisco Standards (AACPS) (2021)", # 2021 CATn Cisco Standards (AACPS)
+    "98A595036E4B46C98A723F58B3381A07" => "CATns Auto Technology Standards (AACPS) (2021)", # 2021 CATns Auto Technology Standards (AACPS)
+    "692DE98EF90941DDA4D706B186750E72" => "CATn Cisco Standards (2020)", # 2020 CATn Cisco Standards
+    "2CF058234A2A46E993F94F4CCC565207" => "CATns AED Construction Equipment Technology (2021)", # 2021 CATns AED Construction Equipment Technology
+    "55343EFAAC9C49A0BFE63A51F8D855A6" => "CATn Building Maintenance/Support Content Standards (2021)", # 2021 CATn Building Maintenance/Support Content Standards
+    "853519CAA47047E5BD3B6D1AD1C927AE" => "CATns ACF Culinary Arts Content Standards (AACPS) (2021)", # 2021 CATns ACF Culinary Arts Content Standards (AACPS)
+    "AD441046BE0040F1A1C95E3271C89EE8" => "CATn Graphic Design Standards (2021)", # 2021 CATn Graphic Design Standards
+    "10C60EC9DB3647048715EB2778C5E781" => "CATn Motorcycle Content Standards (AACPS) (2021)", # 2021 CATn Motorcycle Content Standards (AACPS)
+    "E2BE25739CE545DFBAB5D55A925498DD" => "CATn Precision Machining Standards (AACPS) (2021)", # 2021 CATn Precision Machining Standards (AACPS)
+    "A20D30F436A640C7BEDF958B6DED507C" => "CATn Masonry Standards (AACPS) (2021)", # 2021 CATn Masonry Standards (AACPS)
+    "A5C282E138A74BB98EC5FD90A0C2F9E6" => "CATn Environmental Resource Management Content Standards (AACPS) (2021)", # 2021 CATn Environmental Resource Management Content Standards (AACPS)
+    "10C48D24E13A47BC90629367029827C8" => "CATn Diesel Standards AACPS) (2015)", # 2015 CATn Diesel Standards AACPS)
+    "42DD2E71AEC8486E890B24E063A65E64" => "CATns Auto Collision Repair Refinishing Standards (AACPS) (2021)", # 2021 CATns Auto Collision Repair Refinishing Standards (AACPS)
+    "575A484570954CF7A47AF2EC996D672F" => "CATns Electricity Content Standards (AACPS) (2021)", # 2021 CATns Electricity Content Standards (AACPS)
+    "1095E06AE2444A07B67672DF72622269" => "CATns Disciplinary Literacy Standards (AACPS) (2021)", # 2021 CATns Disciplinary Literacy Standards (AACPS)
+    "DC040FDDCF204D41ABA20BEFFD736D6A" => "CATns Carpentry Standards (AACPS) (2021)", # 2021 CATns Carpentry Standards (AACPS)
+    "64E468160D864E1CB30886F52F64F360" => "CATns Employability Skills Standards (2021)", # 2021 CATns Employability Skills Standards
+    "C4CF1DB29D06428796E0D81D7D117D23" => "CATns Plumbing Content Standards (2021)", # 2021 CATns Plumbing Content Standards
+    "C4B6F6E39A494F60816F7296704350A5" => "CATns NetPlus N10-006 Standards (AACPS) (2021)", # 2021 CATns NetPlus N10-006 Standards (AACPS)
+    "BFA867E8157A4EC7BA0E3F7E55F5A2D9" => "CATns Drafting CAD Standards (AACPS) (2021)", # 2021 CATns Drafting CAD Standards (AACPS)
+    "CF2143BE23FC41D79611C6CB6F5E4189" => "CATns Heating Ventilation Air conditioning Content Standards (AACPS) (2021)", # 2021 CATns Heating Ventilation Air conditioning Content Standards (AACPS)
+    "0AE3E2427B9D4AE7BA32A74CBD0CA0BE" => "CATns Network Systems Standards (2021)", # 2021 CATns Network Systems Standards
+    "2359077B86084432880DA2A9565B4D30" => "CATns Technological Literacy Standards (2021)", # 2021 CATns Technological Literacy Standards
+    "F9C17E27F1234A179FADB430986FC968" => "CATns Welding Content Standards (2021)", # 2021 CATns Welding Content Standards
+    "7FA9AD950A094E668B065008647ECF16" => "CATn Printing Content Standards (AACPS) (2021)", # 2021 CATn Printing Content Standards (AACPS)
+    "6AE7C05C65BA4D64AF9B2FBAE373F0E7" => "CAT-S Electricity Content Standards (2021)", # 2021 CAT-S Electricity Content Standards
+    "2C04E163B42B4F48891DBE02F51C84C2" => "CATs Interactive Media Production Simulation and Gaming (2021)", # 2021 CATs Interactive Media Production Simulation and Gaming
+    "03B14A14BE924B7090F996424730BE12" => "CAT-S Heating Ventilation Air conditioning Content Standards (2021)", # 2021 CAT-S Heating Ventilation Air conditioning Content Standards
+    "83281D85B6D64735B4AAADCD28A5CBE4" => "CAT-S NCCER Core Content Standards (2021)", # 2021 CAT-S NCCER Core Content Standards
+    "220EFE65EC38415F8EFFFD3D80EC6766" => "CATs Marine Repair Technology Content Standards (2021)", # 2021 CATs Marine Repair Technology Content Standards
+    "5D25F93C1B9C4566941E51125698732B" => "CAT-S Carpentry Content Standards (2021)", # 2021 CAT-S Carpentry Content Standards
+    "38DE920C57BC420C94ACF08E7545EF8B" => "CAT-S IMP (2021)", # 2021 CAT-S IMP
+    "FDC27F133F444A97946BF253A6FAADD0" => "CAT-S Welding Content Standards (2021)", # 2021 CAT-S Welding Content Standards
+
+  },
+  "New York City Department of Education"=>{
+    # Aug11, 2022 Imports:
+    "D21248089" => "AP Calculus AB/BC (2020)", # 2020 AP Calculus AB/BC
+  },
+  "Illinois Community College Board"=>{
+    # Aug11, 2022 Imports:
+    "D21248215" => "ABE/ASE Language Arts (2014)", # 2014 Illinois ABE/ASE Language Arts Content Standards
+    "D21249301" => "ABE/ASE Mathematics (2014)", # 2014 Illinois ABE/ASE Mathematics Content Standards
+
+  },
+  "American Nurses Association"=>{
+    # Aug11, 2022 Imports:
+    "D21251895" => "Standards of Practice (3rd edition) (2017)", # 2017 American Nurses Association Standards of Practice (3rd edition)
+
+  },
+  "National Council of State Boards of Nursing"=>{
+    # Aug11, 2022 Imports:
+    "D21252181" => "NCLEX-RN Standards (2019)", # 2019 NCLEX-RN Standards
+  },
+  "New Brunswick"=>{
+    # Aug11, 2022 Imports:
+    "D21257424" => "Mathematics (Kindergarten) (2008)", # 2008 New Brunswick Mathematics (Kindergarten)
+    "D21257466" => "Mathematics (Grade 1) (2008)", # 2008 New Brunswick Mathematics (Grade 1)
+    "D21257571" => "Mathematics (Grade 2) (2009)", # 2009 New Brunswick Mathematics (Grade 2)
+    "D21257722" => "Mathematics (Grade 3) (2010)", # 2010 New Brunswick Mathematics (Grade 3)
+    "D21257913" => "Mathematics (Grade 4) (2008)", # 2008 New Brunswick Mathematics (Grade 4)
+    "D21258092" => "Mathematics (Grade 5) (2009)", # 2009 New Brunswick Mathematics (Grade 5)
+    "D21258278" => "Mathematics (Grade 6) (2010)", # 2010 New Brunswick Mathematics (Grade 6)
+  },
+  "Calgary Catholic School District"=>{
+    # Aug11, 2022 Imports:
+    "D21281970" => "Religious Outcomes (2022)", # 2022 Calgary Catholic Religious Outcomes
+  }
 }

@@ -175,4 +175,14 @@ JURISDICTION_MATCHERS = {
   "http://purl.org/ASN/scheme/ASNJurisdiction/AACSB" => {:title => "Association to Advance Collegiate Schools of Business", type:"organization", abbreviation: "AACSB", id: "3F7EF92F2EF8454F8CD355194AE2B0AB"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/Waseca_Public_Schools" => {:title => "Waseca Public Schools", type:"organization", abbreviation: "Waseca", id: "5802DA914078408EA307A4275A5F4312"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/Gwinnett_Online_Campus" => {:title => "Gwinnett Online Campus", type:"organization", abbreviation: "GOC", id: "9AD14D7259BD4E9086344AC58DC8A9CB"},
- }
+  "http://purl.org/ASN/scheme/ASNJurisdiction/MTW"=> {:title=>"Move This World", :type=>"organization", :abbreviation=>"MTW", :id=>"7F979BFC2E83469FA2599DF899E1E835"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/CASEL"=> {:title=>"Collaborative for Academic, Social, and Emotional Learning", :type=>"organization", :abbreviation=>"CASEL", :id=>"C5FF5D77B40D4C15B04C95B872723EFB"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/Red_Deer_Public_Schools"=> {:title=>"Red Deer Public Schools", :type=>"school", :abbreviation=>"RDPS", :id=>"E5A51B63EC124D668077A0353FD7F1C4"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/ILEAD"=> {:title=>"iLEAD", :type=>"organization", :abbreviation=>"iLEAD", :id=>"77E9B9278F144E678B21FF290E9CC984"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/LearningForJustice"=> {:title=>"Learning for Justice", :type=>"organization", :abbreviation=>"LfJ", :id=>"FD93EDBBB34B459F869B9B9BB2EBE3FB"},
+  "http://elastic1.asn.desire2learn.com/asn/scheme/ASNJurisdiction/NYC_DOE" => {:title => "New York City Department of Education", type:"organization", abbreviation: "NYDOE", id: "1BF5650D5A064C49A1AB6CDF811CBA86"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/NYC_DOE"=> {:title=>"New York City Department of Education", :type=>"school", :abbreviation=>"NYC DOE", :id=>"1BF5650D5A064C49A1AB6CDF811CBA86"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/ICCB"=> {:title=>"Illinois Community College Board", :type=>"organization", :abbreviation=>"ICCB", :id=>"ECECEEE0A0FA4872BCC22657201993DE"},
+  "http://elastic1.asn.desire2learn.com/asn/scheme/ASNJurisdiction/CAN-NB"=> {:title=>"New Brunswick", :type=>"state", :abbreviation=>"NB", :id=>"4695FD787B404E0FA11C9DF47AD69079"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/CCSD-AB"=> {:title=>"Calgary Catholic School District", :type=>"school", :abbreviation=>"CCSD-AB", :id=>"709266F376944D9EB08DFFE2FC236622"}
+}
