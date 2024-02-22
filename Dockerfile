@@ -14,5 +14,9 @@ RUN sudo apt-get update -qq && apt-get install -y nodejs
 ADD Gemfile .
 ADD Gemfile.lock .
 RUN bundle install --jobs 4
+COPY ./ ./
 
-ENTRYPOINT [ "/bin/bash" ]
+ENTRYPOINT [ "/bin/sh", "-c" ]
+
+CMD ["bundle exec puma -C puma.rb"]
+
