@@ -5,13 +5,28 @@ require_relative "../config/mongo";
 class CachedStandards
 
   def self.all
-    sets = $db[:standard_sets].find().batch_size(1000).map{|set|
-      self.generate(set)
-    }
+    # sets = $db[:standard_sets].find().batch_size(1000).map{|set|
+    #   self.generate(set)
+    # }
+    sets = $db[:standard_sets].find()
     Parallel.map_with_index(sets){|set, index|
+      set = self.generate(set)
       p "Inserting set: #{index+1}"
       next if set.nil? || set.empty?
-      $db[:cached_standards].bulk_write(set, :ordered => false)
+      begin
+        $db[:cached_standards].bulk_write(set, :ordered => false)
+      rescue
+        pp set
+        set.map{|write|
+          begin
+            $db[:cached_standards].bulk_write([write], :ordered => false)
+          rescue
+            pp write
+            # to rethrow error
+            $db[:cached_standards].bulk_write([write], :ordered => false)
+          end
+        }
+      end
     }
   end
 
@@ -28,7 +43,7 @@ class CachedStandards
     standards_hash.values.map{|s|
       {
         :replace_one => {
-          :find => {_id: s["id"]},
+          :filter => {_id: s["id"]},
           :replacement => {
             asnIdentifier:   s["asnIdentifier"],
             standardSetId:   standardSet["_id"],

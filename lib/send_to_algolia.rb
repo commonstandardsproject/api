@@ -9,11 +9,11 @@ class SendToAlgolia
   @@index = Algolia::Index.new("common-standards-project")
 
   def self.all_standard_sets
-    $db[:standard_sets].find().batch_size(20).map{|set|
+    slices = []
+    Parallel.map($db[:standard_sets].find(), in_threads: 32){|set|
       p "Denormalizing #{set["jurisdiction"]["title"]}: #{set["title"]}"
-      self.denormalize_standards(set)
-    }.flatten.each_slice(10000){|standards|
-      p "Importing #{standards.length}"
+      standards = self.denormalize_standards(set)
+      p "Sending to Algolia #{set["jurisdiction"]["title"]}: #{set["title"]}"
       @@index.add_objects(standards)
     }
   end

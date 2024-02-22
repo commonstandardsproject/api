@@ -29,6 +29,7 @@ class ImporterCLI < Thor
 
 
   desc "import", "Import standards from ASN"
+  option :download,          :type => :boolean, :default => true
   option :algolia,         :type => :boolean, :default => false
   option :all,             :type => :boolean, :default => false
   option :cache_standards, :type => :boolean, :default => true
@@ -36,8 +37,19 @@ class ImporterCLI < Thor
     Importer.run({
       import_all:      options[:all],
       send_to_algolia: options[:algolia],
-      cache_standards: options[:cache_standards]
+      cache_standards: options[:cache_standards],
+      download_standards: options[:download]
     })
+  end
+
+  desc "cache", "Cache standards"
+  def cache
+    CachedStandards.all
+  end
+
+  desc "algolia", "Send to  standards"
+  def algolia
+    SendToAlgolia.all_standard_sets
   end
 
 
