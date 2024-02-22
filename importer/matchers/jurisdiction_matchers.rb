@@ -184,5 +184,9 @@ JURISDICTION_MATCHERS = {
   "http://purl.org/ASN/scheme/ASNJurisdiction/NYC_DOE"=> {:title=>"New York City Department of Education", :type=>"school", :abbreviation=>"NYC DOE", :id=>"1BF5650D5A064C49A1AB6CDF811CBA86"},
   "http://purl.org/ASN/scheme/ASNJurisdiction/ICCB"=> {:title=>"Illinois Community College Board", :type=>"organization", :abbreviation=>"ICCB", :id=>"ECECEEE0A0FA4872BCC22657201993DE"},
   "http://elastic1.asn.desire2learn.com/asn/scheme/ASNJurisdiction/CAN-NB"=> {:title=>"New Brunswick", :type=>"state", :abbreviation=>"NB", :id=>"4695FD787B404E0FA11C9DF47AD69079"},
-  "http://purl.org/ASN/scheme/ASNJurisdiction/CCSD-AB"=> {:title=>"Calgary Catholic School District", :type=>"school", :abbreviation=>"CCSD-AB", :id=>"709266F376944D9EB08DFFE2FC236622"}
+  "http://purl.org/ASN/scheme/ASNJurisdiction/CCSD-AB"=> {:title=>"Calgary Catholic School District", :type=>"school", :abbreviation=>"CCSD-AB", :id=>"709266F376944D9EB08DFFE2FC236622"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/American_School_of_The_Hague"=> {:title=>"American School of The Hague", :type=>"", :abbreviation=>"", :id=>"94A23EE1090542688BF36D48FE6FFFD1"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/CEPH"=> {:title=>"Council on Education for Public Health", :type=>"", :abbreviation=>"", :id=>"D2EDE6E1212F405DBB905B37D34749E5"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/NOCTI"=> {:title=>"National Occupational Competency Testing Institute", :type=>"", :abbreviation=>"", :id=>"AB1E60B3872C4D0285B9EE9F8E01E6CC"},
+  "http://purl.org/ASN/scheme/ASNJurisdiction/OAHPERD"=> {:title=> "Ohio Association for Health, Physical Education, Recreation and Dance", :type=>"", :abbreviation=>"", :id=>"1B9608FEB1694E93BD019D42CEB5F374"}
 }

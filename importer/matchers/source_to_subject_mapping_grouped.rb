@@ -573,6 +573,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug11, 2022 Imports:
     "D2985275" => "Social Studies: Economics (2017)", # 2017 Arkansas Social Studies Curriculum Framework: Economics
 
+    # Aug10, 2023 Imports:
+    "D21360024" => "English Language Arts Standards (2023)", # 2023 Arkansas English Language Arts Standards
+    "D21361381" => "Mathematics Standards (2023)", # 2023 Arkansas Mathematics Standards
+
 
   },
   # ===================
@@ -697,6 +701,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Jul29, 2020 Imports:
     "D2980651" => "Mathematics (2020)", # 2020 Colorado Academic Standards: Mathematics
     "D21132944" => "Reading, Writing and Communicating (2020)", # 2020 Colorado Academic Standards: Reading, Writing and Communicating
+
+    # Aug10, 2023 Imports:
+    "D21371896" => "Holocaust and Genocide Standards (2023)", # 2023 Colorado Academic Standards: Holocaust and Genocide Standards
 
   },
   # ===================
@@ -998,6 +1005,93 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21253145" => "Map and Globe Skills (2016)", # 2016 Georgia Standards of Excellence - Map and Globe Skills
     "D21253159" => "Information Processing Skills (2016)", # 2016 Georgia Standards of Excellence - Information Processing Skills
 
+# Aug10, 2023 Imports:
+    "D21308863" => "Georgia Mathematics Learning Progressions (2021)", # 2021 Georgia Mathematics Learning Progressions
+    "D21309210" => "Mathematics (2021)", # 2021 Georgia Mathematics Standards: Kindergarten
+    "D21309255" => "Mathematics (2021)", # 2021 Georgia Mathematics Standards: Grade 1
+    "D21309299" => "Mathematics (2021)", # 2021 Georgia Mathematics Standards: Grade 2
+    "D21309343" => "Mathematics (2021)", # 2021 Georgia Mathematics Standards: Grade 3
+    "D21309396" => "Mathematics (2021)", # 2021 Georgia Mathematics Standards: Grade 4
+    "D21309450" => "Mathematics (2021)", # 2021 Georgia Mathematics Standards: Grade 5
+    "D21309498" => "Mathematics (2021)", # 2021 Georgia Mathematics Standards: Grade 6
+    "D21309558" => "Mathematics (2021)", # 2021 Georgia Mathematics Standards: Grade 7
+    "D21309620" => "Mathematics (2021)", # 2021 Georgia Mathematics Standards: Grade 8
+    "D21309679" => "Mathematics Algebra Concepts & Connections (2021)", # 2021 Georgia Mathematics Standards: Algebra Concepts & Connections
+    "D21309747" => "Mathematics Geometry Concepts & Connections (2021)", # 2021 Georgia Mathematics Standards: Geometry Concepts & Connections
+    "D21309831" => "Mathematics Advanced Algebra (Algebra II) (2021)", # 2021 Georgia Mathematics Standards: Advanced Algebra (Algebra II)
+    "D21309903" => "Mathematics Precalculus (2021)", # 2021 Georgia Mathematics Standards: Precalculus
+    "D21309972" => "Mathematics Calculus (2021)", # 2021 Georgia Mathematics Standards: Calculus
+    "D21310031" => "Mathematics College Readiness Mathematics (2021)", # 2021 Georgia Mathematics Standards: College Readiness Mathematics
+    "D21310094" => "Mathematics Advanced Financial Algebra (2021)", # 2021 Georgia Mathematics Standards: Advanced Financial Algebra
+    "D21311301" => "Mathematics Advanced Mathematical Decision Making (2021)", # 2021 Georgia Mathematics Standards: Advanced Mathematical Decision Making
+    "D21311374" => "Mathematics Mathematics of Industry & Government (2021)", # 2021 Georgia Mathematics Standards: Mathematics of Industry & Government
+    "D21311436" => "Mathematics Advanced Finite Mathematics (2021)", # 2021 Georgia Mathematics Standards: Advanced Finite Mathematics
+    "D21311505" => "Mathematics Linear Algebra with Computer Science Applications (2021)", # 2021 Georgia Mathematics Standards: Linear Algebra with Computer Science Applications
+    "D21311607" => "Mathematics Statistical Reasoning (2021)", # 2021 Georgia Mathematics Standards: Statistical Reasoning
+    "D21311654" => "Mathematics Multivariable Calculus (2021)", # 2021 Georgia Mathematics Standards: Multivariable Calculus
+    "D21311701" => "Mathematics Differential Equations (2021)", # 2021 Georgia Mathematics Standards: Differential Equations
+    "D21311758" => "Mathematics Engineering Calculus (2021)", # 2021 Georgia Mathematics Standards: Engineering Calculus
+    "D21311814" => "Mathematics History of Mathematics (2021)", # 2021 Georgia Mathematics Standards: History of Mathematics
+    "D21388220" => "Computer Science (2021)", # 2021 Georgia Standards of Excellence Computer Science (Kindergarten)
+    "D21388257" => "Computer Science (2021)", # 2021 Georgia Standards of Excellence Computer Science (Grade 1)
+    "D21388297" => "Computer Science (2021)", # 2021 Georgia Standards of Excellence Computer Science (Grade 2)
+    "D21388345" => "Computer Science (2021)", # 2021 Georgia Standards of Excellence Computer Science (Grade 3)
+    "D21388391" => "Computer Science (2021)", # 2021 Georgia Standards of Excellence Computer Science (Grade 4)
+    "D21388437" => "Computer Science (2021)", # 2021 Georgia Standards of Excellence Computer Science (Grade 5)
+    "D21388487" => "Computer Science I (2021)", # 2021 Georgia Standards of Excellence Middle School Computer Science I
+    "D21388610" => "Computer Science II (2021)", # 2021 Georgia Standards of Excellence Middle School Computer Science II
+    "D21388750" => "Computer Programming (11.01200) (2018)", # 2018 Georgia Middle School Foundations of Computer Programming (11.01200) 
+    "D21388751" => "Interactive Design (11.01300) (2018)", # 2018 Georgia Middle School Foundations of Interactive Design (11.01300)
+    "D21388752" => "Secure Information Systems (11.01100)​ (2018)", # 2018 Georgia Middle School Foundations of Secure Information Systems (11.01100)​
+    "D21388879" => "Advanced Cyber Security (11.48200) (2014)", # 2014 Georgia Standards of Excellence Advanced Cyber Security (11.48200)
+    "D21388880" => "Artificial Intelligence Applications (11.44500) (2021)", # 2021 Georgia Standards of Excellence Artificial Intelligence Applications (11.44500)
+    "D21388881" => "Artificial Intelligence Concepts (11.44400) (2021)", # 2021 Georgia Standards of Excellence Artificial Intelligence Concepts (11.44400)
+    "D21388882" => "Cloud Computing (11.44700) (2021)", # 2021 Georgia Standards of Excellence Cloud Computing (11.44700)
+    "D21388883" => "Coding for FinTech (11.46300) (2020)", # 2020 Georgia Standards of Excellence Coding for FinTech (11.46300)
+    "D21388884" => "Computer Science Principles (11.47100) (2021)", # 2021 Georgia Standards of Excellence Computer Science Principles (11.47100)
+    "D21388885" => "Data Science I (11.08100) (2021)", # 2021 Georgia Standards of Excellence Data Science I (11.08100)
+    "D21388889" => "Data Science II (11.08200) (2021)", # 2021 Georgia Standards of Excellence Data Science II (11.08200)
+    "D21388890" => "Digital Design (11.45100) (2021)", # 2021 Georgia Standards of Excellence Digital Design (11.45100)
+    "D21388886" => "Embedded Computing (11.42700) (2021)", # 2021 Georgia Standards of Excellence Embedded Computing (11.42700)
+    "D21388887" => "E-Sports (11.08000) (2021)", # 2021 Georgia Standards of Excellence E-Sports (11.08000)
+    "D21388888" => "Foundations of Artificial Intelligence (11.44300) (2021)", # 2021 Georgia Standards of Excellence Foundations of Artificial Intelligence (11.44300)
+    "D21389579" => "Financial Technologies and Services (07.42800) (2020)", # 2020 Georgia Standards of Excellence Financial Technologies and Services (07.42800)
+    "D21389578" => "Game Design: Animation and Simulation (11.42900) (2015)", # 2015 Georgia Standards of Excellence Game Design: Animation and Simulation (11.42900)
+    "D21389577" => "Introduction to Cyber Security (11.48100) (2014)", # 2014 Georgia Standards of Excellence Introduction to Cyber Security (11.48100)
+    "D21389868" => "Introduction to Digital Technology (11.41500) (2013)", # 2013 Georgia Standards of Excellence Introduction to Digital Technology (11.41500)
+    "D21389867" => "Introduction to Financial Technology (07.42700) (2021)", # 2021 Georgia Standards of Excellence Introduction to Financial Technology (07.42700)
+    "D21389866" => "Introduction to Python (11.08300) (2021)", # 2021 Georgia Standards of Excellence Introduction to Python (11.08300)
+    "D21389869" => "Introduction to Hardware Technology (11.44800) (2021)", # 2021 Georgia Standards of Excellence Introduction to Hardware Technology (11.44800)
+    "D21389870" => "Introduction to Software Technology (11.44600) (2021)", # 2021 Georgia Standards of Excellence Introduction to Software Technology (11.44600)
+    "D21389872" => "Information Technology Essentials (11.41400) (2021)", # 2021 Georgia Standards of Excellence Information Technology Essentials (11.41400)
+    "D21389873" => "Information Technology Support (11.42000) (2021)", # 2021 Georgia Standards of Excellence Information Technology Support (11.42000)
+    "D21389874" => "Networking Fundamentals (11.46100) (2021)", # 2021 Georgia Standards of Excellence Networking Fundamentals (11.46100)
+    "D21389875" => "Networking Systems and Support (11.46200) (2021)", # 2021 Georgia Standards of Excellence Networking Systems and Support (11.46200)
+    "D21389876" => "Programming, Games, Apps, and Society (11.47200) (2013)", # 2013 Georgia Standards of Excellence Programming, Games, Apps, and Society (11.47200)
+    "D21389877" => "Web Design (11.42500) (2021)", # 2021 Georgia Standards of Excellence Web Design (11.42500)
+    "D21389878" => "Web Development (11.42500) (2021)", # 2021 Georgia Standards of Excellence Web Development (11.42500)
+    "D21394150" => "Middle School CTAE Standards (2020)", # 2020 Georgia Middle School CTAE Standards
+    "D21396393" => "Algebra Concepts & Connections (2021)", # 2021 Georgia Standards Algebra Concepts & Connections
+    "D21396405" => "World Languages and Global Workforce Initiatives (2023)", # 2023 Georgia World Languages and Global Workforce Initiatives
+    "D21406328" => "AP Computer Science Principles (11.01900) (2021)", # 2021 AP Computer Science Principles (11.01900)
+    "D21399472" => "CTEA Energy (2021)", # 2021 Georgia Standards of Excellence CTEA Energy
+    "D21399744" => "CTEA Workforce Ready (2021)", # 2021 Georgia Standards of Excellence CTEA Workforce Ready
+    "D21399984" => "CTEA Transportation, Distribution, and Logistics (2021)", # 2021 Georgia Standards of Excellence CTEA Transportation, Distribution, and Logistics
+    "D21402071" => "CTEA Engineering & Technology (2021)", # 2021 Georgia Standards of Excellence CTEA Engineering & Technology
+    "D21402665" => "CTEA Manufacturing (2021)", # 2021 Georgia Standards of Excellence CTEA Manufacturing
+    "D21403259" => "CTEA Information Technology (2022)", # 2022 Georgia Standards of Excellence CTEA Information Technology
+    "D21403853" => "CTEA Business, Management and Administration (2022)", # 2022 Georgia Standards of Excellence CTEA Business, Management and Administration
+    "D21405102" => "CTEA Architecture & Construction (2021)", # 2021 Georgia Standards of Excellence CTEA Architecture & Construction
+    "D21406329" => "CTEA Arts, A/V Technology and Communications (2021)", # 2021 Georgia Standards of Excellence CTEA Arts, A/V Technology and Communications
+    "D21407365" => "CTEA Education and Training (2021)", # 2021 Georgia Standards of Excellence CTEA Education and Training
+    "D21407797" => "CTEA Finance (2021)", # 2021 Georgia Standards of Excellence CTEA Finance
+    "D21408587" => "CTEA Health Science (2021)", # 2021 Georgia Standards of Excellence CTEA Health Science
+    "D21411815" => "CTEA Hospitality and Tourism (2021)", # 2021 Georgia Standards of Excellence CTEA Hospitality and Tourism
+    "D21412563" => "CTEA Marketing (2021)", # 2021 Georgia Standards of Excellence CTEA Marketing
+    "D21413797" => "CTEA Human Services (2021)", # 2021 Georgia Standards of Excellence CTEA Human Services
+    "D21416403" => "CTEA Law, Public Safety, Corrections and Security (2021)", # 2021 Georgia Standards of Excellence CTEA Law, Public Safety, Corrections and Security
+    "D21416404" => "CTEA Government & Public Administration (2021)", # 2021 Georgia Standards of Excellence CTEA Government & Public Administration
+
   },
   # ===================
   # Hawaii
@@ -1296,6 +1390,63 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21289612" => "Computer Science (2022)", # 2022 Indiana Academic Standards Computer Science (6-8)
     "D21289579" => "Computer Science (2022)", # 2022 Indiana Academic Standards Computer Science (3-5)
 
+# Aug10, 2023 Imports:
+    "D21308261" => "Science and Engineering Practices (2022)", # 2022 Indiana Academic Standards: Science and Engineering Practices
+    "D21308466" => "Matrix of Crosscutting Concepts (2022)", # 2022 Indiana Academic Standards: Matrix of Crosscutting Concepts
+    "D21308556" => "Disciplinary Core Ideas (2022)", # 2022 Indiana Academic Standards: Disciplinary Core Ideas
+    "D21359704" => "Middle School Family and Consumer Sciences (2014)", # 2014 Indiana Academic Standards: Middle School Family and Consumer Sciences
+    "D21359796" => "Digital Citizenship (2016)", # 2016 Indiana Academic Standards: Digital Citizenship
+    "D21359855" => "Exploring College and Careers (2011)", # 2011 Indiana Academic Standards: Exploring College and Careers
+    "D21361136" => "Business and Information Technology (2014)", # 2014 Indiana Academic Standards: Business and Information Technology
+    "D21361287" => "Civics (2022)", # 2022 Indiana Academic Standards: 6th Grade Civics Standards
+    "D21374091" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Kindergarten)
+    "D21374140" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Grade 1)
+    "D21374200" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Grade 2)
+    "D21374264" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Grade 3)
+    "D21374340" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Grade 4)
+    "D21374417" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Grade 5)
+    "D21374490" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Grade 6)
+    "D21374556" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Grade 7)
+    "D21374676" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Grade 9-10)
+    "D21374805" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Grade 11-12)
+    "D21375489" => "Mathematics (2023)", # 2023 Indiana Academic Standards Mathematics (Kindergarten)
+    "D21375524" => "Mathematics (2023)", # 2023 Indiana Academic Standards Mathematics (Grade 1)
+    "D21375559" => "Mathematics (2023)", # 2023 Indiana Academic Standards Mathematics (Grade 2)
+    "D21380576" => "Mathematics (2023)", # 2023 Indiana Academic Standards Mathematics (Grade 3)
+    "D21380620" => "Mathematics (2023)", # 2023 Indiana Academic Standards Mathematics (Grade 4)
+    "D21380665" => "Mathematics (2023)", # 2023 Indiana Academic Standards Mathematics (Grade 5)
+    "D21380708" => "Mathematics (2023)", # 2023 Indiana Academic Standards Mathematics (Grade 6)
+    "D21380758" => "Mathematics (2023)", # 2023 Indiana Academic Standards Mathematics (Grade 7)
+    "D21381006" => "Mathematics (2023)", # 2023 Indiana Academic Standards Mathematics (Grade 8)
+    "D21381044" => "Mathematics: Algebra I (2023)", # 2023 Indiana Academic Standards Mathematics: Algebra I
+    "D21381086" => "Mathematics: Algebra II (2023)", # 2023 Indiana Academic Standards Mathematics: Algebra II
+    "D21381138" => "Mathematics: Analytical Algebra II (2023)", # 2023 Indiana Academic Standards Mathematics: Analytical Algebra II
+    "D21381188" => "Mathematics: Geometry (2023)", # 2023 Indiana Academic Standards Mathematics: Geometry
+    "D21374888" => "Social Studies (2023)", # 2023 Indiana Academic Standards Social Studies (Grade 1)
+    "D21374918" => "Social Studies (2023)", # 2023 Indiana Academic Standards Social Studies (Grade 2)
+    "D21374950" => "Social Studies (2023)", # 2023 Indiana Academic Standards Social Studies (Grade 3)
+    "D21374988" => "Social Studies (2023)", # 2023 Indiana Academic Standards Social Studies (Grade 4)
+    "D21375034" => "Social Studies (2023)", # 2023 Indiana Academic Standards Social Studies (Grade 5)
+    "D21375083" => "Social Studies (2023)", # 2023 Indiana Academic Standards Social Studies (Grade 6)
+    "D21375122" => "Social Studies (2023)", # 2023 Indiana Academic Standards Social Studies (Grade 7)
+    "D21375161" => "Social Studies (2023)", # 2023 Indiana Academic Standards Social Studies (Grade 8)
+    "D21375270" => "Geography and History of the World (2023)", # 2023 Indiana Academic Standards Geography and History of the World
+    "D21375361" => "U.S. History (2023)", # 2023 Indiana Academic Standards U.S. History
+    "D21375426" => "World History and Civilization (2023)", # 2023 Indiana Academic Standards World History and Civilization
+    "D21387540" => "Science (2023)", # 2023 Indiana Academic Standards Science (Grade 4)
+    "D21362215" => "Social Studies (2023)", # 2023 Indiana Academic Standards Social Studies: Grade 8
+    "D21387565" => "Computer Science (2023)", # 2023 Indiana Academic Standards Computer Science (K-2)
+    "D21387593" => "Computer Science (2023)", # 2023 Indiana Academic Standards Computer Science (3-5)
+    "D21387623" => "Computer Science (2023)", # 2023 Indiana Academic Standards Computer Science (6-8)
+    "D21387654" => "Physics I (2023)", # 2023 Indiana Academic Standards Physics I
+    "D21387670" => "Chemistry (2023)", # 2023 Indiana Academic Standards Chemistry
+    "D21387684" => "Earth and Space Science (2023)", # 2023 Indiana Academic Standards Earth and Space Science
+    "D21374619" => "English/Language Arts (2023)", # 2023 Indiana Academic Standards English/Language Arts (Grade 8)
+    "D21374865" => "Social Studies (2023)", # 2023 Indiana Academic Standards Social Studies (Kindergarten)
+    "D21375317" => "U.S. Government (2023)", # 2023 Indiana Academic Standards U.S. Government
+    "D21375217" => "Economics (2023)", # 2023 Indiana Academic Standards Economics
+
+
 
   },
   # ===================
@@ -1406,6 +1557,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21183345" => "Handwriting (2020)", # 2020 Kansas Handwriting Curricular Standards
     "D2842243" => "History, Government, and Social Studies Standards (2020)", # 2020 Kansas History, Government, and Social Studies Standards
 
+    # Aug10, 2023 Imports:
+    "D21383483" => "English Language Arts (2023)", # 2023 Kansas Standards for English Language Arts
+
+
   },
   # ===================
   # Kentucky
@@ -1495,6 +1650,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Aug11, 2022 Imports:
     "D21089059" => "English Language Arts (2019)", # 2019 Louisiana Student Standards K-12 English Language Arts
+
+    # Aug10, 2023 Imports:
+    "D21289732" => "Social Studies (2022)", # 2022 Louisiana Student Standards for Social Studies
 
 
   },
@@ -1721,6 +1879,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug11, 2022 Imports:
     "D21206974" => "Advanced Technical Mathematics (2021)", # 2021 Mississippi College- and Career-Readiness Standards for Advanced Technical Mathematics
 
+    # Aug10, 2023 Imports:
+    "D21335383" => "Social Studies (2022)", # 2022 Mississippi College- and Career-Readiness Social Studies Standards
+
 
 
 
@@ -1888,6 +2049,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug 1, 2021 Imports:
     "D21072654" => "Social Studies (2019)", # 2019 Nebraska Social Studies Standards
 
+      # Aug10, 2023 Imports:
+    "D21351581" => "Mathematics (2022)", # 2022 Nebraska College and Career Ready Standards for Mathematics
+    "D21264351" => "English Language Arts (2021)", # 2021 Nebraska College and Career Ready Standards for English Language Arts
+
   },
   # ===================
   # Nevada
@@ -1980,6 +2145,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2980345" => "Science (2018)", # 2018 New Mexico Specific STEM Ready! Science Standards
     "D2980344" => "Science (2013)", # 2013 New Mexico STEM Ready! Science Standards
 
+    # Aug10, 2023 Imports:
+    "D21323309" => "Social Studies (2022)", # 2022 New Mexico Social Studies Standards
+
   },
   # ===================
   # New York
@@ -2029,6 +2197,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2968234" => "Social Studies (2017)", # 2017 New York State K-8 Social Studies Framework
     "D2968352" => "Social Studies (2017)", # 2017 New York State 9-12 Social Studies Framework
 
+    # Aug10, 2023 Imports:
+    "D21191000" => "Social Emotional Learning Benchmarks (2018)", # 2018 New York State Social Emotional Learning Benchmarks
+    "D21328391" => "Career & Financial Management Curricular Framework (2022)", # 2022 New York State Career & Financial Management Curricular Framework
+    "D21364948" => "Professional Development Standards (2009)", # 2009 New York State Professional Development Standards
+    "D21332529" => "Career Development and Occupational Studies (CDOS) (2021)", # 2021 New York Career Development and Occupational Studies (CDOS)
+
   },
   # ===================
   # Next Generation Science Standards
@@ -2072,7 +2246,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2599802" => "Latin American Studies",               # 2013 North Carolina Social Studies Elective - Latin American Studies  http://www.ncpublicschools.org/docs/acre/standards/new-standards/social-studies/latin-american-studies.doc
     "D2423461" => "Psychology",                           # 2010 North Carolina Social Studies Elective - Psychology  http://www.ncpublicschools.org/docs/acre/standards/new-standards/social-studies/psychology.pdf
     "D2423504" => "Sociology",                            # 2010 North Carolina Social Studies Elective - Sociology  http://www.ncpublicschools.org/docs/acre/standards/new-standards/social-studies/sociology.pdf
-    "D2423340" => "The Cold War",                         # 2010 North Carolina Social Studies Elective - The Cold War  http://www.ncpublicschools.org/docs/acre/standards/new-standards/social-studies/cold-war.pdf
+    "D2423340" => " GThe Cold War",                         # 2010 North Carolina Social Studies Elective - The Cold War  http://www.ncpublicschools.org/docs/acre/standards/new-standards/social-studies/cold-war.pdf
     "D2423440" => "Turning Points in American History",   # 2010 North Carolina Social Studies Elective - Turning Points in American History  http://www.ncpublicschools.org/docs/acre/standards/new-standards/social-studies/turning-points.pdf
     "D2423393" => "Twentieth Century Civil Liberties and Civil Rights",  # 2010 North Carolina Social Studies Elective - Twentieth Century Civil Liberties and Civil Rights  http://www.ncpublicschools.org/docs/acre/standards/new-standards/social-studies/civil-liberties-rights.pdf
     "D2425367" => "World Humanities",                     # 2010 North Carolina Social Studies Elective - World Humanities  http://www.ncpublicschools.org/docs/acre/standards/new-standards/social-studies/world-humanities.pdf
@@ -2261,6 +2435,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21030950" => "Social and Emotional Learning Standards (2019)", # 2019 Ohio K-12 Social and Emotional Learning Standards
     "D21244950" => "Science (2018)", # 2018 Ohio Learning Standards: Science
 
+    # Aug10, 2023 Imports:
+    "D21095884" => "World Languages and Cultures Novice Level (K-6) (2020)", # 2020 Ohio's Learning Standards World Languages and Cultures Novice Level (K-6)
+    "D21095885" => "World Languages and Cultures Novice Level (7-12) (2020)", # 2020 Ohio's Learning Standards World Languages and Cultures Novice Level (7-12)
+    "D21095886" => "World Languages and Cultures Novice High-Intermediate Mid Level (2020)", # 2020 Ohio's Learning Standards World Languages and Cultures Novice High-Intermediate Mid Level
+    "D21095887" => "World Languages and Cultures Intermediate Mid - Advanced Low Level (2020)", # 2020 Ohio's Learning Standards World Languages and Cultures Intermediate Mid - Advanced Low Level
+    "D21089978" => "Financial Literacy (2019)", # 2019 Ohio's Model Curriculum: Financial Literacy
+
+
 
   },
   # ===================
@@ -2321,6 +2503,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug11, 2022 Imports:
     "D21211786" => "English Language Arts (2021)", # 2021 Oklahoma Academic Standards: English Language Arts
 
+    # Aug10, 2023 Imports:
+    "D21321191" => "Mathematics (2022)", # 2022 Oklahoma Academic Standards Mathematics
+
   },
   # ===================
   # Oregon
@@ -2369,6 +2554,17 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug11, 2022 Imports:
     "D21207206" => "Social Science Integrated with Ethnic Studies (2021)", # 2021 Oregon Social Science Standards Integrated with Ethnic Studies
     "D21270900" => "Mathematics (2021)", # 2021 Oregon Mathematics Standards
+
+    # Aug10, 2023 Imports:
+    "D21348433" => "Science (2022)", # 2022 Oregon Science Standards (Kindergarten)
+    "D21348457" => "Science (2022)", # 2022 Oregon Science Standards (Grade 1)
+    "D21348479" => "Science (2022)", # 2022 Oregon Science Standards (Grade 2)
+    "D21348504" => "Science (2022)", # 2022 Oregon Science Standards (Grade 3)
+    "D21348535" => "Science (2022)", # 2022 Oregon Science Standards (Grade 4)
+    "D21348563" => "Science (2022)", # 2022 Oregon Science Standards (Grade 5)
+    "D21348593" => "Science (2022)", # 2022 Oregon Science Standards (Middle School)
+    "D21349315" => "Science (2022)", # 2022 Oregon Science Standards (High School)
+
 
   },
   # ===================
@@ -2422,6 +2618,12 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2624346" => "Personal Finance Model Curriculum",    # 2014 Personal Finance Model Curriculum  http://pdesas.org/main/fileview/PA%20Model%20Personal%20Finance%20Curriculum.pdf
     # Aug 9, 2017 Imports:
     "D2778414" => "World Languages (2002)", # 2002 Proposed Academic Standards for World Languages
+
+    # Aug10, 2023 Imports:
+    "D21302564" => "Science, Environment and Ecology (Grades 6–12) (2022)", # 2022 Pennsylvania Integrated Standards for Science, Environment and Ecology (Grades 6–12)
+    "D21302749" => "Technology and Engineering Standards (6-12) (2022)", # 2022 Pennsylvania Technology and Engineering Standards (6-12)
+    "D21358967" => "Science, Technology & Engineering and Environmental Literacy & Sustainability Standards (STEEL) (2022)", # 2022 Science, Technology & Engineering and Environmental Literacy & Sustainability Standards (STEEL)
+    "D21302386" => "Science, Environment, Ecology, Technology and Engineering (K-5) (2022)", # 2022 Pennsylvania Integrated Standards for Science, Environment, Ecology, Technology and Engineering (K-5)
   },
   # ===================
   # Rhode Island
@@ -2446,6 +2648,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Aug11, 2022 Imports:
     "D21204503" => "Mathematics (2021)", # 2021 Rhode Island Core Standards for Mathematics
+
+    # Aug10, 2023 Imports:
+    "D21193751" => "English Language Arts & Literacy (2021)", # 2021 Rhode Island Core Standards for English Language Arts & Literacy
+    "D21381696" => "Social Studies Standards (2023)", # 2023 Rhode Island Social Studies Standards
   },
   # ===================
   # Scotland
@@ -2515,6 +2721,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Aug11, 2022 Imports:
     "D21210357" => "Science (2021)", # 2021 South Carolina College- and Career-Ready Science Standards
+
+    # Aug10, 2023 Imports:
+    "D21349801" => "English Language Arts Standards (2023)", # 2023 South Carolina College- and Career-Ready English Language Arts Standards
 
   },
   # ===================
@@ -2699,6 +2908,8 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D2805935" => "Social Studies (2017)", # 2017 Tennessee Social Studies (6-8)
     "D2805936" => "Social Studies (2017)", # 2017 Tennessee Social Studies (9-12)
 
+    # Aug10, 2023 Imports:
+    "D21321918" => "Mathematics K-4 (2023)", # 2023 Tennessee Academic Standards: Mathematics K-4th Year
 
   },
 
@@ -2856,6 +3067,31 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21189516" => "Health Education (2013)", # 2013 Texas Essential Knowledge and Skills for Health Education - Grade 5
     "D21203691" => "Character Traits (2021)", # 2021 Texas Essential Knowledge and Skills for Character Traits
 
+    # Aug10, 2023 Imports:
+    "D21299219" => "Health Education (2020)", # 2020 Texas Essential Knowledge and Skills for Health Education - Kindergarten
+    "D21299265" => "Health Education (2020)", # 2020 Texas Essential Knowledge and Skills for Health Education - Grade 1
+    "D21299318" => "Health Education (2020)", # 2020 Texas Essential Knowledge and Skills for Health Education - Grade 2
+    "D21299376" => "Health Education (2020)", # 2020 Texas Essential Knowledge and Skills for Health Education - Grade 3
+    "D21299438" => "Health Education (2020)", # 2020 Texas Essential Knowledge and Skills for Health Education - Grade 4
+    "D21299511" => "Health Education (2020)", # 2020 Texas Essential Knowledge and Skills for Health Education - Grade 5
+    "D21303426" => "Health Education (2020)", # 2020 Texas Essential Knowledge and Skills for Health Education (Grade 7-8)
+    "D21303553" => "Health Education - Health 1 (2020)", # 2020 Texas Essential Knowledge and Skills for Health Education - Health 1
+    "D21303627" => "Health Education - Health II (2020)", # 2020 Texas Essential Knowledge and Skills for Health Education - Health II
+    "D21303699" => "Health in the Real World (2020)", # 2020 Texas Essential Knowledge and Skills - Your Health in the Real World
+    "D21312375" => "Lifetime Fitness and Wellness Pursuits (2022)", # 2022 Lifetime Fitness and Wellness Pursuits
+    "D21312117" => "Graphics Design and Illustration II (2017)", # 2017 Graphics Design and Illustration II
+    "D21312148" => "Commercial Photography I (2017)", # 2017 Commercial Photography I
+    "D21312204" => "Commercial Photography II (2017)", # 2017 Commercial Photography II
+    "D21312260" => "Accounting II (2017)", # 2017 Accounting II
+    "D21311903" => "Digital Audio Technology I (2017)", # 2017 Digital Audio Technology I
+    "D21349449" => "Instructional Practices (2021)", # 2021 Texas Essential Knowledge and Skills for Instructional Practices
+    "D21311978" => "Human Growth and Development (2022)", # 2022 Human Growth and Development
+    "D21359567" => "Human Growth and Development (2021)", # 2021 Texas Essential Knowledge and Skills: Human Growth and Development
+    "D21361314" => "Digital Design and Media Production (2020)", # 2020 Texas Essential Knowledge and Skills for Digital Design and Media Production
+    "D21303303" => "Health Education (Grade 6) (2020)", # 2020 Texas Essential Knowledge and Skills for Health Education (Grade 6)
+    "D21366192" => "Personal Financial Literacy & Economics (2022)", # 2022 Texas Essential Knowledge and Skills for Personal Financial Literacy & Economics
+    "D21416291" => "Ethnic Studies: African-American Studies (2020)", # 2020 Texas Essential Knowledge and Skills for Ethnic Studies: African-American Studies
+
 
 
   },
@@ -2917,6 +3153,10 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21033782" => "Science (2020)", # 2020 Utah Science with SEEd Standards (Grades 9-12)
     "D21033781" => "Science (2020)", # 2020 Utah Science with SEEd Standards (Grades 3-5)
     "D21033780" => "Science (2020)", # 2020 Utah Science with SEEd Standards (Grades K-2)
+
+    # Aug10, 2023 Imports:
+    "D21349561" => "Social Studies (2023)", # 2023 Utah Core Standards Elementary Social Studies
+    "D21362291" => "English Language Arts (2023)", # 2023 P-12 Utah State Standards for English Language Arts
 
 
   },
@@ -2986,6 +3226,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Jun28, 2019 Imports:
     "D2985351" => "Science (2018)", # 2018 Virginia Science Standards of Learning
 
+    # Aug10, 2023 Imports:
+    "D21340046" => "Mathematics: Data Science (2022)", # 2022 Mathematics Standards of Learning for Virginia Public Schools: Data Science
+
   },
   # ===================
   # Washington
@@ -3013,6 +3256,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Aug 1, 2021 Imports:
     "D21045197" => "Social Studies (2019)", # 2019 Washington State K-12 Learning Standards for Social Studies
+
+    # Aug10, 2023 Imports:
+    "D21340046" => "Mathematics: Data Science (2022)", # 2022 Mathematics Standards of Learning for Virginia Public Schools: Data Science
 
   },
   # ===================
@@ -3066,6 +3312,11 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Aug 1, 2021 Imports:
     "D21182111" => "English Language Arts (2020)", # 2020 West Virginia College- and Career-Ready Standards for English Language Arts
+
+    # Aug10, 2023 Imports:
+    "D21301910" => "Science (2022)", # 2022 West Virginia College- and Career-Readiness Standards for Science
+
+
   },
 
   # ===================
@@ -3106,6 +3357,7 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     # Aug 1, 2021 Imports:
     "D21129598" => "English Language Arts (2020)", # 2020 Wisconsin Standards for English Language Arts
     "D21201558" => "Mathematics (2021)", # 2021 Wisconsin Standards for Mathematics
+
 
 
   },
@@ -3230,6 +3482,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21272309" => "Science (Grade 9) (2022)", # 2022 The Ontario Curriculum: Science (Grade 9)
     "D21129204" => "Mathématiques (2020)", # 2020 Le curriculum de l'Ontario de la 1re à la 8e année – Mathématiques, 2020
 
+    # Aug10, 2023 Imports:
+    "D21349268" => "Civics and Citizenship (CHV20) (2022)", # 2022 The Ontario Curriculum: Civics and Citizenship (CHV20)
+    "D21395205" => "Language (2023)", # 2023 The Ontario Curriculum, Grades 1–8: Language
 
   },
 
@@ -3345,6 +3600,236 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
 
     # Aug11, 2022 Imports:
     "D21243211" => "Core Competencies (2019)", # 2019 British Columbia Core Competencies
+
+    # Aug10, 2023 Imports:
+    "D21313093" => "Physical and Health Education 10 (2018)", # 2018 British Columbia Physical and Health Education 10
+    "D21313139" => "Career Life Education 10 (2019)", # 2019 British Columbia Career Life Education 10
+    "D21313176" => "Career Life Connections 12 (2019)", # 2019 British Columbia Career Life Connections 12
+    "D21313255" => "Musical Theatre 10 (2018)", # 2018 British Columbia Musical Theatre 10
+    "D21313289" => "Dance Choreography 10 (2018)", # 2018 British Columbia Dance Choreography 10
+    "D21313335" => "Dance Company 10 (2018)", # 2018 British Columbia Dance Company 10
+    "D21313382" => "Dance Foundations 10 (2018)", # 2018 British Columbia Dance Foundations 10
+    "D21313428" => "Dance Technique and Performance 10 (2018)", # 2018 British Columbia Dance Technique and Performance 10
+    "D21313474" => "Drama 10 (2018)", # 2018 British Columbia Drama 10
+    "D21313506" => "Theatre Company 10 (2018)", # 2018 British Columbia Theatre Company 10
+    "D21313542" => "Theatre Production 10 (2018)", # 2018 British Columbia Theatre Production 10
+    "D21313580" => "Choral Music 10 (2018)", # 2018 British Columbia Choral Music 10
+    "D21313620" => "Contemporary Music 10 (2018)", # 2018 British Columbia Contemporary Music 10
+    "D21313661" => "Instrumental Music 10 (2018)", # 2018 British Columbia Instrumental Music 10
+    "D21313701" => "Art Studio 10 (2018)", # 2018 British Columbia Art Studio 10
+    "D21313738" => "Photography 10 (2018)", # 2018 British Columbia Photography 10
+    "D21313775" => "Studio Arts 2-D 10 (2018)", # 2018 British Columbia Studio Arts 2-D 10
+    "D21313814" => "Studio Arts 3-D 10 (2018)", # 2018 British Columbia Studio Arts 3-D 10
+    "D21313852" => "Media Arts 11 (2018)", # 2018 British Columbia Media Arts 11
+    "D21033874" => "Musical Theatre 11 (2018)", # 2018 British Columbia Musical Theatre 11
+    "D21033875" => "Dance Choreography 11 (2018)", # 2018 British Columbia Dance Choreography 11
+    "D21033876" => "Dance Company 11 (2018)", # 2018 British Columbia Dance Company 11
+    "D21033877" => "Dance Conditioning 11 (2018)", # 2018 British Columbia Dance Conditioning 11
+    "D21033878" => "Dance Foundations 11 (2018)", # 2018 British Columbia Dance Foundations 11
+    "D21033879" => "Dance Technique and Performance 11 (2018)", # 2018 British Columbia Dance Technique and Performance 11
+    "D21033880" => "Directing and Script Development 11 (2018)", # 2018 British Columbia Directing and Script Development 11
+    "D21033881" => "Drama 11 (2018)", # 2018 British Columbia Drama 11
+    "D21033882" => "Film and Television 11 (2018)", # 2018 British Columbia Film and Television 11
+    "D21033883" => "Theatre Company 11 (2018)", # 2018 British Columbia Theatre Company 11
+    "D21033884" => "Theatre Production 11 (2018)", # 2018 British Columbia Theatre Production 11
+    "D21033885" => "Choral Music 11 (2018)", # 2018 British Columbia Choral Music 11
+    "D21033886" => "Music Composition and Production 11 (2018)", # 2018 British Columbia Music Composition and Production 11
+    "D21033887" => "Contemporary Music 11 (2018)", # 2018 British Columbia Contemporary Music 11
+    "D21033888" => "Instrumental Music 11 (2018)", # 2018 British Columbia Instrumental Music 11
+    "D21033889" => "Visual Arts: Art Studio 11 (2018)", # 2018 British Columbia Visual Arts: Art Studio 11
+    "D21033890" => "Visual Arts: Graphic Arts 11 (2018)", # 2018 British Columbia Visual Arts: Graphic Arts 11
+    "D21033891" => "Visual Arts: Photography 11 (2018)", # 2018 British Columbia Visual Arts: Photography 11
+    "D21033892" => "Visual Arts: Studio Arts 2D 11 (2018)", # 2018 British Columbia Visual Arts: Studio Arts 2D 11
+    "D21033893" => "Visual Arts: Studio Arts 3D 11 (2018)", # 2018 British Columbia Visual Arts: Studio Arts 3D 11
+    "D21033894" => "Media Arts 12 (2018)", # 2018 British Columbia Media Arts 12
+    "D21033895" => "Musical Theatre 12 (2018)", # 2018 British Columbia Musical Theatre 12
+    "D21033896" => "Dance Choreography 12 (2018)", # 2018 British Columbia Dance Choreography 12
+    "D21033897" => "Dance Company 12 (2018)", # 2018 British Columbia Dance Company 12
+    "D21033898" => "Dance Conditioning 12 (2018)", # 2018 British Columbia Dance Conditioning 12
+    "D21033899" => "Dance Foundations 12 (2018)", # 2018 British Columbia Dance Foundations 12
+    "D21033900" => "Dance Technique and Performance 12 (2018)", # 2018 British Columbia Dance Technique and Performance 12
+    "D21033901" => "Drama: Directing and Script Development 12 (2018)", # 2018 British Columbia Drama: Directing and Script Development 12
+    "D21033902" => "Drama 12 (2018)", # 2018 British Columbia Drama 12
+    "D21033903" => "Drama: Film and Television 12 (2018)", # 2018 British Columbia Drama: Film and Television 12
+    "D21033904" => "Theatre Company 12 (2018)", # 2018 British Columbia Theatre Company 12
+    "D21033905" => "Theatre Production 12 (2018)", # 2018 British Columbia Theatre Production 12
+    "D21033906" => "Choral Music 12 (2018)", # 2018 British Columbia Choral Music 12
+    "D21033907" => "Music Composition and Production 12 (2018)", # 2018 British Columbia Music Composition and Production 12
+    "D21033908" => "Contemporary Music 12 (2018)", # 2018 British Columbia Contemporary Music 12
+    "D21033909" => "Instrumental Music 12 (2018)", # 2018 British Columbia Instrumental Music 12
+    "D21033910" => "Visual Arts: Art Studio 12 (2018)", # 2018 British Columbia Visual Arts: Art Studio 12
+    "D21033911" => "Visual Arts: Graphic Arts 12 (2018)", # 2018 British Columbia Visual Arts: Graphic Arts 12
+    "D21033912" => "Visual Arts: Photography 12 (2018)", # 2018 British Columbia Visual Arts: Photography 12
+    "D21033913" => "Visual Arts: Studio Arts 2D 12 (2018)", # 2018 British Columbia Visual Arts: Studio Arts 2D 12
+    "D21033914" => "Visual Arts: Studio Arts 3D 12 (2018)", # 2018 British Columbia Visual Arts: Studio Arts 3D 12
+    "D21313217" => "Media Arts 10 (2018)", # 2018 British Columbia Media Arts 10
+    "D21314193" => "Entrepreneurship and Marketing 10 (2018)", # 2018 British Columbia Entrepreneurship and Marketing 10
+    "D21314241" => "Culinary Arts 10 (2018)", # 2018 British Columbia Culinary Arts 10
+    "D21314287" => "Family and Society 10 (2018)", # 2018 British Columbia Family and Society 10
+    "D21314330" => "Food Studies 10 (2018)", # 2018 British Columbia Food Studies 10
+    "D21314374" => "Textiles 10 (2018)", # 2018 British Columbia Textiles 10
+    "D21314413" => "Computer Studies 10 (2018)", # 2018 British Columbia Computer Studies 10
+    "D21314464" => "Media Design 10 (2018)", # 2018 British Columbia Media Design 10
+    "D21314513" => "Web Development 10 (2018)", # 2018 British Columbia Web Development 10
+    "D21314559" => "Drafting 10 (2018)", # 2018 British Columbia Drafting 10
+    "D21314601" => "Electronics and Robotics 10 (2018)", # 2018 British Columbia Electronics and Robotics 10
+    "D21314650" => "Metalwork 10 (2018)", # 2018 British Columbia Metalwork 10
+    "D21314699" => "Power Technology 10 (2018)", # 2018 British Columbia Power Technology 10
+    "D21314745" => "Technology Explorations 10 (2018)", # 2018 British Columbia Technology Explorations 10
+    "D21314806" => "Woodwork 10 (2018)", # 2018 British Columbia Woodwork 10
+    "D21314850" => "Accounting 11 (2018)", # 2018 British Columbia Accounting 11
+    "D21314895" => "Marketing and Promotion 11 (2018)", # 2018 British Columbia Marketing and Promotion 11
+    "D21314939" => "Tourism 11 (2018)", # 2018 British Columbia Tourism 11
+    "D21314989" => "Culinary Arts 11 (2018)", # 2018 British Columbia Culinary Arts 11
+    "D21315038" => "Food Studies 11 (2018)", # 2018 British Columbia Food Studies 11
+    "D21315085" => "Interpersonal and Family Relationships 11 (2018)", # 2018 British Columbia Interpersonal and Family Relationships 11
+    "D21315128" => "Textiles 11 (2018)", # 2018 British Columbia Textiles 11
+    "D21315171" => "Computer Information Systems 11 (2018)", # 2018 British Columbia Computer Information Systems 11
+    "D21315221" => "Computer Programming 11 (2018)", # 2018 British Columbia Computer Programming 11
+    "D21315275" => "Digital Communications 11 (2018)", # 2018 British Columbia Digital Communications 11
+    "D21315329" => "Graphic Production 11 (2018)", # 2018 British Columbia Graphic Production 11
+    "D21315382" => "Media Design 11 (2018)", # 2018 British Columbia Media Design 11
+    "D21315435" => "Automotive Technology 11 (2018)", # 2018 British Columbia Automotive Technology 11
+    "D21315483" => "Drafting 11 (2018)", # 2018 British Columbia Drafting 11
+    "D21315529" => "Electronics 11 (2018)", # 2018 British Columbia Electronics 11
+    "D21315579" => "Engineering 11 (2018)", # 2018 British Columbia Engineering 11
+    "D21315633" => "Metalwork 11 (2018)", # 2018 British Columbia Metalwork 11
+    "D21315686" => "Robotics 11 (2018)", # 2018 British Columbia Robotics 11
+    "D21315736" => "Woodwork 11 (2018)", # 2018 British Columbia Woodwork 11
+    "D21315787" => "Accounting 12 (2018)", # 2018 British Columbia Accounting 12
+    "D21315832" => "Business Computer Applications 12 (2018)", # 2018 British Columbia Business Computer Applications 12
+    "D21315880" => "E-Commerce 12 (2018)", # 2018 British Columbia E-Commerce 12
+    "D21315934" => "Economics 12 (2018)", # 2018 British Columbia Economics 12
+    "D21316032" => "Entrepreneurship 12 (2018)", # 2018 British Columbia Entrepreneurship 12
+    "D21315985" => "Financial Accounting 12 (2018)", # 2018 British Columbia Financial Accounting 12
+    "D21316080" => "Tourism 12 (2018)", # 2018 British Columbia Tourism 12
+    "D21316125" => "Child Development and Caregiving 12 (2018)", # 2018 British Columbia Child Development and Caregiving 12
+    "D21316170" => "Culinary Arts 12 (2018)", # 2018 British Columbia Culinary Arts 12
+    "D21316223" => "Fashion Industry 12 (2018)", # 2018 British Columbia Fashion Industry 12
+    "D21316271" => "Food Studies Industry 12 (2018)", # 2018 British Columbia Food Studies Industry 12
+    "D21316316" => "Housing and Living Environments 12 (2018)", # 2018 British Columbia Housing and Living Environments 12
+    "D21316360" => "Specialized Studies in Food 12 (2018)", # 2018 British Columbia Specialized Studies in Food 12
+    "D21316408" => "Textiles 12 (2018)", # 2018 British Columbia Textiles 12
+    "D21316457" => "Computer Information Systems 12 (2018)", # 2018 British Columbia Computer Information Systems 12
+    "D21316507" => "Computer Program 12 (2018)", # 2018 British Columbia Computer Program 12
+    "D21316559" => "Digital Media Development 12 (2018)", # 2018 British Columbia Digital Media Development 12
+    "D21316614" => "Graphic Production 12 (2018)", # 2018 British Columbia Graphic Production 12
+    "D21316668" => "Media Design 12 (2018)", # 2018 British Columbia Media Design 12
+    "D21316723" => "Art Metal and Jewellery 12 (2018)", # 2018 British Columbia Art Metal and Jewellery 12
+    "D21316777" => "Automotive Technology 12 (2018)", # 2018 British Columbia Automotive Technology 12
+    "D21317407" => "Woodwork 12 (2018)", # 2018 British Columbia Woodwork 12
+    "D21317355" => "Robotics 12 (2018)", # 2018 British Columbia Robotics 12
+    "D21317192" => "Mechatronics 12 (2018)", # 2018 British Columbia Mechatronics 12
+    "D21317246" => "Metalwork 12 (2018)", # 2018 British Columbia Metalwork 12
+    "D21317299" => "Remotely Operated Vehicles and Drones 12 (2018)", # 2018 British Columbia Remotely Operated Vehicles and Drones 12
+    "D21316825" => "Drafting 12 (2018)", # 2018 British Columbia Drafting 12
+    "D21316874" => "Electronics 12 (2018)", # 2018 British Columbia Electronics 12
+    "D21316929" => "Engine and Drivetrain 12 (2018)", # 2018 British Columbia Engine and Drivetrain 12
+    "D21316979" => "Engineering 12 (2018)", # 2018 British Columbia Engineering 12
+    "D21317031" => "Furniture and Cabinetry 12 (2018)", # 2018 British Columbia Furniture and Cabinetry 12
+    "D21317085" => "Industrial Coding and Design 12 (2018)", # 2018 British Columbia Industrial Coding and Design 12
+    "D21317140" => "Machining and Welding 12 (2019)", # 2019 British Columbia Machining and Welding 12
+    "D21365187" => "American Sign Language (Grade 8) (2018)", # 2018 British Columbia American Sign Language (Grade 8)
+    "D21365219" => "American Sign Language (Grade 9) (2018)", # 2018 British Columbia American Sign Language (Grade 9)
+    "D21365254" => "American Sign Language (Grade 10) (2018)", # 2018 British Columbia American Sign Language (Grade 10)
+    "D21365288" => "American Sign Language (Grade 11) (2018)", # 2018 British Columbia American Sign Language (Grade 11)
+    "D21365321" => "American Sign Language (Grade 11 Introductory) (2018)", # 2018 British Columbia American Sign Language (Grade 11 Introductory)
+    "D21365358" => "American Sign Language (Grade 12) (2018)", # 2018 British Columbia American Sign Language (Grade 12)
+    "D21365394" => "American Core French (Grade 8) (2018)", # 2018 British Columbia American Core French (Grade 8)
+    "D21365422" => "Core French (Grade 9) (2018)", # 2018 British Columbia Core French (Grade 9)
+    "D21365450" => "Core French (Grade 10) (2018)", # 2018 British Columbia Core French (Grade 10)
+    "D21365480" => "Core French (Grade 11) (2018)", # 2018 British Columbia Core French (Grade 11)
+    "D21365545" => "Core French (Grade 11 Introductory) (2018)", # 2018 British Columbia Core French (Grade 11 Introductory)
+    "D21365512" => "Core French (Grade 12) (2018)", # 2018 British Columbia Core French (Grade 12)
+    "D21365579" => "German (Grade 8) (2018)", # 2018 British Columbia German (Grade 8)
+    "D21365611" => "German (Grade 9) (2018)", # 2018 British Columbia German (Grade 9)
+    "D21365643" => "German (Grade 10) (2018)", # 2018 British Columbia German (Grade 10)
+    "D21365676" => "German (Grade 11) (2018)", # 2018 British Columbia German (Grade 11)
+    "D21365707" => "German (Grade 11 Introductory) (2018)", # 2018 British Columbia German (Grade 11 Introductory)
+    "D21365742" => "German (Grade 12) (2018)", # 2018 British Columbia German (Grade 12)
+    "D21365779" => "Italian (Grade 8) (2018)", # 2018 British Columbia Italian (Grade 8)
+    "D21365811" => "Italian (Grade 9) (2018)", # 2018 British Columbia Italian (Grade 9)
+    "D21365845" => "Italian (Grade 10) (2018)", # 2018 British Columbia Italian (Grade 10)
+    "D21365878" => "Italian (Grade 11) (2018)", # 2018 British Columbia Italian (Grade 11)
+    "D21365877" => "Italian (Grade 11 Introductory) (2018)", # 2018 British Columbia Italian (Grade 11 Introductory)
+    "D21365915" => "Italian (Grade 12) (2018)", # 2018 British Columbia Italian (Grade 12)
+    "D21365990" => "Japanese (Grade 8) (2018)", # 2018 British Columbia Japanese (Grade 8)
+    "D21366025" => "Japanese (Grade 9) (2018)", # 2018 British Columbia Japanese (Grade 9)
+    "D21366057" => "Japanese (Grade 10) (2018)", # 2018 British Columbia Japanese (Grade 10)
+    "D21366092" => "Japanese (Grade 11) (2018)", # 2018 British Columbia Japanese (Grade 11)
+    "D21366127" => "Japanese (Grade 11 Introductory) (2018)", # 2018 British Columbia Japanese (Grade 11 Introductory)
+    "D21366155" => "Japanese (Grade 12) (2018)", # 2018 British Columbia Japanese (Grade 12)
+    "D21367754" => "Korean (Grade 8) (2018)", # 2018 British Columbia Korean (Grade 8)
+    "D21367784" => "Korean (Grade 9) (2018)", # 2018 British Columbia Korean (Grade 9)
+    "D21367817" => "Korean (Grade 10) (2018)", # 2018 British Columbia Korean (Grade 10)
+    "D21367852" => "Mandarin (Grade 8) (2018)", # 2018 British Columbia Mandarin (Grade 8)
+    "D21367885" => "Mandarin (Grade 9) (2018)", # 2018 British Columbia Mandarin (Grade 9)
+    "D21367918" => "Mandarin (Grade 10) (2018)", # 2018 British Columbia Mandarin (Grade 10)
+    "D21367954" => "Punjabi (Grade 8) (2018)", # 2018 British Columbia Punjabi (Grade 8)
+    "D21367984" => "Punjabi (Grade 9) (2018)", # 2018 British Columbia Punjabi (Grade 9)
+    "D21368016" => "Punjabi (Grade 10) (2018)", # 2018 British Columbia Punjabi (Grade 10)
+    "D21368049" => "Spanish (Grade 8) (2018)", # 2018 British Columbia Spanish (Grade 8)
+    "D21368079" => "Spanish (Grade 9) (2018)", # 2018 British Columbia Spanish (Grade 9)
+    "D21368109" => "Spanish (Grade 10) (2018)", # 2018 British Columbia Spanish (Grade 10)
+    "D21368144" => "Korean (Grade 11) (2018)", # 2018 British Columbia Korean (Grade 11)
+    "D21368175" => "Korean (Grade 11 Introductory) (2018)", # 2018 British Columbia Korean (Grade 11 Introductory)
+    "D21368207" => "Mandarin (Grade 11) (2018)", # 2018 British Columbia Mandarin (Grade 11)
+    "D21368240" => "Mandarin (Grade 11 Introductory) (2018)", # 2018 British Columbia Mandarin (Grade 11 Introductory)
+    "D21368270" => "Punjabi (Grade 11) (2018)", # 2018 British Columbia Punjabi (Grade 11)
+    "D21368305" => "Punjabi (Grade 11 Introductory) (2018)", # 2018 British Columbia Punjabi (Grade 11 Introductory)
+    "D21368334" => "Spanish (Grade 11) (2018)", # 2018 British Columbia Spanish (Grade 11)
+    "D21368367" => "Spanish (Grade 11 Introductory) (2018)", # 2018 British Columbia Spanish (Grade 11 Introductory)
+    "D21368397" => "Korean (Grade 12) (2018)", # 2018 British Columbia Korean (Grade 12)
+    "D21368433" => "Mandarin (Grade 12) (2018)", # 2018 British Columbia Mandarin (Grade 12)
+    "D21368466" => "Punjabi (Grade 12) (2018)", # 2018 British Columbia Punjabi (Grade 12)
+    "D21368500" => "Spanish (Grade 12) (2018)", # 2018 British Columbia Spanish (Grade 12)
+    "D21373314" => "Spanish (Grade 5) (2018)", # 2018 British Columbia Spanish (Grade 5)
+    "D21373295" => "Punjabi (Grade 5) (2018)", # 2018 British Columbia Punjabi (Grade 5)
+    "D21373276" => "Mandarin (Grade 5) (2018)", # 2018 British Columbia Mandarin (Grade 5)
+    "D21373258" => "Korean (Grade 5) (2018)", # 2018 British Columbia Korean (Grade 5)
+    "D21373239" => "Japanese (Grade 5) (2018)", # 2018 British Columbia Japanese (Grade 5)
+    "D21373446" => "Italian (Grade 5) (2018)", # 2018 British Columbia Italian (Grade 5)
+    "D21373220" => "German (Grade 5) (2018)", # 2018 British Columbia German (Grade 5)
+    "D21373182" => "Core French (Grade 5) (2018)", # 2018 British Columbia Core French (Grade 5)
+    "D21373163" => "American Sign Language (Grade 5) (2018)", # 2018 British Columbia American Sign Language (Grade 5)
+    "D21373332" => "American Sign Language (Grade 6) (2018)", # 2018 British Columbia American Sign Language (Grade 6)
+    "D21373352" => "American Sign Language (Grade 7) (2018)", # 2018 British Columbia American Sign Language (Grade 7)
+    "D21373372" => "Core French (Grade 6) (2018)", # 2018 British Columbia Core French (Grade 6)
+    "D21373391" => "Core French (Grade 7) (2018)", # 2018 British Columbia Core French (Grade 7)
+    "D21373410" => "German (Grade 6) (2018)", # 2018 British Columbia German (Grade 6)
+    "D21373428" => "German (Grade 7) (2018)", # 2018 British Columbia German (Grade 7)
+    "D21373465" => "Italian (Grade 6) (2018)", # 2018 British Columbia Italian (Grade 6)
+    "D21373485" => "Italian (Grade 7) (2018)", # 2018 British Columbia Italian (Grade 7)
+    "D21373504" => "Japanese (Grade 6) (2018)", # 2018 British Columbia Japanese (Grade 6)
+    "D21373522" => "Japanese (Grade 7) (2018)", # 2018 British Columbia Japanese (Grade 7)
+    "D21373540" => "Korean (Grade 6) (2018)", # 2018 British Columbia Korean (Grade 6)
+    "D21373558" => "Korean (Grade 7) (2018)", # 2018 British Columbia Korean (Grade 7)
+    "D21373576" => "Mandarin (Grade 6) (2018)", # 2018 British Columbia Mandarin (Grade 6)
+    "D21373594" => "Mandarin (Grade 7) (2018)", # 2018 British Columbia Mandarin (Grade 7)
+    "D21373611" => "Punjabi (Grade 6) (2018)", # 2018 British Columbia Punjabi (Grade 6)
+    "D21373629" => "Punjabi (Grade 7) (2018)", # 2018 British Columbia Punjabi (Grade 7)
+    "D21373647" => "Spanish (Grade 6) (2018)", # 2018 British Columbia Spanish (Grade 6)
+    "D21373666" => "Spanish (Grade 7) (2018)", # 2018 British Columbia Spanish (Grade 7)
+    "D21372500" => "French Immersion Language Arts 10 (2018)", # 2018 British Columbia French Immersion Language Arts 10
+    "D21372544" => "French Immersion Language Arts Oral Communication 11 (2018)", # 2018 British Columbia French Immersion Language Arts Oral Communication 11
+    "D21372571" => "French-Language Film and Literary Studies 11 (2018)", # 2018 British Columbia French-Language Film and Literary Studies 11
+    "D21372595" => "Language and Culture of the French-Speaking World 11 (2018)", # 2018 British Columbia Language and Culture of the French-Speaking World 11
+    "D21372620" => "Media and Digital Communication 11 (2018)", # 2018 British Columbia Media and Digital Communication 11
+    "D21372517" => "French Immersion Language Arts 12 (2018)", # 2018 British Columbia French Immersion Language Arts 12
+    "D21372646" => "French Immersion Language Arts Oral Communication 12 (2018)", # 2018 British Columbia French Immersion Language Arts Oral Communication 12
+    "D21372674" => "French-Language Film and Literary Studies 12 (2018)", # 2018 British Columbia French-Language Film and Literary Studies 12
+    "D21372698" => "Language and Culture of the French-Speaking World 12 (2018)", # 2018 British Columbia Language and Culture of the French-Speaking World 12
+    "D21372725" => "Media and Digital Communication 12 (2018)", # 2018 British Columbia Media and Digital Communication 12
+    "D21396199" => "French Immersion 8 (2018)", # 2018 British Columbia French Immersion 8
+    "D21396285" => "French Immersion 9 (2018)", # 2018 British Columbia French Immersion 9
+    "D21396313" => "French Immersion Kindergarten (2018)", # 2018 British Columbia French Immersion Kindergarten
+    "D21396228" => "French Immersion 1 (2018)", # 2018 British Columbia French Immersion 1
+    "D21396338" => "French Immersion 2 (2018)", # 2018 British Columbia French Immersion 2
+    "D21396365" => "French Immersion 3 (2018)", # 2018 British Columbia French Immersion 3
+    "D21396258" => "French Immersion 4 (2018)", # 2018 British Columbia French Immersion 4
+    "D21373111" => "French Immersion 5 (2018)", # 2018 British Columbia French Immersion 5
+    "D21373128" => "French Immersion 6 (2018)", # 2018 British Columbia French Immersion 6
+    "D21373145" => "French Immersion 7 (2018)", # 2018 British Columbia French Immersion 7
   },
 
   # ========
@@ -3537,6 +4022,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21274016" => "Social and Emotional Learning Content Statements (2022)", # 2022 Social and Emotional Learning Content Statements
     "D21290636" => "Computer Science Content Statements (2022)", # 2022 Computer Science Content Statements
     "D21289646" => "Science Content Statements High School 2021 (2021)", # 2021 Science Content Statements High School 2021
+
+    # Aug10, 2023 Imports:
+    "D21316612" => "History Content Statements 6-8 (2021)", # 2021 History Content Statements 6-8
+    "D21308465" => "History Content Statements High School (2021)", # 2021 History Content Statements High School
+    "D21353746" => "English Language Arts Content Statements (6-8) (2022)", # 2022 English Language Arts Content Statements (6-8)
+    "D21349556" => "English Language Arts Content Statements (9-12) (2022)", # 2022 English Language Arts Content Statements (9-12)
+    "D21355466" => "Mathematics Content Statements (K-5) (2023)", # 2023 Mathematics Content Statements (K-5)
+
   },
 
   "Dublin Core Metadata Initiative" => {
@@ -3936,6 +4429,28 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21269782" => "English Language Arts Curriculum (2022)", # 2022 Alberta K-6 English Language Arts Curriculum
     "D21269846" => "Physical Education and Wellness Curriculum (2022)", # 2022 Alberta K-6 Physical Education and Wellness Curriculum
 
+    # Aug10, 2023 Imports:
+    "D21283220" => "Career and Life Management (CALM) (2002)", # 2002 Career and Life Management (CALM)
+    "D21283416" => "Hairstylist Apprenticeship 0421 (2019)", # 2019 Hairstylist Apprenticeship 0421
+    "D21283417" => "CTS Foods (2010)", # 2010 CTS Foods
+    "D21283418" => "Cosmetology and Esthetics (2006)", # 2006 Cosmetology and Esthetics
+    "D21303771" => "Health Care Services (HCS) (2010)", # 2010 Health Care Services (HCS)
+    "D21305917" => "Human and Social Services (HSS) (2010)", # 2010 Human and Social Services (HSS)
+    "D21319998" => "Mathematics 10C (2008)", # 2008 Alberta Mathematics 10C
+    "D21320059" => "Mathematics 20-1 (2008)", # 2008 Alberta Mathematics 20-1
+    "D21320100" => "Mathematics 30-1 (2008)", # 2008 Alberta Mathematics 30-1
+    "D21320139" => "Mathematics 20-2 (2008)", # 2008 Alberta Mathematics 20-2
+    "D21320176" => "Mathematics 30-2 (2008)", # 2008 Alberta Mathematics 30-2
+    "D21320206" => "Mathematics 10-3 (2008)", # 2008 Alberta Mathematics 10-3
+    "D21320257" => "Mathematics 20-3 (2008)", # 2008 Alberta Mathematics 20-3
+    "D21320297" => "Mathematics 30-3 (2008)", # 2008 Alberta Mathematics 30-3
+    "D21327719" => "Science 10 (2014)", # 2014 Alberta Science 10
+    "D21327941" => "Science 14 (2014)", # 2014 Alberta Science 14
+    "D21328149" => "Science 24 (2014)", # 2014 Alberta Science 24
+    "D21368534" => "Science 7 (2014)", # 2014 Alberta Science 7
+    "D21368777" => "Science 8 (2014)", # 2014 Alberta Science 8
+    "D21369002" => "Science 9 (2014)", # 2014 Alberta Science 9
+
   },
 
   "Association of American Medical Colleges" => {
@@ -4017,6 +4532,9 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21272859" => "Sciences (9ᵉ année) (2022)", # 2022 Le Curriculum De L'Ontario: Sciences (9ᵉ année)
     "D21273658" => "Anglais (2006)", # 2006 Anglais de la 4e à la 8e année
     "D21273354" => "Anglais pour débutants (APD) (2013)", # 2013 Anglais pour débutants de la 4e à la 8e année (APD)
+
+    # Aug10, 2023 Imports:
+    "D21395702" => "Français (2023)", # 2023 Le Curriculum De L'Ontario, 1-8: Français
 
 
 
@@ -4273,6 +4791,110 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21241301" => "French Language Arts (2021)", # 2021 French Language Arts Grades 1-5
     "D21241393" => "French (2021)", # 2021 French Grades 4-5
     "D21241409" => "Spanish Language Arts (2021)", # 2021 Spanish Language Arts Grades 1-5
+
+    # Aug10, 2023 Imports:
+    "D21321085" => "Art (IB) 25-3 (2016)", # 2016 Art (IB) 25-3
+    "D21321177" => "Advanced Acting/Touring Theatre 35-5 (2019)", # 2019 Advanced Acting/Touring Theatre 35-5
+    "D21321162" => "Advanced Acting/Touring Theatre 35-3 (2019)", # 2019 Advanced Acting/Touring Theatre 35-3
+    "D21321146" => "Advanced Acting/Touring Theatre 25-5 (2019)", # 2019 Advanced Acting/Touring Theatre 25-5
+    "D21321133" => "Advanced Acting/Touring Theatre 25-3 (2019)", # 2019 Advanced Acting/Touring Theatre 25-3
+    "D21321117" => "Advanced Acting/Touring Theatre 15-5 (2019)", # 2019 Advanced Acting/Touring Theatre 15-5
+    "D21321104" => "Advanced Acting/Touring Theatre 15-3 (2019)", # 2019 Advanced Acting/Touring Theatre 15-3
+    "D21324546" => "Biology (Advanced) 35-5 (2020)", # 2020 Biology (Advanced) 35-5
+    "D21324483" => "Biology (IB) 35-5 (2016)", # 2016 Biology (IB) 35-5
+    "D21324453" => "Calculus (Advanced 2020) 35-5 (2020)", # 2020 Calculus (Advanced 2020) 35-5
+    "D21324632" => "Calculus (Advanced 2021) 35-3 (2021)", # 2021 Calculus (Advanced 2021) 35-3
+    "D21324726" => "Ceramics (Advanced Techniques) 15-5 (2019)", # 2019 Ceramics (Advanced Techniques) 15-5
+    "D21324747" => "Ceramics (Advanced Techniques) 25-5 (2019)", # 2019 Ceramics (Advanced Techniques) 25-5
+    "D21324768" => "Ceramics (Advanced Techniques) 35-5 (2019)", # 2019 Ceramics (Advanced Techniques) 35-5
+    "D21324789" => "Chamber Ensemble 15-3 (2021)", # 2021 Chamber Ensemble 15-3
+    "D21324803" => "Chamber Ensemble 25-3 (2021)", # 2021 Chamber Ensemble 25-3
+    "D21324817" => "Chamber Ensemble 35-3 (2021)", # 2021 Chamber Ensemble 35-3
+    "D21324831" => "Chemistry (Advanced) 35-3 (2021)", # 2021 Chemistry (Advanced) 35-3
+    "D21324945" => "Chemistry (IB) 25-5 (2016)", # 2016 Chemistry (IB) 25-5
+    "D21325236" => "Choir 15-3 (2021)", # 2021 Choir 15-3
+    "D21325252" => "Choir 25-3 (2021)", # 2021 Choir 25-3
+    "D21325268" => "Choir 35-3 (2021)", # 2021 Choir 35-3
+    "D21325284" => "Choir 15-5 (2021)", # 2021 Choir 15-5
+    "D21325302" => "Choir 25-5 (2021)", # 2021 Choir 25-5
+    "D21325320" => "Choir 35-5 (2021)", # 2021 Choir 35-5
+    "D21325338" => "Competencies in Math 15-3 (2022)", # 2022 Competencies in Math 15-3
+    "D21325370" => "Competencies in Math 15-5 (2022)", # 2022 Competencies in Math 15-5
+    "D21325402" => "Creative Writing & Publishing 15-3 (2019)", # 2019 Creative Writing & Publishing 15-3
+    "D21325417" => "Creative Writing & Publishing 15-5 (2019)", # 2019 Creative Writing & Publishing 15-5
+    "D21325428" => "Creative Writing & Publishing 25-3 (2019)", # 2019 Creative Writing & Publishing 25-3
+    "D21325444" => "Creative Writing & Publishing 25-5 (2019)", # 2019 Creative Writing & Publishing 25-5
+    "D21325460" => "Creative Writing & Publishing 35-3 (2019)", # 2019 Creative Writing & Publishing 35-3
+    "D21325475" => "Creative Writing & Publishing 35-5 (2019)", # 2019 Creative Writing & Publishing 35-5
+    "D21325497" => "Dance 15-3 (2019)", # 2019 Dance 15-3
+    "D21325525" => "Dance 15-5 (2019)", # 2019 Dance 15-5
+    "D21325557" => "Dance 25-3 (2019)", # 2019 Dance 25-3
+    "D21325585" => "Dance 25-5 (2019)", # 2019 Dance 25-5
+    "D21325617" => "Dance 35-3 (2019)", # 2019 Dance 35-3
+    "D21325645" => "Dance 35-5 (2019)", # 2019 Dance 35-5
+    "D21325677" => "Drawing 15-5 (2022)", # 2022 Drawing 15-5
+    "D21325710" => "Drawing 25-5 (2022)", # 2022 Drawing 25-5
+    "D21325743" => "Drawing 35-5 (2022)", # 2022 Drawing 35-5
+    "D21325775" => "English Literature (IB) 35-5 (2021)", # 2021 English Literature (IB) 35-5
+    "D21325798" => "English Literature 35-5 (2020)", # 2020 English Literature 35-5
+    "D21325821" => "ESL Expository English 15-5 (2020)", # 2020 ESL Expository English 15-5
+    "D21325881" => "ESL Expository English 25-5 (2020)", # 2020 ESL Expository English 25-5
+    "D21325938" => "ESL Intro to Canadian Studies 15-5 (2019)", # 2019 ESL Intro to Canadian Studies 15-5
+    "D21326027" => "ESL Intro to Canadian Studies 25-5 (2019)", # 2019 ESL Intro to Canadian Studies 25-5
+    "D21326100" => "ESL Introduction Mathematics 15-5 (2021)", # 2021 ESL Introduction Mathematics 15-5
+    "D21326204" => "ESL Introduction Science 15-5 (2019)", # 2019 ESL Introduction Science 15-5
+    "D21326299" => "ESL Introduction Science 25-5 (2019)", # 2019 ESL Introduction Science 25-5
+    "D21326370" => "Film and Media Art 15-5 (2021)", # 2021 Film and Media Art 15-5
+    "D21326379" => "Film and Media Art 25-5 (2021)", # 2021 Film and Media Art 25-5
+    "D21326388" => "Film and Media Art 35-5 (2021)", # 2021 Film and Media Art 35-5
+    "D21326398" => "Forensic Studies 25-3 (2021)", # 2021 Forensic Studies 25-3
+    "D21326419" => "Forensic Studies 35-3 (2021)", # 2021 Forensic Studies 35-3
+    "D21326440" => "Guitar 15-5 (2022)", # 2022 Guitar 15-5
+    "D21326468" => "Guitar 25-5 (2022)", # 2022 Guitar 25-5
+    "D21326489" => "The Guitar 35-5 (2022)", # 2022 The Guitar 35-5
+    "D21326510" => "Improvisational Theatre 15-3 (2020)", # 2020 Improvisational Theatre 15-3
+    "D21326541" => "Improvisational Theatre 15-5 (2020)", # 2020 Improvisational Theatre 15-5
+    "D21326580" => "Improvisational Theatre 25-3 (2020)", # 2020 Improvisational Theatre 25-3
+    "D21326611" => "Improvisational Theatre 25-5 (2020)", # 2020 Improvisational Theatre 25-5
+    "D21326650" => "Improvisational Theatre 35-3 (2020)", # 2020 Improvisational Theatre 35-3
+    "D21326681" => "Improvisational Theatre 35-5 (2020)", # 2020 Improvisational Theatre 35-5
+    "D21326720" => "Instrumental Jazz 15-3 (2021)", # 2021 Instrumental Jazz 15-3
+    "D21326732" => "Instrumental Jazz 25-3 (2021)", # 2021 Instrumental Jazz 25-3
+    "D21326744" => "Instrumental Jazz 35-3 (2021)", # 2021 Instrumental Jazz 35-3
+    "D21326745" => "Instrumental Jazz 15-5 (2021)", # 2021 Instrumental Jazz 15-5
+    "D21326758" => "Instrumental Jazz 25-5 (2021)", # 2021 Instrumental Jazz 25-5
+    "D21326771" => "Instrumental Jazz 35-5 (2021)", # 2021 Instrumental Jazz 35-5
+    "D21326783" => "Intercultural Studies 15-3 (2022)", # 2022 Intercultural Studies 15-3
+    "D21326802" => "Literature & Composition 35-5 (2021)", # 2021 Literature & Composition 35-5
+    "D21326828" => "Mental Health Literacy 15-3 (2020)", # 2020 Mental Health Literacy 15-3
+    "D21326861" => "Musical Theatre 15-5 (2022)", # 2022 Musical Theatre 15-5
+    "D21326881" => "Musical Theatre 25-5 (2022)", # 2022 Musical Theatre 25-5
+    "D21326937" => "Musical Theatre 35-5 (2022)", # 2022 Musical Theatre 35-5
+    "D21326993" => "Musical Theatre Performance 15-5 (2021)", # 2021 Musical Theatre Performance 15-5
+    "D21327013" => "Musical Theatre Performance 25-5 (2021)", # 2021 Musical Theatre Performance 25-5
+    "D21327033" => "Musical Theatre Performance 35-5 (2021)", # 2021 Musical Theatre Performance 35-5
+    "D21327055" => "Physics - Advanced 35-5 (2019)", # 2019 Physics - Advanced 35-5
+    "D21327174" => "Psychology - Abnormal 35-3 (2022)", # 2022 Psychology - Abnormal 35-3
+    "D21327234" => "Psychology - Advanced 35-3 (2022)", # 2022 Psychology - Advanced 35-3
+    "D21327294" => "RS Christian Studies 15-3 (2019)", # 2019 RS Christian Studies 15-3
+    "D21327308" => "RS Christian Studies 25-3 (2019)", # 2019 RS Christian Studies 25-3
+    "D21327325" => "RS Christian Studies 35-3 (2019)", # 2019 RS Christian Studies 35-3
+    "D21327342" => "Scientific Research 35-3 (2022)", # 2022 Scientific Research 35-3
+    "D21327368" => "Technical Theatre 15-5 (2022)", # 2022 Technical Theatre 15-5
+    "D21327392" => "Technical Theatre 25-5 (2022)", # 2022 Technical Theatre 25-5
+    "D21327415" => "Technical Theatre 35-5 (2022)", # 2022 Technical Theatre 35-5
+    "D21327676" => "Theory of Knowledge 25-3 (2021)", # 2021 Theory of Knowledge 25-3
+    "D21327693" => "Theory of Knowledge 35-3 (2021)", # 2021 Theory of Knowledge 35-3
+    "D21327440" => "Vocal Jazz 15-5 (2021)", # 2021 Vocal Jazz 15-5
+    "D21327454" => "Vocal Jazz 25-5 (2021)", # 2021 Vocal Jazz 25-5
+    "D21327468" => "Vocal Jazz 35-5 (2021)", # 2021 Vocal Jazz 35-5
+    "D21327482" => "Yoga 15-3 (2019)", # 2019 Yoga 15-3
+    "D21327507" => "Yoga 15-5 (2019)", # 2019 Yoga 15-5
+    "D21327532" => "Yoga 25-3 (2019)", # 2019 Yoga 25-3
+    "D21327564" => "Yoga 25-5 (2019)", # 2019 Yoga 25-5
+    "D21327597" => "Yoga 35-3 (2019)", # 2019 Yoga 35-3
+    "D21327636" => "Yoga 35-5 (2019)", # 2019 Yoga 35-5
+
   },
   "iLEAD"=>{
     # Aug11, 2022 Imports:
@@ -4408,6 +5030,14 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
   "New York City Department of Education"=>{
     # Aug11, 2022 Imports:
     "D21248089" => "AP Calculus AB/BC (2020)", # 2020 AP Calculus AB/BC
+
+    # Aug10, 2023 Imports:
+    "D21345337" => "AP English Language and Composition (2020)", # 2020 AP English Language and Composition
+    "D21345450" => "AP Art and Design (2021)", # 2021 AP Art and Design
+    "D21345494" => "AP Art History (2020)", # 2020 AP Art History
+    "D21345595" => "AP Biology (2020)", # 2020 AP Biology
+    "D21345782" => "AP Calculus AB and BC (2020)", # 2020 AP Calculus AB and BC
+
   },
   "Illinois Community College Board"=>{
     # Aug11, 2022 Imports:
@@ -4433,9 +5063,70 @@ SOURCE_TO_SUBJECT_MAPPINGS_GROUPED = {
     "D21257913" => "Mathematics (Grade 4) (2008)", # 2008 New Brunswick Mathematics (Grade 4)
     "D21258092" => "Mathematics (Grade 5) (2009)", # 2009 New Brunswick Mathematics (Grade 5)
     "D21258278" => "Mathematics (Grade 6) (2010)", # 2010 New Brunswick Mathematics (Grade 6)
+
+    # Aug10, 2023 Imports:
+    "D21366609" => "Physical Education (2023)", # 2023 New Brunswick K-9 Scope and Sequence Physical Education
+    "D21366686" => "Personal Wellness (2023)", # 2023 New Brunswick 3-9 Scope and Sequence Personal Wellness
+    "D21366812" => "Scope and Sequence Science (2023)", # 2023 New Brunswick 3-9 Scope and Sequence Science
+    "D21366855" => "Social Studies (2023)", # 2023 New Brunswick 3-9 Scope and Sequence Social Studies
+    "D21366949" => "Intensive French - Post-Intensive French (2023)", # 2023 New Brunswick 5-9 Scope and Sequence Intensive French - Post-Intensive French
+    "D21366988" => "Wabanaki Languages (2023)", # 2023 New Brunswick 6-8 Scope and Sequence Wabanaki Languages
+    "D21367063" => "Technology (2023)", # 2023 New Brunswick 6-9 Scope and Sequence Technology
+    "D21367155" => "English Language Arts (2023)", # 2023 New Brunswick K-9 Scope and Sequence English Language Arts
+    "D21367404" => "Mathematics (2023)", # 2023 New Brunswick K-9 Scope and Sequence Mathematics
+    "D21367598" => "New Brunswick G1-8 G1, 3, 6 Entry Scope and Sequence - FILA (2023)", # 2023 New Brunswick G1-8 G1, 3, 6 Entry Scope and Sequence - FILA
   },
   "Calgary Catholic School District"=>{
     # Aug11, 2022 Imports:
     "D21281970" => "Religious Outcomes (2022)", # 2022 Calgary Catholic Religious Outcomes
+  },
+
+  "Acton School"=>{
+# Aug10, 2023 Imports:
+    "D21259621" => "National Core Arts Standards (2013)", # 2013 National Core Arts Standards
+    "D21259399" => "NAFME PK-8 Music Standards (2014)", # 2014 NAFME PK-8 Music Standards
+    "D21258796" => "National Standards & Outcomes for K-12 Physical Education (SHAPE America) (2013)", # 2013 National Standards & Outcomes for K-12 Physical Education (SHAPE America)
+
+
+  },
+  "American School of The Hague"=>{
+    # Aug10, 2023 Imports:
+    "D21340065" => "Common Core State Standards for English Language Arts & Literacy in History/Social Studies, Science, and Technical Subjects (2010)", # 2010 Common Core State Standards for English Language Arts & Literacy in History/Social Studies, Science, and Technical Subjects
+    "D21340066" => "Common Core State Standards for Mathematics (2010)", # 2010 Common Core State Standards for Mathematics
+    "D21340067" => "Next Generation Science Standards (2013)", # 2013 Next Generation Science Standards
+    "D21340068" => "College, Career, and Civic Life (C3) Framework for Social Studies State Standards (2017)", # 2017 College, Career, and Civic Life (C3) Framework for Social Studies State Standards
+    "D21340069" => "National Health Education Standards (2007)", # 2007 National Health Education Standards
+    "D21340070" => "National Standards & Outcomes for K-12 Physical Education (SHAPE America) (2013)", # 2013 National Standards & Outcomes for K-12 Physical Education (SHAPE America)
+    "D21352896" => "WIDA Can Do Descriptors (Kindergarten) (2016)", # 2016 WIDA Can Do Descriptors (Kindergarten)
+    "D21353089" => "WIDA Can Do Descriptors (Grade 1) (2016)", # 2016 WIDA Can Do Descriptors (Grade 1)
+    "D21353251" => "WIDA Can Do Descriptors (Grades 2-3) (2016)", # 2016 WIDA Can Do Descriptors (Grades 2-3)
+    "D21353415" => "WIDA Can Do Descriptors (Grades 4-5) (2016)", # 2016 WIDA Can Do Descriptors (Grades 4-5)
+    "D21353582" => "WIDA Can Do Descriptors (Grades 6-8) (2016)", # 2016 WIDA Can Do Descriptors (Grades 6-8)
+    "D21353748" => "WIDA Can Do Descriptors (Grades 9-12) (2016)", # 2016 WIDA Can Do Descriptors (Grades 9-12)
+    "D21354036" => "AASL Standards Framework for Learners (2018)", # 2018 AASL Standards Framework for Learners
+    "D21340071" => "National Core Arts Standards: Visual Arts (2013)", # 2013 National Core Arts Standards: Visual Arts
+    "D21356317" => "National Core Arts Standards: Theatre (2021)", # 2021 National Core Arts Standards: Theatre
+    "D21356099" => "National Core Arts Standards: Music (2021)", # 2021 National Core Arts Standards: Music
+
+  },
+  "Council on Education for Public Health"=>{
+    # Aug10, 2023 Imports:
+    "D21353958" => "Doctor of Public Health Degree Criteria (2021)", # 2021 Doctor of Public Health Degree Criteria
+    "D21353913" => "Master of Public Health Degree Criteria (2021)", # 2021 Master of Public Health Degree Criteria
+  },
+  "National Occupational Competency Testing Institute"=>{
+    # Aug10, 2023 Imports:
+    "D21365125" => "NOCTI Natural Resource Systems (2010)", # 2010 NOCTI Natural Resource Systems
+    "D21365072" => "NOCTI Building Trades Maintenance (2012)", # 2012 NOCTI Building Trades Maintenance
+    "D21365006" => "NOCTI Culinary Arts Prep Cook (2017)", # 2017 NOCTI Culinary Arts Prep Cook
+
+
+  },
+  "Ohio Association for Health, Physical Education, Recreation and Dance"=>{
+    # Aug10, 2023 Imports:
+    "D21375600" => "OAHPERD Health Education Model Curriculum K-2 (2019)", # 2019 OAHPERD Health Education Model Curriculum K-2
+    "D21376482" => "OAHPERD Health Education Model Curriculum 3-5 (2019)", # 2019 OAHPERD Health Education Model Curriculum 3-5
+    "D21378133" => "OAHPERD Health Education Model Curriculum 6-8 (2019)", # 2019 OAHPERD Health Education Model Curriculum 6-8
+    "D21380035" => "OAHPERD Health Education Model Curriculum High School (2019)", # 2019 OAHPERD Health Education Model Curriculum High School
   }
 }
