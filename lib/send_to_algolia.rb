@@ -43,6 +43,9 @@ class SendToAlgolia
           id: standardSet["_id"]
         },
         jurisdiction: standardSet["jurisdiction"],
+        document: {
+          publicationStatus: standardSet["document"]["publicationStatus"],
+        },
         _tags: [ancestor_ids, standardSet["_id"], standardSet["jurisdiction"]["id"], standardSet["educationLevels"]].flatten
       })
     }
