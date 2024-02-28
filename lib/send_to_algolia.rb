@@ -9,12 +9,20 @@ class SendToAlgolia
   @@index = Algolia::Index.new("common-standards-project")
 
   def self.all_standard_sets
-    slices = []
-    Parallel.map($db[:standard_sets].find(), in_threads: 32){|set|
-      p "Denormalizing #{set["jurisdiction"]["title"]}: #{set["title"]}"
-      standards = self.denormalize_standards(set)
-      p "Sending to Algolia #{set["jurisdiction"]["title"]}: #{set["title"]}"
-      @@index.add_objects(standards)
+    # slices = []
+    sets = []
+    puts $db[:standard_sets].find(nil, {batch_size: 32}).each {|set|
+      sets.push(set)
+      if sets.length == 32
+        puts "Has 32 sets. Now processing."
+        Parallel.map(sets, in_threads: 32){|set|
+          p "Denormalizing #{set["jurisdiction"]["title"]}: #{set["title"]}"
+          standards = self.denormalize_standards(set)
+          p "Sending to Algolia #{set["jurisdiction"]["title"]}: #{set["title"]}"
+          @@index.add_objects(standards)
+        }
+        sets = []
+      end
     }
   end
 
@@ -28,6 +36,10 @@ class SendToAlgolia
     # this algorithm if I move from up (instead of down) a tree
     standards = standardSet["standards"].values.reject{|s| s == ""}.sort_by{|s| s["position"].to_i}.reverse
 
+    publication_status = nil
+    if standardSet["document"] != nil && standardSet["document"]["publicationStatus"] != nil
+      publication_status = standardSet["document"]["publicationStatus"]
+    end
     standards.each_with_index.map{|standard, i|
       ancestors = StandardHierarchy.find_ancestors(standards, standard, i)
       ancestor_ids = ancestors.map{|a| a["id"]}
@@ -44,7 +56,7 @@ class SendToAlgolia
         },
         jurisdiction: standardSet["jurisdiction"],
         document: {
-          publicationStatus: standardSet["document"]["publicationStatus"],
+          publicationStatus: publication_status
         },
         _tags: [ancestor_ids, standardSet["_id"], standardSet["jurisdiction"]["id"], standardSet["educationLevels"]].flatten
       })
