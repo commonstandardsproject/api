@@ -121,7 +121,12 @@ class StandardSet
     doc["version"] = doc["version"] + 1
 
     # Set the ID
-    doc["_id"]     = doc.delete("id")
+    doc["_id"]     = doc["id"]
+    doc.delete("id")
+
+    if doc["_id"] = nil
+      raise "_ID is nil"
+    end
 
     # Replace the document
     doc = $db[:standard_sets].find({_id: doc["_id"]}).find_one_and_update(doc, {upsert: true, return_document: :after})
