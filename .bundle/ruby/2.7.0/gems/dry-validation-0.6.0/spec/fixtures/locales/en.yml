@@ -1,0 +1,5 @@
+en:
+  errors:
+    rules:
+      email:
+        filled?: "Please provide your email"

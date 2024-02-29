@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.7.4'
+ruby '2.7.1'
 gem 'oj'
 gem 'mongo'
 gem 'bson'
@@ -44,3 +44,5 @@ group :development do
   gem 'rspec'
   gem 'rack-test'
 end
+
+gem "rails", "~> 0.9.5"

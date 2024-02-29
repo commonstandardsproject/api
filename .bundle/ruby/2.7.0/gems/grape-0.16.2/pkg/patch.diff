@@ -1,0 +1,24 @@
+diff --git lib/grape/router/route.rb lib/grape/router/route.rb
+index 643960d..1074c01 100644
+--- lib/grape/router/route.rb
++++ lib/grape/router/route.rb
+@@ -20,7 +20,9 @@ module Grape
+         :entity,
+         :details,
+         :requirements,
+-        :request_method
++        :request_method,
++        :hidden,
++        :params
+       ].freeze
+ 
+       attr_accessor :pattern, :translator, :app, :index, :regexp
+@@ -42,7 +44,7 @@ module Grape
+         if match
+           method_name = match.captures.last.to_sym
+           warn_route_methods(method_name, caller(1).shift)
+-          @options[method_name]
++          respond_to?(method_name) ? send(method_name) : @options[method_name]
+         else
+           super
+         end

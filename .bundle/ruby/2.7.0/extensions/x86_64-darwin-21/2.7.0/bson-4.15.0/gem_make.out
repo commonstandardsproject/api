@@ -1,0 +1,1783 @@
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/bson-4.15.0/ext/bson
+/Users/schrater/.rbenv/versions/2.7.1/bin/ruby -I /Users/schrater/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20220502-77070-g80bn8.rb extconf.rb
+creating Makefile
+
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/bson-4.15.0/ext/bson
+make "DESTDIR=" clean
+
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/bson-4.15.0/ext/bson
+make "DESTDIR="
+compiling bytebuf.c
+compiling endian.c
+compiling init.c
+init.c:58:64: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  VALUE rb_bson_object_id_class = rb_const_get(rb_bson_module, rb_intern("ObjectId"));
+                                                               ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+init.c:58:64: note: '{' token is here
+  VALUE rb_bson_object_id_class = rb_const_get(rb_bson_module, rb_intern("ObjectId"));
+                                                               ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+init.c:58:64: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  VALUE rb_bson_object_id_class = rb_const_get(rb_bson_module, rb_intern("ObjectId"));
+                                                               ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+init.c:58:64: note: ')' token is here
+  VALUE rb_bson_object_id_class = rb_const_get(rb_bson_module, rb_intern("ObjectId"));
+                                                               ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+init.c:59:83: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  VALUE rb_bson_object_id_generator_class = rb_const_get(rb_bson_object_id_class, rb_intern("Generator"));
+                                                                                  ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+init.c:59:83: note: '{' token is here
+  VALUE rb_bson_object_id_generator_class = rb_const_get(rb_bson_object_id_class, rb_intern("Generator"));
+                                                                                  ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+init.c:59:83: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  VALUE rb_bson_object_id_generator_class = rb_const_get(rb_bson_object_id_class, rb_intern("Generator"));
+                                                                                  ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+init.c:59:83: note: ')' token is here
+  VALUE rb_bson_object_id_generator_class = rb_const_get(rb_bson_object_id_class, rb_intern("Generator"));
+                                                                                  ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+init.c:60:52: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  VALUE rb_digest_class = rb_const_get(rb_cObject, rb_intern("Digest"));
+                                                   ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+init.c:60:52: note: '{' token is here
+  VALUE rb_digest_class = rb_const_get(rb_cObject, rb_intern("Digest"));
+                                                   ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+init.c:60:52: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  VALUE rb_digest_class = rb_const_get(rb_cObject, rb_intern("Digest"));
+                                                   ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+init.c:60:52: note: ')' token is here
+  VALUE rb_digest_class = rb_const_get(rb_cObject, rb_intern("Digest"));
+                                                   ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+init.c:61:54: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  VALUE rb_md5_class = rb_const_get(rb_digest_class, rb_intern("MD5"));
+                                                     ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+init.c:61:54: note: '{' token is here
+  VALUE rb_md5_class = rb_const_get(rb_digest_class, rb_intern("MD5"));
+                                                     ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+init.c:61:54: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  VALUE rb_md5_class = rb_const_get(rb_digest_class, rb_intern("MD5"));
+                                                     ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+init.c:61:54: note: ')' token is here
+  VALUE rb_md5_class = rb_const_get(rb_digest_class, rb_intern("MD5"));
+                                                     ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+init.c:63:67: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  rb_bson_illegal_key = rb_const_get(rb_const_get(rb_bson_module, rb_intern("String")),rb_intern("IllegalKey"));
+                                                                  ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+init.c:63:67: note: '{' token is here
+  rb_bson_illegal_key = rb_const_get(rb_const_get(rb_bson_module, rb_intern("String")),rb_intern("IllegalKey"));
+                                                                  ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+init.c:63:67: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  rb_bson_illegal_key = rb_const_get(rb_const_get(rb_bson_module, rb_intern("String")),rb_intern("IllegalKey"));
+                                                                  ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+init.c:63:67: note: ')' token is here
+  rb_bson_illegal_key = rb_const_get(rb_const_get(rb_bson_module, rb_intern("String")),rb_intern("IllegalKey"));
+                                                                  ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+init.c:63:88: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  rb_bson_illegal_key = rb_const_get(rb_const_get(rb_bson_module, rb_intern("String")),rb_intern("IllegalKey"));
+                                                                                       ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+init.c:63:88: note: '{' token is here
+  rb_bson_illegal_key = rb_const_get(rb_const_get(rb_bson_module, rb_intern("String")),rb_intern("IllegalKey"));
+                                                                                       ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+init.c:63:88: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  rb_bson_illegal_key = rb_const_get(rb_const_get(rb_bson_module, rb_intern("String")),rb_intern("IllegalKey"));
+                                                                                       ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+init.c:63:88: note: ')' token is here
+  rb_bson_illegal_key = rb_const_get(rb_const_get(rb_bson_module, rb_intern("String")),rb_intern("IllegalKey"));
+                                                                                       ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+init.c:360:62: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  rb_bson_object_id_counter = FIX2INT(rb_funcall(rb_mKernel, rb_intern("rand"), 1, INT2FIX(0x1000000)));
+                                                             ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:717:32: note: expanded from macro 'FIX2INT'
+#define FIX2INT(x)  RB_FIX2INT(x)
+                               ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:693:48: note: expanded from macro 'RB_FIX2INT'
+#define RB_FIX2INT(x) ((int)rb_fix2int((VALUE)(x)))
+                                               ^
+init.c:360:62: note: '{' token is here
+  rb_bson_object_id_counter = FIX2INT(rb_funcall(rb_mKernel, rb_intern("rand"), 1, INT2FIX(0x1000000)));
+                                                             ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:717:32: note: expanded from macro 'FIX2INT'
+#define FIX2INT(x)  RB_FIX2INT(x)
+                               ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:693:48: note: expanded from macro 'RB_FIX2INT'
+#define RB_FIX2INT(x) ((int)rb_fix2int((VALUE)(x)))
+                                               ^
+init.c:360:62: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  rb_bson_object_id_counter = FIX2INT(rb_funcall(rb_mKernel, rb_intern("rand"), 1, INT2FIX(0x1000000)));
+                                                             ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:717:32: note: expanded from macro 'FIX2INT'
+#define FIX2INT(x)  RB_FIX2INT(x)
+                               ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:693:48: note: expanded from macro 'RB_FIX2INT'
+#define RB_FIX2INT(x) ((int)rb_fix2int((VALUE)(x)))
+                                               ^
+init.c:360:62: note: ')' token is here
+  rb_bson_object_id_counter = FIX2INT(rb_funcall(rb_mKernel, rb_intern("rand"), 1, INT2FIX(0x1000000)));
+                                                             ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:717:32: note: expanded from macro 'FIX2INT'
+#define FIX2INT(x)  RB_FIX2INT(x)
+                               ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:693:48: note: expanded from macro 'RB_FIX2INT'
+#define RB_FIX2INT(x) ((int)rb_fix2int((VALUE)(x)))
+                                               ^
+init.c:362:51: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  rb_bson_registry = rb_const_get(rb_bson_module, rb_intern("Registry"));
+                                                  ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+init.c:362:51: note: '{' token is here
+  rb_bson_registry = rb_const_get(rb_bson_module, rb_intern("Registry"));
+                                                  ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+init.c:362:51: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  rb_bson_registry = rb_const_get(rb_bson_module, rb_intern("Registry"));
+                                                  ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+init.c:362:51: note: ')' token is here
+  rb_bson_registry = rb_const_get(rb_bson_module, rb_intern("Registry"));
+                                                  ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+16 warnings generated.
+compiling libbson-utf8.c
+compiling read.c
+read.c:33:49: warning: function 'pvt_raise_decode_error' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void pvt_raise_decode_error(volatile VALUE msg) {
+                                                ^
+read.c:83:49: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      VALUE klass = rb_funcall(rb_bson_registry,rb_intern("get"),1, INT2FIX(type));
+                                                ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:83:49: note: '{' token is here
+      VALUE klass = rb_funcall(rb_bson_registry,rb_intern("get"),1, INT2FIX(type));
+                                                ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:83:49: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      VALUE klass = rb_funcall(rb_bson_registry,rb_intern("get"),1, INT2FIX(type));
+                                                ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:83:49: note: ')' token is here
+      VALUE klass = rb_funcall(rb_bson_registry,rb_intern("get"),1, INT2FIX(type));
+                                                ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:84:39: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      VALUE value = rb_funcall(klass, rb_intern("from_bson"),1, rb_buffer);
+                                      ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:84:39: note: '{' token is here
+      VALUE value = rb_funcall(klass, rb_intern("from_bson"),1, rb_buffer);
+                                      ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:84:39: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      VALUE value = rb_funcall(klass, rb_intern("from_bson"),1, rb_buffer);
+                                      ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:84:39: note: ')' token is here
+      VALUE value = rb_funcall(klass, rb_intern("from_bson"),1, rb_buffer);
+                                      ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:121:27: warning: implicit conversion loses integer precision: 'long' to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  const uint32_t length = FIX2LONG(i);
+                 ~~~~~~   ^~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:394:21: note: expanded from macro 'FIX2LONG'
+#define FIX2LONG(x) RB_FIX2LONG(x)
+                    ^~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:378:25: note: expanded from macro 'RB_FIX2LONG'
+#define RB_FIX2LONG(x) ((long)RSHIFT((SIGNED_VALUE)(x),1))
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+read.c:142:5: warning: variable 'result' is used uninitialized whenever switch default is taken [-Wsometimes-uninitialized]
+    default:
+    ^~~~~~~
+read.c:146:10: note: uninitialized use occurs here
+  return result;
+         ^~~~~~
+read.c:131:15: note: initialize the variable 'result' to silence this warning
+  VALUE result;
+              ^
+               = 0
+read.c:204:31: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    value = rb_funcall(klass, rb_intern("new"), 1, value);
+                              ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:204:31: note: '{' token is here
+    value = rb_funcall(klass, rb_intern("new"), 1, value);
+                              ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:204:31: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    value = rb_funcall(klass, rb_intern("new"), 1, value);
+                              ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:204:31: note: ')' token is here
+    value = rb_funcall(klass, rb_intern("new"), 1, value);
+                              ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:206:42: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    klass = rb_funcall(rb_bson_registry, rb_intern("get"), 1, INT2FIX(BSON_TYPE_SYMBOL));
+                                         ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:206:42: note: '{' token is here
+    klass = rb_funcall(rb_bson_registry, rb_intern("get"), 1, INT2FIX(BSON_TYPE_SYMBOL));
+                                         ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:206:42: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    klass = rb_funcall(rb_bson_registry, rb_intern("get"), 1, INT2FIX(BSON_TYPE_SYMBOL));
+                                         ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:206:42: note: ')' token is here
+    klass = rb_funcall(rb_bson_registry, rb_intern("get"), 1, INT2FIX(BSON_TYPE_SYMBOL));
+                                         ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:207:31: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    value = rb_funcall(klass, rb_intern("from_bson"), 1, rb_buffer);
+                              ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:207:31: note: '{' token is here
+    value = rb_funcall(klass, rb_intern("from_bson"), 1, rb_buffer);
+                              ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:207:31: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    value = rb_funcall(klass, rb_intern("from_bson"), 1, rb_buffer);
+                              ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:207:31: note: ')' token is here
+    value = rb_funcall(klass, rb_intern("from_bson"), 1, rb_buffer);
+                              ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:312:47: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    VALUE klass = rb_funcall(rb_bson_registry,rb_intern("get"),1, INT2FIX(BSON_TYPE_INT64));
+                                              ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:312:47: note: '{' token is here
+    VALUE klass = rb_funcall(rb_bson_registry,rb_intern("get"),1, INT2FIX(BSON_TYPE_INT64));
+                                              ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:312:47: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    VALUE klass = rb_funcall(rb_bson_registry,rb_intern("get"),1, INT2FIX(BSON_TYPE_INT64));
+                                              ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:312:47: note: ')' token is here
+    VALUE klass = rb_funcall(rb_bson_registry,rb_intern("get"),1, INT2FIX(BSON_TYPE_INT64));
+                                              ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:313:37: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    VALUE value = rb_funcall(klass, rb_intern("new"), 1, num);
+                                    ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:313:37: note: '{' token is here
+    VALUE value = rb_funcall(klass, rb_intern("new"), 1, num);
+                                    ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:313:37: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    VALUE value = rb_funcall(klass, rb_intern("new"), 1, num);
+                                    ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:313:37: note: ')' token is here
+    VALUE value = rb_funcall(klass, rb_intern("new"), 1, num);
+                                    ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:396:31: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  doc = rb_funcall(cDocument, rb_intern("allocate"), 0);
+                              ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:396:31: note: '{' token is here
+  doc = rb_funcall(cDocument, rb_intern("allocate"), 0);
+                              ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:396:31: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  doc = rb_funcall(cDocument, rb_intern("allocate"), 0);
+                              ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:396:31: note: ')' token is here
+  doc = rb_funcall(cDocument, rb_intern("allocate"), 0);
+                              ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:410:30: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    doc = rb_funcall(cDBRef, rb_intern("new"), 1, doc);
+                             ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:410:30: note: '{' token is here
+    doc = rb_funcall(cDBRef, rb_intern("new"), 1, doc);
+                             ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:410:30: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    doc = rb_funcall(cDBRef, rb_intern("new"), 1, doc);
+                             ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+read.c:410:30: note: ')' token is here
+    doc = rb_funcall(cDBRef, rb_intern("new"), 1, doc);
+                             ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+21 warnings generated.
+compiling util.c
+util.c:26:43: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  VALUE digest = rb_funcall(rb_md5_class, rb_intern("digest"), 1, rb_str_new2(rb_bson_machine_id));
+                                          ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+util.c:26:43: note: '{' token is here
+  VALUE digest = rb_funcall(rb_md5_class, rb_intern("digest"), 1, rb_str_new2(rb_bson_machine_id));
+                                          ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+util.c:26:43: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  VALUE digest = rb_funcall(rb_md5_class, rb_intern("digest"), 1, rb_str_new2(rb_bson_machine_id));
+                                          ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+util.c:26:43: note: ')' token is here
+  VALUE digest = rb_funcall(rb_md5_class, rb_intern("digest"), 1, rb_str_new2(rb_bson_machine_id));
+                                          ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+util.c:44:55: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    t = BSON_UINT32_TO_BE(NUM2ULONG(rb_funcall(*args, rb_intern("to_i"), 0)));
+                                                      ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:689:35: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                                  ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:688:45: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                                            ^
+./bson-endian.h:86:57: note: expanded from macro 'BSON_UINT32_TO_BE'
+# define BSON_UINT32_TO_BE(v)    BSON_UINT32_SWAP_LE_BE(v)
+                                                        ^
+./bson-endian.h:57:55: note: expanded from macro 'BSON_UINT32_SWAP_LE_BE'
+#  define BSON_UINT32_SWAP_LE_BE(v) __builtin_bswap32(v)
+                                                      ^
+util.c:44:55: note: '{' token is here
+    t = BSON_UINT32_TO_BE(NUM2ULONG(rb_funcall(*args, rb_intern("to_i"), 0)));
+                                                      ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:688:45: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                                            ^
+./bson-endian.h:86:57: note: expanded from macro 'BSON_UINT32_TO_BE'
+# define BSON_UINT32_TO_BE(v)    BSON_UINT32_SWAP_LE_BE(v)
+                                                        ^
+./bson-endian.h:57:55: note: expanded from macro 'BSON_UINT32_SWAP_LE_BE'
+#  define BSON_UINT32_SWAP_LE_BE(v) __builtin_bswap32(v)
+                                                      ^
+util.c:44:55: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    t = BSON_UINT32_TO_BE(NUM2ULONG(rb_funcall(*args, rb_intern("to_i"), 0)));
+                                                      ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:688:45: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                                            ^
+./bson-endian.h:86:57: note: expanded from macro 'BSON_UINT32_TO_BE'
+# define BSON_UINT32_TO_BE(v)    BSON_UINT32_SWAP_LE_BE(v)
+                                                        ^
+./bson-endian.h:57:55: note: expanded from macro 'BSON_UINT32_SWAP_LE_BE'
+#  define BSON_UINT32_SWAP_LE_BE(v) __builtin_bswap32(v)
+                                                      ^
+util.c:44:55: note: ')' token is here
+    t = BSON_UINT32_TO_BE(NUM2ULONG(rb_funcall(*args, rb_intern("to_i"), 0)));
+                                                      ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:689:35: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                                  ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:688:45: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                                            ^
+./bson-endian.h:86:57: note: expanded from macro 'BSON_UINT32_TO_BE'
+# define BSON_UINT32_TO_BE(v)    BSON_UINT32_SWAP_LE_BE(v)
+                                                        ^
+./bson-endian.h:57:55: note: expanded from macro 'BSON_UINT32_SWAP_LE_BE'
+#  define BSON_UINT32_SWAP_LE_BE(v) __builtin_bswap32(v)
+                                                      ^
+util.c:44:27: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+    t = BSON_UINT32_TO_BE(NUM2ULONG(rb_funcall(*args, rb_intern("to_i"), 0)));
+        ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:689:22: note: expanded from macro 'NUM2ULONG'
+#define NUM2ULONG(x) RB_NUM2ULONG(x)
+                     ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:688:25: note: expanded from macro 'RB_NUM2ULONG'
+#define RB_NUM2ULONG(x) rb_num2ulong_inline(x)
+                        ^
+./bson-endian.h:86:57: note: expanded from macro 'BSON_UINT32_TO_BE'
+# define BSON_UINT32_TO_BE(v)    BSON_UINT32_SWAP_LE_BE(v)
+                                 ~~~~~~~~~~~~~~~~~~~~~~~^~
+./bson-endian.h:57:55: note: expanded from macro 'BSON_UINT32_SWAP_LE_BE'
+#  define BSON_UINT32_SWAP_LE_BE(v) __builtin_bswap32(v)
+                                    ~~~~~~~~~~~~~~~~~ ^
+util.c:61:48: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  return rb_const_get(rb_const_get(rb_cObject, rb_intern(c1)), rb_intern(c2));
+                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+util.c:61:48: note: '{' token is here
+  return rb_const_get(rb_const_get(rb_cObject, rb_intern(c1)), rb_intern(c2));
+                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+util.c:61:48: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  return rb_const_get(rb_const_get(rb_cObject, rb_intern(c1)), rb_intern(c2));
+                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+util.c:61:48: note: ')' token is here
+  return rb_const_get(rb_const_get(rb_cObject, rb_intern(c1)), rb_intern(c2));
+                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+util.c:61:64: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  return rb_const_get(rb_const_get(rb_cObject, rb_intern(c1)), rb_intern(c2));
+                                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+util.c:61:64: note: '{' token is here
+  return rb_const_get(rb_const_get(rb_cObject, rb_intern(c1)), rb_intern(c2));
+                                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+util.c:61:64: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  return rb_const_get(rb_const_get(rb_cObject, rb_intern(c1)), rb_intern(c2));
+                                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+util.c:61:64: note: ')' token is here
+  return rb_const_get(rb_const_get(rb_cObject, rb_intern(c1)), rb_intern(c2));
+                                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+util.c:68:48: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  return rb_const_get(pvt_const_get_2(c1, c2), rb_intern(c3));
+                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+util.c:68:48: note: '{' token is here
+  return rb_const_get(pvt_const_get_2(c1, c2), rb_intern(c3));
+                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+util.c:68:48: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  return rb_const_get(pvt_const_get_2(c1, c2), rb_intern(c3));
+                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+util.c:68:48: note: ')' token is here
+  return rb_const_get(pvt_const_get_2(c1, c2), rb_intern(c3));
+                                               ^~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+util.c:85:40: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    mode = rb_hash_lookup(opts, ID2SYM(rb_intern("mode")));
+                                       ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+util.c:85:40: note: '{' token is here
+    mode = rb_hash_lookup(opts, ID2SYM(rb_intern("mode")));
+                                       ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+util.c:85:40: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    mode = rb_hash_lookup(opts, ID2SYM(rb_intern("mode")));
+                                       ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+util.c:85:40: note: ')' token is here
+    mode = rb_hash_lookup(opts, ID2SYM(rb_intern("mode")));
+                                       ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+util.c:88:31: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    } else if (mode == ID2SYM(rb_intern("bson"))) {
+                              ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+util.c:88:31: note: '{' token is here
+    } else if (mode == ID2SYM(rb_intern("bson"))) {
+                              ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+util.c:88:31: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    } else if (mode == ID2SYM(rb_intern("bson"))) {
+                              ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+util.c:88:31: note: ')' token is here
+    } else if (mode == ID2SYM(rb_intern("bson"))) {
+                              ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+util.c:92:38: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1010:15: note: expanded from macro 'RSTRING_PTR'
+    (!(RBASIC(str)->flags & RSTRING_NOEMBED) ? \
+              ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1267:38: note: expanded from macro 'RBASIC'
+#define RBASIC(obj)  (R_CAST(RBasic)(obj))
+                                     ^~~
+util.c:92:38: note: '{' token is here
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1010:15: note: expanded from macro 'RSTRING_PTR'
+    (!(RBASIC(str)->flags & RSTRING_NOEMBED) ? \
+              ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1267:38: note: expanded from macro 'RBASIC'
+#define RBASIC(obj)  (R_CAST(RBasic)(obj))
+                                     ^~~
+util.c:92:38: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1010:15: note: expanded from macro 'RSTRING_PTR'
+    (!(RBASIC(str)->flags & RSTRING_NOEMBED) ? \
+              ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1267:38: note: expanded from macro 'RBASIC'
+#define RBASIC(obj)  (R_CAST(RBasic)(obj))
+                                     ^~~
+util.c:92:38: note: ')' token is here
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1010:15: note: expanded from macro 'RSTRING_PTR'
+    (!(RBASIC(str)->flags & RSTRING_NOEMBED) ? \
+              ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1267:38: note: expanded from macro 'RBASIC'
+#define RBASIC(obj)  (R_CAST(RBasic)(obj))
+                                     ^~~
+util.c:92:38: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1011:14: note: expanded from macro 'RSTRING_PTR'
+     RSTRING(str)->as.ary : \
+             ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1271:39: note: expanded from macro 'RSTRING'
+#define RSTRING(obj) (R_CAST(RString)(obj))
+                                      ^~~
+util.c:92:38: note: '{' token is here
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1011:14: note: expanded from macro 'RSTRING_PTR'
+     RSTRING(str)->as.ary : \
+             ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1271:39: note: expanded from macro 'RSTRING'
+#define RSTRING(obj) (R_CAST(RString)(obj))
+                                      ^~~
+util.c:92:38: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1011:14: note: expanded from macro 'RSTRING_PTR'
+     RSTRING(str)->as.ary : \
+             ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1271:39: note: expanded from macro 'RSTRING'
+#define RSTRING(obj) (R_CAST(RString)(obj))
+                                      ^~~
+util.c:92:38: note: ')' token is here
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1011:14: note: expanded from macro 'RSTRING_PTR'
+     RSTRING(str)->as.ary : \
+             ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1271:39: note: expanded from macro 'RSTRING'
+#define RSTRING(obj) (R_CAST(RString)(obj))
+                                      ^~~
+util.c:92:38: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1012:14: note: expanded from macro 'RSTRING_PTR'
+     RSTRING(str)->as.heap.ptr)
+             ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1271:39: note: expanded from macro 'RSTRING'
+#define RSTRING(obj) (R_CAST(RString)(obj))
+                                      ^~~
+util.c:92:38: note: '{' token is here
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1012:14: note: expanded from macro 'RSTRING_PTR'
+     RSTRING(str)->as.heap.ptr)
+             ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1271:39: note: expanded from macro 'RSTRING'
+#define RSTRING(obj) (R_CAST(RString)(obj))
+                                      ^~~
+util.c:92:38: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1012:14: note: expanded from macro 'RSTRING_PTR'
+     RSTRING(str)->as.heap.ptr)
+             ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1271:39: note: expanded from macro 'RSTRING'
+#define RSTRING(obj) (R_CAST(RString)(obj))
+                                      ^~~
+util.c:92:38: note: ')' token is here
+        RSTRING_PTR(rb_funcall(mode, rb_intern("inspect"), 0)));
+                                     ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1012:14: note: expanded from macro 'RSTRING_PTR'
+     RSTRING(str)->as.heap.ptr)
+             ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1271:39: note: expanded from macro 'RSTRING'
+#define RSTRING(obj) (R_CAST(RString)(obj))
+                                      ^~~
+21 warnings generated.
+compiling write.c
+write.c:70:23: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      rb_funcall(val, rb_intern("to_bson"), 2, rb_buffer, validating_keys);
+                      ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:70:23: note: '{' token is here
+      rb_funcall(val, rb_intern("to_bson"), 2, rb_buffer, validating_keys);
+                      ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:70:23: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      rb_funcall(val, rb_intern("to_bson"), 2, rb_buffer, validating_keys);
+                      ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:70:23: note: ')' token is here
+      rb_funcall(val, rb_intern("to_bson"), 2, rb_buffer, validating_keys);
+                      ^~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:160:76: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      VALUE responds = rb_funcall(val, rb_intern("respond_to?"), 1, ID2SYM(rb_intern("bson_type")));
+                                                                           ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2686:35: note: expanded from macro 'rb_funcall'
+        const VALUE rb_funcall_args[] = {__VA_ARGS__}; \
+                                         ^~~~~~~~~~~
+write.c:160:76: note: '{' token is here
+      VALUE responds = rb_funcall(val, rb_intern("respond_to?"), 1, ID2SYM(rb_intern("bson_type")));
+                                                                           ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2686:35: note: expanded from macro 'rb_funcall'
+        const VALUE rb_funcall_args[] = {__VA_ARGS__}; \
+                                         ^~~~~~~~~~~
+write.c:160:76: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      VALUE responds = rb_funcall(val, rb_intern("respond_to?"), 1, ID2SYM(rb_intern("bson_type")));
+                                                                           ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2686:35: note: expanded from macro 'rb_funcall'
+        const VALUE rb_funcall_args[] = {__VA_ARGS__}; \
+                                         ^~~~~~~~~~~
+write.c:160:76: note: ')' token is here
+      VALUE responds = rb_funcall(val, rb_intern("respond_to?"), 1, ID2SYM(rb_intern("bson_type")));
+                                                                           ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:414:29: note: expanded from macro 'ID2SYM'
+#define ID2SYM(x) RB_ID2SYM(x)
+                            ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:409:33: note: expanded from macro 'RB_ID2SYM'
+#define RB_ID2SYM(x) (rb_id2sym(x))
+                                ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2686:35: note: expanded from macro 'rb_funcall'
+        const VALUE rb_funcall_args[] = {__VA_ARGS__}; \
+                                         ^~~~~~~~~~~
+write.c:160:40: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      VALUE responds = rb_funcall(val, rb_intern("respond_to?"), 1, ID2SYM(rb_intern("bson_type")));
+                                       ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:160:40: note: '{' token is here
+      VALUE responds = rb_funcall(val, rb_intern("respond_to?"), 1, ID2SYM(rb_intern("bson_type")));
+                                       ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:160:40: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      VALUE responds = rb_funcall(val, rb_intern("respond_to?"), 1, ID2SYM(rb_intern("bson_type")));
+                                       ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:160:40: note: ')' token is here
+      VALUE responds = rb_funcall(val, rb_intern("respond_to?"), 1, ID2SYM(rb_intern("bson_type")));
+                                       ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:163:41: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        VALUE val_str = rb_funcall(val, rb_intern("to_s"), 0);
+                                        ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:163:41: note: '{' token is here
+        VALUE val_str = rb_funcall(val, rb_intern("to_s"), 0);
+                                        ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:163:41: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        VALUE val_str = rb_funcall(val, rb_intern("to_s"), 0);
+                                        ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:163:41: note: ')' token is here
+        VALUE val_str = rb_funcall(val, rb_intern("to_s"), 0);
+                                        ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:166:30: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      type = rb_funcall(val, rb_intern("bson_type"), 0);
+                             ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:166:30: note: '{' token is here
+      type = rb_funcall(val, rb_intern("bson_type"), 0);
+                             ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:166:30: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      type = rb_funcall(val, rb_intern("bson_type"), 0);
+                             ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:166:30: note: ')' token is here
+      type = rb_funcall(val, rb_intern("bson_type"), 0);
+                             ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:218:24: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    rb_funcall(string, rb_intern("encoding"), 0),
+                       ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:21: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                    ^~~~
+write.c:218:24: note: '{' token is here
+    rb_funcall(string, rb_intern("encoding"), 0),
+                       ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:21: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                    ^~~~
+write.c:218:24: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    rb_funcall(string, rb_intern("encoding"), 0),
+                       ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:21: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                    ^~~~
+write.c:218:24: note: ')' token is here
+    rb_funcall(string, rb_intern("encoding"), 0),
+                       ^~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:21: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                    ^~~~
+write.c:219:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    rb_intern("name"), 0);
+    ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:219:5: note: '{' token is here
+    rb_intern("name"), 0);
+    ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:219:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    rb_intern("name"), 0);
+    ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:219:5: note: ')' token is here
+    rb_intern("name"), 0);
+    ^~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:230:38: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    utf8_string = rb_funcall(string, rb_intern("encode"), 1, encoding);
+                                     ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:230:38: note: '{' token is here
+    utf8_string = rb_funcall(string, rb_intern("encode"), 1, encoding);
+                                     ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:230:38: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    utf8_string = rb_funcall(string, rb_intern("encode"), 1, encoding);
+                                     ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:230:38: note: ')' token is here
+    utf8_string = rb_funcall(string, rb_intern("encode"), 1, encoding);
+                                     ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:225:14: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+    length = RSTRING_LEN(utf8_string);
+           ~ ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1007:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1003:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+write.c:225:14: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+    length = RSTRING_LEN(utf8_string);
+           ~ ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1008:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+write.c:248:12: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  length = RSTRING_LEN(utf8_string);
+         ~ ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1007:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1003:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+write.c:248:12: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  length = RSTRING_LEN(utf8_string);
+         ~ ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1008:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+write.c:292:12: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  length = RSTRING_LEN(string);
+         ~ ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1007:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1003:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+write.c:292:12: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  length = RSTRING_LEN(string);
+         ~ ^~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1008:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+write.c:321:26: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  const int32_t length = RSTRING_LEN(symbol_str);
+                ~~~~~~   ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1007:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1003:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+write.c:321:26: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  const int32_t length = RSTRING_LEN(symbol_str);
+                ~~~~~~   ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1008:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+write.c:336:52: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      rb_exc_raise(rb_funcall(rb_bson_illegal_key, rb_intern("new"), 1, string));
+                                                   ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:336:52: note: '{' token is here
+      rb_exc_raise(rb_funcall(rb_bson_illegal_key, rb_intern("new"), 1, string));
+                                                   ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:336:52: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      rb_exc_raise(rb_funcall(rb_bson_illegal_key, rb_intern("new"), 1, string));
+                                                   ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:336:52: note: ')' token is here
+      rb_exc_raise(rb_funcall(rb_bson_illegal_key, rb_intern("new"), 1, string));
+                                                   ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:340:29: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  pvt_put_cstring(b, c_str, length, "Key");
+  ~~~~~~~~~~~~~~~           ^~~~~~
+write.c:370:35: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  pvt_replace_int32(b, _position, NUM2LONG(newval));
+  ~~~~~~~~~~~~~~~~~               ^~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:679:21: note: expanded from macro 'NUM2LONG'
+#define NUM2LONG(x) RB_NUM2LONG(x)
+                    ^~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:678:24: note: expanded from macro 'RB_NUM2LONG'
+#define RB_NUM2LONG(x) rb_num2long_inline(x)
+                       ^~~~~~~~~~~~~~~~~~~~~
+write.c:370:24: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  pvt_replace_int32(b, _position, NUM2LONG(newval));
+  ~~~~~~~~~~~~~~~~~    ^~~~~~~~~
+write.c:500:63: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      rb_bson_byte_buffer_put_cstring(buffer, rb_funcall(key, rb_intern("to_bson_key"), 1, validating_keys));
+                                                              ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:23: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                      ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:500:63: note: '{' token is here
+      rb_bson_byte_buffer_put_cstring(buffer, rb_funcall(key, rb_intern("to_bson_key"), 1, validating_keys));
+                                                              ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1832:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    {                                                   \
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:500:63: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      rb_bson_byte_buffer_put_cstring(buffer, rb_funcall(key, rb_intern("to_bson_key"), 1, validating_keys));
+                                                              ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:24: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1837:5: note: expanded from macro 'RUBY_CONST_ID_CACHE'
+    }
+    ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:500:63: note: ')' token is here
+      rb_bson_byte_buffer_put_cstring(buffer, rb_funcall(key, rb_intern("to_bson_key"), 1, validating_keys));
+                                                              ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1847:56: note: expanded from macro 'rb_intern'
+        __extension__ (RUBY_CONST_ID_CACHE((ID), (str))) : \
+                                                       ^
+/Users/schrater/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:2689:27: note: expanded from macro 'rb_funcall'
+        rb_funcallv(recv, mid, \
+                          ^~~
+write.c:531:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  new_length = new_position - position;
+             ~ ~~~~~~~~~~~~~^~~~~~~~~~
+write.c:532:24: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  pvt_replace_int32(b, position, new_length);
+  ~~~~~~~~~~~~~~~~~    ^~~~~~~~
+write.c:676:29: warning: implicit conversion loses integer precision: 'unsigned long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  new_length = new_position - position;
+             ~ ~~~~~~~~~~~~~^~~~~~~~~~
+write.c:677:24: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  pvt_replace_int32(b, position, new_length);
+  ~~~~~~~~~~~~~~~~~    ^~~~~~~~
+35 warnings generated.
+linking shared-object bson_native.bundle
+
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/bson-4.15.0/ext/bson
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 bson_native.bundle ./.gem.20220502-77070-1ju9xmu

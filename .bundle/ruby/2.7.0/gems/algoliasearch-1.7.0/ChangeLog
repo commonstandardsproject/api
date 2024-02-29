@@ -1,0 +1,186 @@
+CHANGELOG
+
+2016-01-09 1.7.0
+      * New generate_secured_api_key embedding the filters in the resulting key
+
+2015-08-01 1.6.1
+      * Search queries are now using POST requests
+
+2015-07-19 1.6.0
+      * Ability to instantiate multiple API clients in the same process (was using a class variable before).
+
+2015-07-14 1.5.1
+      * Ability to retrieve a single page from a cursor with `browse_from`
+
+2015-06-05 1.5.0
+      * New cursor-based browse() implementation taking query parameters
+
+2015-05-27 1.4.3
+      * Do not call `WebMock.disable!` in the helper
+
+2015-05-04 1.4.2
+      * Add new methods to add/update api key
+      * Add batch method to target multiple indices
+      * Add strategy parameter for the multipleQueries
+      * Add new method to generate secured api key from query parameters
+
+2015-04-10  1.4.1
+      * Force the default connect/read/write/search/batch timeouts to Algolia-specific values
+
+2015-03-17  1.4.0
+      * High-available DNS: search queries are now targeting "APPID-DSN.algolia.net" first, then the main cluster using NSOne, then the main cluster using Route53.
+        Indexing queries are targeting "APPID.algolia.net" first, then the main cluster using NSOne, then the main cluster using Route53.
+
+2014-11-29  1.3.1
+      * Fixed wrong deployed version (1.3.0 was based on 1.2.13 instead of 1.2.14)
+
+2014-11-29  1.3.0
+      * Use algolia.net domain instead of algolia.io
+
+2014-11-10 1.2.14
+      * Force the underlying httpclient dependency to be >= 2.4 in the gemspec as well
+      * Ability to force the SSL version
+
+2014-10-22 1.2.13
+      * Fix the loop on hosts to retry when the http code is different than 200, 201, 400, 403, 404
+
+2014-10-08  1.2.12
+
+      * Upgrade to httpclient 2.4
+      * Do not reset the timeout on each requests
+
+2014-09-14  1.2.11
+
+      * Ability to update API keys
+
+2014-08-22  1.2.10
+
+      * Using Digest to remove "Digest::Digest is deprecated; Use Digest" warning (author: @dglancy)
+
+2014-07-10  1.2.9
+
+      * Expose connect_timeout, receive_timeout and send_timeout
+      * Add new 'delete_by_query' method to delete all objects matching a specific query
+      * Add new 'get_objects' method to retrieve a list of objects from a single API call
+      * Add a helper to perform disjunctive faceting
+
+2014-03-27  1.2.8
+
+      * Catch all exceptions before retrying with another host
+
+2014-03-24  1.2.7
+
+      * Ruby 1.8 compatibility
+
+2014-03-19  1.2.6
+
+      * Raise an exception if no APPLICATION_ID is provided
+      * Ability to get last API call errors
+      * Ability to send multiple queries using a single API call
+      * Secured API keys generation is now based on secured HMAC-SHA256
+
+2014-02-24  1.2.5
+
+      * Ability to generate secured API key from a list of tags + optional user_token
+      * Ability to specify a list of indexes targeted by the user key
+
+2014-02-21  1.2.4
+
+      * Added delete_objects
+
+2014-02-10  1.2.3
+
+      * add_object: POST request if objectID is nil OR empty
+
+2014-01-11  1.2.2
+
+      * Expose batch requests
+
+2014-01-07  1.2.1
+
+      * Removed 'jeweler' since it doesn't support platform specific deps (see https://github.com/technicalpickles/jeweler/issues/170)
+
+2014-01-07  1.2.0
+
+      * Removed 'curb' dependency and switched on 'httpclient' to avoid fork-safety issue (see issue #5)
+
+2014-01-06  1.1.18
+
+      * Fixed batch request builder (broken since last refactoring)
+
+2014-01-02  1.1.17
+
+      * Ability to use IP rate limit behind a proxy forwarding the end-user's IP
+      * Add documentation for the new 'attributeForDistinct' setting and 'distinct' search parameter
+
+2013-12-16  1.1.16
+
+      * Add arguments type-checking
+      * Normalize save_object/partial_update/add_object signatures
+      * Force dependencies versions
+
+2013-12-16  1.1.15
+
+      * Embed ca-bundle.crt
+      
+2013-12-11  1.1.14
+
+      * Added index.add_user_key(acls, validity, rate_limit, maxApiCalls)
+	
+2013-12-10  1.1.13
+
+      * WebMock integration
+
+2013-12-05  1.1.12
+
+      * Add browse command
+
+2013-11-29  1.1.11
+
+      * Remove rubysl (rbx required dependencies)
+
+2013-11-29  1.1.10
+
+      * Fixed gzip handling bug
+
+2013-11-28  1.1.9
+
+      * Added gzip support
+
+2013-11-26  1.1.8
+
+      * Add partial_update_objects method
+
+2013-11-08  1.1.7
+
+      * Search params: encode array-based parameters (tagFilters, facetFilters, ...)
+
+2013-11-07  1.1.6
+
+      * Index: clear and clear! methods can now be used the delete the whole content of an index
+      * User keys: plug new maxQueriesPerIPPerHour and maxHitsPerQuery parameters
+
+2013-10-17  1.1.5
+
+      * Version is now part of the user-agent
+
+2013-10-17  1.1.4
+
+      * Fixed wait_task not sleeping at all
+
+2013-10-15  1.1.3
+
+      * Fixed thread-safety issues.  - Curl sessions are now thread-local
+
+2013-10-02  1.1.2
+
+      * Fixed instance/class method conflict
+
+2013-10-01  1.1.1
+
+      * Updated documentation
+      * Plug copy/move index
+
+2013-09-17  1.1.0
+
+      * Initial import

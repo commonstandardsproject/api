@@ -1,0 +1,5 @@
+group :server do
+  guard :shotgun do
+    watch(/.+/) # watch *every* file in the directory
+  end
+end

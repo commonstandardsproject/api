@@ -1,0 +1,11 @@
+source "http://rubygems.org"
+
+gem 'sinatra', :require => "sinatra/base"
+
+group :development, :test do
+  gem 'guard', '~> 2.0'
+
+  # Requirements for the manually inserted guard-shotgun
+  gem 'spoon'
+  gem 'ffi'
+end

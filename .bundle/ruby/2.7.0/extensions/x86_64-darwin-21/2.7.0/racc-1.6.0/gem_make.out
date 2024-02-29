@@ -1,0 +1,17 @@
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/racc-1.6.0/ext/racc/cparse
+/Users/schrater/.rbenv/versions/2.7.1/bin/ruby -I /Users/schrater/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20220502-77070-857xfl.rb extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/racc-1.6.0/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/racc-1.6.0/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/schrater/Documents/GitHub/EduDataIngestion/StandardsData/Untitled/.bundle/ruby/2.7.0/gems/racc-1.6.0/ext/racc/cparse
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20220502-77070-6pslwb/racc

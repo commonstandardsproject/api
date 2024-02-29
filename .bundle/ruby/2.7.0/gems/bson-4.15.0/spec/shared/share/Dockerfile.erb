@@ -1,0 +1,338 @@
+# Python toolchain as of this writing is available on rhel62, debian92 and
+# ubuntu1604.
+#
+# To run rhel62 in docker, host system must be configured to emulate syscalls:
+# https://github.com/CentOS/sig-cloud-instance-images/issues/103
+
+<%
+
+python_toolchain_url = "https://s3.amazonaws.com//mciuploads/mongo-python-driver-toolchain/#{distro}/ba92de2700c04ee2d4f82c3ffdfc33105140cb04/mongo_python_driver_toolchain_#{distro.gsub('-', '_')}_ba92de2700c04ee2d4f82c3ffdfc33105140cb04_19_11_14_15_33_33.tar.gz"
+server_version = '4.3.3'
+server_url = "http://downloads.10gen.com/linux/mongodb-linux-x86_64-enterprise-#{distro}-#{server_version}.tgz"
+server_archive_basename = File.basename(server_url)
+server_extracted_dir = server_archive_basename.sub(/\.(tar\.gz|tgz)$/, '')
+
+TOOLCHAIN_VERSION='35fb9fb797a941094bf4ee8678284da88849435c'
+
+def ruby_toolchain_url(ruby)
+  "http://boxes.10gen.com/build/toolchain-drivers/mongo-ruby-driver/#{TOOLCHAIN_VERSION}/#{distro}/#{ruby}.tar.xz"
+end
+
+#ruby_toolchain_url = "https://s3.amazonaws.com//mciuploads/mongo-ruby-toolchain/#{distro}/#{toolchain_upper}/mongo_ruby_driver_toolchain_#{distro.gsub('-', '_')}_patch_#{toolchain_upper}_#{toolchain_lower}.tar.gz"
+
+%>
+
+FROM <%= base_image %>
+
+<% if debian? %>
+
+  ENV DEBIAN_FRONTEND=noninteractive
+
+<% else %>
+
+  RUN echo assumeyes=1 |tee -a /etc/yum.conf
+
+<% end %>
+
+<% if ruby_head? %>
+
+  # To use current versions of mlaunch, Python 3.6+ is required.
+  # Most distros ship with older Pythons, therefore we need to install
+  # a newer Python from somewhere. This section installs the Python
+  # toolhcain which comes with recent Pythons.
+  # Alternatively, Ruby toolchain compiles its own copy of Python 3 but
+  # this is currently incomplete in that on older distros with old OpenSSL,
+  # the built Python has no ssl module and hence practically is unusable.
+  # Currently Ruby driver uses mtools-legacy which supports Python 2,
+  # avoiding this entire issue for the time being.
+
+  #RUN curl --retry 3 -fL <%= python_toolchain_url %> -o python-toolchain.tar.gz
+  #RUN tar -xC /opt -zf python-toolchain.tar.gz
+
+<% end %>
+
+<% if debian? %>
+
+  # zsh is not required for any scripts but it is a better interactive shell
+  # than bash.
+  # Ruby runtime dependencies: libyaml-0-2
+  # Compiling ruby libraries: gcc make
+  # Compiling pyhton packages: python2.7-dev
+  # JRuby: openjdk-8-jdk-headless
+  # Server dependencies: libsnmp30 libcurl3/libcurl4
+  # Determining OS we are running on: lsb-release
+  # Load balancer testing: haproxy
+  # Kerberos testing: krb5-user
+  # Local Kerberos server: krb5-kdc krb5-admin-server
+  # Installing mlaunch from git: git
+  # ruby-head archive: bzip2
+  # nio4r on JRuby: libgmp-dev
+  # Snappy compression: libsnappy-dev
+  # nokogiri: zlib1g-dev
+  # Mongoid testing: tzdata shared-mime-info
+  # Mongoid application testing: nodejs (8.x or newer)
+  # Test suite: procps for ps (to kill JRubies)
+  #
+  # We currently use Python 2-compatible version of mtools, which
+  # is installable via pip (which uses Python 2). All of the MongoDB
+  # distros have pip installed (but none as of this writing have pip3)
+  # therefore install python-pip in all configurations here.
+
+  <% packages = %w(
+    procps lsb-release bzip2 curl zsh
+    git make gcc libyaml-0-2 libgmp-dev zlib1g-dev libsnappy-dev
+    krb5-user krb5-kdc krb5-admin-server libsasl2-dev libsasl2-modules-gssapi-mit
+    haproxy
+    python3-pip
+    tzdata shared-mime-info
+  ) %>
+
+  <% if distro =~ /ubuntu1404/ %>
+    # For building python & setuptools
+    <% packages += %w(libssl-dev unzip) %>
+  <% end %>
+
+  <% if distro !~ /ubuntu2004/ %>
+    <% packages += %w(python2.7-dev) %>
+  <% end %>
+
+  <% if distro =~ /ubuntu2004/ %>
+    <% packages << 'libsnmp35' %>
+  <% else %>
+    <% packages << 'libsnmp30' %>
+  <% end %>
+
+  <% if distro !~ /ubuntu2004/ %>
+    <% packages << 'python-pip' %>
+  <% end %>
+
+  <% if distro =~ /debian10/ %>
+    <% packages << 'openjdk-11-jdk-headless' %>
+  <% elsif distro =~ /ubuntu1404/ %>
+    # Ubuntu 14.04 only has openjdk 7, this is too old to be useful
+  <% else %>
+    <% packages << 'openjdk-8-jdk-headless' %>
+  <% end %>
+
+  # ubuntu1404, ubuntu1604: libcurl3
+  # ubuntu1804, ubuntu2004, debian10: libcurl4
+  <% if distro =~ /ubuntu1804|ubuntu2004|debian10/ %>
+    <% packages << 'libcurl4' %>
+  <% else %>
+    <% packages << 'libcurl3' %>
+  <% end %>
+
+  <% if distro =~ /ubuntu1804/ %>
+    <% packages << 'nodejs' %>
+  <% end %>
+
+  <% if distro =~ /ubuntu2004/ %>
+    <% packages += %w(ruby ruby2.7 bundler python2 python2-dev) %>
+  <% end %>
+
+  RUN apt-get update && apt-get install -y <%= packages.join(' ') %>
+<% else %>
+
+  <% if distro =~ /rhel6/ %>
+  
+    # CentOS 6 is dead - to use it retrieve the packages from vault:
+    # https://stackoverflow.com/questions/53562691/error-cannot-retrieve-repository-metadata-repomd-xml-for-repository-base-pl
+  
+    <%
+      
+      cfg = <<-CFG
+[base]
+name=CentOS-$releasever - Base
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os
+#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
+baseurl=http://vault.centos.org/6.10/os/x86_64/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+CFG
+
+    %>
+  
+    RUN printf "<%= cfg.gsub("\n", "\\n") %>" >/etc/yum.repos.d/CentOS-Base.repo
+  
+  <% end %>
+  
+  # Enterprise server: net-snmp
+  # lsb_release: redhat-lsb-core
+  # our runner scripts: which
+  # Ruby dependency: libyaml
+  # compiling python packages: gcc python-devel
+  # Kerberos tests: krb5-workstation + cyrus-sasl-devel to build the
+  # mongo_kerberos gem + cyrus-sasl-gssapi for authentication to work
+  # Local Kerberos server: krb5-server
+  # JRuby: java-1.8.0-openjdk
+  #
+  # Note: lacking cyrus-sasl-gssapi produces a cryptic message
+  # "SASL(-4): no mechanism available: No worthy mechs found"
+  # https://github.com/farorm/python-ad/issues/10
+
+  RUN yum install -y redhat-lsb-core which git gcc libyaml krb5-server \
+    krb5-workstation cyrus-sasl-devel cyrus-sasl-gssapi java-1.8.0-openjdk \
+    net-snmp python3
+
+  <% if distro =~ /rhel6/ %>
+
+    # RHEL 6 ships with Python 2.6.
+
+    RUN yum install -y centos-release-scl && \
+      yum install -y python27-python python27-python-devel
+    ENV PATH=/opt/rh/python27/root/usr/bin:$PATH \
+      LD_LIBRARY_PATH=/opt/rh/python27/root/usr/lib64
+
+  <% else %>
+
+    RUN yum install -y python-devel
+
+  <% end %>
+  
+<% end %>
+
+<% if preload? %>
+
+  <% if distro =~ /ubuntu1404/ %>
+    
+    # I couldn't find a prebuilt package of anything more recent than 2.7.6
+    # for 14.04.
+    RUN curl --retry 3 -fL https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tar.xz | \
+      tar xfJ - && \
+      cd Python-2.7.16 && \
+      ./configure && \
+      nice make -j4 && \
+      make install && \
+      cd .. && rm -rf Python-2.7.16
+      
+    ENV PATH=/usr/local/bin:$PATH
+    
+    RUN curl --retry 3 -fL -o setuptools-44.1.1.zip https://files.pythonhosted.org/packages/b2/40/4e00501c204b457f10fe410da0c97537214b2265247bc9a5bc6edd55b9e4/setuptools-44.1.1.zip && \
+      unzip setuptools-44.1.1.zip && \
+      cd setuptools-44.1.1 && \
+      python setup.py install && \
+      cd .. && rm -rf setuptools-44.1.1
+
+  <% end%>
+
+  <% if true || distro =~ /rhel|ubuntu1604/ %>
+
+    # Ubuntu 12.04 ships pip 1.0 which is ancient and does not work.
+    #
+    # Ubuntu 16.04 apparently also ships a pip that does not work:
+    # https://stackoverflow.com/questions/37495375/python-pip-install-throws-typeerror-unsupported-operand-types-for-retry
+    # Potentially this only affects environments with less than ideal
+    # connectivity (or, perhaps, when python package registry is experiencing
+    # availability issues) when pip must retry to install packages.
+    #
+    # rhel apparently does not package pip at all in core repoitories,
+    # therefore install it the manual way.
+    #
+    # https://pip.pypa.io/en/stable/installing/
+    RUN curl --retry 3 -fL https://bootstrap.pypa.io/pip/2.7/get-pip.py | python2
+
+  <% end %>
+
+  # Current virtualenv fails with
+  # https://github.com/pypa/virtualenv/issues/1630
+  <% if distro =~ /ubuntu2004/ %>
+    RUN python3 -m pip install 'virtualenv<20' 'mtools-legacy[mlaunch]'
+  <% else %>
+    RUN python2 -m pip install 'virtualenv<20' 'mtools-legacy[mlaunch]'
+  <% end %>
+
+  RUN pip --version && \
+    pip install mtools-legacy[mlaunch]
+
+  <% if @env.fetch('MONGODB_VERSION') >= '4.4' %>
+    # ubuntu1604 installs MarkupSafe 0.0.0 here instead of 2.0.0+
+    # as specified by dependencies, causing OCSP mock to not work.
+    RUN python3 -mpip install asn1crypto oscrypto flask --upgrade
+  <% end %>
+
+  # FLE is tested against 4.0+ servers.
+  <% if @env.fetch('MONGODB_VERSION') >= '4.0' %>
+    # Requirements in drivers-evergreen-tools:
+    # boto3~=1.19 cryptography~=3.4.8 pykmip~=0.10.0
+    # cryptography does not install due to lacking setuptools_rust
+    # (either that version or anything that isn't part of system packages)
+    RUN python3 -mpip install boto3~=1.19 cryptography pykmip~=0.10.0
+  <% end %>
+
+  <% unless ruby_head? || system_ruby? %>
+
+    RUN curl --retry 3 -fL <%= ruby_toolchain_url(ruby) %> |tar -xC /opt -Jf -
+    ENV PATH=/opt/rubies/<%= ruby %>/bin:$PATH \
+      USE_OPT_TOOLCHAIN=1
+    #ENV PATH=/opt/rubies/python/3/bin:$PATH
+
+  <% end %>
+
+  RUN curl --retry 3 -fL <%= server_download_url %> |tar xzf - && \
+    mv mongo*/ /opt/mongodb
+  ENV USE_OPT_MONGODB=1 USE_SYSTEM_PYTHON_PACKAGES=1
+
+<% end %>
+
+<% if distro =~ /debian|ubuntu/ %>
+  # mkdir was moved from /usr/bin to /bin and MongoDB's distros
+  # apparently keep using the old location.
+  # This definitely affects debian10.
+  # https://stackoverflow.com/questions/64653051/make-usr-bin-mkdir-command-not-found-during-gem-install-nokogiri-in-ubuntu
+  RUN test -f /usr/bin/mkdir || ln -s /bin/mkdir /usr/bin/mkdir
+<% end %>
+
+WORKDIR /app
+
+<% if preload? && !ruby_head? %>
+
+  COPY Gemfile .
+  COPY gemfiles gemfiles
+  COPY *.gemspec .
+  COPY lib/<%= project_lib_subdir %>/version.rb lib/<%= project_lib_subdir %>/version.rb
+  RUN bundle install
+  COPY .evergreen/patch-debuggers .evergreen/patch-debuggers
+  <% if system_ruby? %>
+    # Running under docker with root access
+    RUN .evergreen/patch-debuggers /var/lib/gems
+  <% else %>
+    RUN .evergreen/patch-debuggers /opt/rubies
+  <% end %>
+
+<% end %>
+
+<% if fle? %>
+  RUN curl --retry 3 -fL "https://s3.amazonaws.com/mciuploads/libmongocrypt/all/master/latest/libmongocrypt-all.tar.gz" |tar zxf -
+
+  <%= "ENV LIBMONGOCRYPT_PATH #{libmongocrypt_path}" %>
+<% end %>
+
+<% if preload? %>
+  ENV DOCKER_PRELOAD=1
+<% end %>
+
+ENV MONGO_ORCHESTRATION_HOME=/tmpfs \
+  PROJECT_DIRECTORY=/app \
+  <%= @env.map { |k, v| %Q`#{k}="#{v.gsub('$', "\\$").gsub('"', "\\\"")}"` }.join(" \\\n  ") %>
+
+<% if interactive? %>
+  ENV INTERACTIVE=1
+<% end %>
+
+COPY . .
+
+<% if expose? %>
+
+  <% ports = [] %>
+
+  <% 0.upto(num_exposed_ports-1) do |i| %>
+    <% ports << 27017 + i %>
+  <% end %>
+
+  <% if @env['OCSP_ALGORITHM'] %>
+    <% ports << 8100 %>
+  <% end %>
+
+  EXPOSE <%= ports.map(&:to_s).join(' ') %>
+
+<% end %>

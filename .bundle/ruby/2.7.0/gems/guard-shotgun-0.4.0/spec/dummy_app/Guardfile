@@ -1,0 +1,6 @@
+$LOAD_PATH << File.expand_path('../../lib', __dir__)
+require 'guard/shotgun'
+
+guard 'shotgun' do
+  watch(%r{^(app|assets|lib|config)/(.)*.(rb|css|js|haml)})
+end
