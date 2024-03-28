@@ -14,14 +14,16 @@ class Jurisdiction
 
   def self.from_mongo(attrs)
     return nil if attrs.nil?
-    attrs[:id] = attrs.delete("_id")
+    attrs[:id] = attrs["_id"]
+    attrs.delete("id")
     model = self.new(attrs)
     model
   end
 
   def self.insert(model)
     attrs = ::VirtusConvert.new(model).to_hash
-    attrs[:_id] = attrs.delete("id")
+    attrs[:_id] = attrs[:id]
+    attrs.delete(:id)
     $db[:jurisdictions].insert_one(attrs)
   end
 

@@ -9,6 +9,7 @@ class StandardSet
   include Virtus.model
 
   attribute :id, String, default: -> (page, attrs) { SecureRandom.csp_uuid() }
+  attribute :id, String, default: -> (page, attrs) { SecureRandom.csp_uuid() }
   attribute :title, String, default: ""
   attribute :subject, String, default: ""
   attribute :document, Hash, default: {}
@@ -92,7 +93,7 @@ class StandardSet
   end
 
   def self.validate(model)
-    pp model.attributes
+    # pp model.attributes
     self_validations = Validator.new.call(model.attributes)
     return self_validations.messages unless self_validations.messages.empty?
 
@@ -111,25 +112,27 @@ class StandardSet
   end
 
   def self.update(doc, opts={})
-    old_version    = $db[:standard_sets].find({_id: doc["id"]}).to_a.first || {}
+    old_version    = $db[:standard_sets].find({_id: doc[:id]}).to_a.first || {}
     if old_version
       self.save_version(old_version)
     end
 
     # Set the version
-    doc["version"] = old_version["version"] || 0
-    doc["version"] = doc["version"] + 1
+    doc[:version] = old_version[:version] || 0
+    doc[:version] = doc[:version] + 1
+
+    id = doc[:id]
 
     # Set the ID
-    doc["_id"]     = doc["id"]
-    doc.delete("id")
+    doc.delete(:id)
 
-    if doc["_id"] = nil
-      raise "_ID is nil"
+    if id == nil
+      pp doc
+      raise "_id is nil"
     end
 
     # Replace the document
-    doc = $db[:standard_sets].find({_id: doc["_id"]}).find_one_and_update(doc, {upsert: true, return_document: :after})
+    doc = $db[:standard_sets].find({_id: id}).find_one_and_update(doc, {upsert: true, return_document: :after})
 
     # Cache standards
     unless opts[:cache_standards] == false

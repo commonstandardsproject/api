@@ -181,6 +181,14 @@ class PullRequest
 
   def self.change_status(id, status, comment, send_notice=false)
     return false unless STATUSES.include? status
+
+    model = self.find(id)
+
+    if status == "approved"
+      StandardSet.update(::VirtusConvert.new(model).to_hash[:standardSet])
+      Jurisdiction.approve(model.standardSet.jurisdiction.id)
+    end
+
     model = self.from_mongo($db[:pull_requests]
       .find({_id: id})
       .find_one_and_update({
@@ -197,10 +205,6 @@ class PullRequest
     })
     self.add_activity(model, activity)
 
-    if status == "approved"
-      StandardSet.update(::VirtusConvert.new(model).to_hash[:standardSet])
-      Jurisdiction.approve(model.standardSet.jurisdiction.id)
-    end
 
     send_notice(model, status, comment) if send_notice
 
