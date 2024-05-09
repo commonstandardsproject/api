@@ -95,7 +95,7 @@ There are a few tasks that must be completed to get running with a local copy of
 
 ```
 heroku container:push web -a csp-api-docker
-heroku container:release web
+heroku container:release web -a csp-api-docker
 ```
 
 ## Contributing!
