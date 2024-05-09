@@ -19,7 +19,7 @@ You bet! Head over to [http://commonstandardsproject.com](http://commonstandards
 Sort of.
 
 - The [Achievement Standards Network](http://asn.jesandco.org/) has created XML and JSON versions of the standards. In our experience, their schema doesn't fully address our needs.
-- Other companies sell XML and JSON versions of the standards. Like with ASN, we weren't satisfied with their schemas. 
+- Other companies sell XML and JSON versions of the standards. Like with ASN, we weren't satisfied with their schemas.
 - [OpenSALT/CASE](https://sites.google.com/view/opensalt/home) is an open format for standards. It came out after CSP was created. We like their format for individual standards, but the semantics don't reflect the organization we see in the real world. See more below.
 
 ## What is this?
@@ -89,6 +89,16 @@ There are a few tasks that must be completed to get running with a local copy of
 - Run `forego start dev` to start the application on your local machine. Foreman will automatically use the variables in your `.env` file.
 - Point your browser at `http://localhost:9393` and bask in the goodness of beautifully formatted standards
 
+**Deploying**
+
+- Currently, it's deployed on heroku using a docker container.
+
+```
+heroku container:push web -a csp-api-docker
+heroku container:release web
+```
+
 ## Contributing!
 
 Join the mailing list and we'll help you out: [https://groups.google.com/d/forum/common-standards-project](https://groups.google.com/d/forum/common-standards-project)
+
