@@ -173,9 +173,9 @@ class PullRequest
     self.add_activity(model, activity)
     if user["isCommitter"] == true
       Email.send_email("admin-comment-added", model, comment)
-      AsanaTask.add_comment_from_approver(model.asanaTaskId, comment, user["profile"]["name"])
+      # AsanaTask.add_comment_from_approver(model.asanaTaskId, comment, user["profile"]["name"])
     else
-      AsanaTask.add_comment_from_submitter(model.asanaTaskId, comment, user["profile"]["name"], model)
+      # AsanaTask.add_comment_from_submitter(model.asanaTaskId, comment, user["profile"]["name"], model)
     end
   end
 
@@ -216,16 +216,16 @@ class PullRequest
     case status
     when "approved"
       Email.send_email("approved", model, comment)
-      AsanaTask.approve(model.asanaTaskId, model)
+      # AsanaTask.approve(model.asanaTaskId, model)
     when "rejected"
       Email.send_email("rejected", model, comment)
-      AsanaTask.reject(model.asanaTaskId, model)
+      # AsanaTask.reject(model.asanaTaskId, model)
     when "revise-and-resubmit"
       Email.send_email("revise-and-resubmit", model, comment)
-      AsanaTask.revise_and_resubmit(model.asanaTaskId, model)
+      # AsanaTask.revise_and_resubmit(model.asanaTaskId, model)
     when "approval-requested"
       Email.send_email("approval-requested", model, comment)
-      AsanaTask.approval_requested(model.asanaTaskId, model)
+      # AsanaTask.approval_requested(model.asanaTaskId, model)
     end
   end
 
