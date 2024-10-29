@@ -1,0 +1,14 @@
+AllCops:
+  Include:
+    - '**/Rakefile'
+  Exclude:
+    - 'bin/**/*'
+    - 'examples/**/*'
+    - 'lib/asana/resources/*'
+    - 'spec/templates/unicorn.rb'
+    - 'spec/templates/world.rb'
+    - 'test.rb'
+
+LineLength:
+  Max: 120
+require: rubocop-rspec
