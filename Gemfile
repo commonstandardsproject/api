@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.7.4'
 gem 'oj'
-gem 'mongo'
+gem 'mongo', '~>2.19.3'
 gem 'bson'
 gem 'bson_ext'
 # gem 'grape'
