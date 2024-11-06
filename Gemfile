@@ -4,6 +4,7 @@ gem 'oj'
 gem 'mongo', '~>2.19.3'
 gem 'bson'
 gem 'bson_ext'
+gem 'zstd-ruby'
 # gem 'grape'
 gem 'grape', '~>0.16.0'
 # for this issue
