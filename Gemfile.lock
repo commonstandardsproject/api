@@ -235,6 +235,7 @@ GEM
       equalizer (~> 0.0, >= 0.0.9)
     virtus_convert (0.1.0)
     zeitwerk (2.4.2)
+    zstd-ruby (1.5.6.6)
 
 PLATFORMS
   ruby
@@ -278,6 +279,7 @@ DEPENDENCIES
   typhoeus
   virtus (~> 1.0.5)
   virtus_convert
+  zstd-ruby
 
 RUBY VERSION
    ruby 2.7.4p191
