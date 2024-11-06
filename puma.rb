@@ -7,3 +7,21 @@ preload_app!
 rackup      DefaultRackup
 port        ENV['PORT']     || 3000
 environment ENV['RACK_ENV'] || 'development'
+
+before_fork do
+  if $db
+    $db.close
+  end
+end
+
+on_refork do
+  if $db    
+    $db.close
+  end
+end
+
+on_worker_boot do
+  if $db
+    $db.reconnect
+  end
+end
