@@ -126,7 +126,7 @@ class StandardSet
     # Set the ID
     doc.delete(:id)
     standards = doc[:standards]
-    doc[:standardsCount] = if standards != nil ? standards.length : 0
+    doc[:standardsCount] = standards&.length || 0
 
     if id == nil
       pp doc
