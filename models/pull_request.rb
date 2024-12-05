@@ -148,9 +148,7 @@ class PullRequest
     # 3. Remove the updatedAtDate field
     model.updatedAtDate = Time.now
     model.title = "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}"
-    model.standardsCount = model.standardSet
-      ? model.standardSet.standards ? model.standardsSet.standards.length : 0
-      : 0
+    model.standardsCount = model.standardSet&.standards&.length || 0
     attrs = ::VirtusConvert.new(model).to_hash
     attrs.delete(:id)
 
