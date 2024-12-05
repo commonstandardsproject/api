@@ -9,7 +9,6 @@ class StandardSet
   include Virtus.model
 
   attribute :id, String, default: -> (page, attrs) { SecureRandom.csp_uuid() }
-  attribute :id, String, default: -> (page, attrs) { SecureRandom.csp_uuid() }
   attribute :title, String, default: ""
   attribute :subject, String, default: ""
   attribute :document, Hash, default: {}
@@ -17,6 +16,7 @@ class StandardSet
   attribute :updatedAt, DateTime
   attribute :version, Integer, default: 1
   attribute :standards, Hash[String => Standard], default: {}
+  attribute :standardsCount, Integer, default: 0
 
   class Jurisdiction
     include Virtus.model
@@ -125,6 +125,8 @@ class StandardSet
 
     # Set the ID
     doc.delete(:id)
+    standards = doc[:standards]
+    doc[:standardsCount] = standards ? standards.length | 0
 
     if id == nil
       pp doc

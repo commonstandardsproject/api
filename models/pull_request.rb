@@ -19,9 +19,12 @@ class PullRequest
   attribute :activities, Array[Activity], default: []
   attribute :forkedFromStandardSetId, String
   attribute :standardSet, StandardSet, default: -> (page, attrs) {StandardSet.new}
+  attribute :standardsCount, Integer, default: 0
   attribute :asanaTaskId, String
   attribute :createdAt, DateTime
   attribute :updatedAt, DateTime
+  attribute :updatedAtDate, DateTime
+  attribute :pullRequestUrl, String
   attribute :title, String
 
   STATUSES = ["draft", "approval-requested", "revise-and-resubmit", "approved", "rejected" ]
@@ -90,6 +93,7 @@ class PullRequest
         type: "forked",
         title: "Woohoo! New pull request created by #{user['profile']['name']} from #{forked_standard_set.jurisdiction.title}: #{forked_standard_set.subject}: #{forked_standard_set.title}"
       })
+      model.standardsCount = forked_standard_set.standards.length
     else
       activity = Activity.new({
         type: "created",
@@ -101,6 +105,10 @@ class PullRequest
     model.submitterName = user["profile"]["name"]
     model.status = "draft"
     model.activities.push(activity)
+    model.updatedAtDate = Time.now()
+    model.id = SecureRandom.csp_uuid()
+    model.createdAt = Time.now
+    model.pullRequestUrl = "https://commonstandardsproject.com/edit/pull-requests/#{model.id}"
 
     insert(model)
     # self.create_asana_task(model)
@@ -134,7 +142,15 @@ class PullRequest
 
   def self.update(model)
     model.updatedAt = Time.now
+    # Old updatedAt dates were strings so another field was added. To resolve this,
+    # 1. all updatedAt strings should be turned into dates
+    # 2. The Polytomic task should be updated to look at updatedAt
+    # 3. Remove the updatedAtDate field
+    model.updatedAtDate = Time.now
     model.title = "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}"
+    model.standardsCount = model.standardSet
+      ? model.standardSet.standards ? model.standardsSet.standards.length : 0
+      : 0
     attrs = ::VirtusConvert.new(model).to_hash
     attrs.delete(:id)
 
