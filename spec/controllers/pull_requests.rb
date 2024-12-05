@@ -43,7 +43,6 @@ describe "PullRequest API" do
 
   describe "POST new, blank PR" do
     it "should work" do
-      allow(AsanaTask).to receive(:create_task).and_return(OpenStruct.new({id: "asana-task-1"}))
       allow(PostmarkClient).to receive(:deliver_with_template)
       response = post '/api/v1/pull_requests'
       model = JSON.parse(response.body)
@@ -56,7 +55,6 @@ describe "PullRequest API" do
   describe "POST PR from existing standard set" do
     it "should work" do
       StandardSet.update({"id" => "md-math-grade1", "title" => "MD Math Gr 1"}, {cache_standards: false, send_to_algolia: false})
-      allow(AsanaTask).to receive(:create_task).and_return(OpenStruct.new({id: "asana-task-1"}))
       allow(PostmarkClient).to receive(:deliver_with_template)
       response = post '/api/v1/pull_requests', :standard_set_id => "md-math-grade1"
       model = JSON.parse(response.body)
@@ -68,7 +66,6 @@ describe "PullRequest API" do
 
   describe "POST update PR" do
     it "should work" do
-      allow(AsanaTask).to receive(:create_task).and_return(OpenStruct.new({id: "asana-task-1"}))
       allow(PostmarkClient).to receive(:deliver_with_template)
       pull_request = PullRequest.new({
         id: "1",
@@ -114,7 +111,7 @@ describe "PullRequest API" do
 
     describe "POST /:id/submit" do
       it "should mark as submitted" do
-        allow(AsanaTask).to receive(:approval_requested)
+        # allow(AsanaTask).to receive(:approval_requested)
 
         post "/api/v1/pull_requests/#{@pull_request.id}/submit"
         # expect(AsanaTask).to have_received(:approval_requested).with("task-1")
@@ -125,7 +122,7 @@ describe "PullRequest API" do
 
     describe "POST /:id/change_status" do
       it "should reject" do
-        allow(AsanaTask).to receive(:reject)
+        # allow(AsanaTask).to receive(:reject)
         allow(PostmarkClient).to receive(:deliver_with_template)
 
         post "/api/v1/pull_requests/#{@pull_request.id}/change_status", status: "rejected"
@@ -154,7 +151,7 @@ describe "PullRequest API" do
       end
 
       it "should revise-and-resubmit" do
-        allow(AsanaTask).to receive(:revise_and_resubmit)
+        # allow(AsanaTask).to receive(:revise_and_resubmit)
         allow(PostmarkClient).to receive(:deliver_with_template)
 
         post "/api/v1/pull_requests/#{@pull_request.id}/change_status", status: "revise-and-resubmit"
@@ -169,7 +166,7 @@ describe "PullRequest API" do
     describe "POST /:id/comment" do
       it "should post an admin's comment" do
 
-        allow(AsanaTask).to receive(:add_comment_from_approver)
+        # allow(AsanaTask).to receive(:add_comment_from_approver)
         allow(PostmarkClient).to receive(:deliver_with_template)
         post "/api/v1/pull_requests/#{@pull_request.id}/comment", comment: "love it"
 
@@ -183,7 +180,7 @@ describe "PullRequest API" do
         # make user not a committer
         $db[:users].find({_id: "tester"}).find_one_and_update({"$set" => {committer: false}})
 
-        allow(AsanaTask).to receive(:add_comment_from_submitter)
+        # allow(AsanaTask).to receive(:add_comment_from_submitter)
         post "/api/v1/pull_requests/#{@pull_request.id}/comment", comment: "love it"
 
         pr = PullRequest.find(@pull_request.id)

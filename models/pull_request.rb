@@ -103,7 +103,7 @@ class PullRequest
     model.activities.push(activity)
 
     insert(model)
-    self.create_asana_task(model)
+    # self.create_asana_task(model)
     model
   end
 
@@ -114,9 +114,9 @@ class PullRequest
   end
 
   def self.create_asana_task(model, completed=true)
-    task = AsanaTask.create_task(model, completed)
-    model.asanaTaskId = task.gid
-    self.update(model)
+    # task = AsanaTask.create_task(model, completed)
+    # model.asanaTaskId = task.gid
+    # self.update(model)
   end
 
   def self.user_update(params)
@@ -246,7 +246,7 @@ class PullRequest
     pr.forkedFromStandardSetId = commit[:standardSetId]
     pr.standardSet = StandardSet.find(commit[:standardSetId])
     PullRequest.update(pr)
-    PullRequest.create_asana_task(pr, false)
+    # PullRequest.create_asana_task(pr, false)
 
     operations = commit[:ops].reduce({}){|acc, hash|
       acc[hash["op"]] ||= {}
