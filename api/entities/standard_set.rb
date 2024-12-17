@@ -9,6 +9,7 @@ module API
       expose :title, documentation: {desc: "Title of the set"}
       expose :subject, documentation: {desc: "The subject"}
       expose :educationLevels, documentation: {desc: "An array of education levels", values: ::StandardSet::EDUCATION_LEVELS }
+      expose :normalizedSubject, documentation: {desc: "A more normalized subjects."}
       expose :cspStatus, safe: true do |doc, opts|
         (doc[:cspStatus] || {}).to_hash
       end
