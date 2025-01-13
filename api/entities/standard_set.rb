@@ -8,6 +8,7 @@ module API
       expose :id
       expose :title, documentation: {desc: "Title of the set"}
       expose :subject, documentation: {desc: "The subject"}
+      expose :normalizedSubject, documentation: {desc: "UNOFFICIAL: A normalized subject for standards imported from ASN (list: https://elastic1.asn.desire2learn.com/asn/scheme/ASNTopic/). These have not been entered for non-ASN standards. Also, this list might change in the future if this becomes an official field"}
       expose :educationLevels, documentation: {desc: "An array of education levels", values: ::StandardSet::EDUCATION_LEVELS }
       expose :cspStatus, safe: true do |doc, opts|
         (doc[:cspStatus] || {}).to_hash
