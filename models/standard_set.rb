@@ -17,6 +17,7 @@ class StandardSet
   attribute :version, Integer, default: 1
   attribute :standards, Hash[String => Standard], default: {}
   attribute :standardsCount, Integer, default: 0
+  attribute :normalizedSubject, String, default: nil
 
   class Jurisdiction
     include Virtus.model
