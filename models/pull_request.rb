@@ -132,11 +132,12 @@ class PullRequest
     return [false, self.validate(model)] if self.validate(model) != true
 
     standard_set = ::VirtusConvert.new(model).to_hash[:standardSet]
+    standards = standard_set[:standards] || {}
     # only let the user update the standard set
     attrs = {
       title: "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}",
       standardSet: standard_set,
-      standardsCount: standard_set&.standards&.keys&.length || 0
+      standardsCount: standards.keys.length || 0
     }
     new_model = self.from_mongo(update_in_mongo(model.id, attrs))
     return [true, new_model]
