@@ -93,7 +93,7 @@ class PullRequest
         type: "forked",
         title: "Woohoo! New pull request created by #{user['profile']['name']} from #{forked_standard_set.jurisdiction.title}: #{forked_standard_set.subject}: #{forked_standard_set.title}"
       })
-      model.standardsCount = forked_standard_set.standards.length
+      model.standardsCount = forked_standard_set.standards.keys.length
     else
       activity = Activity.new({
         type: "created",
@@ -148,7 +148,7 @@ class PullRequest
     # 3. Remove the updatedAtDate field
     model.updatedAtDate = Time.now
     model.title = "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}"
-    model.standardsCount = model.standardSet&.standards&.length || 0
+    model.standardsCount = model.standardSet&.standards&.keys.length || 0
     attrs = ::VirtusConvert.new(model).to_hash
     attrs.delete(:id)
 
