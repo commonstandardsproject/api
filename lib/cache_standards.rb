@@ -1,5 +1,6 @@
 require 'pp';
 require 'parallel'
+require 'date'
 require_relative "../config/mongo";
 
 class CachedStandards
@@ -59,7 +60,8 @@ class CachedStandards
             listId:          s["listId"],
             description:     s["description"],
             comments:        s["comments"],
-            ancestorIds:     s["ancestorIds"]
+            ancestorIds:     s["ancestorIds"],
+            updatedAt:       standardSet["updatedAt"]
           },
           :upsert => true
         }
