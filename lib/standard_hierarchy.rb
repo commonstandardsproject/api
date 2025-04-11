@@ -8,8 +8,11 @@ class StandardHierarchy
       .each_with_index
       .map{|standard, i|
         ancestors = self.find_ancestors(standards, standard, i)
+        parent = ancestors.find{|a| a["depth"] == standard["depth"] - 1}
+
         standard.merge({
-          ancestorIds: ancestors.map{|a| a["id"]}
+          ancestorIds: ancestors.map{|a| a["id"]},
+          parentId: parent ? parent["id"] : nil
         })
       }.reduce({}){|acc, standard|
         acc[standard["id"]] = standard
