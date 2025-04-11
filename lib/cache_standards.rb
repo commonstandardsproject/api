@@ -48,8 +48,10 @@ class CachedStandards
           :replacement => {
             asnIdentifier:   s["asnIdentifier"],
             standardSetId:   standardSet["_id"],
+            standardSetTitle: standardSet["title"],
             standardDocumentId: standardSet["document"] ? standardSet["document"]["id"] : nil,
             jurisdictionId:  standardSet["jurisdiction"] ? standardSet["jurisdiction"]["id"] : nil,
+            jurisdictionTitle: standardSet["jurisdiction"] ? standardSet["jurisdiction"]["title"] : nil,
             subject:         standardSet["subject"],
             educationLevels: standardSet["educationLevels"],
             position:        s["position"],
