@@ -1,5 +1,6 @@
 require 'pp'
 require 'dry-validation'
+require 'date'
 require_relative '../lib/cache_standards'
 require_relative '../lib/send_to_algolia'
 require_relative "standard"
@@ -121,6 +122,7 @@ class StandardSet
     # Set the version
     doc[:version] = old_version[:version] || 0
     doc[:version] = doc[:version] + 1
+    doc[:updatedAt] = DateTime.now()
 
     id = doc[:id]
 
