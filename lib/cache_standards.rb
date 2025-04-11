@@ -61,7 +61,7 @@ class CachedStandards
             description:     s["description"],
             comments:        s["comments"],
             ancestorIds:     s["ancestorIds"],
-            createdAt:       standardSet["createdAt"]
+            createdAt:       standardSet["createdAt"],
             updatedAt:       standardSet["updatedAt"]
           },
           :upsert => true
