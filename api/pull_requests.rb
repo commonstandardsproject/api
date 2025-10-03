@@ -81,11 +81,11 @@ module API
           submitterId: params[:user_id]
         }
 
-        opts = { projection: { title: 1 } }
+        opts = { projection: { title: 1, status: 1, updatedAt: 1, createdAt: 1 } }
 
         models = PullRequest.find_query(query, opts)
 
-        present :data, models, with: Entities::PullRequest
+        present :data, models, with: Entities::PullRequestSummary
       end
 
       get "/" do
