@@ -2,6 +2,7 @@ require 'grape'
 require_relative '../config/mongo'
 require_relative '../lib/securerandom'
 require_relative 'entities/pull_request'
+require_relative 'entities/pull_request_summary'
 require_relative "../models/pull_request"
 
 module API
@@ -81,9 +82,11 @@ module API
           submitterId: params[:user_id]
         }
 
-        models = PullRequest.find_query(query)
+        opts = { projection: { title: 1, status: 1, updatedAt: 1, createdAt: 1 } }
 
-        present :data, models, with: Entities::PullRequest
+        models = PullRequest.find_query(query, opts)
+
+        present :data, models, with: Entities::PullRequestSummary
       end
 
       get "/" do
