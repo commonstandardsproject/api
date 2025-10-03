@@ -70,8 +70,8 @@ class PullRequest
     }
   end
 
-  def self.find_query(query)
-    $db[:pull_requests].find(query).to_a.map{|doc|
+  def self.find_query(query, opts = {})
+    $db[:pull_requests].find(query, opts).to_a.map{|doc|
       self.from_mongo(doc)
     }
   end
