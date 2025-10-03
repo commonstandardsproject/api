@@ -65,7 +65,7 @@ class PullRequest
   end
 
   def self.find_all_active
-    $db[:pull_requests].find({status: {:$ne => "rejected"}}).to_a.map{|pr|
+    $db[:pull_requests].find({status: {:$ne => "rejected"}}).limit(100).to_a.map{|pr|
       self.from_mongo(pr)
     }
   end
