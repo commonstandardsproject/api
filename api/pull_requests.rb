@@ -2,6 +2,7 @@ require 'grape'
 require_relative '../config/mongo'
 require_relative '../lib/securerandom'
 require_relative 'entities/pull_request'
+require_relative 'entities/pull_request_summary'
 require_relative "../models/pull_request"
 
 module API
