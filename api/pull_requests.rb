@@ -81,7 +81,9 @@ module API
           submitterId: params[:user_id]
         }
 
-        models = PullRequest.find_query(query)
+        opts = { projection: { title: 1 } }
+
+        models = PullRequest.find_query(query, opts)
 
         present :data, models, with: Entities::PullRequest
       end
