@@ -137,7 +137,8 @@ class PullRequest
     attrs = {
       title: "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}",
       standardSet: standard_set,
-      standardsCount: standards.keys.length || 0
+      standardsCount: standards.keys.length || 0,
+      updatedAtDate: Time.now()
     }
     new_model = self.from_mongo(update_in_mongo(model.id, attrs))
     return [true, new_model]
@@ -211,7 +212,8 @@ class PullRequest
       .find_one_and_update({
         "$set" => {
           "status" => status,
-          "statusComment" => comment
+          "statusComment" => comment,
+          "updatedAtDate" => Time.now()
         }
       }, {upsert: true, return_document: :after}))
 
