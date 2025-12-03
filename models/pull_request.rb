@@ -211,7 +211,8 @@ class PullRequest
       .find_one_and_update({
         "$set" => {
           "status" => status,
-          "statusComment" => comment
+          "statusComment" => comment,
+          "updatedAtDate" => Time.now
         }
       }, {upsert: true, return_document: :after}))
 
