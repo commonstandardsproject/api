@@ -3,6 +3,13 @@ FROM circleci/ruby:2.7.4
 RUN sudo apt-get update && sudo apt-get install libjemalloc2 && sudo rm -rf /var/lib/apt/lists/*
 ENV LD_PRELOAD=libjemalloc.so.2
 
+# Ensure certs and openssl are up-to-date
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  ca-certificates \
+  openssl \
+  && update-ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /home/app
 
 ENV PORT 3000
