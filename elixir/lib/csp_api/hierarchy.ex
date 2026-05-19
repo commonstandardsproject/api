@@ -51,6 +51,15 @@ defmodule CspApi.Hierarchy do
   # Walks the rest of the (descending-position) list collecting the
   # lowest-depth ancestor we've crossed at each step, stopping at the first
   # root.
+  #
+  # Ruby quirk preserved: when the standard is the last element in the
+  # ordered list (nothing after it), the rest is `[]` and we return `[]`.
+  # That means a non-root leaf at the tail of the position-desc list
+  # gets `ancestorIds: []` — even though semantically it has ancestors
+  # somewhere in the set. The Ruby implementation in
+  # `lib/standard_hierarchy.rb` does the same thing because it iterates
+  # `each_with_index` and slices `all[(idx + 1)..]`, which returns `[]`
+  # at the tail. See CONVERSION_NOTES.md.
   defp walk_ancestors(rest, standard) do
     Enum.reduce_while(rest, {[], standard}, fn ss, {acc, last} ->
       case depth(ss) do
