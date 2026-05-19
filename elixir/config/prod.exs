@@ -2,6 +2,6 @@ import Config
 
 config :csp_api, CspApiWeb.Endpoint, server: true
 
-config :logger, level: :info
+config :csp_api, :auth, jwt_test_bypass?: false
 
-config :csp_api, :environment, :prod
+config :logger, level: :info

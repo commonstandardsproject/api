@@ -1,8 +1,23 @@
 ExUnit.start()
 
-# Use the in-process TestAdapter so we can assert on outgoing emails.
+# Refuse to start if the configured Repo points anywhere other than a
+# database whose name contains "test". The Ruby rspec suite has the same
+# safety belt — `if $db.database.name == "common-standards-project-testing"`.
+url = Application.get_env(:csp_api, CspApi.Repo)[:url]
+
+unless is_binary(url) and String.contains?(url, "test") do
+  raise """
+  Test repo is not pointing at a *test* database.
+
+  Configured Repo URL: #{inspect(url)}
+
+  Set MONGO_URL_TEST or update config/test.exs to a database whose name
+  contains the substring "test".
+  """
+end
+
+# Use the test email adapter so we can assert on what gets sent.
 Application.put_env(:csp_api, :email_adapter, CspApi.Email.TestAdapter)
 
-# Some tests want the JWT bypass; in test mode `Authorization: TEST` always
-# passes the JWT plug. Anything else requires a real token.
-Application.put_env(:csp_api, :environment, :test)
+# Drop the test database once at boot so we start from a clean slate.
+Mongo.Ecto.command(CspApi.Repo, dropDatabase: 1)

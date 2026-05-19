@@ -29,18 +29,20 @@ defmodule CspApi.MixProject do
       {:phoenix_pubsub, "~> 2.1"},
       {:plug_cowboy, "~> 2.6"},
       {:jason, "~> 1.4"},
-      {:mongodb_driver, "~> 1.4"},
+
+      # Ecto + the official MongoDB adapter
+      {:ecto, "~> 3.10"},
+      {:mongodb_ecto, "~> 1.1"},
+
       {:joken, "~> 2.6"},
-      {:req, "~> 0.4"},
-      {:floki, ">= 0.30.0", only: :test}
+      {:elixir_uuid, "~> 1.2"}
     ]
   end
 
   defp aliases do
     [
       setup: ["deps.get"],
-      "test.contract": ["test --only contract"],
-      "test.all": ["test"]
+      test: ["test"]
     ]
   end
 end

@@ -1,94 +1,227 @@
 defmodule CspApi.PullRequests do
-  @moduledoc """
-  Pull requests carry user-proposed edits to a `StandardSet`. Port of
-  `models/pull_request.rb`.
-  """
+  @moduledoc "Pull-request flows. Port of `models/pull_request.rb`."
 
-  alias CspApi.{Mongo, ID, Email, StandardSets}
+  import Ecto.Query
+  alias CspApi.{Repo, ID, Email, StandardSets}
+  alias CspApi.Schemas.{PullRequest, StandardSet, Activity}
 
-  @statuses ["draft", "approval-requested", "revise-and-resubmit", "approved", "rejected"]
-  @humanized_statuses %{
-    "draft" => "Draft",
-    "approval-requested" => "Approval Requested",
-    "revise-and-resubmit" => "Revise and Resubmit",
-    "approved" => "Approved",
-    "rejected" => "Rejected"
-  }
+  defdelegate statuses, to: PullRequest
+  defdelegate humanized(status), to: PullRequest
 
-  def statuses, do: @statuses
-
-  def get(id), do: Mongo.find_one("pull_requests", %{"_id" => id})
+  def get(id), do: Repo.get(PullRequest, id)
 
   def list_active do
-    "pull_requests"
-    |> Mongo.find_all(%{"status" => %{"$ne" => "rejected"}}, limit: 100)
+    from(p in PullRequest, where: p.status != "rejected", limit: 100)
+    |> Repo.all()
   end
 
   def list_for_user(user_id) do
-    Mongo.find_all(
-      "pull_requests",
-      %{"status" => %{"$ne" => "rejected"}, "submitterId" => user_id},
-      projection: %{"title" => 1, "status" => 1, "updatedAt" => 1, "createdAt" => 1}
+    from(p in PullRequest,
+      where: p.status != "rejected" and p.submitterId == ^user_id,
+      select: [:id, :title, :status, :updatedAt, :createdAt]
     )
+    |> Repo.all()
   end
 
-  def can_edit?(_pr, %{"isCommitter" => true}), do: true
-  def can_edit?(%{"submitterId" => sid}, %{"_id" => uid}) when sid == uid, do: true
-  def can_edit?(%{"submitterId" => sid}, %{"id" => uid}) when sid == uid, do: true
+  def can_edit?(_pr, %{isCommitter: true}), do: true
+  def can_edit?(%{submitterId: sid}, %{id: uid}) when sid == uid, do: true
   def can_edit?(_pr, _user), do: false
 
-  @doc """
-  Creates a new pull request, optionally forked from an existing standard
-  set.
-  """
-  def create(user, standard_set_id \\ nil) do
-    id = ID.csp_uuid()
-    name = get_in(user, ["profile", "name"]) || "anonymous"
+  @doc "Create an empty PR for the current user."
+  def create_blank(user) do
+    name = name_of(user)
+    now = now()
 
-    {standard_set, forked_from, activity, count} =
-      if is_binary(standard_set_id) and standard_set_id != "" do
-        ss = StandardSets.get(standard_set_id)
-
-        title =
-          "Woohoo! New pull request created by #{name} from " <>
-            (get_in(ss || %{}, ["jurisdiction", "title"]) || "") <>
-            ": " <>
-            (Map.get(ss || %{}, "subject", "")) <>
-            ": " <>
-            (Map.get(ss || %{}, "title", ""))
-
-        {ss, standard_set_id, %{"type" => "forked", "title" => title}, map_size(ss["standards"] || %{})}
-      else
-        {default_standard_set(), nil,
-         %{"type" => "created", "title" => "Woohoo! New pull request created by #{name}"}, 0}
-      end
-
-    now = DateTime.utc_now()
-
-    activity =
-      activity
-      |> Map.put("id", ID.csp_uuid())
-      |> Map.put("createdAt", now)
-
-    doc = %{
-      "_id" => id,
-      "submitterId" => user["_id"] || user["id"],
-      "submitterEmail" => Map.get(user, "email", "noemail@example.com"),
-      "submitterName" => name,
-      "status" => "draft",
-      "activities" => [activity],
-      "standardSet" => standard_set,
-      "forkedFromStandardSetId" => forked_from,
-      "standardsCount" => count,
-      "createdAt" => now,
-      "updatedAt" => now,
-      "updatedAtDate" => now,
-      "pullRequestUrl" => "https://commonstandardsproject.com/edit/pull-requests/" <> id,
-      "title" => "#{get_in(standard_set, ["jurisdiction", "title"]) || ""}: #{Map.get(standard_set, "subject", "")}: #{Map.get(standard_set, "title", "")}"
+    activity = %{
+      id: ID.csp_uuid(),
+      createdAt: now,
+      type: "created",
+      title: "Woohoo! New pull request created by #{name}"
     }
 
-    Mongo.insert_one("pull_requests", doc)
-    doc
+    insert_pr(user, %{
+      activities: [activity],
+      standardSet: default_standard_set(),
+      standardsCount: 0,
+      forkedFromStandardSetId: nil,
+      title: ": : ",
+      createdAt: now,
+      updatedAt: now,
+      updatedAtDate: now
+    })
+  end
+
+  @doc "Fork an existing standard set into a fresh PR."
+  def create_forked(user, standard_set_id) when is_binary(standard_set_id) do
+    name = name_of(user)
+    now = now()
+
+    case StandardSets.get(standard_set_id) do
+      nil ->
+        # Fall back to a blank PR if the source set has disappeared, matching
+        # Ruby's behavior of silently degrading.
+        create_blank(user)
+
+      %StandardSet{} = source ->
+        standards = source.standards || %{}
+
+        activity = %{
+          id: ID.csp_uuid(),
+          createdAt: now,
+          type: "forked",
+          title:
+            "Woohoo! New pull request created by #{name} from " <>
+              "#{source.jurisdiction.title}: #{source.subject}: #{source.title}"
+        }
+
+        embedded_set = standard_set_for_embed(source)
+
+        insert_pr(user, %{
+          activities: [activity],
+          standardSet: embedded_set,
+          standardsCount: map_size(standards),
+          forkedFromStandardSetId: standard_set_id,
+          title: "#{source.jurisdiction.title}: #{source.subject}: #{source.title}",
+          createdAt: now,
+          updatedAt: now,
+          updatedAtDate: now
+        })
+    end
+  end
+
+  @doc "Apply edits to the user-controlled fields of a PR."
+  def user_update(id, %{} = data) do
+    case Repo.get(PullRequest, id) do
+      nil ->
+        {:error, :not_found}
+
+      pr ->
+        standard_set = Map.get(data, "standardSet") || Map.get(data, :standardSet) || %{}
+        standards = Map.get(standard_set, "standards") || Map.get(standard_set, :standards) || %{}
+        jurisdiction = Map.get(standard_set, "jurisdiction") || %{}
+
+        title =
+          "#{Map.get(jurisdiction, "title", "")}: " <>
+            "#{Map.get(standard_set, "subject", "")}: " <>
+            "#{Map.get(standard_set, "title", "")}"
+
+        changeset =
+          PullRequest.changeset(pr, %{
+            title: title,
+            standardSet: standard_set,
+            standardsCount: map_size(standards),
+            updatedAt: now(),
+            updatedAtDate: now()
+          })
+
+        case Repo.update(changeset) do
+          {:ok, updated} -> {:ok, updated}
+          {:error, cs} -> {:error, cs}
+        end
+    end
+  end
+
+  def add_comment(pr, comment, user) when is_binary(comment) do
+    activity = %Activity{
+      id: ID.csp_uuid(),
+      createdAt: now(),
+      type: "comment",
+      title: comment,
+      userName: name_of(user),
+      userId: user.id
+    }
+
+    activities = (pr.activities || []) ++ [activity]
+
+    {:ok, updated} =
+      pr
+      |> Ecto.Changeset.change()
+      |> Ecto.Changeset.put_embed(:activities, activities)
+      |> Repo.update()
+
+    if Map.get(user, :isCommitter) == true do
+      Email.send_email("admin-comment-added", updated, comment)
+    end
+
+    updated
+  end
+
+  @doc """
+  Changes a PR's status. Returns `{:ok, pr}` or `{:error, reason}`.
+
+  Bug-for-bug with Ruby: an unknown status returns `{:error,
+  :invalid_status}` here, and the controller turns that into a 200 with
+  the unchanged PR (Ruby's `change_status` returns `false`, the endpoint
+  swallows it and re-fetches).
+  """
+  def change_status(id, status, comment, send_notice? \\ false) do
+    cond do
+      status not in PullRequest.statuses() ->
+        {:error, :invalid_status}
+
+      true ->
+        case Repo.get(PullRequest, id) do
+          nil ->
+            {:error, :not_found}
+
+          pr ->
+            do_change_status(pr, status, comment, send_notice?)
+        end
+    end
+  end
+
+  defp do_change_status(pr, status, comment, send_notice?) do
+    if status == "approved" and is_map(pr.standardSet) and pr.standardSet["id"] do
+      # Ruby `change_status` calls StandardSet.update(model.standardSet)
+      # which upserts using the embedded set's id. We do the same — no
+      # extra validation that the id matches forkedFromStandardSetId,
+      # matching Ruby.
+      StandardSets.upsert(pr.standardSet)
+    end
+
+    activity = %Activity{
+      id: ID.csp_uuid(),
+      createdAt: now(),
+      type: "status-change",
+      status: PullRequest.humanized(status),
+      title: comment || ""
+    }
+
+    activities = (pr.activities || []) ++ [activity]
+
+    {:ok, updated} =
+      pr
+      |> Ecto.Changeset.change(%{
+        status: status,
+        statusComment: comment,
+        updatedAtDate: now()
+      })
+      |> Ecto.Changeset.put_embed(:activities, activities)
+      |> Repo.update()
+
+    if send_notice?, do: Email.send_email(status, updated, comment)
+
+    {:ok, updated}
+  end
+
+  # ────────────────────────────────────────────────────────────────────────
+
+  defp insert_pr(user, fields) do
+    id = ID.csp_uuid()
+
+    attrs =
+      Map.merge(fields, %{
+        id: id,
+        submitterId: user.id,
+        submitterEmail: Map.get(user, :email, "noemail@example.com"),
+        submitterName: name_of(user),
+        status: "draft",
+        pullRequestUrl: "https://commonstandardsproject.com/edit/pull-requests/" <> id
+      })
+
+    %PullRequest{}
+    |> PullRequest.changeset(attrs)
+    |> Repo.insert!()
   end
 
   defp default_standard_set do
@@ -109,110 +242,30 @@ defmodule CspApi.PullRequests do
     }
   end
 
-  @doc """
-  Updates the user-editable part of a pull request: title and the embedded
-  `standardSet`.
-  """
-  def user_update(id, %{} = data) do
-    standard_set = Map.get(data, "standardSet") || %{}
-    standards = Map.get(standard_set, "standards") || %{}
-    jurisdiction = Map.get(standard_set, "jurisdiction", %{})
-
-    title =
-      "#{Map.get(jurisdiction, "title", "")}: " <>
-        "#{Map.get(standard_set, "subject", "")}: " <>
-        "#{Map.get(standard_set, "title", "")}"
-
-    updates = %{
-      "title" => title,
-      "standardSet" => standard_set,
-      "standardsCount" => map_size(standards),
-      "updatedAt" => DateTime.utc_now(),
-      "updatedAtDate" => DateTime.utc_now()
+  defp standard_set_for_embed(%StandardSet{} = s) do
+    %{
+      "id" => s.id,
+      "title" => s.title,
+      "subject" => s.subject,
+      "normalizedSubject" => s.normalizedSubject,
+      "educationLevels" => s.educationLevels,
+      "standards" => s.standards,
+      "document" => s.document,
+      "jurisdiction" => s.jurisdiction && Map.from_struct(s.jurisdiction),
+      "cspStatus" => s.cspStatus && Map.from_struct(s.cspStatus),
+      "license" => s.license && Map.from_struct(s.license)
     }
-
-    {:ok, model} =
-      Mongo.find_one_and_update(
-        "pull_requests",
-        %{"_id" => id},
-        %{"$set" => updates},
-        return_document: :after
-      )
-
-    {:ok, model}
   end
 
-  def add_comment(pr, comment, user) when is_map(pr) and is_binary(comment) do
-    activity = %{
-      "id" => ID.csp_uuid(),
-      "createdAt" => DateTime.utc_now(),
-      "type" => "comment",
-      "title" => comment,
-      "userName" => get_in(user, ["profile", "name"]),
-      "userId" => user["_id"] || user["id"]
-    }
+  defp name_of(user) do
+    cond do
+      profile = Map.get(user, :profile) ->
+        Map.get(profile, "name") || Map.get(profile, :name) || "anonymous"
 
-    Mongo.update_one(
-      "pull_requests",
-      %{"_id" => pr["_id"]},
-      %{"$push" => %{"activities" => activity}}
-    )
-
-    if user["isCommitter"] == true do
-      Email.send_email("admin-comment-added", pr, comment)
+      true ->
+        "anonymous"
     end
-
-    get(pr["_id"])
   end
 
-  @doc """
-  Changes the status, appends an activity, and (when `send_notice?` is
-  true) sends the status-change email. Returns the updated PR or
-  `{:error, :invalid_status}` if the status is unknown.
-  """
-  def change_status(id, status, comment, send_notice? \\ false)
-
-  def change_status(_id, status, _comment, _send) when status not in @statuses,
-    do: {:error, :invalid_status}
-
-  def change_status(id, status, comment, send_notice?) do
-    pr = get(id)
-    if is_nil(pr), do: throw({:no_pr, id})
-
-    if status == "approved" do
-      StandardSets.upsert(Map.merge(pr["standardSet"], %{"id" => get_in(pr, ["standardSet", "id"])}))
-    end
-
-    {:ok, updated} =
-      Mongo.find_one_and_update(
-        "pull_requests",
-        %{"_id" => id},
-        %{
-          "$set" => %{
-            "status" => status,
-            "statusComment" => comment,
-            "updatedAtDate" => DateTime.utc_now()
-          }
-        },
-        return_document: :after
-      )
-
-    activity = %{
-      "id" => ID.csp_uuid(),
-      "createdAt" => DateTime.utc_now(),
-      "type" => "status-change",
-      "status" => @humanized_statuses[status],
-      "title" => comment || ""
-    }
-
-    Mongo.update_one(
-      "pull_requests",
-      %{"_id" => id},
-      %{"$push" => %{"activities" => activity}}
-    )
-
-    if send_notice?, do: Email.send_email(status, updated, comment)
-
-    get(id)
-  end
+  defp now, do: DateTime.utc_now() |> DateTime.truncate(:second)
 end

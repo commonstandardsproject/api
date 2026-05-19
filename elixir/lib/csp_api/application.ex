@@ -4,11 +4,9 @@ defmodule CspApi.Application do
 
   @impl true
   def start(_type, _args) do
-    mongo_opts = Application.fetch_env!(:csp_api, :mongo)
-
     children = [
+      CspApi.Repo,
       {Phoenix.PubSub, name: CspApi.PubSub},
-      {Mongo, mongo_opts},
       CspApiWeb.Endpoint
     ]
 

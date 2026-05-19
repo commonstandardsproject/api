@@ -1,9 +1,12 @@
 defmodule CspApiWeb.Plugs.JwtAuth do
   @moduledoc """
-  Verifies the `Authorization` header on mutating endpoints. In test
-  environments an `Authorization: TEST` header bypasses verification — the
-  Ruby app does the same so the rspec suite can hit POST endpoints
-  without minting JWTs.
+  Verifies the `Authorization` header on mutating endpoints.
+
+  When `:csp_api, :auth, jwt_test_bypass?` is `true`, an
+  `Authorization: TEST` header bypasses verification — this matches the
+  Ruby spec's `Authorization=TEST` shortcut. The bypass is a compile-time
+  config flag, not an env var, so a stray `MIX_ENV=test` at runtime can't
+  open it up.
   """
 
   import Plug.Conn
@@ -11,14 +14,14 @@ defmodule CspApiWeb.Plugs.JwtAuth do
   def init(opts), do: opts
 
   def call(conn, _opts) do
-    env = Application.get_env(:csp_api, :environment, :prod)
-    auth = case get_req_header(conn, "authorization") do
-      [v | _] -> v
-      _ -> nil
-    end
+    auth =
+      case get_req_header(conn, "authorization") do
+        [v | _] -> v
+        _ -> nil
+      end
 
     cond do
-      env == :test and auth == "TEST" ->
+      auth == "TEST" and test_bypass?() ->
         conn
 
       is_nil(auth) ->
@@ -29,25 +32,27 @@ defmodule CspApiWeb.Plugs.JwtAuth do
     end
   end
 
+  defp test_bypass? do
+    Application.get_env(:csp_api, :auth, [])[:jwt_test_bypass?] == true
+  end
+
   defp verify_token(conn, "Bearer " <> token), do: verify_token(conn, token)
 
   defp verify_token(conn, token) do
-    secret = Application.get_env(:csp_api, :auth)[:jwt_secret]
-    client_id = Application.get_env(:csp_api, :auth)[:jwt_client_id]
+    auth = Application.get_env(:csp_api, :auth, [])
+    secret = auth[:jwt_secret]
+    client_id = auth[:jwt_client_id]
 
-    cond do
-      is_nil(secret) ->
-        unauthorized(conn, "Invalid Token")
+    if is_nil(secret) do
+      unauthorized(conn, "Invalid Token")
+    else
+      decoded_secret = Base.url_decode64!(secret, padding: false)
+      signer = Joken.Signer.create("HS256", decoded_secret)
 
-      true ->
-        # Auth0 historically base64-url-decoded the secret before HS256.
-        decoded_secret = Base.url_decode64!(secret, padding: false)
-        signer = Joken.Signer.create("HS256", decoded_secret)
-
-        case Joken.verify_and_validate(%{}, token, signer) do
-          {:ok, %{"aud" => ^client_id}} -> conn
-          _ -> unauthorized(conn, "Invalid Token")
-        end
+      case Joken.verify_and_validate(%{}, token, signer) do
+        {:ok, %{"aud" => ^client_id}} -> conn
+        _ -> unauthorized(conn, "Invalid Token")
+      end
     end
   rescue
     _ -> unauthorized(conn, "Invalid Token")

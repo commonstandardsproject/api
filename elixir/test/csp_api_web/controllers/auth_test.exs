@@ -18,7 +18,27 @@ defmodule CspApiWeb.AuthTest do
     assert %{"error" => "Unauthorized" <> _} = json_response(conn, 401)
   end
 
-  test "swagger doc is public", %{conn: conn} do
+  test "missing api key matches Ruby bug — passes when a system user exists with no apiKey field", %{conn: conn} do
+    # Insert a user with NO apiKey field. The Ruby app's `before` block
+    # accidentally matches such users when the header is missing, because
+    # `find({apiKey: nil})` in MongoDB matches documents where the field
+    # doesn't exist. We replicate that behavior exactly.
+    {:ok, _} =
+      Mongo.Ecto.command(Repo,
+        insert: "users",
+        documents: [%{_id: "system-no-key", email: "system@example.com", profile: %{name: "System"}}]
+      )
+
+    conn =
+      Phoenix.ConnTest.build_conn()
+      |> Plug.Conn.put_req_header("accept", "application/json")
+      |> Plug.Conn.delete_req_header("api-key")
+      |> get("/api/v1/jurisdictions")
+
+    assert conn.status == 200
+  end
+
+  test "swagger doc is public", %{conn: _conn} do
     conn =
       Phoenix.ConnTest.build_conn()
       |> Plug.Conn.put_req_header("accept", "application/json")

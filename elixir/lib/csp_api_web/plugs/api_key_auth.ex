@@ -1,9 +1,14 @@
 defmodule CspApiWeb.Plugs.ApiKeyAuth do
   @moduledoc """
-  Authenticates the request by looking up the user whose `apiKey` matches
-  the `Api-Key` header. Stores the user on `conn.assigns[:current_user]`.
+  Authenticates by `Api-Key` header (or `api-key` query param), and
+  increments the matching user's `requestCount`. Sets
+  `conn.assigns[:current_user]` on success.
 
-  Mirrors the `before do ... end` block in `api/api.rb`.
+  Bug-for-bug with `api/api.rb`: a missing or empty key still hits Mongo
+  with `{apiKey: nil}`, which matches a user document that has no
+  `apiKey` field. In production this lets unkeyed requests succeed if such
+  a document exists; we replicate that exactly rather than silently
+  closing the hole.
   """
 
   import Plug.Conn
@@ -15,7 +20,7 @@ defmodule CspApiWeb.Plugs.ApiKeyAuth do
   def call(conn, _opts) do
     key = get_key(conn)
 
-    case Users.by_api_key(key) do
+    case Users.by_api_key_and_bump(key) do
       nil ->
         conn
         |> put_resp_content_type("application/json")
@@ -28,8 +33,6 @@ defmodule CspApiWeb.Plugs.ApiKeyAuth do
         |> halt()
 
       user ->
-        # The Ruby app uses _id as id; expose both for downstream code.
-        user = Map.put(user, "id", user["_id"])
         assign(conn, :current_user, user)
     end
   end

@@ -1,10 +1,9 @@
 defmodule CspApi.Jurisdictions do
-  @moduledoc """
-  Read operations for the `jurisdictions` collection plus the joined
-  `standardSets` summary used by `GET /api/v1/jurisdictions/:id`.
-  """
+  @moduledoc "Read operations for `jurisdictions`, plus the joined standard-set summary."
 
-  alias CspApi.Mongo
+  import Ecto.Query
+  alias CspApi.{Repo, MongoX}
+  alias CspApi.Schemas.Jurisdiction
 
   @summary_projection %{
     "_id" => 1,
@@ -15,48 +14,56 @@ defmodule CspApi.Jurisdictions do
   }
 
   @doc """
-  Lists all jurisdictions that the public should see.
-
-  The Ruby app filters out items with `status in [inactive, pending,
-  rejected]` *unless* the requester submitted them. Without an authenticated
-  user we just hide all three.
+  Lists jurisdictions for the public listing — hides inactive/pending/rejected
+  unless the requester submitted them. Mirrors the `:$or` query in
+  `api/jurisdictions.rb`.
   """
   def list_all(user_id \\ nil) do
-    status_filter = %{"status" => %{"$nin" => ["inactive", "pending", "rejected"]}}
-
-    filter =
+    query =
       case user_id do
-        nil -> status_filter
-        id -> %{"$or" => [status_filter, %{"submitterId" => id}]}
+        nil ->
+          from j in Jurisdiction,
+            where: j.status not in ["inactive", "pending", "rejected"] or is_nil(j.status),
+            order_by: [asc: j.title]
+
+        id ->
+          from j in Jurisdiction,
+            where:
+              (j.status not in ["inactive", "pending", "rejected"] or is_nil(j.status)) or
+                j.submitterId == ^id,
+            order_by: [asc: j.title]
       end
 
-    Mongo.find_all("jurisdictions", filter, sort: %{"title" => 1})
+    Repo.all(query)
   end
 
   @doc """
-  Fetches a jurisdiction and attaches its standard-set summary list. When
-  `hide_hidden_sets?` is true (the default), sets whose `cspStatus.value`
-  equals `"hidden"` are filtered out.
+  Fetches a jurisdiction and joins on the standard-set summary collection.
+  `hide_hidden_sets?` defaults to true, matching the Ruby endpoint.
+
+  Returns `{jurisdiction, [standard_set_summary_map]}` or `nil`.
   """
   def get(id, opts \\ []) do
     hide_hidden? = Keyword.get(opts, :hide_hidden_sets, true)
 
-    case Mongo.find_one("jurisdictions", %{"_id" => id}) do
+    case Repo.get(Jurisdiction, id) do
       nil ->
         nil
 
       jurisdiction ->
-        set_filter = %{"jurisdiction.id" => id}
+        filter = %{"jurisdiction.id" => id}
 
-        set_filter =
+        filter =
           if hide_hidden? do
-            Map.put(set_filter, "cspStatus.value", %{"$ne" => "hidden"})
+            Map.put(filter, "cspStatus.value", %{"$ne" => "hidden"})
           else
-            set_filter
+            filter
           end
 
-        standard_sets = Mongo.find_all("standard_sets", set_filter, projection: @summary_projection)
-        Map.put(jurisdiction, "standardSets", standard_sets)
+        sets =
+          MongoX.find("standard_sets", filter, projection: @summary_projection)
+
+        {jurisdiction, sets}
     end
   end
 end

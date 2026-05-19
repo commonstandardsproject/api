@@ -2,12 +2,12 @@ defmodule CspApiWeb.JurisdictionsController do
   use CspApiWeb, :controller
 
   alias CspApi.Jurisdictions
-  alias CspApiWeb.JurisdictionJSON
+  alias CspApiWeb.JSON
 
   def index(conn, _params) do
     user_id = current_user_id(conn)
     jurisdictions = Jurisdictions.list_all(user_id)
-    json(conn, %{data: Enum.map(jurisdictions, &JurisdictionJSON.summary/1)})
+    json(conn, %{data: Enum.map(jurisdictions, &JSON.jurisdiction_summary/1)})
   end
 
   def show(conn, %{"id" => id} = params) do
@@ -15,13 +15,13 @@ defmodule CspApiWeb.JurisdictionsController do
 
     case Jurisdictions.get(id, hide_hidden_sets: hide_hidden?) do
       nil -> json(conn, %{data: %{}})
-      j -> json(conn, %{data: JurisdictionJSON.full(j)})
+      {j, sets} -> json(conn, %{data: JSON.jurisdiction_full(j, sets)})
     end
   end
 
   defp current_user_id(conn) do
     case conn.assigns[:current_user] do
-      %{"_id" => id} -> id
+      %{id: id} -> id
       _ -> nil
     end
   end

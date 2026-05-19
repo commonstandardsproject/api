@@ -1,32 +1,28 @@
 defmodule CspApi.StandardSets do
   @moduledoc """
-  Read operations on the `standard_sets` collection plus the
-  hierarchy-augmentation step that the Ruby app applies before serializing.
+  Read + upsert operations on `standard_sets`. Includes the hierarchy
+  walk that mirrors `lib/standard_hierarchy.rb`.
   """
 
-  alias CspApi.{Mongo, Hierarchy}
+  import Ecto.Query
+  alias CspApi.{Repo, Hierarchy, ID}
+  alias CspApi.Schemas.StandardSet
 
   @doc """
-  Fetches a single standard set by id. Returns `nil` if missing. The
-  `standards` map is enriched with `parentId`/`ancestorIds` exactly like the
-  Ruby endpoint does via `StandardHierarchy.add_ancestor_ids`.
+  Fetches a standard set, augments `standards` with `parentId`/`ancestorIds`,
+  and returns the changeset-loaded struct or `nil`.
   """
   def get(id) do
-    case Mongo.find_one("standard_sets", %{"_id" => id}) do
+    case Repo.get(StandardSet, id) do
       nil ->
         nil
 
       set ->
-        standards = Hierarchy.add_ancestor_ids(set["standards"] || %{})
-
-        set
-        |> Map.put("standards", standards)
-        |> Map.put_new("educationLevels", [])
-        |> Map.put("id", set["_id"])
+        Map.put(set, :standards, Hierarchy.add_ancestor_ids(set.standards || %{}))
     end
   end
 
-  @doc "Like `get/1` but returns standards as a list (sorted by position desc)."
+  @doc "Same as `get/1` but returns the standards collection as a position-desc list."
   def get_with_array(id) do
     case get(id) do
       nil ->
@@ -34,46 +30,65 @@ defmodule CspApi.StandardSets do
 
       set ->
         list =
-          set["standards"]
+          set.standards
           |> Map.values()
           |> Enum.sort_by(&(&1["position"] || 0), :desc)
 
-        Map.put(set, "standards", list)
+        Map.put(set, :standards, list)
     end
   end
 
   @doc """
-  Upserts a standard set. Matches Ruby `StandardSet.update` semantics:
-  bumps `version`, sets `updatedAt`, computes `standardsCount`, and stores
-  the previous revision in `standard_set_versions`.
+  Upserts a standard set, bumping `version`, recomputing `standardsCount`,
+  and stashing the previous revision in `standard_set_versions`.
+
+  Returns `{:ok, struct}` or `{:error, changeset}`.
   """
-  def upsert(%{"id" => id} = doc) when is_binary(id) do
-    old = Mongo.find_one("standard_sets", %{"_id" => id}) || %{}
-    if map_size(old) > 0, do: save_version(old)
+  def upsert(attrs) when is_map(attrs) do
+    id = attrs[:id] || attrs["id"] || attrs[:_id] || attrs["_id"]
 
-    standards = doc["standards"] || %{}
-    version = (old["version"] || 0) + 1
+    if is_nil(id) do
+      {:error, "id is required for upsert"}
+    else
+      old = Repo.get(StandardSet, id)
 
-    doc =
-      doc
-      |> Map.drop(["id", "_id"])
-      |> Map.put("version", version)
-      |> Map.put("updatedAt", DateTime.utc_now())
-      |> Map.put("standardsCount", map_size(standards))
+      if old, do: save_version(old)
 
-    Mongo.find_one_and_update("standard_sets", %{"_id" => id}, %{"$set" => doc},
-      upsert: true,
-      return_document: :after
-    )
+      standards = attrs[:standards] || attrs["standards"] || %{}
+
+      attrs =
+        attrs
+        |> Map.put(:id, id)
+        |> Map.put(:version, (old && old.version || 0) + 1)
+        |> Map.put(:updatedAt, DateTime.utc_now() |> DateTime.truncate(:second))
+        |> Map.put(:standardsCount, map_size(standards))
+
+      changeset = StandardSet.changeset(old || %StandardSet{}, attrs)
+
+      Repo.insert_or_update(changeset)
+    end
   end
 
   defp save_version(old) do
     versioned =
       old
-      |> Map.put("standardSetId", old["_id"])
-      |> Map.put("_id", CspApi.ID.csp_uuid())
-      |> Map.put("createdAt", DateTime.utc_now())
+      |> Map.from_struct()
+      |> Map.drop([:__meta__])
+      |> Map.put(:standardSetId, old.id)
+      |> Map.put(:id, ID.csp_uuid())
+      |> Map.put(:createdAt, DateTime.utc_now() |> DateTime.truncate(:second))
 
-    Mongo.insert_one("standard_set_versions", versioned)
+    Mongo.Ecto.command(Repo, insert: "standard_set_versions", documents: [versioned])
+  end
+
+  @doc false
+  def query_by_jurisdiction(jurisdiction_id) do
+    # Used only by tests that already insert via raw mongo; not part of
+    # the public API.
+    from(s in StandardSet) |> where_jurisdiction(jurisdiction_id)
+  end
+
+  defp where_jurisdiction(query, jurisdiction_id) do
+    from s in query, where: fragment("?", field(s, :jurisdiction)) == ^%{"id" => jurisdiction_id}
   end
 end

@@ -5,8 +5,7 @@ defmodule CspApiWeb.PullRequestsControllerTest do
 
   describe "POST /pull_requests" do
     test "creates a blank PR for the current user", %{conn: conn} do
-      %{"data" => pr} =
-        conn |> post("/api/v1/pull_requests", %{}) |> json_response(200)
+      %{"data" => pr} = conn |> post("/api/v1/pull_requests", %{}) |> json_response(200)
 
       assert pr["submitterId"] == "tester"
       assert pr["submitterEmail"] == "test@test.com"
@@ -14,7 +13,7 @@ defmodule CspApiWeb.PullRequestsControllerTest do
       assert hd(pr["activities"])["type"] == "created"
     end
 
-    test "creates a forked PR from an existing standard set", %{conn: conn} do
+    test "forks an existing standard set", %{conn: conn} do
       Fixtures.insert_jurisdiction()
       Fixtures.insert_standard_set()
 
@@ -32,32 +31,29 @@ defmodule CspApiWeb.PullRequestsControllerTest do
 
   describe "GET /pull_requests/:id" do
     test "returns the PR", %{conn: conn, user: user} do
-      pr = PullRequests.create(user, nil)
-
-      %{"data" => fetched} =
-        conn |> get("/api/v1/pull_requests/#{pr["_id"]}") |> json_response(200)
-
-      assert fetched["id"] == pr["_id"]
+      pr = PullRequests.create_blank(user)
+      %{"data" => fetched} = conn |> get("/api/v1/pull_requests/#{pr.id}") |> json_response(200)
+      assert fetched["id"] == pr.id
     end
   end
 
   describe "GET /pull_requests/user/:user_id" do
     test "returns the user's open PRs", %{conn: conn, user: user} do
-      pr = PullRequests.create(user, nil)
+      pr = PullRequests.create_blank(user)
 
       %{"data" => list} =
-        conn |> get("/api/v1/pull_requests/user/#{user["_id"]}") |> json_response(200)
+        conn |> get("/api/v1/pull_requests/user/#{user.id}") |> json_response(200)
 
-      assert Enum.any?(list, fn p -> p["id"] == pr["_id"] end)
+      assert Enum.any?(list, fn p -> p["id"] == pr.id end)
     end
   end
 
   describe "POST /pull_requests/:id/submit" do
     test "marks the PR approval-requested", %{conn: conn, user: user} do
-      pr = PullRequests.create(user, nil)
+      pr = PullRequests.create_blank(user)
 
       %{"data" => updated} =
-        conn |> post("/api/v1/pull_requests/#{pr["_id"]}/submit") |> json_response(200)
+        conn |> post("/api/v1/pull_requests/#{pr.id}/submit") |> json_response(200)
 
       assert updated["status"] == "approval-requested"
     end
@@ -65,22 +61,22 @@ defmodule CspApiWeb.PullRequestsControllerTest do
 
   describe "POST /pull_requests/:id/change_status" do
     test "committers can reject", %{conn: conn, user: user} do
-      pr = PullRequests.create(user, nil)
+      pr = PullRequests.create_blank(user)
 
       %{"data" => updated} =
         conn
-        |> post("/api/v1/pull_requests/#{pr["_id"]}/change_status", %{"status" => "rejected"})
+        |> post("/api/v1/pull_requests/#{pr.id}/change_status", %{"status" => "rejected"})
         |> json_response(200)
 
       assert updated["status"] == "rejected"
     end
 
-    test "invalid status is silently ignored (matches Ruby behavior)", %{conn: conn, user: user} do
-      pr = PullRequests.create(user, nil)
+    test "an unknown status is silently kept as draft (bug-compatible with Ruby)", %{conn: conn, user: user} do
+      pr = PullRequests.create_blank(user)
 
       %{"data" => updated} =
         conn
-        |> post("/api/v1/pull_requests/#{pr["_id"]}/change_status", %{"status" => "make-up"})
+        |> post("/api/v1/pull_requests/#{pr.id}/change_status", %{"status" => "make-up"})
         |> json_response(200)
 
       assert updated["status"] == "draft"
@@ -89,11 +85,11 @@ defmodule CspApiWeb.PullRequestsControllerTest do
 
   describe "POST /pull_requests/:id/comment" do
     test "appends the comment as a new activity", %{conn: conn, user: user} do
-      pr = PullRequests.create(user, nil)
+      pr = PullRequests.create_blank(user)
 
       %{"data" => updated} =
         conn
-        |> post("/api/v1/pull_requests/#{pr["_id"]}/comment", %{"comment" => "looks great"})
+        |> post("/api/v1/pull_requests/#{pr.id}/comment", %{"comment" => "looks great"})
         |> json_response(200)
 
       assert Enum.any?(updated["activities"], fn a ->

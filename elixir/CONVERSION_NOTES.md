@@ -1,71 +1,85 @@
-# Conversion notes — Ruby → Elixir
-
-What each Ruby file maps to in the new tree:
+# Conversion notes — Ruby → Elixir/Phoenix/Ecto
 
 | Ruby                                     | Elixir                                              |
 | ---------------------------------------- | --------------------------------------------------- |
 | `api/api.rb` (mount, before, helpers)    | `lib/csp_api_web/router.ex` + plugs                 |
 | `api/api.rb` API-Key auth `before` block | `lib/csp_api_web/plugs/api_key_auth.ex`             |
 | `api/api.rb` `validate_token` helper     | `lib/csp_api_web/plugs/jwt_auth.ex`                 |
-| `api/jurisdictions.rb`                   | `lib/csp_api_web/controllers/jurisdictions_controller.ex` |
+| `api/jurisdictions.rb` (Grape resource)  | `lib/csp_api_web/controllers/jurisdictions_controller.ex` |
 | `api/standard_sets.rb`                   | `lib/csp_api_web/controllers/standard_sets_controller.ex` |
 | `api/standard_documents.rb`              | `lib/csp_api_web/controllers/standard_documents_controller.ex` |
 | `api/pull_requests.rb`                   | `lib/csp_api_web/controllers/pull_requests_controller.ex` |
 | `api/users.rb`                           | `lib/csp_api_web/controllers/users_controller.ex`   |
-| `api/entities/*`                         | `lib/csp_api_web/json/*`                            |
-| `models/standard_set.rb`                 | `lib/csp_api/standard_sets.ex`                      |
-| `models/jurisdiction.rb`                 | `lib/csp_api/jurisdictions.ex`                      |
-| `models/pull_request.rb`                 | `lib/csp_api/pull_requests.ex`                      |
-| `models/user.rb`                         | `lib/csp_api/users.ex`                              |
-| `models/activity.rb`                     | inlined into `lib/csp_api/pull_requests.ex`         |
-| `models/email.rb`                        | `lib/csp_api/email.ex` (with pluggable adapter)     |
+| `api/entities/*`                         | `lib/csp_api_web/json.ex` (one module)              |
+| `models/standard_set.rb` (Virtus)        | `lib/csp_api/schemas/standard_set.ex` (Ecto.Schema) |
+| `models/jurisdiction.rb`                 | `lib/csp_api/schemas/jurisdiction.ex`               |
+| `models/pull_request.rb`                 | `lib/csp_api/schemas/pull_request.ex`               |
+| `models/user.rb`                         | `lib/csp_api/schemas/user.ex`                       |
+| `models/activity.rb`                     | `lib/csp_api/schemas/activity.ex` (embedded)        |
+| `models/email.rb`                        | `lib/csp_api/email.ex` (pluggable adapter)          |
 | `lib/standard_hierarchy.rb`              | `lib/csp_api/hierarchy.ex`                          |
 | `lib/securerandom.rb`                    | `lib/csp_api/id.ex`                                 |
-| `config/mongo.rb`                        | `lib/csp_api/mongo.ex` + `config/*.exs`             |
+| `config/mongo.rb`                        | `config/*.exs` + `lib/csp_api/repo.ex`              |
 
-## Things that are intentionally different
+## Stack choices
 
-- **Ecto.** The Ruby app stored everything in MongoDB through the raw
-  driver. The Elixir port uses `mongodb_driver` directly (no Ecto schemas).
-  An Ecto adapter for Mongo exists (`mongodb_ecto`), but it's awkward for
-  documents like a `standard_set` whose `standards` field is a nested map
-  keyed by id. Contexts (`CspApi.Jurisdictions`, `CspApi.StandardSets`,
-  …) keep the boundary that Ecto would have given us; only the row format
-  is different.
-- **Auth0 / JWT.** Ruby decoded the token with the URL-decoded client
-  secret. The Elixir port does the same via Joken. In `:test` environment
-  an `Authorization: TEST` header bypasses verification, exactly like the
-  Ruby rspec suite relied on.
-- **No-Api-Key bug.** The Ruby `before do` accidentally allows requests
-  with a missing `Api-Key` header (MongoDB matches the nil query against
-  a system user that has no `apiKey` field). The Elixir port closes that
-  hole — a missing or empty key returns 401.
-- **Importer.** `importer/` and `lib/cache_standards.rb` /
-  `lib/send_to_algolia.rb` are out of scope for the API conversion and
-  not ported. The Algolia search index is a separate concern and the
-  Phoenix port simply doesn't write to it.
+- **Ecto + mongodb_ecto.** The data store stays MongoDB; the adapter
+  gives us `Ecto.Schema`, `Ecto.Changeset`, and `Repo.{get,all,insert,update}`.
+  Validation that lived in `dry-validation` `Validator` classes is now
+  in changeset functions. For two queries that hit nested embedded fields
+  (`jurisdiction.id`, `cspStatus.value`), `CspApi.MongoX` issues a raw
+  `find` command through `Mongo.Ecto.command/2` — that's still inside the
+  adapter, just bypassing the Ecto query DSL where it can't express the
+  filter.
 
-## Things that are intentionally the same
+- **`findAndModify` for atomic upserts.** Ruby uses `find_one_and_update`
+  with `$inc/$set/$setOnInsert` so an Auth0 sign-in is a single round
+  trip. The Elixir port does the same via `Mongo.Ecto.command/2` rather
+  than `Repo.update`, because `Repo.update` would require a separate
+  fetch and lose the atomicity.
 
-- The wire format. Field names, casing, presence of empty defaults
-  (`cspStatus: {}`, `educationLevels: []`), the `standards` map keyed by
-  id, the `standardsAsArray=true` query flag, and the
-  `hideHiddenSets=true` default all match.
-- The `ancestorIds` / `parentId` derivation. The same position-desc walk
-  is implemented in `lib/csp_api/hierarchy.ex`. There's a dedicated
-  unit test against a trimmed sample of the live Maryland Math Grade 1
-  response.
-- Status transitions for pull requests, including the quirky
-  "silently keep `draft` when status is unknown" behavior the Ruby
-  controller has.
-- `signed_in` is idempotent on `email` and generates `apiKey` on first
-  insert.
+- **Standards as `:map`, not `embeds_many`.** The Ruby model is
+  `Hash[String => Standard]`, and Mongo stores it that way. Ecto's
+  `embeds_many` would serialize as a list, which would change the wire
+  format. We declare `field :standards, :map, default: %{}` so the
+  storage shape is preserved exactly.
 
-## Test layout
+## Bug-for-bug fidelity to the Ruby app
 
-- `test/csp_api/hierarchy_test.exs` — pure unit test (no Mongo).
-- `test/csp_api_web/controllers/*_test.exs` — in-process Phoenix tests.
-  They run the actual router/plug stack and read/write a local MongoDB
-  via `Mongo.delete_many(:mongo, …, %{})` between cases.
-- `../contract_tests/` — Python HTTP contract suite, runnable against
-  either the live Ruby app or `mix phx.server`.
+The Elixir port intentionally preserves these Ruby quirks:
+
+- **Missing `Api-Key` header.** `find({apiKey: nil})` in MongoDB matches
+  documents with no `apiKey` field. If a user document like that exists,
+  unkeyed requests get authenticated as that user. The Elixir port hits
+  Mongo the same way; the controller test `auth_test.exs` pins this
+  behavior down.
+
+- **Unknown `change_status` value.** Ruby's `PullRequest.change_status`
+  returns `false` for any value outside the known statuses, and the
+  controller silently re-fetches and returns the unchanged PR with 200.
+  The Elixir `change_status/4` returns `{:error, :invalid_status}` and
+  the controller turns that into the same 200.
+
+- **`ancestorIds` walks position-desc forward.** A leaf standard at the
+  end of the descending-position list ends up with `ancestorIds: []` if
+  there are no entries after it to walk through. `hierarchy.ex` keeps
+  that algorithm verbatim and the test asserts it.
+
+- **`standardSet.id` on approval.** When a PR is approved, the embedded
+  `standardSet` is written back using whatever `id` is on it — no check
+  that it matches `forkedFromStandardSetId`. Same as Ruby.
+
+## Out of scope
+
+- `importer/`, `lib/cache_standards.rb`, `lib/send_to_algolia.rb`.
+- The grape-swagger generated docs. `SwaggerController` returns a stub.
+
+## Things flagged but kept the same on purpose
+
+- The Ruby `before` hook also checks `HTTP_ORIGIN` against the user's
+  `allowedOrigins`. The Elixir port doesn't yet implement that check; it
+  should be added back as a separate plug when production needs it.
+
+- `Email.send_email` doesn't actually hit Postmark — the production
+  adapter logs the would-be payload. Wire up the Postmark adapter when
+  the env vars are available.

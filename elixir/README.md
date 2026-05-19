@@ -1,75 +1,92 @@
-# CSP API (Elixir/Phoenix)
+# CSP API (Elixir/Phoenix/Ecto)
 
-Elixir/Phoenix port of the Ruby/Grape Common Standards Project API. The data
-layer still talks to MongoDB through `:mongodb_driver`; the rest is plain
-Phoenix.
+Phoenix port of the Ruby/Grape CSP API. Talks to MongoDB through Ecto via
+the `mongodb_ecto` adapter — same data store, full Ecto schemas +
+changesets at the boundary.
 
 ## Layout
 
 ```
 lib/
-  csp_api/                 -- domain contexts
-    application.ex         -- starts Mongo + Phoenix + PubSub
-    mongo.ex               -- thin facade over the driver
-    jurisdictions.ex       -- read ops on `jurisdictions`
-    standard_sets.ex       -- read + upsert on `standard_sets`
-    pull_requests.ex       -- PR creation/edit/status change
-    users.ex               -- user upsert/lookup
-    hierarchy.ex           -- adds parentId/ancestorIds (lib/standard_hierarchy.rb port)
-    id.ex                  -- csp_uuid + base58 token helpers
-    email.ex               -- pluggable mailer (test adapter in test/)
+  csp_api/
+    application.ex            -- starts Repo + Phoenix
+    repo.ex                   -- Ecto.Repo, adapter: Mongo.Ecto
+    mongo_x.ex                -- escape hatch for nested-field filters
+                                 (Mongo.Ecto.command/2 around `find`)
+    schemas/                  -- Ecto.Schema modules
+      jurisdiction.ex
+      standard_set.ex         -- embeds_one jurisdiction/cspStatus/license,
+                                 :map for the standards collection (matches
+                                 how the Ruby Hash[id => Standard] is stored)
+      user.ex
+      activity.ex
+      pull_request.ex         -- embeds_many activities, :map standardSet
+    jurisdictions.ex          -- context (Repo.all/get + MongoX for joins)
+    standard_sets.ex          -- context (Repo.get + Hierarchy walk)
+    users.ex                  -- context (findAndModify upsert for atomicity)
+    pull_requests.ex          -- create_blank/create_forked/change_status
+    hierarchy.ex              -- port of lib/standard_hierarchy.rb
+    id.ex                     -- UUID.uuid4 |> strip-hyphens |> upcase
+    email.ex                  -- pluggable mailer (test adapter built in)
   csp_api_web/
     endpoint.ex
     router.ex
     plugs/
-      api_key_auth.ex      -- API-Key header → current_user
-      jwt_auth.ex          -- Auth0 JWT verification (with `Authorization: TEST` bypass in env=test)
-    controllers/
-    json/                  -- response shapers (replace Grape entities)
+      api_key_auth.ex         -- Api-Key → current_user (keeps Ruby's
+                                 missing-header behavior)
+      jwt_auth.ex             -- Auth0 JWT; `Authorization: TEST` bypass
+                                 gated on :auth, :jwt_test_bypass? (only
+                                 set in config/test.exs)
+    controllers/              -- one per resource
+    json.ex                   -- single module of response shapers
 test/
   csp_api/
-    hierarchy_test.exs     -- pure unit test for the ancestor algorithm
-  csp_api_web/controllers/ -- in-process controller tests against the router
+    hierarchy_test.exs        -- pure unit test for the ancestor walk
+    schemas/
+      standard_set_test.exs   -- changeset validations
+      pull_request_test.exs   -- changeset validations
+  csp_api_web/controllers/    -- in-process Phoenix controller tests
   support/
-    conn_case.ex           -- per-test Mongo cleanup + auth setup
-    fixtures.ex            -- minimal inserters for jurisdictions/standard_sets
+    data_case.ex              -- per-test Repo reset (with safety belt)
+    conn_case.ex              -- adds an authed Plug.Conn
+    fixtures.ex               -- Repo.insert via changesets
 ```
 
 ## Running
 
-A local MongoDB is required for the in-process tests.
+Requires a local MongoDB. Test runs use a separate database whose name
+must contain the substring `test`; `test/test_helper.exs` refuses to start
+otherwise.
 
 ```sh
-# get deps
 mix deps.get
 
-# run the full Elixir test suite (controller tests + hierarchy unit tests)
+# Pure unit tests (no Mongo needed):
+mix test test/csp_api/hierarchy_test.exs test/csp_api/schemas/
+
+# Full suite (requires local Mongo):
 mix test
 
-# run only the hierarchy unit test (no Mongo needed)
-mix test test/csp_api/hierarchy_test.exs
-
-# start a dev server
-MONGO_URL="mongodb+srv://user:pass@host/csp-2" mix phx.server
+# Run dev server against production read-only Mongo:
+MONGO_URL="mongodb+srv://csp-readonly:..@host/csp-2" mix phx.server
 ```
 
-## Cross-backend contract tests
+## Same-contract testing across both backends
 
-A language-neutral Python contract suite lives at
-`../contract_tests/`. It accepts a `CSP_BASE_URL` env var so you can run the
-exact same assertions against either backend:
+`../contract_tests/` is a language-neutral Python HTTP suite. Aim it at
+either the live Ruby app or `mix phx.server` via `CSP_BASE_URL`:
 
 ```sh
-# Validate the live Ruby API
+# Verify the live Ruby API still satisfies the contract
 CSP_BASE_URL="https://api.commonstandardsproject.com" \
 CSP_API_KEY="..." \
 python3 -m pytest ../contract_tests/
 
-# Validate the local Phoenix port
+# Verify the Phoenix port satisfies the same contract
 CSP_BASE_URL="http://localhost:4000" \
 CSP_API_KEY="..." \
 python3 -m pytest ../contract_tests/
-```
 
-Write-side tests (pull requests, users) are gated behind `CSP_ALLOW_WRITES=1`
-and are not run against the live API by default.
+# Include write-side tests (pull requests, users)
+CSP_ALLOW_WRITES=1 ... python3 -m pytest ../contract_tests/
+```

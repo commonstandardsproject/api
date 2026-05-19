@@ -3,12 +3,9 @@ import Config
 if config_env() == :prod do
   mongo_url =
     System.get_env("MONGO_URL") ||
-      raise """
-      MONGO_URL environment variable is missing.
-      """
+      raise "MONGO_URL environment variable is missing."
 
-  config :csp_api, :mongo,
-    name: :mongo,
+  config :csp_api, CspApi.Repo,
     url: mongo_url,
     pool_size: String.to_integer(System.get_env("MONGO_POOL_SIZE") || "10")
 
@@ -25,5 +22,6 @@ if config_env() == :prod do
 
   config :csp_api, :auth,
     jwt_secret: System.get_env("AUTH0_CLIENT_SECRET"),
-    jwt_client_id: System.get_env("AUTH0_CLIENT_ID")
+    jwt_client_id: System.get_env("AUTH0_CLIENT_ID"),
+    jwt_test_bypass?: false
 end
