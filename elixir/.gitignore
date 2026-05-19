@@ -1,0 +1,7 @@
+_build/
+deps/
+*.ez
+erl_crash.dump
+.elixir_ls/
+priv/static/
+.env
