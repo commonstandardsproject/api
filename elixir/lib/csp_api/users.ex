@@ -1,7 +1,6 @@
 defmodule CspApi.Users do
   @moduledoc "User upsert and lookup. Port of `models/user.rb`."
 
-  import Ecto.Query
   alias CspApi.{Repo, ID}
   alias CspApi.Schemas.User
 

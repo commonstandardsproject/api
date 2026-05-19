@@ -1,10 +1,10 @@
 defmodule CspApiWeb.StandardDocumentsController do
   use CspApiWeb, :controller
 
-  alias CspApi.Mongo
+  alias CspApi.MongoX
 
   def show(conn, %{"id" => id}) do
-    case Mongo.find_one(
+    case MongoX.find_one(
            "standard_documents",
            %{"_id" => id},
            projection: %{

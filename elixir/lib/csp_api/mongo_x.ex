@@ -25,6 +25,13 @@ defmodule CspApi.MongoX do
     end
   end
 
+  def find_one(coll, filter, opts \\ []) do
+    case find(coll, filter, Keyword.put(opts, :limit, 1)) do
+      [doc | _] -> doc
+      _ -> nil
+    end
+  end
+
   defp add_opt(list, _key, nil), do: list
   defp add_opt(list, key, value), do: list ++ [{key, value}]
 end
