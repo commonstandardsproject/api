@@ -2,7 +2,7 @@ defmodule CspApiWeb.StandardSetsController do
   use CspApiWeb, :controller
 
   alias CspApi.StandardSets
-  alias CspApiWeb.JSON
+  alias CspApiWeb.StandardSetJSON
 
   def show(conn, %{"id" => id} = params) do
     as_array? = params["standardsAsArray"] in [true, "true"]
@@ -11,7 +11,7 @@ defmodule CspApiWeb.StandardSetsController do
 
     case set do
       nil -> json(conn, %{data: %{}})
-      set -> json(conn, %{data: JSON.standard_set_full(set)})
+      set -> json(conn, %{data: StandardSetJSON.full(set)})
     end
   end
 end

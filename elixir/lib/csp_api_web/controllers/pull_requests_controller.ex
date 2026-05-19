@@ -2,22 +2,22 @@ defmodule CspApiWeb.PullRequestsController do
   use CspApiWeb, :controller
 
   alias CspApi.PullRequests
-  alias CspApiWeb.JSON
+  alias CspApiWeb.PullRequestJSON
 
   def index(conn, _params) do
     prs = PullRequests.list_active()
-    json(conn, %{data: Enum.map(prs, &JSON.pull_request_full/1)})
+    json(conn, %{data: Enum.map(prs, &PullRequestJSON.full/1)})
   end
 
   def for_user(conn, %{"user_id" => user_id}) do
     prs = PullRequests.list_for_user(user_id)
-    json(conn, %{data: Enum.map(prs, &JSON.pull_request_summary/1)})
+    json(conn, %{data: Enum.map(prs, &PullRequestJSON.summary/1)})
   end
 
   def show(conn, %{"id" => id}) do
     case PullRequests.get(id) do
       nil -> conn |> put_status(:not_found) |> json(%{error: "Not found"})
-      pr -> json(conn, %{data: JSON.pull_request_full(pr)})
+      pr -> json(conn, %{data: PullRequestJSON.full(pr)})
     end
   end
 
@@ -32,7 +32,7 @@ defmodule CspApiWeb.PullRequestsController do
         PullRequests.create_blank(user)
       end
 
-    json(conn, %{data: JSON.pull_request_full(pr)})
+    json(conn, %{data: PullRequestJSON.full(pr)})
   end
 
   def user_update(conn, %{"id" => id} = params) do
@@ -42,7 +42,7 @@ defmodule CspApiWeb.PullRequestsController do
          true <- PullRequests.can_edit?(pr, user) do
       case PullRequests.user_update(id, params["data"] || %{}) do
         {:ok, updated} ->
-          json(conn, %{data: JSON.pull_request_full(updated)})
+          json(conn, %{data: PullRequestJSON.full(updated)})
 
         {:error, %Ecto.Changeset{} = cs} ->
           conn
@@ -67,7 +67,7 @@ defmodule CspApiWeb.PullRequestsController do
              "Thanks so much! We'll take a look and get back to you in the next week (if not sooner)",
              true
            ) do
-      json(conn, %{data: JSON.pull_request_full(updated)})
+      json(conn, %{data: PullRequestJSON.full(updated)})
     else
       nil -> conn |> put_status(:not_found) |> json(%{error: "Not found"})
       false -> send_resp(conn, 401, "")
@@ -82,15 +82,13 @@ defmodule CspApiWeb.PullRequestsController do
     if Map.get(user, :isCommitter) == true do
       case PullRequests.change_status(id, status, params["message"], true) do
         {:ok, pr} ->
-          json(conn, %{data: JSON.pull_request_full(pr)})
+          json(conn, %{data: PullRequestJSON.full(pr)})
 
-        # Ruby behavior: an unknown status quietly returns the unchanged PR
-        # with a 200 (because `PullRequest.change_status` returns false and
-        # the controller re-fetches). We do the same.
+        # Ruby returns the unchanged PR with 200 when status is unknown.
         {:error, :invalid_status} ->
           case PullRequests.get(id) do
             nil -> conn |> put_status(:not_found) |> json(%{error: "Not found"})
-            pr -> json(conn, %{data: JSON.pull_request_full(pr)})
+            pr -> json(conn, %{data: PullRequestJSON.full(pr)})
           end
 
         {:error, :not_found} ->
@@ -107,7 +105,7 @@ defmodule CspApiWeb.PullRequestsController do
     with %{} = pr <- PullRequests.get(id),
          true <- PullRequests.can_edit?(pr, user) do
       updated = PullRequests.add_comment(pr, comment, user)
-      json(conn, %{data: JSON.pull_request_full(updated)})
+      json(conn, %{data: PullRequestJSON.full(updated)})
     else
       nil -> conn |> put_status(:not_found) |> json(%{error: "Not found"})
       false -> send_resp(conn, 401, "")
