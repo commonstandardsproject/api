@@ -35,6 +35,7 @@ defmodule CspApi.MixProject do
       {:mongodb_ecto, "~> 1.1"},
 
       {:joken, "~> 2.6"},
+      {:jose, "1.11.10", override: true},
       {:elixir_uuid, "~> 1.2"}
     ]
   end
