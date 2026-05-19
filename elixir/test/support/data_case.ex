@@ -15,6 +15,11 @@ defmodule CspApi.DataCase do
 
   using do
     quote do
+      # Tests in this case talk to MongoDB. When the test runner can't reach
+      # Mongo (e.g. CI without a Mongo service) test_helper.exs configures
+      # ExUnit to exclude :mongo so these get skipped.
+      @moduletag :mongo
+
       import Ecto
       import Ecto.Changeset
       import Ecto.Query

@@ -20,4 +20,24 @@ end
 Application.put_env(:csp_api, :email_adapter, CspApi.Email.TestAdapter)
 
 # Drop the test database once at boot so we start from a clean slate.
-Mongo.Ecto.command(CspApi.Repo, dropDatabase: 1)
+# When MongoDB isn't reachable (CI / pure-unit runs) we tag any test that
+# depends on the Repo as `:mongo` and skip it. Tests that don't touch
+# Mongo still run.
+try do
+  case Mongo.Ecto.command(CspApi.Repo, dropDatabase: 1) do
+    {:ok, _} ->
+      :ok
+
+    {:error, reason} ->
+      IO.warn("Could not reset Mongo test database: #{inspect(reason)} — excluding :mongo tagged tests")
+      ExUnit.configure(exclude: [:mongo])
+  end
+rescue
+  e ->
+    IO.warn("Could not reach MongoDB: #{Exception.message(e)} — excluding :mongo tagged tests")
+    ExUnit.configure(exclude: [:mongo])
+catch
+  :exit, reason ->
+    IO.warn("MongoDB exit while resetting db: #{inspect(reason)} — excluding :mongo tagged tests")
+    ExUnit.configure(exclude: [:mongo])
+end
