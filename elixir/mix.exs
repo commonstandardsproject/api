@@ -5,7 +5,7 @@ defmodule CspApi.MixProject do
     [
       app: :csp_api,
       version: "0.1.0",
-      elixir: "~> 1.14",
+      elixir: "~> 1.19",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -32,10 +32,9 @@ defmodule CspApi.MixProject do
 
       # Ecto + the official MongoDB adapter
       {:ecto, "~> 3.10"},
-      {:mongodb_ecto, "~> 1.1"},
+      {:mongodb_ecto, "~> 2.1"},
 
       {:joken, "~> 2.6"},
-      {:jose, "1.11.10", override: true},
       {:elixir_uuid, "~> 1.2"}
     ]
   end

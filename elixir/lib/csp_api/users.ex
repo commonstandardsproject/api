@@ -23,10 +23,8 @@ defmodule CspApi.Users do
            update: %{"$inc" => %{"requestCount" => 1}},
            new: true
          ) do
-      {:ok, %{"value" => nil}} -> nil
-      {:ok, %{"value" => doc}} -> load_user(doc)
-      {:ok, %{value: nil}} -> nil
-      {:ok, %{value: doc}} -> load_user(doc)
+      %{"value" => nil} -> nil
+      %{"value" => doc} -> load_user(doc)
       _ -> nil
     end
   end
@@ -49,7 +47,7 @@ defmodule CspApi.Users do
 
     new_id = ID.csp_uuid()
 
-    {:ok, %{"value" => upserted}} =
+    %{"value" => upserted} =
       Mongo.Ecto.command(Repo,
         findAndModify: "users",
         query: %{"email" => email},
@@ -69,7 +67,7 @@ defmodule CspApi.Users do
       )
 
     if upserted["apiKey"] in [nil, ""] do
-      {:ok, %{"value" => with_key}} =
+      %{"value" => with_key} =
         Mongo.Ecto.command(Repo,
           findAndModify: "users",
           query: %{"_id" => upserted["_id"]},

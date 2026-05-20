@@ -18,10 +18,8 @@ defmodule CspApi.MongoX do
       |> add_opt(:limit, opts[:limit])
 
     case Mongo.Ecto.command(Repo, cmd) do
-      {:ok, %{"cursor" => %{"firstBatch" => docs}}} -> docs
-      {:ok, %{cursor: %{firstBatch: docs}}} -> docs
-      {:ok, _} -> []
-      {:error, _} -> []
+      %{"cursor" => %{"firstBatch" => docs}} -> docs
+      _ -> []
     end
   end
 

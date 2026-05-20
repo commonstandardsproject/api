@@ -20,19 +20,21 @@ defmodule CspApi.Email do
 
     template_id = Map.get(@templates, template)
 
+    standard_set = pull_request.standardSet || %{}
+
     model = %{
-      name: pull_request["submitterName"],
-      URL: "http://commonstandardsproject.com/edit/pull-requests/" <> pull_request["_id"],
-      jurisdiction: get_in(pull_request, ["standardSet", "jurisdiction", "title"]),
-      subject: get_in(pull_request, ["standardSet", "subject"]),
-      title: get_in(pull_request, ["standardSet", "title"]),
+      name: pull_request.submitterName,
+      URL: "http://commonstandardsproject.com/edit/pull-requests/" <> pull_request.id,
+      jurisdiction: get_in(standard_set, ["jurisdiction", "title"]),
+      subject: standard_set["subject"],
+      title: standard_set["title"],
       comment: comment && %{text: comment}
     }
 
     adapter.deliver(%{
       template: template,
       template_id: template_id,
-      to: "#{pull_request["submitterName"]} <#{pull_request["submitterEmail"]}>",
+      to: "#{pull_request.submitterName} <#{pull_request.submitterEmail}>",
       model: model
     })
   end

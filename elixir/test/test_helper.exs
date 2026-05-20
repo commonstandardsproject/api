@@ -25,11 +25,11 @@ Application.put_env(:csp_api, :email_adapter, CspApi.Email.TestAdapter)
 # Mongo still run.
 try do
   case Mongo.Ecto.command(CspApi.Repo, dropDatabase: 1) do
-    {:ok, _} ->
+    %{"ok" => 1.0} ->
       :ok
 
-    {:error, reason} ->
-      IO.warn("Could not reset Mongo test database: #{inspect(reason)} — excluding :mongo tagged tests")
+    other ->
+      IO.warn("Could not reset Mongo test database: #{inspect(other)} — excluding :mongo tagged tests")
       ExUnit.configure(exclude: [:mongo])
   end
 rescue

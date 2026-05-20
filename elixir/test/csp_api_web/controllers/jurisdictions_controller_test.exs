@@ -40,7 +40,7 @@ defmodule CspApiWeb.JurisdictionsControllerTest do
 
   test "GET /jurisdictions/:id with hideHiddenSets=false includes hidden sets", %{conn: conn} do
     # Mark one set hidden so the filter has work to do.
-    {:ok, _} =
+    %{"ok" => 1.0} =
       Mongo.Ecto.command(Repo,
         update: "standard_sets",
         updates: [%{q: %{_id: "MD_D1_grade-02"}, u: %{"$set" => %{cspStatus: %{value: "hidden"}}}}]

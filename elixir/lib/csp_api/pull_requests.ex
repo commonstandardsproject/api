@@ -71,7 +71,7 @@ defmodule CspApi.PullRequests do
           type: "forked",
           title:
             "Woohoo! New pull request created by #{name} from " <>
-              "#{source.jurisdiction.title}: #{source.subject}: #{source.title}"
+              "#{(source.jurisdiction || %{})["title"]}: #{source.subject}: #{source.title}"
         }
 
         embedded_set = standard_set_for_embed(source)
@@ -81,7 +81,7 @@ defmodule CspApi.PullRequests do
           standardSet: embedded_set,
           standardsCount: map_size(standards),
           forkedFromStandardSetId: standard_set_id,
-          title: "#{source.jurisdiction.title}: #{source.subject}: #{source.title}",
+          title: "#{(source.jurisdiction || %{})["title"]}: #{source.subject}: #{source.title}",
           createdAt: now,
           updatedAt: now,
           updatedAtDate: now
@@ -251,9 +251,9 @@ defmodule CspApi.PullRequests do
       "educationLevels" => s.educationLevels,
       "standards" => s.standards,
       "document" => s.document,
-      "jurisdiction" => s.jurisdiction && Map.from_struct(s.jurisdiction),
-      "cspStatus" => s.cspStatus && Map.from_struct(s.cspStatus),
-      "license" => s.license && Map.from_struct(s.license)
+      "jurisdiction" => s.jurisdiction || %{},
+      "cspStatus" => s.cspStatus || %{},
+      "license" => s.license || %{}
     }
   end
 

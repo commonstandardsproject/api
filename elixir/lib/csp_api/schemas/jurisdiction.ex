@@ -4,7 +4,7 @@ defmodule CspApi.Schemas.Jurisdiction do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @primary_key {:id, :binary_id, autogenerate: false}
+  @primary_key {:id, :string, autogenerate: false}
 
   schema "jurisdictions" do
     field :title, :string

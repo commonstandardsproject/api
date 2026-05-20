@@ -31,12 +31,6 @@ defmodule CspApi.DataCase do
     end
   end
 
-  setup _tags do
-    :ok = CspApi.DataCase.reset_repo!()
-    Process.put(:sent_emails, [])
-    :ok
-  end
-
   @collections ~w(
     users
     jurisdictions

@@ -4,7 +4,7 @@ defmodule CspApi.Schemas.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @primary_key {:id, :binary_id, autogenerate: false}
+  @primary_key {:id, :string, autogenerate: false}
 
   schema "users" do
     field :email, :string

@@ -19,7 +19,7 @@ defmodule CspApi.Schemas.PullRequest do
   def statuses, do: @statuses
   def humanized(status), do: Map.get(@humanized, status, status)
 
-  @primary_key {:id, :binary_id, autogenerate: false}
+  @primary_key {:id, :string, autogenerate: false}
 
   schema "pull_requests" do
     field :submitterId, :string
