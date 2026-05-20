@@ -53,7 +53,8 @@ defmodule CspApi.MixProject do
       {:elixir_uuid, "~> 1.2"},
       # Hex package is `algolia_ex` (slab fork), but the actual OTP app
       # is named `:algolia` — use the `hex:` override to bridge.
-      {:algolia, "~> 0.11", hex: :algolia_ex}
+      {:algolia, "~> 0.11", hex: :algolia_ex},
+      {:corsica, "~> 2.1"}
     ]
   end
 

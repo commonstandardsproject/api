@@ -81,6 +81,49 @@ defmodule CspApiWeb.PullRequestsControllerTest do
 
       assert updated["status"] == "draft"
     end
+
+    test "committers can revise-and-resubmit", %{conn: conn, user: user} do
+      pr = PullRequests.create_blank(user)
+
+      %{"data" => updated} =
+        conn
+        |> post("/api/v1/pull_requests/#{pr.id}/change_status", %{
+          "status" => "revise-and-resubmit"
+        })
+        |> json_response(200)
+
+      assert updated["status"] == "revise-and-resubmit"
+    end
+
+    test "approving a PR upserts the embedded standardSet", %{conn: conn, user: user} do
+      # Mirror of `spec/controllers/pull_requests.rb:136` "should approve
+      # and apply": after change_status("approved"), looking up the
+      # standardSet by id should return the title the PR carried.
+      Fixtures.insert_jurisdiction()
+      Fixtures.insert_standard_set()
+      pr = PullRequests.create_blank(user)
+
+      conn
+      |> post("/api/v1/pull_requests/#{pr.id}", %{
+        "data" => %{
+          "standardSet" => %{
+            "id" => "MD_D1_grade-01",
+            "title" => "MD Math Grade 1 (updated)",
+            "subject" => "Math",
+            "educationLevels" => ["01"],
+            "jurisdiction" => %{"id" => "MD", "title" => "Maryland"}
+          }
+        }
+      })
+      |> json_response(200)
+
+      conn
+      |> post("/api/v1/pull_requests/#{pr.id}/change_status", %{"status" => "approved"})
+      |> json_response(200)
+
+      set = CspApi.StandardSets.get("MD_D1_grade-01")
+      assert set.title == "MD Math Grade 1 (updated)"
+    end
   end
 
   describe "POST /pull_requests/:id/comment" do
@@ -94,6 +137,28 @@ defmodule CspApiWeb.PullRequestsControllerTest do
 
       assert Enum.any?(updated["activities"], fn a ->
                a["type"] == "comment" and a["title"] == "looks great"
+             end)
+    end
+
+    test "non-committer can still comment on their own PR", %{conn: conn, user: user} do
+      # Mirror of `spec/controllers/pull_requests.rb:179`: the comment
+      # endpoint authorizes on `can_edit?(pr, user)`, which returns true
+      # for the submitter regardless of `isCommitter`.
+      pr = PullRequests.create_blank(user)
+
+      # Demote the user mid-test.
+      Mongo.Ecto.command(Repo,
+        update: "users",
+        updates: [%{"q" => %{"_id" => user.id}, "u" => %{"$set" => %{"isCommitter" => false}}}]
+      )
+
+      %{"data" => updated} =
+        conn
+        |> post("/api/v1/pull_requests/#{pr.id}/comment", %{"comment" => "thanks for the review"})
+        |> json_response(200)
+
+      assert Enum.any?(updated["activities"], fn a ->
+               a["type"] == "comment" and a["title"] == "thanks for the review"
              end)
     end
   end
