@@ -1,7 +1,7 @@
 defmodule CspApi.Fixtures do
   @moduledoc "Inserters for test fixtures. Uses Ecto changesets so we get the same validation the API does."
 
-  alias CspApi.Repo
+  alias CspApi.{Repo, Users, PullRequests}
   alias CspApi.Schemas.{Jurisdiction, StandardSet}
 
   def insert_jurisdiction(attrs \\ %{}) do
@@ -43,6 +43,40 @@ defmodule CspApi.Fixtures do
     %StandardSet{}
     |> StandardSet.changeset(Map.merge(base, atom_keys(attrs)))
     |> Repo.insert!()
+  end
+
+  def insert_committer(attrs \\ %{}) do
+    base = %{
+      id: "committer-1",
+      email: "committer@example.com",
+      apiKey: "committer-key",
+      isCommitter: true,
+      profile: %{"name" => "Committer"}
+    }
+
+    Users.create(Map.merge(base, attrs))
+  end
+
+  def insert_pull_request_for(user, overrides \\ %{}) do
+    pr = PullRequests.create_blank(user)
+
+    # Apply overrides via Repo.update so tests can pre-set standardSet, etc.
+    if map_size(overrides) > 0 do
+      data =
+        case overrides do
+          %{standardSet: std_set} -> %{title: pr.title, standardSet: std_set}
+          _ -> overrides
+        end
+
+      changeset = CspApi.Schemas.PullRequest.changeset(pr, data)
+
+      case Repo.update(changeset) do
+        {:ok, updated} -> {:ok, updated}
+        other -> other
+      end
+    else
+      {:ok, pr}
+    end
   end
 
   defp atom_keys(map) when is_map(map) do

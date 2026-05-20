@@ -107,3 +107,23 @@ def test_change_status_invalid_rejected(client):
     # the endpoint returns the unchanged PR.
     assert resp.status == 200
     assert resp.json()["data"]["status"] == "draft"
+
+
+@pytest.mark.writes
+def test_comment_records_user_id_and_name(client):
+    """The Ruby `add_comment` puts the commenting user's id+name onto
+    the activity record so the UI can render `<name> said:` correctly."""
+    pr = client.post("/api/v1/pull_requests", headers=AUTH_HEADER).json()["data"]
+    resp = client.post(
+        f"/api/v1/pull_requests/{pr['id']}/comment",
+        form_body={"comment": "hey there"},
+        headers=AUTH_HEADER,
+    )
+    assert resp.status == 200
+    data = resp.json()["data"]
+    comments = [a for a in data["activities"] if a["type"] == "comment"]
+    assert comments, "expected a comment activity"
+    last = comments[-1]
+    assert last["title"] == "hey there"
+    assert last["userId"], "expected commenter's userId on the activity"
+    assert last["userName"], "expected commenter's userName on the activity"
