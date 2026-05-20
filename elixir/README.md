@@ -15,9 +15,11 @@ lib/
                                  (Mongo.Ecto.command/2 around `find`)
     schemas/                  -- Ecto.Schema modules
       jurisdiction.ex
-      standard_set.ex         -- embeds_one jurisdiction/cspStatus/license,
-                                 :map for the standards collection (matches
-                                 how the Ruby Hash[id => Standard] is stored)
+      standard_set.ex         -- :map jurisdiction/cspStatus/license (the
+                                 adapter remaps embedded `:id` to `_id`,
+                                 which would break the wire format), :map
+                                 for the standards collection (matches how
+                                 the Ruby Hash[id => Standard] is stored)
       user.ex
       activity.ex
       pull_request.ex         -- embeds_many activities, :map standardSet
@@ -38,7 +40,7 @@ lib/
                                  gated on :auth, :jwt_test_bypass? (only
                                  set in config/test.exs)
     controllers/              -- one per resource
-    json.ex                   -- single module of response shapers
+    {resource}_json.ex        -- one response shaper per resource
 test/
   csp_api/
     hierarchy_test.exs        -- pure unit test for the ancestor walk
@@ -82,11 +84,17 @@ CSP_BASE_URL="https://api.commonstandardsproject.com" \
 CSP_API_KEY="..." \
 python3 -m pytest ../contract_tests/
 
-# Verify the Phoenix port satisfies the same contract
-CSP_BASE_URL="http://localhost:4000" \
-CSP_API_KEY="..." \
-python3 -m pytest ../contract_tests/
+# Verify the Phoenix port satisfies the same contract.
+# Requires the test-mode endpoint up (JWT bypass on, `Authorization: TEST`
+# accepted) and the seed loaded so the read-side tests find their data.
+MONGO_URL_TEST=mongodb://localhost:27017/csp-contract-test \
+  MIX_ENV=test mix run priv/seed_contract.exs
 
-# Include write-side tests (pull requests, users)
-CSP_ALLOW_WRITES=1 ... python3 -m pytest ../contract_tests/
+MONGO_URL_TEST=mongodb://localhost:27017/csp-contract-test \
+  PHX_SERVE_TEST=1 MIX_ENV=test mix phx.server &
+
+CSP_BASE_URL="http://localhost:4002" \
+  CSP_API_KEY="smoke-key-12345" \
+  CSP_ALLOW_WRITES=1 \
+  python3 -m pytest ../contract_tests/
 ```
