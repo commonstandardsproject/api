@@ -48,9 +48,11 @@ defmodule CspApiWeb.Router do
     post "/pull_requests/:id/comment", PullRequestsController, :comment
   end
 
-  # Public — no API key required, like the Ruby app's swagger_doc.
+  # Public — no API key required, like the Ruby app's swagger_doc and
+  # sitemap.
   scope "/api/v1", CspApiWeb do
     pipe_through [:api]
     get "/swagger_doc", SwaggerController, :index
+    get "/sitemap.xml", SitemapController, :show
   end
 end

@@ -33,7 +33,8 @@ defmodule CspApi.AlgoliaTest do
           "title" => set.title,
           "subject" => set.subject,
           "educationLevels" => set.educationLevels,
-          "standards" => %{},
+          # Copy the source set's standards so Algolia has rows to index.
+          "standards" => set.standards,
           "jurisdiction" => %{"id" => set.jurisdiction.id, "title" => set.jurisdiction.title}
         }
       })
@@ -41,10 +42,15 @@ defmodule CspApi.AlgoliaTest do
     {:ok, _} = PullRequests.change_status(pr.id, "approved", "looks good", true)
 
     indexed = Process.get(:algolia_indexed, [])
-    assert length(indexed) == 1, "expected the approved set to be indexed once"
-    {coll, doc} = hd(indexed)
+    assert length(indexed) == 1, "expected one index/2 call per approved set"
+    {coll, batch} = hd(indexed)
     assert coll == "common-standards-project"
-    assert doc["id"] == set.id
+
+    # The batch should have one entry per standard in the set's
+    # `standards` map. The fixture set has 4 standards.
+    assert length(batch) == 4
+    ids = Enum.map(batch, & &1["objectID"])
+    assert "S1" in ids and "ROOT" in ids
   end
 
   test "rejecting a PR does NOT push to Algolia" do

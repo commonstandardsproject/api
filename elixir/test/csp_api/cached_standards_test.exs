@@ -48,11 +48,12 @@ defmodule CspApi.CachedStandardsTest do
       assert row["educationLevels"] == set.educationLevels
     end)
 
-    # Ancestor walk is consistent with parent_id chain.
+    # Ancestor walk: closest parent first, root last. Matches Ruby's
+    # `find_ancestors` and the existing hierarchy_test assertions.
     assert by_id["R"]["ancestorIds"] == []
     assert by_id["P"]["ancestorIds"] == ["R"]
-    assert by_id["S1"]["ancestorIds"] == ["R", "P"]
-    assert by_id["S2"]["ancestorIds"] == ["R", "P"]
+    assert by_id["S1"]["ancestorIds"] == ["P", "R"]
+    assert by_id["S2"]["ancestorIds"] == ["P", "R"]
   end
 
   test "re-upserting replaces existing cached_standards (no duplicates)" do

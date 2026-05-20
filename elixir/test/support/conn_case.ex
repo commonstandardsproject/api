@@ -1,17 +1,29 @@
 defmodule CspApiWeb.ConnCase do
   @moduledoc """
-  Base case for controller tests. Builds on `CspApi.DataCase`, adds a
-  configured `Plug.Conn` and seeds a test user we can authenticate as.
+  Base case for controller tests. Does its own Repo reset + user
+  seeding; doesn't `use CspApi.DataCase` because chaining the two
+  CaseTemplates puts DataCase's reset hook AFTER our user-creation,
+  which wipes the user before the test body runs.
   """
 
   use ExUnit.CaseTemplate
 
   using do
     quote do
-      use CspApi.DataCase
+      # Talk to MongoDB — same tag DataCase uses, so the helper-level
+      # `:mongo` exclude in test_helper.exs picks these up when Mongo
+      # isn't reachable.
+      @moduletag :mongo
+
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
       import Plug.Conn
       import Phoenix.ConnTest
       import CspApiWeb.ConnCase
+
+      alias CspApi.Repo
+      alias CspApi.Schemas
 
       @endpoint CspApiWeb.Endpoint
     end

@@ -69,7 +69,18 @@ defmodule CspApi.StandardSets do
 
       changeset = StandardSet.changeset(old || %StandardSet{}, attrs)
 
-      Repo.insert_or_update(changeset)
+      case Repo.insert_or_update(changeset) do
+        {:ok, set} = ok ->
+          # Mirror Ruby's `StandardSet.update`:
+          #   * rebuild the denormalized `cached_standards` rows
+          #   * push the new revision into Algolia
+          CspApi.CachedStandards.one(set)
+          CspApi.Algolia.index(set)
+          ok
+
+        other ->
+          other
+      end
     end
   end
 
@@ -86,14 +97,32 @@ defmodule CspApi.StandardSets do
   defp save_version(old) do
     versioned =
       old
-      |> Map.from_struct()
-      |> Map.drop([:__meta__])
+      |> deep_demap_struct()
       |> Map.put(:standardSetId, old.id)
       |> Map.put(:id, ID.csp_uuid())
       |> Map.put(:createdAt, DateTime.utc_now() |> DateTime.truncate(:second))
 
     Mongo.Ecto.command(Repo, insert: "standard_set_versions", documents: [versioned])
   end
+
+  # `Map.from_struct/1` is shallow — nested embeds_one values stay as
+  # structs and the BSON encoder rejects them. Recursively turn every
+  # `%Schema{}` into a plain map (keeping DateTime + BSON-shaped structs
+  # intact so the encoder can handle them).
+  defp deep_demap_struct(%mod{} = struct)
+       when mod not in [DateTime, NaiveDateTime, Date, Time, BSON.UTCDateTime, BSON.ObjectId] do
+    struct
+    |> Map.from_struct()
+    |> Map.drop([:__meta__])
+    |> Map.new(fn {k, v} -> {k, deep_demap_struct(v)} end)
+  end
+
+  defp deep_demap_struct(map) when is_map(map) and not is_struct(map) do
+    Map.new(map, fn {k, v} -> {k, deep_demap_struct(v)} end)
+  end
+
+  defp deep_demap_struct(list) when is_list(list), do: Enum.map(list, &deep_demap_struct/1)
+  defp deep_demap_struct(other), do: other
 
   @doc false
   def query_by_jurisdiction(jurisdiction_id) do

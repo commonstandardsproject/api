@@ -40,7 +40,10 @@ defmodule CspApi.MixProject do
       {:mongodb_ecto, github: "elixir-mongo/mongodb_ecto", branch: "scope-pk-rename-to-top-level"},
 
       {:joken, "~> 2.6"},
-      {:elixir_uuid, "~> 1.2"}
+      {:elixir_uuid, "~> 1.2"},
+      # Hex package is `algolia_ex` (slab fork), but the actual OTP app
+      # is named `:algolia` — use the `hex:` override to bridge.
+      {:algolia, "~> 0.11", hex: :algolia_ex}
     ]
   end
 

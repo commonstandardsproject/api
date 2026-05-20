@@ -16,8 +16,10 @@ unless is_binary(url) and String.contains?(url, "test") do
   """
 end
 
-# Use the test email adapter so we can assert on what gets sent.
+# Use the test adapters for outbound integrations so we can assert on
+# what would have been sent instead of hitting real services.
 Application.put_env(:csp_api, :email_adapter, CspApi.Email.TestAdapter)
+Application.put_env(:csp_api, :algolia_adapter, CspApi.Algolia.TestAdapter)
 
 # Drop the test database once at boot so we start from a clean slate.
 # When MongoDB isn't reachable (CI / pure-unit runs) we tag any test that
