@@ -1,5 +1,13 @@
 import Config
 
+if config_env() == :test do
+  # PHX_SERVE_TEST=1 brings the test-mode endpoint up so the language-neutral
+  # Python contract suite can run against the Phoenix port with JWT-bypass on.
+  if System.get_env("PHX_SERVE_TEST") in ["1", "true"] do
+    config :csp_api, CspApiWeb.Endpoint, server: true
+  end
+end
+
 if config_env() == :prod do
   mongo_url =
     System.get_env("MONGO_URL") ||
