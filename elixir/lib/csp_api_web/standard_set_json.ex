@@ -9,7 +9,7 @@ defmodule CspApiWeb.StandardSetJSON do
       "title" => s.title,
       "subject" => s.subject,
       "educationLevels" => s.educationLevels || [],
-      "document" => s.document || %{}
+      "document" => embedded(s.document)
     }
   end
 
@@ -32,7 +32,7 @@ defmodule CspApiWeb.StandardSetJSON do
       "educationLevels" => s.educationLevels || [],
       "cspStatus" => embedded(s.cspStatus),
       "license" => embedded(s.license),
-      "document" => s.document || %{},
+      "document" => embedded(s.document),
       "jurisdiction" => embedded(s.jurisdiction),
       "standards" => s.standards
     }

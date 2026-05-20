@@ -1,13 +1,16 @@
 defmodule CspApi.Schemas.StandardSet do
   @moduledoc """
-  Port of `models/standard_set.rb`. Nested data is captured with
-  `embeds_one`; the `standards` collection stays as a `:map` keyed by id
-  because that's how the Ruby app and the existing Mongo documents store
-  it.
+  Port of `models/standard_set.rb`. Sub-documents use `embeds_one` with
+  explicit `@primary_key {:id, :string, autogenerate: false}` so the
+  Mongo adapter stores `id` as `id` (it only remaps unkeyed `:id` fields
+  to `_id`). The `standards` collection is `:map` because the Ruby model
+  is `Hash[id => Standard]` and that's how it's stored on disk.
   """
 
   use Ecto.Schema
   import Ecto.Changeset
+
+  alias __MODULE__.{Jurisdiction, CspStatus, License, Document}
 
   @primary_key {:id, :string, autogenerate: false}
 
@@ -34,62 +37,33 @@ defmodule CspApi.Schemas.StandardSet do
     field :version, :integer, default: 1
     field :createdAt, :utc_datetime
     field :updatedAt, :utc_datetime
-    field :document, :map, default: %{}
 
-    # These are stored as plain :map fields rather than embeds_one because
-    # mongodb_ecto remaps an embedded schema's :id field to _id, which would
-    # break wire-format compatibility with the Ruby app (which writes
-    # `jurisdiction: { id: ..., title: ... }`).
-    field :jurisdiction, :map, default: %{}
-    field :cspStatus, :map, default: %{"value" => "visible"}
-    field :license, :map, default: %{"title" => "CC BY 4.0 US", "URL" => "http://creativecommons.org/licenses/by/4.0/us/", "rightsHolder" => "Common Curriculum, Inc."}
+    embeds_one :document, Document, on_replace: :update
+    embeds_one :jurisdiction, Jurisdiction, on_replace: :update
+    embeds_one :cspStatus, CspStatus, on_replace: :update
+    embeds_one :license, License, on_replace: :update
   end
 
   @cast_fields ~w(
     id title subject normalizedSubject educationLevels standards
-    standardsCount version createdAt updatedAt document
-    jurisdiction cspStatus license
+    standardsCount version createdAt updatedAt
   )a
 
   def changeset(set, attrs) do
     set
     |> cast(attrs, @cast_fields)
-    |> stringify_map_keys([:jurisdiction, :cspStatus, :license, :document])
+    |> cast_embed(:document)
+    |> cast_embed(:jurisdiction)
+    |> cast_embed(:cspStatus)
+    |> cast_embed(:license)
     |> validate_required([:title, :subject])
     |> validate_education_levels()
   end
 
-  # Embedded sub-documents are stored with string keys, matching the
-  # wire format the Ruby app reads/writes and what arrives via JSON.
-  # Without this, atom keys get remapped (most notably :id → _id) by
-  # the Mongo adapter, breaking filters like `jurisdiction.id`.
-  defp stringify_map_keys(changeset, fields) do
-    Enum.reduce(fields, changeset, fn field, cs ->
-      case get_change(cs, field) do
-        nil -> cs
-        map when is_map(map) -> put_change(cs, field, stringify(map))
-        _ -> cs
-      end
-    end)
-  end
-
-  defp stringify(map) when is_map(map) do
-    Map.new(map, fn
-      {k, v} when is_atom(k) -> {Atom.to_string(k), stringify(v)}
-      {k, v} -> {k, stringify(v)}
-    end)
-  end
-
-  defp stringify(other), do: other
-
   defp validate_education_levels(changeset) do
     case get_field(changeset, :educationLevels) do
-      nil ->
-        changeset
-
-      [] ->
-        changeset
-
+      nil -> changeset
+      [] -> changeset
       levels ->
         if Enum.all?(levels, &(&1 in @education_levels)) do
           changeset
@@ -99,4 +73,65 @@ defmodule CspApi.Schemas.StandardSet do
     end
   end
 
+  defmodule Jurisdiction do
+    use Ecto.Schema
+    import Ecto.Changeset
+
+    # Explicit string `:id` primary key — without this, mongodb_ecto
+    # would treat the `id` field as the embedded doc's auto-renamed
+    # primary key and store it as `_id`, breaking `jurisdiction.id`
+    # filters and the wire format the Ruby app reads.
+    @primary_key {:id, :string, autogenerate: false}
+    embedded_schema do
+      field :title, :string
+    end
+
+    def changeset(j, attrs) do
+      j |> cast(attrs, [:id, :title]) |> validate_required([:id, :title])
+    end
+  end
+
+  defmodule Document do
+    use Ecto.Schema
+    import Ecto.Changeset
+
+    @primary_key {:id, :string, autogenerate: false}
+    embedded_schema do
+      field :title, :string
+      field :asnIdentifier, :string
+      field :publicationStatus, :string
+      field :sourceURL, :string
+      field :valid, :string
+    end
+
+    def changeset(d, attrs),
+      do: cast(d, attrs, [:id, :title, :asnIdentifier, :publicationStatus, :sourceURL, :valid])
+  end
+
+  defmodule CspStatus do
+    use Ecto.Schema
+    import Ecto.Changeset
+
+    @primary_key false
+    embedded_schema do
+      field :value, :string, default: "visible"
+      field :notes, :string
+    end
+
+    def changeset(c, attrs), do: cast(c, attrs, [:value, :notes])
+  end
+
+  defmodule License do
+    use Ecto.Schema
+    import Ecto.Changeset
+
+    @primary_key false
+    embedded_schema do
+      field :title, :string, default: "CC BY 4.0 US"
+      field :URL, :string, default: "http://creativecommons.org/licenses/by/4.0/us/"
+      field :rightsHolder, :string, default: "Common Curriculum, Inc."
+    end
+
+    def changeset(l, attrs), do: cast(l, attrs, [:title, :URL, :rightsHolder])
+  end
 end

@@ -1,0 +1,70 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+Subject: [PATCH] Scope the primary-key -> _id rename to the outermost document
+
+The MongoDB convention of renaming the schema's primary-key field to
+`_id` was being applied recursively. Once `Conversions.from_ecto_pk/2`
+descended into a nested map (for example an `embeds_one` sub-document),
+the parent schema's `pk` value was still threaded through, so any
+nested field named `:id` was also rewritten to `:_id`.
+
+That meant an embedded value like
+
+    %{jurisdiction: %{id: "MD", title: "Maryland"}}
+
+was stored as
+
+    {jurisdiction: {_id: "MD", title: "Maryland"}}
+
+even when the embedded schema declared its own `@primary_key {:id, :string,
+autogenerate: false}`. Queries that filter on `jurisdiction.id` (the
+common shape for apps that put a string identifier on a sub-document)
+return nothing, and the wire format diverges from what other clients
+(Ruby driver, Node driver, etc.) write for the same model.
+
+The pk -> _id rename is only meaningful at the top of a document. Below
+that, the field names are user-controlled and should be passed through
+unchanged. This patch makes the recursive call inside `document/2` and
+`document/3` pass `nil` for the pk argument, so the rename only fires
+for the outermost document.
+
+`Conversions.to_ecto_pk/2` (the read path) is left as-is for now. Its
+rename of nested `"_id"` -> `Atom.to_string(pk)` only matters when a
+sub-document actually contains an `_id` field, which is uncommon in
+hand-written documents (Mongo only auto-adds `_id` to top-level docs).
+A symmetric read-side change can follow separately if there's appetite.
+---
+ lib/mongo_ecto/conversions.ex | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+
+diff --git a/lib/mongo_ecto/conversions.ex b/lib/mongo_ecto/conversions.ex
+index c32a385..4aaeb25 100644
+--- a/lib/mongo_ecto/conversions.ex
++++ b/lib/mongo_ecto/conversions.ex
+@@ -74,13 +74,25 @@ defmodule Mongo.Ecto.Conversions do
+
+   defp document(doc, pk) do
+     map(doc, fn {key, value} ->
+-      pair(key, value, pk, &from_ecto_pk(&1, pk))
++      # Recurse with `nil` so the parent schema's primary key isn't
++      # accidentally rewritten when it appears inside a nested document
++      # (e.g. an `embeds_one` whose embedded schema has its own `:id`
++      # field). Without this guard, an embed like
++      #
++      #   %{jurisdiction: %{id: "MD", title: "Maryland"}}
++      #
++      # gets serialized as `jurisdiction._id`, which breaks queries that
++      # filter on `jurisdiction.id`. The pk → _id remap is only meaningful
++      # at the top of the document.
++      pair(key, value, pk, &from_ecto_pk(&1, nil))
+     end)
+   end
+
+   defp document(doc, params, pk) do
+     map(doc, fn {key, value} ->
+-      pair(key, value, pk, &inject_params(&1, params, pk))
++      # Same rationale as `document/2`: scope the pk → _id rename to the
++      # outer document. See the comment in `document/2`.
++      pair(key, value, pk, &inject_params(&1, params, nil))
+     end)
+   end
+
