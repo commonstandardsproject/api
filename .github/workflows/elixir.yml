@@ -1,0 +1,99 @@
+name: elixir
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "elixir/**"
+      - "contract_tests/**"
+      - ".github/workflows/elixir.yml"
+  pull_request:
+    paths:
+      - "elixir/**"
+      - "contract_tests/**"
+      - ".github/workflows/elixir.yml"
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: elixir
+
+jobs:
+  test:
+    name: mix test + contract suite
+    runs-on: ubuntu-24.04
+    services:
+      mongo:
+        image: mongo:7
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --quiet --eval 'db.adminCommand({ ping: 1 })'"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      MIX_ENV: test
+      MONGO_URL_TEST: mongodb://localhost:27017/csp-test
+      ELIXIR_ERL_OPTIONS: "+fnu"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          elixir-version: "1.19.5"
+          otp-version: "27.3.4"
+
+      - name: Restore deps cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            elixir/deps
+            elixir/_build
+          key: ${{ runner.os }}-mix-${{ hashFiles('elixir/mix.lock') }}
+          restore-keys: ${{ runner.os }}-mix-
+
+      - name: Install deps
+        run: |
+          mix local.hex --force
+          mix local.rebar --force
+          mix deps.get
+
+      - name: Compile (warnings as errors)
+        run: mix compile --warnings-as-errors
+
+      - name: mix test
+        run: mix test --warnings-as-errors
+
+      - name: Seed the contract-test database
+        env:
+          MONGO_URL_TEST: mongodb://localhost:27017/csp-contract-test
+        run: mix run priv/seed_contract.exs
+
+      - name: Start Phoenix in test mode (background)
+        env:
+          MONGO_URL_TEST: mongodb://localhost:27017/csp-contract-test
+          PHX_SERVE_TEST: "1"
+        run: |
+          mix phx.server &
+          # Poll for the endpoint to come up; bail out if it doesn't bind
+          # within 30s.
+          for i in $(seq 1 30); do
+            if curl -s --max-time 1 http://localhost:4002/api/v1/swagger_doc > /dev/null; then
+              echo "phoenix up after ${i}s"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "phoenix didn't bind within 30s" >&2
+          exit 1
+
+      - name: Run Python contract suite
+        working-directory: contract_tests
+        env:
+          CSP_BASE_URL: http://localhost:4002
+          CSP_API_KEY: smoke-key-12345
+          CSP_ALLOW_WRITES: "1"
+        run: |
+          python3 -m pip install --quiet pytest
+          python3 -m pytest -v

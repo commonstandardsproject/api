@@ -9,8 +9,8 @@ defmodule CspApi.CachedStandardsTest do
   use CspApi.DataCase, async: false
 
   alias CspApi.Fixtures
+  alias CspApi.MongoX
   alias CspApi.StandardSets
-  alias CspApi.{Repo, MongoX}
 
   test "upserting a standard set populates cached_standards" do
     Fixtures.insert_jurisdiction()

@@ -26,10 +26,38 @@ if config_env() == :prod do
   config :csp_api, CspApiWeb.Endpoint,
     url: [host: System.get_env("PHX_HOST") || "localhost", port: 80],
     http: [ip: {0, 0, 0, 0}, port: port],
-    secret_key_base: secret_key_base
+    secret_key_base: secret_key_base,
+    server: true
 
   config :csp_api, :auth,
-    jwt_secret: System.get_env("AUTH0_CLIENT_SECRET"),
-    jwt_client_id: System.get_env("AUTH0_CLIENT_ID"),
+    jwt_secret:
+      System.get_env("AUTH0_CLIENT_SECRET") ||
+        raise("AUTH0_CLIENT_SECRET environment variable is missing"),
+    jwt_client_id:
+      System.get_env("AUTH0_CLIENT_ID") ||
+        raise("AUTH0_CLIENT_ID environment variable is missing"),
     jwt_test_bypass?: false
+
+  # Algolia — production indexing wraps the live `algolia_ex` client.
+  config :csp_api,
+    algolia_adapter: CspApi.Algolia.AlgoliaAdapter,
+    algolia: [index: System.get_env("ALGOLIA_INDEX") || "common-standards-project"]
+
+  config :algolia,
+    application_id:
+      System.get_env("ALGOLIA_APPLICATION_ID") ||
+        raise("ALGOLIA_APPLICATION_ID environment variable is missing"),
+    api_key:
+      System.get_env("ALGOLIA_API_KEY") ||
+        raise("ALGOLIA_API_KEY environment variable is missing")
+
+  # Postmark — emails on PR status change.
+  config :csp_api,
+    email_adapter: CspApi.Email.PostmarkAdapter,
+    postmark_token:
+      System.get_env("POSTMARK_API_TOKEN") ||
+        raise("POSTMARK_API_TOKEN environment variable is missing"),
+    postmark_from:
+      System.get_env("POSTMARK_FROM_ADDRESS") ||
+        raise("POSTMARK_FROM_ADDRESS environment variable is missing")
 end
