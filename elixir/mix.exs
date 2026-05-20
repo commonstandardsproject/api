@@ -54,7 +54,8 @@ defmodule CspApi.MixProject do
       # Hex package is `algolia_ex` (slab fork), but the actual OTP app
       # is named `:algolia` — use the `hex:` override to bridge.
       {:algolia, "~> 0.11", hex: :algolia_ex},
-      {:corsica, "~> 2.1"}
+      {:corsica, "~> 2.1"},
+      {:open_api_spex, "~> 3.22"}
     ]
   end
 

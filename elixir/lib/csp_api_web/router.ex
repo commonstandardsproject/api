@@ -55,4 +55,12 @@ defmodule CspApiWeb.Router do
     get "/swagger_doc", SwaggerController, :index
     get "/sitemap.xml", SitemapController, :show
   end
+
+  # Liveness + Mongo reachability — for load balancers / uptime checks.
+  # Outside any API-version prefix so monitoring URLs stay stable across
+  # future API revisions.
+  scope "/", CspApiWeb do
+    pipe_through [:api]
+    get "/healthz", HealthController, :show
+  end
 end

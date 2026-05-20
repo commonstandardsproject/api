@@ -1,7 +1,18 @@
 defmodule CspApiWeb.StandardDocumentsController do
   use CspApiWeb, :controller
+  use OpenApiSpex.ControllerSpecs
 
   alias CspApi.MongoX
+  alias CspApiWeb.Schemas
+
+  tags ["StandardDocuments"]
+
+  operation :show,
+    summary: "Get a standard document",
+    parameters: [id: [in: :path, required: true, type: :string]],
+    responses: [
+      ok: {"Standard document", "application/json", Schemas.StandardDocument}
+    ]
 
   def show(conn, %{"id" => id}) do
     case MongoX.find_one(
