@@ -138,25 +138,33 @@ def test_pr_approval_auto_approves_jurisdiction(client):
     """
     `Jurisdiction.approve` runs when a PR with a standardSet whose
     jurisdiction is `pending` is approved. The jurisdiction's status
-    becomes `approved`, so it shows up in the public list afterwards.
+    becomes `approved`, so it shows up in the public list (for someone
+    who isn't the submitter — submitters always see their own pending
+    items, per the Ruby `:$or` query).
+
     Mirror of `models/pull_request.rb:206`.
     """
-    j_id = uuid.uuid4().hex.upper()
+    from client import Client  # local import so the module isn't picky
 
-    # Create a pending jurisdiction
+    other_key = os.environ.get("CSP_OTHER_API_KEY", "smoke-key-other")
+    stranger = Client(api_key=other_key)
+
+    j_id = uuid.uuid4().hex.upper()
+    title = f"Auto-approve test {j_id[:6]}"
+
+    # Submitter creates a pending jurisdiction.
     client.post(
         "/api/v1/jurisdictions",
-        json_body={"jurisdiction": {"id": j_id, "title": f"Auto-approve test {j_id[:6]}", "type": "state"}},
+        json_body={"jurisdiction": {"id": j_id, "title": title, "type": "state"}},
         headers=AUTH_HEADER,
     )
 
-    # Confirm it's NOT in the public list yet (pending)
-    pre = client.get("/api/v1/jurisdictions").json()["data"]
-    pre_titles = {j["title"] for j in pre}
-    assert f"Auto-approve test {j_id[:6]}" not in pre_titles
+    # Stranger (not submitter) doesn't see it yet — pending is hidden.
+    pre = stranger.get("/api/v1/jurisdictions").json()["data"]
+    assert title not in {j["title"] for j in pre}
 
-    # Create a PR, fill in its standardSet to point at the new jurisdiction,
-    # then approve it. The Ruby flow auto-approves the jurisdiction.
+    # Submitter approves a PR whose standardSet's jurisdiction points at
+    # the pending row. Ruby's flow flips the jurisdiction to approved.
     pr = client.post("/api/v1/pull_requests", headers=AUTH_HEADER).json()["data"]
     client.post(
         f"/api/v1/pull_requests/{pr['id']}",
@@ -167,7 +175,7 @@ def test_pr_approval_auto_approves_jurisdiction(client):
                     "title": "Trigger Set",
                     "subject": "Trigger",
                     "educationLevels": ["01"],
-                    "jurisdiction": {"id": j_id, "title": f"Auto-approve test {j_id[:6]}"},
+                    "jurisdiction": {"id": j_id, "title": title},
                 }
             }
         },
@@ -179,10 +187,9 @@ def test_pr_approval_auto_approves_jurisdiction(client):
         headers=AUTH_HEADER,
     )
 
-    # Now the jurisdiction should show up in the public list
-    post = client.get("/api/v1/jurisdictions").json()["data"]
-    post_titles = {j["title"] for j in post}
-    assert f"Auto-approve test {j_id[:6]}" in post_titles, (
+    # Stranger now sees it.
+    post = stranger.get("/api/v1/jurisdictions").json()["data"]
+    assert title in {j["title"] for j in post}, (
         "expected Jurisdiction.approve to flip status to approved when a "
         "PR referencing it is approved"
     )

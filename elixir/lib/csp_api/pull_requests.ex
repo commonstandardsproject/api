@@ -177,6 +177,17 @@ defmodule CspApi.PullRequests do
       # extra validation that the id matches forkedFromStandardSetId,
       # matching Ruby.
       StandardSets.upsert(pr.standardSet)
+
+      # Same Ruby flow approves the embedded standardSet's jurisdiction
+      # so a brand-new (pending) jurisdiction becomes public the moment
+      # one of its sets is approved. See models/pull_request.rb:206.
+      case pr.standardSet["jurisdiction"] do
+        %{"id" => j_id} when is_binary(j_id) and j_id != "" ->
+          CspApi.Jurisdictions.approve(j_id)
+
+        _ ->
+          :ok
+      end
     end
 
     activity = %Activity{

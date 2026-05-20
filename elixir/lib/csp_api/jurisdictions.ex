@@ -38,6 +38,42 @@ defmodule CspApi.Jurisdictions do
   end
 
   @doc """
+  Creates a new jurisdiction in `pending` status. Mirrors the hidden
+  `POST /jurisdictions` endpoint in `api/jurisdictions.rb`.
+  """
+  def create_pending(attrs, submitter_id) do
+    attrs =
+      attrs
+      |> Map.put(:status, "pending")
+      |> Map.put(:submitterId, submitter_id)
+      |> Map.put_new(:id, CspApi.ID.csp_uuid())
+
+    %Jurisdiction{}
+    |> Jurisdiction.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Flips a jurisdiction from `pending` (or any other status) to
+  `approved`. Called from the PR-approval flow — matches
+  `models/jurisdiction.rb:30` `Jurisdiction.approve`.
+  """
+  def approve(id) when is_binary(id) do
+    case Repo.get(Jurisdiction, id) do
+      nil ->
+        :not_found
+
+      j ->
+        j
+        |> Ecto.Changeset.change(status: "approved")
+        |> Repo.update!()
+        :ok
+    end
+  end
+
+  def approve(_), do: :not_found
+
+  @doc """
   Fetches a jurisdiction and joins on the standard-set summary collection.
   `hide_hidden_sets?` defaults to true, matching the Ruby endpoint.
 

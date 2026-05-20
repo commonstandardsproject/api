@@ -45,7 +45,11 @@ defmodule CspApi.StandardSets do
   Returns `{:ok, struct}` or `{:error, changeset}`.
   """
   def upsert(attrs) when is_map(attrs) do
-    id = attrs[:id] || attrs["id"] || attrs[:_id] || attrs["_id"]
+    # Normalize to atom keys so subsequent Map.put's don't produce a
+    # mixed atom/string keyset (Ecto.Changeset.cast rejects mixed maps).
+    attrs = atomize_keys(attrs)
+
+    id = attrs[:id] || attrs[:_id]
 
     if is_nil(id) do
       {:error, "id is required for upsert"}
@@ -54,7 +58,7 @@ defmodule CspApi.StandardSets do
 
       if old, do: save_version(old)
 
-      standards = attrs[:standards] || attrs["standards"] || %{}
+      standards = attrs[:standards] || %{}
 
       attrs =
         attrs
@@ -67,6 +71,16 @@ defmodule CspApi.StandardSets do
 
       Repo.insert_or_update(changeset)
     end
+  end
+
+  # Top-level only — embedded sub-doc maps (jurisdiction, document, etc.)
+  # keep whatever key style they came in with, since the StandardSet
+  # changeset's stringify-on-cast already normalizes them.
+  defp atomize_keys(map) when is_map(map) and not is_struct(map) do
+    Map.new(map, fn
+      {k, v} when is_binary(k) -> {String.to_atom(k), v}
+      kv -> kv
+    end)
   end
 
   defp save_version(old) do

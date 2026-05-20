@@ -26,6 +26,17 @@ Users.create(%{
   profile: %{"name" => "Smoke Tester"}
 })
 
+# Second user — not the submitter of anything, used by the contract
+# tests that need to verify "is X visible to a stranger" (e.g. the
+# Jurisdiction.approve side effect on PR approval).
+Users.create(%{
+  id: "smoke-other",
+  email: "other@test.com",
+  apiKey: "smoke-key-other",
+  isCommitter: false,
+  profile: %{"name" => "Smoke Other"}
+})
+
 # 50 US states + DC. Maryland uses the prod id the contract suite expects.
 states = [
   {"AL", "Alabama"}, {"AK", "Alaska"}, {"AZ", "Arizona"}, {"AR", "Arkansas"},
@@ -130,8 +141,33 @@ standards = %{
 })
 |> Repo.insert!()
 
+# standard_documents row referenced by the MD_MATH_G1 set. The
+# StandardDocuments controller does a raw projection on `_id`,
+# `document`, `documentMeta`, `standardSetQueries`, so the test seed
+# needs to populate those fields.
+Mongo.Ecto.command(Repo,
+  insert: "standard_documents",
+  documents: [
+    %{
+      "_id" => "D2604890",
+      "document" => %{
+        "id" => "D2604890",
+        "title" => "Maryland Mathematics Grade 1",
+        "asnIdentifier" => "D2604890",
+        "publicationStatus" => "Published"
+      },
+      "documentMeta" => %{
+        "language" => "en-US",
+        "license" => "CC BY 4.0 US"
+      },
+      "standardSetQueries" => []
+    }
+  ]
+)
+
 IO.puts("Seeded:")
 IO.puts("  - smoke-user (apiKey=smoke-key-12345, isCommitter=true)")
 IO.puts("  - 51 jurisdictions including Maryland (id=#{md_id})")
 IO.puts("  - standard_set #{md_math_g1}")
 IO.puts("  - one hidden standard_set under Maryland")
+IO.puts("  - standard_document D2604890")

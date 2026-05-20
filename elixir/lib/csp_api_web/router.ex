@@ -39,6 +39,8 @@ defmodule CspApiWeb.Router do
     get "/users/:email", UsersController, :show
     post "/users/:id/allowed_origins", UsersController, :set_allowed_origins
 
+    post "/jurisdictions", JurisdictionsController, :create
+
     post "/pull_requests", PullRequestsController, :create
     post "/pull_requests/:id", PullRequestsController, :user_update
     post "/pull_requests/:id/submit", PullRequestsController, :submit
