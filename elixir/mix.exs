@@ -32,13 +32,12 @@ defmodule CspApi.MixProject do
 
       # Ecto + the official MongoDB adapter
       {:ecto, "~> 3.10"},
-      # Vendored copy of mongodb_ecto 2.1.1 with a patch to scope the
-      # primary-key → _id rename to the top-level document (the upstream
-      # adapter rewrites nested `:id` keys inside `embeds_one` docs too,
-      # which breaks wire-format parity with the Ruby app's
-      # `jurisdiction.id`-style filters). The patch is in
-      # vendor_deps/mongodb_ecto.patch — submit upstream.
-      {:mongodb_ecto, path: "vendor_deps/mongodb_ecto"},
+      # Tracks elixir-mongo/mongodb_ecto#scope-pk-rename-to-top-level —
+      # scopes the primary-key → _id rename to the outermost document so
+      # `embeds_one` sub-docs keep their own `:id` field (matching the
+      # wire format the Ruby app reads/writes). Swap back to a Hex
+      # release once that branch is merged and tagged.
+      {:mongodb_ecto, github: "elixir-mongo/mongodb_ecto", branch: "scope-pk-rename-to-top-level"},
 
       {:joken, "~> 2.6"},
       {:elixir_uuid, "~> 1.2"}
