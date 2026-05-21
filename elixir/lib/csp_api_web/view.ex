@@ -102,10 +102,7 @@ defmodule CspApiWeb.View do
   end
 
   # Source maps can be Ecto structs (atom keys) or raw Mongo docs (string
-  # keys). Try atom first, fall back to string. Raw Mongo docs are
-  # normalized at the data-context boundary (`CspApi.MongoX.normalize_id/1`)
-  # so `"_id"` has already been rewritten to `"id"` by the time a value
-  # reaches a View.
+  # keys). Try atom first, fall back to string.
   defp read_field(source, field) when is_map(source) do
     string_key = Atom.to_string(field)
 

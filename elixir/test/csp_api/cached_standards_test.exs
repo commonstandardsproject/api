@@ -9,8 +9,17 @@ defmodule CspApi.CachedStandardsTest do
   use CspApi.DataCase, async: false
 
   alias CspApi.Fixtures
-  alias CspApi.MongoX
   alias CspApi.StandardSets
+
+  defp find_cached_standards(set_id) do
+    %{"cursor" => %{"firstBatch" => rows}} =
+      Mongo.Ecto.command(CspApi.Repo,
+        find: "cached_standards",
+        filter: %{"standardSetId" => set_id}
+      )
+
+    rows
+  end
 
   test "upserting a standard set populates cached_standards" do
     Fixtures.insert_jurisdiction()
@@ -32,7 +41,7 @@ defmodule CspApi.CachedStandardsTest do
         }
       })
 
-    rows = MongoX.find("cached_standards", %{"standardSetId" => set.id})
+    rows = find_cached_standards(set.id)
 
     assert length(rows) == 4, "expected one cached_standards row per standard"
 
@@ -82,7 +91,7 @@ defmodule CspApi.CachedStandardsTest do
         base.(%{"X" => %{"id" => "X", "depth" => 0, "position" => 1, "description" => "v2"}})
       )
 
-    rows = MongoX.find("cached_standards", %{"standardSetId" => set.id})
+    rows = find_cached_standards(set.id)
     assert length(rows) == 1, "expected upsert, not duplicate insert"
     assert hd(rows)["description"] in ["v2", nil],
       "expected the latest revision's description (was: #{inspect(hd(rows))})"

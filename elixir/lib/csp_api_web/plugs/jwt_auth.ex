@@ -43,7 +43,10 @@ defmodule CspApiWeb.Plugs.JwtAuth do
     secret = auth[:jwt_secret]
     client_id = auth[:jwt_client_id]
 
-    if is_nil(secret) do
+    # Fail closed if either is unset — otherwise a missing `client_id`
+    # combined with a token whose `aud` happens to be `nil` would pin-match
+    # and let the request through.
+    if is_nil(secret) or is_nil(client_id) do
       unauthorized(conn, "Invalid Token")
     else
       decoded_secret = Base.url_decode64!(secret, padding: false)

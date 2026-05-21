@@ -202,12 +202,14 @@ defmodule CspApiWeb.PullRequestsController do
     user = conn.assigns[:current_user]
 
     with %{} = pr <- PullRequests.get(id),
-         true <- PullRequests.can_edit?(pr, user) do
-      updated = PullRequests.add_comment(pr, comment, user)
+         true <- PullRequests.can_edit?(pr, user),
+         {:ok, updated} <- PullRequests.add_comment(pr, comment, user) do
       json(conn, %{data: DetailJSON.data(updated)})
     else
       nil -> conn |> put_status(:not_found) |> json(%{error: "Not found"})
       false -> send_resp(conn, 401, "")
+      {:error, %Ecto.Changeset{} = cs} ->
+        conn |> put_status(:unprocessable_entity) |> json(%{errors: changeset_errors(cs)})
     end
   end
 

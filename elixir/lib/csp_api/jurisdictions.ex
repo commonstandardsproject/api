@@ -2,16 +2,8 @@ defmodule CspApi.Jurisdictions do
   @moduledoc "Read operations for `jurisdictions`, plus the joined standard-set summary."
 
   import Ecto.Query
-  alias CspApi.{Repo, MongoX}
-  alias CspApi.Schemas.Jurisdiction
-
-  @summary_projection %{
-    "_id" => 1,
-    "title" => 1,
-    "subject" => 1,
-    "document" => 1,
-    "educationLevels" => 1
-  }
+  alias CspApi.Repo
+  alias CspApi.Schemas.{Jurisdiction, StandardSet}
 
   @doc """
   Lists jurisdictions for the public listing — hides inactive/pending/rejected
@@ -42,15 +34,26 @@ defmodule CspApi.Jurisdictions do
   `POST /jurisdictions` endpoint in `api/jurisdictions.rb`.
   """
   def create_pending(attrs, submitter_id) do
+    # Stringify atom keys so the merge below doesn't produce a mixed-key
+    # map (Ecto.Changeset.cast rejects those). String keys are GC-safe;
+    # avoid `String.to_atom` on user input.
     attrs =
       attrs
-      |> Map.put(:status, "pending")
-      |> Map.put(:submitterId, submitter_id)
-      |> Map.put_new(:id, CspApi.ID.csp_uuid())
+      |> stringify_keys()
+      |> Map.put("status", "pending")
+      |> Map.put("submitterId", submitter_id)
+      |> Map.put_new("id", CspApi.ID.csp_uuid())
 
     %Jurisdiction{}
     |> Jurisdiction.changeset(attrs)
     |> Repo.insert()
+  end
+
+  defp stringify_keys(map) when is_map(map) and not is_struct(map) do
+    Map.new(map, fn
+      {k, v} when is_atom(k) -> {Atom.to_string(k), v}
+      kv -> kv
+    end)
   end
 
   @doc """
@@ -87,21 +90,31 @@ defmodule CspApi.Jurisdictions do
         nil
 
       jurisdiction ->
-        filter = %{"jurisdiction.id" => id}
-
-        filter =
-          if hide_hidden? do
-            Map.put(filter, "cspStatus.value", %{"$ne" => "hidden"})
-          else
-            filter
-          end
-
+        # mongodb_ecto doesn't expose embed-field navigation through Ecto's
+        # standard DSL (`s.jurisdiction.id` raises in query compilation), so
+        # we pass nested filters through `fragment/1` — the adapter encodes
+        # the keyword list as a Mongo find filter verbatim.
         sets =
-          "standard_sets"
-          |> MongoX.find(filter, projection: @summary_projection)
-          |> Enum.map(&MongoX.normalize_id/1)
+          StandardSet
+          |> where_jurisdiction(id)
+          |> maybe_hide_hidden(hide_hidden?)
+          |> select([s], map(s, [:id, :title, :subject, :document, :educationLevels]))
+          |> Repo.all()
 
         {jurisdiction, sets}
     end
+  end
+
+  defp where_jurisdiction(query, jurisdiction_id) do
+    from s in query, where: fragment("jurisdiction.id": ^jurisdiction_id)
+  end
+
+  defp maybe_hide_hidden(query, false), do: query
+
+  defp maybe_hide_hidden(query, true) do
+    # Mongo's `$ne` is true for "not equal" and for "field missing", which
+    # is what we want — hide only docs where cspStatus.value is exactly
+    # "hidden".
+    from s in query, where: fragment("cspStatus.value": ["$ne": "hidden"])
   end
 end

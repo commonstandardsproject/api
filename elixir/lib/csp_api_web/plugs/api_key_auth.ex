@@ -60,7 +60,10 @@ defmodule CspApiWeb.Plugs.ApiKeyAuth do
       end
 
     cond do
-      Mix.env() == :dev -> :ok
+      # Runtime config (default `false`). Set `dev_origin_bypass?: true` in
+      # `config/dev.exs` to skip the Origin check locally. We can't use
+      # `Mix.env/0` here — it isn't callable from a release.
+      Application.get_env(:csp_api, :dev_origin_bypass?, false) -> :ok
       is_nil(origin) -> :ok
       origin in @canonical_origins -> :ok
       origin in (user.allowedOrigins || []) -> :ok

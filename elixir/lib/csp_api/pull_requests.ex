@@ -2,35 +2,19 @@ defmodule CspApi.PullRequests do
   @moduledoc "Pull-request flows. Port of `models/pull_request.rb`."
 
   import Ecto.Query
-  alias CspApi.{Repo, ID, Email, MongoX, StandardSets}
+  alias CspApi.{Repo, ID, Email, StandardSets}
   alias CspApi.Schemas.{PullRequest, StandardSet, Activity}
 
   defdelegate statuses, to: PullRequest
 
   defdelegate humanized(status), to: PullRequest
 
-  def get(id) do
-    case Repo.get(PullRequest, id) do
-      nil -> nil
-      pr -> normalize_embedded(pr)
-    end
-  end
+  def get(id), do: Repo.get(PullRequest, id)
 
   def list_active do
     from(p in PullRequest, where: p.status != "rejected", limit: 100)
     |> Repo.all()
-    |> Enum.map(&normalize_embedded/1)
   end
-
-  # The embedded `standardSet` is a raw `:map` field — Mongoid-saved
-  # documents from the Ruby app may have `"_id"` instead of `"id"` for the
-  # set itself or any nested doc. Normalize before handing the PR to a View
-  # so the renderer can read `:id` consistently.
-  defp normalize_embedded(%PullRequest{standardSet: ss} = pr) when is_map(ss) do
-    %{pr | standardSet: MongoX.normalize_id(ss)}
-  end
-
-  defp normalize_embedded(pr), do: pr
 
   def list_for_user(user_id) do
     from(p in PullRequest,
@@ -154,17 +138,20 @@ defmodule CspApi.PullRequests do
 
     activities = (pr.activities || []) ++ [activity]
 
-    {:ok, updated} =
-      pr
-      |> Ecto.Changeset.change()
-      |> Ecto.Changeset.put_embed(:activities, activities)
-      |> Repo.update()
+    case pr
+         |> Ecto.Changeset.change()
+         |> Ecto.Changeset.put_embed(:activities, activities)
+         |> Repo.update() do
+      {:ok, updated} ->
+        if Map.get(user, :isCommitter) == true do
+          Email.send_email("admin-comment-added", updated, comment)
+        end
 
-    if Map.get(user, :isCommitter) == true do
-      Email.send_email("admin-comment-added", updated, comment)
+        {:ok, updated}
+
+      {:error, %Ecto.Changeset{} = cs} ->
+        {:error, cs}
     end
-
-    updated
   end
 
   @doc """
@@ -221,19 +208,21 @@ defmodule CspApi.PullRequests do
 
     activities = (pr.activities || []) ++ [activity]
 
-    {:ok, updated} =
-      pr
-      |> Ecto.Changeset.change(%{
-        status: status,
-        statusComment: comment,
-        updatedAtDate: now()
-      })
-      |> Ecto.Changeset.put_embed(:activities, activities)
-      |> Repo.update()
+    case pr
+         |> Ecto.Changeset.change(%{
+           status: status,
+           statusComment: comment,
+           updatedAtDate: now()
+         })
+         |> Ecto.Changeset.put_embed(:activities, activities)
+         |> Repo.update() do
+      {:ok, updated} ->
+        if send_notice?, do: Email.send_email(status, updated, comment)
+        {:ok, updated}
 
-    if send_notice?, do: Email.send_email(status, updated, comment)
-
-    {:ok, updated}
+      {:error, %Ecto.Changeset{} = cs} ->
+        {:error, cs}
+    end
   end
 
   # ────────────────────────────────────────────────────────────────────────

@@ -51,11 +51,12 @@ defmodule CspApi.StandardSets do
   Returns `{:ok, struct}` or `{:error, changeset}`.
   """
   def upsert(attrs) when is_map(attrs) do
-    # Normalize to atom keys so subsequent Map.put's don't produce a
-    # mixed atom/string keyset (Ecto.Changeset.cast rejects mixed maps).
-    attrs = atomize_keys(attrs)
-
-    id = attrs[:id] || attrs[:_id]
+    # Stringify atom keys (GC-safe — unlike the reverse, which the old
+    # `atomize_keys` did and exposed an atom-table DoS through user input).
+    # `Ecto.Changeset.cast` rejects mixed-key maps, so we have to commit
+    # to one key style; string keys match the wire shape from Mongo / JSON.
+    attrs = stringify_keys(attrs)
+    id = attrs["id"] || attrs["_id"]
 
     if is_nil(id) do
       {:error, "id is required for upsert"}
@@ -63,7 +64,7 @@ defmodule CspApi.StandardSets do
       # Run the changeset against an empty struct so all validations
       # (`validate_required`, `validate_education_levels`, embed casts) fire
       # regardless of whether the doc already exists in Mongo.
-      changeset = StandardSet.changeset(%StandardSet{id: id}, Map.put(attrs, :id, id))
+      changeset = StandardSet.changeset(%StandardSet{id: id}, Map.put(attrs, "id", id))
 
       if changeset.valid? do
         do_atomic_upsert(Ecto.Changeset.apply_changes(changeset))
@@ -71,6 +72,13 @@ defmodule CspApi.StandardSets do
         {:error, changeset}
       end
     end
+  end
+
+  defp stringify_keys(map) when is_map(map) and not is_struct(map) do
+    Map.new(map, fn
+      {k, v} when is_atom(k) -> {Atom.to_string(k), v}
+      kv -> kv
+    end)
   end
 
   defp do_atomic_upsert(%StandardSet{} = applied) do
@@ -123,16 +131,6 @@ defmodule CspApi.StandardSets do
     end
   end
 
-  # Top-level only — embedded sub-doc maps (jurisdiction, document, etc.)
-  # keep whatever key style they came in with, since the StandardSet
-  # changeset's stringify-on-cast already normalizes them.
-  defp atomize_keys(map) when is_map(map) and not is_struct(map) do
-    Map.new(map, fn
-      {k, v} when is_binary(k) -> {String.to_atom(k), v}
-      kv -> kv
-    end)
-  end
-
   # Accepts either an Ecto-loaded `%StandardSet{}` (atom keys, `:id`) or a
   # raw Mongo doc (string keys, `"_id"`). The new atomic upsert path hands
   # us the latter via `findAndModify(new: false)`.
@@ -172,12 +170,8 @@ defmodule CspApi.StandardSets do
 
   @doc false
   def query_by_jurisdiction(jurisdiction_id) do
-    # Used only by tests that already insert via raw mongo; not part of
-    # the public API.
-    from(s in StandardSet) |> where_jurisdiction(jurisdiction_id)
-  end
-
-  defp where_jurisdiction(query, jurisdiction_id) do
-    from s in query, where: fragment("?", field(s, :jurisdiction)) == ^%{"id" => jurisdiction_id}
+    # Used only by tests; mongodb_ecto needs `fragment` for nested-field
+    # filters (Ecto's standard DSL doesn't allow embed navigation).
+    from s in StandardSet, where: fragment("jurisdiction.id": ^jurisdiction_id)
   end
 end

@@ -63,7 +63,7 @@ defmodule CspApiWeb.JurisdictionsController do
         _ -> nil
       end
 
-    case Jurisdictions.create_pending(atom_keyed(attrs), submitter_id) do
+    case Jurisdictions.create_pending(attrs, submitter_id) do
       {:ok, j} ->
         json(conn, %{data: SummaryJSON.data(j)})
 
@@ -72,13 +72,6 @@ defmodule CspApiWeb.JurisdictionsController do
         |> put_status(:unprocessable_entity)
         |> json(%{errors: changeset_errors(cs)})
     end
-  end
-
-  defp atom_keyed(map) do
-    Map.new(map, fn
-      {k, v} when is_binary(k) -> {String.to_atom(k), v}
-      kv -> kv
-    end)
   end
 
   defp changeset_errors(%Ecto.Changeset{} = cs) do

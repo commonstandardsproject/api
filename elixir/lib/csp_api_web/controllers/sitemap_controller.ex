@@ -16,16 +16,18 @@ defmodule CspApiWeb.SitemapController do
   """
   use CspApiWeb, :controller
 
-  alias CspApi.MongoX
+  import Ecto.Query
+  alias CspApi.Repo
+  alias CspApi.Schemas.StandardSet
 
   @xmlns "http://www.sitemaps.org/schemas/sitemap/0.9"
 
   @doc false
   def show(conn, _params) do
     url_elements =
-      "standard_sets"
-      |> MongoX.find(%{}, projection: %{"_id" => 1})
-      |> Enum.map(fn %{"_id" => id} ->
+      from(s in StandardSet, select: s.id)
+      |> Repo.all()
+      |> Enum.map(fn id ->
         {:url, [], [{:loc, [], [String.to_charlist(search_url(id))]}]}
       end)
 

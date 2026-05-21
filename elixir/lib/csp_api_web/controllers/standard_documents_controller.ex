@@ -2,7 +2,8 @@ defmodule CspApiWeb.StandardDocumentsController do
   use CspApiWeb, :controller
   use OpenApiSpex.ControllerSpecs
 
-  alias CspApi.MongoX
+  alias CspApi.Repo
+  alias CspApi.Schemas.StandardDocument
   alias CspApiWeb.StandardDocuments.DetailJSON
 
   tags ["StandardDocuments"]
@@ -15,21 +16,9 @@ defmodule CspApiWeb.StandardDocumentsController do
     ]
 
   def show(conn, %{"id" => id}) do
-    case MongoX.find_one(
-           "standard_documents",
-           %{"_id" => id},
-           projection: %{
-             "_id" => 1,
-             "document" => 1,
-             "documentMeta" => 1,
-             "standardSetQueries" => 1
-           }
-         ) do
-      nil ->
-        json(conn, %{})
-
-      doc ->
-        json(conn, %{data: DetailJSON.data(MongoX.normalize_id(doc))})
+    case Repo.get(StandardDocument, id) do
+      nil -> json(conn, %{})
+      doc -> json(conn, %{data: DetailJSON.data(doc)})
     end
   end
 end

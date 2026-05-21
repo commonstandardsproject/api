@@ -9,6 +9,7 @@ config :csp_api, CspApi.Repo,
   pool_size: 5
 
 config :csp_api, CspApiWeb.Endpoint,
+  adapter: Bandit.PhoenixAdapter,
   url: [host: "localhost"],
   render_errors: [
     formats: [json: CspApiWeb.ErrorJSON],

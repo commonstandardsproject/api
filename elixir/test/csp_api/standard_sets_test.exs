@@ -6,8 +6,18 @@ defmodule CspApi.StandardSetsTest do
 
   use CspApi.DataCase, async: false
 
-  alias CspApi.{Fixtures, MongoX, Repo, StandardSets}
+  alias CspApi.{Fixtures, Repo, StandardSets}
   alias CspApi.Schemas.StandardSet
+
+  defp find_versions(set_id) do
+    %{"cursor" => %{"firstBatch" => rows}} =
+      Mongo.Ecto.command(Repo,
+        find: "standard_set_versions",
+        filter: %{"standardSetId" => set_id}
+      )
+
+    rows
+  end
 
   defp base_attrs(set, overrides) do
     Map.merge(
@@ -38,7 +48,7 @@ defmodule CspApi.StandardSetsTest do
     assert final.title == "rev3"
     assert final.version == original_version + 2
 
-    versions = MongoX.find("standard_set_versions", %{"standardSetId" => set.id})
+    versions = find_versions(set.id)
     assert length(versions) == 2, "expected one history row per upsert (got #{length(versions)})"
   end
 
@@ -63,7 +73,8 @@ defmodule CspApi.StandardSetsTest do
     |> Enum.each(fn {:ok, {:ok, _}} -> :ok end)
 
     versions =
-      MongoX.find("standard_set_versions", %{"standardSetId" => set.id})
+      set.id
+      |> find_versions()
       |> Enum.map(& &1["version"])
 
     # Each upsert stashes the PRE-update version. So we expect the

@@ -35,9 +35,9 @@ defmodule CspApi.MixProject do
 
   defp deps do
     [
-      {:phoenix, "~> 1.7.10"},
+      {:phoenix, "~> 1.7.18"},
       {:phoenix_pubsub, "~> 2.1"},
-      {:plug_cowboy, "~> 2.6"},
+      {:bandit, "~> 1.5"},
       {:jason, "~> 1.4"},
 
       # Ecto + the official MongoDB adapter
