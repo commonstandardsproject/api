@@ -29,9 +29,7 @@ defmodule CspApiWeb.StandardDocumentsController do
         json(conn, %{})
 
       doc ->
-        # The Mongo doc has "_id"; map it back to :id for the view.
-        source = Map.put(doc, "id", doc["_id"])
-        json(conn, %{data: DetailJSON.data(source)})
+        json(conn, %{data: DetailJSON.data(MongoX.normalize_id(doc))})
     end
   end
 end

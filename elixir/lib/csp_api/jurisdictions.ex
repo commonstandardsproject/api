@@ -97,7 +97,9 @@ defmodule CspApi.Jurisdictions do
           end
 
         sets =
-          MongoX.find("standard_sets", filter, projection: @summary_projection)
+          "standard_sets"
+          |> MongoX.find(filter, projection: @summary_projection)
+          |> Enum.map(&MongoX.normalize_id/1)
 
         {jurisdiction, sets}
     end

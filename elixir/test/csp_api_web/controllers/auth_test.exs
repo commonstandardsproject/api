@@ -46,4 +46,24 @@ defmodule CspApiWeb.AuthTest do
 
     assert conn.status == 200
   end
+
+  # GET /pull_requests and GET /pull_requests/:id moved into the JWT
+  # pipeline in PR #58. The shared contract suite passes by sending
+  # `Authorization: TEST`; lock down the negative case here so a future
+  # router change can't silently de-gate these endpoints.
+  describe "JWT-gated PR read endpoints" do
+    test "GET /pull_requests requires JWT", %{conn: conn} do
+      conn = conn |> Plug.Conn.delete_req_header("authorization") |> get("/api/v1/pull_requests")
+      assert conn.status == 401
+    end
+
+    test "GET /pull_requests/:id requires JWT", %{conn: conn} do
+      conn =
+        conn
+        |> Plug.Conn.delete_req_header("authorization")
+        |> get("/api/v1/pull_requests/anything")
+
+      assert conn.status == 401
+    end
+  end
 end

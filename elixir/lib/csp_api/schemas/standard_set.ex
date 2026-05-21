@@ -82,6 +82,7 @@ defmodule CspApi.Schemas.StandardSet do
     # primary key and store it as `_id`, breaking `jurisdiction.id`
     # filters and the wire format the Ruby app reads.
     @primary_key {:id, :string, autogenerate: false}
+    @derive {Jason.Encoder, only: [:id, :title]}
     embedded_schema do
       field :title, :string
     end
@@ -96,6 +97,8 @@ defmodule CspApi.Schemas.StandardSet do
     import Ecto.Changeset
 
     @primary_key {:id, :string, autogenerate: false}
+    @derive {Jason.Encoder,
+             only: [:id, :title, :asnIdentifier, :publicationStatus, :sourceURL, :valid]}
     embedded_schema do
       field :title, :string
       field :asnIdentifier, :string
@@ -113,6 +116,7 @@ defmodule CspApi.Schemas.StandardSet do
     import Ecto.Changeset
 
     @primary_key false
+    @derive {Jason.Encoder, only: [:value, :notes]}
     embedded_schema do
       field :value, :string, default: "visible"
       field :notes, :string
@@ -126,6 +130,7 @@ defmodule CspApi.Schemas.StandardSet do
     import Ecto.Changeset
 
     @primary_key false
+    @derive {Jason.Encoder, only: [:title, :URL, :rightsHolder]}
     embedded_schema do
       field :title, :string, default: "CC BY 4.0 US"
       field :URL, :string, default: "http://creativecommons.org/licenses/by/4.0/us/"

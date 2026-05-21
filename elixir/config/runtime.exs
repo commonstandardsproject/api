@@ -6,6 +6,14 @@ import Config
 # (OTP 25+) pulls the platform trust store. Applies to any env that points
 # MONGO_URL at an SRV string; non-TLS URLs ignore the option.
 if System.get_env("MONGO_READ_ONLY") in ["1", "true"] do
+  if config_env() == :prod do
+    raise """
+    MONGO_READ_ONLY=1 is set with MIX_ENV=prod. This flag is for parity
+    diffs against a read-only replica — it disables the `findAndModify`
+    bump on auth and degrades request-count accounting. Refusing to boot.
+    """
+  end
+
   config :csp_api, :mongo_read_only, true
 end
 

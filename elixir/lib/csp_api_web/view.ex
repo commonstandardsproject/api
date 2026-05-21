@@ -101,17 +101,17 @@ defmodule CspApiWeb.View do
     end)
   end
 
-  # Source maps can be Ecto structs (atom keys only) or raw Mongo docs
-  # (string keys). Try atom first, fall back to string. For the conventional
-  # `:id` field, also accept Mongo's `"_id"` so raw documents from
-  # `Mongo.Ecto.command/2` queries don't need pre-aliasing.
+  # Source maps can be Ecto structs (atom keys) or raw Mongo docs (string
+  # keys). Try atom first, fall back to string. Raw Mongo docs are
+  # normalized at the data-context boundary (`CspApi.MongoX.normalize_id/1`)
+  # so `"_id"` has already been rewritten to `"id"` by the time a value
+  # reaches a View.
   defp read_field(source, field) when is_map(source) do
     string_key = Atom.to_string(field)
 
     cond do
       Map.has_key?(source, field) -> Map.get(source, field)
       Map.has_key?(source, string_key) -> Map.get(source, string_key)
-      field == :id and Map.has_key?(source, "_id") -> Map.get(source, "_id")
       true -> nil
     end
   end
@@ -144,33 +144,12 @@ defmodule CspApiWeb.View do
     end
   end
 
-  defp render_field(_view, _field, value, false), do: demap_struct(value)
-
-  # Source data on a non-embed `:map` field can be either a raw Mongo map
-  # (pass through) or an Ecto-loaded embedded struct (Jason can't encode
-  # those). Recursively unwrap Ecto-style structs to plain maps; leave
-  # date/time structs alone since Jason knows how to encode them.
-  defp demap_struct(%mod{} = value)
-       when mod in [DateTime, Date, NaiveDateTime, Time, Decimal, BSON.UTCDateTime, BSON.ObjectId] do
-    value
-  end
-
-  defp demap_struct(%_{} = struct) do
-    struct
-    |> Map.from_struct()
-    |> Map.drop([:__meta__])
-    |> Map.new(fn {k, v} -> {k, demap_struct(v)} end)
-  end
-
-  defp demap_struct(map) when is_map(map) do
-    Map.new(map, fn {k, v} -> {k, demap_struct(v)} end)
-  end
-
-  defp demap_struct(list) when is_list(list) do
-    Enum.map(list, &demap_struct/1)
-  end
-
-  defp demap_struct(other), do: other
+  # Non-embed values pass through unchanged. When a View declares a field as
+  # `:map`, the source value may be a raw Mongo map (encodes fine) or an
+  # Ecto-loaded sub-doc struct — those need `@derive Jason.Encoder` on the
+  # schema so the encoder knows which fields to expose. See
+  # `CspApi.Schemas.StandardSet.{Document,Jurisdiction,CspStatus,License}`.
+  defp render_field(_view, _field, value, false), do: value
 
   # ────────────────────────────────────────────────────────────────────
   # Schema: reflect Ecto types into an OpenAPI envelope

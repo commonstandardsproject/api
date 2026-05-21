@@ -48,12 +48,34 @@ defmodule CspApi.MongoX do
     end
   end
 
+  # find_one delegates to find/3 with `limit: 1` so the cursor-drain path is
+  # the same — at most one document arrives in `firstBatch` and `cursor.id`
+  # is 0, so `drain/3` returns immediately. Kept as a separate function to
+  # match the symmetric Mongo client API the rest of the codebase expects.
   def find_one(coll, filter, opts \\ []) do
     case find(coll, filter, Keyword.put(opts, :limit, 1)) do
       [doc | _] -> doc
       _ -> nil
     end
   end
+
+  @doc """
+  Recursively renames Mongo's `"_id"` to `"id"` so the value can be handed
+  to a `CspApiWeb.View` (which reads the conventional `:id`/`"id"` key).
+  Walks into nested maps and lists of maps. Use at the data-context
+  boundary on raw cursor results before passing them to a view.
+  """
+  def normalize_id(%{} = map) when not is_struct(map) do
+    map
+    |> Enum.map(fn
+      {"_id", v} -> {"id", normalize_id(v)}
+      {k, v} -> {k, normalize_id(v)}
+    end)
+    |> Map.new()
+  end
+
+  def normalize_id(list) when is_list(list), do: Enum.map(list, &normalize_id/1)
+  def normalize_id(other), do: other
 
   defp add_opt(list, _key, nil), do: list
   defp add_opt(list, key, value), do: list ++ [{key, value}]

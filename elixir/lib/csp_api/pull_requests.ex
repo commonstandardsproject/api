@@ -2,18 +2,35 @@ defmodule CspApi.PullRequests do
   @moduledoc "Pull-request flows. Port of `models/pull_request.rb`."
 
   import Ecto.Query
-  alias CspApi.{Repo, ID, Email, StandardSets}
+  alias CspApi.{Repo, ID, Email, MongoX, StandardSets}
   alias CspApi.Schemas.{PullRequest, StandardSet, Activity}
 
   defdelegate statuses, to: PullRequest
+
   defdelegate humanized(status), to: PullRequest
 
-  def get(id), do: Repo.get(PullRequest, id)
+  def get(id) do
+    case Repo.get(PullRequest, id) do
+      nil -> nil
+      pr -> normalize_embedded(pr)
+    end
+  end
 
   def list_active do
     from(p in PullRequest, where: p.status != "rejected", limit: 100)
     |> Repo.all()
+    |> Enum.map(&normalize_embedded/1)
   end
+
+  # The embedded `standardSet` is a raw `:map` field — Mongoid-saved
+  # documents from the Ruby app may have `"_id"` instead of `"id"` for the
+  # set itself or any nested doc. Normalize before handing the PR to a View
+  # so the renderer can read `:id` consistently.
+  defp normalize_embedded(%PullRequest{standardSet: ss} = pr) when is_map(ss) do
+    %{pr | standardSet: MongoX.normalize_id(ss)}
+  end
+
+  defp normalize_embedded(pr), do: pr
 
   def list_for_user(user_id) do
     from(p in PullRequest,
@@ -91,7 +108,7 @@ defmodule CspApi.PullRequests do
 
   @doc "Apply edits to the user-controlled fields of a PR."
   def user_update(id, %{} = data) do
-    case Repo.get(PullRequest, id) do
+    case get(id) do
       nil ->
         {:error, :not_found}
 
@@ -160,7 +177,7 @@ defmodule CspApi.PullRequests do
         {:error, :invalid_status}
 
       true ->
-        case Repo.get(PullRequest, id) do
+        case get(id) do
           nil ->
             {:error, :not_found}
 

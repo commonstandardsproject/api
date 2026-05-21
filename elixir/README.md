@@ -69,9 +69,21 @@ mix test test/csp_api/hierarchy_test.exs test/csp_api/schemas/
 # Full suite (requires local Mongo):
 mix test
 
-# Run dev server against production read-only Mongo:
-MONGO_URL="mongodb+srv://csp-readonly:..@host/csp-2" mix phx.server
+# Run dev server against production read-only Mongo (for parity diffs):
+MONGO_READ_ONLY=1 \
+  MONGO_URL="mongodb+srv://csp-readonly:..@host/csp-2" \
+  mix phx.server
 ```
+
+### `MONGO_READ_ONLY=1`
+
+Disables the `findAndModify` request-count bump on the auth path so the
+server can boot against a read-only replica (e.g. Atlas analytics node).
+It's strictly a diagnostic flag — `requestCount` accounting is dropped
+while it's set. `config/runtime.exs` raises on boot if it's set alongside
+`MIX_ENV=prod`. See `lib/csp_api/users.ex:by_api_key_and_bump/1`.
+
+See `.env.example` for the full set of environment knobs.
 
 ## Same-contract testing across both backends
 
@@ -97,4 +109,25 @@ CSP_BASE_URL="http://localhost:4002" \
   CSP_API_KEY="smoke-key-12345" \
   CSP_ALLOW_WRITES=1 \
   python3 -m pytest ../contract_tests/
+```
+
+## Parity diff vs. live Ruby
+
+`scripts/parity_diff.sh` issues the same paths against the running
+Phoenix port and live Ruby prod, flattens JSON to `[path, value]` tuples
+with `jq`, sorts, and uses `comm` to categorize differences (`extra_null`,
+`value_change`, `ruby_only`, `phx_extra`). Requires `MONGO_READ_ONLY=1`
+on the Phoenix side so it can boot against the production read-only
+replica.
+
+```sh
+MONGO_READ_ONLY=1 \
+  MONGO_URL="mongodb+srv://csp-readonly:..@host/csp-2" \
+  mix phx.server &
+
+CSP_API_KEY=... ./scripts/parity_diff.sh \
+  /api/v1/jurisdictions \
+  /api/v1/jurisdictions/MD \
+  /api/v1/standard_sets/MD_D1_grade-01 \
+  /sitemap.xml
 ```
