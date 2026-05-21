@@ -49,13 +49,23 @@ defmodule CspApiWeb.Plugs.JwtAuth do
       decoded_secret = Base.url_decode64!(secret, padding: false)
       signer = Joken.Signer.create("HS256", decoded_secret)
 
-      case Joken.verify_and_validate(%{}, token, signer) do
+      case Joken.verify_and_validate(token_config(), token, signer) do
         {:ok, %{"aud" => ^client_id}} -> conn
         _ -> unauthorized(conn, "Invalid Token")
       end
     end
   rescue
     _ -> unauthorized(conn, "Invalid Token")
+  end
+
+  # Ruby's `JWT.decode(token, key)` (jwt 2.2.x) defaults to `verify: true`,
+  # which validates `exp`, `nbf`, and `iat`. Joken's `verify_and_validate`
+  # with an empty config only verifies the signature — so we'd silently
+  # accept expired tokens. Use the default claim validators but skip the
+  # ones we don't have a value for or handle elsewhere (`aud` is matched
+  # in the case clause above; we don't pin `iss`).
+  defp token_config do
+    Joken.Config.default_claims(skip: [:iss, :aud, :jti])
   end
 
   defp unauthorized(conn, msg) do

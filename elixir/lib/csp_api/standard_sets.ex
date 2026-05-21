@@ -42,6 +42,12 @@ defmodule CspApi.StandardSets do
   Upserts a standard set, bumping `version`, recomputing `standardsCount`,
   and stashing the previous revision in `standard_set_versions`.
 
+  Atomic on `version`: the entire write is a single `findAndModify` with
+  `$inc` on `version` and `$set` on everything else. Mongo serializes
+  concurrent calls against the same `_id`, so two simultaneous upserts
+  can't both produce `version=N+1` — they're guaranteed to land at N+1
+  and N+2 in some order.
+
   Returns `{:ok, struct}` or `{:error, changeset}`.
   """
   def upsert(attrs) when is_map(attrs) do
@@ -54,33 +60,66 @@ defmodule CspApi.StandardSets do
     if is_nil(id) do
       {:error, "id is required for upsert"}
     else
-      old = Repo.get(StandardSet, id)
+      # Run the changeset against an empty struct so all validations
+      # (`validate_required`, `validate_education_levels`, embed casts) fire
+      # regardless of whether the doc already exists in Mongo.
+      changeset = StandardSet.changeset(%StandardSet{id: id}, Map.put(attrs, :id, id))
 
-      if old, do: save_version(old)
-
-      standards = attrs[:standards] || %{}
-
-      attrs =
-        attrs
-        |> Map.put(:id, id)
-        |> Map.put(:version, (old && old.version || 0) + 1)
-        |> Map.put(:updatedAt, DateTime.utc_now() |> DateTime.truncate(:second))
-        |> Map.put(:standardsCount, map_size(standards))
-
-      changeset = StandardSet.changeset(old || %StandardSet{}, attrs)
-
-      case Repo.insert_or_update(changeset) do
-        {:ok, set} = ok ->
-          # Mirror Ruby's `StandardSet.update`:
-          #   * rebuild the denormalized `cached_standards` rows
-          #   * push the new revision into Algolia
-          CspApi.CachedStandards.one(set)
-          CspApi.Algolia.index(set)
-          ok
-
-        other ->
-          other
+      if changeset.valid? do
+        do_atomic_upsert(Ecto.Changeset.apply_changes(changeset))
+      else
+        {:error, changeset}
       end
+    end
+  end
+
+  defp do_atomic_upsert(%StandardSet{} = applied) do
+    now = DateTime.utc_now() |> DateTime.truncate(:second)
+    standards = applied.standards || %{}
+
+    # Build the `$set` payload from the validated struct. Drop the primary
+    # key (it's in the query), `version` (handled by `$inc`), and
+    # `createdAt` (only set on first insert via `$setOnInsert`). The
+    # adapter encodes the rest, including the embedded Ecto sub-docs,
+    # once we flatten them to plain maps.
+    set_payload =
+      applied
+      |> deep_demap_struct()
+      |> Map.drop([:_id, :id, :version, :createdAt])
+      |> Map.put(:updatedAt, now)
+      |> Map.put(:standardsCount, map_size(standards))
+
+    result =
+      Mongo.Ecto.command(Repo,
+        findAndModify: "standard_sets",
+        query: %{"_id" => applied.id},
+        update: %{
+          "$inc" => %{"version" => 1},
+          "$set" => set_payload,
+          "$setOnInsert" => %{"createdAt" => now}
+        },
+        upsert: true,
+        new: false
+      )
+
+    # `new: false` returns the PRE-update doc. On insert it's nil. On
+    # update we stash it in `standard_set_versions` — Mongo serializes
+    # the findAndModify, so the returned `value` is the immediately-prior
+    # revision even under concurrent calls.
+    case result do
+      %{"value" => nil} -> :ok
+      %{"value" => old} when is_map(old) -> save_version(old)
+      _ -> :ok
+    end
+
+    case Repo.get(StandardSet, applied.id) do
+      nil ->
+        {:error, "post-upsert read returned nil"}
+
+      %StandardSet{} = set ->
+        CspApi.CachedStandards.one(set)
+        CspApi.Algolia.index(set)
+        {:ok, set}
     end
   end
 
@@ -94,13 +133,20 @@ defmodule CspApi.StandardSets do
     end)
   end
 
-  defp save_version(old) do
+  # Accepts either an Ecto-loaded `%StandardSet{}` (atom keys, `:id`) or a
+  # raw Mongo doc (string keys, `"_id"`). The new atomic upsert path hands
+  # us the latter via `findAndModify(new: false)`.
+  defp save_version(%StandardSet{} = old), do: save_version(deep_demap_struct(old))
+
+  defp save_version(%{} = old) do
+    old_id = old[:id] || old[:_id] || old["_id"] || old["id"]
+
     versioned =
       old
-      |> deep_demap_struct()
-      |> Map.put(:standardSetId, old.id)
-      |> Map.put(:id, ID.csp_uuid())
-      |> Map.put(:createdAt, DateTime.utc_now() |> DateTime.truncate(:second))
+      |> Map.drop([:__meta__, :_id, "_id", :id])
+      |> Map.put("standardSetId", old_id)
+      |> Map.put("_id", ID.csp_uuid())
+      |> Map.put("createdAt", DateTime.utc_now() |> DateTime.truncate(:second))
 
     Mongo.Ecto.command(Repo, insert: "standard_set_versions", documents: [versioned])
   end

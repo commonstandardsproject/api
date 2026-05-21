@@ -113,12 +113,13 @@ CSP_BASE_URL="http://localhost:4002" \
 
 ## Parity diff vs. live Ruby
 
-`scripts/parity_diff.sh` issues the same paths against the running
-Phoenix port and live Ruby prod, flattens JSON to `[path, value]` tuples
-with `jq`, sorts, and uses `comm` to categorize differences (`extra_null`,
-`value_change`, `ruby_only`, `phx_extra`). Requires `MONGO_READ_ONLY=1`
-on the Phoenix side so it can boot against the production read-only
-replica.
+### Read-side: `scripts/parity_diff.sh`
+
+Issues the same paths against the running Phoenix port and live Ruby
+prod, flattens JSON to `[path, value]` tuples with `jq`, sorts, and uses
+`comm` to categorize differences (`extra_null`, `value_change`,
+`ruby_only`, `phx_extra`). Requires `MONGO_READ_ONLY=1` on the Phoenix
+side so it can boot against the production read-only replica.
 
 ```sh
 MONGO_READ_ONLY=1 \
@@ -129,5 +130,46 @@ CSP_API_KEY=... ./scripts/parity_diff.sh \
   /api/v1/jurisdictions \
   /api/v1/jurisdictions/MD \
   /api/v1/standard_sets/MD_D1_grade-01 \
-  /sitemap.xml
+  /api/v1/sitemap.xml
 ```
+
+### Building a representative corpus
+
+`scripts/build_parity_corpus.sh` walks the running Phoenix port to
+synthesize a ~250-URL corpus covering listings, every major
+jurisdiction type, a slice of standard sets (including
+`?standardsAsArray=true`), and a handful of standard documents. Pipe
+its output into `parity_diff.sh`:
+
+```sh
+CSP_API_KEY=... ./scripts/build_parity_corpus.sh > /tmp/corpus.txt
+CSP_API_KEY=... ./scripts/parity_diff.sh $(< /tmp/corpus.txt)
+```
+
+Last run (2026-05-21, 249 paths): **242/249 byte-clean**. The 6 that
+return `status: ruby=500 phx=200` are a long-standing Ruby bug — the
+`/standard_documents/:id` endpoint references the non-existent
+`Entities::StandardsDocument` (extra `s`) and crashes on every hit;
+Phoenix returns valid JSON. The 7th non-clean path is `/swagger_doc`,
+which is out of scope per the maintainer (grape-swagger vs OpenApiSpex).
+
+### Write-side: `scripts/post_parity_diff.sh`
+
+Drives `create_blank → user_update → comment → submit →
+change_status(rejected)` against two backends pointed at separate
+databases, then diffs the response bodies (after stripping non-
+deterministic fields: ids, timestamps, asanaTaskId, pullRequestUrl).
+
+```sh
+# Boot Ruby at :3000 (docker compose up from repo root)
+# Boot Phoenix at :4000 against a separate local Mongo db
+
+RUBY_BASE=http://localhost:3000 \
+  PHX_BASE=http://localhost:4000 \
+  CSP_API_KEY=... \
+  ./scripts/post_parity_diff.sh
+```
+
+Each backend MUST have a user with `isCommitter: true` for the given
+API key and accept `Authorization: TEST`. Both sides need write access
+to Mongo (no `MONGO_READ_ONLY`).

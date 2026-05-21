@@ -3,6 +3,16 @@ defmodule CspApiWeb.SitemapController do
   Port of the `/api/v1/sitemap.xml` Ruby endpoint. Returns an XML
   `urlset` containing one URL per standard set, pointing at the public
   search page. Public — no API key required.
+
+  Output is formatted to match Ruby's Nokogiri `XML::Builder.to_xml`
+  byte-for-byte:
+
+    * `<?xml version="1.0"?>` (no `encoding` attribute — Nokogiri omits
+      it by default)
+    * Two-space indented `<url>` blocks, each wrapping `<loc>`
+    * URL: literal `"` around the id; only `[`/`]` are percent-encoded
+      (Ruby builds the URL with `%5B"...id..."%5D` interpolation, no
+      URI escaping of the quotes)
   """
   use CspApiWeb, :controller
 
@@ -12,15 +22,17 @@ defmodule CspApiWeb.SitemapController do
   def show(conn, _params) do
     docs = MongoX.find("standard_sets", %{}, projection: %{"_id" => 1})
 
-    body =
-      [
-        ~s(<?xml version="1.0" encoding="UTF-8"?>),
-        ~s(<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">)
-      ] ++
-        Enum.map(docs, fn %{"_id" => id} ->
-          encoded = URI.encode_www_form(~s(["#{id}"]))
-          ~s(<url><loc>http://commonstandardsproject.com/search?ids=#{encoded}</loc></url>)
-        end) ++ [~s(</urlset>)]
+    url_blocks =
+      Enum.map(docs, fn %{"_id" => id} ->
+        ~s(  <url>\n    <loc>http://commonstandardsproject.com/search?ids=%5B"#{id}"%5D</loc>\n  </url>\n)
+      end)
+
+    body = [
+      ~s(<?xml version="1.0"?>\n),
+      ~s(<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n),
+      url_blocks,
+      ~s(</urlset>\n)
+    ]
 
     conn
     |> put_resp_content_type("text/xml")
