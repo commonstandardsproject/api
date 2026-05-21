@@ -56,12 +56,16 @@ defmodule CspApi.PullRequests do
       title: "Woohoo! New pull request created by #{name}"
     }
 
+    # Ruby leaves PR-level `title` unset on create_blank — Virtus's
+    # `attribute :title, String` (no default) yields nil. Phoenix matches
+    # by passing nil; the title gets recomputed on `user_update` once the
+    # user fills in jurisdiction/subject/title.
     insert_pr(user, %{
       activities: [activity],
       standardSet: default_standard_set(),
       standardsCount: 0,
       forkedFromStandardSetId: nil,
-      title: ": : ",
+      title: nil,
       createdAt: now,
       updatedAt: now,
       updatedAtDate: now
@@ -265,7 +269,11 @@ defmodule CspApi.PullRequests do
         "URL" => "http://creativecommons.org/licenses/by/4.0/us/",
         "rightsHolder" => "Common Curriculum, Inc."
       },
-      "jurisdiction" => %{"id" => "", "title" => ""},
+      # Ruby's Virtus `StandardSet.Jurisdiction` has no default for `:id`
+      # or `:title`, so they're nil. Phoenix matches — leaving them nil is
+      # equivalent to omitting them from the wire payload after the view's
+      # nil-rendering rules apply.
+      "jurisdiction" => %{"id" => nil, "title" => nil},
       "cspStatus" => %{"value" => "visible"}
     }
   end

@@ -160,16 +160,55 @@ change_status(rejected)` against two backends pointed at separate
 databases, then diffs the response bodies (after stripping non-
 deterministic fields: ids, timestamps, asanaTaskId, pullRequestUrl).
 
-```sh
-# Boot Ruby at :3000 (docker compose up from repo root)
-# Boot Phoenix at :4000 against a separate local Mongo db
+Latest run (2026-05-21): **6/6 endpoints byte-clean** with parallel
+`parity-ruby` / `parity-phx` Mongo databases.
 
+```sh
+# 1. Seed two parallel databases with the same fixtures (matching ids
+#    so the diff sees identical inputs).
+mongosh -u admin -p admin --eval '
+  ["parity-ruby", "parity-phx"].forEach(name => {
+    const d = db.getSiblingDB(name);
+    d.dropDatabase();
+    d.users.insertOne({_id:"PARITY_COMMITTER",apiKey:"parity-test-key",isCommitter:true,profile:{name:"Parity Tester"},email:"parity@test.com"});
+    d.jurisdictions.insertOne({_id:"PARITY",title:"Parity Jurisdiction",type:"state",status:"approved"});
+    d.standard_sets.insertOne({_id:"PARITY_TEST_SET",title:"Parity Test",subject:"Math",educationLevels:["01"],jurisdiction:{id:"PARITY",title:"Parity Jurisdiction"},document:{id:"PARITY_DOC"},standards:{S1:{id:"S1",depth:0,position:1,description:"only standard"}},standardsCount:1,version:1});
+  });'
+
+# 2. Boot the Ruby app against parity-ruby, with ENVIRONMENT=test
+#    so the `Authorization: TEST` JWT bypass is honored, and the
+#    Postmark stub injected so `comment`/`submit`/`change_status`
+#    don't crash on missing API credentials.
+docker compose -f docker-compose.yml -f docker-compose.parity.yml \
+  up --build -d  # docker-compose.parity.yml is committed alongside
+
+# OR (the form actually used 2026-05-21, since the upstream Dockerfile's
+# ENTRYPOINT/CMD interaction means `bundle exec puma` must be passed
+# explicitly):
+docker run -d --name csp-ruby-parity -p 3000:3000 \
+  -e MONGODB_CONNECTION_STRING='mongodb://admin:admin@host.docker.internal:27017' \
+  -e MONGODB_DATABASE=parity-ruby \
+  -e ENVIRONMENT=test \
+  -e RACK_ENV=development \
+  -e POSTMARK_API_TOKEN=fake \
+  -v /Users/.../csp-api:/home/app \
+  --entrypoint bundle csp-api-web \
+  exec ruby -r/home/app/elixir/scripts/parity_postmark_stub.rb \
+    -S puma -C puma.rb
+
+# 3. Boot Phoenix in test mode (JWT bypass on) against parity-phx.
+MIX_ENV=test PHX_SERVE_TEST=1 \
+  MONGO_URL_TEST='mongodb://admin:admin@localhost:27017/parity-phx?authSource=admin' \
+  mix phx.server &
+
+# 4. Run the diff.
 RUBY_BASE=http://localhost:3000 \
-  PHX_BASE=http://localhost:4000 \
-  CSP_API_KEY=... \
+  PHX_BASE=http://localhost:4002 \
+  CSP_API_KEY=parity-test-key \
   ./scripts/post_parity_diff.sh
 ```
 
-Each backend MUST have a user with `isCommitter: true` for the given
-API key and accept `Authorization: TEST`. Both sides need write access
-to Mongo (no `MONGO_READ_ONLY`).
+`scripts/parity_postmark_stub.rb` monkey-patches
+`Postmark::ApiClient#deliver_with_template` to a no-op so the
+status-change emails the Ruby app sends don't require real Postmark
+credentials.

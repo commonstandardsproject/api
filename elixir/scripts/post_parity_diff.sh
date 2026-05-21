@@ -58,12 +58,29 @@ run_sequence() {
   fi
   echo "$pr_id" > "$OUT_DIR/${tag}_pr_id"
 
-  # 2. user_update — populate a minimal standardSet
+  # 2. user_update — Ember's client sends the entire loaded PR back as
+  # `data`, not just the diff. Ruby's `user_update` calls
+  # `PullRequest.new(params)` which requires submitterId/Name to be
+  # strings, so a minimal `{standardSet: …}` body fails validation.
+  # Mirror Ember: take the create response and post it back with the
+  # standardSet edited.
   local update_body
-  update_body=$(cat <<'JSON'
-{"data":{"standardSet":{"id":"PARITY_TEST_SET","title":"Parity Test","subject":"Math","educationLevels":["01"],"jurisdiction":{"id":"PARITY","title":"Parity Jurisdiction"},"document":{"id":"PARITY_DOC"},"standards":{"S1":{"id":"S1","depth":0,"position":1,"description":"only standard"}}}}}
-JSON
-)
+  update_body=$(jq -c '
+    .data
+    | .standardSet = {
+        id: "PARITY_TEST_SET",
+        title: "Parity Test",
+        subject: "Math",
+        normalizedSubject: null,
+        educationLevels: ["01"],
+        jurisdiction: { id: "PARITY", title: "Parity Jurisdiction" },
+        cspStatus: { value: "visible" },
+        license: { title: "CC BY 4.0 US", URL: "http://creativecommons.org/licenses/by/4.0/us/", rightsHolder: "Common Curriculum, Inc." },
+        document: { id: "PARITY_DOC" },
+        standards: { S1: { id: "S1", depth: 0, position: 1, description: "only standard" } }
+      }
+    | { data: . }
+  ' "$OUT_DIR/${tag}_01_create.json")
   hit "$base" POST "/api/v1/pull_requests/$pr_id" "$OUT_DIR/${tag}_02_update.json" "$update_body" > /dev/null
 
   # 3. Comment
