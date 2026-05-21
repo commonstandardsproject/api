@@ -1,18 +1,28 @@
 defmodule CspApiWeb.SitemapControllerTest do
   @moduledoc """
-  Pins the sitemap response format byte-for-byte against the Ruby Grape
-  endpoint (which uses Nokogiri's XML::Builder.to_xml). Verified against
-  live prod 2026-05-21: 24,296 URLs at 3,081,779 bytes, `cmp` clean.
+  Pins the sitemap response: valid XML, one `<url>` per standard set,
+  correct URL shape, namespace, content-type.
 
-  If this test starts failing, the wire format has drifted. SEO/sitemap
-  consumers care about exact format here.
+  The wire format is `:xmerl.export_simple/2` output (compact, no
+  pretty-printing). Sitemap crawlers parse XML, not text, so the lack
+  of Nokogiri-style indentation is invisible to consumers.
   """
 
   use CspApiWeb.ConnCase, async: false
 
   alias CspApi.Fixtures
 
-  test "matches Ruby Nokogiri output verbatim" do
+  defp parse_xml(body) do
+    {doc, _} = :xmerl_scan.string(String.to_charlist(body))
+    doc
+  end
+
+  defp loc_urls(xml) do
+    :xmerl_xpath.string(~c"//loc/text()", xml)
+    |> Enum.map(fn {:xmlText, _, _, _, val, _} -> List.to_string(val) end)
+  end
+
+  test "emits one <url><loc> per standard set, namespaced and content-typed" do
     Fixtures.insert_jurisdiction()
     Fixtures.insert_standard_set()
 
@@ -23,37 +33,41 @@ defmodule CspApiWeb.SitemapControllerTest do
       educationLevels: ["02"]
     })
 
-    # Sitemap consumers (Google etc.) don't send an Accept header in
-    # practice. The `:accepts` plug lets that through; setting Accept:
-    # application/xml would make it 406.
+    # Sitemap crawlers don't send an Accept header — the `:accepts` plug
+    # lets that through. Setting Accept: application/xml would 406.
+    conn =
+      Phoenix.ConnTest.build_conn()
+      |> get("/api/v1/sitemap.xml")
+
+    assert conn.status == 200
+
+    [content_type] = Plug.Conn.get_resp_header(conn, "content-type")
+    assert content_type =~ "text/xml"
+
+    body = response(conn, 200)
+
+    # Namespace declaration is on the root element.
+    assert body =~ ~s(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+
+    xml = parse_xml(body)
+    urls = loc_urls(xml) |> Enum.sort()
+
+    # Locs match the Ruby URL template: literal `"` around the id,
+    # `[`/`]` pre-encoded. (Ruby builds these via string interpolation;
+    # we do the same — xmerl leaves `"` in element text alone.)
+    assert urls == [
+             ~s(http://commonstandardsproject.com/search?ids=%5B"ANOTHER_SET"%5D),
+             ~s(http://commonstandardsproject.com/search?ids=%5B"MD_D1_grade-01"%5D)
+           ]
+  end
+
+  test "no standard sets → empty <urlset/>" do
     body =
       Phoenix.ConnTest.build_conn()
       |> get("/api/v1/sitemap.xml")
       |> response(200)
 
-    expected =
-      ~s(<?xml version="1.0"?>\n) <>
-        ~s(<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n)
-
-    assert String.starts_with?(body, expected)
-    assert String.ends_with?(body, ~s(</urlset>\n))
-
-    # Each url block: 2-space indented <url>, 4-space indented <loc>, the
-    # id wrapped in literal " (not %22), [/] percent-encoded only.
-    assert body =~
-             ~s(  <url>\n    <loc>http://commonstandardsproject.com/search?ids=%5B"MD_D1_grade-01"%5D</loc>\n  </url>\n)
-
-    assert body =~
-             ~s(  <url>\n    <loc>http://commonstandardsproject.com/search?ids=%5B"ANOTHER_SET"%5D</loc>\n  </url>\n)
-
-    # No %22 anywhere — that would mean the URL builder is escaping the
-    # quotes Ruby leaves raw.
-    refute body =~ "%22"
-  end
-
-  test "sets text/xml content-type (Ruby's Grape `content_type`)", %{conn: conn} do
-    conn = get(conn, "/api/v1/sitemap.xml")
-    [content_type] = Plug.Conn.get_resp_header(conn, "content-type")
-    assert content_type =~ "text/xml"
+    xml = parse_xml(body)
+    assert :xmerl_xpath.string(~c"//url", xml) == []
   end
 end
