@@ -65,4 +65,11 @@ defmodule CspApiWeb.Router do
     pipe_through [:api]
     get "/healthz", HealthController, :show
   end
+
+  # Swagger UI at `/` (the Ruby app's `Main` Sinatra route). Serves a
+  # CDN-hosted Swagger UI 5.x that consumes the OpenAPI 3.0 spec
+  # emitted by `/api/v1/swagger_doc`.
+  scope "/", CspApiWeb do
+    get "/", RootController, :show
+  end
 end
