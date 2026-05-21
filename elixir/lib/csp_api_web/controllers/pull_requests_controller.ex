@@ -3,45 +3,46 @@ defmodule CspApiWeb.PullRequestsController do
   use OpenApiSpex.ControllerSpecs
 
   alias CspApi.PullRequests
-  alias CspApiWeb.{PullRequestJSON, Schemas}
+  alias CspApiWeb.Errors
+  alias CspApiWeb.PullRequests.{DetailJSON, SummaryJSON}
 
   tags ["PullRequests"]
 
   operation :index,
     summary: "List all active pull requests",
     responses: [
-      ok: {"PRs", "application/json", Schemas.Envelope.list_of(Schemas.PullRequest)}
+      ok: {"All non-rejected pull requests, full detail", "application/json", DetailJSON.list_schema()}
     ]
 
   def index(conn, _params) do
     prs = PullRequests.list_active()
-    json(conn, %{data: Enum.map(prs, &PullRequestJSON.full/1)})
+    json(conn, %{data: Enum.map(prs, &DetailJSON.data/1)})
   end
 
   operation :for_user,
     summary: "List a user's open pull requests",
     parameters: [user_id: [in: :path, required: true, type: :string]],
     responses: [
-      ok: {"PRs (summary)", "application/json", Schemas.Envelope.list_of(Schemas.PullRequest)}
+      ok: {"The requested user's open pull requests (summary fields)", "application/json", SummaryJSON.list_schema()}
     ]
 
   def for_user(conn, %{"user_id" => user_id}) do
     prs = PullRequests.list_for_user(user_id)
-    json(conn, %{data: Enum.map(prs, &PullRequestJSON.summary/1)})
+    json(conn, %{data: Enum.map(prs, &SummaryJSON.data/1)})
   end
 
   operation :show,
     summary: "Fetch a pull request by id",
     parameters: [id: [in: :path, required: true, type: :string]],
     responses: [
-      ok: {"PR", "application/json", Schemas.Envelope.of(Schemas.PullRequest)},
-      not_found: {"Not found", "application/json", Schemas.Error}
+      ok: {"The requested pull request with full detail", "application/json", DetailJSON.schema()},
+      not_found: {"Pull request not found", "application/json", Errors.JSON.schema()}
     ]
 
   def show(conn, %{"id" => id}) do
     case PullRequests.get(id) do
       nil -> conn |> put_status(:not_found) |> json(%{error: "Not found"})
-      pr -> json(conn, %{data: PullRequestJSON.full(pr)})
+      pr -> json(conn, %{data: DetailJSON.data(pr)})
     end
   end
 
@@ -55,7 +56,7 @@ defmodule CspApiWeb.PullRequestsController do
          properties: %{standardSetId: %OpenApiSpex.Schema{type: :string}}
        }},
     responses: [
-      ok: {"PR", "application/json", Schemas.Envelope.of(Schemas.PullRequest)}
+      ok: {"The newly created pull request", "application/json", DetailJSON.schema()}
     ]
 
   def create(conn, params) do
@@ -69,7 +70,7 @@ defmodule CspApiWeb.PullRequestsController do
         PullRequests.create_blank(user)
       end
 
-    json(conn, %{data: PullRequestJSON.full(pr)})
+    json(conn, %{data: DetailJSON.data(pr)})
   end
 
   operation :user_update,
@@ -82,10 +83,10 @@ defmodule CspApiWeb.PullRequestsController do
          properties: %{data: %OpenApiSpex.Schema{type: :object, additionalProperties: true}}
        }},
     responses: [
-      ok: {"PR", "application/json", Schemas.Envelope.of(Schemas.PullRequest)},
-      not_found: {"Not found", "application/json", Schemas.Error},
-      unprocessable_entity: {"Validation errors", "application/json", Schemas.Error},
-      unauthorized: {"Caller cannot edit this PR", "application/json", Schemas.Error}
+      ok: {"The pull request with the requested changes applied", "application/json", DetailJSON.schema()},
+      not_found: {"Pull request not found", "application/json", Errors.JSON.schema()},
+      unprocessable_entity: {"Validation errors", "application/json", Errors.JSON.schema()},
+      unauthorized: {"Caller cannot edit this PR", "application/json", Errors.JSON.schema()}
     ]
 
   def user_update(conn, %{"id" => id} = params) do
@@ -95,7 +96,7 @@ defmodule CspApiWeb.PullRequestsController do
          true <- PullRequests.can_edit?(pr, user) do
       case PullRequests.user_update(id, params["data"] || %{}) do
         {:ok, updated} ->
-          json(conn, %{data: PullRequestJSON.full(updated)})
+          json(conn, %{data: DetailJSON.data(updated)})
 
         {:error, %Ecto.Changeset{} = cs} ->
           conn
@@ -112,10 +113,9 @@ defmodule CspApiWeb.PullRequestsController do
     summary: "Submit the PR for review",
     parameters: [id: [in: :path, required: true, type: :string]],
     responses: [
-      ok: {"PR (approval-requested)", "application/json",
-           Schemas.Envelope.of(Schemas.PullRequest)},
-      not_found: {"Not found", "application/json", Schemas.Error},
-      unauthorized: {"Caller cannot edit this PR", "application/json", Schemas.Error}
+      ok: {"The pull request, now in `approval-requested` status", "application/json", DetailJSON.schema()},
+      not_found: {"Pull request not found", "application/json", Errors.JSON.schema()},
+      unauthorized: {"Caller cannot edit this PR", "application/json", Errors.JSON.schema()}
     ]
 
   def submit(conn, %{"id" => id}) do
@@ -130,7 +130,7 @@ defmodule CspApiWeb.PullRequestsController do
              "Thanks so much! We'll take a look and get back to you in the next week (if not sooner)",
              true
            ) do
-      json(conn, %{data: PullRequestJSON.full(updated)})
+      json(conn, %{data: DetailJSON.data(updated)})
     else
       nil -> conn |> put_status(:not_found) |> json(%{error: "Not found"})
       false -> send_resp(conn, 401, "")
@@ -154,9 +154,9 @@ defmodule CspApiWeb.PullRequestsController do
          required: [:status]
        }},
     responses: [
-      ok: {"PR", "application/json", Schemas.Envelope.of(Schemas.PullRequest)},
-      not_found: {"Not found", "application/json", Schemas.Error},
-      unauthorized: {"Caller is not a committer", "application/json", Schemas.Error}
+      ok: {"The pull request, possibly with a new status", "application/json", DetailJSON.schema()},
+      not_found: {"Pull request not found", "application/json", Errors.JSON.schema()},
+      unauthorized: {"Caller is not a committer", "application/json", Errors.JSON.schema()}
     ]
 
   def change_status(conn, %{"id" => id, "status" => status} = params) do
@@ -165,13 +165,13 @@ defmodule CspApiWeb.PullRequestsController do
     if Map.get(user, :isCommitter) == true do
       case PullRequests.change_status(id, status, params["message"], true) do
         {:ok, pr} ->
-          json(conn, %{data: PullRequestJSON.full(pr)})
+          json(conn, %{data: DetailJSON.data(pr)})
 
         # Ruby returns the unchanged PR with 200 when status is unknown.
         {:error, :invalid_status} ->
           case PullRequests.get(id) do
             nil -> conn |> put_status(:not_found) |> json(%{error: "Not found"})
-            pr -> json(conn, %{data: PullRequestJSON.full(pr)})
+            pr -> json(conn, %{data: DetailJSON.data(pr)})
           end
 
         {:error, :not_found} ->
@@ -193,9 +193,9 @@ defmodule CspApiWeb.PullRequestsController do
          required: [:comment]
        }},
     responses: [
-      ok: {"PR", "application/json", Schemas.Envelope.of(Schemas.PullRequest)},
-      not_found: {"Not found", "application/json", Schemas.Error},
-      unauthorized: {"Caller cannot edit this PR", "application/json", Schemas.Error}
+      ok: {"The pull request with the new comment appended to its activities", "application/json", DetailJSON.schema()},
+      not_found: {"Pull request not found", "application/json", Errors.JSON.schema()},
+      unauthorized: {"Caller cannot edit this PR", "application/json", Errors.JSON.schema()}
     ]
 
   def comment(conn, %{"id" => id, "comment" => comment}) do
@@ -204,7 +204,7 @@ defmodule CspApiWeb.PullRequestsController do
     with %{} = pr <- PullRequests.get(id),
          true <- PullRequests.can_edit?(pr, user) do
       updated = PullRequests.add_comment(pr, comment, user)
-      json(conn, %{data: PullRequestJSON.full(updated)})
+      json(conn, %{data: DetailJSON.data(updated)})
     else
       nil -> conn |> put_status(:not_found) |> json(%{error: "Not found"})
       false -> send_resp(conn, 401, "")

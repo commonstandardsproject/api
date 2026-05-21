@@ -27,9 +27,9 @@ defmodule CspApiWeb.Router do
     get "/standard_sets/:id", StandardSetsController, :show
     get "/standard_documents/:id", StandardDocumentsController, :show
 
-    get "/pull_requests", PullRequestsController, :index
+    # Only `pull_requests/user/:user_id` is JWT-free in Ruby; the index and
+    # show endpoints call `validate_token`.
     get "/pull_requests/user/:user_id", PullRequestsController, :for_user
-    get "/pull_requests/:id", PullRequestsController, :show
   end
 
   scope "/api/v1", CspApiWeb do
@@ -41,6 +41,8 @@ defmodule CspApiWeb.Router do
 
     post "/jurisdictions", JurisdictionsController, :create
 
+    get "/pull_requests", PullRequestsController, :index
+    get "/pull_requests/:id", PullRequestsController, :show
     post "/pull_requests", PullRequestsController, :create
     post "/pull_requests/:id", PullRequestsController, :user_update
     post "/pull_requests/:id/submit", PullRequestsController, :submit

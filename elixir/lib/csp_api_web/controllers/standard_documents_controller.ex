@@ -3,7 +3,7 @@ defmodule CspApiWeb.StandardDocumentsController do
   use OpenApiSpex.ControllerSpecs
 
   alias CspApi.MongoX
-  alias CspApiWeb.Schemas
+  alias CspApiWeb.StandardDocuments.DetailJSON
 
   tags ["StandardDocuments"]
 
@@ -11,7 +11,7 @@ defmodule CspApiWeb.StandardDocumentsController do
     summary: "Get a standard document",
     parameters: [id: [in: :path, required: true, type: :string]],
     responses: [
-      ok: {"Standard document", "application/json", Schemas.StandardDocument}
+      ok: {"A standard document with its standards and metadata", "application/json", DetailJSON.schema()}
     ]
 
   def show(conn, %{"id" => id}) do
@@ -25,8 +25,13 @@ defmodule CspApiWeb.StandardDocumentsController do
              "standardSetQueries" => 1
            }
          ) do
-      nil -> json(conn, %{})
-      doc -> json(conn, %{id: doc["_id"], document: doc["document"], documentMeta: doc["documentMeta"], standardSetQueries: doc["standardSetQueries"]})
+      nil ->
+        json(conn, %{})
+
+      doc ->
+        # The Mongo doc has "_id"; map it back to :id for the view.
+        source = Map.put(doc, "id", doc["_id"])
+        json(conn, %{data: DetailJSON.data(source)})
     end
   end
 end

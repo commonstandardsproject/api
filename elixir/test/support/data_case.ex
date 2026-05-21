@@ -62,7 +62,7 @@ defmodule CspApi.DataCase do
   end
 
   defp assert_test_database! do
-    url = Application.get_env(:csp_api, CspApi.Repo)[:url]
+    url = Application.get_env(:csp_api, CspApi.Repo)[:mongo_url]
 
     unless is_binary(url) and String.contains?(url, "test") do
       raise """

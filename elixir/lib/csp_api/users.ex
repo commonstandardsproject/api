@@ -17,15 +17,27 @@ defmodule CspApi.Users do
     # incremented atomically alongside the find. Ecto's `Repo.update` would
     # require a fetch-then-update, which is racier and exactly what the
     # Ruby code avoids.
-    case Mongo.Ecto.command(Repo,
-           findAndModify: "users",
-           query: %{"apiKey" => key},
-           update: %{"$inc" => %{"requestCount" => 1}},
-           new: true
-         ) do
-      %{"value" => nil} -> nil
-      %{"value" => doc} -> load_user(doc)
-      _ -> nil
+    #
+    # Under :mongo_read_only (set when pointing at a read-only replica for
+    # parity diffs), skip the bump and fall back to a plain find so the auth
+    # path still works without write privileges. The lost requestCount bump
+    # is acceptable for diagnostic use; never set this in prod.
+    if Application.get_env(:csp_api, :mongo_read_only, false) do
+      case Repo.get_by(User, apiKey: key) do
+        nil -> nil
+        %User{} = user -> user
+      end
+    else
+      case Mongo.Ecto.command(Repo,
+             findAndModify: "users",
+             query: %{"apiKey" => key},
+             update: %{"$inc" => %{"requestCount" => 1}},
+             new: true
+           ) do
+        %{"value" => nil} -> nil
+        %{"value" => doc} -> load_user(doc)
+        _ -> nil
+      end
     end
   end
 

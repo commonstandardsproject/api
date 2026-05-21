@@ -30,9 +30,13 @@ defmodule CspApi.Schemas.PullRequest do
     field :forkedFromStandardSetId, :string
     field :standardsCount, :integer, default: 0
     field :asanaTaskId, :string
-    field :createdAt, :utc_datetime
-    field :updatedAt, :utc_datetime
-    field :updatedAtDate, :utc_datetime
+    # Prod stores these as strings with millisecond precision and an offset
+    # (e.g. "2016-04-26T20:38:49.437+00:00"), which doesn't parse as
+    # `:utc_datetime`. Ruby just passes the string through the JSON entity,
+    # so we keep the wire format identical by storing/serving the raw string.
+    field :createdAt, :string
+    field :updatedAt, :string
+    field :updatedAtDate, :string
     field :pullRequestUrl, :string
     field :title, :string
 

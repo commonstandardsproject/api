@@ -3,8 +3,8 @@ defmodule CspApiWeb.JurisdictionsController do
   use OpenApiSpex.ControllerSpecs
 
   alias CspApi.Jurisdictions
-  alias CspApiWeb.JurisdictionJSON
-  alias CspApiWeb.Schemas
+  alias CspApiWeb.Errors
+  alias CspApiWeb.Jurisdictions.{SummaryJSON, DetailJSON}
 
   tags ["Jurisdictions"]
 
@@ -12,13 +12,13 @@ defmodule CspApiWeb.JurisdictionsController do
     summary: "List jurisdictions",
     description: "Returns every jurisdiction visible to the calling user.",
     responses: [
-      ok: {"List of jurisdictions", "application/json", Schemas.Envelope.list_of(Schemas.Jurisdiction)}
+      ok: {"All jurisdictions the caller can see", "application/json", SummaryJSON.list_schema()}
     ]
 
   def index(conn, _params) do
     user_id = current_user_id(conn)
     jurisdictions = Jurisdictions.list_all(user_id)
-    json(conn, %{data: Enum.map(jurisdictions, &JurisdictionJSON.summary/1)})
+    json(conn, %{data: Enum.map(jurisdictions, &SummaryJSON.data/1)})
   end
 
   operation :show,
@@ -28,8 +28,7 @@ defmodule CspApiWeb.JurisdictionsController do
       hideHiddenSets: [in: :query, required: false, type: :boolean]
     ],
     responses: [
-      ok: {"Jurisdiction (full)", "application/json",
-           Schemas.Envelope.of(Schemas.Jurisdiction)}
+      ok: {"A jurisdiction and the standard sets that belong to it", "application/json", DetailJSON.schema()}
     ]
 
   def show(conn, %{"id" => id} = params) do
@@ -37,7 +36,7 @@ defmodule CspApiWeb.JurisdictionsController do
 
     case Jurisdictions.get(id, hide_hidden_sets: hide_hidden?) do
       nil -> json(conn, %{data: %{}})
-      {j, sets} -> json(conn, %{data: JurisdictionJSON.full(j, sets)})
+      {j, sets} -> json(conn, %{data: DetailJSON.data(j, %{standardSets: sets})})
     end
   end
 
@@ -47,12 +46,14 @@ defmodule CspApiWeb.JurisdictionsController do
       {"Jurisdiction attributes", "application/json",
        %OpenApiSpex.Schema{
          type: :object,
-         properties: %{jurisdiction: Schemas.Jurisdiction},
+         properties: %{
+           jurisdiction: %OpenApiSpex.Schema{type: :object, additionalProperties: true}
+         },
          required: [:jurisdiction]
        }},
     responses: [
-      ok: {"Created", "application/json", Schemas.Envelope.of(Schemas.Jurisdiction)},
-      unprocessable_entity: {"Validation errors", "application/json", Schemas.Error}
+      ok: {"The pending jurisdiction", "application/json", SummaryJSON.schema()},
+      unprocessable_entity: {"Validation errors", "application/json", Errors.JSON.schema()}
     ]
 
   def create(conn, %{"jurisdiction" => attrs}) when is_map(attrs) do
@@ -64,7 +65,7 @@ defmodule CspApiWeb.JurisdictionsController do
 
     case Jurisdictions.create_pending(atom_keyed(attrs), submitter_id) do
       {:ok, j} ->
-        json(conn, %{data: JurisdictionJSON.summary(j)})
+        json(conn, %{data: SummaryJSON.data(j)})
 
       {:error, %Ecto.Changeset{} = cs} ->
         conn

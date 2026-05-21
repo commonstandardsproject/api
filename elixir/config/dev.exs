@@ -1,7 +1,7 @@
 import Config
 
 config :csp_api, CspApi.Repo,
-  url: System.get_env("MONGO_URL") || "mongodb://localhost:27017/csp"
+  mongo_url: System.get_env("MONGO_URL") || "mongodb://localhost:27017/csp"
 
 config :csp_api, CspApiWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4000],

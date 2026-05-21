@@ -5,7 +5,7 @@ config :csp_api,
 
 config :csp_api, CspApi.Repo,
   adapter: Mongo.Ecto,
-  url: System.get_env("MONGO_URL") || "mongodb://localhost:27017/csp",
+  mongo_url: System.get_env("MONGO_URL") || "mongodb://localhost:27017/csp",
   pool_size: 5
 
 config :csp_api, CspApiWeb.Endpoint,

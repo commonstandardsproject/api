@@ -4,7 +4,7 @@ import Config
 # runs. The database name MUST contain "test" — `CspApi.TestCase` refuses to
 # clear anything else.
 config :csp_api, CspApi.Repo,
-  url: System.get_env("MONGO_URL_TEST") || "mongodb://localhost:27017/csp-test",
+  mongo_url: System.get_env("MONGO_URL_TEST") || "mongodb://localhost:27017/csp-test",
   pool_size: 2
 
 # `server: false` so `mix test` doesn't accidentally bind a port. The

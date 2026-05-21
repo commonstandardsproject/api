@@ -278,5 +278,11 @@ defmodule CspApi.PullRequests do
     end
   end
 
-  defp now, do: DateTime.utc_now() |> DateTime.truncate(:second)
+  # createdAt/updatedAt/updatedAtDate are stored as ISO8601 strings to
+  # match the prod data format (see PullRequest schema).
+  defp now do
+    DateTime.utc_now()
+    |> DateTime.truncate(:second)
+    |> DateTime.to_iso8601()
+  end
 end

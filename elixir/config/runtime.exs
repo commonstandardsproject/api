@@ -1,5 +1,29 @@
 import Config
 
+# Atlas (`mongodb+srv://`) auto-enables TLS in mongodb_driver. On OTP 26+,
+# :ssl.connect/3 defaults verify to :verify_peer and refuses to start without
+# explicit cacerts, so we have to inject them. :public_key.cacerts_get/0
+# (OTP 25+) pulls the platform trust store. Applies to any env that points
+# MONGO_URL at an SRV string; non-TLS URLs ignore the option.
+if System.get_env("MONGO_READ_ONLY") in ["1", "true"] do
+  config :csp_api, :mongo_read_only, true
+end
+
+if (System.get_env("MONGO_URL") || "") |> String.contains?("+srv") do
+  # OTP's default hostname check doesn't honor wildcard SAN entries the way HTTPS
+  # clients do, which breaks against Atlas certs (e.g. `*.w80cp.mongodb.net`
+  # against `production-shard-00-00.w80cp.mongodb.net`). The `:https` match_fun
+  # implements RFC 6125 wildcard matching.
+  config :csp_api, CspApi.Repo,
+    ssl_opts: [
+      cacerts: :public_key.cacerts_get(),
+      verify: :verify_peer,
+      customize_hostname_check: [
+        match_fun: :public_key.pkix_verify_hostname_match_fun(:https)
+      ]
+    ]
+end
+
 if config_env() == :test do
   # PHX_SERVE_TEST=1 brings the test-mode endpoint up so the language-neutral
   # Python contract suite can run against the Phoenix port with JWT-bypass on.
@@ -14,7 +38,7 @@ if config_env() == :prod do
       raise "MONGO_URL environment variable is missing."
 
   config :csp_api, CspApi.Repo,
-    url: mongo_url,
+    mongo_url: mongo_url,
     pool_size: String.to_integer(System.get_env("MONGO_POOL_SIZE") || "10")
 
   secret_key_base =

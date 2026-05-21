@@ -3,7 +3,7 @@ ExUnit.start()
 # Refuse to start if the configured Repo points anywhere other than a
 # database whose name contains "test". The Ruby rspec suite has the same
 # safety belt — `if $db.database.name == "common-standards-project-testing"`.
-url = Application.get_env(:csp_api, CspApi.Repo)[:url]
+url = Application.get_env(:csp_api, CspApi.Repo)[:mongo_url]
 
 unless is_binary(url) and String.contains?(url, "test") do
   raise """

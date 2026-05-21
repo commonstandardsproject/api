@@ -3,7 +3,8 @@ defmodule CspApiWeb.UsersController do
   use OpenApiSpex.ControllerSpecs
 
   alias CspApi.{Users, PullRequests}
-  alias CspApiWeb.{Schemas, UserJSON}
+  alias CspApiWeb.Errors
+  alias CspApiWeb.Users.ShowJSON
 
   tags ["Users"]
 
@@ -15,19 +16,19 @@ defmodule CspApiWeb.UsersController do
     request_body:
       {"User profile fields", "application/json",
        %OpenApiSpex.Schema{type: :object, additionalProperties: true}},
-    responses: [ok: {"User", "application/json", Schemas.Envelope.of(Schemas.User)}]
+    responses: [ok: {"The signed-in user with API keys and allowed origins", "application/json", ShowJSON.schema()}]
 
   def signed_in(conn, params) do
     user = Users.upsert_signed_in(params)
-    json(conn, %{data: UserJSON.show(user)})
+    json(conn, %{data: ShowJSON.data(user, %{pullRequests: []})})
   end
 
   operation :show,
     summary: "Look up a user by email",
     parameters: [email: [in: :path, required: true, type: :string]],
     responses: [
-      ok: {"User", "application/json", Schemas.Envelope.of(Schemas.User)},
-      not_found: {"User not found", "application/json", Schemas.Error}
+      ok: {"The user with API keys, allowed origins, and pull requests", "application/json", ShowJSON.schema()},
+      not_found: {"User not found", "application/json", Errors.JSON.schema()}
     ]
 
   def show(conn, %{"email" => email}) do
@@ -37,7 +38,7 @@ defmodule CspApiWeb.UsersController do
 
       user ->
         prs = PullRequests.list_for_user(user.id)
-        json(conn, %{data: UserJSON.show(Map.put(user, :pullRequests, prs))})
+        json(conn, %{data: ShowJSON.data(user, %{pullRequests: prs})})
     end
   end
 
@@ -57,14 +58,14 @@ defmodule CspApiWeb.UsersController do
          required: [:data]
        }},
     responses: [
-      ok: {"User", "application/json", Schemas.Envelope.of(Schemas.User)},
-      not_found: {"User not found", "application/json", Schemas.Error}
+      ok: {"The user with the updated allowed origins", "application/json", ShowJSON.schema()},
+      not_found: {"User not found", "application/json", Errors.JSON.schema()}
     ]
 
   def set_allowed_origins(conn, %{"id" => id, "data" => data}) when is_list(data) do
     case Users.set_allowed_origins(id, data) do
       nil -> conn |> put_status(:not_found) |> json(%{error: "User not found"})
-      user -> json(conn, %{data: UserJSON.show(user)})
+      user -> json(conn, %{data: ShowJSON.data(user, %{pullRequests: []})})
     end
   end
 end

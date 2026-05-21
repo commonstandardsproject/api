@@ -18,8 +18,33 @@ defmodule CspApi.MongoX do
       |> add_opt(:limit, opts[:limit])
 
     case Mongo.Ecto.command(Repo, cmd) do
-      %{"cursor" => %{"firstBatch" => docs}} -> docs
-      _ -> []
+      %{"cursor" => %{"firstBatch" => docs, "id" => cursor_id, "ns" => ns}} ->
+        drain([docs], cursor_id, ns)
+
+      _ ->
+        []
+    end
+  end
+
+  # Mongo returns at most ~101 documents in `firstBatch`; the rest stay on the
+  # server-side cursor and have to be pulled with `getMore`. The previous
+  # implementation ignored the cursor entirely, silently capping every result
+  # set at the first batch.
+  defp drain(batches, 0, _ns), do: batches |> Enum.reverse() |> Enum.concat()
+
+  defp drain(batches, cursor_id, ns) do
+    coll = ns |> String.split(".", parts: 2) |> List.last()
+
+    case Mongo.Ecto.command(Repo,
+           getMore: cursor_id,
+           collection: coll,
+           batchSize: 1000
+         ) do
+      %{"cursor" => %{"nextBatch" => batch, "id" => next_id}} ->
+        drain([batch | batches], next_id, ns)
+
+      _ ->
+        batches |> Enum.reverse() |> Enum.concat()
     end
   end
 

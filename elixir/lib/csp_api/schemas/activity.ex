@@ -7,7 +7,9 @@ defmodule CspApi.Schemas.Activity do
   @primary_key false
   embedded_schema do
     field :id, :string
-    field :createdAt, :utc_datetime
+    # Same string-passthrough as PullRequest createdAt — prod stores the
+    # original ISO8601-with-ms-and-offset string.
+    field :createdAt, :string
     field :type, :string
     field :status, :string
     field :title, :string

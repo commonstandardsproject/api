@@ -3,7 +3,7 @@ defmodule CspApiWeb.StandardSetsController do
   use OpenApiSpex.ControllerSpecs
 
   alias CspApi.StandardSets
-  alias CspApiWeb.{Schemas, StandardSetJSON}
+  alias CspApiWeb.StandardSets.DetailJSON
 
   tags ["StandardSets"]
 
@@ -19,7 +19,7 @@ defmodule CspApiWeb.StandardSetsController do
       ]
     ],
     responses: [
-      ok: {"Full standard set", "application/json", Schemas.Envelope.of(Schemas.StandardSet)}
+      ok: {"A full standard set including its nested standards", "application/json", DetailJSON.schema()}
     ]
 
   def show(conn, %{"id" => id} = params) do
@@ -29,7 +29,7 @@ defmodule CspApiWeb.StandardSetsController do
 
     case set do
       nil -> json(conn, %{data: %{}})
-      set -> json(conn, %{data: StandardSetJSON.full(set)})
+      set -> json(conn, %{data: DetailJSON.data(set)})
     end
   end
 end
