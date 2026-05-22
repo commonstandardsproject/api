@@ -75,7 +75,12 @@ jobs:
           MONGO_URL_TEST: mongodb://localhost:27017/csp-contract-test
           PHX_SERVE_TEST: "1"
         run: |
-          mix phx.server &
+          # Capture Phoenix stdout+stderr so a boot failure is visible in
+          # the next step's diagnostics, not swallowed by the background
+          # detach. `nohup` + `disown` make sure the child survives the
+          # step's bash exit.
+          nohup mix phx.server > "$GITHUB_WORKSPACE/phx.log" 2>&1 &
+          disown
           # Poll for the endpoint to come up; bail out if it doesn't bind
           # within 30s.
           for i in $(seq 1 30); do
@@ -86,6 +91,8 @@ jobs:
             sleep 1
           done
           echo "phoenix didn't bind within 30s" >&2
+          echo "=== phx.log ===" >&2
+          cat "$GITHUB_WORKSPACE/phx.log" >&2 || true
           exit 1
 
       - name: Run Python contract suite
@@ -96,4 +103,10 @@ jobs:
           CSP_ALLOW_WRITES: "1"
         run: |
           python3 -m pip install --quiet pytest
-          python3 -m pytest -v
+          python3 -m pytest -vv
+
+      - name: Dump Phoenix log on failure
+        if: failure()
+        run: |
+          echo "=== phx.log ==="
+          cat "$GITHUB_WORKSPACE/phx.log" || true
