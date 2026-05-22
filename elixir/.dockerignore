@@ -1,0 +1,10 @@
+_build
+deps
+.elixir_ls
+tmp
+test
+priv/static/uploads
+.git
+.formatter.exs
+.gitignore
+*.swp
