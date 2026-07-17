@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+      - "9393:9393"
+    env_file: .env
+    volumes:
+      - ./:/home/app

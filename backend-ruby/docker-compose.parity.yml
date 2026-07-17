@@ -1,0 +1,9 @@
+# Local override — NOT committed. Used by the Elixir port's POST-parity
+# diff to boot the Ruby app against a dedicated `parity-ruby` Mongo db
+# with `ENVIRONMENT=test` so the `Authorization: TEST` JWT bypass is on.
+services:
+  web:
+    environment:
+      MONGODB_DATABASE: parity-ruby
+      ENVIRONMENT: test
+      RACK_ENV: development

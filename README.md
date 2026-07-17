@@ -6,6 +6,7 @@ independently buildable, independently deployable application.
 ```
 platform/
 ├── backend/         Elixir / Phoenix API (the CSP API)
+├── backend-ruby/    Legacy Ruby/Sinatra API — archived, not deployed
 ├── frontend/        Web frontend (placeholder — not yet migrated)
 └── contract_tests/  Language-neutral black-box HTTP contract suite
 ```
@@ -13,6 +14,10 @@ platform/
 - **`backend/`** — the Phoenix/Ecto port of the CSP API, backed by
   MongoDB. This is the service that replaces the old Ruby/Sinatra app.
   See [`backend/README.md`](backend/README.md).
+- **`backend-ruby/`** — the original Ruby/Sinatra implementation, kept for
+  posterity. **Not built, tested, or deployed** by this monorepo; CI and
+  Northflank target `backend/` only. See
+  [`backend-ruby/README.md`](backend-ruby/README.md).
 - **`frontend/`** — reserved for the frontend app. See
   [`frontend/README.md`](frontend/README.md).
 - **`contract_tests/`** — HTTP contract tests that can run against any

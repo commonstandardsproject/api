@@ -1,0 +1,306 @@
+{
+  "rdf:RDF": {
+    "-xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "-xmlns:dcterms": "http://purl.org/dc/terms/",
+    "-xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "-xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "-xmlns:skos": "http://www.w3.org/2004/02/skos/core#",
+    "skos:ConceptScheme": {
+      "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/",
+      "dc:title": {
+        "-xml:lang": "en-US",
+        "#text": "Next Generation Science Standards - Topics"
+      },
+      "dc:description": {
+        "-xml:lang": "en-US",
+        "#text": "A vocabulary consisting of the NGSS topics."
+      },
+      "dcterms:created": {
+        "-rdf:datatype": "http://purl.org/dc/terms/W3CDTF",
+        "#text": "2013-05-22"
+      },
+      "dcterms:modified": {
+        "-rdf:datatype": "http://purl.org/dc/terms/W3CDTF",
+        "#text": "2015-01-07"
+      },
+      "skos:hasTopConcept": [
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/1" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/2" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/3" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/4" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/5" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/6" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/7" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/8" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/9" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/10" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/11" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/12" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/13" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/14" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/15" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/16" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/17" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/18" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/19" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/20" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/21" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/22" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/23" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/24" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/25" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/26" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/27" }
+      ]
+    },
+    "skos:Concept": [
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/1",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Forces and Interactions: Pushes and Pulls"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/2",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "
+Interdependent Relationships in Ecosystems: Animals, Plants, and Their Environment
+"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/3",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Weather and Climate"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/4",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Waves: Light and Sound"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/5",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Structure, Function, and Information Processing"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/6",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Space Systems: Patterns and Cycles"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/7",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Structure and Properties of Matter"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/8",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Interdependent Relationships in Ecosystems"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/9",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Earth's Systems: Processes that Shape the Earth"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/10",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Engineering Design"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/11",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Forces and Interactions"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/12",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "
+Inheritance and Variation of Traits: Life Cycles and Traits
+"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/13",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Energy"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/14",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Waves: Waves and Information"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/15",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Matter and Energy in Organisms and Ecosystems"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/16",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Earth's Systems"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/17",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Space Systems: Stars and the Solar System"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/18",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Chemical Reactions"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/19",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Waves and Electromagnetic Radiation"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/20",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Growth, Development, and Reproduction of Organisms"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/21",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Natural Selection and Adaptations"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/22",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Space Systems"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/23",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "History of Earth"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/24",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Human Impacts"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/25",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Structure and Function"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/26",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Inheritance and Variation of Traits"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/NGSSTopic/27",
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" },
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Natural Selection and Evolution"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/NGSSTopic/" }
+      }
+    ]
+  }
+}

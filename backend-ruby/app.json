@@ -1,0 +1,103 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "env": {
+    "ALGOLIA_API_KEY": {
+      "required": true
+    },
+    "ALGOLIA_APPLICATION_ID": {
+      "required": true
+    },
+    "ASANA_PERSONAL_ACCESS_TOKEN": {
+      "required": true
+    },
+    "ASANA_PR_ASSIGNEE_ID": {
+      "required": true
+    },
+    "ASANA_PR_PROJECT": {
+      "required": true
+    },
+    "AUTH0_CLIENT_ID": {
+      "required": true
+    },
+    "AUTH0_CLIENT_SECRET": {
+      "required": true
+    },
+    "AWS_KEY": {
+      "required": true
+    },
+    "AWS_SECRET": {
+      "required": true
+    },
+    "ENVIRONMENT": {
+      "required": true
+    },
+    "IMPORT_CONCURRENCY": {
+      "required": true
+    },
+    "IMPORT_JSON": {
+      "required": true
+    },
+    "JEMALLOC_ENABLED": {
+      "required": true
+    },
+    "JEMALLOC_VERSION": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "MALLOC_ARENA_MAX": {
+      "required": true
+    },
+    "MAX_THREADS": {
+      "required": true
+    },
+    "MONGODB_CONNECTION_STRING": {
+      "required": true
+    },
+    "MONGODB_DATABASE": {
+      "required": true
+    },
+    "NEW_RELIC_LICENSE_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_LOG": {
+      "required": true
+    },
+    "POSTMARK_API_TOKEN": {
+      "required": true
+    },
+    "POSTMARK_FROM_ADDRESS": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAYGUN_APIKEY": {
+      "required": true
+    },
+    "SKYLIGHT_AUTHENTICATION": {
+      "required": true
+    },
+    "SLACK_WEBHOOK_URL": {
+      "required": true
+    },
+    "WEB_CONCURRENCY": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "api",
+  "scripts": {
+  },
+  "stack": "container"
+}

@@ -1,0 +1,248 @@
+{
+  "rdf:RDF": {
+    "-xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "-xmlns:skos": "http://www.w3.org/2004/02/skos/core#",
+    "-xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "-xmlns:dc": "http://purl.org/dc/elements/1.1/",
+    "-xmlns:dcterms": "http://purl.org/dc/terms/",
+    "skos:ConceptScheme": {
+      "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/",
+      "dc:title": {
+        "-xml:lang": "en-US",
+        "#text": "ASN Bloom's Taxonomy Vocabulary"
+      },
+      "dc:description": {
+        "-xml:lang": "en-US",
+        "#text": "Cognitive, affective, and psychomotor vocabulary."
+      },
+      "dcterms:created": {
+        "-rdf:datatype": "http://purl.org/dc/terms/W3CDTF",
+        "#text": "2008-11-11"
+      },
+      "dcterms:modified": {
+        "-rdf:datatype": "http://purl.org/dc/terms/W3CDTF",
+        "#text": "2015-01-07"
+      },
+      "skos:hasTopConcept": [
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/cognitive" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/affective" },
+        { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/psychomotor" }
+      ]
+    },
+    "skos:Concept": [
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/cognitive",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Cognitive"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" },
+        "skos:narrower": [
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/knowledge" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/comprehension" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/application" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/analysis" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/synthesis" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/evaluation" }
+        ]
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/knowledge",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Knowledge"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/cognitive" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/comprehension",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Comprehension"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/cognitive" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/application",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Application"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/cognitive" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/analysis",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Analysis"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/cognitive" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/synthesis",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Synthesis"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/cognitive" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/evaluation",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Evaluation"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/cognitive" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/affective",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Affective"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" },
+        "skos:narrower": [
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/receiving" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/responding" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/valuing" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/organizing" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/characterizing" }
+        ]
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/receiving",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Receiving"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/affective" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/responding",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Responding"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/affective" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/valuing",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Valuing"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/affective" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/organizing",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Organizing"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/affective" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/characterizing",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Characterizing"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/affective" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/psychomotor",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Psychomotor"
+        },
+        "skos:topConceptOf": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" },
+        "skos:narrower": [
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/perception" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/set" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/guided-response" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/mechanism" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/complex-overt-response" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/adaptation" },
+          { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/origination" }
+        ]
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/perception",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Perception"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/psychomotor" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/set",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Set"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/psychomotor" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/guided-response",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Guided Response"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/psychomotor" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/mechanism",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Mechanism"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/psychomotor" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/complex-overt-response",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Complex Overt Response"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/psychomotor" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/adaptation",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Adaptation"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/psychomotor" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      },
+      {
+        "-rdf:about": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/origination",
+        "skos:prefLabel": {
+          "-xml:lang": "en-US",
+          "#text": "Origination"
+        },
+        "skos:broader": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/psychomotor" },
+        "skos:inScheme": { "-rdf:resource": "http://purl.org/ASN/scheme/ASNBloomsTaxonomy/" }
+      }
+    ]
+  }
+}
