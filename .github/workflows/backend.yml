@@ -1,22 +1,22 @@
-name: elixir
+name: backend
 
 on:
   push:
-    branches: [master]
+    branches: [main, master]
     paths:
-      - "elixir/**"
+      - "backend/**"
       - "contract_tests/**"
-      - ".github/workflows/elixir.yml"
+      - ".github/workflows/backend.yml"
   pull_request:
     paths:
-      - "elixir/**"
+      - "backend/**"
       - "contract_tests/**"
-      - ".github/workflows/elixir.yml"
+      - ".github/workflows/backend.yml"
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: elixir
+    working-directory: backend
 
 jobs:
   test:
@@ -51,9 +51,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            elixir/deps
-            elixir/_build
-          key: ${{ runner.os }}-mix-${{ hashFiles('elixir/mix.lock') }}
+            backend/deps
+            backend/_build
+          key: ${{ runner.os }}-mix-${{ hashFiles('backend/mix.lock') }}
           restore-keys: ${{ runner.os }}-mix-
 
       - name: Install deps

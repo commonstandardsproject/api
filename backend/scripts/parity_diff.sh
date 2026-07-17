@@ -19,7 +19,7 @@
 #   RUBY_BASE     default https://api.commonstandardsproject.com
 #   OUT_DIR       default /tmp/parity
 set -u
-KEY="${CSP_API_KEY:?CSP_API_KEY is required (see elixir/.env.example)}"
+KEY="${CSP_API_KEY:?CSP_API_KEY is required (see backend/.env.example)}"
 PHX="${PHX_BASE:-http://localhost:4000}"
 RUBY="${RUBY_BASE:-https://api.commonstandardsproject.com}"
 OUT_DIR="${OUT_DIR:-/tmp/parity}"

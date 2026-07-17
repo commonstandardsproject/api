@@ -1,9 +1,24 @@
+# OS / editor
 *.DS_Store
-.env
 .claude/
 
-*.log
+# Secrets / local env
+.env
+**/.env
 
+# Logs
+*.log
 **/*.log
 
-log/newrelic_agent.log
+# Elixir build artifacts (backend/) — backend/ also has its own .gitignore
+backend/_build/
+backend/deps/
+backend/*.ez
+backend/erl_crash.dump
+backend/.elixir_ls/
+backend/priv/static/
+
+# Node / frontend build artifacts (when the frontend lands)
+node_modules/
+frontend/dist/
+frontend/build/

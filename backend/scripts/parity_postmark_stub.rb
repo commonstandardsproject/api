@@ -1,5 +1,5 @@
 # Loaded into the Ruby app before puma boots when running POST-endpoint
-# parity diffs (`elixir/scripts/post_parity_diff.sh`). Replaces
+# parity diffs (`backend/scripts/post_parity_diff.sh`). Replaces
 # `Postmark::ApiClient#deliver_with_template` with a no-op so the
 # `change_status`/`submit`/`comment` routes don't crash on missing
 # Postmark credentials.
