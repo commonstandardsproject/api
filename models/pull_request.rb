@@ -129,9 +129,12 @@ class PullRequest
 
   def self.user_update(params)
     model = self.new(params)
-    return [false, self.validate(model)] if self.validate(model) != true
+    validation = self.validate(model)
+    return [false, validation] if validation != true
 
-    standard_set = ::VirtusConvert.new(model).to_hash[:standardSet]
+    # Converting the whole pull request here would build (and throw away) a
+    # copy of every activity alongside the standard set we actually want
+    standard_set = ::VirtusConvert.new(model.standardSet).to_hash
     standards = standard_set[:standards] || {}
     # only let the user update the standard set
     attrs = {
@@ -202,7 +205,7 @@ class PullRequest
     model = self.find(id)
 
     if status == "approved"
-      StandardSet.update(::VirtusConvert.new(model).to_hash[:standardSet])
+      StandardSet.update(::VirtusConvert.new(model.standardSet).to_hash)
       Jurisdiction.approve(model.standardSet.jurisdiction.id)
     end
 
