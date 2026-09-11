@@ -1,4 +1,5 @@
 require 'securerandom'
+require 'set'
 require 'pp'
 require_relative '../../config/mongo'
 require_relative '../matchers/source_to_subject_mapping_grouped'
@@ -23,7 +24,11 @@ class QueryToStandardSet
     # ==============
     time_start = Time.now
     standards     = query["children"].reduce([], &self.gather_standards.call(standardsHash, query["educationLevels"]) )
-    standardsHash = standards.compact.uniq.reduce({}) {|memo, standard| memo.merge({standard["asnIdentifier"] => standard})}
+    # `memo.merge` here would copy the whole hash once per standard, which is
+    # O(n^2) in both time and garbage for a document with thousands of them
+    standardsHash = standards.each_with_object({}) {|standard, memo|
+      memo[standard["asnIdentifier"]] = standard unless standard.nil?
+    }
 
 
     jurisdictionId = standardsDoc[:document][:jurisdictionId]
@@ -34,13 +39,23 @@ class QueryToStandardSet
 
     # Process Standards
     # =================
-    processed_standards = standards
-      .map(&self.set_ancestors.call(query["children"], standardsHash)) # set the ancestors as an array
-      .uniq
-      .map(&self.set_guid.call(id, query)) # set a guid, looking  to see if there's already a standard with a GUID
-      .reduce([], &self.add_position) # assign position
-      .map(&self.filter_keys)
-      .reduce({}, &self.list_to_hash)
+    # Each step of this used to build its own copy of every standard, so a
+    # large document held several copies at once. Doing it in a single pass
+    # means only the finished (and much smaller) standards stick around.
+    children_ids     = Set.new(query["children"] || [])
+    set_ancestors_on = self.set_ancestors.call(children_ids, standardsHash)
+    set_guid_on      = self.set_guid.call(id, query)
+    filter_keys_on   = self.filter_keys
+    position         = 0
+
+    processed_standards = standards.uniq.each_with_object({}) {|standard, memo|
+      standard = set_ancestors_on.call(standard) # set the ancestors as an array
+      standard = set_guid_on.call(standard)      # set a guid, looking to see if there's already a standard with a GUID
+      position += 1000
+      standard["position"] = position
+      standard = filter_keys_on.call(standard)
+      memo[standard["id"]] = standard
+    }
 
     time_end = Time.now
 
@@ -166,13 +181,6 @@ class QueryToStandardSet
   end
 
 
-  def self.add_position
-    lambda{|memo, standard|
-      standard["position"] = (memo.length + 1) * 1000
-      memo.push(standard)
-    }.curry
-  end
-
   def self.filter_keys
     lambda{|standard|
       standard.slice(
@@ -191,13 +199,5 @@ class QueryToStandardSet
     }
 
   end
-
-  def self.list_to_hash
-    lambda{|memo, standard|
-      memo[standard["id"]] = standard
-      memo
-    }
-  end
-
 
 end
