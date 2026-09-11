@@ -1,4 +1,5 @@
-require 'virtus_convert'
+require 'virtus'
+require_relative "../lib/deep_attributes"
 class Jurisdiction
   include Virtus.model
 
@@ -21,7 +22,7 @@ class Jurisdiction
   end
 
   def self.insert(model)
-    attrs = ::VirtusConvert.new(model).to_hash
+    attrs = DeepAttributes.to_hash(model)
     attrs[:_id] = attrs[:id]
     attrs.delete(:id)
     $db[:jurisdictions].insert_one(attrs)
