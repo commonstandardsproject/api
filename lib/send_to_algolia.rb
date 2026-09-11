@@ -8,30 +8,34 @@ require_relative "../lib/standard_hierarchy"
 class SendToAlgolia
   @@index = Algolia::Index.new("common-standards-project")
 
+  # A whole standard set's worth of denormalized standards can be tens of
+  # megabytes (each standard carries its ancestors' descriptions), so we send
+  # them to Algolia in batches instead of building one giant request body.
+  BATCH_SIZE = 500
+
   def self.all_standard_sets
-    # slices = []
-    sets = []
-    puts $db[:standard_sets].find(nil, {batch_size: 32}).each {|set|
-      sets.push(set)
-      if sets.length == 32
-        puts "Has 32 sets. Now processing."
-        Parallel.map(sets, in_threads: 32){|set|
-          p "Denormalizing #{set["jurisdiction"]["title"]}: #{set["title"]}"
-          standards = self.denormalize_standards(set)
-          p "Sending to Algolia #{set["jurisdiction"]["title"]}: #{set["title"]}"
-          @@index.add_objects(standards)
-        }
-        sets = []
-      end
+    $db[:standard_sets].find(nil, {batch_size: 8}).each {|set|
+      p "Sending to Algolia #{set["jurisdiction"]["title"]}: #{set["title"]}"
+      self.standard_set(set)
     }
   end
 
   def self.standard_set(set)
     return if ENV["ENVIRONMENT"] == "development"
-    @@index.add_objects(self.denormalize_standards(set))
+    self.each_denormalized_batch(set){|batch|
+      @@index.add_objects(batch)
+    }
   end
 
   def self.denormalize_standards(standardSet)
+    standards = []
+    self.each_denormalized_batch(standardSet){|batch| standards.concat(batch) }
+    standards
+  end
+
+  def self.each_denormalized_batch(standardSet, batch_size = BATCH_SIZE)
+    return if standardSet["standards"].nil? || standardSet["standards"].empty?
+
     standards = StandardHierarchy.sort_standards(standardSet["standards"])
     ancestors_by_index = StandardHierarchy.ancestors_for(standards)
 
@@ -39,10 +43,12 @@ class SendToAlgolia
     if standardSet["document"] != nil && standardSet["document"]["publicationStatus"] != nil
       publication_status = standardSet["document"]["publicationStatus"]
     end
-    standards.each_with_index.map{|standard, i|
+
+    batch = []
+    standards.each_with_index{|standard, i|
       ancestors = ancestors_by_index[i]
       ancestor_ids = ancestors.map{|a| a["id"]}
-      standard.merge({
+      batch.push(standard.merge({
         objectID:             standard["id"],
         ancestorIds:          ancestor_ids,
         ancestorDescriptions: ancestors.map{|a| a["description"]},
@@ -58,8 +64,15 @@ class SendToAlgolia
           publicationStatus: publication_status
         },
         _tags: [ancestor_ids, standardSet["_id"], standardSet["jurisdiction"]["id"], standardSet["educationLevels"]].flatten
-      })
+      }))
+
+      if batch.length >= batch_size
+        yield batch
+        batch = []
+      end
     }
+
+    yield batch unless batch.empty?
   end
 
 end
