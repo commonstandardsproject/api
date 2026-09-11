@@ -1,4 +1,5 @@
 require 'securerandom'
+require 'set'
 require 'pp'
 require_relative '../../config/mongo'
 require_relative '../matchers/source_to_subject_mapping_grouped'
@@ -23,7 +24,11 @@ class QueryToStandardSet
     # ==============
     time_start = Time.now
     standards     = query["children"].reduce([], &self.gather_standards.call(standardsHash, query["educationLevels"]) )
-    standardsHash = standards.compact.uniq.reduce({}) {|memo, standard| memo.merge({standard["asnIdentifier"] => standard})}
+    # `memo.merge` here would copy the whole hash once per standard, which is
+    # O(n^2) in both time and garbage for a document with thousands of them
+    standardsHash = standards.each_with_object({}) {|standard, memo|
+      memo[standard["asnIdentifier"]] = standard unless standard.nil?
+    }
 
 
     jurisdictionId = standardsDoc[:document][:jurisdictionId]
@@ -34,13 +39,23 @@ class QueryToStandardSet
 
     # Process Standards
     # =================
-    processed_standards = standards
-      .map(&self.set_ancestors.call(query["children"], standardsHash)) # set the ancestors as an array
-      .uniq
-      .map(&self.set_guid.call(id, query)) # set a guid, looking  to see if there's already a standard with a GUID
-      .reduce([], &self.add_position) # assign position
-      .map(&self.filter_keys)
-      .reduce({}, &self.list_to_hash)
+    # Each step of this used to build its own copy of every standard, so a
+    # large document held several copies at once. Doing it in a single pass
+    # means only the finished (and much smaller) standards stick around.
+    children_ids     = Set.new(query["children"] || [])
+    set_ancestors_on = self.set_ancestors.call(children_ids, standardsHash)
+    set_guid_on      = self.set_guid.call(self.cached_ids_by_asn_identifier(id))
+    filter_keys_on   = self.filter_keys
+    position         = 0
+
+    processed_standards = standards.uniq.each_with_object({}) {|standard, memo|
+      standard = set_ancestors_on.call(standard) # set the ancestors as an array
+      standard = set_guid_on.call(standard)      # set a guid, looking to see if there's already a standard with a GUID
+      position += 1000
+      standard["position"] = position
+      standard = filter_keys_on.call(standard)
+      memo[standard["id"]] = standard
+    }
 
     time_end = Time.now
 
@@ -88,17 +103,23 @@ class QueryToStandardSet
   # =========================
 
 
-  # Also puts the standards in order
+  # Also puts the standards in order.
+  #
+  # The walk builds its lambda once and recurses into it, rather than building
+  # a fresh curried lambda at every node of the document.
   def self.gather_standards
-    -> (standardsHash, validEducationLevels, memo, id){
-      if (standardsHash[id]["educationLevels"] & validEducationLevels).length > 0
-        memo.push(standardsHash[id])
-        if standardsHash[id] && standardsHash[id]["children"]
-          memo = standardsHash[id]["children"].reduce(memo, &self.gather_standards.call(standardsHash, validEducationLevels))
+    -> (standardsHash, validEducationLevels){
+      gather = nil
+      gather = -> (memo, id){
+        standard = standardsHash[id]
+        if (standard["educationLevels"] & validEducationLevels).length > 0
+          memo.push(standard)
+          standard["children"].reduce(memo, &gather) if standard["children"]
         end
-      end
-      memo
-    }.curry
+        memo
+      }
+      gather
+    }
   end
 
 
@@ -130,18 +151,26 @@ class QueryToStandardSet
 
 
 
+  # Marks an asnIdentifier that more than one cached standard claims
+  CONFLICTING_IDS = :conflicting_ids
+
+  # The id of every standard we've already cached for this set, keyed by its
+  # asnIdentifier. One query for the set beats one query per standard, and the
+  # projection keeps us from pulling down descriptions we don't look at.
+  def self.cached_ids_by_asn_identifier(standard_set_id)
+    $db[:cached_standards]
+      .find({standardSetId: standard_set_id}, {projection: {asnIdentifier: 1}})
+      .each_with_object({}){|cached, memo|
+        asn_identifier = cached["asnIdentifier"]
+        memo[asn_identifier] = memo.key?(asn_identifier) ? CONFLICTING_IDS : cached["_id"].to_s
+      }
+  end
+
   def self.set_guid
-    -> (standard_set_id, query, standard) {
-      matched = $db[:cached_standards].find({
-        standardSetId: standard_set_id,
-        asnIdentifier: standard["asnIdentifier"]
-      }).to_a
+    -> (cached_ids, standard) {
+      cached_id = cached_ids[standard["asnIdentifier"]]
 
-
-      case matched
-      when ->(m){ m.length == 1}
-        standard.merge({"id" => matched[0]["_id"].to_s})
-      when ->(m) { m.length > 1 }
+      if cached_id.nil? || cached_id == CONFLICTING_IDS
         # From tests, these conflicts only appear to be on a few sets:
         # - Nevada Computer and Technology Standards
         # - Arizona Music 9-12
@@ -150,28 +179,13 @@ class QueryToStandardSet
         # Because these are not core subjects and none of the users in these states
         # has access to the Cc standards tracker at the time of the conversion,
         # we're just going to assign new GUIDs
-        #
-        # p "===================================================="
-        # p "RAISE"
-        # p query
-        # p matched
-        # p "===================================================="
-        # raise "More than one standard matched an ID"
         standard.merge({"id" =>  SecureRandom.uuid().gsub('-', '').upcase})
-      when ->(m) {m.length == 0}
-        standard.merge({"id" =>  SecureRandom.uuid().gsub('-', '').upcase})
+      else
+        standard.merge({"id" => cached_id})
       end
-
     }.curry
   end
 
-
-  def self.add_position
-    lambda{|memo, standard|
-      standard["position"] = (memo.length + 1) * 1000
-      memo.push(standard)
-    }.curry
-  end
 
   def self.filter_keys
     lambda{|standard|
@@ -191,13 +205,5 @@ class QueryToStandardSet
     }
 
   end
-
-  def self.list_to_hash
-    lambda{|memo, standard|
-      memo[standard["id"]] = standard
-      memo
-    }
-  end
-
 
 end

@@ -1,5 +1,5 @@
 require_relative "activity"
-require 'virtus_convert'
+require_relative "../lib/deep_attributes"
 require_relative "user"
 require_relative "standard_set"
 require_relative "asana_task"
@@ -116,7 +116,7 @@ class PullRequest
   end
 
   def self.insert(model)
-    attrs = ::VirtusConvert.new(model).to_hash
+    attrs = DeepAttributes.to_hash(model)
     attrs[:_id] = attrs.delete(:id)
     $db[:pull_requests].insert_one(attrs)
   end
@@ -129,9 +129,12 @@ class PullRequest
 
   def self.user_update(params)
     model = self.new(params)
-    return [false, self.validate(model)] if self.validate(model) != true
+    validation = self.validate(model)
+    return [false, validation] if validation != true
 
-    standard_set = ::VirtusConvert.new(model).to_hash[:standardSet]
+    # Converting the whole pull request here would build (and throw away) a
+    # copy of every activity alongside the standard set we actually want
+    standard_set = DeepAttributes.to_hash(model.standardSet)
     standards = standard_set[:standards] || {}
     # only let the user update the standard set
     attrs = {
@@ -152,7 +155,7 @@ class PullRequest
     model.updatedAtDate = Time.now
     model.title = "#{model.standardSet.jurisdiction.title}: #{model.standardSet.subject}: #{model.standardSet.title}"
     model.standardsCount = model.standardSet&.standards&.keys.length || 0
-    attrs = ::VirtusConvert.new(model).to_hash
+    attrs = DeepAttributes.to_hash(model)
     attrs.delete(:id)
 
     update_in_mongo(model.id, attrs)
@@ -202,7 +205,7 @@ class PullRequest
     model = self.find(id)
 
     if status == "approved"
-      StandardSet.update(::VirtusConvert.new(model).to_hash[:standardSet])
+      StandardSet.update(DeepAttributes.to_hash(model.standardSet))
       Jurisdiction.approve(model.standardSet.jurisdiction.id)
     end
 

@@ -182,11 +182,16 @@ def parse_doc_json(docs)
     acc[hash[:title]] = {url: url, id: hash[:id], title: hash[:title], type: hash[:type], abbreviation: hash[:abbreviation]}
     acc
   }
+  # A jurisdiction shows up in many of these documents, and looking one up
+  # both reads from and writes to mongo, so we only do it once per title
+  # instead of twice per document.
+  jurisdiction_ids = {}
   find_id = lambda{ |title|
+    return jurisdiction_ids[title] if jurisdiction_ids.key?(title)
     jurisdiction = jurisdiction_titles[title]
     if jurisdiction == nil
       puts "SKIPPING: Missing jurisdiction in jurisdiction_matches.rb: #{title}"
-      return nil
+      return jurisdiction_ids[title] = nil
     end
     db_jurisdiction = $db[:jurisdictions].find({_id: jurisdiction[:id]}).to_a.first
     if db_jurisdiction.nil?
@@ -200,7 +205,7 @@ def parse_doc_json(docs)
     else
       $db[:jurisdictions].find({_id: jurisdiction[:id]}).find_one_and_update({"$set" => {status: "active"}})
     end
-    jurisdiction[:id]
+    jurisdiction_ids[title] = jurisdiction[:id]
   }
   docs["hits"]["hit"].reject{|doc|
     jurisdiction = find_id.call(doc["data"]["jurisdiction"][0])
@@ -266,13 +271,12 @@ end
 
 # See commnet on set_retrieved
 def get_previously_imported_docs
+  # `memo.merge` would copy the whole hash for each of the thousands of
+  # documents here, so we stream the cursor into one hash instead
   $db[:standard_documents].find()
     .projection({"documentMeta.primaryTopic" => 1, "retrieved.modifiedAccordingToASNApi" => 1, "_id" => 1})
-    .to_a
-    .reduce({}){|memo, d|
-      memo.merge({
-        d["documentMeta"]["primaryTopic"] => d["retrieved"]["modifiedAccordingToASNApi"]
-      })
+    .each_with_object({}){|d, memo|
+      memo[d["documentMeta"]["primaryTopic"]] = d["retrieved"]["modifiedAccordingToASNApi"]
     }
 end
 
