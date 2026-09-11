@@ -103,17 +103,23 @@ class QueryToStandardSet
   # =========================
 
 
-  # Also puts the standards in order
+  # Also puts the standards in order.
+  #
+  # The walk builds its lambda once and recurses into it, rather than building
+  # a fresh curried lambda at every node of the document.
   def self.gather_standards
-    -> (standardsHash, validEducationLevels, memo, id){
-      if (standardsHash[id]["educationLevels"] & validEducationLevels).length > 0
-        memo.push(standardsHash[id])
-        if standardsHash[id] && standardsHash[id]["children"]
-          memo = standardsHash[id]["children"].reduce(memo, &self.gather_standards.call(standardsHash, validEducationLevels))
+    -> (standardsHash, validEducationLevels){
+      gather = nil
+      gather = -> (memo, id){
+        standard = standardsHash[id]
+        if (standard["educationLevels"] & validEducationLevels).length > 0
+          memo.push(standard)
+          standard["children"].reduce(memo, &gather) if standard["children"]
         end
-      end
-      memo
-    }.curry
+        memo
+      }
+      gather
+    }
   end
 
 
