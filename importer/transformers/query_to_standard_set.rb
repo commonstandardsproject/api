@@ -44,7 +44,7 @@ class QueryToStandardSet
     # means only the finished (and much smaller) standards stick around.
     children_ids     = Set.new(query["children"] || [])
     set_ancestors_on = self.set_ancestors.call(children_ids, standardsHash)
-    set_guid_on      = self.set_guid.call(id, query)
+    set_guid_on      = self.set_guid.call(self.cached_ids_by_asn_identifier(id))
     filter_keys_on   = self.filter_keys
     position         = 0
 
@@ -145,18 +145,26 @@ class QueryToStandardSet
 
 
 
+  # Marks an asnIdentifier that more than one cached standard claims
+  CONFLICTING_IDS = :conflicting_ids
+
+  # The id of every standard we've already cached for this set, keyed by its
+  # asnIdentifier. One query for the set beats one query per standard, and the
+  # projection keeps us from pulling down descriptions we don't look at.
+  def self.cached_ids_by_asn_identifier(standard_set_id)
+    $db[:cached_standards]
+      .find({standardSetId: standard_set_id}, {projection: {asnIdentifier: 1}})
+      .each_with_object({}){|cached, memo|
+        asn_identifier = cached["asnIdentifier"]
+        memo[asn_identifier] = memo.key?(asn_identifier) ? CONFLICTING_IDS : cached["_id"].to_s
+      }
+  end
+
   def self.set_guid
-    -> (standard_set_id, query, standard) {
-      matched = $db[:cached_standards].find({
-        standardSetId: standard_set_id,
-        asnIdentifier: standard["asnIdentifier"]
-      }).to_a
+    -> (cached_ids, standard) {
+      cached_id = cached_ids[standard["asnIdentifier"]]
 
-
-      case matched
-      when ->(m){ m.length == 1}
-        standard.merge({"id" => matched[0]["_id"].to_s})
-      when ->(m) { m.length > 1 }
+      if cached_id.nil? || cached_id == CONFLICTING_IDS
         # From tests, these conflicts only appear to be on a few sets:
         # - Nevada Computer and Technology Standards
         # - Arizona Music 9-12
@@ -165,18 +173,10 @@ class QueryToStandardSet
         # Because these are not core subjects and none of the users in these states
         # has access to the Cc standards tracker at the time of the conversion,
         # we're just going to assign new GUIDs
-        #
-        # p "===================================================="
-        # p "RAISE"
-        # p query
-        # p matched
-        # p "===================================================="
-        # raise "More than one standard matched an ID"
         standard.merge({"id" =>  SecureRandom.uuid().gsub('-', '').upcase})
-      when ->(m) {m.length == 0}
-        standard.merge({"id" =>  SecureRandom.uuid().gsub('-', '').upcase})
+      else
+        standard.merge({"id" => cached_id})
       end
-
     }.curry
   end
 
